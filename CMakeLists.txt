@@ -1,0 +1,2 @@
+add_subdirectory(lib_baseAF)
+add_subdirectory(lib_quickAF)

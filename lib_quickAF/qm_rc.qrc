@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/LibDynamic/MunninQuickTypes">
+        <file>Enum/Colors.qml</file>
+        <file>Item/Button.qml</file>
+        <file>Item/CheckBox.qml</file>
+        <file>Item/Combobox.qml</file>
+        <file>Item/DigitTextInput.qml</file>
+        <file>Item/LinkText.qml</file>
+        <file>Item/Position.qml</file>
+        <file>Item/Separate.qml</file>
+        <file>Item/Slider.qml</file>
+        <file>Item/SpinBox.qml</file>
+        <file>Item/TabButton.qml</file>
+        <file>Item/Text.qml</file>
+        <file>Item/TextInput.qml</file>
+        <file>Component/BusyIndicator.qml</file>
+        <file>Component/Content.qml</file>
+        <file>Component/Header.qml</file>
+        <file>Component/Mirror.qml</file>
+        <file>Component/Plugin.qml</file>
+        <file>Component/TextInput.qml</file>
+        <file>Enum/MQEnum.qml</file>
+        <file>Object/ColorButtonObject.qml</file>
+        <file>Object/TextObject.qml</file>
+        <file>Object/UrlButtonObject.qml</file>
+    </qresource>
+</RCC>
