@@ -17,7 +17,7 @@ public:
 
     void parsePluginDirectory();
     bool registratePlugin(Plugin* object);
-//    std::optional <Plugin*> load(QString pluginName, bool isCritical = false);
+    std::optional <Plugin*> load(QString pluginName, bool isCritical = false);
 
     QList <const Plugin*> pluginList() const;
 

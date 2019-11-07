@@ -6,7 +6,7 @@
 
 namespace AFlib {
     class User;
-    typedef QSharedPointer <const User> UserPtr;
+    typedef QSharedPointer <User> UserPtr;
     typedef QList <UserPtr> UserPtrList;
 }
 

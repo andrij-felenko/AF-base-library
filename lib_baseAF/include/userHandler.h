@@ -12,7 +12,7 @@ class AFlib::UserHandler final : public QObject
 {
     Q_OBJECT
 public:
-    explicit UserHandler(QObject* parent = nullptr);
+    explicit UserHandler(OriginPtr origin, QObject* parent = nullptr);
     virtual ~UserHandler() = default;
 
     QStringList userList() const;

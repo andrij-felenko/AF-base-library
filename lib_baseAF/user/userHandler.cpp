@@ -2,10 +2,13 @@
 #include <QtCore/QDataStream>
 #include <QtCore/QFile>
 #include <QtCore/QCryptographicHash>
+#include <QtCore/QDebug>
 
-AFlib::UserHandler::UserHandler(QObject *parent)
-    : QObject(parent)
+AFlib::UserHandler::UserHandler(OriginPtr origin, QObject *parent)
+    : QObject(parent), m_origin(origin)
 {
+//    m_origin = origin;
+    qDebug() << "fgfg";
     refresh();
 }
 
@@ -47,8 +50,8 @@ void AFlib::UserHandler::save()
 
 void AFlib::UserHandler::addUser(QString uid, QString login, QString password, QString icon)
 {
-    QSharedPointer <User> user;
-    user.create();
+    UserPtr user;
+    user = UserPtr::create();
     user->m_uid = uid;
     user->m_icon = icon;
     user->m_login = login;

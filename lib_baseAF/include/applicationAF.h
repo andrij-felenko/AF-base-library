@@ -16,22 +16,21 @@ template <typename T>
 class AFlib::BaseApplicationAF final : public T
 {
 public:
-    explicit BaseApplicationAF(int argc, char** argv);
+    explicit BaseApplicationAF(int argc, char** argv) : T(argc, argv)
+    {
+        m_origin = OriginPtr::create(this);
+        m_userHandler = UserHandlerPtr::create(m_origin, this);
+        m_plugin = new PluginHandler(m_origin, this);
+    }
 
-    OriginPtr getOrigin() const;
-    UserHandlerPtr getUserHandler() const;
-    bool registratePlugin(Plugin* object);
-
-signals:
-    //
-
-public slots:
-    //
+    bool registratePlugin(Plugin* object) { return m_plugin->registratePlugin(object); }
+    OriginPtr      getOrigin()      const { return m_origin; }
+    UserHandlerPtr getUserHandler() const { return m_userHandler; }
 
 private:
-    OriginPtr origin;
+    OriginPtr m_origin;
     PluginHandler* m_plugin;
-    UserHandlerPtr userHandler;
+    UserHandlerPtr m_userHandler;
 };
 
 typedef AFlib::BaseApplicationAF <QCoreApplication> CoreApplicationAF;

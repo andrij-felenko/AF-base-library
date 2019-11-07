@@ -2,7 +2,7 @@
 
 using namespace AFlib;
 
-PluginGuiHandler::PluginGuiHandler(QObject *parent) : PluginHandler(parent)
+PluginGuiHandler::PluginGuiHandler(OriginPtr origin, QObject *parent) : PluginHandler(origin, parent)
 {
     m_view = QSharedPointer <QQuickView>::create();
 

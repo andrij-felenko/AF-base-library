@@ -4,8 +4,8 @@ using namespace AFlib;
 
 Origin::Origin(QObject *parent) : QObject(parent)
 {
-    m_dir.create(this);
-    m_setting.create(this);
+    m_dir = DirPtr::create(this);
+    m_setting = SettingPtr::create(this);
     m_user.create(this);
 }
 

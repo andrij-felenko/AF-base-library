@@ -6,7 +6,7 @@ using namespace AFlib;
 PluginSingle::PluginSingle(QString path, QObject *parent)
     : QObject(parent), m_type(Type::Dynamic)
 {
-    m_loader.create(this);
+    m_loader = PluginPointer::create(this);
     m_loader->setFileName(path);
 }
 
@@ -45,7 +45,7 @@ bool PluginSingle::init()
     }
 
     if (m_loader.isNull())
-        m_loader.create(this);
+        m_loader = PluginPointer::create(this);
     bool isLoad = m_loader->load();
     qDebug() << "Try load plugin: " << isLoad;
     return isLoad;
