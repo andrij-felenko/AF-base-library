@@ -9,7 +9,7 @@
 
 using namespace AFlib;
 
-PluginHandler::PluginHandler(OriginPtr origin, QObject *parent)
+PluginHandler::PluginHandler(QObject *parent)
     : QObject(parent), m_origin(origin)
 {
     // FIXME it

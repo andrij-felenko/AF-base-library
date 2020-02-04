@@ -17,7 +17,25 @@ AFaccount::StoragePtr AFaccount::Storage::instance()
     return accountStorage();
 }
 
-std::optional <QString> AFaccount::Storage::check(const QString &login, const QString &password) const
+bool AFaccount::Storage::check(const AFlib::id::Account_bit &id)
+{
+    for (auto it : m_accountList)
+        if (it->accountId() == id.accountId())
+            return true;
+
+    for (auto it : m_groupList)
+        if (it->accountId() == id.accountId())
+            return true;
+
+    return false;
+}
+
+bool AFaccount::Storage::check(const quint32 &id)
+{
+    return check(AFlib::id::Account_bit(id));
+}
+
+std::optional <QString> AFaccount::Storage::checkLogin(const QString &login, const QString &password) const
 {
     for (auto it : m_accountList)
         if (it->mail() == login || it->login() == login){
@@ -30,7 +48,7 @@ std::optional <QString> AFaccount::Storage::check(const QString &login, const QS
     return QString(tr("Login %1 not found in storage.")).arg(login);
 }
 
-AFaccount::InfoPtr AFaccount::Storage::getInfo(const AFlib::AccountId &id)
+AFaccount::InfoPtr AFaccount::Storage::getInfo(const AFlib::id::Account_bit &id)
 {
     auto accId = id.accountId();
     for (int i = 0; i < m_accountList.length(); i++)
@@ -39,9 +57,30 @@ AFaccount::InfoPtr AFaccount::Storage::getInfo(const AFlib::AccountId &id)
     return InfoPtr();
 }
 
+AFaccount::InfoPtr AFaccount::Storage::getInfo(const QString &nick)
+{
+    for (int i = 0; i < m_accountList.length(); i++)
+        if (m_accountList[i]->name() == nick)
+            return m_accountList[i];
+    return InfoPtr();
+}
+
+AFaccount::InfoPtr AFaccount::Storage::getInfo(const quint32 &id)
+{
+    return getInfo(AFlib::id::Account_bit(id));
+}
+
+bool AFaccount::Storage::checkNickname(const QString &nick)
+{
+    for (auto it : m_accountList)
+        if (it->m_login == nick)
+            return true;
+    return false;
+}
+
 void AFaccount::Storage::add(AccountPtr account)
 {
-    if (contains(static_cast <AFlib::AccountId> (*account)))
+    if (contains(static_cast <AFlib::id::Account_bit> (*account)))
         return;
 
     m_accountList.push_back(account);
@@ -50,14 +89,14 @@ void AFaccount::Storage::add(AccountPtr account)
 
 void AFaccount::Storage::add(GroupPtr group)
 {
-    if (contains(static_cast <AFlib::AccountId> (*group)))
+    if (contains(static_cast <AFlib::id::Account_bit> (*group)))
         return;
 
     m_groupList.push_back(group);
     save();
 }
 
-void AFaccount::Storage::remove(AFlib::AccountId id)
+void AFaccount::Storage::remove(AFlib::id::Account_bit id)
 {
     m_accountList.erase(std::remove_if(m_accountList.begin(), m_accountList.end(),
                                        [id](const AccountPtr a){ return a->accountId() == id.accountId(); }));
@@ -92,7 +131,7 @@ void AFaccount::Storage::save()
         qWarning() << "Can`t open account file for save.";
 }
 
-bool AFaccount::Storage::contains(AFlib::AccountId id)
+bool AFaccount::Storage::contains(AFlib::id::Account_bit id)
 {
     auto accId = id.accountId();
     for (auto it : m_accountList)

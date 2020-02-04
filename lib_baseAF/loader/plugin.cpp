@@ -69,8 +69,3 @@ void Plugin::readyToStart()
         qInfo() << QString("Plugin %1 start: ").arg(name()) << start();
     m_readyToStart = true;
 }
-
-void Plugin::setOrigin(const QSharedPointer<Origin> origin)
-{
-    m_origin = origin;
-}

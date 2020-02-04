@@ -32,6 +32,7 @@ public:
     QString login() const;
 
     operator QJsonObject() const;
+    QJsonObject toJson() const;
 
 public slots:
     void setLogin(QString login);

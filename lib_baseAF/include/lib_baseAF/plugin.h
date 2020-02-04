@@ -8,7 +8,6 @@
 #include <QtCore/QJsonObject>
 
 #include "dir.h"
-#include "origin.h"
 #include "version.h"
 #include "pluginMetadata.h"
 
@@ -32,7 +31,6 @@ public:
     virtual bool isStatic() const final;
     virtual bool isGui() const;
     virtual void readyToStart();
-    virtual void setOrigin(const QSharedPointer <AFlib::Origin> origin) final;
 
 signals:
     // two signal must be calling in Plugin::start function
@@ -44,7 +42,6 @@ protected:
     bool m_initComplete = false;
     bool m_readyToStart = false;
     QPluginLoader* m_loader;
-    QSharedPointer <const AFlib::Origin> m_origin;
 
     virtual bool start();
 };

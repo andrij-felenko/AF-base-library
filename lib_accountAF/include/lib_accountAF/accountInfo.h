@@ -15,13 +15,13 @@ namespace AFaccount {
     typedef QList <InfoPtr> InfoPtrList;
 }
 
-class AFaccount::Info : public AFlib::HistoryId, public AFlib::AccountId
+class AFaccount::Info : public AFlib::id::Info,
+                        public AFlib::id::History,
+                        public AFlib::id::Account_bit
 {
     Q_OBJECT
     Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
     Q_PROPERTY(QString mail READ mail WRITE setMail NOTIFY mailChanged)
-    Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
-
 public:
     explicit Info(QObject* parent = nullptr);
     Info(uint id, QObject* parent = nullptr);
@@ -30,19 +30,17 @@ public:
 
     virtual QString icon() const final { return m_icon; }
     virtual QString mail() const final { return m_mail; }
-    virtual QString name() const final { return m_name; }
 
     operator QJsonObject() const;
+    QJsonObject toJson() const;
 
 public slots:
     virtual void setIcon(QString icon) final;
     virtual void setMail(QString mail) final;
-    virtual void setName(QString name) final;
 
 signals:
     void iconChanged(QString icon);
     void mailChanged(QString mail);
-    void nameChanged(QString name);
 
 protected:
     friend QDataStream & operator >> (QDataStream& stream,       Info &info);
@@ -51,7 +49,6 @@ protected:
 private:
     QString m_icon;
     QString m_mail;
-    QString m_name;
 };
 
 QDataStream& operator >> (QDataStream& stream,       AFaccount::InfoPtrList& list);

@@ -169,15 +169,7 @@ void Dir::cpDirectory(QString from, QString to)
     }
 }
 
-QDir Dir::pluginData(QString plugin) const
-{
-    QDir dir(m_storage);
-    if (not cdDirectory(dir, plugin))
-        qWarning() << QString("Can`t create %1 directory").arg(dir.path() + plugin);
-    return dir;
-}
-
-DirPtr AFlib::afDir()
+DirPtr AFDir()
 {
     static DirPtr ptr;
     if (ptr.isNull())

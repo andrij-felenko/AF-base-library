@@ -1,10 +1,11 @@
 #include "storage.h"
+#include "lib_baseAF/dir.h"
 #include "crypt.h"
 #include <QtCore/QDebug>
 
 using namespace AFlib;
 
-Storage::Storage(DirPtr dir, QObject *parent) : QObject(parent), m_dir(dir)
+Storage::Storage(QObject *parent) : QObject(parent)
 {
     //
 }
@@ -67,17 +68,14 @@ std::optional<QByteArray> Storage::readData(QDir dir, QString name, QString sufi
     return Storage::readData(dir.absoluteFilePath(QString("%1.%2").arg(name, sufix)));
 }
 
-std::optional<QByteArray> Storage::readData(QString plugin, QDir dir, QString name, QString sufix)
+std::optional<QByteArray> Storage::readData(QString plugin, QString name, QString sufix)
 {
-    if (not Dir::cdDirectory(dir, plugin))
-        return std::nullopt;
-
-    return readData(dir, name, sufix);
+    return readData(afDir()->pluginData(plugin), name, sufix);
 }
 
 bool Storage::writeData(QString name, QByteArray data, QString sufix, bool user, bool crypt)
 {
-    return Storage::writeData(user ? m_dir->userData() : m_dir->storage(), name, sufix, data, crypt, "", m_subFolder, m_subSubFolder);
+    return Storage::writeData(user ? afDir()->userData() : afDir()->storage(), name, sufix, data, crypt, "", m_subFolder, m_subSubFolder);
 }
 
 bool Storage::writeData(QString name, QByteArray data, bool user, bool crypt)
@@ -87,10 +85,10 @@ bool Storage::writeData(QString name, QByteArray data, bool user, bool crypt)
 
 bool Storage::writeData(QString plugin, QString name, QByteArray data, bool user, bool crypt)
 {
-    return writeData(user ? m_dir->userData() : m_dir->storage(), name, m_sufix, data, crypt, "", plugin);
+    return writeData(user ? afDir()->userData() : afDir()->storage(), name, m_sufix, data, crypt, "", plugin);
 }
 
 bool Storage::writeData(QString plugin, QString name, QByteArray data, QString sufix, bool user, bool crypt)
 {
-    return Storage::writeData(user ? m_dir->userData() : m_dir->storage(), name, sufix, data, crypt, "", plugin);
+    return Storage::writeData(user ? afDir()->userData() : afDir()->storage(), name, sufix, data, crypt, "", plugin);
 }

@@ -1,84 +1,65 @@
 #include "accountAPI.h"
 #include <optional>
+#include <QtCore/QCoreApplication>
 
-//#include "userHandler.h"
-//#include <QtCore/QDataStream>
-//#include <QtCore/QFile>
-//#include <QtCore/QCryptographicHash>
-//#include <QtCore/QDebug>
-
-//AFlib::UserHandler::UserHandler(OriginPtr origin, QObject *parent)
-//    : QObject(parent), m_origin(origin)
-//{
-//    refresh();
-//}
-
-//QStringList AFlib::UserHandler::userList() const
-//{
-//    QStringList list;
-//    for (auto it : m_userList)
-//        list.push_back(it->login());
-//    return list;
-//}
-
-//void AFlib::UserHandler::refresh()
-//{
-//    m_userList.clear();
-//    QFile file(m_origin->dir()->users().absoluteFilePath("list.afud"));
-//    if (file.open(QIODevice::ReadWrite)){
-//        QDataStream stream(&file);
-//        while (!stream.atEnd()){
-//            auto user = QSharedPointer <User>::create();
-//            stream >> *user.data();
-//            m_userList.push_back(user);
-//        }
-//        file.close();
-//    }
-//    emit userListChanged(userList());
-//}
-
-//void AFlib::UserHandler::save()
-//{
-//    QFile file(m_origin->dir()->users().absoluteFilePath("list.afud"));
-//    file.remove();
-//    if (file.open(QIODevice::WriteOnly)){
-//        QDataStream stream(&file);
-//        for (auto it : m_userList)
-//            stream << *it.data();
-//        file.close();
-//    }
-//}
-
-//void AFlib::UserHandler::addUser(QString uid, QString login, QString password, QString icon)
-//{
-//    UserPtr user;
-//    user = UserPtr::create();
-//    user->m_uid = uid;
-//    user->m_icon = icon;
-//    user->m_login = login;
-//    user->m_password = password;
-//    m_userList.push_back(user);
-//    emit userListChanged(userList());
-//}
-
-//bool AFlib::UserHandler::check(QString login, QString password)
-//{
-//    for (auto it : m_userList)
-//        if (it->m_login == login)
-//            if (it->m_password == QString(QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Md5).toHex())){
-//                m_origin->user() = it;
-//                emit currentUserChanged(it->login());
-//                return true;
-//            }
-//    return false;
-//}
-
-std::optional<QString> AFaccount::API::login(const QString &login, const QString &password)
+AFaccount::API::API(QObject *parent) : QObject(parent)
 {
-    // check online, if some seconds havnt answer, check offline
-    if (accountStorage()->check(login, password)){
-        //
-        return std::nullopt;
-    }
-    return "";
+    m_server = new QNetworkAccessManager(this);
+}
+
+QSharedPointer<QNetworkRequest> AFaccount::API::createRequest()
+{
+    // TODO preferences file need to add request url for account API
+    QUrl accountUrlAPI = QUrl::fromUserInput("");
+    auto req = QSharedPointer <QNetworkRequest>::create(accountUrlAPI);
+    return req;
+}
+
+void AFaccount::API::readServerAnswer(QNetworkReply *reply)
+{
+    // 
+}
+
+AFaccount::AccountAPIPtr AFaccount::API::instance()
+{
+    return api();
+}
+
+void AFaccount::API::login(const QString &login, const QString &password, const QString &device_name)
+{
+    //
+}
+
+void AFaccount::API::remind(const QString &email_login)
+{
+    //
+}
+
+void AFaccount::API::logout(const QString &login, const QString &device_name)
+{
+    //
+}
+
+void AFaccount::API::checkNew(const QDateTime &dtime_last_update)
+{
+    //
+}
+
+void AFaccount::API::registrate(const Account &account)
+{
+    //
+}
+
+void AFaccount::API::checkFreeName(const QString &name)
+{
+    //
+}
+
+AFaccount::AccountAPIPtr AFaccount::api()
+{
+    static AccountAPIPtr ptr;
+    if (ptr.isNull())
+        ptr = AccountAPIPtr::create(qApp);
+
+    return ptr;
 }

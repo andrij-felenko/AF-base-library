@@ -59,7 +59,7 @@ QString AFaccount::Account::login() const
     return m_login;
 }
 
-AFaccount::Account::operator QJsonObject() const
+QJsonObject AFaccount::Account::toJson() const
 {
     QJsonObject obj = static_cast <const Info&> (*this);
     obj.insert("login", m_login);
@@ -70,6 +70,11 @@ AFaccount::Account::operator QJsonObject() const
         friendArray.push_back(QJsonObject(*it.data()));
     obj.insert("friend_list", friendArray);
     return obj;
+}
+
+AFaccount::Account::operator QJsonObject() const
+{
+    return toJson();
 }
 
 void AFaccount::Account::setLogin(QString login)

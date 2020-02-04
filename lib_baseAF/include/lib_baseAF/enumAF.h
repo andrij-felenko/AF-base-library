@@ -37,6 +37,8 @@ namespace AFlib {
         First = AddIdLine,
     };
     HistoryIdType toHistoryIdType(const quint8 i);
+    quint8 fromHisToInt(HistoryIdType type);
+    typedef HistoryIdType HIdType;
 
     enum class SavedIdType {
         TemperarySaved = 0xE0F200,
@@ -47,6 +49,8 @@ namespace AFlib {
         First = TemperarySaved,
     };
     SavedIdType toSavedIdType(const quint8 i);
+    quint8 fromSaveToInt(SavedIdType type);
+    typedef SavedIdType SIdType;
 
     enum class AccountIdType {
         LocalUser = 0xE0F300,

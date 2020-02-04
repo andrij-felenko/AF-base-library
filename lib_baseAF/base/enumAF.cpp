@@ -27,3 +27,13 @@ bool AFlib::operator ==(const AFlib::AccountIdType &f, const AFlib::AccountIdTyp
     }
     return false;
 }
+
+quint8 AFlib::fromHisToInt(AFlib::HistoryIdType type)
+{
+    return quint8(type) % 0b1000;
+}
+
+quint8 AFlib::fromSaveToInt(AFlib::SavedIdType type)
+{
+    return quint8(type) % 0b100;
+}

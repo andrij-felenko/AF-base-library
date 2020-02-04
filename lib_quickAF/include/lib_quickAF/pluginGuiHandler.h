@@ -16,7 +16,7 @@ class PluginGuiHandler : public PluginHandler
     Q_OBJECT
     Q_PROPERTY(QString current READ current WRITE setCurrent NOTIFY currentChanged)
 public:
-    explicit PluginGuiHandler(OriginPtr origin, QObject *parent = nullptr);
+    explicit PluginGuiHandler(QObject *parent = nullptr);
 
     QString current() const;
 

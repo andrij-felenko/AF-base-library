@@ -31,14 +31,10 @@ class AFlib::Dir : public QObject
 
 public:
     explicit Dir(QObject *parent = nullptr);
+    void init(bool useCurrentFolder = false);
 
     static bool cdDirectory(QDir &dir, QString name);
     static void cpDirectory(QString from, QString to);
-
-    // TODO rewrite
-//    QStringList getVersionList(QStringList pluginNameList, QDir dir = QDir::current(), bool isLibrary = true);
-//    QStringList getVersionList(QString pluginName, QDir dir = QDir::current(), bool isLibrary = true);
-//    void removeUnusedPluginVersions(QStringList list);
 
     virtual QDir app()        const final { return m_app; }
     virtual QDir config()     const final { return m_config; }
@@ -51,7 +47,7 @@ public:
     virtual QDir userConfig() const final { return m_userConfig; }
     virtual QDir userData()   const final { return m_userData; }
     virtual QDir userDir()    const final { return m_userDir; }
-    virtual QDir pluginData(QString plugin);
+    virtual QDir pluginData(QString plugin) const;
 
 signals:
     void userConfigChanged(QDir userConfig);
