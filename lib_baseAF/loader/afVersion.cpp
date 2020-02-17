@@ -1,7 +1,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QDebug>
 
-#include "version.h"
+#include "afVersion.h"
 
 using namespace AFlib;
 

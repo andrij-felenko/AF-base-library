@@ -2,9 +2,9 @@
 #define LIB_BASEAF_PLUGIN_HANDLER_H
 
 #include <QtCore/QObject>
-#include "plugin.h"
-#include "libHandler.h"
-#include "pluginSingle.h"
+#include "afPlugin.h"
+#include "afLibHandler.h"
+#include "afPluginSingle.h"
 
 namespace AFlib { class PluginHandler; }
 class AFlib::PluginHandler : public QObject, protected QList <PluginSinglePtr>

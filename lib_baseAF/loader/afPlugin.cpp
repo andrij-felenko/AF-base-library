@@ -1,4 +1,4 @@
-#include "plugin.h"
+#include "afPlugin.h"
 #include <QtCore/QDebug>
 
 using namespace AFlib;

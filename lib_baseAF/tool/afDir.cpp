@@ -1,7 +1,7 @@
 #include <QtCore/QDebug>
 #include <QtCore/QCoreApplication>
 
-#include "dir.h"
+#include "afDir.h"
 
 using namespace AFlib;
 #define TEST_RELEASE true
@@ -148,6 +148,11 @@ bool Dir::cdDirectory(QDir &dir, QString name)
         }
     }
     return true;
+}
+
+bool Dir::cdDirectory(QDir &dir, quint32 name, uint size)
+{
+    return cdDirectory(dir, QString::number(name, size));
 }
 
 void Dir::cpDirectory(QString from, QString to)

@@ -1,7 +1,7 @@
 #include <QtCore/QDebug>
 
-#include "function.h"
-#include "system.h"
+#include "afFunction.h"
+#include "afSystem.h"
 
 using namespace AFlib;
 

@@ -5,7 +5,7 @@
 #include <QtCore/QCryptographicHash>
 #include <QtCore/QDebug>
 
-#include "lib_baseAF/dir.h"
+#include "lib_baseAF/afDir.h"
 
 AFaccount::Storage::Storage(QObject *parent) : QObject(parent)
 {

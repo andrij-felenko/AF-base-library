@@ -1,7 +1,7 @@
 #include <QtCore/QJsonArray>
 #include <QSharedPointer>
 
-#include "pluginMetadata.h"
+#include "afPluginMetadata.h"
 
 AFlib::PluginMetadata::PluginMetadata(QObject *parent) : QObject(parent), m_isEmpty(true)
 {

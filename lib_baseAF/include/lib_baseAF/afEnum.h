@@ -33,12 +33,16 @@ namespace AFlib {
         AddIdLine = 0xE0F100,
         EditIdLine,
         RemoveIdLine,
+        SavedIdChangeLine,
+        InnactivateIdLine,
+        ActivateIdLine,
         //
         First = AddIdLine,
     };
     HistoryIdType toHistoryIdType(const quint8 i);
     quint8 fromHisToInt(HistoryIdType type);
     typedef HistoryIdType HIdType;
+    bool isHIdEnable(HistoryIdType type);
 
     enum class SavedIdType {
         TemperarySaved = 0xE0F200,

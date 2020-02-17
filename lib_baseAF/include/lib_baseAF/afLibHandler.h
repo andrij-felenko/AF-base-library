@@ -5,7 +5,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QVariant>
 
-#include "libSingle.h"
+#include "afLibSingle.h"
 
 namespace AFlib {
     class LibHandler;

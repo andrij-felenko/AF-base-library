@@ -1,4 +1,4 @@
-#include "setting.h"
+#include "afSetting.h"
 #include <QtCore/QVariant>
 
 AFlib::Setting::Setting(QObject *parent) : QObject(parent)

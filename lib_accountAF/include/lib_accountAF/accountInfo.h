@@ -7,7 +7,7 @@
 #include <QtCore/QSharedPointer>
 #include <QtCore/QString>
 
-#include "lib_baseAF/id.h"
+#include "lib_baseAF/afId.h"
 
 namespace AFaccount {
     class Info;

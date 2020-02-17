@@ -8,7 +8,7 @@
 #include <QtQuick/QQuickView>
 
 #include "pluginGui.h"
-#include "lib_baseAF/pluginHandler.h"
+#include "lib_baseAF/afPluginHandler.h"
 
 namespace AFlib {
 class PluginGuiHandler : public PluginHandler

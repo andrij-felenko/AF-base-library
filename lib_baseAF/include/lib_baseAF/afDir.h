@@ -34,6 +34,7 @@ public:
     void init(bool useCurrentFolder = false);
 
     static bool cdDirectory(QDir &dir, QString name);
+    static bool cdDirectory(QDir &dir, quint32 name, uint size);
     static void cpDirectory(QString from, QString to);
 
     virtual QDir app()        const final { return m_app; }

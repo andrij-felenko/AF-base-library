@@ -4,7 +4,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
-#include "enumAF.h"
+#include "afEnum.h"
 
 namespace AFlib {
 class System : public QObject

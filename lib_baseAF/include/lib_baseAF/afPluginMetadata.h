@@ -7,7 +7,7 @@
 #include <QtCore/QVariant>
 #include <QtCore/QUrl>
 
-#include "version.h"
+#include "afVersion.h"
 
 namespace AFlib {
 class PluginMetadata : public QObject

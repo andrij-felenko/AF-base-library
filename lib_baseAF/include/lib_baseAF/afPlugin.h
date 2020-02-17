@@ -7,9 +7,9 @@
 #include <QtCore/QSharedPointer>
 #include <QtCore/QJsonObject>
 
-#include "dir.h"
-#include "version.h"
-#include "pluginMetadata.h"
+#include "afDir.h"
+#include "afVersion.h"
+#include "afPluginMetadata.h"
 
 namespace AFlib { class Plugin; }
 class AFlib::Plugin : public PluginMetadata

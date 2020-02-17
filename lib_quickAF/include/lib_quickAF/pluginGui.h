@@ -1,7 +1,7 @@
 #ifndef PLUGINQML_H
 #define PLUGINQML_H
 
-#include "lib_baseAF/plugin.h"
+#include "lib_baseAF/afPlugin.h"
 
 namespace AFlib {
 class PluginGui : public Plugin

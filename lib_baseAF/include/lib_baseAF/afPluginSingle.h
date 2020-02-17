@@ -2,7 +2,7 @@
 #define LIB_BASEAF_PLUGIN_SINGLE_H
 
 #include <QtCore/QObject>
-#include "plugin.h"
+#include "afPlugin.h"
 
 namespace AFlib {
     class PluginSingle;

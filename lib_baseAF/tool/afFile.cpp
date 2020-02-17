@@ -1,4 +1,4 @@
-#include "file.h"
+#include "afFile.h"
 #include <QtCore/QFile>
 #include <QtCore/QDataStream>
 #include <QtCore/QSharedPointer>

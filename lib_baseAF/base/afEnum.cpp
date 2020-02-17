@@ -1,4 +1,4 @@
-#include "enumAF.h"
+#include "afEnum.h"
 
 AFlib::HistoryIdType AFlib::toHistoryIdType(const quint8 i)
 {
@@ -36,4 +36,14 @@ quint8 AFlib::fromHisToInt(AFlib::HistoryIdType type)
 quint8 AFlib::fromSaveToInt(AFlib::SavedIdType type)
 {
     return quint8(type) % 0b100;
+}
+
+bool AFlib::isHIdEnable(AFlib::HistoryIdType type)
+{
+    if (type == HIdType::RemoveIdLine)
+        return false;
+    if (type == HIdType::InnactivateIdLine)
+        return false;
+
+    return true;
 }

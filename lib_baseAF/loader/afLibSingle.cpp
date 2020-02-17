@@ -1,4 +1,4 @@
-#include "libSingle.h"
+#include "afLibSingle.h"
 
 LibrarySingle::LibrarySingle(const QString &fileName, QObject *parent)
     : QLibrary(fileName, parent)
