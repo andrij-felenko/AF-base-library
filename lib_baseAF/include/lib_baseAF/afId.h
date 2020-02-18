@@ -8,4 +8,38 @@
 #include "afIdHistory.h"
 #include "afIdObject.h"
 
+namespace AFlib {
+    typedef id::Account_bit IdAccount_bit;
+
+    typedef id::History    IdHistory;
+    typedef id::HistoryPtr IdHistoryPtr;
+
+    typedef id::Info IdInfo;
+
+    typedef id::Object        IdObject;
+    typedef id::Object_bit    IdObject_bit;
+    typedef id::ObjectPtr     IdObjectPtr;
+    typedef id::ObjectPtrList IdObjectPtrList;
+
+    typedef id::Operate        IdOperate;
+    typedef id::OperatePtr     IdOperatePtr;
+    typedef id::OperatePtrList IdOperatePtrList;
+}
+
+typedef AFlib::IdAccount_bit AFIdAccount;
+
+typedef AFlib::IdHistory    AFIdHistory;
+typedef AFlib::IdHistoryPtr AFIdHistoryPtr;
+
+typedef AFlib::IdInfo AFIdInfo;
+
+typedef AFlib::IdObject        AFIdObject;
+typedef AFlib::IdObject_bit    AFIdObject_bit;
+typedef AFlib::IdObjectPtr     AFIdObjectPtr;
+typedef AFlib::IdObjectPtrList AFIdObjectPtrList;
+
+typedef AFlib::IdOperate        AFIdOperate;
+typedef AFlib::IdOperatePtr     AFIdOperatePtr;
+typedef AFlib::IdOperatePtrList AFIdOperatePtrList;
+
 #endif // LIB_BASEAF_ID_H

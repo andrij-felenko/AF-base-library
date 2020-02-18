@@ -38,4 +38,6 @@ private:
 QDataStream &operator << (QDataStream& stream, const AFlib::id::ObjectPtrList& data);
 QDataStream &operator >> (QDataStream& stream,       AFlib::id::ObjectPtrList& data);
 
+
+
 #endif // LIB_BASEAF_ID_OBJECT_H

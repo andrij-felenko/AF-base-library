@@ -4,27 +4,156 @@
 
 using namespace AFlib;
 
-Storage::Storage() : QObject(qApp)
+Storage::Storage() : QObject(qApp), m_storageDir(afDir()->storage())
 {
     //
 }
 
-void Storage::loadData(quint32 account, quint8 plugin)
+void Storage::loadAllData()
 {
-    auto dir = getDestinationDir(account, plugin);
-    auto fileList = dir.entryList({"*.afd"});
-    for (auto it : fileList){
-        QFile file(dir.absoluteFilePath(it));
-        if (not file.open(QIODevice::ReadOnly)){
-            qDebug() << "File " << it << " can`t open: " << file.errorString();
-            continue;
-        }
-
-        //
-    }
+//    auto dir = getDestinationDir(account, plugin);
+//    auto fileList = dir.entryList({"*.afd"});
+//    for (auto it : fileList){
+//        QFile file(dir.absoluteFilePath(it));
+//        if (not file.open(QIODevice::ReadOnly)){
+//            qDebug() << "File " << it << " can`t open: " << file.errorString();
+//            continue;
+//        }
+//        //
+    //    }
 }
 
-//void
+void Storage::setPath(QDir dir)
+{
+    m_storageDir = dir;
+    // FIXME add emit if it be QObject
+}
+
+bool Storage::writeData(quint32 obj_id, QByteArray data, QDateTime dTime)
+{
+    return writeData(getFile(getDir(), obj_id), data, dTime);
+}
+
+bool Storage::writeData(QString f_path, QByteArray data, QDateTime dTime)
+{
+    // main write data
+}
+
+bool Storage::writeData(QStringList listOfId, QString object, QByteArray data, QDateTime dTime)
+{
+    return writeData(getFile(getDir(listOfId), object), data, dTime);
+}
+
+bool Storage::writeData(QList<quint32> list, quint32 obj_id, QByteArray data, QDateTime dTime)
+{
+    return writeData(getFile(getDir(list), obj_id), data, dTime);
+}
+
+bool Storage::writeData(quint32 obj_id, IdOperate &data)
+{
+    //
+}
+
+bool Storage::writeData(QString f_path, IdOperate &data)
+{
+    //
+}
+
+bool Storage::writeData(QStringList listOfId, QString object, IdOperate &data)
+{
+    //
+}
+
+bool Storage::writeData(QList<quint32> list, quint32 obj_id, IdOperate &data)
+{
+    //
+}
+
+bool Storage::writeData(quint32 obj_id, IdOperatePtr data)
+{
+    //
+}
+
+bool Storage::writeData(QString f_path, IdOperatePtr data)
+{
+    //
+}
+
+bool Storage::writeData(QStringList listOfId, QString object, IdOperatePtr data)
+{
+    //
+}
+
+bool Storage::writeData(QList<quint32> list, quint32 obj_id, IdOperatePtr data)
+{
+    //
+}
+
+bool Storage::writeData(quint32 obj_id, IdOperatePtrList data)
+{
+    //
+}
+
+bool Storage::writeData(QString f_path, IdOperatePtrList data)
+{
+    //
+}
+
+bool Storage::writeData(QStringList listOfId, QString object, IdOperatePtrList data)
+{
+    //
+}
+
+bool Storage::writeData(QList <quint32> list, quint32 obj_id, IdOperatePtrList data)
+{
+    //
+}
+
+QByteArray Storage::readData(quint32 obj_id) const
+{
+    //
+}
+
+QByteArray Storage::readData(QString f_path) const
+{
+    //
+}
+
+QByteArray Storage::readData(QStringList listOfId, QString object) const
+{
+    //
+}
+
+QByteArray Storage::readData(QList<quint32> list, quint32 obj_id) const
+{
+    //
+}
+
+QString Storage::getFile(const QDir& dir, quint32 id) const
+{
+    return getFile(dir, QString::number(id, 16));
+}
+
+QString Storage::getFile(const QDir &dir, QString name) const
+{
+    return dir.absoluteFilePath(name + ".afd");
+}
+
+QDir Storage::getDir(QStringList listOfId) const
+{
+    QDir dir = m_storageDir;
+    for (auto it : listOfId)
+        AFDir::cdDirectory(dir, it);
+    return dir;
+}
+
+QDir Storage::getDir(QList<quint32> list) const
+{
+    QStringList strList = QStringList();
+    for (auto it : list)
+        strList.push_back(QString::number(it, 16));
+    return getDir(strList);
+}
 
 StoragePtr Storage::init()
 {
@@ -34,117 +163,6 @@ StoragePtr Storage::init()
 
     return storage_ptr;
 }
-
-void Storage::writeData(quint32 account, quint8 plugin, quint32 subjId, QByteArray data)
-{
-    //
-}
-
-void Storage::writeOperate(quint32 account, quint8 plugin, id::Operate_bit data)
-{
-    //
-}
-
-void Storage::writeOperateList(quint32 account, quint8 plugin, QList<id::Operate_bit> list)
-{
-    //
-}
-
-QByteArray Storage::readData(quint32 account, quint8 plugin, quint32 objId, bool fullOperate) const
-{
-    //
-}
-
-QDir Storage::getDestinationDir(quint32 account, quint8 plugin) const
-{
-    QDir dir = afDir()->storage();
-    Dir::cdDirectory(dir, account, 16);
-    Dir::cdDirectory(dir, plugin, 2);
-    return dir;
-}
-
-//bool Storage::writeData(QDir dir, QString name, QString sufix, QByteArray data, bool crypt, QString user, QString sub1, QString sub2)
-//{
-//    if (not user.isEmpty())
-//        if (not Dir::cdDirectory(dir, user))
-//            return false;
-
-//    if (not sub1.isEmpty())
-//        if (not Dir::cdDirectory(dir, sub1))
-//            return false;
-
-//    if (not sub2.isEmpty())
-//        if (not Dir::cdDirectory(dir, sub2))
-//            return false;
-
-//    if (sufix.isEmpty())
-//        sufix = "afs";
-
-//    QFile file(dir.absoluteFilePath(name + "." + sufix));
-//    if (not file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
-//        qWarning() << QString("File %1 not created.").arg(file.fileName());
-//        return false;
-//    }
-
-//    if (crypt)
-//        data = AFlib::crypt(data);
-//    data.append('a' + rand() % 12 * 2 + (crypt ? 0 : 1));
-
-//    bool result = file.write(data) != -1;
-//    file.close();
-//    return result;
-//}
-
-//std::optional<QByteArray> Storage::readData(QString filePath)
-//{
-//    QFile file(filePath);
-//    if (not file.exists()){
-//        qWarning() << QString("File %1 not found.").arg(filePath);
-//        return std::nullopt;
-//    }
-
-//    QByteArray data = file.readAll();
-//    if (data.isEmpty()){
-//        qWarning() << QString("Can`t read %1 file.").arg(filePath);
-//        return std::nullopt;
-//    }
-
-//    bool crypt = data.back() - 'a';
-//    if (crypt)
-//        data = AFlib::encrypt(data);
-
-//    return std::move(data);
-//}
-
-//std::optional<QByteArray> Storage::readData(QDir dir, QString name, QString sufix)
-//{
-//    return Storage::readData(dir.absoluteFilePath(QString("%1.%2").arg(name, sufix)));
-//}
-
-//std::optional<QByteArray> Storage::readData(QString plugin, QString name, QString sufix)
-//{
-//    return readData(afDir()->pluginData(plugin), name, sufix);
-//}
-
-//bool Storage::writeData(QString name, QByteArray data, QString sufix, bool user, bool crypt)
-//{
-//    return Storage::writeData(user ? afDir()->userData() : afDir()->storage(), name, sufix, data, crypt, "", m_subFolder, m_subSubFolder);
-//}
-
-//bool Storage::writeData(QString name, QByteArray data, bool user, bool crypt)
-//{
-//    return writeData(name, data, m_sufix, user, crypt);
-//}
-
-//bool Storage::writeData(QString plugin, QString name, QByteArray data, bool user, bool crypt)
-//{
-//    return writeData(user ? afDir()->userData() : afDir()->storage(), name, m_sufix, data, crypt, "", plugin);
-//}
-
-//bool Storage::writeData(QString plugin, QString name, QByteArray data, QString sufix, bool user, bool crypt)
-//{
-//    return Storage::writeData(user ? afDir()->userData() : afDir()->storage(), name, sufix, data, crypt, "", plugin);
-//}
 
 StoragePtr afStorage()
 {

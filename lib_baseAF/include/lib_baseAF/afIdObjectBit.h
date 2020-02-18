@@ -77,4 +77,6 @@ struct AFlib::id::ObjectFull_bit : public TbitStruct <63>
     void setParent(quint8 type, quint32 id);
 };
 
+
+
 #endif // LIB_BASEAF_ID_SUBJECT_BIT_H
