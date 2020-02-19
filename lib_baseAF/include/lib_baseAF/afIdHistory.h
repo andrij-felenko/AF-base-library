@@ -22,8 +22,9 @@ public:
     QDateTime lastChange() const;
     QDateTime lastUpdate() const;
 
+    void addOperation(Operate    id);
     void addOperation(OperatePtr id);
-    std::optional <OperatePtr> getLastOperation() const;
+    OperatePtr getLastOperation() const;
 
     void makeShorten();
     void makeFull(OperatePtrList list);

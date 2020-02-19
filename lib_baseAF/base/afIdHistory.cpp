@@ -1,12 +1,12 @@
 #include "afIdHistory.h"
 
-std::optional <AFlib::id::OperatePtr> AFlib::id::History::getLastOperation() const
+AFlib::id::OperatePtr AFlib::id::History::getLastOperation() const
 {
     auto lastChanged = lastChange();
     for (int i = 0; i < m_historyList.count(); i++)
         if (m_historyList[i]->datetime() == lastChanged)
             return m_historyList[i];
-    return std::nullopt;
+    return OperatePtr();
 }
 
 void AFlib::id::History::makeShorten()
@@ -93,6 +93,12 @@ QDateTime AFlib::id::History::lastChange() const
 QDateTime AFlib::id::History::lastUpdate() const
 {
     return m_lastUpdate;
+}
+
+void AFlib::id::History::addOperation(Operate id)
+{
+    OperatePtr ptr = OperatePtr::create(id);
+    addOperation(ptr);
 }
 
 void AFlib::id::History::addOperation(OperatePtr id)

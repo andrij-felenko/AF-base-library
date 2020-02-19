@@ -60,23 +60,21 @@ struct AFlib::id::Operate_bit : public TbitStruct <62>
 class AFlib::id::Operate : public Info, public Operate_bit
 {
 public:
-    Operate(quint32 subjectId, quint32 userId, quint32 ownerId, HistoryIdType historyId,
+    Operate(quint32 subjectId, quint32 userId, HistoryIdType historyId,
             SavedIdType saved = SavedIdType::LocaleSaved,
             QDateTime dTime = QDateTime::currentDateTime());
 
-    Operate(quint32 subjectId, quint32 userId, quint32 ownerId, quint8 historyId,
+    Operate(quint32 subjectId, quint32 userId, quint8 historyId,
             quint8 saved = quint8(SavedIdType::LocaleSaved),
             QDateTime dTime = QDateTime::currentDateTime());
 
+    Operate(const Operate& copy);
+
     explicit Operate(Object_bit objectId = Object_bit(),
                      Account_bit userId = Account_bit(),
-                     Account_bit ownerId = Account_bit(),
                      HistoryIdType history = HistoryIdType::First,
                      SavedIdType saved = SavedIdType::LocaleSaved,
                      QDateTime dTime = QDateTime::currentDateTime());
-
-    Account_bit owner() const { return m_owner; }
-    void setOwner(const Account_bit &owner);
 
     QDateTime datetime() const { return  m_datetime; }
     void setDatetime(const QDateTime &datetime);
@@ -89,7 +87,6 @@ protected:
     friend QDataStream &operator >> (QDataStream& stream,       Operate& data);
 
 private:
-    Account_bit m_owner;
     QDateTime m_datetime;
     QVariant m_value;
 };

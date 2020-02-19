@@ -19,13 +19,17 @@ class AFlib::id::Object : public Info, public ObjectFull_bit
 {
 public:
     explicit Object(QObject* parent = nullptr);
-    Object(quint16 uniqueId, quint8 type, quint8 pluginId, QObject* parent = nullptr);
-    Object(QString name, QString descr = QString(""), QObject* parent = nullptr);
-    Object(QString name, QString descr, quint16 uniqueId, quint8 type, quint8 pluginId,
+    Object(QByteArray& data);
+    Object(Account_bit owner, quint16 uniqueId, quint8 type, quint8 pluginId, QObject* parent = nullptr);
+    Object(Account_bit owner, QString name, QString descr = QString(""), QObject* parent = nullptr);
+    Object(Account_bit owner, QString name, QString descr, quint16 uniqueId, quint8 type, quint8 pluginId,
            quint8 parentType, quint32 parentId,
            QObject* parent = nullptr);
 
     HistoryPtr history() const;
+
+    Account_bit owner() const { return m_owner; }
+    void setOwner(const Account_bit &owner);
 
 protected:
     friend QDataStream &operator << (QDataStream& stream, const Object& data);
@@ -33,6 +37,7 @@ protected:
 
 private:
     HistoryPtr m_history;
+    Account_bit m_owner;
 };
 
 QDataStream &operator << (QDataStream& stream, const AFlib::id::ObjectPtrList& data);

@@ -78,4 +78,6 @@ private:
     friend class Origin;
 };
 
+typedef AFlib::Dir AFDir;
+
 #endif // LIB_BASEAF_DIR_H

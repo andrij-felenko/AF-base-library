@@ -22,10 +22,10 @@ public:
     void loadAllData();
     void setPath(QDir dir);
 
-    bool writeData(quint32 obj_id, QByteArray data, QDateTime dTime = QDateTime::currentDateTime());
-    bool writeData(QString f_path, QByteArray data, QDateTime dTime = QDateTime::currentDateTime());
-    bool writeData(QStringList listOfId, QString object, QByteArray data, QDateTime dTime = QDateTime::currentDateTime());
-    bool writeData(QList <quint32> list, quint32 obj_id, QByteArray data, QDateTime dTime = QDateTime::currentDateTime());
+    bool writeData(quint32 obj_id, QByteArray data);
+    bool writeData(QString f_path, QByteArray data);
+    bool writeData(QStringList listOfId, QString object, QByteArray data);
+    bool writeData(QList <quint32> list, quint32 obj_id, QByteArray data);
 
     bool writeData(quint32 obj_id, IdOperate& data);
     bool writeData(QString f_path, IdOperate& data);
@@ -51,6 +51,7 @@ public:
 private:
     QDir getDir(QStringList listOfId = {}) const;
     QDir getDir(QList <quint32> list) const;
+    void loadFromDirectory(QDir& dir);
 
     QString getFile(const QDir &dir, QString name) const;
     QString getFile(const QDir &dir, quint32   id) const;
@@ -61,18 +62,22 @@ private:
         quint8 typeOfSubject;
     };
 
-    struct ModuleStorage {
+    struct PluginStorage {
         quint8 pluginId;
 
         QList <SingleStorage> idList;
+        void addSingle(QDateTime time, quint16 id, quint8 type);
     };
 
     struct AccountStorage {
-        QString acccountName;
         id::Account_bit accountBit;
 
-        QList <ModuleStorage> moduleList;
+        QList <PluginStorage> pluginList;
+        void addPlugin(quint8 id);
     };
+
+    void addAccount(IdAccount_bit id);
+    void setLastChangedTime(quint32 account, quint8 plugin, quint8 typeOfSubject, quint16 uniqueId, QDateTime dTime);
 
     QDir m_storageDir;
     QList <AccountStorage> m_storageList;
