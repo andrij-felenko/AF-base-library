@@ -32,7 +32,7 @@ public:
     QString login() const;
 
     operator QJsonObject() const;
-    QJsonObject toJson() const;
+    virtual QJsonObject toJson() const override;
 
 public slots:
     void setLogin(QString login);

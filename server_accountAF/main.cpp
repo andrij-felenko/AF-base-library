@@ -1,7 +1,7 @@
 #include <QtCore/QCoreApplication>
 #include "lib_currencyAF/currencyData.h"
 
-#include "currencyHttpServer.h"
+//#include "currencyHttpServer.h"
 
 int main(int argc, char** argv)
 {
@@ -20,9 +20,9 @@ int main(int argc, char** argv)
     CurrencyAF::Data::setPluginName("Server_currency");
     CurrencyAF::Data::addCurrency(CurrencyAF::Type::allShort());
 
-    CurrencyHttpServer server(&app);
-    server.listen(QHostAddress::Any, port);
-    qDebug() << QCoreApplication::translate("CurrencyServer", "Running on http://127.0.0.1:%1/").arg(port);
+//    CurrencyHttpServer server(&app);
+//    server.listen(QHostAddress::Any, port);
+//    qDebug() << QCoreApplication::translate("CurrencyServer", "Running on http://127.0.0.1:%1/").arg(port);
 
     return app.exec();
 }

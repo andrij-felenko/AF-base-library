@@ -20,11 +20,11 @@ AFaccount::StoragePtr AFaccount::Storage::instance()
 bool AFaccount::Storage::check(const AFlib::id::Account_bit &id)
 {
     for (auto it : m_accountList)
-        if (it->accountId() == id.accountId())
+        if (it->owner() == id.accountId())
             return true;
 
     for (auto it : m_groupList)
-        if (it->accountId() == id.accountId())
+        if (it->owner() == id.accountId())
             return true;
 
     return false;
@@ -52,7 +52,7 @@ AFaccount::InfoPtr AFaccount::Storage::getInfo(const AFlib::id::Account_bit &id)
 {
     auto accId = id.accountId();
     for (int i = 0; i < m_accountList.length(); i++)
-        if (m_accountList[i]->accountId() == accId)
+        if (m_accountList[i]->owner() == accId)
             return m_accountList[i];
     return InfoPtr();
 }
@@ -80,7 +80,7 @@ bool AFaccount::Storage::checkNickname(const QString &nick)
 
 void AFaccount::Storage::add(AccountPtr account)
 {
-    if (contains(static_cast <AFlib::id::Account_bit> (*account)))
+    if (contains(account->owner()))
         return;
 
     m_accountList.push_back(account);
@@ -89,7 +89,7 @@ void AFaccount::Storage::add(AccountPtr account)
 
 void AFaccount::Storage::add(GroupPtr group)
 {
-    if (contains(static_cast <AFlib::id::Account_bit> (*group)))
+    if (contains(group->owner()))
         return;
 
     m_groupList.push_back(group);
@@ -99,9 +99,9 @@ void AFaccount::Storage::add(GroupPtr group)
 void AFaccount::Storage::remove(AFlib::id::Account_bit id)
 {
     m_accountList.erase(std::remove_if(m_accountList.begin(), m_accountList.end(),
-                                       [id](const AccountPtr a){ return a->accountId() == id.accountId(); }));
+                                       [id](const AccountPtr a){ return a->owner() == id.accountId(); }));
     m_groupList.erase(std::remove_if(m_groupList.begin(), m_groupList.end(),
-                                     [id](const GroupPtr g){ return g->accountId() == id.accountId(); }));
+                                     [id](const GroupPtr g){ return g->owner() == id.accountId(); }));
     save();
 }
 
@@ -135,11 +135,11 @@ bool AFaccount::Storage::contains(AFlib::id::Account_bit id)
 {
     auto accId = id.accountId();
     for (auto it : m_accountList)
-        if (it->accountId() == accId)
+        if (it->owner() == accId)
             return true;
 
     for (auto it : m_groupList)
-        if (it->accountId() == accId)
+        if (it->owner() == accId)
             return true;
 
     return false;

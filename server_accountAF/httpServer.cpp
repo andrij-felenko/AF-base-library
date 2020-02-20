@@ -1,5 +1,6 @@
 #include "httpServer.h"
 #include "lib_accountAF/accountStorage.h"
+#include "lib_baseAF/afId.h"
 
 #include <QtCore/QJsonDocument>
 
@@ -86,12 +87,12 @@ QByteArray AccountHttpServer::registration(const QHttpServerRequest &request)
     auto account = AFaccount::Account(obj);
     if (storage->checkNickname(obj.value("login").toString())){
         // TODO maybe add some test before registrate
-        auto newAcc = AFlib::AccountId::create(AFlib::AccountIdType::User);
+        auto newAcc = AFIdAccount::create(AFlib::AccountIdType::User);
         while (not storage->check(newAcc))
-            newAcc = AFlib::AccountId::create(AFlib::AccountIdType::User);
+            newAcc = AFIdAccount::create(AFlib::AccountIdType::User);
 
         obj.insert("id", QJsonValue::fromVariant(newAcc.accountId()));
-        storage->add(AFaccount::AccountPtr::create(obj, storage));
+        storage->add(AFaccount::AccountPtr::create(obj));
         obj.insert("result", true);
     }
     else {
