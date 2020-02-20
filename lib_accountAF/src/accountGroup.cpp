@@ -49,7 +49,7 @@ QDataStream &operator >>(QDataStream &stream, AFaccount::Group &group)
     stream >> lenUserList;
     for (int i = 0; i < lenUserList; i++){
         int accessType;
-        AFlib::id::Account_bit id;
+        AFIdAccount id;
         stream >> id >> accessType;
         auto acc = accountStorage()->getInfo(id);
         if (not acc.isNull())
@@ -63,7 +63,7 @@ QDataStream &operator <<(QDataStream &stream, const AFaccount::Group &group)
 {
     stream << group.m_userList.count();
     for (auto it = group.m_userList.begin(); it != group.m_userList.end(); ++it)
-        stream << static_cast <AFlib::id::Account_bit> (*it.key()) << int(it.value());
+        stream << it.key()->owner() << int(it.value());
     stream << static_cast <const Info&> (group);
     return stream;
 }

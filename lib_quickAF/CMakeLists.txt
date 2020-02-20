@@ -4,13 +4,13 @@ project(lib_quickAF VERSION 0.0.1)
 set (quickAF_h
     include/lib_quickAF/guiApplicationAF.h
     include/lib_quickAF/pluginGui.h
-    include/lib_quickAF/pluginGuiHandler.h
+#    include/lib_quickAF/pluginGuiHandler.h
     include/lib_quickAF/quickAFlib.h
     )
 
 set (quickAF_cpp
     src/pluginGui.cpp
-    src/pluginGuiHandler.cpp
+#    src/pluginGuiHandler.cpp
     src/quickAFlib.cpp
     )
 

@@ -15,9 +15,7 @@ namespace AFaccount {
     typedef QList <InfoPtr> InfoPtrList;
 }
 
-class AFaccount::Info : public AFlib::id::Info,
-                        public AFlib::id::History,
-                        public AFlib::id::Account_bit
+class AFaccount::Info : public AFIdObject
 {
     Q_OBJECT
     Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
@@ -32,7 +30,7 @@ public:
     virtual QString mail() const final { return m_mail; }
 
     operator QJsonObject() const;
-    QJsonObject toJson() const;
+    virtual QJsonObject toJson() const;
 
 public slots:
     virtual void setIcon(QString icon) final;

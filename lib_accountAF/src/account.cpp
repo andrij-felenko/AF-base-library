@@ -114,10 +114,10 @@ QDataStream &operator >>(QDataStream &stream, AFaccount::AccountPtrList &list)
     return stream;
 }
 
-QDataStream &operator <<(QDataStream &stream, AFaccount::AccountPtrList &list)
+QDataStream &operator <<(QDataStream &stream, const AFaccount::AccountPtrList &list)
 {
     stream << list.length();
     for (auto it : list)
-        stream << it.data();
+        stream << *it;
     return stream;
 }

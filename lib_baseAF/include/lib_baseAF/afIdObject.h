@@ -35,14 +35,11 @@ protected:
     friend QDataStream &operator << (QDataStream& stream, const Object& data);
     friend QDataStream &operator >> (QDataStream& stream,       Object& data);
 
-private:
     HistoryPtr m_history;
     Account_bit m_owner;
 };
 
 QDataStream &operator << (QDataStream& stream, const AFlib::id::ObjectPtrList& data);
 QDataStream &operator >> (QDataStream& stream,       AFlib::id::ObjectPtrList& data);
-
-
 
 #endif // LIB_BASEAF_ID_OBJECT_H
