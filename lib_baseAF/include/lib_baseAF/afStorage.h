@@ -5,6 +5,7 @@
 #include <optional>
 #include "afDir.h"
 #include "afId.h"
+#include <QtCore/QCoreApplication>
 
 namespace AFlib {
     class Storage;
@@ -16,7 +17,7 @@ namespace AFlib {
 class AFlib::Storage : public QObject
 {
 public:
-    Storage();
+    Storage(QObject* parent = qApp);
     static StoragePtr init();
 
     void loadAllData();

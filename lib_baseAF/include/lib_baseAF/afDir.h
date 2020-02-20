@@ -8,7 +8,8 @@
 
 namespace AFlib {
     class Dir;
-    typedef QSharedPointer <Dir const> DirPtr;
+    typedef QSharedPointer <Dir> DirPtr;
+    typedef AFlib::Dir AFDir;
     DirPtr afDir();
 }
 
@@ -77,7 +78,5 @@ private:
 
     friend class Origin;
 };
-
-typedef AFlib::Dir AFDir;
 
 #endif // LIB_BASEAF_DIR_H

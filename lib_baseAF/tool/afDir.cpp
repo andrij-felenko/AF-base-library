@@ -186,6 +186,6 @@ DirPtr AFlib::afDir()
 {
     static DirPtr ptr;
     if (ptr.isNull())
-        ptr = DirPtr::create(qApp);
+        ptr = DirPtr::create();
     return ptr;
 }

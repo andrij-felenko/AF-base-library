@@ -1,12 +1,11 @@
 #include "afStorage.h"
 #include <QtCore/QDebug>
-#include <QtCore/QCoreApplication>
 
 using namespace AFlib;
 
-Storage::Storage() : QObject(qApp), m_storageDir(afDir()->storage())
+Storage::Storage(QObject *parent) : QObject(parent)//, m_storageDir(afDir()->storage())
 {
-    //
+    m_storageDir = afDir()->storage();
 }
 
 void Storage::loadAllData()
