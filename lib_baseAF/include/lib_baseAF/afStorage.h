@@ -18,7 +18,7 @@ class AFlib::Storage : public QObject
 {
 public:
     Storage(QObject* parent = qApp);
-    static StoragePtr init();
+    static QSharedPointer <Storage> init();
 
     void loadAllData();
     void setPath(QDir dir);
@@ -82,8 +82,6 @@ private:
 
     QDir m_storageDir;
     QList <AccountStorage> m_storageList;
-
-    friend class QSharedPointer;
 };
 
 typedef AFlib::Storage   AFStorage;

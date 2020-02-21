@@ -94,6 +94,14 @@ void Dir::init(bool useCurrentFolder)
     qInfo() << "users" << m_users.path();
 }
 
+QSharedPointer<AFlib::Dir> Dir::instance()
+{
+    static DirPtr ptr;
+    if (ptr.isNull())
+        ptr = DirPtr::create();
+    return ptr;
+}
+
 void Dir::switchToUser(QString name)
 {
     QDir tempCacheDir(m_users);
@@ -184,8 +192,5 @@ QDir Dir::pluginData(QString plugin) const
 
 DirPtr AFlib::afDir()
 {
-    static DirPtr ptr;
-    if (ptr.isNull())
-        ptr = DirPtr::create();
-    return ptr;
+    return Dir::instance();
 }

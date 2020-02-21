@@ -9,7 +9,7 @@
 namespace AFlib {
     class Dir;
     typedef QSharedPointer <Dir> DirPtr;
-    typedef AFlib::Dir AFDir;
+
     DirPtr afDir();
 }
 
@@ -33,6 +33,7 @@ class AFlib::Dir : public QObject
 public:
     explicit Dir(QObject *parent = nullptr);
     void init(bool useCurrentFolder = false);
+    static QSharedPointer <Dir> instance();
 
     static bool cdDirectory(QDir &dir, QString name);
     static bool cdDirectory(QDir &dir, quint32 name, uint size);
@@ -75,8 +76,8 @@ private:
     void setUserConfig(QDir userConfig);
     void setUserData(QDir userData);
     void setUserDir(QDir userDir);
-
-    friend class Origin;
 };
+
+typedef AFlib::Dir AFDir;
 
 #endif // LIB_BASEAF_DIR_H

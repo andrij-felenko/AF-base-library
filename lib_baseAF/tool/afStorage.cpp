@@ -3,9 +3,9 @@
 
 using namespace AFlib;
 
-Storage::Storage(QObject *parent) : QObject(parent)//, m_storageDir(afDir()->storage())
+Storage::Storage(QObject *parent) : QObject(parent), m_storageDir(afDir()->storage())
 {
-    m_storageDir = afDir()->storage();
+    //
 }
 
 void Storage::loadAllData()
@@ -21,7 +21,9 @@ void Storage::setPath(QDir dir)
 
 bool Storage::writeData(quint32 obj_id, QByteArray data)
 {
-    return writeData(getFile(getDir(), obj_id), data);
+    return writeData(
+        getFile(
+            getDir(), obj_id), data);
 }
 
 bool Storage::writeData(QString f_path, QByteArray data)
@@ -251,7 +253,7 @@ void Storage::loadFromDirectory(QDir &dir)
     }
 }
 
-StoragePtr Storage::init()
+QSharedPointer<AFlib::Storage> Storage::init()
 {
     static StoragePtr storage_ptr;
     if (storage_ptr.isNull())
