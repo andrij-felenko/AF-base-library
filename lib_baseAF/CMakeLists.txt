@@ -54,7 +54,7 @@ set (baseAF_cpp
     tool/afStorage.cpp
 )
 
-set (CMAKE_AUTORCC)
+set (CMAKE_AUTOMOC, true)
 find_package(Qt5Core)
 
 add_library(lib_baseAF ${baseAF_h} ${baseAF_cpp})
