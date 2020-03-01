@@ -9,7 +9,7 @@ AFaccount::Info::Info(QObject *parent) : Info(0, parent)
 }
 
 AFaccount::Info::Info(uint id, QObject* parent)
-    : AFIdObject(AFIdAccount(id), "", "", parent)
+    : QObject(parent), AFIdObject(AFIdAccount(id), "", "")
 {
     //
 }
@@ -19,8 +19,8 @@ AFaccount::Info::Info(QJsonObject obj, QObject* parent)
 {
     m_icon = obj.value("icon").toString();
     m_mail = obj.value("email").toString();
-    m_name = obj.value("name").toString();
-    m_description = obj.value("description").toString();
+    setName(obj.value("name").toString());
+    setDescription(obj.value("description").toString());
     m_history->updateTime(QDateTime::fromString(obj.value("last_update").toString(), DATE_TIME));
 }
 
@@ -36,8 +36,8 @@ QJsonObject AFaccount::Info::toJson() const
     obj.insert("id", QJsonValue::fromVariant(m_owner.toUInt32()));
     obj.insert("icon", m_icon);
     obj.insert("email", m_mail);
-    obj.insert("name", m_name);
-    obj.insert("description", m_description);
+    obj.insert("name", name());
+    obj.insert("description", description());
     obj.insert("last_update", m_history->lastUpdate().toString(DATE_TIME));
     return obj;
 }

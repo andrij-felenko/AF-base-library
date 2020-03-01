@@ -1,6 +1,6 @@
 #include "afIdObject.h"
 
-AFlib::id::Object::Object(QObject *parent) : Object(Account_bit(), "", "", 0, 0, 0, 0, 0, parent)
+AFlib::id::Object::Object() : Object(Account_bit(), "", "", 0, 0, 0, 0, 0)
 {
     // it`s done
 }
@@ -11,25 +11,51 @@ AFlib::id::Object::Object(QByteArray &data)
     stream >> *this;
 }
 
-AFlib::id::Object::Object(Account_bit owner, quint16 uniqueId, quint8 type, quint8 pluginId, QObject *parent)
-    : Object(owner, "", "", uniqueId, type, pluginId, 0, 0, parent)
+AFlib::id::Object::Object(Account_bit owner, quint16 uniqueId, quint8 type, quint8 pluginId)
+    : Object(owner, "", "", uniqueId, type, pluginId, 0, 0)
 {
     // it`s done
 }
 
-AFlib::id::Object::Object(Account_bit owner, QString name, QString descr, QObject *parent)
-    : Object(owner, name, descr, 0, 0, 0, 0, 0, parent)
+AFlib::id::Object::Object(Account_bit owner, QString name, QString descr)
+    : Object(owner, name, descr, 0, 0, 0, 0, 0)
 {
     // it`s done
 }
 
 AFlib::id::Object::Object(Account_bit owner, QString name, QString descr, quint16 uniqueId, quint8 type,
-                          quint8 pluginId, quint8 parentType, quint32 parentId, QObject *parent)
-    : Info(name, descr, parent),
-      ObjectFull_bit(Object_bit(uniqueId, type, pluginId), parentType, parentId),
+                          quint8 pluginId, quint8 parentType, quint32 parentId)
+      : ObjectFull_bit(Object_bit(uniqueId, type, pluginId), parentType, parentId),
       m_owner(owner)
 {
-    // it`s done
+    setName(name);
+    setDescription(descr);
+}
+
+QString AFlib::id::Object::name() const
+{
+    return getValue(ValueType::Name).toString();
+}
+
+QString AFlib::id::Object::description() const
+{
+    return getValue(ValueType::Description).toString();
+}
+
+void AFlib::id::Object::setName(const QString &name)
+{
+    if (getValue(ValueType::Name).isNull())
+        addOperate(ValueType::Name, name, m_owner);
+    else
+        addOperate(ValueType::Name, name, m_owner, HIdType::EditIdLine);
+}
+
+void AFlib::id::Object::setDescription(const QString &description)
+{
+    if (getValue(ValueType::Description).isNull())
+        addOperate(ValueType::Description, description, m_owner);
+    else
+        addOperate(ValueType::Description, description, m_owner, HIdType::EditIdLine);
 }
 
 void AFlib::id::Object::setOwner(const Account_bit &owner)
@@ -37,24 +63,66 @@ void AFlib::id::Object::setOwner(const Account_bit &owner)
     m_owner = owner;
 }
 
+void AFlib::id::Object::addOperations(const QByteArray &list)
+{
+    OperatePtrList ptrList;
+    QDataStream stream(list);
+    stream >> ptrList;
+    for (auto it : ptrList)
+        m_history->addOperation(it);
+}
+
+void AFlib::id::Object::addOperate(const QByteArray &data)
+{
+    m_history->addOperation(Operate(data));
+}
+
+void AFlib::id::Object::addOperate(ValueType valueKey, QVariant value, Account_bit userId,
+                                   HIdType history, SIdType saved, QDateTime dTime)
+{
+    addOperate(static_cast <quint16> (valueKey), value, userId, history, saved, dTime);
+}
+
+void AFlib::id::Object::addOperate(ValueType valueKey, QVariant value, quint32 userId,
+                                   quint8 historyId, quint8 savedId, QDateTime dTime)
+{
+    addOperate(static_cast <quint16> (valueKey), value, Account_bit(userId), toHistoryIdType(historyId), toSavedIdType(savedId), dTime);
+}
+
+QVariant AFlib::id::Object::getValue(ValueType key) const
+{
+    return getValue(static_cast <quint16> (key));
+}
+
+void AFlib::id::Object::addOperate(quint16 valueKey, QVariant value, Account_bit userId,
+                                   HistoryIdType history, SavedIdType saved, QDateTime dTime)
+{
+    m_history->addOperation(Operate(userId, history, saved, value, valueKey, dTime));
+}
+
+QVariant AFlib::id::Object::getValue(quint16 key) const
+{
+    OperatePtr last = OperatePtr::create();
+    last->setDatetime(QDate(1960, 1, 1).startOfDay());
+    for (auto it : m_history->m_historyList)
+        if (it->key() == key)
+            if (it->m_datetime > last->m_datetime)
+                last = it;
+    if (last->key() == 0 || not isHIdEnable(last->historyType()))
+        return QVariant();
+    return last->m_value;
+}
+
 namespace AFlib::id {
 QDataStream &operator << (QDataStream& stream, const AFlib::id::Object& data)
 {
-    stream
-        << data.m_owner
-        << *data.m_history
-        << static_cast <const Info&> (data)
-        << static_cast <const ObjectFull_bit&> (data);
+    stream << data.m_owner << *data.m_history << data.m_bitset;
     return stream;
 }
 
 QDataStream &operator >> (QDataStream& stream,       AFlib::id::Object& data)
 {
-    stream
-        >> data.m_owner
-        >> *data.m_history
-        >> static_cast <Info&> (data)
-        >> static_cast <ObjectFull_bit&> (data);
+    stream >> data.m_owner >> *data.m_history >> data.m_bitset;
     return stream;
 }
 }

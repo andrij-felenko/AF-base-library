@@ -50,12 +50,12 @@ bool Storage::writeData(QList<quint32> list, quint32 obj_id, QByteArray data)
     return writeData(getFile(getDir(list), obj_id), data);
 }
 
-bool Storage::writeData(quint32 obj_id, IdOperate &data)
+bool Storage::writeOperate(quint32 obj_id, IdOperate &data)
 {
-    return writeData(getFile(getDir(), obj_id), data);
+    return writeOperate(getFile(getDir(), obj_id), data);
 }
 
-bool Storage::writeData(QString f_path, IdOperate &data)
+bool Storage::writeOperate(QString f_path, IdOperate &data)
 {
     auto objData = readData(f_path);
     if (objData.isNull()){
@@ -63,51 +63,52 @@ bool Storage::writeData(QString f_path, IdOperate &data)
         return false;
     }
     IdObject obj(objData);
-    obj.history()->addOperation(data);
-    auto last = obj.history()->getLastOperation();
-    if (last.isNull())
-        return false;
+    obj.addOperate(data);
+    // TODO recheck it
+//    auto last = obj.history()->getLastOperation();
+//    if (last.isNull())
+//        return false;
 
-    setLastChangedTime(obj.owner(), obj.pluginId(), last->type(), last->uniqueId(), last->datetime());
+//    setLastChangedTime(obj.owner(), obj.pluginId(), last->type(), last->uniqueId(), last->datetime());
     return true;
 }
 
-bool Storage::writeData(QStringList listOfId, QString object, IdOperate &data)
+bool Storage::writeOperate(QStringList listOfId, QString object, IdOperate &data)
 {
     return writeData(getFile(getDir(listOfId), object), data);
 }
 
-bool Storage::writeData(QList<quint32> list, quint32 obj_id, IdOperate &data)
+bool Storage::writeOperate(QList<quint32> list, quint32 obj_id, IdOperate &data)
 {
     return writeData(getFile(getDir(list), obj_id), data);
 }
 
-bool Storage::writeData(quint32 obj_id, IdOperatePtr data)
+bool Storage::writeOperatePtr(quint32 obj_id, IdOperatePtr data)
 {
-    return writeData(obj_id, *data);
+    return writeOperate(obj_id, *data);
 }
 
-bool Storage::writeData(QString f_path, IdOperatePtr data)
+bool Storage::writeOperatePtr(QString f_path, IdOperatePtr data)
 {
-    return writeData(f_path, *data);
+    return writeOperate(f_path, *data);
 }
 
-bool Storage::writeData(QStringList listOfId, QString object, IdOperatePtr data)
+bool Storage::writeOperatePtr(QStringList listOfId, QString object, IdOperatePtr data)
 {
-    return writeData(listOfId, object, *data);
+    return writeOperate(listOfId, object, *data);
 }
 
-bool Storage::writeData(QList<quint32> list, quint32 obj_id, IdOperatePtr data)
+bool Storage::writeOperatePtr(QList<quint32> list, quint32 obj_id, IdOperatePtr data)
 {
-    return writeData(list, obj_id, *data);
+    return writeOperate(list, obj_id, *data);
 }
 
-bool Storage::writeData(quint32 obj_id, IdOperatePtrList data)
+bool Storage::writeOperatePtrList(quint32 obj_id, IdOperatePtrList data)
 {
-    return writeData(getFile(getDir(), obj_id), data);
+    return writeOperatePtrList(getFile(getDir(), obj_id), data);
 }
 
-bool Storage::writeData(QString f_path, IdOperatePtrList data)
+bool Storage::writeOperatePtrList(QString f_path, IdOperatePtrList data)
 {
     auto objData = readData(f_path);
     if (objData.isNull()){
@@ -115,24 +116,25 @@ bool Storage::writeData(QString f_path, IdOperatePtrList data)
         return false;
     }
     IdObject obj(objData);
-    for (auto it : data)
-        obj.history()->addOperation(it);
-    auto last = obj.history()->getLastOperation();
-    if (last.isNull())
-        return false;
+    // TODO recheck it
+//    for (auto it : data)
+//        obj.history()->addOperation(it);
+//    auto last = obj.history()->getLastOperation();
+//    if (last.isNull())
+//        return false;
 
-    setLastChangedTime(obj.owner(), obj.pluginId(), last->type(), last->uniqueId(), last->datetime());
+//    setLastChangedTime(obj.owner(), obj.pluginId(), last->type(), last->uniqueId(), last->datetime());
     return true;
 }
 
-bool Storage::writeData(QStringList listOfId, QString object, IdOperatePtrList data)
+bool Storage::writeOperatePtrList(QStringList listOfId, QString object, IdOperatePtrList data)
 {
-    return writeData(getFile(getDir(listOfId), object), data);
+    return writeOperatePtrList(getFile(getDir(listOfId), object), data);
 }
 
-bool Storage::writeData(QList <quint32> list, quint32 obj_id, IdOperatePtrList data)
+bool Storage::writeOperatePtrList(QList <quint32> list, quint32 obj_id, IdOperatePtrList data)
 {
-    return writeData(getFile(getDir(list), obj_id), data);
+    return writeOperatePtrList(getFile(getDir(list), obj_id), data);
 }
 
 QByteArray Storage::readData(quint32 obj_id) const
@@ -237,9 +239,10 @@ void Storage::loadFromDirectory(QDir &dir)
                 accIt.addPlugin(obj.pluginId());
                 for (auto pluginId : accIt.pluginList){
                     if (pluginId.pluginId == obj.pluginId()){
-                        auto last = obj.history()->getLastOperation();
-                        if (not last.isNull())
-                            pluginId.addSingle(last->datetime(), last->uniqueId(), last->type());
+                        // TODO this is need to rewrite
+//                        auto last = obj.history()->getLastOperation();
+//                        if (not last.isNull())
+//                            pluginId.addSingle(last->datetime(), last->uniqueId(), last->type());
                         break;
                     }
                 }

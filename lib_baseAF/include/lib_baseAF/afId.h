@@ -3,7 +3,6 @@
 
 #include "afIdBit.h"
 #include "afIdAccount.h"
-#include "afIdInfo.h"
 #include "afIdOperate.h"
 #include "afIdHistory.h"
 #include "afIdObject.h"
@@ -14,8 +13,6 @@ namespace AFlib {
     typedef id::History    IdHistory;
     typedef id::HistoryPtr IdHistoryPtr;
 
-    typedef id::Info IdInfo;
-
     typedef id::Object        IdObject;
     typedef id::Object_bit    IdObject_bit;
     typedef id::ObjectPtr     IdObjectPtr;
@@ -24,14 +21,14 @@ namespace AFlib {
     typedef id::Operate        IdOperate;
     typedef id::OperatePtr     IdOperatePtr;
     typedef id::OperatePtrList IdOperatePtrList;
+
+    typedef id::ValueType ValueType;
 }
 
 typedef AFlib::IdAccount_bit AFIdAccount;
 
 typedef AFlib::IdHistory    AFIdHistory;
 typedef AFlib::IdHistoryPtr AFIdHistoryPtr;
-
-typedef AFlib::IdInfo AFIdInfo;
 
 typedef AFlib::IdObject        AFIdObject;
 typedef AFlib::IdObject_bit    AFIdObject_bit;
@@ -41,5 +38,7 @@ typedef AFlib::IdObjectPtrList AFIdObjectPtrList;
 typedef AFlib::IdOperate        AFIdOperate;
 typedef AFlib::IdOperatePtr     AFIdOperatePtr;
 typedef AFlib::IdOperatePtrList AFIdOperatePtrList;
+
+typedef AFlib::ValueType AFValueType;
 
 #endif // LIB_BASEAF_ID_H

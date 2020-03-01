@@ -1,14 +1,5 @@
 #include "afIdHistory.h"
 
-AFlib::id::OperatePtr AFlib::id::History::getLastOperation() const
-{
-    auto lastChanged = lastChange();
-    for (int i = 0; i < m_historyList.count(); i++)
-        if (m_historyList[i]->datetime() == lastChanged)
-            return m_historyList[i];
-    return OperatePtr();
-}
-
 void AFlib::id::History::makeShorten()
 {
     auto foundMultiple = [=]() -> std::optional <quint32> {
@@ -16,10 +7,10 @@ void AFlib::id::History::makeShorten()
         objList.clear();
 
         for (auto it : m_historyList){
-            if (objList.contains(it->objectId()))
-                return it->objectId();
+            if (objList.contains(it->key()))
+                return it->key();
             else
-                objList.push_back(it->objectId());
+                objList.push_back(it->key());
         }
         return std::nullopt;
     };
@@ -38,9 +29,9 @@ void AFlib::id::History::makeShorten()
 
         // 1: found ties variant for last id
         OperatePtr last = OperatePtr::create();
-        last->setDatetime(QDateTime(QDate(1960, 1, 1)));
+        last->setDatetime(QDate(1960, 1, 1).startOfDay());
         for (auto it : m_historyList){
-            if (it->objectId() == multiple.value())
+            if (it->key() == multiple.value())
                 if (last->datetime() < it->datetime())
                     last = it;
         }
@@ -51,7 +42,7 @@ void AFlib::id::History::makeShorten()
         m_historyList.erase(
             std::remove_if(m_historyList.begin(), m_historyList.end(),
                            [last, localLast, multiple](OperatePtr single) {
-                               return (multiple == single->objectId() && last.data() != single.data())
+                               return (multiple == single->key() && last.data() != single.data())
                                       || multiple.value() == localLast;
                            }));
 
@@ -60,13 +51,13 @@ void AFlib::id::History::makeShorten()
     }
 }
 
-void AFlib::id::History::makeFull(OperatePtrList list)
+void AFlib::id::History::makeFull(const QByteArray &data)
 {
-    for (auto it : list)
-        addOperation(it);
+    QDataStream stream(data);
+    stream >> m_historyList;
 }
 
-AFlib::id::History::History()// : QObject(parent)
+AFlib::id::History::History()
 {
     m_lastUpdate = QDateTime::fromTime_t(0);
 }
@@ -108,19 +99,16 @@ void AFlib::id::History::addOperation(OperatePtr id)
             return;
 
     m_historyList.push_back(id);
-    //    if (haveUpdates())
-    //        emit needUpdate();
-    //    emit changed();
 }
 
 namespace AFlib::id {
 QDataStream &operator << (QDataStream& stream, const History& data)
 {
-    return stream << data.m_historyList;
+    return stream << data.m_historyList << data.m_lastUpdate;
 }
 
 QDataStream &operator >> (QDataStream& stream,       History& data)
 {
-    return stream >> data.m_historyList;
+    return stream >> data.m_historyList >> data.m_lastUpdate;
 }
 }

@@ -6,8 +6,6 @@
 
 #include "afEnum.h"
 #include "afIdAccount.h"
-#include "afIdInfo.h"
-#include "afIdObjectBit.h"
 
 namespace AFlib::id {
     class Operate;
@@ -17,64 +15,51 @@ namespace AFlib::id {
 }
 
 /* ___________________________OPERATE_ID_Bit____________________________
- *                                       |_______[28]_OBJECT_ID________|
- * 61  56       48       40       32       24       16        8        0
- * |    |        |        |        |        |        |        |        |
- * ###### ######## ######## ######.. ........ ........ ........ ........ 28: user id whose make transaction
- * ...... ........ ........ ......## #....... ........ ........ ........  3: history enum variable
- * ...... ........ ........ ........ .###.... ........ ........ ........  3: save enum variable
- * ...... ........ ........ ........ ....#### ######## ####.... ........ 16: object unique id by current types
- * ...... ........ ........ ........ ........ ........ ....#### ###.....  7: type of subject
- * ...... ........ ........ ........ ........ ........ ........ ...#####  5: plugin id [0 - mean global variable]
- * ...... ........ ........ ........ ........ ........ ........ ........ */
-struct AFlib::id::Operate_bit : public TbitStruct <62>
+ *
+ * 47    40       32       24       16        8        0
+ * |      |        |        |        |        |        |
+ * ####.... ........ ........ ........ ........ ........  4: reserved for now
+ * ....#### ######## ######## ######## ........ ........ 28: user id whose make transaction
+ * ........ ........ ........ ........ ###..... ........  3: history enum variable
+ * ........ ........ ........ ........ ...###.. ........  3: save enum variable
+ * ........ ........ ........ ........ ......## ######## 10: operate key (for using as type of value by object)
+ * ........ ........ ........ ........ ........ ........ */
+struct AFlib::id::Operate_bit : public TbitStruct <48>
 {
-    quint32 userId()     const { return toUInt32(    34, 28); }
-    void setUserId(quint32 id) {       setUInt32(id, 34, 28); }
+    quint32 userId()     const { return toUInt32(    16, 28); }
+    void setUserId(quint32 id) {       setUInt32(id, 16, 28); }
     void setUserId(Acc_bit id) {       setUserId(id.accountId()); }
 
-    HIdType historyType()       const { return toHistoryIdType(toUInt8(      31, 3)); }
-    void setHistoryType(quint8  type) {                       setUInt8(type, 31, 3); }
+    HIdType historyType()       const { return toHistoryIdType(toUInt8(      13, 3)); }
+    void setHistoryType(quint8  type) {                       setUInt8(type, 13, 3); }
     void setHistoryType(HIdType type) {   setHistoryType(fromHisToInt (type)); }
 
-    SIdType saveType()       const { return toSavedIdType(toUInt8(      28, 3)); }
-    void setSaveType(quint8  type) {                     setUInt8(type, 28, 3); }
+    SIdType saveType()       const { return toSavedIdType(toUInt8(      10, 3)); }
+    void setSaveType(quint8  type) {                     setUInt8(type, 10, 3); }
     void setSaveType(SIdType type) {   setSaveType(fromSaveToInt (type)); }
 
-    Object_bit objectId_b()   const { return Object_bit(objectId()); }
-    void setObjectId(Object_bit id) { setObjectId(id.id()); }
+    quint16 key()      const { return toUInt16(     0, 10); }
+    void setKey(quint16 key) {       setUInt16(key, 0, 10); }
 
-    quint32 objectId()     const { return toUInt32(    0, 28); }
-    void setObjectId(quint32 id) {       setUInt32(id, 0, 28); }
-
-    quint32 uniqueId()     const { return toUInt16(    12, 16); }
-    void setUniqueId(quint16 id) {       setUInt16(id, 12, 16); }
-
-    quint32 type()      const { return toUInt8(      5, 7); }
-    void setType(quint8 type) {       setUInt8(type, 5, 7); }
-
-    quint32 pluginId()    const { return toUInt8(    0, 5); }
-    void setPLuginId(quint8 id) {       setUInt8(id, 0, 5); }
+    quint8  reserved()   const { return  toUInt8(   44, 4); }
+    void setReserved(quint8 r) {        setUInt8(r, 44, 4); }
 };
 
-class AFlib::id::Operate : public Info, public Operate_bit
+class AFlib::id::Operate final : public Operate_bit
 {
 public:
-    Operate(quint32 subjectId, quint32 userId, HistoryIdType historyId,
-            SavedIdType saved = SavedIdType::LocaleSaved,
-            QDateTime dTime = QDateTime::currentDateTime());
-
-    Operate(quint32 subjectId, quint32 userId, quint8 historyId,
-            quint8 saved = quint8(SavedIdType::LocaleSaved),
-            QDateTime dTime = QDateTime::currentDateTime());
-
-    Operate(const Operate& copy);
-
-    explicit Operate(Object_bit objectId = Object_bit(),
-                     Account_bit userId = Account_bit(),
+    explicit Operate(Account_bit userId = Account_bit(),
                      HistoryIdType history = HistoryIdType::First,
                      SavedIdType saved = SavedIdType::LocaleSaved,
+                     QVariant value = QVariant(),
+                     quint16 valueKey = 0,
                      QDateTime dTime = QDateTime::currentDateTime());
+
+    Operate(const Operate& copy);
+    Operate(const QByteArray& data);
+
+    operator QByteArray() const;
+    QByteArray data() const;
 
     QDateTime datetime() const { return  m_datetime; }
     void setDatetime(const QDateTime &datetime);
@@ -82,13 +67,13 @@ public:
     QVariant value() const { return m_value; }
     void setValue(const QVariant &value);
 
-protected:
-    friend QDataStream &operator << (QDataStream& stream, const Operate& data);
-    friend QDataStream &operator >> (QDataStream& stream,       Operate& data);
-
 private:
     QDateTime m_datetime;
     QVariant m_value;
+
+    friend class History;
+    friend class Object;
+    friend class Storage;
 };
 
 QDataStream &operator << (QDataStream& stream, const AFlib::id::OperatePtrList& data);

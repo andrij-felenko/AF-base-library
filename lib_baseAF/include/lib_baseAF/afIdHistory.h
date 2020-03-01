@@ -11,36 +11,34 @@ namespace AFlib::id {
     typedef QSharedPointer <History> HistoryPtr;
 }
 
-class AFlib::id::History //: public QObject
+class AFlib::id::History
 {
-    //    Q_OBJECT
 public:
-    explicit History(/*QObject* parent = nullptr*/);
+    friend class Object;
+    friend class Storage;
+    explicit History();
 
     void updateTime(QDateTime dTime);
     bool haveUpdates() const;
     QDateTime lastChange() const;
     QDateTime lastUpdate() const;
 
-    void addOperation(Operate    id);
-    void addOperation(OperatePtr id);
-    OperatePtr getLastOperation() const;
-
     void makeShorten();
-    void makeFull(OperatePtrList list);
+    void makeFull(const QByteArray& data);
 
 protected:
     QDateTime m_lastUpdate;
 
+    void refreshLastChangeTime();
+
     friend QDataStream &operator << (QDataStream& stream, const History& data);
     friend QDataStream &operator >> (QDataStream& stream,       History& data);
 
-    //signals:
-    //    void needUpdate();
-    //    void changed();
-
 private:
     OperatePtrList m_historyList;
+
+    void addOperation(Operate    id);
+    void addOperation(OperatePtr id);
 };
 
 #endif // LIB_BASEAF_ID_HISTORY_H

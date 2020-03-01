@@ -15,7 +15,7 @@ namespace AFaccount {
     typedef QList <InfoPtr> InfoPtrList;
 }
 
-class AFaccount::Info : public AFIdObject
+class AFaccount::Info : public QObject, public AFIdObject
 {
     Q_OBJECT
     Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
