@@ -39,6 +39,8 @@ public:
         return getValue(static_cast <quint16> (key) + 0x40);
     }
 
+    void addOperate(Operate    id);
+    void addOperate(OperatePtr id);
     void addOperate(const QByteArray& data);
     void addOperations(const QByteArray& list);
     void addOperate(ValueType valueKey, QVariant value,
@@ -67,19 +69,16 @@ public:
 
 protected:
     QDateTime m_lastUpdate;
+    OperatePtrList m_operateList;
 
     friend QDataStream &operator << (QDataStream& stream, const History& data);
     friend QDataStream &operator >> (QDataStream& stream,       History& data);
 
 private:
-    OperatePtrList m_historyList;
-
     void refreshLastChangeTime();
 
     QVariant getValue(quint16 key) const;
 
-    void addOperate(Operate    id);
-    void addOperate(OperatePtr id);
     void addOperate(quint16 valueKey, QVariant value, Account_bit userId,
                     HistoryIdType history, SavedIdType saved, QDateTime dTime);
 };

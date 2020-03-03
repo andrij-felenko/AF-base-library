@@ -19,148 +19,252 @@ void Storage::setPath(QDir dir)
     // FIXME add emit if it be QObject
 }
 
-bool Storage::writeData(quint32 obj_id, QByteArray data)
+bool Storage::addObjectId(QDir dir, QString key, const QByteArray &data)
 {
-    return writeData(
-        getFile(
-            getDir(), obj_id), data);
+    return addObjectId(getFile(dir, key), data);
 }
 
-bool Storage::writeData(QString f_path, QByteArray data)
+bool Storage::addObjectId(QString fileName, const QByteArray &data)
 {
-    QFile file(f_path);
-    if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
-        auto result = file.write(data);
-        if (result == -1)
-            qDebug() << "Can`t save to file [" << f_path << "], write return -1.";
-        return result;
+    return addObjectId(fileName, IdObject(data));
+}
+
+bool Storage::addObjectId(QDir dir, QString key, const IdObject &object)
+{
+    return addObjectId(getFile(dir, key), object);
+}
+
+bool Storage::addObjectId(QString fileName, const IdObject &object)
+{
+    QFile file(fileName);
+    if (file.open(QIODevice::ReadOnly)){
+        IdObjectPtrList list;
+        auto allData = file.readAll();
+        QDataStream stream(allData);
+        stream >> list;
+
+        IdObjectPtr ptr = IdObjectPtr::create(object);
+        list.push_back(ptr);
+        file.close();
+
+        if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
+            QDataStream wStream(&file);
+            wStream << list;
+            file.close();
+            return true;
+        }
     }
     else
-        qDebug() << "Can`t save to file [" << f_path << "], error:" << file.errorString();
+        qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
     return false;
 }
 
-bool Storage::writeData(QStringList listOfId, QString object, QByteArray data)
+bool Storage::updateFile(QDir dir, QString key, const QByteArray &data)
 {
-    return writeData(getFile(getDir(listOfId), object), data);
+    return updateFile(getFile(dir, key), data);
 }
 
-bool Storage::writeData(QList<quint32> list, quint32 obj_id, QByteArray data)
+bool Storage::updateFile(QString fileName, const QByteArray &data)
 {
-    return writeData(getFile(getDir(list), obj_id), data);
+    //
 }
 
-bool Storage::writeOperate(quint32 obj_id, IdOperate &data)
+bool Storage::addOperate(QDir dir, QString key, const AFIdObject_bit &object, const QByteArray &data)
 {
-    return writeOperate(getFile(getDir(), obj_id), data);
+    return addOperate(getFile(dir, key), object, data);
 }
 
-bool Storage::writeOperate(QString f_path, IdOperate &data)
+bool Storage::addOperate(QString fileName, const AFIdObject_bit &object, const QByteArray &data)
 {
-    auto objData = readData(f_path);
-    if (objData.isNull()){
-        qDebug() << "Object not found for: " << f_path;
-        return false;
-    }
-    IdObject obj(objData);
-    obj.addOperate(data);
-    // TODO recheck it
-//    auto last = obj.history()->getLastOperation();
-//    if (last.isNull())
+    return addOperate(fileName, object, IdOperate(data));
+}
+
+bool Storage::addOperate(QDir dir, QString key, const AFIdObject_bit &object, const IdOperate &operate)
+{
+    return addOperate(getFile(dir, key), object, operate);
+}
+
+bool Storage::addOperate(QString fileName, const AFIdObject_bit &object, const IdOperate &operate)
+{
+    IdOperatePtr ptr = IdOperatePtr::create(operate);
+    return addOperate(fileName, object, ptr);
+}
+
+bool Storage::addOperate(QDir dir, QString key, const AFIdObject_bit &object, const IdOperatePtr &operate)
+{
+    return addOperate(getFile(dir, key), object, operate);
+}
+
+bool Storage::addOperate(QString fileName, const AFIdObject_bit &object, const IdOperatePtr &operate)
+{
+    //
+}
+
+bool Storage::addOperateList(QDir dir, QString key, const AFIdObject_bit &object, const QByteArray &data)
+{
+    return addOperateList(getFile(dir, key), object, data);
+}
+
+bool Storage::addOperateList(QString fileName, const AFIdObject_bit &object, const QByteArray &data)
+{
+    IdOperatePtrList list;
+    QDataStream stream(data);
+    stream >> list;
+    return addOperateList(fileName, object, list);
+}
+
+bool Storage::addOperateList(QDir dir, QString key, const AFIdObject_bit &object, const IdOperatePtrList &operate)
+{
+    return addOperateList(getFile(dir, key), object, operate);
+}
+
+bool Storage::addOperateList(QString fileName, const AFIdObject_bit &object, const IdOperatePtrList &operate)
+{
+    //
+}
+
+//bool Storage::writeData(quint32 obj_id, QByteArray data)
+//{
+//    return writeData(
+//        getFile(
+//            getDir(), obj_id), data);
+//}
+
+//bool Storage::writeData(QString f_path, QByteArray data)
+//{
+//    QFile file(f_path);
+//    if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
+//        auto result = file.write(data);
+//        if (result == -1)
+//            qDebug() << "Can`t save to file [" << f_path << "], write return -1.";
+//        return result;
+//    }
+//    else
+//        qDebug() << "Can`t save to file [" << f_path << "], error:" << file.errorString();
+//    return false;
+//}
+
+//bool Storage::writeData(QStringList listOfId, QString object, QByteArray data)
+//{
+//    return writeData(getFile(getDir(listOfId), object), data);
+//}
+
+//bool Storage::writeData(QList<quint32> list, quint32 obj_id, QByteArray data)
+//{
+//    return writeData(getFile(getDir(list), obj_id), data);
+//}
+
+//bool Storage::writeOperate(quint32 obj_id, IdOperate &data)
+//{
+//    return writeOperate(getFile(getDir(), obj_id), data);
+//}
+
+//bool Storage::writeOperate(QString f_path, IdOperate &data)
+//{
+//    auto objData = readData(f_path);
+//    if (objData.isNull()){
+//        qDebug() << "Object not found for: " << f_path;
 //        return false;
+//    }
+//    IdObject obj(objData);
+//    obj.addOperate(data);
+//    // TODO recheck it
+////    auto last = obj.history()->getLastOperation();
+////    if (last.isNull())
+////        return false;
 
-//    setLastChangedTime(obj.owner(), obj.pluginId(), last->type(), last->uniqueId(), last->datetime());
-    return true;
-}
+////    setLastChangedTime(obj.owner(), obj.pluginId(), last->type(), last->uniqueId(), last->datetime());
+//    return true;
+//}
 
-bool Storage::writeOperate(QStringList listOfId, QString object, IdOperate &data)
-{
-    return writeData(getFile(getDir(listOfId), object), data);
-}
+//bool Storage::writeOperate(QStringList listOfId, QString object, IdOperate &data)
+//{
+//    return writeData(getFile(getDir(listOfId), object), data);
+//}
 
-bool Storage::writeOperate(QList<quint32> list, quint32 obj_id, IdOperate &data)
-{
-    return writeData(getFile(getDir(list), obj_id), data);
-}
+//bool Storage::writeOperate(QList<quint32> list, quint32 obj_id, IdOperate &data)
+//{
+//    return writeData(getFile(getDir(list), obj_id), data);
+//}
 
-bool Storage::writeOperatePtr(quint32 obj_id, IdOperatePtr data)
-{
-    return writeOperate(obj_id, *data);
-}
+//bool Storage::writeOperatePtr(quint32 obj_id, IdOperatePtr data)
+//{
+//    return writeOperate(obj_id, *data);
+//}
 
-bool Storage::writeOperatePtr(QString f_path, IdOperatePtr data)
-{
-    return writeOperate(f_path, *data);
-}
+//bool Storage::writeOperatePtr(QString f_path, IdOperatePtr data)
+//{
+//    return writeOperate(f_path, *data);
+//}
 
-bool Storage::writeOperatePtr(QStringList listOfId, QString object, IdOperatePtr data)
-{
-    return writeOperate(listOfId, object, *data);
-}
+//bool Storage::writeOperatePtr(QStringList listOfId, QString object, IdOperatePtr data)
+//{
+//    return writeOperate(listOfId, object, *data);
+//}
 
-bool Storage::writeOperatePtr(QList<quint32> list, quint32 obj_id, IdOperatePtr data)
-{
-    return writeOperate(list, obj_id, *data);
-}
+//bool Storage::writeOperatePtr(QList<quint32> list, quint32 obj_id, IdOperatePtr data)
+//{
+//    return writeOperate(list, obj_id, *data);
+//}
 
-bool Storage::writeOperatePtrList(quint32 obj_id, IdOperatePtrList data)
-{
-    return writeOperatePtrList(getFile(getDir(), obj_id), data);
-}
+//bool Storage::writeOperatePtrList(quint32 obj_id, IdOperatePtrList data)
+//{
+//    return writeOperatePtrList(getFile(getDir(), obj_id), data);
+//}
 
-bool Storage::writeOperatePtrList(QString f_path, IdOperatePtrList data)
-{
-    auto objData = readData(f_path);
-    if (objData.isNull()){
-        qDebug() << "Object not found for: " << f_path;
-        return false;
-    }
-    IdObject obj(objData);
-    // TODO recheck it
-//    for (auto it : data)
-//        obj.history()->addOperation(it);
-//    auto last = obj.history()->getLastOperation();
-//    if (last.isNull())
+//bool Storage::writeOperatePtrList(QString f_path, IdOperatePtrList data)
+//{
+//    auto objData = readData(f_path);
+//    if (objData.isNull()){
+//        qDebug() << "Object not found for: " << f_path;
 //        return false;
+//    }
+//    IdObject obj(objData);
+//    // TODO recheck it
+////    for (auto it : data)
+////        obj.history()->addOperation(it);
+////    auto last = obj.history()->getLastOperation();
+////    if (last.isNull())
+////        return false;
 
-//    setLastChangedTime(obj.owner(), obj.pluginId(), last->type(), last->uniqueId(), last->datetime());
-    return true;
-}
+////    setLastChangedTime(obj.owner(), obj.pluginId(), last->type(), last->uniqueId(), last->datetime());
+//    return true;
+//}
 
-bool Storage::writeOperatePtrList(QStringList listOfId, QString object, IdOperatePtrList data)
-{
-    return writeOperatePtrList(getFile(getDir(listOfId), object), data);
-}
+//bool Storage::writeOperatePtrList(QStringList listOfId, QString object, IdOperatePtrList data)
+//{
+//    return writeOperatePtrList(getFile(getDir(listOfId), object), data);
+//}
 
-bool Storage::writeOperatePtrList(QList <quint32> list, quint32 obj_id, IdOperatePtrList data)
-{
-    return writeOperatePtrList(getFile(getDir(list), obj_id), data);
-}
+//bool Storage::writeOperatePtrList(QList <quint32> list, quint32 obj_id, IdOperatePtrList data)
+//{
+//    return writeOperatePtrList(getFile(getDir(list), obj_id), data);
+//}
 
-QByteArray Storage::readData(quint32 obj_id) const
-{
-    return readData(getFile(getDir(), obj_id));
-}
+//QByteArray Storage::readData(quint32 obj_id) const
+//{
+//    return readData(getFile(getDir(), obj_id));
+//}
 
-QByteArray Storage::readData(QString f_path) const
-{
-    QFile file(f_path);
-    if (file.open(QIODevice::ReadOnly))
-        return file.readAll();
-    else
-        qDebug() << "Can`t open file [" << f_path << "], error:" << file.errorString();
-    return QByteArray();
-}
+//QByteArray Storage::readData(QString f_path) const
+//{
+//    QFile file(f_path);
+//    if (file.open(QIODevice::ReadOnly))
+//        return file.readAll();
+//    else
+//        qDebug() << "Can`t open file [" << f_path << "], error:" << file.errorString();
+//    return QByteArray();
+//}
 
-QByteArray Storage::readData(QStringList listOfId, QString object) const
-{
-    return readData(getFile(getDir(listOfId), object));
-}
+//QByteArray Storage::readData(QStringList listOfId, QString object) const
+//{
+//    return readData(getFile(getDir(listOfId), object));
+//}
 
-QByteArray Storage::readData(QList<quint32> list, quint32 obj_id) const
-{
-    return readData(getFile(getDir(list), obj_id));
-}
+//QByteArray Storage::readData(QList<quint32> list, quint32 obj_id) const
+//{
+//    return readData(getFile(getDir(list), obj_id));
+//}
 
 QString Storage::getFile(const QDir& dir, quint32 id) const
 {

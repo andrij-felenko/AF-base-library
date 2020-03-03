@@ -16,11 +16,13 @@ class AFlib::id::Object : public History, public ObjectFull_bit
 {
 public:
     explicit Object();
-    Object(QByteArray& data);
+    Object(const QByteArray& data);
     Object(Account_bit owner, quint16 uniqueId, quint8 type, quint8 pluginId);
     Object(Account_bit owner, QString name, QString descr = QString(""));
     Object(Account_bit owner, QString name, QString descr, quint16 uniqueId, quint8 type, quint8 pluginId,
            quint8 parentType, quint32 parentId);
+
+    void makeGlobalId(quint32 newId);
 
     virtual QString name()        const final;
     virtual QString description() const final;
@@ -33,7 +35,7 @@ public:
     //! Function set owner, only work if history is empty.
     //! \param owner Owner id.
     //! \return Return result of set new id, return false if history is not empty.
-    virtual void setOwner(const Account_bit &owner) final;
+    virtual bool setOwner(const Account_bit &owner) final;
 
 protected:
     friend QDataStream &operator << (QDataStream& stream, const Object& data);

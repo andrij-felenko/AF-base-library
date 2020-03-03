@@ -23,32 +23,52 @@ public:
     void loadAllData();
     void setPath(QDir dir);
 
+    bool addObjectId(QDir dir, QString key, const QByteArray& data);
+    bool addObjectId(QString fileName,      const QByteArray& data);
+    bool addObjectId(QDir dir, QString key, const IdObject& object);
+    bool addObjectId(QString fileName,      const IdObject& object);
+
+    bool updateFile(QDir dir, QString key, const QByteArray& data);
+    bool updateFile(QString fileName,      const QByteArray& data);
+
+    bool addOperate(QDir dir, QString key, const AFIdObject_bit& object, const QByteArray& data);
+    bool addOperate(QString fileName,      const AFIdObject_bit& object, const QByteArray& data);
+    bool addOperate(QDir dir, QString key, const AFIdObject_bit& object, const IdOperate& operate);
+    bool addOperate(QString fileName,      const AFIdObject_bit& object, const IdOperate& operate);
+    bool addOperate(QDir dir, QString key, const AFIdObject_bit& object, const IdOperatePtr& operate);
+    bool addOperate(QString fileName,      const AFIdObject_bit& object, const IdOperatePtr& operate);
+
+    bool addOperateList(QDir dir, QString key, const AFIdObject_bit& object, const QByteArray& data);
+    bool addOperateList(QString fileName,      const AFIdObject_bit& object, const QByteArray& data);
+    bool addOperateList(QDir dir, QString key, const AFIdObject_bit& object, const IdOperatePtrList& operate);
+    bool addOperateList(QString fileName,      const AFIdObject_bit& object, const IdOperatePtrList& operate);
+
     //! Write data as QByteArray all file
-    bool writeData(quint32 obj_id, QByteArray data);
-    bool writeData(QString f_path, QByteArray data);
-    bool writeData(QStringList listOfId, QString object, QByteArray data);
-    bool writeData(QList <quint32> list, quint32 obj_id, QByteArray data);
+//    bool writeData(quint32 obj_id, QByteArray data);
+//    bool writeData(QString f_path, QByteArray data);
+//    bool writeData(QStringList listOfId, QString object, QByteArray data);
+//    bool writeData(QList <quint32> list, quint32 obj_id, QByteArray data);
 
-    bool writeOperate(quint32 obj_id, IdOperate& data);
-    bool writeOperate(QString f_path, IdOperate& data);
-    bool writeOperate(QStringList listOfId, QString object, IdOperate& data);
-    bool writeOperate(QList <quint32> list, quint32 obj_id, IdOperate& data);
+//    bool writeOperate(quint32 obj_id, IdOperate& data);
+//    bool writeOperate(QString f_path, IdOperate& data);
+//    bool writeOperate(QStringList listOfId, QString object, IdOperate& data);
+//    bool writeOperate(QList <quint32> list, quint32 obj_id, IdOperate& data);
 
-    bool writeOperatePtr(quint32 obj_id, IdOperatePtr data);
-    bool writeOperatePtr(QString f_path, IdOperatePtr data);
-    bool writeOperatePtr(QStringList listOfId, QString object, IdOperatePtr data);
-    bool writeOperatePtr(QList <quint32> list, quint32 obj_id, IdOperatePtr data);
+//    bool writeOperatePtr(quint32 obj_id, IdOperatePtr data);
+//    bool writeOperatePtr(QString f_path, IdOperatePtr data);
+//    bool writeOperatePtr(QStringList listOfId, QString object, IdOperatePtr data);
+//    bool writeOperatePtr(QList <quint32> list, quint32 obj_id, IdOperatePtr data);
 
-    bool writeOperatePtrList(quint32 obj_id, IdOperatePtrList data);
-    bool writeOperatePtrList(QString f_path, IdOperatePtrList data);
-    bool writeOperatePtrList(QStringList listOfId, QString object, IdOperatePtrList data);
-    bool writeOperatePtrList(QList <quint32> list, quint32 obj_id, IdOperatePtrList data);
+//    bool writeOperatePtrList(quint32 obj_id, IdOperatePtrList data);
+//    bool writeOperatePtrList(QString f_path, IdOperatePtrList data);
+//    bool writeOperatePtrList(QStringList listOfId, QString object, IdOperatePtrList data);
+//    bool writeOperatePtrList(QList <quint32> list, quint32 obj_id, IdOperatePtrList data);
 
     // FIXME maybe add short and not short version?
-    QByteArray readData(quint32 obj_id) const;
-    QByteArray readData(QString f_path) const;
-    QByteArray readData(QStringList listOfId, QString object) const;
-    QByteArray readData(QList <quint32> list, quint32 obj_id) const;
+//    QByteArray readData(quint32 obj_id) const;
+//    QByteArray readData(QString f_path) const;
+//    QByteArray readData(QStringList listOfId, QString object) const;
+//    QByteArray readData(QList <quint32> list, quint32 obj_id) const;
 
 private:
     QDir getDir(QStringList listOfId = {}) const;

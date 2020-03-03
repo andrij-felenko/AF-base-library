@@ -21,7 +21,7 @@ AFaccount::Info::Info(QJsonObject obj, QObject* parent)
     m_mail = obj.value("email").toString();
     setName(obj.value("name").toString());
     setDescription(obj.value("description").toString());
-    m_history->updateTime(QDateTime::fromString(obj.value("last_update").toString(), DATE_TIME));
+    updateTime(QDateTime::fromString(obj.value("last_update").toString(), DATE_TIME));
 }
 
 AFaccount::Info::Info(AFlib::AccountIdType type, QObject* parent)
@@ -33,12 +33,12 @@ AFaccount::Info::Info(AFlib::AccountIdType type, QObject* parent)
 QJsonObject AFaccount::Info::toJson() const
 {
     QJsonObject obj;
-    obj.insert("id", QJsonValue::fromVariant(m_owner.toUInt32()));
+    obj.insert("id", QJsonValue::fromVariant(owner().toUInt32()));
     obj.insert("icon", m_icon);
     obj.insert("email", m_mail);
     obj.insert("name", name());
     obj.insert("description", description());
-    obj.insert("last_update", m_history->lastUpdate().toString(DATE_TIME));
+    obj.insert("last_update", lastUpdate().toString(DATE_TIME));
     return obj;
 }
 

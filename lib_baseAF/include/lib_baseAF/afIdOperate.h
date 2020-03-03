@@ -26,8 +26,9 @@ namespace AFlib::id {
  * ........ ........ ........ ........ ........ ........ */
 struct AFlib::id::Operate_bit : public TbitStruct <48>
 {
-    quint32 userId()     const { return toUInt32(    16, 28); }
-    void setUserId(quint32 id) {       setUInt32(id, 16, 28); }
+    Account_bit user()   const { return Account_bit(userId()); }
+    quint32 userId()     const { return toUInt32(    16, 28);  }
+    void setUserId(quint32 id) {       setUInt32(id, 16, 28);  }
     void setUserId(Acc_bit id) {       setUserId(id.accountId()); }
 
     HIdType historyType()       const { return toHistoryIdType(toUInt8(      13, 3)); }
