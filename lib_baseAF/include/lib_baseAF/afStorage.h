@@ -23,6 +23,7 @@ public:
     void loadAllData();
     void setPath(QDir dir);
 
+    //! Write data as QByteArray all file
     bool writeData(quint32 obj_id, QByteArray data);
     bool writeData(QString f_path, QByteArray data);
     bool writeData(QStringList listOfId, QString object, QByteArray data);

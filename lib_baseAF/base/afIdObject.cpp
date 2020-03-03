@@ -69,12 +69,7 @@ void AFlib::id::Object::addOperations(const QByteArray &list)
     QDataStream stream(list);
     stream >> ptrList;
     for (auto it : ptrList)
-        m_history->addOperation(it);
-}
-
-void AFlib::id::Object::addOperate(const QByteArray &data)
-{
-    m_history->addOperation(Operate(data));
+        addOperation(it);
 }
 
 void AFlib::id::Object::addOperate(ValueType valueKey, QVariant value, Account_bit userId,
@@ -94,12 +89,6 @@ QVariant AFlib::id::Object::getValue(ValueType key) const
     return getValue(static_cast <quint16> (key));
 }
 
-void AFlib::id::Object::addOperate(quint16 valueKey, QVariant value, Account_bit userId,
-                                   HistoryIdType history, SavedIdType saved, QDateTime dTime)
-{
-    m_history->addOperation(Operate(userId, history, saved, value, valueKey, dTime));
-}
-
 QVariant AFlib::id::Object::getValue(quint16 key) const
 {
     OperatePtr last = OperatePtr::create();
@@ -116,13 +105,13 @@ QVariant AFlib::id::Object::getValue(quint16 key) const
 namespace AFlib::id {
 QDataStream &operator << (QDataStream& stream, const AFlib::id::Object& data)
 {
-    stream << data.m_owner << *data.m_history << data.m_bitset;
+    stream << data.m_owner << static_cast <const History&>(data) << data.m_bitset;
     return stream;
 }
 
 QDataStream &operator >> (QDataStream& stream,       AFlib::id::Object& data)
 {
-    stream >> data.m_owner >> *data.m_history >> data.m_bitset;
+    stream >> data.m_owner >> static_cast <History&>(data) >> data.m_bitset;
     return stream;
 }
 }
