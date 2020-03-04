@@ -29,8 +29,8 @@ public:
 
     bool checkNickname(const QString& nick);
 
-    void add(AccountPtr account);
-    void add(GroupPtr group);
+    void add(AccountPtr account, bool isNeedSave = true);
+    void add(GroupPtr group, bool isNeedSave = true);
     void remove(AFlib::id::Account_bit id);
 
 private:

@@ -40,6 +40,17 @@ public:
     QStringList creatorNameList() const;
     QStringList moderatorNameList() const;
 
+    void addAccount  (InfoPtr account, AccessType access);
+    void removeAcount(InfoPtr account, AccessType access);
+    void changeAccess(InfoPtr account, AccessType newAccess);
+
+    void addAccount  (AFIdObject_bit account, AccessType access);
+    void removeAcount(AFIdObject_bit account, AccessType access);
+    void changeAccess(AFIdObject_bit account, AccessType newAccess);
+
+    //! Call update InfoPtr for all user from list to get new values
+    void updateInfoList();
+
 protected:
     friend QDataStream & operator >> (QDataStream& stream,       Group &group);
     friend QDataStream & operator << (QDataStream& stream, const Group &group);

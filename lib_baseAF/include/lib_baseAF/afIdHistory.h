@@ -15,9 +15,12 @@ namespace AFlib::id {
         Name,
         Description,
         //
+        // for account
         Email = 0x10,
+        Login,
         Icon,
         Password,
+        UserList,
     };
 
     enum class CompressValue {
@@ -43,18 +46,36 @@ public:
     void saveShorten();
     void useCompress(CompressValue value);
 
+    // single part
     QVariant getValue(ValueType key) const;
+    void setValue(ValueType key, QVariant value);
+
     template <typename K>
     QVariant getValue(K key) const
     {
         return getValue(static_cast <quint16> (key) + 0x40);
     }
 
-    void setValue(ValueType key, QVariant value) const;
     template <typename K>
-    void setValue(K key, QVariant value) const
+    void setValue(K key, QVariant value)
     {
         setValue(static_cast <quint16> (key) + 0x40, value);
+    }
+
+    // Multi part
+    OperatePtrList getMultiValue(ValueType key) const;
+    void setMultiValue(ValueType key, QVariant value, HIdType type);
+
+    template <typename K>
+    OperatePtrList getMultiValue(K key) const
+    {
+        return getMultiValue(static_cast <quint16> (key) + 0x40);
+    }
+
+    template <typename K>
+    void setMultiValue(K key, const QVariant& value, HIdType type)
+    {
+        setMultiValue(static_cast <quint16> (key) + 0x40, value, type);
     }
 
     void addOperate(Operate    id);
@@ -98,6 +119,9 @@ private:
 
     QVariant getValue(quint16 key) const;
     void setValue(quint16 key, const QVariant& value);
+
+    OperatePtrList getMultiValue(quint16 key) const;
+    void setMultiValue(quint16 key, const QVariant& value, HIdType type);
 
     void addOperate(quint16 valueKey, QVariant value, Account_bit userId,
                     HistoryIdType history, SavedIdType saved, QDateTime dTime);

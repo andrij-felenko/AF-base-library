@@ -45,6 +45,9 @@ protected:
     friend QDataStream & operator << (QDataStream& stream, const Info &info);
 };
 
+typedef QSharedPointer <AFaccount::Info> AccInfoPtr;
+typedef QList <AccInfoPtr> AccInfoPtrList;
+
 QDataStream& operator >> (QDataStream& stream,       AFaccount::InfoPtrList& list);
 QDataStream& operator << (QDataStream& stream, const AFaccount::InfoPtrList& list);
 

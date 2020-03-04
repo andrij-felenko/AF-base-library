@@ -5,13 +5,13 @@
 
 AFaccount::Info::Info(QObject *parent) : Info(0, parent)
 {
-    //
+    // TODO
 }
 
 AFaccount::Info::Info(uint id, QObject* parent)
     : QObject(parent), AFIdObject(AFIdAccount(id), "", "")
 {
-    //
+    // TODO
 }
 
 AFaccount::Info::Info(QJsonObject obj, QObject* parent)

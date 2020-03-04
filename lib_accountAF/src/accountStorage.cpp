@@ -78,22 +78,24 @@ bool AFaccount::Storage::checkNickname(const QString &nick)
     return false;
 }
 
-void AFaccount::Storage::add(AccountPtr account)
+void AFaccount::Storage::add(AccountPtr account, bool isNeedSave)
 {
     if (contains(account->owner()))
         return;
 
     m_accountList.push_back(account);
-    save();
+    if (isNeedSave)
+        save();
 }
 
-void AFaccount::Storage::add(GroupPtr group)
+void AFaccount::Storage::add(GroupPtr group, bool isNeedSave)
 {
     if (contains(group->owner()))
         return;
 
     m_groupList.push_back(group);
-    save();
+    if (isNeedSave)
+        save();
 }
 
 void AFaccount::Storage::remove(AFlib::id::Account_bit id)

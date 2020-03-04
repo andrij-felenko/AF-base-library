@@ -3,8 +3,6 @@ project(lib_baseAF VERSION 0.0.1)
 
 set (baseAF_h
     include/afLib.h
-#    include/lib_baseAF/applicationAF.h
-#    include/lib_baseAF/crypt.h
     include/lib_baseAF/afDir.h
     include/lib_baseAF/afEnum.h
     include/lib_baseAF/afFile.h
@@ -16,17 +14,10 @@ set (baseAF_h
     include/lib_baseAF/afIdOperate.h
     include/lib_baseAF/afIdObject.h
     include/lib_baseAF/afIdObjectBit.h
-#    include/lib_baseAF/afLibHandler.h
-    include/lib_baseAF/afLibSingle.h
-    include/lib_baseAF/afPlugin.h
-#    include/lib_baseAF/afPluginHandler.h
-    include/lib_baseAF/afPluginMetadata.h
-#    include/lib_baseAF/afPluginSingle.h
     include/lib_baseAF/afPreferences.h
     include/lib_baseAF/afSetting.h
     include/lib_baseAF/afStorage.h
     include/lib_baseAF/afSystem.h
-    include/lib_baseAF/afVersion.h
 )
 
 set (baseAF_cpp
@@ -38,14 +29,6 @@ set (baseAF_cpp
     base/afIdObject.cpp
     base/afIdObjectBit.cpp
     base/afSystem.cpp
-#    loader/afLibHandler.cpp
-    loader/afLibSingle.cpp
-    loader/afPlugin.cpp
-#    loader/afPluginHandler.cpp
-    loader/afPluginMetadata.cpp
-#    loader/afPluginSingle.cpp
-    loader/afVersion.cpp
-#    tool/afCrypt.cpp
     tool/afDir.cpp
     tool/afFile.cpp
     tool/afPreferences.cpp

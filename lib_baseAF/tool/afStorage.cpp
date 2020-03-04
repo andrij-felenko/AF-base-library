@@ -58,6 +58,37 @@ bool Storage::addObjectId(QString fileName, const IdObject &object)
     return false;
 }
 
+bool Storage::removeObjectId(QDir dir, QString key, const AFIdObject_bit &object)
+{
+    return removeObjectId(getFile(dir, key), object);
+}
+
+bool Storage::removeObjectId(QString fileName, const AFIdObject_bit &object)
+{
+    QFile file(fileName);
+    if (file.open(QIODevice::ReadOnly)){
+        IdObjectPtrList list;
+        const QByteArray allData = file.readAll();
+        QDataStream stream(allData);
+        stream >> list;
+        file.close();
+
+        auto newRem = std::remove_if(list.begin(), list.end(), [object](IdObjectPtr single) { return single->id_b() == object; });
+        if (newRem != list.end()){
+            list.erase(newRem);
+            if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
+                QDataStream wStream(&file);
+                wStream << list;
+                file.close();
+                return true;
+            }
+        }
+        qDebug() << "Object " << object << " not found.";
+    }
+    qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
+    return false;
+}
+
 bool Storage::updateFile(QDir dir, QString key, const QByteArray &data)
 {
     return updateFile(getFile(dir, key), data);

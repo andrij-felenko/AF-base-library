@@ -17,7 +17,7 @@ QSharedPointer<QNetworkRequest> AFaccount::API::createRequest()
 
 void AFaccount::API::readServerAnswer(QNetworkReply *reply)
 {
-    // 
+    // TODO
 }
 
 AFaccount::AccountAPIPtr AFaccount::API::instance()
@@ -27,32 +27,32 @@ AFaccount::AccountAPIPtr AFaccount::API::instance()
 
 void AFaccount::API::login(const QString &login, const QString &password, const QString &device_name)
 {
-    //
+    // TODO
 }
 
 void AFaccount::API::remind(const QString &email_login)
 {
-    //
+    // TODO
 }
 
 void AFaccount::API::logout(const QString &login, const QString &device_name)
 {
-    //
+    // TODO
 }
 
 void AFaccount::API::checkNew(const QDateTime &dtime_last_update)
 {
-    //
+    // TODO
 }
 
 void AFaccount::API::registrate(const Account &account)
 {
-    //
+    // TODO
 }
 
 void AFaccount::API::checkFreeName(const QString &name)
 {
-    //
+    // TODO
 }
 
 AFaccount::AccountAPIPtr AFaccount::api()

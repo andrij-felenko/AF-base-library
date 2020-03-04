@@ -5,7 +5,8 @@ using namespace AFaccount;
 
 Group::Group(QObject *parent) : AFaccount::Info(parent)
 {
-    //
+    auto subUsers = getMultiValue(AFValueType::UserList);
+    // TODO parse subUsers
 }
 
 InfoPtrList Group::userList()      const { return getByType(AccessType::User);      }
@@ -17,6 +18,41 @@ QStringList Group::userNameList()      const { return getNameByType(AccessType::
 QStringList Group::ownerNameList()     const { return getNameByType(AccessType::Owner);     }
 QStringList Group::creatorNameList()   const { return getNameByType(AccessType::Creator);   }
 QStringList Group::moderatorNameList() const { return getNameByType(AccessType::Moderator); }
+
+void Group::addAccount(InfoPtr account, AccessType access)
+{
+    // TODO
+}
+
+void Group::removeAcount(InfoPtr account, AccessType access)
+{
+    // TODO
+}
+
+void Group::changeAccess(InfoPtr account, AccessType newAccess)
+{
+    // TODO
+}
+
+void Group::addAccount(AFIdObject_bit account, AccessType access)
+{
+    // TODO
+}
+
+void Group::removeAcount(AFIdObject_bit account, AccessType access)
+{
+    // TODO
+}
+
+void Group::changeAccess(AFIdObject_bit account, AccessType newAccess)
+{
+    // TODO
+}
+
+void Group::updateInfoList()
+{
+    // TODO
+}
 
 InfoPtrList Group::getByType(AccessType type, bool inheritType) const
 {

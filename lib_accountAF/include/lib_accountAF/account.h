@@ -17,8 +17,6 @@ namespace AFaccount {
 
 class AFaccount::Account : public AFaccount::Info
 {
-    Q_OBJECT
-    Q_PROPERTY(QString login READ login WRITE setLogin NOTIFY loginChanged)
 public:
     explicit Account(QObject* parent = nullptr);
     Account(QJsonObject obj, QObject* parent = nullptr);
@@ -29,7 +27,7 @@ public:
     QStringList currencyStringList() const;
     InfoPtrList friendList() const;
 
-    QString login() const;
+    virtual QString login() const final;
 
     operator QJsonObject() const;
     virtual QJsonObject toJson() const override;
@@ -37,20 +35,16 @@ public:
 public slots:
     void setLogin(QString login);
 
-signals:
-    void loginChanged(QString login);
-
 protected:
     friend QDataStream & operator >> (QDataStream& stream,       Account &account);
     friend QDataStream & operator << (QDataStream& stream, const Account &account);
 
 private:
-    QString m_passwordHash;
+    virtual QString passwordHash() const final;
     InfoPtrList m_friendList;
     QList <CurrencyEnum> m_currencyList;
 
     friend class Storage;
-    QString m_login;
 };
 
 QDataStream& operator >> (QDataStream& stream,       AFaccount::AccountPtrList& list);

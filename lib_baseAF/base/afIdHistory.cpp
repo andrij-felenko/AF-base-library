@@ -88,7 +88,7 @@ void AFlib::id::History::makeShorten()
 
 void AFlib::id::History::saveShorten()
 {
-    //
+    // TODO
 }
 
 void AFlib::id::History::useCompress(CompressValue value)
@@ -101,9 +101,19 @@ QVariant AFlib::id::History::getValue(ValueType key) const
     return getValue(static_cast <quint16> (key));
 }
 
-void AFlib::id::History::setValue(ValueType key, QVariant value) const
+void AFlib::id::History::setValue(ValueType key, QVariant value)
 {
     setValue(static_cast <quint16> (key), value);
+}
+
+AFlib::id::OperatePtrList AFlib::id::History::getMultiValue(ValueType key) const
+{
+    return getMultiValue(static_cast <quint16> (key));
+}
+
+void AFlib::id::History::setMultiValue(ValueType key, QVariant value, HIdType type)
+{
+    setMultiValue(static_cast <quint16> (key), value, type);
 }
 
 void AFlib::id::History::addOperate(const QByteArray& data)
@@ -134,7 +144,7 @@ void AFlib::id::History::addOperate(ValueType valueKey, QVariant value, quint32 
 
 void AFlib::id::History::refreshLastChangeTime()
 {
-    //
+    // TODO
 }
 
 QVariant AFlib::id::History::getValue(quint16 key) const
@@ -156,6 +166,20 @@ void AFlib::id::History::setValue(quint16 key, const QVariant &value)
         addOperate(key, value, m_owner, HIdType::AddIdLine, SIdType::LocaleSaved);
     else
         addOperate(key, value, m_owner, HIdType::EditIdLine, SIdType::LocaleSaved);
+}
+
+AFlib::id::OperatePtrList AFlib::id::History::getMultiValue(quint16 key) const
+{
+    OperatePtrList list;
+    for (auto it : m_operateList)
+        if (it->key() == key)
+            list.push_back(it);
+    return list;
+}
+
+void AFlib::id::History::setMultiValue(quint16 key, const QVariant &value, HIdType type)
+{
+    addOperate(key, value, m_owner, type, SIdType::LocaleSaved);
 }
 
 void AFlib::id::History::addOperate(Operate id)

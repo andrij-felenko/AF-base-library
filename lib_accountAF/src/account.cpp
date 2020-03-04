@@ -7,13 +7,13 @@
 
 AFaccount::Account::Account(QObject *parent) : AFaccount::Info(parent)
 {
-    //
+    // TODO
 }
 
 AFaccount::Account::Account(QJsonObject obj, QObject *parent) : AFaccount::Info(obj, parent)
 {
-    m_login = obj.value("login").toString();
-    m_passwordHash = obj.value("password").toString();
+    setLogin(obj.value("login").toString());
+    setValue(AFValueType::Password, obj.value("password").toString());
     for (auto it : obj.value("currencies").toVariant().toStringList())
         m_currencyList.push_back(CurrencyAF::Type::toEnum(it));
     auto friendArray = obj.value("friend_list").toArray();
@@ -33,7 +33,7 @@ AFaccount::AccountPtr AFaccount::Account::me()
 bool AFaccount::Account::check(QString password) const
 {
     thread()->wait(20);
-    return password == m_passwordHash || password == QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Md5);
+    return password == passwordHash() || password == QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Md5);
 }
 
 QList <CurrencyEnum> AFaccount::Account::currencyList() const
@@ -54,16 +54,21 @@ AFaccount::InfoPtrList AFaccount::Account::friendList() const
     return m_friendList;
 }
 
+QString AFaccount::Account::passwordHash() const
+{
+    return getValue(AFValueType::Password).toString();
+}
+
 QString AFaccount::Account::login() const
 {
-    return m_login;
+    return getValue(AFValueType::Login).toString();
 }
 
 QJsonObject AFaccount::Account::toJson() const
 {
     QJsonObject obj = static_cast <const Info&> (*this);
-    obj.insert("login", m_login);
-    obj.insert("password", m_passwordHash);
+    obj.insert("login", login());
+    obj.insert("password", passwordHash());
     obj.insert("currencies", QJsonValue::fromVariant(QVariant::fromValue(currencyStringList())));
     QJsonArray friendArray;
     for (auto it : m_friendList)
@@ -79,24 +84,23 @@ AFaccount::Account::operator QJsonObject() const
 
 void AFaccount::Account::setLogin(QString login)
 {
-    if (m_login == login)
-        return;
-
-    m_login = login;
-    emit loginChanged(m_login);
+    setValue(AFValueType::Login, login);
 }
 
 namespace AFaccount {
 QDataStream& operator >> (QDataStream &stream, AFaccount::Account &account)
 {
-    stream >> account.m_login >> account.m_passwordHash >> account.m_friendList >> account.m_currencyList;
+    QString hash, login;
+    stream >> login >> hash >> account.m_friendList >> account.m_currencyList;
+    account.setLogin(login);
+    account.setValue(AFValueType::Password, hash);
     stream >> static_cast <Info&> (account);
     return stream;
 }
 
 QDataStream& operator << (QDataStream &stream, const AFaccount::Account &account)
 {
-    stream << account.m_login << account.m_passwordHash << account.m_friendList << account.m_currencyList;
+    stream << account.login() << account.passwordHash() << account.m_friendList << account.m_currencyList;
     stream << static_cast <const Info&> (account);
     return stream;
 }

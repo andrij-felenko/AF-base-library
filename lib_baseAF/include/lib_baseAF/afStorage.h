@@ -27,6 +27,9 @@ public:
     bool addObjectId(QDir dir, QString key, const IdObject& object);
     bool addObjectId(QString fileName,      const IdObject& object);
 
+    bool removeObjectId(QDir dir, QString key, const AFIdObject_bit& object);
+    bool removeObjectId(QString fileName,      const AFIdObject_bit& object);
+
     bool updateFile(QDir dir, QString key, const QByteArray& data);
     bool updateFile(QString fileName,      const QByteArray& data);
 
