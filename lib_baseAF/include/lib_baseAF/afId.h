@@ -23,6 +23,7 @@ namespace AFlib {
     typedef id::OperatePtrList IdOperatePtrList;
 
     typedef id::ValueType ValueType;
+    typedef  id::CompressValue CompressValue;
 }
 
 typedef AFlib::IdAccount_bit AFIdAccount;
@@ -40,5 +41,6 @@ typedef AFlib::IdOperatePtr     AFIdOperatePtr;
 typedef AFlib::IdOperatePtrList AFIdOperatePtrList;
 
 typedef AFlib::ValueType AFValueType;
+typedef AFlib::CompressValue AFCompressValue;
 
 #endif // LIB_BASEAF_ID_H

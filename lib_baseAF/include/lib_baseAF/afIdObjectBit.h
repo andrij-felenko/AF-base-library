@@ -14,7 +14,7 @@ namespace AFlib::id {
  *
  *   24       16        8        0
  *    |        |        |        |
- * #### ######## ####.... ........ 16: object unique id by current types
+ * #### ######## ####.... ........ 16: object unique id by current typesx
  * .... ........ ....#### ###.....  7: type of object
  * .... ........ ........ ...#####  5: plugin id [0 - mean global variable]
  * .... ........ ........ ........ */

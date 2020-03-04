@@ -15,6 +15,16 @@ namespace AFlib::id {
         Name,
         Description,
         //
+        Email = 0x10,
+        Icon,
+        Password,
+    };
+
+    enum class CompressValue {
+        Shortest,
+        AllActive,
+        EachByOne,
+        Full,
     };
 }
 
@@ -31,12 +41,20 @@ public:
     void makeFull(const QByteArray& data);
     void makeShorten();
     void saveShorten();
+    void useCompress(CompressValue value);
 
     QVariant getValue(ValueType key) const;
     template <typename K>
     QVariant getValue(K key) const
     {
         return getValue(static_cast <quint16> (key) + 0x40);
+    }
+
+    void setValue(ValueType key, QVariant value) const;
+    template <typename K>
+    void setValue(K key, QVariant value) const
+    {
+        setValue(static_cast <quint16> (key) + 0x40, value);
     }
 
     void addOperate(Operate    id);
@@ -70,6 +88,7 @@ public:
 protected:
     QDateTime m_lastUpdate;
     OperatePtrList m_operateList;
+    Account_bit m_owner;
 
     friend QDataStream &operator << (QDataStream& stream, const History& data);
     friend QDataStream &operator >> (QDataStream& stream,       History& data);
@@ -78,6 +97,7 @@ private:
     void refreshLastChangeTime();
 
     QVariant getValue(quint16 key) const;
+    void setValue(quint16 key, const QVariant& value);
 
     void addOperate(quint16 valueKey, QVariant value, Account_bit userId,
                     HistoryIdType history, SavedIdType saved, QDateTime dTime);

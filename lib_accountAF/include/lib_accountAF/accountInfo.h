@@ -18,23 +18,23 @@ namespace AFaccount {
 class AFaccount::Info : public QObject, public AFIdObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
-    Q_PROPERTY(QString mail READ mail WRITE setMail NOTIFY mailChanged)
+//    Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
+//    Q_PROPERTY(QString mail READ mail WRITE setMail NOTIFY mailChanged)
 public:
     explicit Info(QObject* parent = nullptr);
     Info(uint id, QObject* parent = nullptr);
     Info(QJsonObject obj, QObject* parent = nullptr);
     Info(AFlib::AccountIdType type, QObject* parent = nullptr);
 
-    virtual QString icon() const final { return m_icon; }
-    virtual QString mail() const final { return m_mail; }
+    virtual QByteArray icon() const final;
+    virtual QString mail() const final;
 
     operator QJsonObject() const;
     virtual QJsonObject toJson() const;
 
 public slots:
-    virtual void setIcon(QString icon) final;
-    virtual void setMail(QString mail) final;
+    virtual void setIcon(const QByteArray& icon) final;
+    virtual void setMail(const QString& mail) final;
 
 signals:
     void iconChanged(QString icon);
@@ -43,10 +43,6 @@ signals:
 protected:
     friend QDataStream & operator >> (QDataStream& stream,       Info &info);
     friend QDataStream & operator << (QDataStream& stream, const Info &info);
-
-private:
-    QString m_icon;
-    QString m_mail;
 };
 
 QDataStream& operator >> (QDataStream& stream,       AFaccount::InfoPtrList& list);

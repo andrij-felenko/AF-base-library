@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(lib_baseAF VERSION 0.0.1)
 
 set (baseAF_h
+    include/afLib.h
 #    include/lib_baseAF/applicationAF.h
 #    include/lib_baseAF/crypt.h
     include/lib_baseAF/afDir.h

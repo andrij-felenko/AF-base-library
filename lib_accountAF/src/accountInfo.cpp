@@ -17,8 +17,9 @@ AFaccount::Info::Info(uint id, QObject* parent)
 AFaccount::Info::Info(QJsonObject obj, QObject* parent)
     : Info(obj.value("id").toVariant().toUInt(), parent)
 {
-    m_icon = obj.value("icon").toString();
-    m_mail = obj.value("email").toString();
+    // TODO icon can't covert to QString, it's QByteArray
+//    m_icon = obj.value("icon").toString();
+    setMail(obj.value("email").toString());
     setName(obj.value("name").toString());
     setDescription(obj.value("description").toString());
     updateTime(QDateTime::fromString(obj.value("last_update").toString(), DATE_TIME));
@@ -30,12 +31,22 @@ AFaccount::Info::Info(AFlib::AccountIdType type, QObject* parent)
     // TODO fix
 }
 
+QByteArray AFaccount::Info::icon() const
+{
+    return getValue(AFValueType::Icon).toByteArray();
+}
+
+QString AFaccount::Info::mail() const
+{
+    return getValue(AFValueType::Email).toString();
+}
+
 QJsonObject AFaccount::Info::toJson() const
 {
     QJsonObject obj;
     obj.insert("id", QJsonValue::fromVariant(owner().toUInt32()));
-    obj.insert("icon", m_icon);
-    obj.insert("email", m_mail);
+//    obj.insert("icon", m_icon);
+    obj.insert("email", mail());
     obj.insert("name", name());
     obj.insert("description", description());
     obj.insert("last_update", lastUpdate().toString(DATE_TIME));
@@ -47,35 +58,31 @@ AFaccount::Info::operator QJsonObject() const
     return toJson();
 }
 
-void AFaccount::Info::setIcon(QString icon)
+void AFaccount::Info::setIcon(const QByteArray& icon)
 {
-    if (m_icon == icon)
-        return;
-
-    m_icon = icon;
-    emit iconChanged(m_icon);
+    setValue(AFValueType::Icon, icon);
 }
 
-void AFaccount::Info::setMail(QString mail)
+void AFaccount::Info::setMail(const QString& mail)
 {
-    if (m_mail == mail)
-        return;
-
-    m_mail = mail;
-    emit mailChanged(m_mail);
+    setValue(AFValueType::Email, mail);
 }
 
 namespace AFaccount {
 QDataStream &operator >>(QDataStream &stream, AFaccount::Info &info)
 {
-    stream >> info.m_icon >> info.m_mail;
+    QByteArray icon;
+    QString mail;
+    stream >> icon >> mail;
+    info.setIcon(icon);
+    info.setMail(mail);
     stream >> static_cast <AFIdObject&> (info);
     return stream;
 }
 
 QDataStream &operator <<(QDataStream &stream, const AFaccount::Info &info)
 {
-    stream << info.m_icon << info.m_mail;
+    stream << info.icon() << info.mail();
     stream << static_cast <const AFIdObject&> (info);
     return stream;
 }

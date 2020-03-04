@@ -5,7 +5,7 @@ using namespace AFlib;
 
 Storage::Storage(QObject *parent) : QObject(parent), m_storageDir(afDir()->storage())
 {
-    //
+    loadAllData();
 }
 
 void Storage::loadAllData()
@@ -39,7 +39,7 @@ bool Storage::addObjectId(QString fileName, const IdObject &object)
     QFile file(fileName);
     if (file.open(QIODevice::ReadOnly)){
         IdObjectPtrList list;
-        auto allData = file.readAll();
+        const QByteArray allData = file.readAll();
         QDataStream stream(allData);
         stream >> list;
 
@@ -54,8 +54,7 @@ bool Storage::addObjectId(QString fileName, const IdObject &object)
             return true;
         }
     }
-    else
-        qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
+    qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
     return false;
 }
 
@@ -66,7 +65,14 @@ bool Storage::updateFile(QDir dir, QString key, const QByteArray &data)
 
 bool Storage::updateFile(QString fileName, const QByteArray &data)
 {
-    //
+    QFile file(fileName);
+    if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
+        file.write(data);
+        file.close();
+        return true;
+    }
+    qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
+    return false;
 }
 
 bool Storage::addOperate(QDir dir, QString key, const AFIdObject_bit &object, const QByteArray &data)
@@ -97,7 +103,28 @@ bool Storage::addOperate(QDir dir, QString key, const AFIdObject_bit &object, co
 
 bool Storage::addOperate(QString fileName, const AFIdObject_bit &object, const IdOperatePtr &operate)
 {
-    //
+    QFile file(fileName);
+    if (file.open(QIODevice::ReadOnly)){
+        IdObjectPtrList list;
+        const QByteArray allData = file.readAll();
+        QDataStream stream(allData);
+        stream >> list;
+        file.close();
+
+        for (auto it : list)
+            if (it->id_b() == object){
+                it->addOperate(operate);
+                if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
+                    QDataStream wStream(&file);
+                    wStream << list;
+                    file.close();
+                    return true;
+                }
+            }
+        qDebug() << "Object " << object << " not found.";
+    }
+    qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
+    return false;
 }
 
 bool Storage::addOperateList(QDir dir, QString key, const AFIdObject_bit &object, const QByteArray &data)
@@ -113,158 +140,69 @@ bool Storage::addOperateList(QString fileName, const AFIdObject_bit &object, con
     return addOperateList(fileName, object, list);
 }
 
-bool Storage::addOperateList(QDir dir, QString key, const AFIdObject_bit &object, const IdOperatePtrList &operate)
+bool Storage::addOperateList(QDir dir, QString key, const AFIdObject_bit &object, const IdOperatePtrList &list)
 {
-    return addOperateList(getFile(dir, key), object, operate);
+    return addOperateList(getFile(dir, key), object, list);
 }
 
-bool Storage::addOperateList(QString fileName, const AFIdObject_bit &object, const IdOperatePtrList &operate)
+bool Storage::addOperateList(QString fileName, const AFIdObject_bit &object, const IdOperatePtrList &list)
 {
-    //
+    bool ret = true;
+    for (auto it : list)
+        ret &= addOperate(fileName, object, it);
+    return ret;
 }
 
-//bool Storage::writeData(quint32 obj_id, QByteArray data)
-//{
-//    return writeData(
-//        getFile(
-//            getDir(), obj_id), data);
-//}
+IdObjectPtrList Storage::readObjectList(QString fileName, CompressValue compress)
+{
+    IdObjectPtrList list;
+    QFile file(fileName);
+    if (file.open(QIODevice::ReadOnly)){
+        IdObjectPtrList list;
+        const QByteArray allData = file.readAll();
+        QDataStream stream(allData);
+        stream >> list;
+        file.close();
 
-//bool Storage::writeData(QString f_path, QByteArray data)
-//{
-//    QFile file(f_path);
-//    if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
-//        auto result = file.write(data);
-//        if (result == -1)
-//            qDebug() << "Can`t save to file [" << f_path << "], write return -1.";
-//        return result;
-//    }
-//    else
-//        qDebug() << "Can`t save to file [" << f_path << "], error:" << file.errorString();
-//    return false;
-//}
+        // compress objects
+        for (auto it : list)
+            it->useCompress(compress);
+    }
+    else
+        qDebug() << "Can`t read file [" << fileName << "], error:" << file.errorString();
 
-//bool Storage::writeData(QStringList listOfId, QString object, QByteArray data)
-//{
-//    return writeData(getFile(getDir(listOfId), object), data);
-//}
+    return list;
+}
 
-//bool Storage::writeData(QList<quint32> list, quint32 obj_id, QByteArray data)
-//{
-//    return writeData(getFile(getDir(list), obj_id), data);
-//}
+IdObjectPtr Storage::readObject(QDir dir, QString key, const AFIdObject_bit &object, CompressValue compress)
+{
+    return readObject(getFile(dir, key), object, compress);
+}
 
-//bool Storage::writeOperate(quint32 obj_id, IdOperate &data)
-//{
-//    return writeOperate(getFile(getDir(), obj_id), data);
-//}
+IdObjectPtr Storage::readObject(QString fileName, const AFIdObject_bit &object, CompressValue compress)
+{
+    IdObjectPtrList list;
+    QFile file(fileName);
+    if (file.open(QIODevice::ReadOnly)){
+        IdObjectPtrList list;
+        const QByteArray allData = file.readAll();
+        QDataStream stream(allData);
+        stream >> list;
+        file.close();
 
-//bool Storage::writeOperate(QString f_path, IdOperate &data)
-//{
-//    auto objData = readData(f_path);
-//    if (objData.isNull()){
-//        qDebug() << "Object not found for: " << f_path;
-//        return false;
-//    }
-//    IdObject obj(objData);
-//    obj.addOperate(data);
-//    // TODO recheck it
-////    auto last = obj.history()->getLastOperation();
-////    if (last.isNull())
-////        return false;
+        // compress objects
+        for (auto it : list)
+            if (it->id_b() == object){
+                it->useCompress(compress);
+                return it;
+            }
+        qDebug() << "Can't find " << object << " in this " << fileName << " file.";
+    }
+    else
+        qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
 
-////    setLastChangedTime(obj.owner(), obj.pluginId(), last->type(), last->uniqueId(), last->datetime());
-//    return true;
-//}
-
-//bool Storage::writeOperate(QStringList listOfId, QString object, IdOperate &data)
-//{
-//    return writeData(getFile(getDir(listOfId), object), data);
-//}
-
-//bool Storage::writeOperate(QList<quint32> list, quint32 obj_id, IdOperate &data)
-//{
-//    return writeData(getFile(getDir(list), obj_id), data);
-//}
-
-//bool Storage::writeOperatePtr(quint32 obj_id, IdOperatePtr data)
-//{
-//    return writeOperate(obj_id, *data);
-//}
-
-//bool Storage::writeOperatePtr(QString f_path, IdOperatePtr data)
-//{
-//    return writeOperate(f_path, *data);
-//}
-
-//bool Storage::writeOperatePtr(QStringList listOfId, QString object, IdOperatePtr data)
-//{
-//    return writeOperate(listOfId, object, *data);
-//}
-
-//bool Storage::writeOperatePtr(QList<quint32> list, quint32 obj_id, IdOperatePtr data)
-//{
-//    return writeOperate(list, obj_id, *data);
-//}
-
-//bool Storage::writeOperatePtrList(quint32 obj_id, IdOperatePtrList data)
-//{
-//    return writeOperatePtrList(getFile(getDir(), obj_id), data);
-//}
-
-//bool Storage::writeOperatePtrList(QString f_path, IdOperatePtrList data)
-//{
-//    auto objData = readData(f_path);
-//    if (objData.isNull()){
-//        qDebug() << "Object not found for: " << f_path;
-//        return false;
-//    }
-//    IdObject obj(objData);
-//    // TODO recheck it
-////    for (auto it : data)
-////        obj.history()->addOperation(it);
-////    auto last = obj.history()->getLastOperation();
-////    if (last.isNull())
-////        return false;
-
-////    setLastChangedTime(obj.owner(), obj.pluginId(), last->type(), last->uniqueId(), last->datetime());
-//    return true;
-//}
-
-//bool Storage::writeOperatePtrList(QStringList listOfId, QString object, IdOperatePtrList data)
-//{
-//    return writeOperatePtrList(getFile(getDir(listOfId), object), data);
-//}
-
-//bool Storage::writeOperatePtrList(QList <quint32> list, quint32 obj_id, IdOperatePtrList data)
-//{
-//    return writeOperatePtrList(getFile(getDir(list), obj_id), data);
-//}
-
-//QByteArray Storage::readData(quint32 obj_id) const
-//{
-//    return readData(getFile(getDir(), obj_id));
-//}
-
-//QByteArray Storage::readData(QString f_path) const
-//{
-//    QFile file(f_path);
-//    if (file.open(QIODevice::ReadOnly))
-//        return file.readAll();
-//    else
-//        qDebug() << "Can`t open file [" << f_path << "], error:" << file.errorString();
-//    return QByteArray();
-//}
-
-//QByteArray Storage::readData(QStringList listOfId, QString object) const
-//{
-//    return readData(getFile(getDir(listOfId), object));
-//}
-
-//QByteArray Storage::readData(QList<quint32> list, quint32 obj_id) const
-//{
-//    return readData(getFile(getDir(list), obj_id));
-//}
+    return IdObjectPtr();
+}
 
 QString Storage::getFile(const QDir& dir, quint32 id) const
 {
@@ -332,26 +270,24 @@ void Storage::loadFromDirectory(QDir &dir)
     auto fileList = dir.entryList({"*.afd"}, QDir::Files);
     auto dirList = dir.entryList(QDir::Dirs);
     for (auto it : fileList){
-        auto data = readData(getFile(dir, it));
-        if (data.isNull())
+        IdObjectPtrList list = readObjectList(getFile(dir, it));
+        if (list.isEmpty())
             continue;
-        IdObject obj(data);
-        // add this value to m_storageList
-        addAccount(obj.owner());
-        for (auto accIt : m_storageList)
-            if (accIt.accountBit == obj.owner()){
-                accIt.addPlugin(obj.pluginId());
-                for (auto pluginId : accIt.pluginList){
-                    if (pluginId.pluginId == obj.pluginId()){
-                        // TODO this is need to rewrite
-//                        auto last = obj.history()->getLastOperation();
-//                        if (not last.isNull())
-//                            pluginId.addSingle(last->datetime(), last->uniqueId(), last->type());
-                        break;
+
+        for (auto objIt : list){
+            addAccount(objIt->owner());
+            for (auto accIt : m_storageList)
+                if (accIt.accountBit == objIt->owner()){
+                    accIt.addPlugin(objIt->pluginId());
+                    for (auto pluginId : accIt.pluginList){
+                        if (pluginId.pluginId == objIt->pluginId()){
+                            pluginId.addSingle(objIt->lastChange(), objIt->uniqueId(), objIt->type());
+                            break;
+                        }
                     }
+                    break;
                 }
-                break;
-            }
+        }
     }
     for (auto it : dirList){
         QDir subdir = dir;

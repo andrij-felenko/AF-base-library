@@ -91,9 +91,19 @@ void AFlib::id::History::saveShorten()
     //
 }
 
+void AFlib::id::History::useCompress(CompressValue value)
+{
+    // TODO write it
+}
+
 QVariant AFlib::id::History::getValue(ValueType key) const
 {
     return getValue(static_cast <quint16> (key));
+}
+
+void AFlib::id::History::setValue(ValueType key, QVariant value) const
+{
+    setValue(static_cast <quint16> (key), value);
 }
 
 void AFlib::id::History::addOperate(const QByteArray& data)
@@ -138,6 +148,14 @@ QVariant AFlib::id::History::getValue(quint16 key) const
     if (last->key() == 0 || not isHIdEnable(last->historyType()))
         return QVariant();
     return last->m_value;
+}
+
+void AFlib::id::History::setValue(quint16 key, const QVariant &value)
+{
+    if (getValue(key).isNull())
+        addOperate(key, value, m_owner, HIdType::AddIdLine, SIdType::LocaleSaved);
+    else
+        addOperate(key, value, m_owner, HIdType::EditIdLine, SIdType::LocaleSaved);
 }
 
 void AFlib::id::History::addOperate(Operate id)

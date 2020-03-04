@@ -40,9 +40,6 @@ public:
 protected:
     friend QDataStream &operator << (QDataStream& stream, const Object& data);
     friend QDataStream &operator >> (QDataStream& stream,       Object& data);
-
-private:
-    Account_bit m_owner;
 };
 
 QDataStream &operator << (QDataStream& stream, const AFlib::id::ObjectPtrList& data);

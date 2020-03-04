@@ -25,9 +25,9 @@ AFlib::id::Object::Object(Account_bit owner, QString name, QString descr)
 
 AFlib::id::Object::Object(Account_bit owner, QString name, QString descr, quint16 uniqueId, quint8 type,
                           quint8 pluginId, quint8 parentType, quint32 parentId)
-      : ObjectFull_bit(Object_bit(uniqueId, type, pluginId), parentType, parentId),
-      m_owner(owner)
+      : ObjectFull_bit(Object_bit(uniqueId, type, pluginId), parentType, parentId)
 {
+    setOwner(owner);
     setName(name);
     setDescription(descr);
 }
@@ -49,18 +49,12 @@ QString AFlib::id::Object::description() const
 
 void AFlib::id::Object::setName(const QString &name)
 {
-    if (getValue(ValueType::Name).isNull())
-        addOperate(ValueType::Name, name, m_owner);
-    else
-        addOperate(ValueType::Name, name, m_owner, HIdType::EditIdLine);
+    setValue(ValueType::Name, name);
 }
 
 void AFlib::id::Object::setDescription(const QString &description)
 {
-    if (getValue(ValueType::Description).isNull())
-        addOperate(ValueType::Description, description, m_owner);
-    else
-        addOperate(ValueType::Description, description, m_owner, HIdType::EditIdLine);
+    setValue(ValueType::Description, description);
 }
 
 bool AFlib::id::Object::setOwner(const Account_bit &owner)
