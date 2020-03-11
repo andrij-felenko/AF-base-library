@@ -2,8 +2,10 @@ cmake_minimum_required(VERSION 3.14)
 project(server_accountAF)
 
 set (server_accountAF_src
-    httpServer.cpp
-    httpServer.h
+    dataServer.cpp
+    dataServer.h
+    accountServer.cpp
+    accountServer.h
     main.cpp
 )
 
