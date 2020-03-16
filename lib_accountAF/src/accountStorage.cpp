@@ -5,16 +5,20 @@
 #include <QtCore/QCryptographicHash>
 #include <QtCore/QDebug>
 
-#include "lib_baseAF/afDir.h"
+#include <AFbase/AfDir>
+#include <AFbase/AfStorage>
+#include <AFbase/AfEnum>
 
-AFaccount::Storage::Storage(QObject *parent) : QObject(parent)
+AFaccount::Storage::Storage()
 {
-    load();
+    if (m_accountStorageDir == QDir::current())
+        m_accountStorageDir = AFlib::afDir()->users();
+    reload();
 }
 
 AFaccount::StoragePtr AFaccount::Storage::instance()
 {
-    return accountStorage();
+    return storage();
 }
 
 bool AFaccount::Storage::check(const AFlib::id::Account_bit &id)
@@ -42,13 +46,13 @@ std::optional <QString> AFaccount::Storage::checkLogin(const QString &login, con
             if (it->check(password))
                 return std::nullopt;
             else
-                return QString(tr("Password not equal."));
+                return QString("Password not equal.");
         }
 
-    return QString(tr("Login %1 not found in storage.")).arg(login);
+    return QString("Login %1 not found in storage.").arg(login);
 }
 
-AFaccount::InfoPtr AFaccount::Storage::getInfo(const AFlib::id::Account_bit &id)
+AFaccount::InfoPtr AFaccount::Storage::getInfo(const AFIdAccount &id)
 {
     auto accId = id.accountId();
     for (int i = 0; i < m_accountList.length(); i++)
@@ -73,7 +77,7 @@ AFaccount::InfoPtr AFaccount::Storage::getInfo(const quint32 &id)
 bool AFaccount::Storage::checkNickname(const QString &nick)
 {
     for (auto it : m_accountList)
-        if (it->m_login == nick)
+        if (it->login() == nick)
             return true;
     return false;
 }
@@ -85,7 +89,7 @@ void AFaccount::Storage::add(AccountPtr account, bool isNeedSave)
 
     m_accountList.push_back(account);
     if (isNeedSave)
-        save();
+        save(account);
 }
 
 void AFaccount::Storage::add(GroupPtr group, bool isNeedSave)
@@ -95,45 +99,57 @@ void AFaccount::Storage::add(GroupPtr group, bool isNeedSave)
 
     m_groupList.push_back(group);
     if (isNeedSave)
-        save();
+        save(group);
 }
 
-void AFaccount::Storage::remove(AFlib::id::Account_bit id)
+bool AFaccount::Storage::remove(AFlib::id::Account_bit id)
 {
+    auto info = getInfo(id);
+    if (info.isNull())
+        return false;
+
     m_accountList.erase(std::remove_if(m_accountList.begin(), m_accountList.end(),
                                        [id](const AccountPtr a){ return a->owner() == id.accountId(); }));
     m_groupList.erase(std::remove_if(m_groupList.begin(), m_groupList.end(),
                                      [id](const GroupPtr g){ return g->owner() == id.accountId(); }));
-    save();
+    return AFlib::afStorage()->removeObjectId(m_accountStorageDir, QString::number(id, 16), info.data()->id_b());
 }
 
-void AFaccount::Storage::load()
+void AFaccount::Storage::reload()
 {
     m_groupList.clear();
     m_accountList.clear();
-    QFile file(AFlib::afDir()->storage().absoluteFilePath("accounts.afd"));
-    if (file.open(QIODevice::ReadOnly)){
-        QDataStream stream(&file);
-        stream >> m_accountList << m_groupList;
-        file.close();
+
+    // read all objects
+    auto list = AFlib::afStorage()->readObjectList(m_accountStorageDir, true, AFCompressValue::Shortest);
+
+    // remove object that not account
+    list.erase(std::remove_if(list.begin(), list.end(), [=](AFIdObjectPtr ptr) { return ptr->uniqueId() != 0; }));
+
+    // separate it to group and acount list
+    for (auto it : list){
+        if (it->owner().accountType() == AFlib::AccountIdType::User){
+            auto ptr = AFaccount::AccountPtr::create(it.operator*());
+            m_accountList.push_back(ptr);
+        }
+        else {
+            auto ptr = AFaccount::GroupPtr::create(it.operator*());
+            m_groupList.push_back(ptr);
+        }
     }
-    else
-        qWarning() << "Can`t open account file for load.";
 }
 
-void AFaccount::Storage::save()
+bool AFaccount::Storage::save(AccountPtr account)
 {
-    QFile file(AFlib::afDir()->storage().absoluteFilePath("accounts.afd"));
-    if (file.open(QIODevice::Truncate | QIODevice::WriteOnly)){
-        QDataStream stream(&file);
-        stream << m_accountList << m_groupList;
-        file.close();
-    }
-    else
-        qWarning() << "Can`t open account file for save.";
+    return AFlib::afStorage()->updateFile(m_accountStorageDir, QString::number(account->id(), 16), account->getData());
 }
 
-bool AFaccount::Storage::contains(AFlib::id::Account_bit id)
+bool AFaccount::Storage::save(GroupPtr group)
+{
+    return AFlib::afStorage()->updateFile(m_accountStorageDir, QString::number(group->id(), 16), group->getData());
+}
+
+bool AFaccount::Storage::contains(AFlib::id::Account_bit id) const
 {
     auto accId = id.accountId();
     for (auto it : m_accountList)
@@ -147,11 +163,11 @@ bool AFaccount::Storage::contains(AFlib::id::Account_bit id)
     return false;
 }
 
-AFaccount::StoragePtr AFaccount::accountStorage()
+AFaccount::StoragePtr AFaccount::storage()
 {
     static StoragePtr ptr;
     if (ptr.isNull())
-        ptr = StoragePtr::create(qApp);
+        ptr = StoragePtr::create();
 
     return ptr;
 }

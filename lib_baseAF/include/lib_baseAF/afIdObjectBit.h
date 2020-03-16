@@ -10,14 +10,14 @@ namespace AFlib::id {
     typedef Object_bit Obj_bit;
 }
 
-/* _________OBJECT_ID_Bit_________
- *
- *   24       16        8        0
- *    |        |        |        |
- * #### ######## ####.... ........ 16: object unique id by current typesx
- * .... ........ ....#### ###.....  7: type of object
- * .... ........ ........ ...#####  5: plugin id [0 - mean global variable]
- * .... ........ ........ ........ */
+//! \brief The Function class
+//! \details Bit table, total size <b>28</b>
+//! |<center>OBJECT ID TABLE</center>|||||Size|Description|
+//! |:-|-:|-:|-:|-:|-:||
+//! | |  24|      16|       8|       0| | |
+//! |*|####|########|####oooo|oooooooo|16|object unique id by current types|
+//! |*|oooo|oooooooo|oooo####|###ooooo| 7|type of object|
+//! |*|oooo|oooooooo|oooooooo|ooo#####| 5|plugin id, 0 - mean global variable|
 struct AFlib::id::Object_bit : public TbitStruct <28>
 {
     explicit Object_bit(quint32 subjectFull = 0);
@@ -37,16 +37,20 @@ struct AFlib::id::Object_bit : public TbitStruct <28>
     void setPluginId(quint8 id) {       setUInt8(id, 0, 5); }
 };
 
-/* _________________________OBJECT_FULL_ID_Bit___________________________
- * |_______[28]_OBJECT_ID________|
- * 62   56       48       40       32       24       16        8        0
- * |     |        |        |        |        |        |        |        |
- * ####### ######## #....... ........ ........ ........ ........ ........ 16: object unique id by current types
- * ....... ........ .####### ........ ........ ........ ........ ........  7: type of object
- * ....... ........ ........ #####... ........ ........ ........ ........  5: plugin id [0 - mean global variable]
- * ....... ........ ........ .....### ####.... ........ ........ ........  7: parent subject type
- * ....... ........ ........ ........ ....#### ######## ######## ######## 28: parent id [use prev subject or in account id on top]
- * ....... ........ ........ ........ ........ ........ ........ ........ */
+//! \brief The Function class
+//! \details Bit table, total size <b>63</b>
+//! |<center>OBJECT FULL ID TABLE</center>||||||||||Size|Description|
+//! |:-|-:|-:|-:|-:|-:|-:|-:|-:|-:|-:||
+//! | |     56|      48|      40|   35| 32|      24|      16|       8|       0| | |
+//! |*|#######|########|########|#####|ooo|oooooooo|oooooooo|oooooooo|oooooooo|28|Object_bit|
+//! |*|ooooooo|oooooooo|oooooooo|ooooo|###|########|########|########|########|35|Parent id|
+//! |<b>Object_bit:</b>||||||||||||
+//! |*|#######|########|#ooooooo|ooooo|   |        |        |        |        |16|object unique id by current types|
+//! |*|ooooooo|oooooooo|o#######|ooooo|   |        |        |        |        | 7|type of object|
+//! |*|ooooooo|oooooooo|oooooooo|#####|   |        |        |        |        | 5|plugin id, 0 - mean global variable|
+//! |<b>Parent id bit instruction:</b>||||||||||||
+//! |*|       |        |        |     |###|####oooo|oooooooo|oooooooo|oooooooo| 7|parent subject type|
+//! |*|       |        |        |     |ooo|oooo####|########|########|########|28|parent id, use prev subject or in account id on top|
 struct AFlib::id::ObjectFull_bit : public TbitStruct <63>
 {
     explicit ObjectFull_bit(quint64 subjectFull = 0);

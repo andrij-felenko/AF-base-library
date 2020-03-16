@@ -13,10 +13,11 @@ namespace AFlib {
     typedef id::History    IdHistory;
     typedef id::HistoryPtr IdHistoryPtr;
 
-    typedef id::Object        IdObject;
-    typedef id::Object_bit    IdObject_bit;
-    typedef id::ObjectPtr     IdObjectPtr;
-    typedef id::ObjectPtrList IdObjectPtrList;
+    typedef id::Object         IdObject;
+    typedef id::Object_bit     IdObject_bit;
+    typedef id::ObjectFull_bit IdObjectFull_bit;
+    typedef id::ObjectPtr      IdObjectPtr;
+    typedef id::ObjectPtrList  IdObjectPtrList;
 
     typedef id::Operate        IdOperate;
     typedef id::OperatePtr     IdOperatePtr;
@@ -31,10 +32,11 @@ typedef AFlib::IdAccount_bit AFIdAccount;
 typedef AFlib::IdHistory    AFIdHistory;
 typedef AFlib::IdHistoryPtr AFIdHistoryPtr;
 
-typedef AFlib::IdObject        AFIdObject;
-typedef AFlib::IdObject_bit    AFIdObject_bit;
-typedef AFlib::IdObjectPtr     AFIdObjectPtr;
-typedef AFlib::IdObjectPtrList AFIdObjectPtrList;
+typedef AFlib::IdObject         AFIdObject;
+typedef AFlib::IdObject_bit     AFIdObject_bit;
+typedef AFlib::IdObjectFull_bit AFIdObjectFull_bit;
+typedef AFlib::IdObjectPtr      AFIdObjectPtr;
+typedef AFlib::IdObjectPtrList  AFIdObjectPtrList;
 
 typedef AFlib::IdOperate        AFIdOperate;
 typedef AFlib::IdOperatePtr     AFIdOperatePtr;

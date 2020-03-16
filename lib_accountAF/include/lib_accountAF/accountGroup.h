@@ -29,6 +29,7 @@ class AFaccount::Group : public Info
     Q_OBJECT
 public:
     explicit Group(QObject* parent = nullptr);
+    Group(const AFlib::IdObject& account, QObject* parent = nullptr);
 
     InfoPtrList userList() const;
     InfoPtrList ownerList() const;

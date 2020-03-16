@@ -16,6 +16,7 @@ namespace AFlib {
         OnRequest,
     };
     
+    //! \brief The Continent enum
     enum class Continent {
         Europe = 0,
         Africa,
@@ -56,19 +57,21 @@ namespace AFlib {
     quint8 fromSaveToInt(SavedIdType type);
     typedef SavedIdType SIdType;
 
+    /// Account id type enum
+    //! \details default AccountIdType::LocalUser
     enum class AccountIdType {
-        LocalUser = 0xE0F300,
-        LocalOrganization,
-        GlobalUser,
-        GlobalOrganization,
-        User,
-        Organization,
-        Local,
-        Global,
+        LocalUser = 0xE0F300, ///< User, that not accept from server yet, can't send information to global server.
+        LocalOrganization,    ///< Local organization, use only on current device.
+        GlobalUser,           ///< User, that registrate on server.
+        GlobalOrganization,   ///< Organization, registrate on server, always have owner user.
+        User,                 ///< User enum, unite both LocalUser and GlobalUser.
+        Organization,         ///< Organization enum, unite LocalOrganization and GlobalOrganization
+        Local,                ///< Use for show that enum is local.
+        Global,               ///< Use for Global enum.
 
         First = LocalUser,
     };
-    bool operator == (const AccountIdType& f, const AccountIdType& s);
+    bool operator == (AccountIdType f, AccountIdType s);
 }
 
 #endif // LIB_BASEAF_ENUMAF_H

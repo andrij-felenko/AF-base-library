@@ -5,9 +5,14 @@
 #include <QtCore/QCryptographicHash>
 #include <QtCore/QCoreApplication>
 
-AFaccount::Account::Account(QObject *parent) : AFaccount::Info(parent)
+AFaccount::Account::Account(const AFlib::IdObject &account) : AFaccount::Info(account)
 {
     // TODO
+}
+
+AFaccount::Account::Account(QObject *parent) : AFaccount::Info(parent)
+{
+    //
 }
 
 AFaccount::Account::Account(QJsonObject obj, QObject *parent) : AFaccount::Info(obj, parent)
@@ -21,7 +26,7 @@ AFaccount::Account::Account(QJsonObject obj, QObject *parent) : AFaccount::Info(
         m_friendList.push_back(InfoPtr::create(it.toObject(), this));
 }
 
-AFaccount::AccountPtr AFaccount::Account::me()
+AFaccount::AccountPtr AFaccount::own()
 {
     static AccountPtr m_me;
     if (m_me.isNull())

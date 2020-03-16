@@ -9,6 +9,12 @@ Group::Group(QObject *parent) : AFaccount::Info(parent)
     // TODO parse subUsers
 }
 
+Group::Group(const AFlib::IdObject &account, QObject *parent)
+    : AFaccount::Info(account, parent)
+{
+    //
+}
+
 InfoPtrList Group::userList()      const { return getByType(AccessType::User);      }
 InfoPtrList Group::ownerList()     const { return getByType(AccessType::Owner);     }
 InfoPtrList Group::creatorList()   const { return getByType(AccessType::Creator);   }
@@ -87,7 +93,7 @@ QDataStream &operator >>(QDataStream &stream, AFaccount::Group &group)
         int accessType;
         AFIdAccount id;
         stream >> id >> accessType;
-        auto acc = accountStorage()->getInfo(id);
+        auto acc = AFaccount::storage()->getInfo(id);
         if (not acc.isNull())
             group.m_userList.insert(acc, AccessType(accessType));
     }

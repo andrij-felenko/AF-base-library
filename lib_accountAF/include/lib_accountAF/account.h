@@ -7,12 +7,14 @@
 #include <QtCore/QJsonObject>
 
 #include "accountInfo.h"
-#include "lib_currencyAF/currencyType.h"
+#include <AFcurrency/AfCurrencyType>
 
 namespace AFaccount {
     class Account;
     typedef QSharedPointer <Account> AccountPtr;
     typedef QList <AccountPtr> AccountPtrList;
+
+    AccountPtr own();
 }
 
 class AFaccount::Account : public AFaccount::Info
@@ -20,7 +22,7 @@ class AFaccount::Account : public AFaccount::Info
 public:
     explicit Account(QObject* parent = nullptr);
     Account(QJsonObject obj, QObject* parent = nullptr);
-    static AccountPtr me();
+    Account(const AFlib::IdObject& account);
 
     bool check(QString password) const;
     QList <CurrencyEnum> currencyList() const;

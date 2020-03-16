@@ -2,6 +2,8 @@
 #include <optional>
 #include <QtCore/QCoreApplication>
 
+QString AFaccount::API::serverLink = QString("127.0.0.1:55023");
+
 AFaccount::API::API(QObject *parent) : QObject(parent)
 {
     m_server = new QNetworkAccessManager(this);
@@ -62,4 +64,34 @@ AFaccount::AccountAPIPtr AFaccount::api()
         ptr = AccountAPIPtr::create(qApp);
 
     return ptr;
+}
+
+QString AFaccount::getServerKey(const AFaccount::RequestType type, bool isData)
+{
+    QString key = "/";
+    if (isData)
+        key += "data/";
+    switch (type) {
+    // account
+    case RequestType::Login:               key += "login";
+    case RequestType::Registrate:          key += "registrate";
+    case RequestType::IsLoginFree:         key += "is_login_free";
+    case RequestType::UpdateListOfAccount: key += "update_account_list";
+
+    // account unauth
+    case RequestType::AddOperate:          key += "account/add_operate";
+    case RequestType::AddOperateList:      key += "account/add_operate_list";
+    case RequestType::ChangePassword:      key += "change_password";
+
+    // group
+    case RequestType::LoadGroup:           key += "load_group";
+    }
+    return key;
+}
+
+QUrl AFaccount::getServerLink(const AFaccount::RequestType type)
+{
+    QString key = AFaccount::API::serverLink;
+    key.append(getServerKey(type));
+    return QUrl::fromUserInput(key);
 }

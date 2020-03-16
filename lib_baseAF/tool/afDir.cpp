@@ -194,3 +194,8 @@ DirPtr AFlib::afDir()
 {
     return Dir::instance();
 }
+
+DirPtr AFDir()
+{
+    return afDir();
+}

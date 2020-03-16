@@ -14,6 +14,12 @@ AFaccount::Info::Info(uint id, QObject* parent)
     // TODO
 }
 
+AFaccount::Info::Info(const AFlib::IdObject &obj, QObject *parent)
+    : QObject(parent), AFIdObject(obj)
+{
+    // TODO there is we need reparse all for get info value from history
+}
+
 AFaccount::Info::Info(QJsonObject obj, QObject* parent)
     : Info(obj.value("id").toVariant().toUInt(), parent)
 {

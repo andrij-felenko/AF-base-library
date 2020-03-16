@@ -60,7 +60,7 @@ public:
     Operate(const QByteArray& data);
 
     operator QByteArray() const;
-    QByteArray data() const;
+    QByteArray getData() const;
 
     QDateTime datetime() const { return  m_datetime; }
     void setDatetime(const QDateTime &datetime);

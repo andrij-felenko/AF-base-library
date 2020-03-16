@@ -10,7 +10,7 @@ AFlib::SavedIdType AFlib::toSavedIdType(const quint8 i)
     return SavedIdType(uint(SavedIdType::TemperarySaved) + i);
 }
 
-bool AFlib::operator ==(const AFlib::AccountIdType &f, const AFlib::AccountIdType &s){
+bool AFlib::operator ==(AccountIdType f, AccountIdType s){
     if (uint(f) == uint(s))
         return true;
 

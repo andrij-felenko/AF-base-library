@@ -32,6 +32,9 @@ public:
 
     Account_bit owner() const { return m_owner; }
 
+    operator QByteArray() const;
+    QByteArray getData() const;
+
     //! Function set owner, only work if history is empty.
     //! \param owner Owner id.
     //! \return Return result of set new id, return false if history is not empty.

@@ -7,7 +7,7 @@
 #include <QtCore/QSharedPointer>
 #include <QtCore/QString>
 
-#include "lib_baseAF/afId.h"
+#include <AFbase/AfId>
 
 namespace AFaccount {
     class Info;
@@ -23,6 +23,7 @@ class AFaccount::Info : public QObject, public AFIdObject
 public:
     explicit Info(QObject* parent = nullptr);
     Info(uint id, QObject* parent = nullptr);
+    Info(const AFlib::IdObject &obj, QObject* parent = nullptr);
     Info(QJsonObject obj, QObject* parent = nullptr);
     Info(AFlib::AccountIdType type, QObject* parent = nullptr);
 

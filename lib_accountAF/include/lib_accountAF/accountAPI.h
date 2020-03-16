@@ -9,6 +9,21 @@ namespace AFaccount {
     typedef QSharedPointer <API> AccountAPIPtr;
     typedef QList <AccountAPIPtr> AccountAPIPtrList;
 
+    enum class RequestType {
+        Login = 0xCE8100,
+        IsLoginFree,
+        Registrate,
+        UpdateListOfAccount,
+
+        AddOperate = 0xCE8110,
+        AddOperateList,
+        ChangePassword,
+
+        LoadGroup = 0xCE8120,
+    };
+    QString getServerKey(const RequestType type, bool isData = false);
+    QUrl getServerLink(const RequestType type);
+
     AccountAPIPtr api();
 }
 
@@ -17,6 +32,7 @@ class AFaccount::API : public QObject
 public:
     explicit API(QObject* parent = nullptr);
     static AccountAPIPtr instance();
+    static QString serverLink;
 
     static void login(const QString& login, const QString& password, const QString& device_name);
     static void remind(const QString& email_login);

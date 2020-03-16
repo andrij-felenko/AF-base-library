@@ -13,6 +13,8 @@ namespace AFlib {
     DirPtr afDir();
 }
 
+AFlib::DirPtr AFDir();
+
 // TODO rewrite
 class AFlib::Dir : public QObject
 {
@@ -77,7 +79,5 @@ private:
     void setUserData(QDir userData);
     void setUserDir(QDir userDir);
 };
-
-typedef AFlib::Dir AFDir;
 
 #endif // LIB_BASEAF_DIR_H

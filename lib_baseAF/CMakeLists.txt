@@ -14,7 +14,7 @@ set (baseAF_h
     include/lib_baseAF/afIdOperate.h
     include/lib_baseAF/afIdObject.h
     include/lib_baseAF/afIdObjectBit.h
-    include/lib_baseAF/afPreferences.h
+    include/lib_baseAF/afPreference.h
     include/lib_baseAF/afSetting.h
     include/lib_baseAF/afStorage.h
     include/lib_baseAF/afSystem.h
@@ -31,7 +31,7 @@ set (baseAF_cpp
     base/afSystem.cpp
     tool/afDir.cpp
     tool/afFile.cpp
-    tool/afPreferences.cpp
+    tool/afPreference.cpp
     tool/afSetting.cpp
     tool/afStorage.cpp
 )

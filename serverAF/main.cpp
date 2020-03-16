@@ -1,5 +1,5 @@
 #include <QtCore/QCoreApplication>
-#include "lib_currencyAF/currencyData.h"
+#include <AFcurrency/AfCurrencyData>
 
 //#include "currencyHttpServer.h"
 
@@ -7,9 +7,9 @@ int main(int argc, char** argv)
 {
     QCoreApplication app(argc, argv);
     app.setOrganizationName("AF");
-    app.setApplicationName("server_currency");
+    app.setApplicationName("base_af_server");
 
-    ushort port = 55555;
+    ushort port = 55323;
     for (auto it : app.arguments())
         if (it.left(5).toLower() == "port:"){
             port = it.right(it.length() - 5).toUShort();

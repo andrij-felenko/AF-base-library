@@ -19,7 +19,7 @@ AFlib::id::Operate::Operate(const QByteArray &data)
     stream >> m_datetime >> m_value >> m_bitset;
 }
 
-QByteArray AFlib::id::Operate::data() const
+QByteArray AFlib::id::Operate::getData() const
 {
     return *this;
 }
