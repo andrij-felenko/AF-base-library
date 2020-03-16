@@ -116,6 +116,16 @@ void AFlib::id::History::setMultiValue(ValueType key, QVariant value, HIdType ty
     setMultiValue(static_cast <quint16> (key), value, type);
 }
 
+AFlib::id::OperatePtrList AFlib::id::History::getListAfter(const QDateTime &afterTime) const
+{
+    // WARNING need to test compress flag, so if we have shorten flag, it can`t return full list of operate
+    OperatePtrList retList;
+    for (auto it : m_operateList)
+        if (it->datetime() > afterTime)
+            retList.push_back(it);
+    return retList;
+}
+
 void AFlib::id::History::addOperate(const QByteArray& data)
 {
     addOperate(Operate(data));

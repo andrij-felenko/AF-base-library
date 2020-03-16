@@ -24,6 +24,7 @@ class AFaccount::Storage final
 public:
     explicit Storage();
 
+    static QDir m_accountStorageDir;
     static StoragePtr instance();
 
     /*!
@@ -51,7 +52,6 @@ public:
 private:
     AccountPtrList m_accountList;
     GroupPtrList m_groupList;
-    static QDir m_accountStorageDir;
 
     void reload();
     bool save(AccountPtr account);

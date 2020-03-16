@@ -78,6 +78,7 @@ public:
         setMultiValue(static_cast <quint16> (key) + 0x40, value, type);
     }
 
+    OperatePtrList getListAfter(const QDateTime& afterTime) const;
     void addOperate(Operate    id);
     void addOperate(OperatePtr id);
     void addOperate(const QByteArray& data);

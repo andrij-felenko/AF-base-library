@@ -2,6 +2,7 @@
 #include <QtCore/QDebug>
 
 using namespace AFlib;
+QDir AFStorage::m_storageDir = QDir::current();
 
 Storage::Storage(QObject *parent) : QObject(parent)
 {
@@ -22,24 +23,34 @@ void Storage::setPath(QDir dir)
     // FIXME add emit if it be QObject
 }
 
-bool Storage::addObjectId(const QString &key, const QByteArray &data)
-{
-    return p_addObjectId(getFile(m_storageDir, key), data);
-}
-
-bool Storage::addObjectId(const QString &key, const IdObject &object)
-{
-    return p_addObjectId(getFile(m_storageDir, key), object);
-}
-
-bool Storage::addObjectId(const QDir &dir, const QString &key, const QByteArray &data)
-{
-    return p_addObjectId(getFile(dir, key), data);
-}
-
-bool Storage::addObjectId(const QDir &dir, const QString &key, const IdObject &object)
+bool Storage::addObjectId(const QString& key, const IdObject& object, QDir dir)
 {
     return p_addObjectId(getFile(dir, key), object);
+}
+
+bool Storage::addObjectId(const IdObject& object, QString defaultName, QDir dir)
+{
+    //
+}
+
+bool Storage::addObjectId(const IdObject& object, QDir dir)
+{
+    return addObjectId(object, "", dir);
+}
+
+bool Storage::addObjectId(const QString& key, const QByteArray& data, QDir dir)
+{
+    return addObjectId(key, IdObject(data), dir);
+}
+
+bool Storage::addObjectId(const QByteArray& data, QString defaultName, QDir dir)
+{
+    return addObjectId(IdObject(data), defaultName, dir);
+}
+
+bool Storage::addObjectId(const QByteArray& data, QDir dir)
+{
+    return addObjectId(IdObject(data), dir);
 }
 
 bool Storage::removeObjectId(const QString &key, const AFIdObject_bit &object)
@@ -253,11 +264,6 @@ void Storage::loadFromDirectory(QDir &dir)
     }
 }
 
-bool Storage::p_addObjectId(QString fileName, const QByteArray &data)
-{
-    return p_addObjectId(fileName, IdObject(data));
-}
-
 bool Storage::p_addObjectId(QString fileName, const IdObject &object)
 {
     QFile file(fileName);
@@ -438,7 +444,10 @@ IdObjectPtr Storage::p_readObject(QString fileName, const AFIdObject_bit &object
 
 IdOperatePtrList Storage::p_getOperateListAfter(const QString &fileName, const AFIdObject_bit &object, const QDateTime &afterDate) const
 {
-    // TODO
+    auto objPtr = p_readObject(fileName, object, CompressValue::Full);
+    if (objPtr)
+        return objPtr->getListAfter(afterDate);
+    return IdOperatePtrList();
 }
 
 QSharedPointer<AFlib::Storage> Storage::init()
@@ -475,7 +484,7 @@ void Storage::PluginStorage::addSingle(QString filePath, QDateTime time, quint16
     idList.push_back(ss);
 }
 
-StoragePtr afStorage()
+StoragePtr AFlib::afStorage()
 {
     return Storage::init();
 }

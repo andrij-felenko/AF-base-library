@@ -18,15 +18,29 @@ class AFlib::Storage : public QObject
 public:
     explicit Storage(QObject* parent = qApp);
     static QSharedPointer <Storage> init();
+    static QDir m_storageDir;
 
     void loadAllData();
     void setPath(QDir dir);
 
-    bool addObjectId(const QString& key, const QByteArray& data);
-    bool addObjectId(const QString& key, const IdObject& object);
-    bool addObjectId(const QDir& dir, const QString& key, const QByteArray& data);
-    bool addObjectId(const QDir& dir, const QString& key, const IdObject& object);
+    /*!
+     * \brief addObjectId
+     * \param object
+     * \param key - File name, use forced, or if not found this object in storage list.
+     * \param dir - Use for set file in other directory than default.
+     * \return Result of operand.
+     */
+    bool addObjectId(const QString& key, const IdObject& object, QDir dir = m_storageDir);
+    bool addObjectId(                    const IdObject& object, QString defaultName = "", QDir dir = m_storageDir);
+    bool addObjectId(                    const IdObject& object,                           QDir dir = m_storageDir);
 
+    bool addObjectId(const QString& key, const QByteArray& data, QDir dir = m_storageDir);
+    bool addObjectId(                    const QByteArray& data, QString defaultName = "", QDir dir = m_storageDir);
+    bool addObjectId(                    const QByteArray& data,                           QDir dir = m_storageDir);
+
+
+
+    // TODO
     bool removeObjectId(                 const QString& key, const AFIdObject_bit& object);
     bool removeObjectId(const QDir& dir, const QString& key, const AFIdObject_bit& object);
 
@@ -53,6 +67,8 @@ public:
     IdObjectPtr     readObject(const QDir& dir, const QString& key, const AFIdObject_bit& object, CompressValue compress = CompressValue::Shortest);
     IdObjectPtr     readObject(const QString& key, const AFIdObject_bit& object, CompressValue compress = CompressValue::Shortest);
 
+    // TODO add function to get operate list after
+
 private:
     QDir getDir(const QString& name) const;
     QDir getDir(QStringList listOfId = {}) const;
@@ -60,7 +76,6 @@ private:
     void loadFromDirectory(QDir& dir);
 
     // private storage functions
-    bool p_addObjectId(QString fileName,      const QByteArray& data);
     bool p_addObjectId(QString fileName,      const IdObject& object);
 
     bool p_removeObjectId(QString fileName,      const AFIdObject_bit& object);
@@ -105,12 +120,12 @@ private:
         void addPlugin(quint8 id);
     };
 
+    std::optional <QString> findFilePath(const IdOperate& object);
     void addOperateToStorageList(const QString &filePath, const IdObjectPtr object);
     void addAccount(IdAccount_bit id);
     void setLastChangedTime(quint32 account, quint8 plugin, quint8 typeOfSubject, quint16 uniqueId, QDateTime dTime);
 
     // TODO we need to have some list of storage folders, for wxample for account and for data
-    static QDir m_storageDir;
     QList <AccountStorage> m_storageList;
 };
 

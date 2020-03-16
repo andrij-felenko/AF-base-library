@@ -9,6 +9,8 @@
 #include <AFbase/AfStorage>
 #include <AFbase/AfEnum>
 
+QDir AFaccount::Storage::m_accountStorageDir = QDir::current();
+
 AFaccount::Storage::Storage()
 {
     if (m_accountStorageDir == QDir::current())
