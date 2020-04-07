@@ -10,11 +10,11 @@ AFlib::SavedIdType AFlib::toSavedIdType(const quint8 i)
     return SavedIdType(uint(SavedIdType::TemperarySaved) + i);
 }
 
-bool AFlib::operator ==(AccountIdType f, AccountIdType s){
+bool operator ==(AFlib::AccountIdType f, AFlib::AccountIdType s){
     if (uint(f) == uint(s))
         return true;
 
-    typedef AccountIdType AIT;
+    typedef AFlib::AccountIdType AIT;
     switch (f) {
     case AIT::User:               return uint(f) == uint(AIT::LocalUser)         || uint(f) == uint(AIT::GlobalUser);
     case AIT::Local:              return uint(f) == uint(AIT::LocalUser)         || uint(f) == uint(AIT::LocalOrganization);
@@ -46,4 +46,16 @@ bool AFlib::isHIdEnable(AFlib::HistoryIdType type)
         return false;
 
     return true;
+}
+
+QDebug operator <<(QDebug d, AFlib::FileType type)
+{
+    switch (type){
+    case AFlib::FileType::Data:    d << "FileType::Data";    break;
+    case AFlib::FileType::Json:    d << "FileType::Json";    break;
+    case AFlib::FileType::Config:  d << "FileType::Config";  break;
+    case AFlib::FileType::Account: d << "FileType::Account"; break;
+    case AFlib::FileType::Setting: d << "FileType::Setting"; break;
+    }
+    return d;
 }

@@ -114,7 +114,7 @@ bool AFaccount::Storage::remove(AFlib::id::Account_bit id)
                                        [id](const AccountPtr a){ return a->owner() == id.accountId(); }));
     m_groupList.erase(std::remove_if(m_groupList.begin(), m_groupList.end(),
                                      [id](const GroupPtr g){ return g->owner() == id.accountId(); }));
-    return AFlib::afStorage()->removeObjectId(m_accountStorageDir, QString::number(id, 16), info.data()->id_b());
+    return AFlib::afStorage()->removeObject(*info);
 }
 
 void AFaccount::Storage::reload()
@@ -123,10 +123,22 @@ void AFaccount::Storage::reload()
     m_accountList.clear();
 
     // read all objects
-    auto list = AFlib::afStorage()->readObjectList(m_accountStorageDir, true, AFCompressValue::Shortest);
+    QDir accountDir = AFDir()->storage();
+    if (not AFlib::Dir::cdDirectory(accountDir, "Accounts"))
+        return;
+
+    QDir groupDir = AFDir()->storage();
+    if (not AFlib::Dir::cdDirectory(accountDir, "Groups"))
+        return;
+
+    AFIdObjectPtrList list;
+    for (auto it : accountDir.entryList({"*.afd"}, QDir::Files))
+        list += AFlib::afStorage()->getObjectList({ "Accounts", it }, AFCompressValue::Shortest);
+    for (auto it : groupDir.entryList({"*.afd"}, QDir::Files))
+        list += AFlib::afStorage()->getObjectList({ "Groups", it }, AFCompressValue::Shortest);
 
     // remove object that not account
-    list.erase(std::remove_if(list.begin(), list.end(), [=](AFIdObjectPtr ptr) { return ptr->uniqueId() != 0; }));
+    list.erase(std::remove_if(list.begin(), list.end(), [=](AFIdObjectPtr ptr) { return ptr->uid() == 0; }));
 
     // separate it to group and acount list
     for (auto it : list){
@@ -143,12 +155,12 @@ void AFaccount::Storage::reload()
 
 bool AFaccount::Storage::save(AccountPtr account)
 {
-    return AFlib::afStorage()->updateFile(m_accountStorageDir, QString::number(account->id(), 16), account->getData());
+    return AFlib::afStorage()->updateFile({ "Accounts", QString::number(account->owner(), 16) }, account->getData());
 }
 
 bool AFaccount::Storage::save(GroupPtr group)
 {
-    return AFlib::afStorage()->updateFile(m_accountStorageDir, QString::number(group->id(), 16), group->getData());
+    return AFlib::afStorage()->updateFile({ "Groups", QString::number(group->owner(), 16) }, group->getData());
 }
 
 bool AFaccount::Storage::contains(AFlib::id::Account_bit id) const

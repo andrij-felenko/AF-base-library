@@ -3,6 +3,7 @@
 
 #include <QtCore/QDateTime>
 #include <QtCore/QVariant>
+#include <QtCore/QSharedPointer>
 
 #include "afEnum.h"
 #include "afIdAccount.h"
@@ -10,6 +11,9 @@
 namespace AFlib::id {
     class Operate;
     struct Operate_bit;
+    struct TransferOperate;
+    struct TransferOperateList;
+
     typedef QSharedPointer <Operate> OperatePtr;
     typedef QList <OperatePtr> OperatePtrList;
 }

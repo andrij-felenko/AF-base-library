@@ -173,12 +173,19 @@ void Dir::cpDirectory(QString from, QString to)
 
     for (auto d : dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
         QString dst_path = to + QDir::separator() + d;
-        dir.mkpath(dst_path);
-        cpDirectory(from+ QDir::separator() + d, dst_path);
+        QDir dirTo(to);
+        dirTo.mkpath(dst_path);
+        cpDirectory(from + QDir::separator() + d, dst_path);
     }
 
     for (auto f : dir.entryList(QDir::Files)) {
-        QFile::copy(from + QDir::separator() + f, to + QDir::separator() + f);
+        QFile file(from + QDir::separator() + f);
+        bool result = file.copy(to + QDir::separator() + f);
+        qDebug() << "Copy file" << f << "\n\tfrom: " << from << "\n\tto: " << to
+                 << "\n\tresult:" << (result ? "true" : "false: " + file.errorString())
+                 << "\n";
+        if (result)
+            QFile::setPermissions(to + QDir::separator() + f, QFileDevice::ReadOwner | QFileDevice::WriteOwner);
     }
 }
 

@@ -17,7 +17,6 @@ int main(int argc, char** argv)
         }
 
     CurrencyAF::ByDate::ignoreUpdater = true;
-    CurrencyAF::Data::setPluginName("Server_currency");
     CurrencyAF::Data::addCurrency(CurrencyAF::Type::allShort());
 
 //    CurrencyHttpServer server(&app);

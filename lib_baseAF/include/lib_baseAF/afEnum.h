@@ -1,6 +1,7 @@
 #ifndef LIB_BASEAF_ENUMAF_H
 #define LIB_BASEAF_ENUMAF_H
 
+#include <QtCore/QDebug>
 #include <QtCore/QObject>
 
 namespace AFlib {
@@ -30,6 +31,15 @@ namespace AFlib {
     };
 
 /// Id`s enum list --------------------------------------------------------------------------------
+
+    enum class FileType {
+        Data = 0xE0F0F0,
+        Account,
+        Config,
+        Setting,
+        Json,
+    };
+
     enum class HistoryIdType {
         AddIdLine = 0xE0F100,
         EditIdLine,
@@ -71,7 +81,9 @@ namespace AFlib {
 
         First = LocalUser,
     };
-    bool operator == (AccountIdType f, AccountIdType s);
 }
+
+bool operator == (AFlib::AccountIdType f, AFlib::AccountIdType s);
+QDebug operator << (QDebug d, AFlib::FileType type);
 
 #endif // LIB_BASEAF_ENUMAF_H

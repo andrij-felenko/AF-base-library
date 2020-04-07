@@ -1,181 +1,314 @@
 #include "afStorage.h"
 #include <QtCore/QDebug>
+#include "lib_baseAF/afFile.h"
 
 using namespace AFlib;
-QDir AFStorage::m_storageDir = QDir::current();
+static StoragePtr storage_ptr;
 
 Storage::Storage(QObject *parent) : QObject(parent)
-{
-    if (m_storageDir == QDir::current())
-        m_storageDir = afDir()->storage();
-
-    loadAllData();
-}
-
-void Storage::loadAllData()
-{
-    loadFromDirectory(m_storageDir);
-}
-
-void Storage::setPath(QDir dir)
-{
-    m_storageDir = dir;
-    // FIXME add emit if it be QObject
-}
-
-bool Storage::addObjectId(const QString& key, const IdObject& object, QDir dir)
-{
-    return p_addObjectId(getFile(dir, key), object);
-}
-
-bool Storage::addObjectId(const IdObject& object, QString defaultName, QDir dir)
 {
     //
 }
 
-bool Storage::addObjectId(const IdObject& object, QDir dir)
+QSharedPointer<AFlib::Storage> Storage::init()
 {
-    return addObjectId(object, "", dir);
+    if (storage_ptr.isNull())
+        storage_ptr = StoragePtr::create();
+
+    return storage_ptr;
 }
 
-bool Storage::addObjectId(const QString& key, const QByteArray& data, QDir dir)
+StoragePtr AFlib::afStorage()
 {
-    return addObjectId(key, IdObject(data), dir);
+    return Storage::init();
 }
 
-bool Storage::addObjectId(const QByteArray& data, QString defaultName, QDir dir)
+void Storage::loadFromDirectory(const QStringList &dPath, Storage::CompressV compress)
 {
-    return addObjectId(IdObject(data), defaultName, dir);
+    QDir dir = AFfile::getFullDir(dPath);
+    auto fileList = dir.entryList({"*.afd"}, QDir::Files);
+    auto dirList = dir.entryList(QDir::Dirs);
+    for (auto it : fileList){
+        QStringList fileDPath(dPath);
+        fileDPath.push_back(it);
+        getObjectList(fileDPath, compress);
+    }
+    for (auto it : dirList){
+        QStringList dirDPath(dPath);
+        dirDPath.push_back(it);
+        loadFromDirectory(dirDPath, compress);
+    }
 }
 
-bool Storage::addObjectId(const QByteArray& data, QDir dir)
+bool Storage::updateFile(const QStringList dPath, const QByteArray &data, FileType type)
 {
-    return addObjectId(IdObject(data), dir);
+    AFfile file(dPath);
+    if (not file.openWrite())
+        return false;
+
+    if (not file.writeAll(data))
+        return false;
+
+    removeListByFile(dPath, type);
+    auto list = IdObject::readList(data);
+    registrateObject(dPath, type, list);
+    return true;
 }
 
-bool Storage::removeObjectId(const QString &key, const AFIdObject_bit &object)
+bool Storage::addOperate(const IdObject &object, const IdOperate &operate)
 {
-    return p_removeObjectId(getFile(m_storageDir, key), object);
+    auto single = findSingle(object);
+    if (not single)
+        return false;
+
+    auto data = IdObject::readFromFile(single->dPath, single->fileType);
+    if (data.isEmpty())
+        return false;
+
+    for (auto it : data)
+        if (it->owner() == object.owner() && it->objecttU_b() == object.uid_b()){
+            AFfile file(single->dPath);
+            if (not file.openWrite())
+                break;
+
+            it->addOperate(operate);
+            return file.writeAll(IdObject::listToBytaArray(data));
+        }
+
+    return false;
 }
 
-bool Storage::removeObjectId(const QDir &dir, const QString &key, const AFIdObject_bit &object)
+bool Storage::addOperateList(const transfer::List &list)
 {
-    return p_removeObjectId(getFile(dir, key), object);
+    bool result = true;
+    AFlib::transfer::List retList;
+    for (auto it : list){
+        AFfile file(it.dPath);
+        if (not file.openRead()){
+            result &= false;
+            continue;
+        }
+
+        auto readList = IdObject::readList(file.readAll());
+
+        if (not file.openWrite()){
+            result &= false;
+            continue;
+        }
+        for (auto subIt : it){
+            bool foundSubIt = false;
+            for (auto readIt : readList)
+                if (readIt->owner() == subIt.owner && readIt->objecttU_b() == subIt.object){
+                    readIt->addOperations(subIt);
+                    foundSubIt = true;
+                    break;
+                }
+            if (not foundSubIt){
+                result &= false;
+                qDebug() << "Object not found, can't add " << subIt.object;
+            }
+        }
+        result &= file.writeAll(AFlib::id::Object::listToBytaArray(readList));
+    }
+    return result;
 }
 
-bool Storage::updateFile(const QString &key, const QByteArray &data)
+transfer::List Storage::getOperatesAfter(const QDateTime &dateTime)
 {
-    return p_updateFile(getFile(m_storageDir, key), data);
-}
-
-bool Storage::updateFile(const QDir &dir, const QString &key, const QByteArray &data)
-{
-    return p_updateFile(getFile(dir, key), data);
-}
-
-bool Storage::addOperate(const QString &key, const AFIdObject_bit &object, const QByteArray &data)
-{
-    return p_addOperate(getFile(m_storageDir, key), object, data);
-}
-
-bool Storage::addOperate(const QDir &dir, const QString &key, const AFIdObject_bit &object, const QByteArray &data)
-{
-    return p_addOperate(getFile(dir, key), object, data);
-}
-
-bool Storage::addOperate(const QString &key, const AFIdObject_bit &object, const IdOperate &operate)
-{
-    return p_addOperate(getFile(m_storageDir, key), object, operate);
-}
-
-bool Storage::addOperate(const QDir &dir, const QString &key, const AFIdObject_bit &object, const IdOperate &operate)
-{
-    return p_addOperate(getFile(dir, key), object, operate);
-}
-
-bool Storage::addOperate(const QString &key, const AFIdObject_bit &object, const IdOperatePtr &operate)
-{
-    return p_addOperate(getFile(m_storageDir, key), object, operate);
-}
-
-bool Storage::addOperate(const QDir &dir, const QString &key, const AFIdObject_bit &object, const IdOperatePtr &operate)
-{
-    return p_addOperate(getFile(dir, key), object, operate);
-}
-
-bool Storage::addOperateList(const QString &key, const AFIdObject_bit &object, const QByteArray &data)
-{
-    return p_addOperateList(getFile(m_storageDir, key), object, data);
-}
-
-bool Storage::addOperateList(const QDir &dir, const QString &key, const AFIdObject_bit &object, const QByteArray &data)
-{
-    return p_addOperateList(getFile(dir, key), object, data);
-}
-
-bool Storage::addOperateList(const QString &key, const AFIdObject_bit &object, const IdOperatePtrList &list)
-{
-    return p_addOperateList(getFile(m_storageDir, key), object, list);
-}
-
-bool Storage::addOperateList(const QDir &dir, const QString &key, const AFIdObject_bit &object, const IdOperatePtrList &list)
-{
-    return p_addOperateList(getFile(dir, key), object, list);
-}
-
-IdObjectPtrList Storage::readObjectList(const QDir &dir, bool recurcion, CompressValue compress)
-{
-    auto list = readObjectList(dir,compress);
-    if (not recurcion)
-        return list;
-
-    for (auto it : dir.entryList(QDir::Dirs | QDir::NoDot | QDir::NoDotDot))
-        list += readObjectList(QDir(dir.path() + "/" + it), recurcion, compress);
+    transfer::List list;
+    for (auto aIt : m_storageList)
+        for (auto pIt : aIt.pluginList)
+            for (auto sIt : pIt.idList)
+                if (sIt.lastChange < dateTime){
+                    auto single = findSingle(aIt.accountBit, sIt.id);
+                    if (single)
+                        list.addOperate(single.value().dPath, single->fileType, aIt.accountBit, sIt.id,
+                                        getObject(single->dPath, IdObject_bit(sIt.id))->getListAfter(dateTime));
+                }
     return list;
 }
 
-IdObjectPtrList Storage::readObjectList(const QDir &dir, CompressValue compress)
+bool Storage::addObject(const QStringList dPath, const IdObject &object, FileType type)
 {
-    IdObjectPtrList list;
-    for (auto it : dir.entryList({"*.afd"}, QDir::Files))
-        list += p_readObjectList(it, compress);
+    if (contains(object)){
+        qDebug() << "Can't add object: \n" << object << "\nAlready exists.";
+        return false;
+    }
+
+    AFfile file(dPath, type);
+    if (not file.openRead())
+        return false;
+
+    auto list = IdObject::readFromFile(dPath, type);
+    IdObjectPtr ptr = IdObjectPtr::create(object);
+    list.push_back(ptr);
+
+    if (not file.openWrite())
+        return false;
+
+    bool result = file.writeAll(IdObject::listToBytaArray(list));
+    if (result)
+        registrateObject(dPath, type, object);
+
+    return result;
+}
+
+bool Storage::addOperateList(transfer::List &operateList)
+{
+    bool result = true;
+    if (operateList.isEmpty())
+        return false;
+
+    for (auto fileIt : operateList){
+        auto list = IdObject::readFromFile(fileIt.dPath, fileIt.fileType);
+        if (list.isEmpty())
+            continue;
+
+        for (auto object : fileIt)
+            for (auto it : list)
+                if (it->owner() == object.owner && it->object_b() == object.object){
+                    it->addOperations(object);
+                }
+
+        result &= updateFile(fileIt.dPath, IdObject::listToBytaArray(list));
+    }
+
+    return result;
+}
+
+Storage::IdObj Storage::getObject(const QStringList dPath, const IdObject_bit &object, FileType type, CompressV compress)
+{
+    return getObject(dPath, object, compress, type);
+}
+
+Storage::IdObj Storage::getObject(const QStringList dPath, const IdObject_bit &object, Storage::CompressV compress, FileType type)
+{
+    auto result = AFlib::id::Object::readFromFile(dPath, type, object);
+    if (result.isNull()){
+        qDebug() << "Can't find " << &object << " in this " << dPath << " file.";
+        return IdObj();
+    }
+
+    registrateObject(dPath, type, result);
+    result->useCompress(compress);
+    return result;
+}
+
+Storage::IdObjList Storage::getObjectList(const QStringList dPath, FileType type, CompressV compress)
+{
+    return getObjectList(dPath, compress, type);
+}
+
+Storage::IdObjList Storage::getObjectList(const QStringList dPath, Storage::CompressV compress, FileType type)
+{
+    auto list = AFlib::id::Object::readFromFile(dPath, type);
+    for (auto it : list)
+        it->useCompress(compress);
+
+    registrateObject(dPath, type, list);
     return list;
 }
 
-IdObjectPtrList Storage::readObjectList(const QDir &dir, const QString &key, const QList<AFIdObject_bit> list, CompressValue value)
+Storage::IdObjList Storage::getObjectList(const QStringList dPath, const IdObjectPtrList list, FileType type, CompressV compress)
 {
-    return p_readObjectList(getFile(dir, key), list, value);
+    return getObjectList(dPath, list, compress, type);
 }
 
-IdObjectPtrList Storage::readObjectList(const QString &key, const QList<AFIdObject_bit> list, CompressValue value)
+Storage::IdObjList Storage::getObjectList(const QStringList dPath, const IdObjectPtrList list, Storage::CompressV compress, FileType type)
 {
-    return p_readObjectList(getFile(m_storageDir, key), list, value);
+    auto retList = AFlib::id::Object::readFromFile(dPath, type, list);
+    for (auto it : retList)
+        it->useCompress(compress);
+
+    registrateObject(dPath, type, retList);
+    return retList;
 }
 
-IdObjectPtr Storage::readObject(const QDir &dir, const QString &key, const AFIdObject_bit &object, CompressValue compress)
+bool Storage::removeObject(const IdObject &object)
 {
-    return p_readObject(getFile(dir, key), object, compress);
+    auto single = findSingle(object);
+    if (not single)
+        return false;
+
+    IdObjectPtrList list = AFlib::id::Object::readFromFile(single->dPath, single->fileType);
+    if (list.isEmpty())
+        return false;
+
+    auto newEnd = std::remove_if(list.begin(), list.end(), [object](const IdObjectPtr ptr) { return ptr == object; });
+    if (newEnd == list.end())
+        return false;
+
+    list.erase(newEnd);
+
+    AFfile file(single->dPath);
+    if (file.openWrite()){
+        file << list;
+        return true;
+    }
+
+    return false;
 }
 
-IdObjectPtr Storage::readObject(const QString &key, const AFIdObject_bit &object, CompressValue compress)
+bool Storage::contains(const IdObject &ptr) const
 {
-    return p_readObject(getFile(m_storageDir, key), object, compress);
+    return contains(ptr.owner(), ptr.uid_b());
 }
 
-QString Storage::getFile(const QDir& dir, quint32 id) const
+bool Storage::contains(const IdAccount_bit &account, const IdObjectU_bit &object) const
 {
-    return getFile(dir, QString::number(id, 16));
+    for (auto aIt : m_storageList)
+        if (aIt.accountBit == account)
+            for (auto pIt : aIt.pluginList)
+                if (pIt.pluginId == object.pluginId())
+                    for (auto it : pIt.idList)
+                        if (it.id == object)
+                            return true;
+    return false;
 }
 
-void Storage::addOperateToStorageList(const QString& filePath, const IdObjectPtr object)
+std::optional <Storage::SingleStorage> Storage::findSingle(const IdObject &object)
 {
-    addAccount(object->owner());
+    return findSingle(object.owner(), object.objecttU_b());
+}
+
+std::optional<Storage::SingleStorage> Storage::findSingle(const IdAccount_bit &account, const IdObjectU_bit &object)
+{
     for (auto accIt : m_storageList)
-        if (accIt.accountBit == object->owner()){
-            accIt.addPlugin(object->pluginId());
+        if (accIt.accountBit == account){
+
+            for (auto pluginIt : accIt.pluginList)
+                if (pluginIt.pluginId == object.pluginId()){
+
+                    for (auto singleIt : pluginIt.idList)
+                        if (singleIt.id == object)
+                            return singleIt;
+                    break;
+                }
+
+            break;
+        }
+    return std::nullopt;
+}
+
+void Storage::removeListByFile(const QStringList dPath, FileType fileType)
+{
+    for (auto accIt : m_storageList)
+        for (auto it : accIt.pluginList){
+            auto end = std::remove_if(it.idList.begin(), it.idList.end(),
+                                      [dPath, fileType](const SingleStorage single){ return single.dPath == dPath && single.fileType == fileType; });
+            it.idList.erase(end);
+        }
+}
+
+void Storage::registrateObject(const QStringList dPath, FileType fileType, const IdObject &object)
+{
+    addAccount(object.owner());
+    for (auto accIt : m_storageList)
+        if (accIt.accountBit == object.owner()){
+            accIt.addPlugin(object.pluginId());
             for (auto pluginId : accIt.pluginList){
-                if (pluginId.pluginId == object->pluginId()){
-                    pluginId.addSingle(filePath, object->lastChange(), object->uniqueId(), object->type());
+                if (pluginId.pluginId == object.pluginId()){
+                    pluginId.addSingle(dPath, fileType, object.lastChange(), object.objecttU_b());
                     break;
                 }
             }
@@ -183,30 +316,40 @@ void Storage::addOperateToStorageList(const QString& filePath, const IdObjectPtr
         }
 }
 
+void Storage::registrateObject(const QStringList dPath, FileType fileType, const IdObjectPtr object)
+{
+    registrateObject(dPath, fileType, *object);
+}
+
+void Storage::registrateObject(const QStringList dPath, FileType fileType, const IdObjectPtrList list)
+{
+    for (auto it : list)
+        registrateObject(dPath, fileType,  it);
+}
+
 void Storage::addAccount(IdAccount_bit id)
 {
+    // not add new if we already have it
     for (auto it : m_storageList)
         if (it.accountBit == id)
             return;
 
     AccountStorage as;
     as.accountBit = id;
+
     m_storageList.push_back(as);
 }
 
-void Storage::setLastChangedTime(quint32 account, quint8 plugin,
-                                 quint8 typeOfSubject, quint16 uniqueId,
-                                 QDateTime dTime)
+void Storage::setLastChangedTime(quint32 account, IdObjectU_bit id, QDateTime dTime)
 {
     for (auto accIt : m_storageList)
         if (accIt.accountBit.toUInt32() == account){
 
             for (auto pluginIt : accIt.pluginList)
-                if (pluginIt.pluginId == plugin){
+                if (pluginIt.pluginId == id){
 
                     for (auto singleIt : pluginIt.idList)
-                        if (singleIt.typeOfSubject == typeOfSubject &&
-                            singleIt.uniqueId == uniqueId){
+                        if (singleIt.id == id){
                             singleIt.lastChange = dTime;
                             break;
                         }
@@ -218,245 +361,18 @@ void Storage::setLastChangedTime(quint32 account, quint8 plugin,
         }
 }
 
-QString Storage::getFile(const QDir &dir, QString name) const
+void Storage::PluginStorage::addSingle(QStringList dPath, FileType fileType, QDateTime time, IdObjectU_bit id)
 {
-    return dir.absoluteFilePath(name + ".afd");
-}
+    for (auto it : idList)
+        if (it.id == id)
+            return;
 
-QDir Storage::getDir(QStringList listOfId) const
-{
-    QDir dir = m_storageDir;
-    for (auto it : listOfId)
-        AFlib::Dir::cdDirectory(dir, it);
-    return dir;
-}
-
-QDir Storage::getDir(QList<quint32> list) const
-{
-    QStringList strList = QStringList();
-    for (auto it : list)
-        strList.push_back(QString::number(it, 16));
-    return getDir(strList);
-}
-
-QDir Storage::getDir(const QString &name) const
-{
-    return getDir(QStringList(name));
-}
-
-void Storage::loadFromDirectory(QDir &dir)
-{
-    auto fileList = dir.entryList({"*.afd"}, QDir::Files);
-    auto dirList = dir.entryList(QDir::Dirs);
-    for (auto it : fileList){
-        QString filePath(getFile(dir, it));
-        IdObjectPtrList list = p_readObjectList(filePath);
-        if (list.isEmpty())
-            continue;
-
-        for (auto objIt : list)
-            addOperateToStorageList(filePath, objIt);
-    }
-    for (auto it : dirList){
-        QDir subdir = dir;
-        AFlib::Dir::cdDirectory(subdir, it);
-        loadFromDirectory(subdir);
-    }
-}
-
-bool Storage::p_addObjectId(QString fileName, const IdObject &object)
-{
-    QFile file(fileName);
-    if (file.open(QIODevice::ReadOnly)){
-        IdObjectPtrList list;
-        const QByteArray allData = file.readAll();
-        QDataStream stream(allData);
-        stream >> list;
-
-        IdObjectPtr ptr = IdObjectPtr::create(object);
-        list.push_back(ptr);
-        file.close();
-
-        if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
-            QDataStream wStream(&file);
-            wStream << list;
-            file.close();
-            addOperateToStorageList(file.fileName(), ptr);
-            return true;
-        }
-    }
-    qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
-    return false;
-}
-
-bool Storage::p_removeObjectId(QString fileName, const AFIdObject_bit &object)
-{
-    QFile file(fileName);
-    if (file.open(QIODevice::ReadOnly)){
-        IdObjectPtrList list;
-        const QByteArray allData = file.readAll();
-        QDataStream stream(allData);
-        stream >> list;
-        file.close();
-
-        auto newRem = std::remove_if(list.begin(), list.end(), [object](IdObjectPtr single) { return single->id_b() == object; });
-        if (newRem != list.end()){
-            list.erase(newRem);
-            if (list.isEmpty()){
-                // remove file, we don't need it anymore
-                file.close();
-                return file.remove();
-            }
-            if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
-                QDataStream wStream(&file);
-                wStream << list;
-                file.close();
-                return true;
-            }
-        }
-        qDebug() << "Object " << object << " not found.";
-    }
-    qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
-    return false;
-}
-
-bool Storage::p_updateFile(QString fileName, const QByteArray &data)
-{
-    QFile file(fileName);
-    if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
-        file.write(data);
-        file.close();
-        return true;
-    }
-    qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
-    return false;
-}
-
-bool Storage::p_addOperate(QString fileName, const AFIdObject_bit &object, const QByteArray &data)
-{
-    return p_addOperate(fileName, object, IdOperate(data));
-}
-
-bool Storage::p_addOperate(QString fileName, const AFIdObject_bit &object, const IdOperate &operate)
-{
-    IdOperatePtr ptr = IdOperatePtr::create(operate);
-    return p_addOperate(fileName, object, ptr);
-}
-
-bool Storage::p_addOperate(QString fileName, const AFIdObject_bit &object, const IdOperatePtr &operate)
-{
-    QFile file(fileName);
-    if (file.open(QIODevice::ReadOnly)){
-        IdObjectPtrList list;
-        const QByteArray allData = file.readAll();
-        QDataStream stream(allData);
-        stream >> list;
-        file.close();
-
-        for (auto it : list)
-            if (it->id_b() == object){
-                it->addOperate(operate);
-                if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
-                    QDataStream wStream(&file);
-                    wStream << list;
-                    file.close();
-                    return true;
-                }
-            }
-        qDebug() << "Object " << object << " not found.";
-    }
-    qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
-    return false;
-}
-
-bool Storage::p_addOperateList(QString fileName, const AFIdObject_bit &object, const QByteArray &data)
-{
-    IdOperatePtrList list;
-    QDataStream stream(data);
-    stream >> list;
-    return p_addOperateList(fileName, object, list);
-}
-
-bool Storage::p_addOperateList(QString fileName, const AFIdObject_bit &object, const IdOperatePtrList &list)
-{
-    bool ret = true;
-    for (auto it : list)
-        ret &= p_addOperate(fileName, object, it);
-    return ret;
-}
-
-IdObjectPtrList Storage::p_readObjectList(QString fileName, CompressValue compress) const
-{
-    IdObjectPtrList list;
-    QFile file(fileName);
-    if (file.open(QIODevice::ReadOnly)){
-        IdObjectPtrList list;
-        const QByteArray allData = file.readAll();
-        QDataStream stream(allData);
-        stream >> list;
-        file.close();
-
-        // compress objects
-        for (auto it : list)
-            it->useCompress(compress);
-    }
-    else
-        qDebug() << "Can`t read file [" << fileName << "], error:" << file.errorString();
-
-    return list;//
-}
-
-IdObjectPtrList Storage::p_readObjectList(QString fileName, QList<AFIdObject_bit> list, CompressValue compress) const
-{
-    IdObjectPtrList retList;
-    QFile file(fileName);
-    if (file.open(QIODevice::ReadOnly)){
-        IdObjectPtrList dataList;
-        QDataStream stream(file.readAll());
-        stream >> dataList;
-        file.close();
-
-        // compress objects
-        for (auto it : list)
-            for (auto dataIt : dataList)
-                if (dataIt->id_b() == it){
-                    dataIt->useCompress(compress);
-                    retList += dataIt;
-                    break;
-                }
-    }
-    else
-        qDebug() << "Can`t save to file [" << fileName << "], error:" << file.errorString();
-
-    return retList;
-}
-
-IdObjectPtr Storage::p_readObject(QString fileName, const AFIdObject_bit &object, CompressValue compress) const
-{
-    auto result = p_readObjectList(fileName, { object }, compress);
-    if (result.isEmpty()){
-        qDebug() << "Can't find " << object << " in this " << fileName << " file.";
-        return IdObjectPtr();
-    }
-
-    return result.first();
-}
-
-IdOperatePtrList Storage::p_getOperateListAfter(const QString &fileName, const AFIdObject_bit &object, const QDateTime &afterDate) const
-{
-    auto objPtr = p_readObject(fileName, object, CompressValue::Full);
-    if (objPtr)
-        return objPtr->getListAfter(afterDate);
-    return IdOperatePtrList();
-}
-
-QSharedPointer<AFlib::Storage> Storage::init()
-{
-    static StoragePtr storage_ptr;
-    if (storage_ptr.isNull())
-        storage_ptr = StoragePtr::create();
-
-    return storage_ptr;
+    SingleStorage ss;
+    ss.dPath = dPath;
+    ss.fileType = fileType;
+    ss.id = id;
+    ss.lastChange = time;
+    idList.push_back(ss);
 }
 
 void Storage::AccountStorage::addPlugin(quint8 id)
@@ -468,23 +384,4 @@ void Storage::AccountStorage::addPlugin(quint8 id)
     PluginStorage ps;
     ps.pluginId = id;
     pluginList.push_back(ps);
-}
-
-void Storage::PluginStorage::addSingle(QString filePath, QDateTime time, quint16 id, quint8 type)
-{
-    for (auto it : idList)
-        if (it.uniqueId == id && it.typeOfSubject == type)
-            return;
-
-    SingleStorage ss;
-    ss.filePath = filePath;
-    ss.uniqueId = id;
-    ss.lastChange = time;
-    ss.typeOfSubject = type;
-    idList.push_back(ss);
-}
-
-StoragePtr AFlib::afStorage()
-{
-    return Storage::init();
 }

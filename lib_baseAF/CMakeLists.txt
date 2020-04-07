@@ -18,6 +18,7 @@ set (baseAF_h
     include/lib_baseAF/afSetting.h
     include/lib_baseAF/afStorage.h
     include/lib_baseAF/afSystem.h
+    include/lib_baseAF/afTransferOperateList.h
 )
 
 set (baseAF_cpp
@@ -34,6 +35,23 @@ set (baseAF_cpp
     tool/afPreference.cpp
     tool/afSetting.cpp
     tool/afStorage.cpp
+    tool/afTransferOperateList.cpp
+)
+
+set (initialize_header
+    include/AFbaseLib
+    include/AFbase/AfEnum
+    include/AFbase/AfFile
+    include/AFbase/AfFunction
+    include/AFbase/AfId
+    include/AFbase/AfIdHistory
+    include/AFbase/AfIdObject
+    include/AFbase/AfIdObjectBit
+    include/AFbase/AfIdOperate
+    include/AFbase/AfPreference
+    include/AFbase/AfSetting
+    include/AFbase/AfSystem
+    include/AFbase/AfTransferOperateList
 )
 
 set (CMAKE_AUTOMOC, true)
@@ -45,5 +63,6 @@ set_target_properties(lib_baseAF PROPERTIES OUTPUT_NAME "baseAF")
 target_link_libraries(lib_baseAF Qt5::Core)
 target_include_directories(lib_baseAF
     PUBLIC  include
+    PUBLIC  include/AFbase
     PRIVATE include/lib_baseAF
 )

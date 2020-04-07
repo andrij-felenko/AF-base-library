@@ -140,6 +140,12 @@ void AFlib::id::History::addOperations(const QByteArray& list)
         addOperate(it);
 }
 
+void AFlib::id::History::addOperations(const OperatePtrList list)
+{
+    for (auto it : list)
+        addOperate(it);
+}
+
 void AFlib::id::History::addOperate(ValueType valueKey, QVariant value, Account_bit userId,
                                     HIdType history, SIdType saved, QDateTime dTime)
 {

@@ -4,8 +4,6 @@
 #include <QtCore/QDateTime>
 #include <QtCore/QSharedPointer>
 
-#include "afIdOperate.h"
-
 namespace AFlib::id {
     class History;
     typedef QSharedPointer <History> HistoryPtr;
@@ -30,6 +28,8 @@ namespace AFlib::id {
         Full,
     };
 }
+
+#include "afIdOperate.h"
 
 class AFlib::id::History
 {
@@ -83,6 +83,7 @@ public:
     void addOperate(OperatePtr id);
     void addOperate(const QByteArray& data);
     void addOperations(const QByteArray& list);
+    void addOperations(const OperatePtrList list);
     void addOperate(ValueType valueKey, QVariant value,
                     Account_bit userId, HIdType history = HIdType::AddIdLine,
                     SIdType saved = SIdType::LocaleSaved,
