@@ -59,3 +59,13 @@ QDebug operator <<(QDebug d, AFlib::FileType type)
     }
     return d;
 }
+
+AFlib::AccountIdType AFlib::toAccountIdType(const quint8 i)
+{
+    return static_cast <AccountIdType> (i + static_cast <uint> (AccountIdType::First));
+}
+
+quint8 AFlib::fromAccountIdType(AFlib::AccountIdType type)
+{
+    return static_cast <uint>(type) - static_cast <uint>(AccountIdType::First);
+}

@@ -34,25 +34,29 @@ struct AFlib::id::ObjectUnique_bit : public TbitStruct <28>
     quint8  type()      const { return toUInt8(      5, 7); }
     void setType(quint8 type) {       setUInt8(type, 5, 7); }
 
+    template <typename N> N       type() const { return  static_cast <N>(type()); }
+    template <typename N> void setType(N type) { setType(static_cast <quint8> (type)); }
+
     quint8  pluginId()    const { return toUInt8(    0, 5); }
     void setPluginId(quint8 id) {       setUInt8(id, 0, 5); }
 };
 
 //! \brief The Function class
-//! \details Bit table, total size <b>63</b>
+//! \details Bit table, total size <b>64</b>
 //! |<center>OBJECT ID bit TABLE</center>||||||||||Size|Description|
-//! |:-|-:|-:|-:|-:|-:|-:|-:|-:|-:|-:||
-//! | |     56|      48|      40|   35| 32|      24|      16|       8|       0| | |
-//! |*|#######|########|########|#####|ooo|oooooooo|oooooooo|oooooooo|oooooooo|28|Object_bit|
-//! |*|ooooooo|oooooooo|oooooooo|ooooo|###|########|########|########|########|35|Parent id|
-//! |<b>Object_bit:</b>||||||||||||
-//! |*|#######|########|#ooooooo|ooooo|   |        |        |        |        |16|object unique id by current types|
-//! |*|ooooooo|oooooooo|o#######|ooooo|   |        |        |        |        | 7|type of object|
-//! |*|ooooooo|oooooooo|oooooooo|#####|   |        |        |        |        | 5|plugin id, 0 - mean global variable|
-//! |<b>Parent id bit instruction:</b>||||||||||||
-//! |*|       |        |        |     |###|####oooo|oooooooo|oooooooo|oooooooo| 7|parent subject type|
-//! |*|       |        |        |     |ooo|oooo####|########|########|########|28|parent id, use prev subject or in account id on top|
-struct AFlib::id::Object_bit : public TbitStruct <63>
+//! |:-|:-|-:|-:|-:|-:|-:|-:|-:|-:|-:|-:||
+//! | |63|     56|      48|      40|   35| 32|      24|      16|       8|       0| | |
+//! |*|#|ooooooo|oooooooo|oooooooo|ooooo|ooo|oooooooo|oooooooo|oooooooo|oooooooo| 1|free bit|
+//! |*|o|#######|########|########|#####|ooo|oooooooo|oooooooo|oooooooo|oooooooo|28|Object_bit|
+//! |*|o|ooooooo|oooooooo|oooooooo|ooooo|###|########|########|########|########|35|Parent id|
+//! ||<b>Object_bit:</b>||||||||||||
+//! |*||#######|########|#ooooooo|ooooo|   |        |        |        |        |16|object unique id by current types|
+//! |*||ooooooo|oooooooo|o#######|ooooo|   |        |        |        |        | 7|type of object|
+//! |*||ooooooo|oooooooo|oooooooo|#####|   |        |        |        |        | 5|plugin id, 0 - mean global variable|
+//! ||<b>Parent id bit instruction:</b>||||||||||||
+//! |*||       |        |        |     |###|####oooo|oooooooo|oooooooo|oooooooo| 7|parent subject type|
+//! |*||       |        |        |     |ooo|oooo####|########|########|########|28|parent id, use prev subject or in account id on top|
+struct AFlib::id::Object_bit : public TbitStruct <64>
 {
     explicit Object_bit(quint64 subjectFull = 0);
     Object_bit(quint32 unique, quint8 parentType, quint32 parentId);
@@ -60,6 +64,9 @@ struct AFlib::id::Object_bit : public TbitStruct <63>
 
     AFlib::id::Object_bit object_b() const { return static_cast <AFlib::id::Object_bit>(*this); }
     AFlib::id::ObjectUnique_bit objecttU_b() const { return uid_b(); }
+
+    bool freeBit()          const { return m_bitset    [63]; }
+    void setFreeBit(bool freeBit) {        m_bitset.set(63, freeBit); }
 
     ObjU_bit uid_b()   const { return ObjU_bit(uid()); }
     void setuId(ObjU_bit id) {          setUId(id); }

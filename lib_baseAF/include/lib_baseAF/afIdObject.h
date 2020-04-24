@@ -16,6 +16,9 @@ class AFlib::id::Object : public AFlib::id::History, public AFlib::id::Object_bi
 public:
     explicit Object();
     Object(const QByteArray& data);
+    Object(const Object& cpObject);
+    Object(const Object* cpObject);
+    Object(const ObjectPtr ptr);
     Object(Account_bit owner, quint16 uniqueId, quint8 type, quint8 pluginId);
     Object(Account_bit owner, QString name, QString descr = QString(""));
     Object(Account_bit owner, QString name, QString descr, quint16 uniqueId, quint8 type, quint8 pluginId,
@@ -52,6 +55,9 @@ public:
 protected:
     friend QDataStream &operator << (QDataStream& stream, const Object& data);
     friend QDataStream &operator >> (QDataStream& stream,       Object& data);
+
+private:
+    virtual void saveToStorage(const OperatePtr ptr) override final;
 };
 
 QDataStream &operator << (QDataStream& stream, const AFlib::id::ObjectPtrList& data);

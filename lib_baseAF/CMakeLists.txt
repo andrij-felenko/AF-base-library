@@ -3,6 +3,11 @@ project(lib_baseAF VERSION 0.0.1)
 
 set (baseAF_h
     include/afBaseLib.h
+    include/lib_baseAF/afAccount.h
+    include/lib_baseAF/afAccountAPI.h
+    include/lib_baseAF/afAccountGroup.h
+    include/lib_baseAF/afAccountInfo.h
+    include/lib_baseAF/afAccountStorage.h
     include/lib_baseAF/afDir.h
     include/lib_baseAF/afEnum.h
     include/lib_baseAF/afFile.h
@@ -22,6 +27,11 @@ set (baseAF_h
 )
 
 set (baseAF_cpp
+    account/afAccount.cpp
+    account/afAccountAPI.cpp
+    account/afAccountGroup.cpp
+    account/afAccountInfo.cpp
+    account/afAccountStorage.cpp
     base/afEnum.cpp
     base/afFunction.cpp
     base/afIdAccount.cpp
@@ -39,6 +49,11 @@ set (baseAF_cpp
 )
 
 set (initialize_header
+    include/AFaccount/AfAccount
+    include/AFaccount/AfAccountApi
+    include/AFaccount/AfAccountGroup
+    include/AFaccount/AfAccountInfo
+    include/AFaccount/AfAccountStorage
     include/AFbaseLib
     include/AFbase/AfEnum
     include/AFbase/AfFile

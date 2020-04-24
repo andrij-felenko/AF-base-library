@@ -1,5 +1,6 @@
 #include "afIdObject.h"
 #include "afFile.h"
+#include "AfStorage"
 #include <QtCore/QDebug>
 
 AFlib::id::Object::Object() : Object(Account_bit(), "", "", 0, 0, 0, 0, 0)
@@ -11,6 +12,21 @@ AFlib::id::Object::Object(const QByteArray &data)
 {
     QDataStream stream(data);
     stream >> *this;
+}
+
+AFlib::id::Object::Object(const Object &cpObject) : AFlib::id::Object(cpObject.getData())
+{
+    // it`s done
+}
+
+AFlib::id::Object::Object(const Object *cpObject) : AFlib::id::Object(cpObject->getData())
+{
+    // it`s done
+}
+
+AFlib::id::Object::Object(const ObjectPtr ptr) : AFlib::id::Object(ptr.get())
+{
+    // it`s done
 }
 
 AFlib::id::Object::Object(Account_bit owner, quint16 uniqueId, quint8 type, quint8 pluginId)
@@ -42,22 +58,22 @@ void AFlib::id::Object::makeGlobalId(quint32 newId)
 
 QString AFlib::id::Object::name() const
 {
-    return getValue(ValueType::Name).toString();
+    return getAttribute(Attribute::Name).toString();
 }
 
 QString AFlib::id::Object::description() const
 {
-    return getValue(ValueType::Description).toString();
+    return getAttribute(Attribute::Description).toString();
 }
 
 void AFlib::id::Object::setName(const QString &name)
 {
-    setValue(ValueType::Name, name);
+    setAttribute(Attribute::Name, name);
 }
 
 void AFlib::id::Object::setDescription(const QString &description)
 {
-    setValue(ValueType::Description, description);
+    setAttribute(Attribute::Description, description);
 }
 
 QByteArray AFlib::id::Object::getData() const
@@ -201,9 +217,15 @@ AFlib::id::ObjectPtrList AFlib::id::Object::readFromFile(const QStringList &dPat
     return readList(file.readAll(), list);
 }
 
+void AFlib::id::Object::saveToStorage(const OperatePtr ptr)
+{
+    afStorage()->addOperate(this, *ptr);
+}
+
 QDebug operator <<(QDebug d, const AFlib::id::Object &object)
 {
     return d << "AFlib::id::Object {\n\t"
+             << "owner id:    "    << object.owner()
              << "name:        "    << object.name() << ";\n\t"
              << "description: "    << object.description() << ";\n\t"
              << "unique id:    0x" << QString::number(object.uid(), 16) << ";\n\t"

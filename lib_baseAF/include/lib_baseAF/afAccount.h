@@ -5,9 +5,9 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 #include <QtCore/QJsonObject>
+#include <QtCore/QSharedPointer>
 
-#include "accountInfo.h"
-#include <AFcurrency/AfCurrencyType>
+#include "lib_baseAF/afAccountInfo.h"
 
 namespace AFaccount {
     class Account;
@@ -25,9 +25,7 @@ public:
     Account(const AFlib::IdObject& account);
 
     bool check(QString password) const;
-    QList <CurrencyEnum> currencyList() const;
-    QStringList currencyStringList() const;
-    InfoPtrList friendList() const;
+//    InfoPtrList friendList() const;
 
     virtual QString login() const final;
 
@@ -43,8 +41,7 @@ protected:
 
 private:
     virtual QString passwordHash() const final;
-    InfoPtrList m_friendList;
-    QList <CurrencyEnum> m_currencyList;
+//    InfoPtrList m_friendList;
 
     friend class Storage;
 };

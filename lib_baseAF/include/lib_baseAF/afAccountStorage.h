@@ -1,8 +1,8 @@
 #ifndef LIB_ACCOUNTAF_ACCOUNT_STORAGE_H
 #define LIB_ACCOUNTAF_ACCOUNT_STORAGE_H
 
-#include "account.h"
-#include "accountGroup.h"
+#include "afAccount.h"
+#include "afAccountGroup.h"
 //#include  "afBaseLib.h"
 
 namespace AFaccount {
@@ -24,7 +24,6 @@ class AFaccount::Storage final
 public:
     explicit Storage();
 
-    static QDir m_accountStorageDir;
     static StoragePtr instance();
 
     /*!
@@ -35,6 +34,7 @@ public:
      * \return Return true if have error, it's hasn't logic, but for now it's ok.
      */
     std::optional <QString> checkLogin(const QString& login, const QString& password) const;
+    QList <AFlib::id::Account_bit> dependsAccount() const;
 
     bool check(const AFlib::id::Account_bit& id);
     bool check(const quint32& id);
@@ -50,6 +50,7 @@ public:
     bool remove(AFlib::id::Account_bit id);
 
 private:
+    static QDir m_accountStorageDir;
     AccountPtrList m_accountList;
     GroupPtrList m_groupList;
 

@@ -1,4 +1,4 @@
-#include "account.h"
+#include "lib_baseAF/afAccount.h"
 #include <QtCore/QVariant>
 #include <QtCore/QThread>
 #include <QtCore/QJsonArray>
@@ -18,12 +18,11 @@ AFaccount::Account::Account(QObject *parent) : AFaccount::Info(parent)
 AFaccount::Account::Account(QJsonObject obj, QObject *parent) : AFaccount::Info(obj, parent)
 {
     setLogin(obj.value("login").toString());
-    setValue(AFValueType::Password, obj.value("password").toString());
-    for (auto it : obj.value("currencies").toVariant().toStringList())
-        m_currencyList.push_back(CurrencyAF::Type::toEnum(it));
+    setAttribute(AFattribute::Password, obj.value("password").toString());
     auto friendArray = obj.value("friend_list").toArray();
-    for (auto it : friendArray)
-        m_friendList.push_back(InfoPtr::create(it.toObject(), this));
+    // TODO rewrite
+//    for (auto it : friendArray)
+//        m_friendList.push_back(InfoPtr::create(it.toObject(), this));
 }
 
 AFaccount::AccountPtr AFaccount::own()
@@ -40,33 +39,20 @@ bool AFaccount::Account::check(QString password) const
     thread()->wait(20);
     return password == passwordHash() || password == QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Md5);
 }
-
-QList <CurrencyEnum> AFaccount::Account::currencyList() const
-{
-    return m_currencyList;
-}
-      
-QStringList AFaccount::Account::currencyStringList() const
-{
-    QStringList ret;
-    for (auto it : m_currencyList)
-        ret += CurrencyAF::Type::toShort(it);
-    return ret;
-}
-
-AFaccount::InfoPtrList AFaccount::Account::friendList() const
-{
-    return m_friendList;
-}
+// TODO rewrite
+//AFaccount::InfoPtrList AFaccount::Account::friendList() const
+//{
+//    return m_friendList;
+//}
 
 QString AFaccount::Account::passwordHash() const
 {
-    return getValue(AFValueType::Password).toString();
+    return getAttribute(AFattribute::Password).toString();
 }
 
 QString AFaccount::Account::login() const
 {
-    return getValue(AFValueType::Login).toString();
+    return getAttribute(AFattribute::Login).toString();
 }
 
 QJsonObject AFaccount::Account::toJson() const
@@ -74,10 +60,10 @@ QJsonObject AFaccount::Account::toJson() const
     QJsonObject obj = static_cast <const Info&> (*this);
     obj.insert("login", login());
     obj.insert("password", passwordHash());
-    obj.insert("currencies", QJsonValue::fromVariant(QVariant::fromValue(currencyStringList())));
     QJsonArray friendArray;
-    for (auto it : m_friendList)
-        friendArray.push_back(QJsonObject(*it.data()));
+    // TODO rewrite
+//    for (auto it : m_friendList)
+//        friendArray.push_back(QJsonObject(*it.data()));
     obj.insert("friend_list", friendArray);
     return obj;
 }
@@ -89,23 +75,23 @@ AFaccount::Account::operator QJsonObject() const
 
 void AFaccount::Account::setLogin(QString login)
 {
-    setValue(AFValueType::Login, login);
+    setAttribute(AFattribute::Login, login);
 }
 
 namespace AFaccount {
 QDataStream& operator >> (QDataStream &stream, AFaccount::Account &account)
 {
     QString hash, login;
-    stream >> login >> hash >> account.m_friendList >> account.m_currencyList;
+    stream >> login >> hash;// TODO rewrite >> account.m_friendList;
     account.setLogin(login);
-    account.setValue(AFValueType::Password, hash);
+    account.setAttribute(AFattribute::Password, hash);
     stream >> static_cast <Info&> (account);
     return stream;
 }
 
 QDataStream& operator << (QDataStream &stream, const AFaccount::Account &account)
 {
-    stream << account.login() << account.passwordHash() << account.m_friendList << account.m_currencyList;
+    stream << account.login() << account.passwordHash();// TODO rewrite << account.m_friendList;
     stream << static_cast <const Info&> (account);
     return stream;
 }

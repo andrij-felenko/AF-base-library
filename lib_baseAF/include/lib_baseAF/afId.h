@@ -24,9 +24,6 @@ namespace AFlib {
     typedef id::OperatePtr     IdOperatePtr;
     typedef id::OperatePtrList IdOperatePtrList;
 
-    typedef id::ValueType ValueType;
-    typedef  id::CompressValue CompressValue;
-
     typedef transfer::List TransferOperateList;
 }
 
@@ -45,8 +42,8 @@ typedef AFlib::IdOperate        AFIdOperate;
 typedef AFlib::IdOperatePtr     AFIdOperatePtr;
 typedef AFlib::IdOperatePtrList AFIdOperatePtrList;
 
-typedef AFlib::ValueType     AFValueType;
-typedef AFlib::CompressValue AFCompressValue;
+typedef AFlib::Attribute AFattribute;
+typedef AFlib::Compress  AFcompress;
 
 typedef AFlib::TransferOperateList AFTransferOperateList;
 

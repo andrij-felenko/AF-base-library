@@ -15,7 +15,6 @@ namespace AFlib {
 
 class AFlib::Storage : public QObject
 {
-    typedef CompressValue CompressV;
     typedef IdObjectPtr     IdObj;
     typedef AFIdObject_bit  IdObj_b;
     typedef IdObjectPtrList IdObjList;
@@ -24,7 +23,8 @@ public:
     explicit Storage(QObject* parent = qApp);
     static QSharedPointer <Storage> init();
 
-    void loadFromDirectory(const QStringList& dPath, CompressV compress = CompressV::AllActive);
+    // TODO add refresh object function, send object and read all new to it file
+    void loadFromDirectory(const QStringList& dPath, Compress compress = Compress::AllActive);
     bool updateFile(const QStringList dPath, const QByteArray &data, AFlib::FileType type = AFlib::FileType::Data);
     bool contains(const IdObject& ptr) const;
     bool contains(const IdAccount_bit& account, const IdObjectU_bit& object) const;
@@ -38,14 +38,15 @@ public:
 
     bool addOperateList(transfer::List &operateList);
 
-    IdObj     getObject    (const QStringList dPath, const IdObject_bit &object, CompressV compress = CompressV::AllActive, AFlib::FileType type = AFlib::FileType::Data);
-    IdObj     getObject    (const QStringList dPath, const IdObject_bit &object, AFlib::FileType type, CompressV compress = CompressV::AllActive);
+    IdObj     getObject    (const QStringList dPath, const IdObject_bit &object, Compress compress  = Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
+    IdObj     getObject    (const QStringList dPath, const IdObject_bit &object, AFlib::FileType type, Compress compress = Compress::AllActive);
 
-    IdObjList getObjectList(const QStringList dPath,                             CompressV compress = CompressV::AllActive, AFlib::FileType type = AFlib::FileType::Data);
-    IdObjList getObjectList(const QStringList dPath,                             AFlib::FileType type, CompressV compress = CompressV::AllActive);
+    IdObjList getObjectList(const QStringList dPath,                             Compress compress  =  Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
+    IdObjList getObjectList(const QStringList dPath,                             AFlib::FileType type, Compress compress = Compress::AllActive);
+    IdObjList getObjectList(QList <id::Account_bit> accList, quint8 plugin, Compress compress  =  Compress::AllActive);
 
-    IdObjList getObjectList(const QStringList dPath, const IdObjectPtrList list, CompressV compress = CompressV::AllActive, AFlib::FileType type = AFlib::FileType::Data);
-    IdObjList getObjectList(const QStringList dPath, const IdObjectPtrList list, AFlib::FileType type, CompressV compress = CompressV::AllActive);
+    IdObjList getObjectList(const QStringList dPath, const IdObjectPtrList list, Compress compress  =  Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
+    IdObjList getObjectList(const QStringList dPath, const IdObjectPtrList list, AFlib::FileType type, Compress compress = Compress::AllActive);
 
     bool removeObject(const IdObject& object);
 

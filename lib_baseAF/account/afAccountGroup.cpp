@@ -1,11 +1,21 @@
-#include "accountGroup.h"
-#include "accountStorage.h"
+#include "afAccountGroup.h"
+#include "afAccountStorage.h"
+#include "AFbase/AfEnum"
+#include <QtCore/QPair>
+
+typedef QPair <quint32, quint8> AccountWithAccess;
+Q_DECLARE_METATYPE(AccountWithAccess);
+
+AccountWithAccess makeAccountWithAccess(AFIdObject_bit account, AFaccount::AccessType access)
+{
+    return AccountWithAccess(account.toUInt32(), fromAccessType(access));
+}
 
 using namespace AFaccount;
 
 Group::Group(QObject *parent) : AFaccount::Info(parent)
 {
-    auto subUsers = getMultiValue(AFValueType::UserList);
+    auto subUsers = getMultiAttribute(AFattribute::UserList);
     // TODO parse subUsers
 }
 
@@ -27,37 +37,35 @@ QStringList Group::moderatorNameList() const { return getNameByType(AccessType::
 
 void Group::addAccount(InfoPtr account, AccessType access)
 {
-    // TODO
+    addAccount(account->object_b(), access);
 }
 
-void Group::removeAcount(InfoPtr account, AccessType access)
+void Group::removeAccount(InfoPtr account, AccessType access)
 {
-    // TODO
+    removeAccount(account->object_b(), access);
 }
 
 void Group::changeAccess(InfoPtr account, AccessType newAccess)
 {
-    // TODO
+    changeAccess(account->object_b(), newAccess);
 }
 
 void Group::addAccount(AFIdObject_bit account, AccessType access)
 {
-    // TODO
+    QVariant var = QVariant::fromValue(makeAccountWithAccess(account, access));
+    setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::AddIdLine);
 }
 
-void Group::removeAcount(AFIdObject_bit account, AccessType access)
+void Group::removeAccount(AFIdObject_bit account, AccessType access)
 {
-    // TODO
+    QVariant var = QVariant::fromValue(makeAccountWithAccess(account, access));
+    setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::RemoveIdLine);
 }
 
 void Group::changeAccess(AFIdObject_bit account, AccessType newAccess)
 {
-    // TODO
-}
-
-void Group::updateInfoList()
-{
-    // TODO
+    QVariant var = QVariant::fromValue(makeAccountWithAccess(account, newAccess));
+    setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::EditIdLine);
 }
 
 InfoPtrList Group::getByType(AccessType type, bool inheritType) const
@@ -82,6 +90,16 @@ QStringList Group::getNameByType(AccessType type, bool inheritType) const
             list += it.key()->name();
     }
     return list;
+}
+
+AccessType AFaccount::toAccessType(const quint8 i)
+{
+    return static_cast <AccessType> (i + static_cast <uint> (AccessType::First));
+}
+
+quint8 AFaccount::fromAccessType(AccessType type)
+{
+    return static_cast <uint>(type) - static_cast <uint>(AccessType::First);
 }
 
 namespace AFaccount {

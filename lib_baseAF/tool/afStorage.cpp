@@ -23,7 +23,7 @@ StoragePtr AFlib::afStorage()
     return Storage::init();
 }
 
-void Storage::loadFromDirectory(const QStringList &dPath, Storage::CompressV compress)
+void Storage::loadFromDirectory(const QStringList &dPath, Compress compress)
 {
     QDir dir = AFfile::getFullDir(dPath);
     auto fileList = dir.entryList({"*.afd"}, QDir::Files);
@@ -71,7 +71,7 @@ bool Storage::addOperate(const IdObject &object, const IdOperate &operate)
             if (not file.openWrite())
                 break;
 
-            it->addOperate(operate);
+            it->addOperate(operate, false);
             return file.writeAll(IdObject::listToBytaArray(data));
         }
 
@@ -99,7 +99,7 @@ bool Storage::addOperateList(const transfer::List &list)
             bool foundSubIt = false;
             for (auto readIt : readList)
                 if (readIt->owner() == subIt.owner && readIt->objecttU_b() == subIt.object){
-                    readIt->addOperations(subIt);
+                    readIt->addOperations(subIt, false);
                     foundSubIt = true;
                     break;
                 }
@@ -167,7 +167,7 @@ bool Storage::addOperateList(transfer::List &operateList)
         for (auto object : fileIt)
             for (auto it : list)
                 if (it->owner() == object.owner && it->object_b() == object.object){
-                    it->addOperations(object);
+                    it->addOperations(object, false);
                 }
 
         result &= updateFile(fileIt.dPath, IdObject::listToBytaArray(list));
@@ -176,12 +176,12 @@ bool Storage::addOperateList(transfer::List &operateList)
     return result;
 }
 
-Storage::IdObj Storage::getObject(const QStringList dPath, const IdObject_bit &object, FileType type, CompressV compress)
+Storage::IdObj Storage::getObject(const QStringList dPath, const IdObject_bit &object, FileType type, Compress compress)
 {
     return getObject(dPath, object, compress, type);
 }
 
-Storage::IdObj Storage::getObject(const QStringList dPath, const IdObject_bit &object, Storage::CompressV compress, FileType type)
+Storage::IdObj Storage::getObject(const QStringList dPath, const IdObject_bit &object, Compress compress, FileType type)
 {
     auto result = AFlib::id::Object::readFromFile(dPath, type, object);
     if (result.isNull()){
@@ -194,12 +194,29 @@ Storage::IdObj Storage::getObject(const QStringList dPath, const IdObject_bit &o
     return result;
 }
 
-Storage::IdObjList Storage::getObjectList(const QStringList dPath, FileType type, CompressV compress)
+Storage::IdObjList Storage::getObjectList(const QStringList dPath, FileType type, Compress compress)
 {
     return getObjectList(dPath, compress, type);
 }
 
-Storage::IdObjList Storage::getObjectList(const QStringList dPath, Storage::CompressV compress, FileType type)
+Storage::IdObjList Storage::getObjectList(QList<id::Account_bit> accList, quint8 plugin, Compress compress)
+{
+    QList <QStringList> dPathList;
+    for (auto aIt : m_storageList)
+        if (accList.contains(aIt.accountBit))
+            for (auto pIt : aIt.pluginList)
+                if (pIt.pluginId == plugin)
+                    for (auto it : pIt.idList)
+                        if (not dPathList.contains(it.dPath))
+                            dPathList.push_back(it.dPath);
+
+    IdObjList retList;
+    for (auto it : dPathList)
+        retList += getObjectList(it, compress);
+    return retList;
+}
+
+Storage::IdObjList Storage::getObjectList(const QStringList dPath, Compress compress, FileType type)
 {
     auto list = AFlib::id::Object::readFromFile(dPath, type);
     for (auto it : list)
@@ -209,12 +226,12 @@ Storage::IdObjList Storage::getObjectList(const QStringList dPath, Storage::Comp
     return list;
 }
 
-Storage::IdObjList Storage::getObjectList(const QStringList dPath, const IdObjectPtrList list, FileType type, CompressV compress)
+Storage::IdObjList Storage:: getObjectList(const QStringList dPath, const IdObjectPtrList list, FileType type, Compress compress)
 {
     return getObjectList(dPath, list, compress, type);
 }
 
-Storage::IdObjList Storage::getObjectList(const QStringList dPath, const IdObjectPtrList list, Storage::CompressV compress, FileType type)
+Storage::IdObjList Storage::getObjectList(const QStringList dPath, const IdObjectPtrList list, Compress compress, FileType type)
 {
     auto retList = AFlib::id::Object::readFromFile(dPath, type, list);
     for (auto it : retList)

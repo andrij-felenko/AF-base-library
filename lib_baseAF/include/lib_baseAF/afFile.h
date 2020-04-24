@@ -33,7 +33,7 @@ public:
 
     static bool rename(QDir dir, QString file, QString newName);
 
-    static QDir    getFullDir (const QStringList& list, bool isFileNameIsLast = true);
+    static QDir    getFullDir (const QStringList &list, bool isFileNameIsLast = true);
     static QString getFullPath(const QStringList& list, AFlib::FileType type = AFlib::FileType::Data);
     static QString getFullPath(const QString& dPath);
     static QString getDPath(const QStringList& list);

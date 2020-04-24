@@ -81,6 +81,8 @@ namespace AFlib {
 
         First = LocalUser,
     };
+    AccountIdType toAccountIdType(const quint8 i);
+    quint8 fromAccountIdType(AccountIdType type);
 }
 
 bool operator == (AFlib::AccountIdType f, AFlib::AccountIdType s);

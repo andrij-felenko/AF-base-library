@@ -87,9 +87,14 @@ bool AFlib::File::rename(QDir dir, QString file, QString newName)
     return QFile::rename(dir.absoluteFilePath(file), dir.absoluteFilePath(newName));
 }
 
-QDir AFlib::File::getFullDir(const QStringList &list, bool isFileNameIsLast)
+QDir AFlib::File::getFullDir(const QStringList& list, bool isFileNameIsLast)
 {
-    QDir dir = afDir()->storage();
+    QDir dir;
+    if (list.first() == "accounts" || list.first() == "groups")
+        dir = afDir()->users();
+    else
+        dir = afDir()->storage();
+
     for (auto it : list)
         if (it != list.last() && isFileNameIsLast)
             AFlib::Dir::cdDirectory(dir, it);

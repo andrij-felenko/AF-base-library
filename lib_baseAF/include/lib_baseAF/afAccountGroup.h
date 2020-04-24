@@ -6,7 +6,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
-#include "accountInfo.h"
+#include "lib_baseAF/afAccountInfo.h"
 
 namespace AFaccount {
     class Group;
@@ -21,7 +21,11 @@ namespace AFaccount {
         User,
 
         Default = User,
+        First = Owner,
     };
+
+    AccessType toAccessType(const quint8 i);
+    quint8 fromAccessType(AccessType type);
 }
 
 class AFaccount::Group : public Info
@@ -41,16 +45,13 @@ public:
     QStringList creatorNameList() const;
     QStringList moderatorNameList() const;
 
-    void addAccount  (InfoPtr account, AccessType access);
-    void removeAcount(InfoPtr account, AccessType access);
-    void changeAccess(InfoPtr account, AccessType newAccess);
+    void addAccount   (InfoPtr account, AccessType access);
+    void removeAccount(InfoPtr account, AccessType access);
+    void changeAccess (InfoPtr account, AccessType newAccess);
 
-    void addAccount  (AFIdObject_bit account, AccessType access);
-    void removeAcount(AFIdObject_bit account, AccessType access);
-    void changeAccess(AFIdObject_bit account, AccessType newAccess);
-
-    //! Call update InfoPtr for all user from list to get new values
-    void updateInfoList();
+    void addAccount   (AFIdObject_bit account, AccessType access);
+    void removeAccount(AFIdObject_bit account, AccessType access);
+    void changeAccess (AFIdObject_bit account, AccessType newAccess);
 
 protected:
     friend QDataStream & operator >> (QDataStream& stream,       Group &group);

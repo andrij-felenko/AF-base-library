@@ -1,4 +1,4 @@
-#include "accountInfo.h"
+#include "afAccountInfo.h"
 #include <QtCore/QVariant>
 
 #define DATE_TIME "yyyy.MM.dd hh:mm:ss"
@@ -39,12 +39,12 @@ AFaccount::Info::Info(AFlib::AccountIdType type, QObject* parent)
 
 QByteArray AFaccount::Info::icon() const
 {
-    return getValue(AFValueType::Icon).toByteArray();
+    return getAttribute(AFattribute::Icon).toByteArray();
 }
 
 QString AFaccount::Info::mail() const
 {
-    return getValue(AFValueType::Email).toString();
+    return getAttribute(AFattribute::Email).toString();
 }
 
 QJsonObject AFaccount::Info::toJson() const
@@ -66,12 +66,13 @@ AFaccount::Info::operator QJsonObject() const
 
 void AFaccount::Info::setIcon(const QByteArray& icon)
 {
-    setValue(AFValueType::Icon, icon);
+    setAttribute(AFattribute::Icon, icon);
 }
 
 void AFaccount::Info::setMail(const QString& mail)
 {
-    setValue(AFValueType::Email, mail);
+    setAttribute(AFattribute::Email, mail);
+    emit mailChanged(mail);
 }
 
 namespace AFaccount {

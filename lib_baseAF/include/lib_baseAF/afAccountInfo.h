@@ -15,11 +15,11 @@ namespace AFaccount {
     typedef QList <InfoPtr> InfoPtrList;
 }
 
-class AFaccount::Info : public QObject, public AFIdObject
+class AFaccount::Info : public QObject, public AFlib::id::Object
 {
     Q_OBJECT
 //    Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
-//    Q_PROPERTY(QString mail READ mail WRITE setMail NOTIFY mailChanged)
+    Q_PROPERTY(QString mail READ mail WRITE setMail NOTIFY mailChanged)
 public:
     explicit Info(QObject* parent = nullptr);
     Info(uint id, QObject* parent = nullptr);

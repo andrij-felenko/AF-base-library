@@ -4,14 +4,13 @@
 #include <QtCore/QDateTime>
 #include <QtCore/QSharedPointer>
 
-namespace AFlib::id {
-    class History;
-    typedef QSharedPointer <History> HistoryPtr;
-
-    enum class ValueType {
+namespace AFlib {
+    enum class Attribute {
         None = 0,
         Name,
         Description,
+        Date,
+        Time,
         //
         // for account
         Email = 0x10,
@@ -19,14 +18,20 @@ namespace AFlib::id {
         Icon,
         Password,
         UserList,
+        GroupMembers,         ///< List of members in Group
     };
 
-    enum class CompressValue {
+    enum class Compress {
         Shortest,
         AllActive,
         EachByOne,
         Full,
     };
+}
+
+namespace AFlib::id {
+    class History;
+    typedef QSharedPointer <History> HistoryPtr;
 }
 
 #include "afIdOperate.h"
@@ -44,51 +49,51 @@ public:
     void makeFull(const QByteArray& data);
     void makeShorten();
     void saveShorten();
-    void useCompress(CompressValue value);
+    void useCompress(Compress value);
 
     // single part
-    QVariant getValue(ValueType key) const;
-    void setValue(ValueType key, QVariant value);
+    QVariant getAttribute(Attribute key) const;
+    void     setAttribute(Attribute key, QVariant value);
 
     template <typename K>
-    QVariant getValue(K key) const
+    QVariant getAttribute(K key) const
     {
-        return getValue(static_cast <quint16> (key) + 0x40);
+        return getAttribute(static_cast <quint16> (key) + 0x40);
     }
 
     template <typename K>
-    void setValue(K key, QVariant value)
+    void setAttribute(K key, QVariant value)
     {
-        setValue(static_cast <quint16> (key) + 0x40, value);
+        setAttribute(static_cast <quint16> (key) + 0x40, value);
     }
 
     // Multi part
-    OperatePtrList getMultiValue(ValueType key) const;
-    void setMultiValue(ValueType key, QVariant value, HIdType type);
+    QVariantList getMultiAttribute(Attribute key) const;
+    void         setMultiAttribute(Attribute key, QVariant value, HIdType type);
 
     template <typename K>
-    OperatePtrList getMultiValue(K key) const
+    QVariantList getMultiAttribute(K key) const
     {
-        return getMultiValue(static_cast <quint16> (key) + 0x40);
+        return getMultiAttribute(static_cast <quint16> (key) + 0x40);
     }
 
     template <typename K>
-    void setMultiValue(K key, const QVariant& value, HIdType type)
+    void setMultiAttribute(K key, const QVariant& value, HIdType type)
     {
-        setMultiValue(static_cast <quint16> (key) + 0x40, value, type);
+        setMultiAttribute(static_cast <quint16> (key) + 0x40, value, type);
     }
 
     OperatePtrList getListAfter(const QDateTime& afterTime) const;
-    void addOperate(Operate    id);
-    void addOperate(OperatePtr id);
+    void addOperate(Operate    id, bool saveToStorage = true);
+    void addOperate(OperatePtr id, bool saveToStorage = true);
     void addOperate(const QByteArray& data);
     void addOperations(const QByteArray& list);
-    void addOperations(const OperatePtrList list);
-    void addOperate(ValueType valueKey, QVariant value,
+    void addOperations(const OperatePtrList list, bool saveToStorage = true);
+    void addOperate(Attribute attributeKey, QVariant value,
                     Account_bit userId, HIdType history = HIdType::AddIdLine,
                     SIdType saved = SIdType::LocaleSaved,
                     QDateTime dTime = QDateTime::currentDateTime());
-    void addOperate(ValueType valueKey, QVariant value,
+    void addOperate(Attribute attributeKey, QVariant value,
                     quint32 userId, quint8 historyId, quint8 savedId,
                     QDateTime dTime = QDateTime::currentDateTime());
 
@@ -113,17 +118,20 @@ protected:
     OperatePtrList m_operateList;
     Account_bit m_owner;
 
+    virtual void saveToStorage(const OperatePtr ptr) = 0;
+
     friend QDataStream &operator << (QDataStream& stream, const History& data);
     friend QDataStream &operator >> (QDataStream& stream,       History& data);
 
 private:
     void refreshLastChangeTime();
 
-    QVariant getValue(quint16 key) const;
-    void setValue(quint16 key, const QVariant& value);
+    QVariant getAttribute(quint16 key) const;
+    QVariant getAttribute(const OperatePtrList &list, quint16 key) const;
+    void setAttribute(quint16 key, const QVariant& value);
 
-    OperatePtrList getMultiValue(quint16 key) const;
-    void setMultiValue(quint16 key, const QVariant& value, HIdType type);
+    QVariantList getMultiAttribute(quint16 key) const;
+    void setMultiAttribute(quint16 key, const QVariant& value, HIdType type);
 
     void addOperate(quint16 valueKey, QVariant value, Account_bit userId,
                     HistoryIdType history, SavedIdType saved, QDateTime dTime);

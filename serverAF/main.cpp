@@ -1,5 +1,5 @@
 #include <QtCore/QCoreApplication>
-#include <AFcurrency/AfCurrencyData>
+//#include <AFcurrency/AfCurrencyData>
 
 //#include "currencyHttpServer.h"
 
@@ -16,8 +16,8 @@ int main(int argc, char** argv)
             break;
         }
 
-    CurrencyAF::ByDate::ignoreUpdater = true;
-    CurrencyAF::Data::addCurrency(CurrencyAF::Type::allShort());
+//    CurrencyAF::ByDate::ignoreUpdater = true;
+//    CurrencyAF::Data::addCurrency(CurrencyAF::Type::allShort());
 
 //    CurrencyHttpServer server(&app);
 //    server.listen(QHostAddress::Any, port);

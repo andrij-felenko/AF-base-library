@@ -1,7 +1,7 @@
 #ifndef LIB_ACCOUNTAF_ACCOUNT_API_H
 #define LIB_ACCOUNTAF_ACCOUNT_API_H
 
-#include "accountStorage.h"
+#include "afAccountStorage.h"
 #include <QtNetwork/QNetworkAccessManager>
 
 namespace AFaccount {
