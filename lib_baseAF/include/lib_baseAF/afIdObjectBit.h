@@ -80,11 +80,17 @@ struct AFlib::id::Object_bit : public TbitStruct <64>
     quint8 type()      const { return toUInt8(      40, 7); }
     void setType(quint8 type) {       setUInt8(type, 40, 7); }
 
+    template <typename N> N       type() const { return  static_cast <N>(type()); }
+    template <typename N> void setType(N type) { setType(static_cast <quint8> (type)); }
+
     quint8 pluginId()    const { return toUInt8(    35, 5); }
     void setPLuginId(quint8 id) {       setUInt8(id, 35, 5); }
 
     quint8 parentType()      const { return toUInt8(      28, 7); }
     void setParentType(quint8 type) {       setUInt8(type, 28, 7); }
+
+    template <typename N> N       parentType() const { return  static_cast <N>(parentType()); }
+    template <typename N> void setParentType(N type) { setParentType(static_cast <quint8> (type)); }
 
     quint32 parentId()     const { return toUInt32(    0, 28); }
     void setParnetId(quint32 id) {       setUInt32(id, 0, 28); }

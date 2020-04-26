@@ -1,0 +1,2 @@
+#include "include/lib_quickAF/guiApplication.h"
+#include "include/lib_quickAF/guiPlugin.h"

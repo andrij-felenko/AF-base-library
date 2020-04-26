@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/LibDynamic/MunninQuickTypes">
+    <qresource prefix="/AFquick">
         <file>Enum/Colors.qml</file>
         <file>Item/Button.qml</file>
         <file>Item/CheckBox.qml</file>
@@ -23,5 +23,7 @@
         <file>Object/ColorButtonObject.qml</file>
         <file>Object/TextObject.qml</file>
         <file>Object/UrlButtonObject.qml</file>
+        <file>Item/BasePlugin.qml</file>
+        <file>Item/BaseApp.qml</file>
     </qresource>
 </RCC>

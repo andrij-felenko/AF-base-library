@@ -3,6 +3,7 @@ project(lib_baseAF VERSION 0.0.1)
 
 set (baseAF_h
     include/afBaseLib.h
+    include/afAccountLib.h
     include/lib_baseAF/afAccount.h
     include/lib_baseAF/afAccountAPI.h
     include/lib_baseAF/afAccountGroup.h
@@ -72,7 +73,7 @@ set (initialize_header
 set (CMAKE_AUTOMOC, true)
 find_package(Qt5Core)
 
-add_library(lib_baseAF ${baseAF_h} ${baseAF_cpp})
+add_library(lib_baseAF ${baseAF_h} ${baseAF_cpp} ${initialize_header})
 
 set_target_properties(lib_baseAF PROPERTIES OUTPUT_NAME "baseAF")
 target_link_libraries(lib_baseAF Qt5::Core)

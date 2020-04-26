@@ -2,29 +2,38 @@ cmake_minimum_required(VERSION 3.14)
 project(lib_quickAF VERSION 0.0.1)
 
 set (quickAF_h
-#    include/lib_quickAF/guiApplicationAF.h
-#    include/lib_quickAF/pluginGui.h
-#    include/lib_quickAF/pluginGuiHandler.h
-#    include/lib_quickAF/quickAFlib.h
-    )
+    include/lib_quickAF/guiApplication.h
+    include/lib_quickAF/guiPlugin.h
+)
 
 set (quickAF_cpp
-#    src/pluginGui.cpp
-#    src/pluginGuiHandler.cpp
-#    src/quickAFlib.cpp
-    )
+    src/guiApplication.cpp
+    src/guiPlugin.cpp
+)
 
-set (CMAKE_AUTORCC)
+set (initialize_header
+    include/AFquick/AfGuiApplication
+    include/AFquick/AfGuiPlugin
+    include/AFquickLib
+)
+
+set (CMAKE_AUTORCC ON)
 find_package(Qt5Core)
 find_package(Qt5Qml)
 find_package(Qt5Quick)
 
-add_library(lib_quickAF SHARED ${quickAF_h} ${quickAF_cpp})
+add_library(lib_quickAF SHARED
+    ${quickAF_h} ${quickAF_cpp}
+    ${initialize_header}
+    rc/af_quick_rc.qrc
+)
 
 set_target_properties(lib_quickAF PROPERTIES OUTPUT_NAME "quickAF")
 target_link_libraries(lib_quickAF lib_baseAF Qt5::Core Qt5::Gui Qt5::Quick Qt5::Qml)
 target_include_directories(lib_quickAF
+#    PUBLIC rc
     PUBLIC include
+    PUBLIC include/AFquick
     PRIVATE include/lib_quickAF
     PUBLIC $<TARGET_PROPERTY:lib_baseAF,INTERFACE_INCLUDE_DIRECTORIES>
 )
