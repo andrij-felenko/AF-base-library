@@ -4,6 +4,7 @@
 #include <QtGui/QGuiApplication>
 #include <QtQuick/QQuickView>
 #include "guiPlugin.h"
+#include "menuModel.h"
 
 namespace AFquick {
     class GuiApplication;
@@ -16,8 +17,10 @@ class AFquick::GuiApplication : public QGuiApplication
     Q_PROPERTY(bool monomenu   READ monomenu   NOTIFY monomenuChanged)
     Q_PROPERTY(bool monoobject READ monoobject NOTIFY monoobjectChanged)
     Q_PROPERTY(bool portrait   READ portrait   NOTIFY portraitChanged)
+    Q_PROPERTY(QAbstractListModel* menuModel READ menuModel CONSTANT)
 public:
     explicit GuiApplication(int &argc, char **argv);
+    virtual ~GuiApplication();
 
     void initializePlugin();
     void initializePlugin(QString name);
@@ -32,6 +35,7 @@ public:
 
     void setMonomenu(QStringList list);
     void setMonomenu(QHash <QString/*icon*/, QString/*name*/> hash);
+    QAbstractListModel* menuModel() const;
 
     bool addPlugin(GuiPluginPtr plugin);
 
@@ -66,6 +70,7 @@ private:
 
     void checkPortrait();
     bool setContentUrl(QUrl url);
+    MenuModel* m_menu;
 };
 
 typedef AFquick::GuiApplication AFguiApplication;

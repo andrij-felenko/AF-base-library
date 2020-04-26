@@ -21,3 +21,8 @@ System::SystemOS System::OS()
     return SystemOS::Mac;
 #endif
 }
+
+bool System::isMobile()
+{
+    return OS() == SystemOS::iOS || OS() == SystemOS::Android;
+}

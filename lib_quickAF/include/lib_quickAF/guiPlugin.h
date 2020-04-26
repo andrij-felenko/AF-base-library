@@ -19,6 +19,7 @@ public:
     virtual ~GuiPlugin() = default;
 
     virtual QString name() const final;
+    virtual QString icon() const;
     virtual QUrl qmlUrl() const  = 0;
 
     virtual void initialize() = 0;

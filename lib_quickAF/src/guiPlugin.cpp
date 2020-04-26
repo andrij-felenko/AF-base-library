@@ -12,6 +12,12 @@ QString AFquick::GuiPlugin::name() const
     return m_name;
 }
 
+QString AFquick::GuiPlugin::icon() const
+{
+    // for work need to override
+    return "";
+}
+
 void AFquick::GuiPlugin::clickOnMenu(int index)
 {
     Q_UNUSED(index)

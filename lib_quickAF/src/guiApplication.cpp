@@ -1,16 +1,41 @@
 #include "guiApplication.h"
+#include "guiSize.h"
 #include <QtQml/QQmlContext>
 #include <QtQuick/QQuickItem>
 
-QUrl m_defaultQmlUrl("qrc:/AFquick/Item/BaseApp.qml");
+QUrl m_defaultQmlUrl("qrc:/AFquick/Base/App.qml");
 
 AFquick::GuiApplication::GuiApplication(int &argc, char **argv)
     : QGuiApplication(argc, argv),
       m_useAFaccount(false), m_initializeAll(false), m_monomenu(false)
 {
+    m_menu = new MenuModel(this);
+
     m_view = new QQuickView();
     connect(m_view, &QQuickView::heightChanged, this, &GuiApplication::checkPortrait);
     connect(m_view, &QQuickView:: widthChanged, this, &GuiApplication::checkPortrait);
+
+    setContextProperty("AFapp", this);
+    setContextProperty("AFsize", afGuiSize().data());
+
+    connect(m_menu, &MenuModel::getCount, [=](){ return m_pluginList.length(); });
+
+    connect(m_menu, &MenuModel::getNameByIndex,
+            [=](int index){ return m_pluginList[index]->name(); });
+
+    connect(m_menu, &MenuModel::getIconByIndex,
+            [=](int index){ return m_pluginList[index]->icon(); });
+
+    connect(m_menu, &MenuModel::isCurrentByIndex,
+            [=](int index){ return m_pluginList[index]->name() == m_currentPluginName; });
+}
+
+AFquick::GuiApplication::~GuiApplication()
+{
+    // TODO close all plugin step by step with saving data
+    // TODO close main source
+    m_view->setSource(QUrl(""));
+    m_view->deleteLater();
 }
 
 void AFquick::GuiApplication::setAFaccountFlag(bool isUseAFaccount)
@@ -47,6 +72,7 @@ void AFquick::GuiApplication::show()
 
     initializePlugin();
     checkPortrait();
+    m_view->resize(400, 600);
     m_view->show();
 }
 
@@ -83,6 +109,11 @@ void AFquick::GuiApplication::setMonomenu(QHash<QString, QString> hash)
     emit monomenuChanged(true);
 }
 
+QAbstractListModel *AFquick::GuiApplication::menuModel() const
+{
+    return static_cast <QAbstractListModel*> (m_menu);
+}
+
 bool AFquick::GuiApplication::addPlugin(GuiPluginPtr plugin)
 {
     for (auto it : m_pluginList)
@@ -98,6 +129,8 @@ bool AFquick::GuiApplication::addPlugin(GuiPluginPtr plugin)
 
     if (m_pluginList.length() == 2)
         emit monoobjectChanged(monoobject());
+
+    m_menu->updateData();
 
     return true;
 }
@@ -123,6 +156,7 @@ bool AFquick::GuiApplication::setCurrentPlugin(const QString &name)
             return false;
         }
 
+    m_menu->updateData();
     return true;
 }
 

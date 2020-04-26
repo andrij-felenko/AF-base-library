@@ -4,16 +4,22 @@ project(lib_quickAF VERSION 0.0.1)
 set (quickAF_h
     include/lib_quickAF/guiApplication.h
     include/lib_quickAF/guiPlugin.h
+    include/lib_quickAF/guiSize.h
+    include/lib_quickAF/menuModel.h
 )
 
 set (quickAF_cpp
     src/guiApplication.cpp
     src/guiPlugin.cpp
+    src/guiSize.cpp
+    src/menuModel.cpp
 )
 
 set (initialize_header
     include/AFquick/AfGuiApplication
     include/AFquick/AfGuiPlugin
+    include/AFquick/AfGuiSize
+    include/AFquick/AfMenuModel
     include/AFquickLib
 )
 
@@ -31,7 +37,6 @@ add_library(lib_quickAF SHARED
 set_target_properties(lib_quickAF PROPERTIES OUTPUT_NAME "quickAF")
 target_link_libraries(lib_quickAF lib_baseAF Qt5::Core Qt5::Gui Qt5::Quick Qt5::Qml)
 target_include_directories(lib_quickAF
-#    PUBLIC rc
     PUBLIC include
     PUBLIC include/AFquick
     PRIVATE include/lib_quickAF

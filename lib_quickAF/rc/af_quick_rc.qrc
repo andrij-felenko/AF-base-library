@@ -23,7 +23,8 @@
         <file>Object/ColorButtonObject.qml</file>
         <file>Object/TextObject.qml</file>
         <file>Object/UrlButtonObject.qml</file>
-        <file>Item/BasePlugin.qml</file>
-        <file>Item/BaseApp.qml</file>
+        <file>Base/App.qml</file>
+        <file>Base/Menu.qml</file>
+        <file>Base/Plugin.qml</file>
     </qresource>
 </RCC>

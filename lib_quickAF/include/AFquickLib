@@ -1,2 +1,4 @@
 #include "include/lib_quickAF/guiApplication.h"
 #include "include/lib_quickAF/guiPlugin.h"
+#include "lib_quickAF/menuModel.h"
+#include "lib_quickAF/guiSize.h"

@@ -22,6 +22,8 @@ public:
     }; Q_ENUMS(SystemOS)
     static SystemOS OS();
 
+    static bool isMobile();
+
     enum class Anchor {
         Top,
         Left,
