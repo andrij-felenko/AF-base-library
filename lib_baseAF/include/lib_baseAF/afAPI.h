@@ -79,6 +79,19 @@ private:
 typedef QSharedPointer <AFlib::API> AFapiPtr;
 typedef QList <AFapiPtr> AFapiPtrList;
 
+QDataStream& operator << (QDataStream& s, AFlib::RequestType type)
+{
+    return s << static_cast <uint>(type);
+}
+
+QDataStream& operator >> (QDataStream& s, AFlib::RequestType type)
+{
+    uint i;
+    s >> i;
+    type = static_cast <AFlib::RequestType>(i);
+    return s;
+}
+
 AFapiPtr afAPI();
 
 #endif // LIB_ACCOUNTAF_ACCOUNT_API_H

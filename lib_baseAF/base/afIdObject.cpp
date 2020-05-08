@@ -107,6 +107,11 @@ bool AFlib::id::Object::setOwner(const Account_bit &owner)
     return true;
 }
 
+bool AFlib::id::Object::isAccount() const
+{
+    return id() == 0;
+}
+
 QByteArray AFlib::id::Object::listToBytaArray(const ObjectPtrList list)
 {
     QByteArray ret;

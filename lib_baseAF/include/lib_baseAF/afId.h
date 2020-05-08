@@ -17,7 +17,6 @@ namespace AFlib {
 
     typedef id::Object           IdObject;
     typedef id::ObjectTemplate   IdObjectTemplate;
-    typedef id::ObjectUnique_bit IdObjectU_bit;
     typedef id::Object_bit       IdObject_bit;
     typedef id::ObjectPtr        IdObjectPtr;
     typedef id::ObjectPtrList    IdObjectPtrList;
@@ -36,7 +35,6 @@ typedef AFlib::IdHistoryPtr AFIdHistoryPtr;
 
 typedef AFlib::IdObject         AFIdObject;
 typedef AFlib::IdObjectTemplate AFIdObjectTemplate;
-typedef AFlib::IdObjectU_bit    AFIdObjectU_bit;
 typedef AFlib::IdObject_bit     AFIdObject_bit; 
 typedef AFlib::IdObjectPtr      AFIdObjectPtr;
 typedef AFlib::IdObjectPtrList  AFIdObjectPtrList;

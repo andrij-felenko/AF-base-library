@@ -68,7 +68,7 @@ bool Storage::addOperate(const IdObject &object, const IdOperate &operate)
         return false;
 
     for (auto it : data)
-        if (it->owner() == object.owner() && it->objecttU_b() == object.uid_b()){
+        if (it->owner() == object.owner() && it->object_b() == object.object_b()){
             AFfile file(single->dPath);
             if (not file.openWrite())
                 break;
@@ -99,7 +99,7 @@ bool Storage::addOperateList(const transfer::List &list)
         for (auto subIt : it){
             bool foundSubIt = false;
             for (auto readIt : readList)
-                if (readIt->owner() == subIt.owner && readIt->objecttU_b() == subIt.object){
+                if (readIt->owner() == subIt.owner && readIt->object_b() == subIt.object){
                     readIt->addOperations(subIt, false);
                     foundSubIt = true;
                     break;
@@ -111,7 +111,7 @@ bool Storage::addOperateList(const transfer::List &list)
                                        findFileTypeByDPath(it.dPath));
                 result &= isAdd;
                 if (not isAdd)
-                    qDebug() << "Object not found, can't add " << subIt.object;
+                    qDebug() << "Object not found, can't add " << &subIt.object;
             }
         }
         result &= file.writeAll(AFlib::id::Object::listToBytaArray(readList));
@@ -139,7 +139,7 @@ transfer::List Storage::getOperatesAfter(const QDateTime& dateTime, AFaccList_b 
                     if (single){
                         auto obj = getObject(single->dPath, IdObj_b(sIt.id));
                         // check, if uid != 0 it mean that its not account
-                        if (not isAItOwner && obj->uid() == 0)
+                        if (not isAItOwner && obj->isAccount())
                             continue;
 
                         if (obj->timeCreate() > dateTime)
@@ -285,10 +285,10 @@ FileType Storage::findFileTypeByDPath(QStringList dPath)
 
 bool Storage::contains(const IdObject &ptr) const
 {
-    return contains(ptr.owner(), ptr.uid_b());
+    return contains(ptr.owner(), ptr.object_b());
 }
 
-bool Storage::contains(const IdAccount_bit &account, const IdObjectU_bit &object) const
+bool Storage::contains(const IdAccount_bit &account, const IdObject_bit &object) const
 {
     for (auto aIt : m_storageList)
         if (aIt.accountBit == account)
@@ -302,10 +302,10 @@ bool Storage::contains(const IdAccount_bit &account, const IdObjectU_bit &object
 
 std::optional <Storage::SingleStorage> Storage::findSingle(const IdObject &object)
 {
-    return findSingle(object.owner(), object.objecttU_b());
+    return findSingle(object.owner(), object.object_b());
 }
 
-std::optional<Storage::SingleStorage> Storage::findSingle(const IdAccount_bit &account, const IdObjectU_bit &object)
+std::optional<Storage::SingleStorage> Storage::findSingle(const IdAccount_bit &account, const IdObject_bit &object)
 {
     for (auto accIt : m_storageList)
         if (accIt.accountBit == account){
@@ -342,7 +342,7 @@ void Storage::registrateObject(const QStringList dPath, FileType fileType, const
             accIt.addPlugin(object.pluginId());
             for (auto pluginId : accIt.pluginList){
                 if (pluginId.pluginId == object.pluginId()){
-                    pluginId.addSingle(dPath, fileType, object.lastChange(), object.objecttU_b());
+                    pluginId.addSingle(dPath, fileType, object.lastChange(), object.object_b());
                     break;
                 }
             }
@@ -374,13 +374,13 @@ void Storage::addAccount(IdAccount_bit id)
     m_storageList.push_back(as);
 }
 
-void Storage::setLastChangedTime(quint32 account, IdObjectU_bit id, QDateTime dTime)
+void Storage::setLastChangedTime(quint32 account, IdObject_bit id, QDateTime dTime)
 {
     for (auto accIt : m_storageList)
         if (accIt.accountBit.toUInt32() == account){
 
             for (auto pluginIt : accIt.pluginList)
-                if (pluginIt.pluginId == id){
+                if (pluginIt.pluginId == id.pluginId()){
 
                     for (auto singleIt : pluginIt.idList)
                         if (singleIt.id == id){
@@ -395,7 +395,7 @@ void Storage::setLastChangedTime(quint32 account, IdObjectU_bit id, QDateTime dT
         }
 }
 
-void Storage::PluginStorage::addSingle(QStringList dPath, FileType fileType, QDateTime time, IdObjectU_bit id)
+void Storage::PluginStorage::addSingle(QStringList dPath, FileType fileType, QDateTime time, IdObject_bit id)
 {
     for (auto it : idList)
         if (it.id == id)

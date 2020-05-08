@@ -22,7 +22,7 @@ namespace AFlib::transfer::list {
 
 struct AFlib::transfer::list::Operates : public id::OperatePtrList {
     AFlib::id::Account_bit owner;
-    AFlib::id::ObjectUnique_bit object;
+    AFlib::id::Object_bit object;
 };
 
 struct AFlib::transfer::list::Objects : public QList <Operates> {
@@ -44,8 +44,8 @@ public:
     List(const QByteArray& data);
 
     void addNewObject(const QStringList& dPath, FileType fileType, id::ObjectPtr object);
-    void addOperate(const QStringList& dPath, FileType fileType, id::Acc_bit owner, id::ObjU_bit object, id::OperatePtrList list);
-    void addOperate(const QStringList& dPath, FileType fileType, id::Acc_bit owner, id::ObjU_bit object, id::OperatePtr  operate);
+    void addOperate(const QStringList& dPath, FileType fileType, id::Acc_bit owner, id::Object_bit object, id::OperatePtrList list);
+    void addOperate(const QStringList& dPath, FileType fileType, id::Acc_bit owner, id::Object_bit object, id::OperatePtr  operate);
 
     operator QByteArray() const;
     QByteArray getData() const;

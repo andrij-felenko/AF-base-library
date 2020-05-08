@@ -39,6 +39,7 @@ public:
     //! \param owner Owner id.
     //! \return Return result of set new id, return false if history is not empty.
     virtual bool setOwner(const Account_bit &owner) final;
+    virtual bool isAccount() const final;
 
     static QByteArray listToBytaArray(const ObjectPtrList list);
 

@@ -28,7 +28,7 @@ public:
     void loadFromDirectory(const QStringList& dPath, Compress compress = Compress::AllActive);
     bool updateFile(const QStringList dPath, const QByteArray &data, AFlib::FileType type = AFlib::FileType::Data);
     bool contains(const IdObject& ptr) const;
-    bool contains(const IdAccount_bit& account, const IdObjectU_bit& object) const;
+    bool contains(const IdAccount_bit& account, const IdObject_bit& object) const;
 
     bool addOperate(const IdObject& object, const IdOperate& operate);
     bool addOperateList(const transfer::List &list);
@@ -53,7 +53,7 @@ public:
 private:
     struct SingleStorage {
         QDateTime lastChange;
-        IdObjectU_bit  id;
+        IdObject_bit  id;
         QStringList dPath;
         FileType fileType;
     };
@@ -62,7 +62,7 @@ private:
         quint8 pluginId;
 
         std::vector <SingleStorage> idList;
-        void addSingle(QStringList dPath, FileType fileType, QDateTime time, IdObjectU_bit id);
+        void addSingle(QStringList dPath, FileType fileType, QDateTime time, IdObject_bit id);
     };
 
     struct AccountStorage {
@@ -74,13 +74,13 @@ private:
 
     FileType findFileTypeByDPath(QStringList dPath);
     std::optional <SingleStorage> findSingle(const IdObject &object);
-    std::optional <SingleStorage> findSingle(const IdAccount_bit& account, const IdObjectU_bit& object);
+    std::optional <SingleStorage> findSingle(const IdAccount_bit& account, const IdObject_bit& object);
     void removeListByFile(const QStringList dPath, FileType fileType);
     void registrateObject(const QStringList dPath, FileType fileType, const IdObject&     object);
     void registrateObject(const QStringList dPath, FileType fileType, const IdObjectPtr   object);
     void registrateObject(const QStringList dPath, FileType fileType, const IdObjectPtrList list);
     void addAccount(IdAccount_bit id);
-    void setLastChangedTime(quint32 account, IdObjectU_bit id, QDateTime dTime);
+    void setLastChangedTime(quint32 account, IdObject_bit id, QDateTime dTime);
 
     std::vector <AccountStorage> m_storageList;
 };

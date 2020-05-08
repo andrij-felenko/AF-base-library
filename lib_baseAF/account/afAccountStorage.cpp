@@ -89,7 +89,7 @@ AFaccount::InfoPtr AFaccount::Storage::getInfo(const AFIdAccount &id)
     auto accId = id.accountId();
     for (int i = 0; i < m_accountList.length(); i++)
         if (m_accountList[i]->afObject()->owner() == accId
-            || m_accountList[i]->afObject()->localUid_b() == accId)
+            || m_accountList[i]->afObject()->owner() == accId)
             return m_accountList[i];
     return InfoPtr();
 }
@@ -196,7 +196,7 @@ void AFaccount::Storage::reload()
         list += AFlib::afStorage()->getObjectList({ "groups", it }, AFlib::FileType::Account, AFcompress::Shortest);
 
     // remove object that not account
-    list.erase(std::remove_if(list.begin(), list.end(), [=](AFIdObjectPtr ptr) { return ptr->uid() == 0; }));
+    list.erase(std::remove_if(list.begin(), list.end(), [=](AFIdObjectPtr ptr) { return ptr->isAccount(); }));
 
     // separate it to group and acount list
     for (auto it : list){

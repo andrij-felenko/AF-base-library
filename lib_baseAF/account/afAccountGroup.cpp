@@ -8,7 +8,7 @@ Q_DECLARE_METATYPE(AccountWithAccess);
 
 AccountWithAccess makeAccountWithAccess(AFIdObject_bit account, AFaccount::AccessType access)
 {
-    return AccountWithAccess(account.toUInt32(), fromAccessType(access));
+    return AccountWithAccess(account.id(), fromAccessType(access));
 }
 
 using namespace AFaccount;

@@ -51,7 +51,7 @@ void AFlib::transfer::List::addNewObject(const QStringList &dPath, FileType file
 }
 
 void AFlib::transfer::List::addOperate(const QStringList &dPath, FileType fileType, AFlib::id::Acc_bit owner,
-                                       AFlib::id::ObjU_bit object, AFlib::id::OperatePtrList list)
+                                       AFlib::id::Object_bit object, AFlib::id::OperatePtrList list)
 {
     for (auto it = begin(); it != end(); ++it)
         if (it->dPath == dPath && it->fileType == fileType){
@@ -67,7 +67,7 @@ void AFlib::transfer::List::addOperate(const QStringList &dPath, FileType fileTy
 }
 
 void AFlib::transfer::List::addOperate(const QStringList &dPath, FileType fileType, AFlib::id::Acc_bit owner,
-                                       id::ObjU_bit object, AFlib::id::OperatePtr operate)
+                                       id::Object_bit object, AFlib::id::OperatePtr operate)
 {
     id::OperatePtrList list;
     list.push_back(operate);
