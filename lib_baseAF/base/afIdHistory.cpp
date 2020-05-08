@@ -3,6 +3,7 @@
 
 AFlib::id::History::History()
 {
+    setAttribute(Attribute::Created, QDateTime::currentDateTime());
     m_lastUpdate = QDateTime::fromTime_t(0);
 }
 
@@ -28,6 +29,11 @@ QDateTime AFlib::id::History::lastChange() const
 QDateTime AFlib::id::History::lastUpdate() const
 {
     return m_lastUpdate;
+}
+
+QDateTime AFlib::id::History::timeCreate() const
+{
+    return getAttribute(Attribute::Created).toDateTime();
 }
 
 void AFlib::id::History::makeFull(const QByteArray& data)
@@ -135,6 +141,11 @@ QVariantList AFlib::id::History::getMultiAttribute(Attribute key) const
 void AFlib::id::History::setMultiAttribute(Attribute key, QVariant value, HIdType type)
 {
     setMultiAttribute(static_cast <quint16> (key), value, type);
+}
+
+AFlib::id::OperatePtrList AFlib::id::History::getAllOperates() const
+{
+    return m_operateList;
 }
 
 AFlib::id::OperatePtrList AFlib::id::History::getListAfter(const QDateTime &afterTime) const

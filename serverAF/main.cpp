@@ -1,7 +1,5 @@
 #include <QtCore/QCoreApplication>
-//#include <AFcurrency/AfCurrencyData>
-
-//#include "currencyHttpServer.h"
+#include "dataServer.h"
 
 int main(int argc, char** argv)
 {

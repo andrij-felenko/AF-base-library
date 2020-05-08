@@ -12,14 +12,14 @@ AFlib::id::ObjectUnique_bit::ObjectUnique_bit(quint16 uniqueId, quint8 type, qui
     setPluginId(pluginId);
 }
 
-AFlib::id::Object_bit::Object_bit(quint64 subjectFull)
+AFlib::id::Object_bit::Object_bit(quint32 subjectFull)
 {
     setUInt64(subjectFull);
 }
 
-AFlib::id::Object_bit::Object_bit(quint32 unique, quint8 parentType, quint32 parentId)
+AFlib::id::Object_bit::Object_bit(quint32 id, quint8 parentType, quint32 parentId)
 {
-    setUId(unique);
+    setUId(id);
     setParent(parentType, parentId);
 }
 

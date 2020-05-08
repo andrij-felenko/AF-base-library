@@ -23,6 +23,8 @@ set (initialize_header
     include/AFquickLib
 )
 
+set (force_rc_material_design -Wl,--whole-archive rc_material_design -Wl,--no-whole-archive)
+
 set (CMAKE_AUTORCC ON)
 find_package(Qt5Core)
 find_package(Qt5Qml)
@@ -35,7 +37,11 @@ add_library(lib_quickAF SHARED
 )
 
 set_target_properties(lib_quickAF PROPERTIES OUTPUT_NAME "quickAF")
-target_link_libraries(lib_quickAF lib_baseAF Qt5::Core Qt5::Gui Qt5::Quick Qt5::Qml)
+target_link_libraries(lib_quickAF
+    lib_baseAF ${force_rc_material_design}
+    Qt5::Core Qt5::Gui Qt5::Quick Qt5::Qml
+)
+
 target_include_directories(lib_quickAF
     PUBLIC include
     PUBLIC include/AFquick

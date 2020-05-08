@@ -4,8 +4,8 @@ project(server_accountAF)
 set (server_accountAF_src
     dataServer.cpp
     dataServer.h
-    accountServer.cpp
-    accountServer.h
+#    accountServer.cpp
+#    accountServer.h
     main.cpp
 )
 

@@ -1,6 +1,8 @@
 #include "afStorage.h"
 #include <QtCore/QDebug>
 #include "lib_baseAF/afFile.h"
+#include "afTransferOperateList.h"
+#include "afAccountStorage.h"
 
 using namespace AFlib;
 static StoragePtr storage_ptr;
@@ -81,7 +83,6 @@ bool Storage::addOperate(const IdObject &object, const IdOperate &operate)
 bool Storage::addOperateList(const transfer::List &list)
 {
     bool result = true;
-    AFlib::transfer::List retList;
     for (auto it : list){
         AFfile file(it.dPath);
         if (not file.openRead()){
@@ -103,9 +104,14 @@ bool Storage::addOperateList(const transfer::List &list)
                     foundSubIt = true;
                     break;
                 }
-            if (not foundSubIt){
-                result &= false;
-                qDebug() << "Object not found, can't add " << subIt.object;
+
+            // add new object
+            if (not foundSubIt & not it.object.isNull()){
+                bool isAdd = addObject(it.dPath, *it.object.data(),
+                                       findFileTypeByDPath(it.dPath));
+                result &= isAdd;
+                if (not isAdd)
+                    qDebug() << "Object not found, can't add " << subIt.object;
             }
         }
         result &= file.writeAll(AFlib::id::Object::listToBytaArray(readList));
@@ -113,19 +119,38 @@ bool Storage::addOperateList(const transfer::List &list)
     return result;
 }
 
-transfer::List Storage::getOperatesAfter(const QDateTime &dateTime)
+transfer::List Storage::getOperatesAfter(const QDateTime& dateTime, AFaccList_b list)
 {
-    transfer::List list;
-    for (auto aIt : m_storageList)
+    transfer::List retList;
+    for (auto aIt : m_storageList){
+        if (list.isEmpty()){
+            if (AFaccount::storage()->getInfo(aIt.accountBit)->afObject()->owner().isLocal())
+                continue;
+        }
+        else if (not list.contains(aIt.accountBit))
+            continue;
+
+        bool isAItOwner = list.isEmpty() || (not list.isEmpty() && list.first() == aIt.accountBit);
+
         for (auto pIt : aIt.pluginList)
             for (auto sIt : pIt.idList)
                 if (sIt.lastChange < dateTime){
                     auto single = findSingle(aIt.accountBit, sIt.id);
-                    if (single)
-                        list.addOperate(single.value().dPath, single->fileType, aIt.accountBit, sIt.id,
-                                        getObject(single->dPath, IdObject_bit(sIt.id))->getListAfter(dateTime));
+                    if (single){
+                        auto obj = getObject(single->dPath, IdObj_b(sIt.id));
+                        // check, if uid != 0 it mean that its not account
+                        if (not isAItOwner && obj->uid() == 0)
+                            continue;
+
+                        if (obj->timeCreate() > dateTime)
+                            retList.addNewObject(single->dPath, single->fileType, obj);
+                        else
+                            retList.addOperate(single.value().dPath, single->fileType, aIt.accountBit, sIt.id,
+                                            obj->getListAfter(dateTime));
+                    }
                 }
-    return list;
+    }
+    return retList;
 }
 
 bool Storage::addObject(const QStringList dPath, const IdObject &object, FileType type)
@@ -149,29 +174,6 @@ bool Storage::addObject(const QStringList dPath, const IdObject &object, FileTyp
     bool result = file.writeAll(IdObject::listToBytaArray(list));
     if (result)
         registrateObject(dPath, type, object);
-
-    return result;
-}
-
-bool Storage::addOperateList(transfer::List &operateList)
-{
-    bool result = true;
-    if (operateList.isEmpty())
-        return false;
-
-    for (auto fileIt : operateList){
-        auto list = IdObject::readFromFile(fileIt.dPath, fileIt.fileType);
-        if (list.isEmpty())
-            continue;
-
-        for (auto object : fileIt)
-            for (auto it : list)
-                if (it->owner() == object.owner && it->object_b() == object.object){
-                    it->addOperations(object, false);
-                }
-
-        result &= updateFile(fileIt.dPath, IdObject::listToBytaArray(list));
-    }
 
     return result;
 }
@@ -264,6 +266,21 @@ bool Storage::removeObject(const IdObject &object)
     }
 
     return false;
+}
+
+bool Storage::updateObjects(transfer::List &operateList)
+{
+    return addOperateList(operateList);
+}
+
+FileType Storage::findFileTypeByDPath(QStringList dPath)
+{
+    for (auto aIt : m_storageList)
+        for (auto pIt : aIt.pluginList)
+            for (auto it : pIt.idList)
+                if (it.dPath == dPath)
+                    return it.fileType;
+    return FileType::Data;
 }
 
 bool Storage::contains(const IdObject &ptr) const

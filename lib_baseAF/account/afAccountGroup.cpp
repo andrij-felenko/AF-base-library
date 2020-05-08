@@ -15,12 +15,12 @@ using namespace AFaccount;
 
 Group::Group(QObject *parent) : AFaccount::Info(parent)
 {
-    auto subUsers = getMultiAttribute(AFattribute::UserList);
+    auto subUsers = m_ptr->getMultiAttribute(AFattribute::UserList);
     // TODO parse subUsers
 }
 
-Group::Group(const AFlib::IdObject &account, QObject *parent)
-    : AFaccount::Info(account, parent)
+Group::Group(AFlib::IdObjectPtr ptr, QObject *parent)
+    : AFaccount::Info(ptr, parent)
 {
     //
 }
@@ -37,35 +37,35 @@ QStringList Group::moderatorNameList() const { return getNameByType(AccessType::
 
 void Group::addAccount(InfoPtr account, AccessType access)
 {
-    addAccount(account->object_b(), access);
+    addAccount(account->afObject()->object_b(), access);
 }
 
 void Group::removeAccount(InfoPtr account, AccessType access)
 {
-    removeAccount(account->object_b(), access);
+    removeAccount(account->afObject()->object_b(), access);
 }
 
 void Group::changeAccess(InfoPtr account, AccessType newAccess)
 {
-    changeAccess(account->object_b(), newAccess);
+    changeAccess(account->afObject()->object_b(), newAccess);
 }
 
 void Group::addAccount(AFIdObject_bit account, AccessType access)
 {
     QVariant var = QVariant::fromValue(makeAccountWithAccess(account, access));
-    setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::AddIdLine);
+    m_ptr->setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::AddIdLine);
 }
 
 void Group::removeAccount(AFIdObject_bit account, AccessType access)
 {
     QVariant var = QVariant::fromValue(makeAccountWithAccess(account, access));
-    setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::RemoveIdLine);
+    m_ptr->setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::RemoveIdLine);
 }
 
 void Group::changeAccess(AFIdObject_bit account, AccessType newAccess)
 {
     QVariant var = QVariant::fromValue(makeAccountWithAccess(account, newAccess));
-    setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::EditIdLine);
+    m_ptr->setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::EditIdLine);
 }
 
 InfoPtrList Group::getByType(AccessType type, bool inheritType) const
@@ -85,9 +85,9 @@ QStringList Group::getNameByType(AccessType type, bool inheritType) const
     QStringList list;
     for (auto it = m_userList.begin(); it != m_userList.end(); ++it){
         if (type == it.value())
-            list += it .key()->name();
+            list += it .key()->afObject()->name();
         else if (inheritType && uint(type) > uint(it.value()))
-            list += it.key()->name();
+            list += it.key()->afObject()->name();
     }
     return list;
 }
@@ -100,51 +100,4 @@ AccessType AFaccount::toAccessType(const quint8 i)
 quint8 AFaccount::fromAccessType(AccessType type)
 {
     return static_cast <uint>(type) - static_cast <uint>(AccessType::First);
-}
-
-namespace AFaccount {
-QDataStream &operator >>(QDataStream &stream, AFaccount::Group &group)
-{
-    int lenUserList;
-    stream >> lenUserList;
-    for (int i = 0; i < lenUserList; i++){
-        int accessType;
-        AFIdAccount id;
-        stream >> id >> accessType;
-        auto acc = AFaccount::storage()->getInfo(id);
-        if (not acc.isNull())
-            group.m_userList.insert(acc, AccessType(accessType));
-    }
-    stream >> static_cast <Info&> (group);
-    return stream;
-}
-
-QDataStream &operator <<(QDataStream &stream, const AFaccount::Group &group)
-{
-    stream << group.m_userList.count();
-    for (auto it = group.m_userList.begin(); it != group.m_userList.end(); ++it)
-        stream << it.key()->owner() << int(it.value());
-    stream << static_cast <const Info&> (group);
-    return stream;
-}
-}
-
-QDataStream &operator >>(QDataStream &stream, GPtrList &list)
-{
-    int count = 0;
-    stream >> count;
-    for (int i = 0; i < count; i++){
-        GroupPtr temp = GroupPtr::create();
-        stream >> *temp;
-        list.push_back(temp);
-    }
-    return stream;
-}
-
-QDataStream &operator <<(QDataStream &stream, const GPtrList &list)
-{
-    stream << list.length();
-    for (auto it : list)
-        stream << it.data();
-    return stream;
 }

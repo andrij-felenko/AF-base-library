@@ -1,1 +1,2 @@
 #include "lib_baseAF/afIdObject.h"
+#include "lib_baseAF/afIdObjectTemplate.h"

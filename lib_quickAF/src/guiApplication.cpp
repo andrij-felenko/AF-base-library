@@ -72,7 +72,7 @@ void AFquick::GuiApplication::show()
 
     initializePlugin();
     checkPortrait();
-    m_view->resize(400, 600);
+    m_view->resize(700, 450);
     m_view->show();
 }
 

@@ -18,16 +18,14 @@ public:
     Object(const QByteArray& data);
     Object(const Object& cpObject);
     Object(const Object* cpObject);
-    Object(const ObjectPtr ptr);
-    Object(Account_bit owner, quint16 uniqueId, quint8 type, quint8 pluginId);
-    Object(Account_bit owner, QString name, QString descr = QString(""));
-    Object(Account_bit owner, QString name, QString descr, quint16 uniqueId, quint8 type, quint8 pluginId,
-           quint8 parentType, quint32 parentId);
-
+    // TODO need to change it, and all system
     void makeGlobalId(quint32 newId);
 
     virtual QString name()        const final;
     virtual QString description() const final;
+
+    virtual Object_bit localId_b() const final;
+    virtual quint32    localId()   const final;
 
     virtual void setName       (const QString& name)        final;
     virtual void setDescription(const QString& description) final;
@@ -53,10 +51,18 @@ public:
     static AFlib::id::ObjectPtrList readFromFile(const QStringList &dPath, FileType type, const ObjectPtrList list);
 
 protected:
+    template <typename Plugin, typename Type>
+    Object(Account_bit owner, Plugin plugin, Type type, QString name = "", QString description = "")
+        : Object(owner, static_cast <quint8>(plugin) + 1, static_cast <quint8>(type) + 1, name, description)
+    {
+        //
+    }
+
     friend QDataStream &operator << (QDataStream& stream, const Object& data);
     friend QDataStream &operator >> (QDataStream& stream,       Object& data);
 
 private:
+    Object(Account_bit owner, quint8 pluginId, quint8 typeId, QString name, QString descr);
     virtual void saveToStorage(const OperatePtr ptr) override final;
 };
 

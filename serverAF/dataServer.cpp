@@ -1,125 +1,142 @@
-//#include <QtHttpServer/QHttpServer>
-//#include "lib_accountAF/accountStorage.h"
-//#include "lib_baseAF/afId.h"
+#include "dataServer.h"
+#include <AfAPI>
+#include <AFaccountLib>
+#include <AFbaseLib>
 
-//#include <QtCore/QJsonDocument>
+Server::Server(QObject *parent) : QObject(parent)
+{
+    m_server = new QHttpServer(this);
+    init();
 
-//AccountHttpServer::AccountHttpServer(QObject *parent) : QObject(parent)
-//{
-//    m_server = new QHttpServer(this);
-//    init();
-//}
+    AFlib::afStorage();
+    AFaccount::storage(this);
+}
 
-//void AccountHttpServer::init()
-//{
-//    m_server->route("/check_nickname",  &AccountHttpServer::checkNickname);
-//    m_server->route("/check_updates",   &AccountHttpServer::checkUpdates);
-//    m_server->route("/found_account",   &AccountHttpServer::foundAccount);
-//    m_server->route("/login",           &AccountHttpServer::login);
-//    m_server->route("/logout",          &AccountHttpServer::logout);
-//    m_server->route("/registration",    &AccountHttpServer::registration);
-//    m_server->route("/remind_password", &AccountHttpServer::remindPassword);
-//    m_server->route("/update_account",  &AccountHttpServer::updateAccount);
-//}
+void Server::init()
+{
+    using namespace AFlib;
+    m_server->route(getServerKey(RequestType::Ping,             true), &Server::ping);
+    m_server->route(getServerKey(RequestType::Login,            true), &Server::login);
+    m_server->route(getServerKey(RequestType::AddAccount,       true), &Server::addAccount);
+    m_server->route(getServerKey(RequestType::Registrate,       true), &Server::registrate);
+    m_server->route(getServerKey(RequestType::RemindMyLogin,    true), &Server::remindMyLogin);
+    m_server->route(getServerKey(RequestType::AddAccountById,   true), &Server::addAccountById);
+    m_server->route(getServerKey(RequestType::UpdateAfObjects,  true), &Server::updateObjects);
+    m_server->route(getServerKey(RequestType::RemindMyPassword, true), &Server::remindMyPassword);
+}
 
-//int AccountHttpServer::listen(const QHostAddress &address, quint16 port)
-//{
-//    return m_server->listen(address, port);
-//}
+int Server::listen(const QHostAddress &address, quint16 port)
+{
+    return m_server->listen(address, port);
+}
 
-//QByteArray AccountHttpServer::checkNickname(const QHttpServerRequest &request)
-//{
-//    auto storage = AFaccount::accountStorage();
-//    QJsonObject obj = QJsonDocument::fromJson(request.body()).object();
-//    obj.insert("request", "check_nickname");
-//    obj.insert("result", QJsonValue(storage->checkNickname(obj.value("nick").toString())));
-//    return QJsonDocument(obj).toJson();
-//}
+QByteArray Server::ping()
+{
+    QByteArray data;
+    QDataStream stream(&data, QIODevice::WriteOnly);
+    stream << AFlib::RequestType::Ping;
+    return data;
+}
 
-//QByteArray AccountHttpServer::checkUpdates(const QHttpServerRequest &request)
-//{
-//    // TODO add check update init
-//    return request.body();
-//}
+QByteArray Server::login(const QHttpServerRequest &request)
+{
+    QByteArray data = request.body();
+    QDataStream streamIn(data);
 
-//QByteArray AccountHttpServer::foundAccount(const QHttpServerRequest &request)
-//{
-//    auto storage = AFaccount::accountStorage();
-//    QJsonObject obj = QJsonDocument::fromJson(request.body()).object();
-//    AFaccount::InfoPtr result;
-//    if (obj.contains("nick"))
-//        result = storage->getInfo(obj.value("name").toString());
-//    else if (obj.contains("id"))
-//        result = storage->getInfo(obj.value("id").toVariant().toUInt());
-//    obj.insert("request", "found_account");
-//    obj.insert("is_found", not result.isNull());
-//    if (result.isNull())
-//        obj.insert("error", tr("Account not found with this parameter."));
-//    else {
-//        // TODO add register login device info
-//        obj.insert("account", result->toJson());
-//    }
-//    return QJsonDocument(obj).toJson();
-//}
+    // read income data
+    QString login;
+    QString password;
+    streamIn >> login >> password;
 
-//QByteArray AccountHttpServer::login(const QHttpServerRequest &request)
-//{
-//    auto storage = AFaccount::accountStorage();
-//    QJsonObject obj = QJsonDocument::fromJson(request.body()).object();
-//    auto result = storage->checkLogin(obj.value("name").toString(), obj.value("password").toString());
-//    obj.insert("request", "login");
-//    obj.insert("result", QJsonValue(not result.has_value()));
-//    if (result.has_value())
-//        obj.insert("error", result.value());
-//    return QJsonDocument(obj).toJson();
-//}
+    // test is login information is correct
+    AFlib::id::Account_bit acc_b;
+    auto result = AFaccount::storage()->checkLogin(login, password, acc_b);
 
-//QByteArray AccountHttpServer::logout(const QHttpServerRequest &request)
-//{
-//    // TODO add logout
-//    return request.body();
-//}
+    // write return data
+    data.clear();
+    QDataStream streamOut(&data, QIODevice::WriteOnly);
+    streamOut << AFlib::RequestType::Login << result->isNull();
+    if (result->isNull())
+        streamOut << acc_b;
+    else
+        streamOut << result.value();
 
-//QByteArray AccountHttpServer::registration(const QHttpServerRequest &request)
-//{
-//    auto storage = AFaccount::accountStorage();
-//    auto obj = QJsonDocument::fromJson(request.body()).object();
-//    auto account = AFaccount::Account(obj);
-//    if (storage->checkNickname(obj.value("login").toString())){
-//        // TODO maybe add some test before registrate
-//        auto newAcc = AFIdAccount::create(AFlib::AccountIdType::User);
-//        while (not storage->check(newAcc))
-//            newAcc = AFIdAccount::create(AFlib::AccountIdType::User);
+    return data;
+}
 
-//        obj.insert("id", QJsonValue::fromVariant(newAcc.accountId()));
-//        storage->add(AFaccount::AccountPtr::create(obj));
-//        obj.insert("result", true);
-//    }
-//    else {
-//        obj.insert("result", false);
-//        obj.insert("error", tr("Login already exist."));
-//    }
+QByteArray Server::registrate(const QHttpServerRequest &request)
+{
+    QByteArray data = request.body();
+    QDataStream streamIn(data);
 
-//    return QJsonDocument(obj).toJson();
-//}
+    // read income data
+    auto accPtr = AFaccount::AccountPtr::create();
+    streamIn >> *accPtr->afObjectPtr().get();
 
-//QByteArray AccountHttpServer::remindPassword(const QHttpServerRequest &request)
-//{
-//    auto storage = AFaccount::accountStorage();
-//    QJsonObject obj = QJsonDocument::fromJson(request.body()).object();
-//    obj.insert("request", "check_nickname");
-//    bool result = storage->checkNickname(obj.value("nick").toString());
-//    obj.insert("result", QJsonValue(result));
-//    if (result){
-//        // TODO send notification to email
-//    }
-//    else
-//        obj.insert("error", "Login not exist.");
-//    return QJsonDocument(obj).toJson();
-//}
+    // test is login information is correct
+    bool loginFree = false;
+    bool mailFree = false;
+    bool result = not (accPtr->login().isEmpty() && accPtr->mail().isEmpty());
+    if (not accPtr->login().isEmpty()){
+        loginFree = AFaccount::storage()->checkNickname(accPtr->login());
+        result &= loginFree;
+    }
+    if (not accPtr->mail().isEmpty()){
+        mailFree = AFaccount::storage()->checkNickname(accPtr->mail());
+        result &= mailFree;
+    }
 
-//QByteArray AccountHttpServer::updateAccount(const QHttpServerRequest &request)
-//{
-//    // TODO update account
-//    return request.body();
-//}
+    // add new Object if result is successfully
+    if (result)
+        AFaccount::storage()->add(accPtr);
+
+    // write return data
+    data.clear();
+    QDataStream streamOut(&data, QIODevice::WriteOnly);
+    streamOut << AFlib::RequestType::Registrate << result;
+    if (result)
+        streamOut << *accPtr->afObject();
+    else if (loginFree)
+        streamOut << "Login already exists.";
+    else if (mailFree)
+        streamOut << "Mail already exists.";
+    else
+        streamOut << "Unknown error registarte.";
+
+    return data;
+}
+
+QByteArray Server::addAccount(const QHttpServerRequest &request)
+{
+    Q_UNUSED(request)
+    // TODO
+    return QByteArray();
+}
+
+QByteArray Server::addAccountById(const QHttpServerRequest &request)
+{
+    Q_UNUSED(request)
+    // TODO
+    return QByteArray();
+}
+
+QByteArray Server::remindMyLogin(const QHttpServerRequest &request)
+{
+    Q_UNUSED(request)
+    // TODO
+    return QByteArray();
+}
+
+QByteArray Server::remindMyPassword(const QHttpServerRequest &request)
+{
+    Q_UNUSED(request)
+    // TODO
+    return QByteArray();
+}
+
+QByteArray Server::updateObjects(const QHttpServerRequest &request)
+{
+    Q_UNUSED(request)
+    // TODO
+    return QByteArray();
+}

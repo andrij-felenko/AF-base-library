@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/AFquick">
         <file>Enum/Colors.qml</file>
-        <file>Item/Button.qml</file>
         <file>Item/CheckBox.qml</file>
         <file>Item/Combobox.qml</file>
         <file>Item/DigitTextInput.qml</file>
@@ -11,7 +10,6 @@
         <file>Item/Slider.qml</file>
         <file>Item/SpinBox.qml</file>
         <file>Item/TabButton.qml</file>
-        <file>Item/Text.qml</file>
         <file>Item/TextInput.qml</file>
         <file>Component/BusyIndicator.qml</file>
         <file>Component/Content.qml</file>
@@ -26,5 +24,7 @@
         <file>Base/App.qml</file>
         <file>Base/Menu.qml</file>
         <file>Base/Plugin.qml</file>
+        <file>Item/AFbutton.qml</file>
+        <file>Item/AFtext.qml</file>
     </qresource>
 </RCC>

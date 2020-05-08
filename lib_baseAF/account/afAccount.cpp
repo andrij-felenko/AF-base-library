@@ -5,9 +5,17 @@
 #include <QtCore/QCryptographicHash>
 #include <QtCore/QCoreApplication>
 
-AFaccount::Account::Account(const AFlib::IdObject &account) : AFaccount::Info(account)
+AFaccount::Account::Account(AFlib::IdObjectPtr ptr, QObject* parent)
+    : AFaccount::Info(ptr, parent)
 {
     // TODO
+}
+
+AFaccount::Account::Account(const QByteArray &data, QObject* parent)
+  : AFaccount::Info(parent)
+{
+    QDataStream stream(data);
+    stream >> *m_ptr.data();
 }
 
 AFaccount::Account::Account(QObject *parent) : AFaccount::Info(parent)
@@ -15,15 +23,15 @@ AFaccount::Account::Account(QObject *parent) : AFaccount::Info(parent)
     //
 }
 
-AFaccount::Account::Account(QJsonObject obj, QObject *parent) : AFaccount::Info(obj, parent)
-{
-    setLogin(obj.value("login").toString());
-    setAttribute(AFattribute::Password, obj.value("password").toString());
-    auto friendArray = obj.value("friend_list").toArray();
-    // TODO rewrite
-//    for (auto it : friendArray)
-//        m_friendList.push_back(InfoPtr::create(it.toObject(), this));
-}
+//AFaccount::Account::Account(QJsonObject obj, QObject *parent) : AFaccount::Info(obj, parent)
+//{
+//    setLogin(obj.value("login").toString());
+//    m_ptr->setAttribute(AFattribute::Password, obj.value("password").toString());
+//    auto friendArray = obj.value("friend_list").toArray();
+//    // TODO rewrite
+////    for (auto it : friendArray)
+////        m_friendList.push_back(InfoPtr::create(it.toObject(), this));
+//}
 
 AFaccount::AccountPtr AFaccount::own()
 {
@@ -47,12 +55,36 @@ bool AFaccount::Account::check(QString password) const
 
 QString AFaccount::Account::passwordHash() const
 {
-    return getAttribute(AFattribute::Password).toString();
+    return m_ptr->getAttribute(AFattribute::Password).toString();
+}
+
+void AFaccount::Account::addAccount(AFlib::IdObjectPtr account)
+{
+    auto account_b = account->owner().toUInt32();
+    m_ptr->setMultiAttribute(AFattribute::FriendList, account_b, AFlib::HIdType::AddIdLine);
+}
+
+void AFaccount::Account::removeAccount(AFlib::IdObjectPtr account)
+{
+    auto account_b = account->owner().toUInt32();
+    m_ptr->setMultiAttribute(AFattribute::FriendList, account_b, AFlib::HIdType::RemoveIdLine);
+}
+
+void AFaccount::Account::addGroup(AFlib::IdObjectPtr account)
+{
+    auto account_b = account->owner().toUInt32();
+    m_ptr->setMultiAttribute(AFattribute::GroupList, account_b, AFlib::HIdType::RemoveIdLine);
+}
+
+void AFaccount::Account::removeGroup(AFlib::IdObjectPtr account)
+{
+    auto account_b = account->owner().toUInt32();
+    m_ptr->setMultiAttribute(AFattribute::GroupList, account_b, AFlib::HIdType::RemoveIdLine);
 }
 
 QString AFaccount::Account::login() const
 {
-    return getAttribute(AFattribute::Login).toString();
+    return m_ptr->getAttribute(AFattribute::Login).toString();
 }
 
 QJsonObject AFaccount::Account::toJson() const
@@ -68,6 +100,35 @@ QJsonObject AFaccount::Account::toJson() const
     return obj;
 }
 
+QByteArray AFaccount::Account::toByteArray() const
+{
+    QByteArray ret;
+    QDataStream stream(&ret, QIODevice::WriteOnly);
+    stream << *afObject();
+    return ret;
+}
+
+void AFaccount::Account::reset()
+{
+    //
+}
+
+AFlib::id::AccList_b AFaccount::Account::friendList() const
+{
+    AFlib::id::AccList_b ret;
+    for (auto it : m_ptr->getMultiAttribute(AFattribute::FriendList))
+        ret += AFlib::id::Account_bit(it.toUInt());
+    return ret;
+}
+
+AFlib::id::AccList_b AFaccount::Account::groupList() const
+{
+    AFlib::id::AccList_b ret;
+    for (auto it : m_ptr->getMultiAttribute(AFattribute::GroupList))
+        ret += AFlib::id::Account_bit(it.toUInt());
+    return ret;
+}
+
 AFaccount::Account::operator QJsonObject() const
 {
     return toJson();
@@ -75,44 +136,5 @@ AFaccount::Account::operator QJsonObject() const
 
 void AFaccount::Account::setLogin(QString login)
 {
-    setAttribute(AFattribute::Login, login);
-}
-
-namespace AFaccount {
-QDataStream& operator >> (QDataStream &stream, AFaccount::Account &account)
-{
-    QString hash, login;
-    stream >> login >> hash;// TODO rewrite >> account.m_friendList;
-    account.setLogin(login);
-    account.setAttribute(AFattribute::Password, hash);
-    stream >> static_cast <Info&> (account);
-    return stream;
-}
-
-QDataStream& operator << (QDataStream &stream, const AFaccount::Account &account)
-{
-    stream << account.login() << account.passwordHash();// TODO rewrite << account.m_friendList;
-    stream << static_cast <const Info&> (account);
-    return stream;
-}
-}
-
-QDataStream &operator >>(QDataStream &stream, AFaccount::AccountPtrList &list)
-{
-    int count = 0;
-    stream >> count;
-    for (int i = 0; i < count; i++){
-        AFaccount::AccountPtr temp = AFaccount::AccountPtr::create();
-        stream >> *temp;
-        list.push_back(temp);
-    }
-    return stream;
-}
-
-QDataStream &operator <<(QDataStream &stream, const AFaccount::AccountPtrList &list)
-{
-    stream << list.length();
-    for (auto it : list)
-        stream << *it;
-    return stream;
+    m_ptr->setAttribute(AFattribute::Login, login);
 }

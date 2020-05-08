@@ -13,6 +13,7 @@ AFquick::GuiSize::GuiSize(QObject *parent) : QObject(parent)
     }
     else
         m_button = 40;
+    m_menuWidth = 250;
 }
 
 double AFquick::GuiSize::button() const
@@ -25,6 +26,11 @@ QPoint AFquick::GuiSize::topleft() const
     return m_topleft;
 }
 
+uint AFquick::GuiSize::menuWidth() const
+{
+    return m_menuWidth;
+}
+
 void AFquick::GuiSize::setTopleft(QPoint topleft)
 {
     if (m_topleft == topleft)
@@ -32,6 +38,15 @@ void AFquick::GuiSize::setTopleft(QPoint topleft)
 
     m_topleft = topleft;
     emit topleftChanged(m_topleft);
+}
+
+void AFquick::GuiSize::setMenuWidth(uint menuWidth)
+{
+    if (m_menuWidth == menuWidth)
+        return;
+
+    m_menuWidth = menuWidth;
+    emit menuWidthChanged(m_menuWidth);
 }
 
 AFguiSizePtr afGuiSize()

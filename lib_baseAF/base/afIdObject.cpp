@@ -24,11 +24,6 @@ AFlib::id::Object::Object(const Object *cpObject) : AFlib::id::Object(cpObject->
     // it`s done
 }
 
-AFlib::id::Object::Object(const ObjectPtr ptr) : AFlib::id::Object(ptr.get())
-{
-    // it`s done
-}
-
 AFlib::id::Object::Object(Account_bit owner, quint16 uniqueId, quint8 type, quint8 pluginId)
     : Object(owner, "", "", uniqueId, type, pluginId, 0, 0)
 {
@@ -64,6 +59,20 @@ QString AFlib::id::Object::name() const
 QString AFlib::id::Object::description() const
 {
     return getAttribute(Attribute::Description).toString();
+}
+
+AFlib::id::ObjU_bit AFlib::id::Object::localUid_b() const
+{
+    return ObjU_bit(localUid());
+}
+
+quint32 AFlib::id::Object::localUid() const
+{
+    auto last = getAttribute(Attribute::LocalId);
+    if (last.isNull())
+        return uid_b();
+
+    return last.toUInt();
 }
 
 void AFlib::id::Object::setName(const QString &name)
@@ -225,7 +234,7 @@ void AFlib::id::Object::saveToStorage(const OperatePtr ptr)
 QDebug operator <<(QDebug d, const AFlib::id::Object &object)
 {
     return d << "AFlib::id::Object {\n\t"
-             << "owner id:    "    << object.owner()
+             << "owner id:     0x" << QString::number(object.owner().toUInt32(), 16)
              << "name:        "    << object.name() << ";\n\t"
              << "description: "    << object.description() << ";\n\t"
              << "unique id:    0x" << QString::number(object.uid(), 16) << ";\n\t"

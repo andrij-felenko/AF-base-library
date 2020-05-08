@@ -21,7 +21,7 @@ void AFlib::id::Account_bit::setUserId(quint32 id)
     m_bitset |= id % (1 << 28);
 }
 
-AFlib::AccountIdType AFlib::id::Account_bit::accountType()
+AFlib::AccountIdType AFlib::id::Account_bit::accountType() const
 {
     quint32 accId = accountId();
     if (accId >> 14 == 0)
@@ -31,6 +31,16 @@ AFlib::AccountIdType AFlib::id::Account_bit::accountType()
     if (accId >> 28 == 0)
         return AccountIdType::GlobalUser;
     return AccountIdType::GlobalOrganization;
+}
+
+bool AFlib::id::Account_bit::isGlobal() const
+{
+    return accountType() == AFlib::AccountIdType::Global;
+}
+
+bool AFlib::id::Account_bit::isLocal() const
+{
+    return accountType() == AFlib::AccountIdType::Local;
 }
 
 AFlib::id::Account_bit AFlib::id::Account_bit::create(const AccountIdType &type)

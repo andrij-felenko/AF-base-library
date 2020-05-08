@@ -33,7 +33,7 @@ class AFaccount::Group : public Info
     Q_OBJECT
 public:
     explicit Group(QObject* parent = nullptr);
-    Group(const AFlib::IdObject& account, QObject* parent = nullptr);
+    Group(AFlib::IdObjectPtr ptr, QObject* parent = nullptr);
 
     InfoPtrList userList() const;
     InfoPtrList ownerList() const;
@@ -53,18 +53,11 @@ public:
     void removeAccount(AFIdObject_bit account, AccessType access);
     void changeAccess (AFIdObject_bit account, AccessType newAccess);
 
-protected:
-    friend QDataStream & operator >> (QDataStream& stream,       Group &group);
-    friend QDataStream & operator << (QDataStream& stream, const Group &group);
-
 private:
     QMap <InfoPtr, AccessType> m_userList;
 
     InfoPtrList getByType(AccessType type, bool inheritType = true) const;
     QStringList getNameByType(AccessType type, bool inheritType = true) const;
 };
-
-QDataStream& operator >> (QDataStream& stream,       AFaccount::GPtrList& list);
-QDataStream& operator << (QDataStream& stream, const AFaccount::GPtrList& list);
 
 #endif // LIB_ACCOUNTAF_ACCOUNT_GROUP_H

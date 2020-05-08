@@ -40,7 +40,7 @@ namespace AFlib {
         Json,
     };
 
-    enum class HistoryIdType {
+    enum class HistoryIdType { // 3 bit`s
         AddIdLine = 0xE0F100,
         EditIdLine,
         RemoveIdLine,
@@ -55,7 +55,7 @@ namespace AFlib {
     typedef HistoryIdType HIdType;
     bool isHIdEnable(HistoryIdType type);
 
-    enum class SavedIdType {
+    enum class SavedIdType { // 2 bit`s
         TemperarySaved = 0xE0F200,
         LocaleSaved,
         SavedOnWayToServer,

@@ -15,17 +15,17 @@ namespace AFaccount {
     typedef QList <InfoPtr> InfoPtrList;
 }
 
-class AFaccount::Info : public QObject, public AFlib::id::Object
+class AFaccount::Info : public AFlib::id::ObjectTemplate
 {
     Q_OBJECT
 //    Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
     Q_PROPERTY(QString mail READ mail WRITE setMail NOTIFY mailChanged)
 public:
     explicit Info(QObject* parent = nullptr);
-    Info(uint id, QObject* parent = nullptr);
-    Info(const AFlib::IdObject &obj, QObject* parent = nullptr);
-    Info(QJsonObject obj, QObject* parent = nullptr);
-    Info(AFlib::AccountIdType type, QObject* parent = nullptr);
+//    Info(uint id, QObject* parent = nullptr);
+    Info(AFlib::IdObjectPtr ptr, QObject* parent = nullptr);
+//    Info(QJsonObject obj, QObject* parent = nullptr);
+//    Info(AFlib::AccountIdType type, QObject* parent = nullptr);
 
     virtual QByteArray icon() const final;
     virtual QString mail() const final;
@@ -40,16 +40,9 @@ public slots:
 signals:
     void iconChanged(QString icon);
     void mailChanged(QString mail);
-
-protected:
-    friend QDataStream & operator >> (QDataStream& stream,       Info &info);
-    friend QDataStream & operator << (QDataStream& stream, const Info &info);
 };
 
 typedef QSharedPointer <AFaccount::Info> AccInfoPtr;
 typedef QList <AccInfoPtr> AccInfoPtrList;
-
-QDataStream& operator >> (QDataStream& stream,       AFaccount::InfoPtrList& list);
-QDataStream& operator << (QDataStream& stream, const AFaccount::InfoPtrList& list);
 
 #endif // LIB_ACCOUNTAF_ACCOUNT_INFO_H

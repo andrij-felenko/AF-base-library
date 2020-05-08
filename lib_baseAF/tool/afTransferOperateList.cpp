@@ -22,10 +22,32 @@ void AFlib::transfer::list::Objects::addOperate(AFlib::id::Account_bit owner, AF
     addOperate(owner, object, list);
 }
 
+namespace AFlib::transfer::list {
+QDataStream& operator >>(QDataStream &stream, Objects &data)
+{
+    return stream >> static_cast <QList <Operates>&> (data) >> *data.object;
+}
+
+QDataStream& operator <<(QDataStream &stream, Objects &data)
+{
+    return stream << static_cast <QList <Operates>&>(data) << *data.object;
+}
+}
+
 AFlib::transfer::List::List(const QByteArray &data)
 {
     QDataStream stream(data);
     stream >> *this;
+}
+
+void AFlib::transfer::List::addNewObject(const QStringList &dPath, FileType fileType, AFlib::id::ObjectPtr object)
+{
+    transfer::list::Objects newO;
+    newO.dPath = dPath;
+    newO.fileType = fileType;
+    newO.object = object;
+    newO.addOperate(object->owner(), object->object_b(), object->getAllOperates());
+    push_back(newO);
 }
 
 void AFlib::transfer::List::addOperate(const QStringList &dPath, FileType fileType, AFlib::id::Acc_bit owner,

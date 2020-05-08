@@ -15,6 +15,7 @@ namespace AFlib {
 
 class AFlib::Storage : public QObject
 {
+    Q_OBJECT
     typedef IdObjectPtr     IdObj;
     typedef AFIdObject_bit  IdObj_b;
     typedef IdObjectPtrList IdObjList;
@@ -32,23 +33,22 @@ public:
     bool addOperate(const IdObject& object, const IdOperate& operate);
     bool addOperateList(const transfer::List &list);
 
-    transfer::List getOperatesAfter(const QDateTime& dateTime);
+    transfer::List getOperatesAfter(const QDateTime& dateTime, AFaccList_b list = AFaccList_b());
 
     bool addObject(const QStringList dPath, const IdObject& object, AFlib::FileType type = AFlib::FileType::Data);
-
-    bool addOperateList(transfer::List &operateList);
 
     IdObj     getObject    (const QStringList dPath, const IdObject_bit &object, Compress compress  = Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
     IdObj     getObject    (const QStringList dPath, const IdObject_bit &object, AFlib::FileType type, Compress compress = Compress::AllActive);
 
-    IdObjList getObjectList(const QStringList dPath,                             Compress compress  =  Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
-    IdObjList getObjectList(const QStringList dPath,                             AFlib::FileType type, Compress compress = Compress::AllActive);
-    IdObjList getObjectList(QList <id::Account_bit> accList, quint8 plugin, Compress compress  =  Compress::AllActive);
+    IdObjList getObjectList(const QStringList dPath,                        Compress compress = Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
+    IdObjList getObjectList(const QStringList dPath, AFlib::FileType type,  Compress compress = Compress::AllActive);
+    IdObjList getObjectList(QList <id::Account_bit> accList, quint8 plugin, Compress compress = Compress::AllActive);
 
     IdObjList getObjectList(const QStringList dPath, const IdObjectPtrList list, Compress compress  =  Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
     IdObjList getObjectList(const QStringList dPath, const IdObjectPtrList list, AFlib::FileType type, Compress compress = Compress::AllActive);
 
     bool removeObject(const IdObject& object);
+    bool updateObjects(transfer::List &operateList);
 
 private:
     struct SingleStorage {
@@ -72,6 +72,7 @@ private:
         void addPlugin(quint8 id);
     };
 
+    FileType findFileTypeByDPath(QStringList dPath);
     std::optional <SingleStorage> findSingle(const IdObject &object);
     std::optional <SingleStorage> findSingle(const IdAccount_bit& account, const IdObjectU_bit& object);
     void removeListByFile(const QStringList dPath, FileType fileType);

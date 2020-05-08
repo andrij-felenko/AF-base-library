@@ -5,10 +5,10 @@ set (baseAF_h
     include/afBaseLib.h
     include/afAccountLib.h
     include/lib_baseAF/afAccount.h
-    include/lib_baseAF/afAccountAPI.h
     include/lib_baseAF/afAccountGroup.h
     include/lib_baseAF/afAccountInfo.h
     include/lib_baseAF/afAccountStorage.h
+    include/lib_baseAF/afAPI.h
     include/lib_baseAF/afDir.h
     include/lib_baseAF/afEnum.h
     include/lib_baseAF/afFile.h
@@ -19,8 +19,10 @@ set (baseAF_h
     include/lib_baseAF/afIdHistory.h
     include/lib_baseAF/afIdOperate.h
     include/lib_baseAF/afIdObject.h
+    include/lib_baseAF/afIdObjectTemplate.h
     include/lib_baseAF/afIdObjectBit.h
     include/lib_baseAF/afPreference.h
+    include/lib_baseAF/afServerSettings.h
     include/lib_baseAF/afSetting.h
     include/lib_baseAF/afStorage.h
     include/lib_baseAF/afSystem.h
@@ -29,21 +31,23 @@ set (baseAF_h
 
 set (baseAF_cpp
     account/afAccount.cpp
-    account/afAccountAPI.cpp
     account/afAccountGroup.cpp
     account/afAccountInfo.cpp
     account/afAccountStorage.cpp
+    base/afAPI.cpp
     base/afEnum.cpp
     base/afFunction.cpp
     base/afIdAccount.cpp
     base/afIdHistory.cpp
     base/afIdOperate.cpp
     base/afIdObject.cpp
+    base/afIdObjectTemplate.cpp
     base/afIdObjectBit.cpp
     base/afSystem.cpp
     tool/afDir.cpp
     tool/afFile.cpp
     tool/afPreference.cpp
+    tool/afServerSettings.cpp
     tool/afSetting.cpp
     tool/afStorage.cpp
     tool/afTransferOperateList.cpp
@@ -51,11 +55,11 @@ set (baseAF_cpp
 
 set (initialize_header
     include/AFaccount/AfAccount
-    include/AFaccount/AfAccountApi
     include/AFaccount/AfAccountGroup
     include/AFaccount/AfAccountInfo
     include/AFaccount/AfAccountStorage
     include/AFbaseLib
+    include/AFbase/AfAPI
     include/AFbase/AfEnum
     include/AFbase/AfFile
     include/AFbase/AfFunction
@@ -65,6 +69,7 @@ set (initialize_header
     include/AFbase/AfIdObjectBit
     include/AFbase/AfIdOperate
     include/AFbase/AfPreference
+    include/AFbase/AfServerSettings
     include/AFbase/AfSetting
     include/AFbase/AfSystem
     include/AFbase/AfTransferOperateList

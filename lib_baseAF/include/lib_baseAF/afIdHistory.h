@@ -8,9 +8,11 @@ namespace AFlib {
     enum class Attribute {
         None = 0,
         Name,
+        Created,
         Description,
         Date,
         Time,
+        LocalId,
         //
         // for account
         Email = 0x10,
@@ -19,6 +21,8 @@ namespace AFlib {
         Password,
         UserList,
         GroupMembers,         ///< List of members in Group
+        FriendList,
+        GroupList,
     };
 
     enum class Compress {
@@ -45,6 +49,7 @@ public:
     bool haveUpdates() const;
     QDateTime lastChange() const;
     QDateTime lastUpdate() const;
+    QDateTime timeCreate() const;
 
     void makeFull(const QByteArray& data);
     void makeShorten();
@@ -83,6 +88,7 @@ public:
         setMultiAttribute(static_cast <quint16> (key) + 0x40, value, type);
     }
 
+    OperatePtrList getAllOperates() const;
     OperatePtrList getListAfter(const QDateTime& afterTime) const;
     void addOperate(Operate    id, bool saveToStorage = true);
     void addOperate(OperatePtr id, bool saveToStorage = true);

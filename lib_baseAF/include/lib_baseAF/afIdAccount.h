@@ -7,6 +7,7 @@
 namespace AFlib::id {
     struct Account_bit;
     typedef Account_bit Acc_bit;
+    typedef QList <Account_bit> AccList_b;
 }
 
 /* ________ACCOUNT_ID_Bit_________________
@@ -28,7 +29,10 @@ struct AFlib::id::Account_bit : public TbitStruct <32>
 
     operator quint32() const;
 
-    AccountIdType accountType();
+    AccountIdType accountType() const;
+
+    bool isGlobal() const;
+    bool isLocal() const;
 
     static Account_bit create(const AccountIdType &type);
 
