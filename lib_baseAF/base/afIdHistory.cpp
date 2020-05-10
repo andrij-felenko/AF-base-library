@@ -17,6 +17,14 @@ bool AFlib::id::History::haveUpdates() const
     return lastChange() > m_lastUpdate;
 }
 
+bool AFlib::id::History::isEmpty() const
+{
+    for (auto it : m_operateList)
+        if (it->key() >= 4)
+            return false;
+    return true;
+}
+
 QDateTime AFlib::id::History::lastChange() const
 {
     QDateTime ret = QDateTime(QDate(2000, 1, 1), QTime(0, 0, 0));
@@ -272,7 +280,7 @@ void AFlib::id::History::addOperate(OperatePtr id, bool saveToStorage)
     refreshLastChangeTime();
 
     // save it to storage
-    if (saveToStorage)
+    if (saveToStorage && savedStatus() != SavedIdType::TemporarySaved)
         this->saveToStorage(id);
 }
 

@@ -6,6 +6,7 @@
 #include <QtCore/QLibrary>
 #include <QtCore/QPluginLoader>
 #include <QtCore/QDir>
+#include <random>
 
 namespace AFlib {
 class Function : public QObject
@@ -25,6 +26,7 @@ public:
     // work with numbers
     static QString stringToDigit(QString text);
     static QString digitToString(double number, int symbolAfterPoint = 3);
+    static int randomInt(int from, int to);
 
 signals:
     //

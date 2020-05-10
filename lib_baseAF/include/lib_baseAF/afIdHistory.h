@@ -13,6 +13,7 @@ namespace AFlib {
         Date,
         Time,
         LocalId,
+        Parent,
         //
         // for account
         Email = 0x10,
@@ -47,6 +48,7 @@ public:
 
     void updateTime(QDateTime dTime);
     bool haveUpdates() const;
+    bool isEmpty() const;
     QDateTime lastChange() const;
     QDateTime lastUpdate() const;
     QDateTime timeCreate() const;
@@ -125,6 +127,7 @@ protected:
     Account_bit m_owner;
 
     virtual void saveToStorage(const OperatePtr ptr) = 0;
+    virtual SavedIdType savedStatus() = 0;
 
     friend QDataStream &operator << (QDataStream& stream, const History& data);
     friend QDataStream &operator >> (QDataStream& stream,       History& data);

@@ -31,9 +31,9 @@ public:
     bool contains(const IdAccount_bit& account, const IdObject_bit& object) const;
 
     bool addOperate(const IdObject& object, const IdOperate& operate);
-    bool addOperateList(const transfer::List &list);
+    bool addOperateList(const transfer::Send &list);
 
-    transfer::List getOperatesAfter(const QDateTime& dateTime, AFaccList_b list = AFaccList_b());
+    transfer::Send getOperatesAfter(const QDateTime& dateTime, AFaccList_b list = AFaccList_b());
 
     bool addObject(const QStringList dPath, const IdObject& object, AFlib::FileType type = AFlib::FileType::Data);
 
@@ -48,7 +48,10 @@ public:
     IdObjList getObjectList(const QStringList dPath, const IdObjectPtrList list, AFlib::FileType type, Compress compress = Compress::AllActive);
 
     bool removeObject(const IdObject& object);
-    bool updateObjects(transfer::List &operateList);
+    bool updateObjects(transfer::Send &operateList);
+
+    id::Object_bit foundFreeLocalId(quint8 plugin, quint8 type);
+    id::Object_bit foundFreeLocalId(AFlib::id::Account_bit account, quint8 plugin, quint8 type);
 
 private:
     struct SingleStorage {

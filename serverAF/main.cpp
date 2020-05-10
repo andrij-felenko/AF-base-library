@@ -1,5 +1,5 @@
 #include <QtCore/QCoreApplication>
-#include "dataServer.h"
+#include "server.h"
 
 int main(int argc, char** argv)
 {

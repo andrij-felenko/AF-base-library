@@ -80,7 +80,7 @@ bool Storage::addOperate(const IdObject &object, const IdOperate &operate)
     return false;
 }
 
-bool Storage::addOperateList(const transfer::List &list)
+bool Storage::addOperateList(const transfer::Send &list)
 {
     bool result = true;
     for (auto it : list){
@@ -119,9 +119,9 @@ bool Storage::addOperateList(const transfer::List &list)
     return result;
 }
 
-transfer::List Storage::getOperatesAfter(const QDateTime& dateTime, AFaccList_b list)
+transfer::Send Storage::getOperatesAfter(const QDateTime& dateTime, AFaccList_b list)
 {
-    transfer::List retList;
+    transfer::Send retList;
     for (auto aIt : m_storageList){
         if (list.isEmpty()){
             if (AFaccount::storage()->getInfo(aIt.accountBit)->afObject()->owner().isLocal())
@@ -268,9 +268,34 @@ bool Storage::removeObject(const IdObject &object)
     return false;
 }
 
-bool Storage::updateObjects(transfer::List &operateList)
+bool Storage::updateObjects(transfer::Send &operateList)
 {
     return addOperateList(operateList);
+}
+
+AFlib::id::Object_bit Storage::foundFreeLocalId(quint8 plugin, quint8 type)
+{
+    return foundFreeLocalId(AFaccount::user()->afObject()->owner(), plugin, type);
+}
+
+AFlib::id::Object_bit Storage::foundFreeLocalId(id::Account_bit account, quint8 plugin, quint8 type)
+{
+    for (auto aIt : m_storageList)
+        if (aIt.accountBit == account)
+            for (auto pIt : aIt.pluginList)
+                if (pIt.pluginId == plugin)
+                    while (true){
+                        uint possibleKey = id::Object_bit::createLocalId();
+                        bool isFound(false);
+                        for (auto sIt : pIt.idList)
+                            if (sIt.id.uniqueId() == possibleKey){
+                                isFound = true;
+                                break;
+                            }
+                        if (not isFound)
+                            return id::Object_bit(plugin, type, possibleKey);
+                    }
+    return id::Object_bit();
 }
 
 FileType Storage::findFileTypeByDPath(QStringList dPath)

@@ -7,7 +7,7 @@ AFlib::HistoryIdType AFlib::toHistoryIdType(const quint8 i)
 
 AFlib::SavedIdType AFlib::toSavedIdType(const quint8 i)
 {
-    return SavedIdType(uint(SavedIdType::TemperarySaved) + i);
+    return SavedIdType(uint(SavedIdType::TemporarySaved) + i);
 }
 
 bool operator ==(AFlib::AccountIdType f, AFlib::AccountIdType s){

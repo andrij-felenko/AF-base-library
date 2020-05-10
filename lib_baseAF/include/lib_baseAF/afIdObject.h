@@ -6,6 +6,7 @@
 
 namespace AFlib::id {
     class Object;
+    class ObjectTemplate;
 
     typedef QSharedPointer <Object> ObjectPtr;
     typedef QList <ObjectPtr> ObjectPtrList;
@@ -30,10 +31,15 @@ public:
     virtual void setName       (const QString& name)        final;
     virtual void setDescription(const QString& description) final;
 
+    virtual Object_bit parent() const final;
+    virtual void setParent(Object_bit obj_b) final;
+
     Account_bit owner() const { return History::m_owner; }
 
     operator QByteArray() const;
     QByteArray getData() const;
+
+    virtual SavedIdType savedStatus() override;
 
     //! Function set owner, only work if history is empty.
     //! \param owner Owner id.
@@ -52,19 +58,16 @@ public:
     static AFlib::id::ObjectPtrList readFromFile(const QStringList &dPath, FileType type, const ObjectPtrList list);
 
 protected:
-    template <typename Plugin, typename Type>
-    Object(Account_bit owner, Plugin plugin, Type type, QString name = "", QString description = "")
-        : Object(owner, static_cast <quint8>(plugin) + 1, static_cast <quint8>(type) + 1, name, description)
-    {
-        //
-    }
-
     friend QDataStream &operator << (QDataStream& stream, const Object& data);
     friend QDataStream &operator >> (QDataStream& stream,       Object& data);
 
 private:
-    Object(Account_bit owner, quint8 pluginId, quint8 typeId, QString name, QString descr);
+    Object(Account_bit owner, quint8 pluginId, quint8 typeId, QString name = "", QString descr = "");
     virtual void saveToStorage(const OperatePtr ptr) override final;
+
+    bool setUniqueId();
+
+    friend class AFlib::id::ObjectTemplate;
 };
 
 QDataStream &operator << (QDataStream& stream, const AFlib::id::ObjectPtrList& data);

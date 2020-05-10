@@ -80,7 +80,7 @@ void AFlib::API::readServerAnswer(QNetworkReply *reply)
     case AFlib::RequestType::UpdateAfObjects: {
         QByteArray listData;
         stream >> listData;
-        transfer::List objectsData(listData);
+        transfer::Send objectsData(listData);
         afStorage()->updateObjects(objectsData);
         break;
     }

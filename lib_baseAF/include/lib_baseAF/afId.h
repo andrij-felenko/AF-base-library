@@ -25,7 +25,7 @@ namespace AFlib {
     typedef id::OperatePtr     IdOperatePtr;
     typedef id::OperatePtrList IdOperatePtrList;
 
-    typedef transfer::List TransferOperateList;
+    typedef transfer::Send TransferOperateSendList;
 }
 
 typedef AFlib::IdAccount_bit AFIdAccount;
@@ -47,6 +47,6 @@ typedef AFlib::Attribute AFattribute;
 typedef AFlib::Compress  AFcompress;
 
 typedef AFlib::id::AccList_b AFaccList_b;
-typedef AFlib::TransferOperateList AFTransferOperateList;
+typedef AFlib::TransferOperateSendList AFTransferOperateSendList;
 
 #endif // LIB_BASEAF_ID_H

@@ -1,36 +1,45 @@
 #include "afIdObjectBit.h"
+#include "AfFunction"
 
-AFlib::id::ObjectUnique_bit::ObjectUnique_bit(quint32 subjectFull)
+AFlib::id::Object_bit::Object_bit(quint32 id)
 {
-    setUInt32(subjectFull);
+    setUInt32(id);
 }
 
-AFlib::id::ObjectUnique_bit::ObjectUnique_bit(quint16 uniqueId, quint8 type, quint8 pluginId)
+AFlib::id::Object_bit::Object_bit(quint8 plugin, quint8 type)
 {
-    setUniqueId(uniqueId);
+    setPluginId(plugin);
     setType(type);
-    setPluginId(pluginId);
 }
 
-AFlib::id::Object_bit::Object_bit(quint32 subjectFull)
+AFlib::id::Object_bit AFlib::id::Object_bit::object_b() const
 {
-    setUInt64(subjectFull);
+    return static_cast <AFlib::id::Object_bit>(*this);
 }
 
-AFlib::id::Object_bit::Object_bit(quint32 id, quint8 parentType, quint32 parentId)
+bool AFlib::id::Object_bit::isIdLocal() const
 {
-    setUId(id);
-    setParent(parentType, parentId);
+    return uniqueId() < 1 << 10;
 }
 
-AFlib::id::Object_bit::Object_bit(ObjectUnique_bit unique, quint8 parentType, quint32 parentId)
+bool AFlib::id::Object_bit::isEmpty() const
 {
-    setUId(unique);
-    setParent(parentType, parentId);
+    return uniqueId() == 0;
 }
 
-void AFlib::id::Object_bit::setParent(quint8 type, quint32 id)
+quint32 AFlib::id::Object_bit::createLocalId()
 {
-    setParnetId(id);
-    setParentType(type);
+    return Function::randomInt(1, (1 << 10) - 1);
+}
+
+quint32 AFlib::id::Object_bit::createGlobalId()
+{
+    return Function::randomInt(1 << 10, (1 << 20) - 1);
+}
+
+AFlib::id::Object_bit::Object_bit(quint8 plugin, quint8 type, quint32 uid)
+{
+    setPluginId(plugin);
+    setType(type);
+    setUniqueId(uid);
 }

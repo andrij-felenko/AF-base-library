@@ -3,9 +3,9 @@
 #include "AfStorage"
 #include <QtCore/QDebug>
 
-AFlib::id::Object::Object() : Object(Account_bit(), "", "", 0, 0, 0, 0, 0)
+AFlib::id::Object::Object()
 {
-    // it`s done
+    //
 }
 
 AFlib::id::Object::Object(const QByteArray &data)
@@ -14,32 +14,20 @@ AFlib::id::Object::Object(const QByteArray &data)
     stream >> *this;
 }
 
-AFlib::id::Object::Object(const Object &cpObject) : AFlib::id::Object(cpObject.getData())
+AFlib::id::Object::Object(const AFlib::id::Object &cpObject)
+    : AFlib::id::Object(cpObject.getData())
 {
-    // it`s done
+    //
 }
 
-AFlib::id::Object::Object(const Object *cpObject) : AFlib::id::Object(cpObject->getData())
+AFlib::id::Object::Object(const AFlib::id::Object *cpObject)
+    : AFlib::id::Object(cpObject->getData())
 {
-    // it`s done
+    //
 }
 
-AFlib::id::Object::Object(Account_bit owner, quint16 uniqueId, quint8 type, quint8 pluginId)
-    : Object(owner, "", "", uniqueId, type, pluginId, 0, 0)
-{
-    // it`s done
-}
-
-AFlib::id::Object::Object(Account_bit owner, QString name, QString descr)
-    : Object(owner, name, descr, 0, 0, 0, 0, 0)
-{
-    // it`s done
-}
-
-AFlib::id::Object::Object(Account_bit owner, QString name, QString descr,
-                          quint16 uniqueId, quint8 type, quint8 pluginId,
-                          quint8 parentType, quint32 parentId)
-      : Object_bit(ObjU_bit(uniqueId, type, pluginId), parentType, parentId)
+AFlib::id::Object::Object(id::Account_bit owner, quint8 pluginId, quint8 typeId, QString name, QString descr)
+    : AFlib::id::Object_bit(pluginId, typeId)
 {
     setOwner(owner);
     setName(name);
@@ -48,7 +36,7 @@ AFlib::id::Object::Object(Account_bit owner, QString name, QString descr,
 
 void AFlib::id::Object::makeGlobalId(quint32 newId)
 {
-    setUId(newId);
+    // TODO
 }
 
 QString AFlib::id::Object::name() const
@@ -61,18 +49,18 @@ QString AFlib::id::Object::description() const
     return getAttribute(Attribute::Description).toString();
 }
 
-AFlib::id::ObjU_bit AFlib::id::Object::localUid_b() const
-{
-    return ObjU_bit(localUid());
-}
-
-quint32 AFlib::id::Object::localUid() const
+AFlib::id::Object_bit AFlib::id::Object::localId_b() const
 {
     auto last = getAttribute(Attribute::LocalId);
     if (last.isNull())
-        return uid_b();
+        return object_b();
 
-    return last.toUInt();
+    return Object_bit(last.toUInt());
+}
+
+quint32 AFlib::id::Object::localId() const
+{
+    return localId_b().toUInt32();
 }
 
 void AFlib::id::Object::setName(const QString &name)
@@ -85,9 +73,28 @@ void AFlib::id::Object::setDescription(const QString &description)
     setAttribute(Attribute::Description, description);
 }
 
+AFlib::id::Object_bit AFlib::id::Object::parent() const
+{
+    return Object_bit(getAttribute(Attribute::Parent).toUInt());
+}
+
+void AFlib::id::Object::setParent(AFlib::id::Object_bit obj_b)
+{
+    setAttribute(Attribute::Parent, obj_b.toUInt32());
+}
+
 QByteArray AFlib::id::Object::getData() const
 {
     return *this;
+}
+
+AFlib::SavedIdType AFlib::id::Object::savedStatus()
+{
+    if (uniqueId() == 0)
+        return SavedIdType::TemporarySaved;
+    else if (object_b().isIdLocal())
+        return SavedIdType::LocaleSaved;
+    return SavedIdType::SavedOnServer;
 }
 
 AFlib::id::Object::operator QByteArray() const
@@ -100,7 +107,7 @@ AFlib::id::Object::operator QByteArray() const
 
 bool AFlib::id::Object::setOwner(const Account_bit &owner)
 {
-    if (not m_operateList.isEmpty())
+    if (not History::isEmpty() && savedStatus() != SavedIdType::TemporarySaved)
         return false;
 
     m_owner = owner;
@@ -123,7 +130,7 @@ QByteArray AFlib::id::Object::listToBytaArray(const ObjectPtrList list)
 namespace AFlib::id {
 QDataStream &operator << (QDataStream& stream, const AFlib::id::Object& data)
 {
-    stream << data.m_owner << static_cast <const History&>(data) << data.m_bitset;
+    stream << data.m_owner << static_cast <const History&>(data) << data.object_b();
     return stream;
 }
 
@@ -189,7 +196,7 @@ AFlib::id::ObjectPtrList AFlib::id::Object::readList(const QByteArray &data, con
 
         bool isFound = false;
         for (auto it : removeList)
-            if (ptr->uid_b() == it->uid_b() && ptr->owner() == it->owner()){
+            if (ptr->object_b() == it->object_b() && ptr->owner() == it->owner()){
                 retList.push_back(ptr);
                 isFound = true;
                 break;
@@ -236,17 +243,24 @@ void AFlib::id::Object::saveToStorage(const OperatePtr ptr)
     afStorage()->addOperate(this, *ptr);
 }
 
+bool AFlib::id::Object::setUniqueId()
+{
+    if (savedStatus() != SavedIdType::TemporarySaved)
+        return false;
+
+    setId(afStorage()->foundFreeLocalId(owner(), pluginId(), type()).id());
+    return true;
+}
+
 QDebug operator <<(QDebug d, const AFlib::id::Object &object)
 {
     return d << "AFlib::id::Object {\n\t"
              << "owner id:     0x" << QString::number(object.owner().toUInt32(), 16)
              << "name:        "    << object.name() << ";\n\t"
              << "description: "    << object.description() << ";\n\t"
-             << "unique id:    0x" << QString::number(object.uid(), 16) << ";\n\t"
+             << "unique id:    0x" << QString::number(object.uniqueId(), 16) << ";\n\t"
              << "type:        "    << object.type() << ";\n\t"
-             << "plugin:      "    << object.pluginId() << ";\n\n\t"
-             << "parent type: "    << object.parentType() << ";\n\t"
-             << "parent id:   "    << object.parentId() << ";\n}";
+             << "plugin:      "    << object.pluginId() << ";\n}";
 }
 
 bool operator ==(const AFlib::id::ObjectPtr ptr, const AFlib::id::Object &object)

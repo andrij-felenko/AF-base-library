@@ -56,12 +56,12 @@ namespace AFlib {
     bool isHIdEnable(HistoryIdType type);
 
     enum class SavedIdType { // 2 bit`s
-        TemperarySaved = 0xE0F200,
+        TemporarySaved = 0xE0F200,
         LocaleSaved,
         SavedOnWayToServer,
         SavedOnServer,
 
-        First = TemperarySaved,
+        First = TemporarySaved,
     };
     SavedIdType toSavedIdType(const quint8 i);
     quint8 fromSaveToInt(SavedIdType type);
