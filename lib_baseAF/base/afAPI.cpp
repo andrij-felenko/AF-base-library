@@ -234,3 +234,18 @@ AFapiPtr afAPI()
 {
     return AFlib::api();
 }
+
+namespace AFlib {
+    QDataStream &operator << (QDataStream &d, const AFlib::RequestType &type)
+    {
+        return d << static_cast <ushort> (type);
+    }
+
+    QDataStream &operator >> (QDataStream &d, AFlib::RequestType &type)
+    {
+        ushort retShort;
+        d >> retShort;
+        type = static_cast <AFlib::RequestType> (retShort);
+        return d;
+    }
+}

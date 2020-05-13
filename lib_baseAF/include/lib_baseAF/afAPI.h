@@ -37,6 +37,9 @@ namespace AFlib {
     QUrl getServerLink(const RequestType type, bool isData = false);
 
     ApiPtr api();
+
+    QDataStream &operator << (QDataStream& d, const AFlib::RequestType& type);
+    QDataStream &operator >> (QDataStream& d,       AFlib::RequestType& type);
 }
 
 class AFlib::API : public QNetworkAccessManager
