@@ -69,3 +69,16 @@ quint8 AFlib::fromAccountIdType(AFlib::AccountIdType type)
 {
     return static_cast <uint>(type) - static_cast <uint>(AccountIdType::First);
 }
+
+QDataStream &operator <<(QDataStream &s, const AFlib::FileType& type)
+{
+    return s << static_cast <uint> (type);
+}
+
+QDataStream &operator >>(QDataStream &s, AFlib::FileType& type)
+{
+    uint value;
+    s >> value;
+    type = static_cast <AFlib::FileType> (value);
+    return s;
+}

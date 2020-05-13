@@ -27,6 +27,7 @@ public:
     static QString stringToDigit(QString text);
     static QString digitToString(double number, int symbolAfterPoint = 3);
     static int randomInt(int from, int to);
+    static QDateTime nullDateTime();
 
 signals:
     //

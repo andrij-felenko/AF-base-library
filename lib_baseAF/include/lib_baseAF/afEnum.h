@@ -3,6 +3,7 @@
 
 #include <QtCore/QDebug>
 #include <QtCore/QObject>
+#include <QtCore/QDataStream>
 
 namespace AFlib {
     Q_NAMESPACE
@@ -87,5 +88,8 @@ namespace AFlib {
 
 bool operator == (AFlib::AccountIdType f, AFlib::AccountIdType s);
 QDebug operator << (QDebug d, AFlib::FileType type);
+
+QDataStream& operator << (QDataStream& s, const AFlib::FileType& type);
+QDataStream& operator >> (QDataStream& s,       AFlib::FileType& type);
 
 #endif // LIB_BASEAF_ENUMAF_H

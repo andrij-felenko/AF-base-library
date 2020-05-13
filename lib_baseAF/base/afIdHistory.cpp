@@ -1,5 +1,6 @@
 #include "afIdHistory.h"
 #include "afStorage.h"
+#include "afFunction.h"
 
 AFlib::id::History::History()
 {
@@ -85,7 +86,8 @@ void AFlib::id::History::makeShorten(OperatePtrList &list)
 
         // 1: found ties variant for last id
         OperatePtr last = OperatePtr::create();
-        last->setDatetime(QDate(1960, 1, 1).startOfDay());
+        last->setDatetime(AFlib::Function::nullDateTime());
+
         for (auto it : list){
             if (it->key() == multiple.value())
                 if (last->datetime() < it->datetime())
@@ -255,7 +257,7 @@ QVariant AFlib::id::History::getAttribute(quint16 key) const
 QVariant AFlib::id::History::getAttribute(const OperatePtrList& list, quint16 key) const
 {
     OperatePtr last;
-    last->setDatetime(QDate(1960, 1, 1).startOfDay());
+    last->setDatetime(Function::nullDateTime());
     for (auto it : list)
         if (it->key() == key)
             if (it->m_datetime > last->m_datetime)

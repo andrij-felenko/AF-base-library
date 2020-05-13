@@ -2,6 +2,7 @@
 
 #include "afFunction.h"
 #include "afSystem.h"
+#include <QtCore/QDateTime>
 
 using namespace AFlib;
 
@@ -84,6 +85,15 @@ int Function::randomInt(int from, int to)
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> dis(from, to);
     return dis(gen);
+}
+
+QDateTime Function::nullDateTime()
+{
+#if QT_VERSION >= 0x051300
+    return QDateTime(QDate(1960, 1, 1).startOfDay());
+#else
+    return QDateTime(QDate(1960, 1, 1));
+#endif
 }
 
 QString Function::libraryName(QString libraryName)
