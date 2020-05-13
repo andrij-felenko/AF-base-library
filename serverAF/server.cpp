@@ -136,7 +136,16 @@ QByteArray Server::remindMyPassword(const QHttpServerRequest &request)
 
 QByteArray Server::updateObjects(const QHttpServerRequest &request)
 {
-    Q_UNUSED(request)
     // TODO
+    // 1. read objects transfer::Send
+    AFlib::transfer::Send sendData;
+    QDataStream streamIn(request.body());
+    streamIn >> sendData;
+
+    // 2. register new objects and save it to af storage
+    auto answer = AFlib::afStorage()->saveObjects(sendData);
+
+    // TODO 3. found related objects and return it
+
     return QByteArray();
 }

@@ -40,6 +40,8 @@ namespace AFlib::id {
 }
 
 #include "afIdOperate.h"
+#include "afIdObjectBit.h"
+#include "afIdGlobalBit.h"
 
 class AFlib::id::History
 {
@@ -54,6 +56,7 @@ public:
     QDateTime timeCreate() const;
 
     void makeFull(const QByteArray& data);
+    void makeShorten(OperatePtrList& list);
     void makeShorten();
     void saveShorten();
     void useCompress(Compress value);
@@ -63,8 +66,7 @@ public:
     void     setAttribute(Attribute key, QVariant value);
 
     template <typename K>
-    QVariant getAttribute(K key) const
-    {
+    QVariant getAttribute(K key) const {
         return getAttribute(static_cast <quint16> (key) + 0x40);
     }
 
@@ -74,29 +76,50 @@ public:
         setAttribute(static_cast <quint16> (key) + 0x40, value);
     }
 
+    template <typename K>
+    Global_bit getIdAttribute(K key) const {
+        return getIdAttribute(static_cast <quint16> (key) + 0x40);
+    }
+
+    template <typename K>
+    void setIdAttribute(K key, const Global_bit& value) {
+        setIdAttribute(static_cast <quint16> (key) + 0x40, value);
+    }
+
     // Multi part
     QVariantList getMultiAttribute(Attribute key) const;
     void         setMultiAttribute(Attribute key, QVariant value, HIdType type);
 
     template <typename K>
-    QVariantList getMultiAttribute(K key) const
-    {
-        return getMultiAttribute(static_cast <quint16> (key) + 0x40);
+    QVariantList getMultiAttribute(K key) const {
+        return getMultiAttribute(m_operateList, static_cast <quint16> (key) + 0x40);
     }
 
     template <typename K>
-    void setMultiAttribute(K key, const QVariant& value, HIdType type)
-    {
+    GlobalList_bit getMultiIdAttribute(K key) const {
+        return getMultiIdAttribute(static_cast <quint16> (key) + 0x40);
+    }
+
+    template <typename K>
+    void setMultiAttribute(K key, const QVariant& value, HIdType type) {
         setMultiAttribute(static_cast <quint16> (key) + 0x40, value, type);
     }
 
+    template <typename K>
+    void setMultiIdAttribute(K key, const Global_bit& value, HIdType type) {
+        setMultiIdAttribute(static_cast <quint16> (key) + 0x40, value, type);
+    }
+
     OperatePtrList getAllOperates() const;
-    OperatePtrList getListAfter(const QDateTime& afterTime) const;
+    OperatePtrList getIdOperates() const;
+    OperatePtrList getNoIdOperates() const;
+    OperatePtrList getListAfter  (const QDateTime& afterTime) const;
+    OperatePtrList getListIdAfter(const QDateTime& afterTime) const;
     void addOperate(Operate    id, bool saveToStorage = true);
-    void addOperate(OperatePtr id, bool saveToStorage = true);
+    void addOperate(OperatePtr id, bool saveToStorage = true, bool isId = false);
     void addOperate(const QByteArray& data);
     void addOperations(const QByteArray& list);
-    void addOperations(const OperatePtrList list, bool saveToStorage = true);
+    void addOperations(const OperatePtrList list, bool saveToStorage = true, bool isId = false);
     void addOperate(Attribute attributeKey, QVariant value,
                     Account_bit userId, HIdType history = HIdType::AddIdLine,
                     SIdType saved = SIdType::LocaleSaved,
@@ -124,9 +147,10 @@ public:
 protected:
     QDateTime m_lastUpdate;
     OperatePtrList m_operateList;
+    OperatePtrList m_operateIdList;
     Account_bit m_owner;
 
-    virtual void saveToStorage(const OperatePtr ptr) = 0;
+    virtual void saveToStorage(const OperatePtr ptr, bool isId = false) = 0;
     virtual SavedIdType savedStatus() = 0;
 
     friend QDataStream &operator << (QDataStream& stream, const History& data);
@@ -135,15 +159,22 @@ protected:
 private:
     void refreshLastChangeTime();
 
+    Global_bit getIdAttribute(quint16 key);
+    void       setIdAttribute(quint16 key, const Global_bit& globalId);
+
     QVariant getAttribute(quint16 key) const;
     QVariant getAttribute(const OperatePtrList &list, quint16 key) const;
-    void setAttribute(quint16 key, const QVariant& value);
+    void setAttribute(quint16 key, const QVariant& value, bool isId = false);
 
-    QVariantList getMultiAttribute(quint16 key) const;
-    void setMultiAttribute(quint16 key, const QVariant& value, HIdType type);
+    QVariantList getMultiAttribute(const OperatePtrList &opList, quint16 key) const;
+    void setMultiAttribute(quint16 key, const QVariant& value, HIdType type, bool isId = false);
+
+    GlobalList_bit getMultiIdAttribute(quint16 key) const;
+    void setMultiIdAttribute(quint16 key, const Global_bit& value, HIdType type);
 
     void addOperate(quint16 valueKey, QVariant value, Account_bit userId,
-                    HistoryIdType history, SavedIdType saved, QDateTime dTime);
+                    HistoryIdType history, SavedIdType saved, bool isId = false,
+                    QDateTime dTime = QDateTime::currentDateTime());
 };
 
 #endif // LIB_BASEAF_ID_HISTORY_H

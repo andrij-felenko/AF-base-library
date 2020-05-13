@@ -5,6 +5,7 @@
 #include "afIdAccount.h"
 #include "afIdOperate.h"
 #include "afIdObject.h"
+#include "afIdGlobalBit.h"
 #include "afIdObjectTemplate.h"
 #include "afIdHistory.h"
 #include "AfTransferOperateList"
@@ -15,6 +16,7 @@ namespace AFlib {
     typedef id::History    IdHistory;
     typedef id::HistoryPtr IdHistoryPtr;
 
+    typedef id::Global_bit       IdGlobal_bit;
     typedef id::Object           IdObject;
     typedef id::ObjectTemplate   IdObjectTemplate;
     typedef id::Object_bit       IdObject_bit;
@@ -33,6 +35,7 @@ typedef AFlib::IdAccount_bit AFIdAccount;
 typedef AFlib::IdHistory    AFIdHistory;
 typedef AFlib::IdHistoryPtr AFIdHistoryPtr;
 
+typedef AFlib::IdGlobal_bit     AFIdGlobal_bit;
 typedef AFlib::IdObject         AFIdObject;
 typedef AFlib::IdObjectTemplate AFIdObjectTemplate;
 typedef AFlib::IdObject_bit     AFIdObject_bit; 

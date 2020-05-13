@@ -2,6 +2,7 @@
 #define LIB_BASEAF_ID_OBJECT_BIT_H
 
 #include "afIdBit.h"
+#include "afIdAccount.h"
 
 namespace AFlib {
     class Storage;
@@ -50,6 +51,8 @@ private:
     void setId      (quint32 id)  { setUInt32(id); }
     void setUniqueId(quint32 id)  { setUInt32(id, 12, 20); }
     void setPluginId(quint8  id)  { setUInt8 (id, 35, 5); }
+
+    void setId(Object_bit id)  { *this = id; }
 
     template <typename N> void setType(N type) { setType(static_cast <quint8> (type)); }
     template <typename N> void setPlugin(N id)   { setPluginId(static_cast <quint8> (id)); }

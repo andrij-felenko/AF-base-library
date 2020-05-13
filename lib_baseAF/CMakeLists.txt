@@ -16,6 +16,7 @@ set (baseAF_h
     include/lib_baseAF/afId.h
     include/lib_baseAF/afIdAccount.h
     include/lib_baseAF/afIdBit.h
+    include/lib_baseAF/afIdGlobalBit.h
     include/lib_baseAF/afIdHistory.h
     include/lib_baseAF/afIdOperate.h
     include/lib_baseAF/afIdObject.h
@@ -38,6 +39,7 @@ set (baseAF_cpp
     base/afEnum.cpp
     base/afFunction.cpp
     base/afIdAccount.cpp
+    base/afIdGlobalBit.cpp
     base/afIdHistory.cpp
     base/afIdOperate.cpp
     base/afIdObject.cpp

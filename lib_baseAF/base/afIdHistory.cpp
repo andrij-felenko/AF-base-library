@@ -19,6 +19,9 @@ bool AFlib::id::History::haveUpdates() const
 
 bool AFlib::id::History::isEmpty() const
 {
+    if (not m_operateIdList.isEmpty())
+        return false;
+
     for (auto it : m_operateList)
         if (it->key() >= 4)
             return false;
@@ -29,6 +32,9 @@ QDateTime AFlib::id::History::lastChange() const
 {
     QDateTime ret = QDateTime(QDate(2000, 1, 1), QTime(0, 0, 0));
     for (auto it : m_operateList)
+        if (ret > it->datetime())
+            ret = it->datetime();
+    for (auto it : m_operateIdList)
         if (ret > it->datetime())
             ret = it->datetime();
     return ret;
@@ -47,16 +53,16 @@ QDateTime AFlib::id::History::timeCreate() const
 void AFlib::id::History::makeFull(const QByteArray& data)
 {
     QDataStream stream(data);
-    stream >> m_operateList;
+    stream >> m_operateList >> m_operateIdList;
 }
 
-void AFlib::id::History::makeShorten()
+void AFlib::id::History::makeShorten(OperatePtrList &list)
 {
     auto foundMultiple = [=]() -> std::optional <quint32> {
         QVector <quint32> objList;
         objList.clear();
 
-        for (auto it : m_operateList){
+        for (auto it : list){
             if (objList.contains(it->key()))
                 return it->key();
             else
@@ -70,7 +76,7 @@ void AFlib::id::History::makeShorten()
     while (multiple){
         // 0: found local last, always have it
         quint32 localLast = 0;
-        for (auto it : m_operateList)
+        for (auto it : list)
             if (it->historyType() == HIdType::SavedIdChangeLine)
                 if (it->value().toUInt() == multiple){
                     localLast = it->value().toUInt();
@@ -80,7 +86,7 @@ void AFlib::id::History::makeShorten()
         // 1: found ties variant for last id
         OperatePtr last = OperatePtr::create();
         last->setDatetime(QDate(1960, 1, 1).startOfDay());
-        for (auto it : m_operateList){
+        for (auto it : list){
             if (it->key() == multiple.value())
                 if (last->datetime() < it->datetime())
                     last = it;
@@ -89,8 +95,8 @@ void AFlib::id::History::makeShorten()
             last = OperatePtr::create();
 
         // 2: remove all same as last unique id but not compare this last
-        m_operateList.erase(
-            std::remove_if(m_operateList.begin(), m_operateList.end(),
+        list.erase(
+            std::remove_if(list.begin(), list.end(),
                            [last, localLast, multiple](OperatePtr single) {
                                return (multiple == single->key() && last.data() != single.data())
                                       || multiple.value() == localLast;
@@ -101,6 +107,12 @@ void AFlib::id::History::makeShorten()
     }
 }
 
+void AFlib::id::History::makeShorten()
+{
+    makeShorten(m_operateList);
+    makeShorten(m_operateIdList);
+}
+
 void AFlib::id::History::saveShorten()
 {
     // TODO
@@ -108,7 +120,7 @@ void AFlib::id::History::saveShorten()
 
 void AFlib::id::History::useCompress(Compress value)
 {
-    // TODO
+    // TODO not forget about that we have 2 operate lists
     auto removeFunction = [value](const OperatePtr ptr){
         switch (value){
         case Compress::Shortest: {
@@ -143,7 +155,7 @@ void AFlib::id::History::setAttribute(Attribute key, QVariant value)
 
 QVariantList AFlib::id::History::getMultiAttribute(Attribute key) const
 {
-    return getMultiAttribute(static_cast <quint16> (key));
+    return getMultiAttribute(m_operateList, static_cast <quint16> (key));
 }
 
 void AFlib::id::History::setMultiAttribute(Attribute key, QVariant value, HIdType type)
@@ -152,6 +164,16 @@ void AFlib::id::History::setMultiAttribute(Attribute key, QVariant value, HIdTyp
 }
 
 AFlib::id::OperatePtrList AFlib::id::History::getAllOperates() const
+{
+    return m_operateList + m_operateIdList;
+}
+
+AFlib::id::OperatePtrList AFlib::id::History::getIdOperates() const
+{
+    return m_operateIdList;
+}
+
+AFlib::id::OperatePtrList AFlib::id::History::getNoIdOperates() const
 {
     return m_operateList;
 }
@@ -162,7 +184,19 @@ AFlib::id::OperatePtrList AFlib::id::History::getListAfter(const QDateTime &afte
     OperatePtrList retList;
     for (auto it : m_operateList)
         if (it->datetime() > afterTime)
-            retList.push_back(it);
+            if (it->setSaveType(SIdType::SavedOnWayToServer))
+                retList.push_back(it);
+    return retList;
+}
+
+AFlib::id::OperatePtrList AFlib::id::History::getListIdAfter(const QDateTime &afterTime) const
+{
+    // WARNING need to test compress flag, so if we have shorten flag, it can`t return full list of operate
+    OperatePtrList retList;
+    for (auto it : m_operateIdList)
+        if (it->datetime() > afterTime)
+            if (it->setSaveType(SIdType::SavedOnWayToServer))
+                retList.push_back(it);
     return retList;
 }
 
@@ -180,10 +214,10 @@ void AFlib::id::History::addOperations(const QByteArray& list)
         addOperate(it);
 }
 
-void AFlib::id::History::addOperations(const OperatePtrList list, bool saveToStorage)
+void AFlib::id::History::addOperations(const OperatePtrList list, bool saveToStorage, bool isId)
 {
     for (auto it : list)
-        addOperate(it, saveToStorage);
+        addOperate(it, saveToStorage, isId);
 }
 
 void AFlib::id::History::addOperate(Attribute attributeKey, QVariant value, Account_bit userId,
@@ -201,6 +235,16 @@ void AFlib::id::History::addOperate(Attribute attributeKey, QVariant value, quin
 void AFlib::id::History::refreshLastChangeTime()
 {
     // TODO
+}
+
+AFlib::id::Global_bit AFlib::id::History::getIdAttribute(quint16 key)
+{
+    return Global_bit(getAttribute(m_operateIdList, key).toULongLong());
+}
+
+void AFlib::id::History::setIdAttribute(quint16 key, const Global_bit &globalId)
+{
+    setAttribute(key, globalId.toNumber(), true);
 }
 
 QVariant AFlib::id::History::getAttribute(quint16 key) const
@@ -223,19 +267,19 @@ QVariant AFlib::id::History::getAttribute(const OperatePtrList& list, quint16 ke
     return last->m_value;
 }
 
-void AFlib::id::History::setAttribute(quint16 key, const QVariant &value)
+void AFlib::id::History::setAttribute(quint16 key, const QVariant &value, bool isId)
 {
     if (getAttribute(key).isNull())
-        addOperate(key, value, m_owner, HIdType::AddIdLine, SIdType::LocaleSaved);
+        addOperate(key, value, m_owner, HIdType::AddIdLine, SIdType::LocaleSaved, isId);
     else
-        addOperate(key, value, m_owner, HIdType::EditIdLine, SIdType::LocaleSaved);
+        addOperate(key, value, m_owner, HIdType::EditIdLine, SIdType::LocaleSaved, isId);
 }
 
-QVariantList AFlib::id::History::getMultiAttribute(quint16 key) const
+QVariantList AFlib::id::History::getMultiAttribute(const OperatePtrList& opList, quint16 key) const
 {
     OperatePtrList list;
     QMap <QVariant, QDateTime> valueMap;
-    for (auto it : m_operateList)
+    for (auto it : opList)
         if (it->key() == key){
             list.push_back(it);
             if (valueMap.contains(it->value()))
@@ -259,9 +303,23 @@ QVariantList AFlib::id::History::getMultiAttribute(quint16 key) const
     return retList;
 }
 
-void AFlib::id::History::setMultiAttribute(quint16 key, const QVariant &value, HIdType type)
+void AFlib::id::History::setMultiAttribute(quint16 key, const QVariant &value, HIdType type, bool isId)
 {
-    addOperate(key, value, m_owner, type, SIdType::LocaleSaved);
+    addOperate(key, value, m_owner, type, SIdType::LocaleSaved, isId);
+}
+
+AFlib::id::GlobalList_bit AFlib::id::History::getMultiIdAttribute(quint16 key) const
+{
+    auto list = getMultiAttribute(m_operateIdList, key);
+    GlobalList_bit retList;
+    for (auto it : list)
+        retList.push_back(Global_bit(it.toULongLong()));
+    return retList;
+}
+
+void AFlib::id::History::setMultiIdAttribute(quint16 key, const Global_bit &value, HIdType type)
+{
+    setMultiAttribute(key, value.toNumber(), type, true);
 }
 
 void AFlib::id::History::addOperate(Operate id, bool saveToStorage)
@@ -270,35 +328,39 @@ void AFlib::id::History::addOperate(Operate id, bool saveToStorage)
     addOperate(ptr, saveToStorage);
 }
 
-void AFlib::id::History::addOperate(OperatePtr id, bool saveToStorage)
+void AFlib::id::History::addOperate(OperatePtr id, bool saveToStorage, bool isId)
 {
     for (auto it : m_operateList)
         if (it.data() == id.data())
             return;
 
-    m_operateList.push_back(id);
+    if (isId)
+        m_operateIdList.push_back(id);
+    else
+        m_operateList.push_back(id);
     refreshLastChangeTime();
 
     // save it to storage
     if (saveToStorage && savedStatus() != SavedIdType::TemporarySaved)
-        this->saveToStorage(id);
+        this->saveToStorage(id, isId);
 }
 
 void AFlib::id::History::addOperate(quint16 valueKey, QVariant value, Account_bit userId,
-                                    HistoryIdType history, SavedIdType saved, QDateTime dTime)
+                                    HistoryIdType history, SavedIdType saved, bool isId,
+                                    QDateTime dTime)
 {
     OperatePtr ptr = OperatePtr::create(userId, history, saved, value, valueKey, dTime);
-    addOperate(ptr);
+    addOperate(ptr, true, isId);
 }
 
 namespace AFlib::id {
 QDataStream &operator << (QDataStream& stream, const History& data)
 {
-    return stream << data.m_operateList << data.m_lastUpdate;
+    return stream << data.m_operateList << data.m_operateIdList << data.m_lastUpdate;
 }
 
 QDataStream &operator >> (QDataStream& stream,       History& data)
 {
-    return stream >> data.m_operateList >> data.m_lastUpdate;
+    return stream >> data.m_operateList >> data.m_operateIdList >> data.m_lastUpdate;
 }
 }

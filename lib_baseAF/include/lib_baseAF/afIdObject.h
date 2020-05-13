@@ -20,7 +20,10 @@ public:
     Object(const Object& cpObject);
     Object(const Object* cpObject);
     // TODO need to change it, and all system
-    void makeGlobalId(quint32 newId);
+    void makeGlobalId(id::Object_bit newId);
+
+    virtual Global_bit globalId() const final;
+    virtual quint64    global()   const final;
 
     virtual QString name()        const final;
     virtual QString description() const final;
@@ -41,7 +44,7 @@ public:
 
     virtual SavedIdType savedStatus() override;
 
-    //! Function set owner, only work if history is empty.
+    //! Function set owner, only work if history is empty (empty exists create and date time operate).
     //! \param owner Owner id.
     //! \return Return result of set new id, return false if history is not empty.
     virtual bool setOwner(const Account_bit &owner) final;
@@ -63,7 +66,7 @@ protected:
 
 private:
     Object(Account_bit owner, quint8 pluginId, quint8 typeId, QString name = "", QString descr = "");
-    virtual void saveToStorage(const OperatePtr ptr) override final;
+    virtual void saveToStorage(const OperatePtr ptr, bool isId = false) override final;
 
     bool setUniqueId();
 

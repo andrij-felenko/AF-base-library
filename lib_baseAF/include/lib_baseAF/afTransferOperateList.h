@@ -48,25 +48,31 @@ public:
     void addNewGlobalId(QStringList dPath, FileType fileType, id::Account_bit owner,
                         id::Object_bit old, id::Object_bit new_);
 
+    std::optional <id::Global_bit> isOldIdPresent(id::Global_bit localId, QStringList dPath, FileType type) const;
+
     operator QByteArray() const;
     QByteArray getData() const;
 };
 
 // send struct --------------------------------------------------------------------------
 
-struct AFlib::transfer::send::Operates : public id::OperatePtrList {
-    AFlib::id::Account_bit owner;
-    AFlib::id::Object_bit object;
+struct AFlib::transfer::send::Operates {
+    Operates() : globalId(0) {}
+    Operates(id::Global_bit globalId) : globalId(globalId) {}
+    id::Global_bit globalId;
 
-    friend QDataStream& operator << (QDataStream& stream, Operates& data);
-    friend QDataStream& operator >> (QDataStream& stream, Operates& data);
+    id::OperatePtrList operateList;
+    id::OperatePtrList operateIdList;
+
+    friend QDataStream& operator << (QDataStream& stream, const Operates& data);
+    friend QDataStream& operator >> (QDataStream& stream,       Operates& data);
 };
 
 struct AFlib::transfer::send::Objects : public QList <Operates> {
     QStringList dPath;
     FileType fileType;
-    void addOperate(id::Account_bit owner, id::Object_bit object, id::OperatePtrList list);
-    void addOperate(id::Account_bit owner, id::Object_bit object, id::OperatePtr  operate);
+    void addOperate(id::Global_bit id, id::OperatePtrList list, bool isId);
+    void addOperate(id::Global_bit id, id::OperatePtr  operate, bool isId);
 
     id::ObjectPtr object;
 
@@ -81,8 +87,10 @@ public:
     Send(const QByteArray& data);
 
     void addNewObject(const QStringList& dPath, FileType fileType, id::ObjectPtr object);
-    void addOperate(const QStringList& dPath, FileType fileType, id::Acc_bit owner, id::Object_bit object, id::OperatePtrList list);
-    void addOperate(const QStringList& dPath, FileType fileType, id::Acc_bit owner, id::Object_bit object, id::OperatePtr  operate);
+    void addOperate(const QStringList& dPath, FileType fileType, id::Global_bit id,
+                    id::OperatePtrList list, bool isId);
+    void addOperate(const QStringList& dPath, FileType fileType, id::Global_bit id,
+                    id::OperatePtr  operate, bool isId);
 
     operator QByteArray() const;
     QByteArray getData() const;

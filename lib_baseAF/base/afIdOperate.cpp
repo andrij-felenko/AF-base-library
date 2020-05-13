@@ -1,9 +1,20 @@
 #include "afIdOperate.h"
 #include <QtCore/QSharedPointer>
+#include <QtCore/QTimer>
 
 void AFlib::id::Operate::setValue(const QVariant &value)
 {
     m_value = value;
+}
+
+AFlib::id::Global_bit AFlib::id::Operate::valueId() const
+{
+    return Global_bit(value().toULongLong());
+}
+
+void AFlib::id::Operate::setValueId(Global_bit newId)
+{
+    setValue(newId.toNumber());
 }
 
 AFlib::id::Operate::Operate(const AFlib::id::Operate &copy)
@@ -66,4 +77,27 @@ QDataStream &operator >> (QDataStream& stream,       AFlib::id::OperatePtrList& 
         data.push_back(ptr);
     }
     return stream;
+}
+
+bool AFlib::id::Operate_bit::setSaveType(quint8 type)
+{
+    return setSaveType(toSavedIdType(type));
+}
+
+bool AFlib::id::Operate_bit::setSaveType(SIdType type)
+{
+    auto current = saveType();
+    if (current == type)
+        return false;
+
+    if (current == SIdType::SavedOnServer && type == SIdType::SavedOnWayToServer)
+        return false;
+
+    setUInt8(fromSaveToInt(type), 10, 3);
+    static auto returnToLocalSaveStatus = [=](){
+        if (saveType() == SIdType::SavedOnWayToServer)
+            setSaveType(SIdType::LocaleSaved);
+    };
+    QTimer::singleShot(7000, returnToLocalSaveStatus);
+    return true;
 }

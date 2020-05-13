@@ -13,7 +13,7 @@ namespace AFlib {
     StoragePtr afStorage();
 }
 
-class AFlib::Storage : public QObject
+class AFlib::Storage final : public QObject
 {
     Q_OBJECT
     typedef IdObjectPtr     IdObj;
@@ -28,9 +28,9 @@ public:
     void loadFromDirectory(const QStringList& dPath, Compress compress = Compress::AllActive);
     bool updateFile(const QStringList dPath, const QByteArray &data, AFlib::FileType type = AFlib::FileType::Data);
     bool contains(const IdObject& ptr) const;
-    bool contains(const IdAccount_bit& account, const IdObject_bit& object) const;
+    bool contains(const IdGlobal_bit& globalId) const;
 
-    bool addOperate(const IdObject& object, const IdOperate& operate);
+    bool addOperate(const IdObject& object, const IdOperate& operate, bool isId = false);
     bool addOperateList(const transfer::Send &list);
 
     transfer::Send getOperatesAfter(const QDateTime& dateTime, AFaccList_b list = AFaccList_b());
@@ -48,10 +48,18 @@ public:
     IdObjList getObjectList(const QStringList dPath, const IdObjectPtrList list, AFlib::FileType type, Compress compress = Compress::AllActive);
 
     bool removeObject(const IdObject& object);
-    bool updateObjects(transfer::Send &operateList);
+
+    // from server, only used
+    bool updateObjects(transfer::Answer answer, transfer::Send &operateList);
+
+    // set data to server, only on server
+    transfer::Answer saveObjects(transfer::Send &sendData);
 
     id::Object_bit foundFreeLocalId(quint8 plugin, quint8 type);
     id::Object_bit foundFreeLocalId(AFlib::id::Account_bit account, quint8 plugin, quint8 type);
+
+    id::Object_bit foundFreeGlobalId(id::Object_bit id);
+    id::Object_bit foundFreeGlobalId(id::Global_bit id);
 
 private:
     struct SingleStorage {
@@ -59,6 +67,8 @@ private:
         IdObject_bit  id;
         QStringList dPath;
         FileType fileType;
+
+        QList <id::Global_bit> localSharedList;
     };
 
     struct PluginStorage {
@@ -77,13 +87,15 @@ private:
 
     FileType findFileTypeByDPath(QStringList dPath);
     std::optional <SingleStorage> findSingle(const IdObject &object);
-    std::optional <SingleStorage> findSingle(const IdAccount_bit& account, const IdObject_bit& object);
+    std::optional <SingleStorage> findSingle(const id::Global_bit& globalId);
+    std::optional <SingleStorage> findSingle(const id::Account_bit& owner, const id::Object_bit& object);
     void removeListByFile(const QStringList dPath, FileType fileType);
     void registrateObject(const QStringList dPath, FileType fileType, const IdObject&     object);
     void registrateObject(const QStringList dPath, FileType fileType, const IdObjectPtr   object);
     void registrateObject(const QStringList dPath, FileType fileType, const IdObjectPtrList list);
     void addAccount(IdAccount_bit id);
     void setLastChangedTime(quint32 account, IdObject_bit id, QDateTime dTime);
+    void addLocalShared(IdGlobal_bit sender, IdGlobal_bit whatsAddId);
 
     std::vector <AccountStorage> m_storageList;
 };

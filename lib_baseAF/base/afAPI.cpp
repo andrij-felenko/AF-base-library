@@ -78,10 +78,10 @@ void AFlib::API::readServerAnswer(QNetworkReply *reply)
     case AFlib::RequestType::RemindMyLogin:    break;
     case AFlib::RequestType::RemindMyPassword: break;
     case AFlib::RequestType::UpdateAfObjects: {
-        QByteArray listData;
-        stream >> listData;
-        transfer::Send objectsData(listData);
-        afStorage()->updateObjects(objectsData);
+        transfer::Answer answer;
+        transfer::Send sendNew;
+        stream >> answer >> sendNew;
+        afStorage()->updateObjects(answer, sendNew);
         break;
     }
     default: qDebug() << "Wrong key request.";

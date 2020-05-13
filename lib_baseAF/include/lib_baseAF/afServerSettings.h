@@ -23,6 +23,7 @@ public:
 
     bool addUrl(QString key, QString url);
     QString getUrl(QString key, QString defaultValue = "") const;
+    // TODO it must be differebt for every users, cause we load only users depends updates
     QDateTime lastStorageUpdate() const;
 
 private:

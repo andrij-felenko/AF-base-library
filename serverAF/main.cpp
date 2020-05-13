@@ -14,12 +14,9 @@ int main(int argc, char** argv)
             break;
         }
 
-//    CurrencyAF::ByDate::ignoreUpdater = true;
-//    CurrencyAF::Data::addCurrency(CurrencyAF::Type::allShort());
-
-//    CurrencyHttpServer server(&app);
-//    server.listen(QHostAddress::Any, port);
-//    qDebug() << QCoreApplication::translate("CurrencyServer", "Running on http://127.0.0.1:%1/").arg(port);
+    Server server;
+    server.listen(QHostAddress::Any, port);
+    qDebug() << QCoreApplication::translate("AFServer", "Running on http://127.0.0.1:%1/").arg(port);
 
     return app.exec();
 }

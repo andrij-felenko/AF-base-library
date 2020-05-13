@@ -1,25 +1,31 @@
 #include "afTransferOperateList.h"
 
-void AFlib::transfer::send::Objects::addOperate(AFlib::id::Account_bit owner, AFlib::id::Object_bit object,
-                                                AFlib::id::OperatePtrList list)
+void AFlib::transfer::send::Objects::addOperate(id::Global_bit id,
+                                                AFlib::id::OperatePtrList list, bool isId)
 {
     for (auto it = begin(); it != end(); ++it)
-        if (it->owner == owner && it->object == object){
-            *it += list;
+        if (it->globalId == id){
+            if (isId)
+                it->operateIdList += list;
+            else
+                it->operateIdList += list;
             return;
         }
 
-    Operates operate;
-    operate += list;
+    Operates operate(id);
+    if (isId)
+        operate.operateIdList += list;
+    else
+        operate.operateIdList += list;
     push_back(operate);
 }
 
-void AFlib::transfer::send::Objects::addOperate(AFlib::id::Account_bit owner, AFlib::id::Object_bit object,
-                                                AFlib::id::OperatePtr operate)
+void AFlib::transfer::send::Objects::addOperate(id::Global_bit id,
+                                                AFlib::id::OperatePtr operate, bool isId)
 {
     id::OperatePtrList list;
     list.push_back(operate);
-    addOperate(owner, object, list);
+    addOperate(id, list, isId);
 }
 
 namespace AFlib::transfer::answer {
@@ -70,6 +76,21 @@ void AFlib::transfer::Answer::addNewGlobalId(QStringList dPath, FileType fileTyp
     push_back(newDPath);
 }
 
+std::optional<AFlib::id::Global_bit> AFlib::transfer::Answer::isOldIdPresent(AFlib::id::Global_bit localId, QStringList dPath, FileType type) const
+{
+    if (not localId.objectId.isIdLocal())
+        return std::nullopt;
+
+    for (auto it = begin(); it != end(); ++it)
+        if (it->dPath == dPath && it->fileType == type)
+            for (auto object = it->begin(); object != it->end(); ++it)
+                if (object->owner == localId.ownerId)
+                    if (object->object_local == localId.objectId)
+                        return id::Global_bit(localId.ownerId, object->object_global);
+
+    return std::nullopt;
+}
+
 QByteArray AFlib::transfer::Answer::getData() const
 {
     return *this;
@@ -95,32 +116,33 @@ void AFlib::transfer::Send::addNewObject(const QStringList &dPath, FileType file
     newO.dPath = dPath;
     newO.fileType = fileType;
     newO.object = object;
-    newO.addOperate(object->owner(), object->object_b(), object->getAllOperates());
+    newO.addOperate(object->globalId(), object->getIdOperates(), true);
+    newO.addOperate(object->globalId(), object->getNoIdOperates(), false);
     push_back(newO);
 }
 
-void AFlib::transfer::Send::addOperate(const QStringList &dPath, FileType fileType, AFlib::id::Acc_bit owner,
-                                       AFlib::id::Object_bit object, AFlib::id::OperatePtrList list)
+void AFlib::transfer::Send::addOperate(const QStringList &dPath, FileType fileType, id::Global_bit id,
+                                       AFlib::id::OperatePtrList list, bool isId)
 {
     for (auto it = begin(); it != end(); ++it)
         if (it->dPath == dPath && it->fileType == fileType){
-            it->addOperate(owner, object, list);
+            it->addOperate(id, list, isId);
             return;
         }
 
     send::Objects file;
     file.dPath = dPath;
     file.fileType = fileType;
-    file.addOperate(owner, object, list);
+    file.addOperate(id, list, isId);
     push_back(file);
 }
 
-void AFlib::transfer::Send::addOperate(const QStringList &dPath, FileType fileType, AFlib::id::Acc_bit owner,
-                                       id::Object_bit object, AFlib::id::OperatePtr operate)
+void AFlib::transfer::Send::addOperate(const QStringList &dPath, FileType fileType, id::Global_bit id,
+                                       AFlib::id::OperatePtr operate, bool isId)
 {
     id::OperatePtrList list;
     list.push_back(operate);
-    addOperate(dPath, fileType, owner, object, list);
+    addOperate(dPath, fileType, id, list, isId);
 }
 
 QByteArray AFlib::transfer::Send::getData() const
@@ -156,13 +178,13 @@ namespace AFlib::transfer::send {
         return stream << data.dPath << data.fileType;
     }
 
-    QDataStream &operator <<(QDataStream &stream, AFlib::transfer::send::Operates &data)
+    QDataStream &operator <<(QDataStream &stream, const AFlib::transfer::send::Operates &data)
     {
-        return stream << data.owner << data.object << static_cast <id::OperatePtrList&>(data);
+        return stream << data.globalId << data.operateList << data.operateIdList;
     }
 
     QDataStream &operator >>(QDataStream &stream, AFlib::transfer::send::Operates &data)
     {
-        return stream >> data.owner >> data.object >> static_cast <id::OperatePtrList&>(data);
+        return stream >> data.globalId >> data.operateList >> data.operateIdList;
     }
 }

@@ -7,6 +7,7 @@
 
 #include "afEnum.h"
 #include "afIdAccount.h"
+#include "afIdGlobalBit.h"
 
 namespace AFlib::id {
     class Operate;
@@ -30,24 +31,26 @@ namespace AFlib::id {
  * ........ ........ ........ ........ ........ ........ */
 struct AFlib::id::Operate_bit : public TbitStruct <48>
 {
-    Account_bit user()   const { return Account_bit(userId()); }
-    quint32 userId()     const { return toUInt32(    16, 28);  }
-    void setUserId(quint32 id) {       setUInt32(id, 16, 28);  }
-    void setUserId(Acc_bit id) {       setUserId(id.accountId()); }
-
-    HIdType historyType()       const { return toHistoryIdType(toUInt8(      13, 3)); }
-    void setHistoryType(quint8  type) {                       setUInt8(type, 13, 3); }
-    void setHistoryType(HIdType type) {   setHistoryType(fromHisToInt (type)); }
-
-    SIdType saveType()       const { return toSavedIdType(toUInt8(      10, 3)); }
-    void setSaveType(quint8  type) {                     setUInt8(type, 10, 3); }
-    void setSaveType(SIdType type) {   setSaveType(fromSaveToInt (type)); }
-
-    quint16 key()      const { return toUInt16(     0, 10); }
-    void setKey(quint16 key) {       setUInt16(key, 0, 10); }
+    Account_bit user()    const { return Account_bit(userId()); }
+    quint32 userId()      const { return toUInt32(    16, 28);  }
+    HIdType historyType() const { return toHistoryIdType(toUInt8(      13, 3)); }
+    SIdType saveType()    const { return toSavedIdType(toUInt8(      10, 3)); }
+    quint16 key()         const { return toUInt16(     0, 10); }
 
     quint8  reserved()   const { return  toUInt8(   44, 4); }
     void setReserved(quint8 r) {        setUInt8(r, 44, 4); }
+
+protected:
+    virtual void setUserId(quint32 id) final { setUInt32(id, 16, 28);  }
+    virtual void setUserId(Acc_bit id) final { setUserId(id.accountId()); }
+
+    virtual void setHistoryType(quint8  type) final { setUInt8(type, 13, 3); }
+    virtual void setHistoryType(HIdType type) final { setHistoryType(fromHisToInt (type)); }
+
+    virtual bool setSaveType(quint8  type) final;
+    virtual bool setSaveType(SIdType type) final;
+
+    virtual void setKey(quint16 key) final {       setUInt16(key, 0, 10); }
 };
 
 class AFlib::id::Operate final : public Operate_bit
@@ -76,9 +79,14 @@ private:
     QDateTime m_datetime;
     QVariant m_value;
 
+    // FIXME
     friend class History;
     friend class Object;
-    friend class Storage;
+    friend class AFlib::Storage;
+
+    // use only in update afStorage
+    Global_bit valueId() const;
+    void setValueId(Global_bit newId);
 };
 
 QDataStream &operator << (QDataStream& stream, const AFlib::id::OperatePtrList& data);

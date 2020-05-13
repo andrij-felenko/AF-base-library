@@ -34,9 +34,20 @@ AFlib::id::Object::Object(id::Account_bit owner, quint8 pluginId, quint8 typeId,
     setDescription(descr);
 }
 
-void AFlib::id::Object::makeGlobalId(quint32 newId)
+void AFlib::id::Object::makeGlobalId(Object_bit newId)
 {
-    // TODO
+    setAttribute(Attribute::LocalId, localId());
+    setId(newId.toUInt32());
+}
+
+AFlib::id::Global_bit AFlib::id::Object::globalId() const
+{
+    return Global_bit(owner(), object_b());
+}
+
+quint64 AFlib::id::Object::global() const
+{
+    return globalId().toNumber();
 }
 
 QString AFlib::id::Object::name() const
@@ -137,7 +148,7 @@ QDataStream &operator << (QDataStream& stream, const AFlib::id::Object& data)
 QDataStream &operator >> (QDataStream& stream,       AFlib::id::Object& data)
 {
     stream >> data.m_owner >> static_cast <History&>(data) >> data.m_bitset;
-    return stream;
+                         return stream;
 }
 }
 
@@ -238,9 +249,9 @@ AFlib::id::ObjectPtrList AFlib::id::Object::readFromFile(const QStringList &dPat
     return readList(file.readAll(), list);
 }
 
-void AFlib::id::Object::saveToStorage(const OperatePtr ptr)
+void AFlib::id::Object::saveToStorage(const OperatePtr ptr, bool isId)
 {
-    afStorage()->addOperate(this, *ptr);
+    afStorage()->addOperate(this, *ptr, isId);
 }
 
 bool AFlib::id::Object::setUniqueId()

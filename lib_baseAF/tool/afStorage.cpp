@@ -57,7 +57,7 @@ bool Storage::updateFile(const QStringList dPath, const QByteArray &data, FileTy
     return true;
 }
 
-bool Storage::addOperate(const IdObject &object, const IdOperate &operate)
+bool Storage::addOperate(const IdObject &object, const IdOperate &operate, bool isId)
 {
     auto single = findSingle(object);
     if (not single)
@@ -74,6 +74,9 @@ bool Storage::addOperate(const IdObject &object, const IdOperate &operate)
                 break;
 
             it->addOperate(operate, false);
+            // FIXME
+            if (isId)
+                addLocalShared(object.globalId(), id::Global_bit(operate.value().toULongLong()));
             return file.writeAll(IdObject::listToBytaArray(data));
         }
 
@@ -99,8 +102,9 @@ bool Storage::addOperateList(const transfer::Send &list)
         for (auto subIt : it){
             bool foundSubIt = false;
             for (auto readIt : readList)
-                if (readIt->owner() == subIt.owner && readIt->object_b() == subIt.object){
-                    readIt->addOperations(subIt, false);
+                if (readIt->globalId() == subIt.globalId){
+                    readIt->addOperations(subIt.operateList, false);
+                    readIt->addOperations(subIt.operateIdList, false, true);
                     foundSubIt = true;
                     break;
                 }
@@ -111,7 +115,7 @@ bool Storage::addOperateList(const transfer::Send &list)
                                        findFileTypeByDPath(it.dPath));
                 result &= isAdd;
                 if (not isAdd)
-                    qDebug() << "Object not found, can't add " << &subIt.object;
+                    qDebug() << "Object not found, can't add " << &subIt.globalId;
             }
         }
         result &= file.writeAll(AFlib::id::Object::listToBytaArray(readList));
@@ -144,9 +148,12 @@ transfer::Send Storage::getOperatesAfter(const QDateTime& dateTime, AFaccList_b 
 
                         if (obj->timeCreate() > dateTime)
                             retList.addNewObject(single->dPath, single->fileType, obj);
-                        else
-                            retList.addOperate(single.value().dPath, single->fileType, aIt.accountBit, sIt.id,
-                                            obj->getListAfter(dateTime));
+                        else {
+                            retList.addOperate(single.value().dPath, single->fileType, id::Global_bit(aIt.accountBit, sIt.id),
+                                            obj->getListAfter(dateTime), false);
+                            retList.addOperate(single.value().dPath, single->fileType, id::Global_bit(aIt.accountBit, sIt.id),
+                                               obj->getListIdAfter(dateTime), true);
+                        }
                     }
                 }
     }
@@ -268,17 +275,70 @@ bool Storage::removeObject(const IdObject &object)
     return false;
 }
 
-bool Storage::updateObjects(transfer::Send &operateList)
+// from server, only on user side
+bool Storage::updateObjects(transfer::Answer answer, transfer::Send &operateList)
 {
+    // TODO move it to AFapi file
+    // first set new global id for all objects,
+    for (auto list : answer){
+        auto objList = id::Object::readFromFile(list.dPath, list.fileType);
+        for (auto it : list)
+            for (auto itObj : objList){
+                if (itObj->isIdLocal() && itObj->owner() == it.owner)
+                    if (itObj->localId_b() == it.object_local){
+                        itObj->makeGlobalId(it.object_global);
+                        break;
+                    }
+            }
+
+        // write changes
+        AFfile file(list.dPath, list.fileType);
+        file.openWrite();
+        file.writeAll(IdObject::listToBytaArray(objList));
+    }
+
+    // TODO recheck all old localId and change it to Global pointers
+
+    // than only update object by add new operates to them
     return addOperateList(operateList);
 }
 
-AFlib::id::Object_bit Storage::foundFreeLocalId(quint8 plugin, quint8 type)
+// saves data on server, please not use it on user side
+transfer::Answer Storage::saveObjects(transfer::Send &sendData)
+{
+    transfer::Answer returnList;
+    // TODO move it to AFapi file
+    // 1. make all local objects and set global id
+    for (auto it : sendData){
+        auto obj = it.object;
+        if (not obj.isNull()){
+            auto newId = foundFreeGlobalId(obj->globalId());
+            obj->makeGlobalId(newId);
+            returnList.addNewGlobalId(it.dPath, it.fileType, obj->owner(), obj->localId_b(), newId);
+        }
+    }
+    // 2. change shared objects in operate list by new objects ids
+    for (auto file : sendData)
+        for (auto object : file){
+            for (auto operate : object.operateIdList){
+                auto newGlobal = returnList.isOldIdPresent(operate->valueId(), file.dPath, file.fileType);
+                if (newGlobal)
+                    operate->setValueId(newGlobal.value());
+            }
+        }
+
+    // 3. set objectList to update
+    addOperateList(sendData);
+
+    return returnList;
+}
+
+id::Object_bit Storage::foundFreeLocalId(quint8 plugin, quint8 type)
 {
     return foundFreeLocalId(AFaccount::user()->afObject()->owner(), plugin, type);
 }
 
-AFlib::id::Object_bit Storage::foundFreeLocalId(id::Account_bit account, quint8 plugin, quint8 type)
+id::Object_bit Storage::foundFreeLocalId(id::Account_bit account, quint8 plugin, quint8 type)
 {
     for (auto aIt : m_storageList)
         if (aIt.accountBit == account)
@@ -298,6 +358,34 @@ AFlib::id::Object_bit Storage::foundFreeLocalId(id::Account_bit account, quint8 
     return id::Object_bit();
 }
 
+id::Object_bit Storage::foundFreeGlobalId(id::Object_bit id)
+{
+    return foundFreeGlobalId(id::Global_bit(AFaccount::user()->afObject()->owner(), id));
+}
+
+id::Object_bit Storage::foundFreeGlobalId(id::Global_bit id)
+{
+    for (auto aIt : m_storageList)
+        if (aIt.accountBit == id.ownerId)
+            for (auto pIt : aIt.pluginList)
+                if (pIt.pluginId == id.objectId.pluginId())
+                    while (true){
+                        uint possibleKey = id::Object_bit::createGlobalId();
+                        bool isFound(false);
+                        for (auto sIt : pIt.idList)
+                            if (sIt.id.uniqueId() == possibleKey){
+                                isFound = true;
+                                break;
+                            }
+                        if (not isFound){
+                            id::Object_bit ret = id.objectId;
+                            ret.setUniqueId(possibleKey);
+                            return ret;
+                        }
+                    }
+    return id::Object_bit();
+}
+
 FileType Storage::findFileTypeByDPath(QStringList dPath)
 {
     for (auto aIt : m_storageList)
@@ -310,36 +398,36 @@ FileType Storage::findFileTypeByDPath(QStringList dPath)
 
 bool Storage::contains(const IdObject &ptr) const
 {
-    return contains(ptr.owner(), ptr.object_b());
+    return contains(ptr.globalId());
 }
 
-bool Storage::contains(const IdAccount_bit &account, const IdObject_bit &object) const
+bool Storage::contains(const IdGlobal_bit &globalId) const
 {
     for (auto aIt : m_storageList)
-        if (aIt.accountBit == account)
+        if (aIt.accountBit == globalId.ownerId)
             for (auto pIt : aIt.pluginList)
-                if (pIt.pluginId == object.pluginId())
+                if (pIt.pluginId == globalId.objectId.pluginId())
                     for (auto it : pIt.idList)
-                        if (it.id == object)
+                        if (it.id == globalId.objectId)
                             return true;
     return false;
 }
 
 std::optional <Storage::SingleStorage> Storage::findSingle(const IdObject &object)
 {
-    return findSingle(object.owner(), object.object_b());
+    return findSingle(object.globalId());
 }
 
-std::optional<Storage::SingleStorage> Storage::findSingle(const IdAccount_bit &account, const IdObject_bit &object)
+std::optional<Storage::SingleStorage> Storage::findSingle(const id::Global_bit &globalId)
 {
     for (auto accIt : m_storageList)
-        if (accIt.accountBit == account){
+        if (accIt.accountBit == globalId.ownerId){
 
             for (auto pluginIt : accIt.pluginList)
-                if (pluginIt.pluginId == object.pluginId()){
+                if (pluginIt.pluginId == globalId.objectId.pluginId()){
 
                     for (auto singleIt : pluginIt.idList)
-                        if (singleIt.id == object)
+                        if (singleIt.id == globalId.objectId)
                             return singleIt;
                     break;
                 }
@@ -347,6 +435,11 @@ std::optional<Storage::SingleStorage> Storage::findSingle(const IdAccount_bit &a
             break;
         }
     return std::nullopt;
+}
+
+std::optional<Storage::SingleStorage> Storage::findSingle(const id::Account_bit &owner, const id::Object_bit &object)
+{
+    return findSingle(IdGlobal_bit(owner, object));
 }
 
 void Storage::removeListByFile(const QStringList dPath, FileType fileType)
@@ -418,6 +511,20 @@ void Storage::setLastChangedTime(quint32 account, IdObject_bit id, QDateTime dTi
 
             break;
         }
+}
+
+void Storage::addLocalShared(IdGlobal_bit sender, IdGlobal_bit whatsAddId)
+{
+    for (auto accIt : m_storageList)
+        if (accIt.accountBit == sender.ownerId)
+            for (auto pluginIt : accIt.pluginList)
+                if (pluginIt.pluginId == sender.objectId.pluginId())
+                    for (auto singleIt : pluginIt.idList)
+                        if (singleIt.id == sender.objectId)
+                            if (not singleIt.localSharedList.contains(whatsAddId)){
+                                singleIt.localSharedList.push_back(whatsAddId);
+                                return;
+                        }
 }
 
 void Storage::PluginStorage::addSingle(QStringList dPath, FileType fileType, QDateTime time, IdObject_bit id)
