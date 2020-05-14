@@ -90,7 +90,9 @@ bool AFlib::File::rename(QDir dir, QString file, QString newName)
 QDir AFlib::File::getFullDir(const QStringList& list, bool isFileNameIsLast)
 {
     QDir dir;
-    if (list.first() == "accounts" || list.first() == "groups")
+    if (list.isEmpty())
+        dir = afDir()->storage();
+    else if (list.first() == "accounts" || list.first() == "groups")
         dir = afDir()->users();
     else
         dir = afDir()->storage();

@@ -196,7 +196,8 @@ void AFaccount::Storage::reload()
         list += AFlib::afStorage()->getObjectList({ "groups", it }, AFlib::FileType::Account, AFcompress::Shortest);
 
     // remove object that not account
-    list.erase(std::remove_if(list.begin(), list.end(), [=](AFIdObjectPtr ptr) { return ptr->isAccount(); }));
+//    auto lastObject = std::remove_if(list.begin(), list.end(), [=](AFIdObjectPtr ptr) { return ptr->isAccount(); });
+    list.erase(list.end()/* lastObject*/);
 
     // separate it to group and acount list
     for (auto it : list){

@@ -2,6 +2,8 @@
 #include "guiSize.h"
 #include <QtQml/QQmlContext>
 #include <QtQuick/QQuickItem>
+#include <AFaccount/AfAccountStorage>
+#include <AFbase/AfStorage>
 
 QUrl m_defaultQmlUrl("qrc:/AFquick/Base/App.qml");
 
@@ -9,6 +11,10 @@ AFquick::GuiApplication::GuiApplication(int &argc, char **argv)
     : QGuiApplication(argc, argv),
       m_useAFaccount(false), m_initializeAll(false), m_monomenu(false)
 {
+    // init default
+    AFlib::afStorage();
+    AFaccount::storage(this);
+
     m_menu = new MenuModel(this);
 
     m_view = new QQuickView();

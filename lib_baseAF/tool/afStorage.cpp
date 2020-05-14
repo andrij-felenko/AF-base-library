@@ -9,7 +9,7 @@ static StoragePtr storage_ptr;
 
 Storage::Storage(QObject *parent) : QObject(parent)
 {
-    //
+    loadFromDirectory({});
 }
 
 QSharedPointer<AFlib::Storage> Storage::init()
@@ -28,8 +28,9 @@ StoragePtr AFlib::afStorage()
 void Storage::loadFromDirectory(const QStringList &dPath, Compress compress)
 {
     QDir dir = AFfile::getFullDir(dPath);
+    qDebug() << "Read data to af_storage from directory: " << dir.path();
     auto fileList = dir.entryList({"*.afd"}, QDir::Files);
-    auto dirList = dir.entryList(QDir::Dirs);
+    auto dirList = dir.entryList(QDir::Dirs | QDir::NoDot | QDir::NoDotDot);
     for (auto it : fileList){
         QStringList fileDPath(dPath);
         fileDPath.push_back(it);
