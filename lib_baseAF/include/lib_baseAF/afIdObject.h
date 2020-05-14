@@ -19,6 +19,7 @@ public:
     Object(const QByteArray& data);
     Object(const Object& cpObject);
     Object(const Object* cpObject);
+    virtual ~Object() = default;
     // TODO need to change it, and all system
     void makeGlobalId(id::Object_bit newId);
 

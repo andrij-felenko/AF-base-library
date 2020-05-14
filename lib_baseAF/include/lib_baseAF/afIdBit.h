@@ -112,7 +112,7 @@ protected:
 
 template <typename T>
 QDataStream& operator << (QDataStream& s, const std::vector <QSharedPointer <T>> & list){
-    s << list.size();
+    s << uint(list.size());
     for (auto it = list.begin(); it != list.end(); ++it)
         s << *it;
     return s;
