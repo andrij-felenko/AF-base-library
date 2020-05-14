@@ -67,8 +67,8 @@ signals:
 
 private:
     static QDir m_accountStorageDir;
-    AccountPtrList m_accountList;
-    GroupPtrList m_groupList;
+    AccountPtrV m_accountList;
+    GroupPtrV m_groupList;
 
     void reload();
     void loginAs(AFlib::id::Account_bit account);

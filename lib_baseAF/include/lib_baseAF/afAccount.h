@@ -13,7 +13,7 @@
 namespace AFaccount {
     class Account;
     typedef QSharedPointer <Account> AccountPtr;
-    typedef QList <AccountPtr> AccountPtrList;
+    typedef std::vector <AccountPtr> AccountPtrV;
 
     AccountPtr own();
 }

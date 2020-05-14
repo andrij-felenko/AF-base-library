@@ -11,8 +11,7 @@
 namespace AFaccount {
     class Group;
     typedef QSharedPointer <Group> GroupPtr;
-    typedef QList <GroupPtr> GroupPtrList;
-    typedef GroupPtrList GPtrList;
+    typedef std::vector <GroupPtr> GroupPtrV;
 
     enum class AccessType {
         Owner = 0xE0E100,

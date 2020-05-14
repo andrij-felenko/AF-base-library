@@ -9,7 +9,7 @@ namespace AFlib::id {
     class ObjectTemplate;
 
     typedef QSharedPointer <Object> ObjectPtr;
-    typedef QList <ObjectPtr> ObjectPtrList;
+    typedef std::vector <ObjectPtr> ObjectPtrV;
 }
 
 class AFlib::id::Object : public AFlib::id::History, public AFlib::id::Object_bit
@@ -50,15 +50,15 @@ public:
     virtual bool setOwner(const Account_bit &owner) final;
     virtual bool isAccount() const final;
 
-    static QByteArray listToBytaArray(const ObjectPtrList list);
+    static QByteArray listToBytaArray(const ObjectPtrV list);
 
-    static AFlib::id::ObjectPtrList readList(const QByteArray& data);
-    static AFlib::id::ObjectPtr     readList(const QByteArray& data, const Obj_bit id);
-    static AFlib::id::ObjectPtrList readList(const QByteArray& data, const ObjectPtrList list);
+    static AFlib::id::ObjectPtrV readList(const QByteArray& data);
+    static AFlib::id::ObjectPtr    readList(const QByteArray& data, const Obj_bit id);
+    static AFlib::id::ObjectPtrV readList(const QByteArray& data, const ObjectPtrV list);
 
-    static AFlib::id::ObjectPtrList readFromFile(const QStringList &dPath, FileType type);
-    static AFlib::id::ObjectPtr     readFromFile(const QStringList &dPath, FileType type, const  AFlib::id::Obj_bit& id);
-    static AFlib::id::ObjectPtrList readFromFile(const QStringList &dPath, FileType type, const ObjectPtrList list);
+    static AFlib::id::ObjectPtrV readFromFile(const QStringList &dPath, FileType type);
+    static AFlib::id::ObjectPtr    readFromFile(const QStringList &dPath, FileType type, const  AFlib::id::Obj_bit& id);
+    static AFlib::id::ObjectPtrV readFromFile(const QStringList &dPath, FileType type, const ObjectPtrV list);
 
 protected:
     friend QDataStream &operator << (QDataStream& stream, const Object& data);
@@ -73,9 +73,10 @@ private:
     friend class AFlib::id::ObjectTemplate;
 };
 
-QDataStream &operator << (QDataStream& stream, const AFlib::id::ObjectPtrList& data);
-QDataStream &operator >> (QDataStream& stream,       AFlib::id::ObjectPtrList& data);
 QDebug operator << (QDebug d, const AFlib::id::Object& object);
 bool operator == (const AFlib::id::ObjectPtr ptr, const AFlib::id::Object& object);
+bool operator == (const AFlib::id::ObjectPtr l,   const AFlib::id::ObjectPtr r);
+
+AFlib::id::ObjectPtrV& operator += (AFlib::id::ObjectPtrV& l, const AFlib::id::ObjectPtrV& r);
 
 #endif // LIB_BASEAF_ID_OBJECT_H

@@ -130,7 +130,7 @@ bool AFlib::id::Object::isAccount() const
     return id() == 0;
 }
 
-QByteArray AFlib::id::Object::listToBytaArray(const ObjectPtrList list)
+QByteArray AFlib::id::Object::listToBytaArray(const ObjectPtrV list)
 {
     QByteArray ret;
     QDataStream stream(&ret, QIODevice::WriteOnly);
@@ -152,29 +152,9 @@ QDataStream &operator >> (QDataStream& stream,       AFlib::id::Object& data)
 }
 }
 
-QDataStream &operator << (QDataStream& stream, const AFlib::id::ObjectPtrList& data)
+AFlib::id::ObjectPtrV AFlib::id::Object::readList(const QByteArray &data)
 {
-    stream << data.count();
-    for (auto it = data.begin(); it != data.end(); ++it)
-        stream << *it->data();
-    return stream;
-}
-
-QDataStream &operator >> (QDataStream& stream,       AFlib::id::ObjectPtrList& data)
-{
-    int count;
-    stream >> count;
-    for (int i = 0; i < count; i++){
-        AFlib::id::ObjectPtr ptr = AFlib::id::ObjectPtr::create();
-        stream >> *ptr;
-        data.push_back(ptr);
-    }
-    return stream;
-}
-
-AFlib::id::ObjectPtrList AFlib::id::Object::readList(const QByteArray &data)
-{
-    AFlib::id::ObjectPtrList retList;
+    AFlib::id::ObjectPtrV retList;
     QDataStream stream(data);
     stream >> retList;
     return retList;
@@ -194,15 +174,16 @@ AFlib::id::ObjectPtr AFlib::id::Object::readList(const QByteArray &data, const A
     return AFlib::id::ObjectPtr();
 }
 
-AFlib::id::ObjectPtrList AFlib::id::Object::readList(const QByteArray &data, const AFlib::id::ObjectPtrList list)
+AFlib::id::ObjectPtrV AFlib::id::Object::readList(const QByteArray &data, const ObjectPtrV list)
 {
     auto removeList = list;
-    AFlib::id::ObjectPtrList retList;
+    AFlib::id::ObjectPtrV retList;
     int count;
     QDataStream stream(data);
     stream >> count;
     for (int i = 0; i < count; i++){
         AFlib::id::ObjectPtr ptr = AFlib::id::ObjectPtr::create();
+        auto check = [ptr](ObjectPtr it){ return it->globalId() == ptr->globalId(); };
         stream >> *ptr;
 
         bool isFound = false;
@@ -214,19 +195,20 @@ AFlib::id::ObjectPtrList AFlib::id::Object::readList(const QByteArray &data, con
             }
 
         if (isFound)
-            removeList.removeOne(ptr);
+            removeList.erase(std::remove_if(removeList.begin(), removeList.end(),
+                                            [ptr](ObjectPtr it){ return it == ptr; }));
 
-        if (removeList.isEmpty())
+        if (removeList.size() == 0)
             break;
     }
     return retList;
 }
 
-AFlib::id::ObjectPtrList AFlib::id::Object::readFromFile(const QStringList &dPath, FileType type)
+AFlib::id::ObjectPtrV AFlib::id::Object::readFromFile(const QStringList &dPath, FileType type)
 {
     AFfile file(dPath, type);
     if (not file.openRead())
-        return AFlib::id::ObjectPtrList();
+        return AFlib::id::ObjectPtrV();
 
     return readList((file.readAll()));
 }
@@ -240,11 +222,11 @@ AFlib::id::ObjectPtr AFlib::id::Object::readFromFile(const QStringList &dPath, F
     return readList(file.readAll(), id);
 }
 
-AFlib::id::ObjectPtrList AFlib::id::Object::readFromFile(const QStringList &dPath, FileType type, const AFlib::id::ObjectPtrList list)
+AFlib::id::ObjectPtrV AFlib::id::Object::readFromFile(const QStringList &dPath, FileType type, const AFlib::id::ObjectPtrV list)
 {
     AFfile file(dPath, type);
     if (not file.openRead())
-        return AFlib::id::ObjectPtrList();
+        return AFlib::id::ObjectPtrV();
 
     return readList(file.readAll(), list);
 }
@@ -279,4 +261,15 @@ bool operator ==(const AFlib::id::ObjectPtr ptr, const AFlib::id::Object &object
     if (ptr.isNull())
         return false;
     return ptr->object_b() == object.object_b() && ptr->owner() == object.owner();
+}
+
+bool operator ==(const AFlib::id::ObjectPtr l, const AFlib::id::ObjectPtr r)
+{
+    return l->globalId() == r->globalId();
+}
+
+AFlib::id::ObjectPtrV& operator += (AFlib::id::ObjectPtrV& l, const AFlib::id::ObjectPtrV& r)
+{
+    l.insert(l.end(), r.begin(), r.end());
+    return l;
 }

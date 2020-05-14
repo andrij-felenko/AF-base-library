@@ -4,6 +4,7 @@
 #include <bitset>
 #include <iostream>
 #include <QtCore/QDataStream>
+#include <QtCore/QSharedPointer>
 
 namespace AFlib::id {
     template <size_t bitsize>
@@ -108,5 +109,26 @@ protected:
     void setUInt32(quint32 value, uint index = 0, uint size = bitsize){ setFromValue <quint32, 32> (value, index, size); }
     void setUInt64(quint64 value, uint index = 0, uint size = bitsize){ setFromValue <quint64, 64> (value, index, size); }
 };
+
+template <typename T>
+QDataStream& operator << (QDataStream& s, const std::vector <QSharedPointer <T>> & list){
+    s << list.size();
+    for (auto it = list.begin(); it != list.end(); ++it)
+        s << *it;
+    return s;
+}
+
+template <typename T>
+QDataStream& operator >> (QDataStream& s, std::vector <QSharedPointer <T>> & list){
+    list.clear();
+    quint32 count;
+    s >> count;
+    T obj;
+    for (uint i = 0; i < count; i++){
+        s >> obj;
+        list.push_back(QSharedPointer <T>::create(obj));
+    }
+    return s;
+}
 
 #endif // LIB_BASEAF_ID_BIT_H

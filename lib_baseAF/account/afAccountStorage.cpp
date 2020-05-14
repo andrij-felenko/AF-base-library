@@ -87,7 +87,7 @@ QList<AFlib::id::Account_bit> AFaccount::Storage::dependsAccount(AFlib::id::Acco
 AFaccount::InfoPtr AFaccount::Storage::getInfo(const AFIdAccount &id)
 {
     auto accId = id.accountId();
-    for (int i = 0; i < m_accountList.length(); i++)
+    for (uint i = 0; i < m_accountList.size(); i++)
         if (m_accountList[i]->afObject()->owner() == accId
             || m_accountList[i]->afObject()->owner() == accId)
             return m_accountList[i];
@@ -96,7 +96,7 @@ AFaccount::InfoPtr AFaccount::Storage::getInfo(const AFIdAccount &id)
 
 AFaccount::InfoPtr AFaccount::Storage::getInfo(const QString &nick)
 {
-    for (int i = 0; i < m_accountList.length(); i++)
+    for (uint i = 0; i < m_accountList.size(); i++)
         if (m_accountList[i]->afObject()->name() == nick)
             return m_accountList[i];
     return InfoPtr();
@@ -189,7 +189,7 @@ void AFaccount::Storage::reload()
     if (not AFlib::Dir::cdDirectory(accountDir, "groups"))
         return;
 
-    AFIdObjectPtrList list;
+    AFlib::IdObjectPtrV list;
     for (auto it : accountDir.entryList({"*.afd"}, QDir::Files))
         list += AFlib::afStorage()->getObjectList({ "accounts", it }, AFlib::FileType::Account, AFcompress::Shortest);
     for (auto it : groupDir.entryList({"*.afd"}, QDir::Files))
