@@ -18,7 +18,6 @@ class AFlib::Storage final : public QObject
     Q_OBJECT
     typedef IdObjectPtr     IdObj;
     typedef AFIdObject_bit  IdObj_b;
-    typedef IdObjectPtrList IdObjList;
 
 public:
     explicit Storage(QObject* parent = qApp);
@@ -40,12 +39,12 @@ public:
     IdObj     getObject    (const QStringList dPath, const IdObject_bit &object, Compress compress  = Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
     IdObj     getObject    (const QStringList dPath, const IdObject_bit &object, AFlib::FileType type, Compress compress = Compress::AllActive);
 
-    IdObjList getObjectList(const QStringList dPath,                        Compress compress = Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
-    IdObjList getObjectList(const QStringList dPath, AFlib::FileType type,  Compress compress = Compress::AllActive);
-    IdObjList getObjectList(QList <id::Account_bit> accList, quint8 plugin, Compress compress = Compress::AllActive);
+    IdObjectPtrV getObjectList(const QStringList dPath,                        Compress compress = Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
+    IdObjectPtrV getObjectList(const QStringList dPath, AFlib::FileType type,  Compress compress = Compress::AllActive);
+    IdObjectPtrV getObjectList(QList <id::Account_bit> accList, quint8 plugin, Compress compress = Compress::AllActive);
 
-    IdObjList getObjectList(const QStringList dPath, const IdObjectPtrList list, Compress compress  =  Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
-    IdObjList getObjectList(const QStringList dPath, const IdObjectPtrList list, AFlib::FileType type, Compress compress = Compress::AllActive);
+    IdObjectPtrV getObjectList(const QStringList dPath, const IdObjectPtrV list, Compress compress  =  Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
+    IdObjectPtrV getObjectList(const QStringList dPath, const IdObjectPtrV list, AFlib::FileType type, Compress compress = Compress::AllActive);
 
     bool removeObject(const IdObject& object);
 
@@ -92,7 +91,7 @@ private:
     void removeListByFile(const QStringList dPath, FileType fileType);
     void registrateObject(const QStringList dPath, FileType fileType, const IdObject&     object);
     void registrateObject(const QStringList dPath, FileType fileType, const IdObjectPtr   object);
-    void registrateObject(const QStringList dPath, FileType fileType, const IdObjectPtrList list);
+    void registrateObject(const QStringList dPath, FileType fileType, const IdObjectPtrV list);
     void addAccount(IdAccount_bit id);
     void setLastChangedTime(quint32 account, IdObject_bit id, QDateTime dTime);
     void addLocalShared(IdGlobal_bit sender, IdGlobal_bit whatsAddId);

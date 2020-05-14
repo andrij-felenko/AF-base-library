@@ -21,7 +21,7 @@ namespace AFlib {
     typedef id::ObjectTemplate   IdObjectTemplate;
     typedef id::Object_bit       IdObject_bit;
     typedef id::ObjectPtr        IdObjectPtr;
-    typedef id::ObjectPtrList    IdObjectPtrList;
+    typedef id::ObjectPtrV     IdObjectPtrV;
 
     typedef id::Operate        IdOperate;
     typedef id::OperatePtr     IdOperatePtr;
@@ -40,7 +40,7 @@ typedef AFlib::IdObject         AFIdObject;
 typedef AFlib::IdObjectTemplate AFIdObjectTemplate;
 typedef AFlib::IdObject_bit     AFIdObject_bit; 
 typedef AFlib::IdObjectPtr      AFIdObjectPtr;
-typedef AFlib::IdObjectPtrList  AFIdObjectPtrList;
+typedef AFlib::IdObjectPtrV   AFIdObjectPtrV;
 
 typedef AFlib::IdOperate        AFIdOperate;
 typedef AFlib::IdOperatePtr     AFIdOperatePtr;
