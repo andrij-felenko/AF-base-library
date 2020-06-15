@@ -35,6 +35,7 @@ class AFlib::Dir : public QObject
 public:
     explicit Dir(QObject *parent = nullptr);
     void init(bool useCurrentFolder = false);
+    void initStandartPath();
     static QSharedPointer <Dir> instance();
 
     static bool cdDirectory(QDir &dir, QString name);

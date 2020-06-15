@@ -27,7 +27,7 @@ AFlib::id::Operate::Operate(const AFlib::id::Operate &copy)
 AFlib::id::Operate::Operate(const QByteArray &data)
 {
     QDataStream stream(data);
-    stream >> m_datetime >> m_value >> m_bitset;
+    stream >> m_datetime >> m_value >> static_cast <Operate_bit&> (*this);
 }
 
 QByteArray AFlib::id::Operate::getData() const
@@ -39,7 +39,7 @@ AFlib::id::Operate::operator QByteArray() const
 {
     QByteArray data;
     QDataStream stream(data);
-    stream << m_datetime << m_value << m_bitset;
+    stream << m_datetime << m_value << static_cast <Operate_bit> (*this);
     return data;
 }
 

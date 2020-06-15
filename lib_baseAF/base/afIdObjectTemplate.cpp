@@ -14,6 +14,7 @@ AFlib::id::ObjectTemplate::ObjectTemplate(quint8 plugin, quint8 type, QStringLis
     //
 }
 
+// main constructor, other constructor call it for create this object
 AFlib::id::ObjectTemplate::ObjectTemplate(quint8 plugin, quint8 type, FileType fileType, QStringList subDPath, QObject *parent)
     : QObject(parent), m_subDPath(subDPath), m_fileType(fileType)
 {
@@ -30,7 +31,8 @@ AFlib::id::ObjectTemplate::ObjectTemplate(quint8 plugin, quint8 type, FileType f
 AFlib::id::ObjectTemplate::ObjectTemplate(ObjectPtr ptr, QObject *parent)
     : QObject(parent), m_ptr(ptr)
 {
-    //
+    if (ptr.isNull())
+        m_ptr = Object::createPtr();
 }
 
 const AFlib::id::Object *AFlib::id::ObjectTemplate::afObject() const
@@ -55,6 +57,7 @@ AFlib::id::Object_bit AFlib::id::ObjectTemplate::object_b() const
 
 bool AFlib::id::ObjectTemplate::save()
 {
+    auto cp = m_ptr;
     bool trySave = m_ptr->setUniqueId();
     if (trySave)
         AFlib::afStorage()->addObject(m_subDPath, *m_ptr.data(), m_fileType);

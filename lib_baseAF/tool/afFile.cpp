@@ -6,60 +6,75 @@
 #include <QtCore/QDebug>
 
 AFlib::File::File(QString dPath, AFlib::FileType type)
-    : QFile(getFullPath(dPath)),
-    p_dPath(getDPath(dPath)),
-    p_fileType(type)
+    : p_dPath(getDPath(dPath)),
+      p_fileType(type)
 {
-    //
+    m_file = new QFile(getFullPath(dPath));
+    qDebug() << "File name:" << m_file->fileName() << m_file->exists() << endl;
 }
 
 AFlib::File::File(QStringList list, AFlib::FileType type)
-    : QFile(getFullPath(list)),
-    p_dPath(list),
-    p_fileType(type)
+    : p_dPath(list),
+      p_fileType(type)
 {
-    //
+    m_file = new QFile(getFullPath(list));
+    qDebug() << "File name:" << m_file->fileName() << m_file->exists() << endl;
 }
 
 AFlib::File::~File()
 {
-    close();
+    m_file->close();
+    m_file->deleteLater();
 }
 
 bool AFlib::File::openRead()
 {
-    if (QFile::isOpen())
-        close();
+    if (not m_file->exists()){
+        qDebug() << "File can`t open, file not exists: " << m_file->fileName();
+        return false;
+    }
 
-    bool success = open(QIODevice::ReadOnly);
+    if (m_file->isOpen())
+        m_file->close();
+
+    qDebug() << m_file->permissions();
+    m_file->setPermissions(QFileDevice::ReadOwner);
+    bool success = m_file->open(QIODevice::ReadOnly);
     if (not success)
-        qDebug() << "File " << fileName() << " not open, cause: " << errorString();
+        qDebug() << "File " << m_file->fileName() << " not open, cause: " << m_file->errorString();
 
-    m_stream.setDevice(this);
+    m_stream.setDevice(m_file);
     return success;
 }
 
 bool AFlib::File::openWrite()
 {
-    if (QFile::isOpen())
-        close();
+    if (m_file->isOpen())
+        m_file->close();
 
-    bool success = open(QIODevice::WriteOnly | QIODevice::Truncate);
+    qDebug() << m_file->permissions();
+    m_file->setPermissions(QFileDevice::WriteOwner | QFileDevice::ReadOwner);
+    bool success = m_file->open(QIODevice::WriteOnly | QIODevice::Truncate);
     if (not success)
-        qDebug() << "File " << fileName() << " not open, cause: " << errorString();
+        qDebug() << "File " << m_file->fileName() << " not open, cause: " << m_file->errorString();
 
-    m_stream.setDevice(this);
+    m_stream.setDevice(m_file);
     return success;
+}
+
+bool AFlib::File::exists()
+{
+    return m_file->exists();
 }
 
 QByteArray AFlib::File::readAll()
 {
-    return QFile::readAll();
+    return m_file->readAll();
 }
 
 bool AFlib::File::writeAll(const QByteArray &data)
 {
-    return QFile::write(data) != -1;
+    return m_file->write(data) != -1;
 }
 
 QDataStream &AFlib::File::stream()
@@ -69,7 +84,7 @@ QDataStream &AFlib::File::stream()
 
 bool AFlib::File::isOpen() const
 {
-    return QFile::isOpen();
+    return m_file->isOpen();
 }
 
 QStringList AFlib::File::dPath() const
@@ -85,6 +100,29 @@ AFlib::FileType AFlib::File::dType() const
 bool AFlib::File::rename(QDir dir, QString file, QString newName)
 {
     return QFile::rename(dir.absoluteFilePath(file), dir.absoluteFilePath(newName));
+}
+
+QStringList AFlib::File::getFullTypeList()
+{
+    QStringList list;
+    list.push_back("*" + getFileTypeName(FileType::Data));
+    list.push_back("*" + getFileTypeName(FileType::Json));
+    list.push_back("*" + getFileTypeName(FileType::Config));
+    list.push_back("*" + getFileTypeName(FileType::Account));
+    list.push_back("*" + getFileTypeName(FileType::Setting));
+    return list;
+}
+
+QString AFlib::File::getFileTypeName(FileType type)
+{
+    switch (type) {
+        case AFlib::FileType::Data:    return ".afd";
+        case AFlib::FileType::Json:    return ".json";
+        case AFlib::FileType::Config:  return ".afdc";
+        case AFlib::FileType::Account: return ".afda";
+        case AFlib::FileType::Setting: return ".afds";
+    }
+    return "";
 }
 
 QDir AFlib::File::getFullDir(const QStringList& list, bool isFileNameIsLast)
@@ -105,16 +143,8 @@ QDir AFlib::File::getFullDir(const QStringList& list, bool isFileNameIsLast)
 
 QString AFlib::File::getFullPath(const QStringList &list, FileType type)
 {
-    QString path = getFullDir(list).path();
-    path.append("/").append(list.last()).append(".");
-    switch (type) {
-        case AFlib::FileType::Data:    path.append("afd");  break;
-        case AFlib::FileType::Json:    path.append("json"); break;
-        case AFlib::FileType::Config:  path.append("afdc"); break;
-        case AFlib::FileType::Account: path.append("afda"); break;
-        case AFlib::FileType::Setting: path.append("afds"); break;
-    }
-    return path;
+    return getFullDir(list).path().append("/")
+            .append(list.last()).append(getFileTypeName(type));
 }
 
 QString AFlib::File::getFullPath(const QString &dPath)
@@ -124,7 +154,7 @@ QString AFlib::File::getFullPath(const QString &dPath)
 
 QString AFlib::File::getDPath(const QStringList& list)
 {
-    return "/" + list.join("/");
+    return QDir::separator() + list.join(QDir::separator());
 }
 
 QString AFlib::File::getDPath(const QString &fullPath)
@@ -141,7 +171,7 @@ QString AFlib::File::getDPath(const QString &fullPath)
 
 QStringList AFlib::File::getDPathList(const QString &dPath)
 {
-    QStringList list = dPath.split("/");
+    QStringList list = dPath.split(QDir::separator());
     list.removeOne("");
     return list;
 }

@@ -273,7 +273,7 @@ AFaccount::AccountPtr AFaccount::user(QObject *parent)
 {
     if (m_user.isNull()){
         if (m_guest.isNull())
-            m_guest = AFaccount::AccountPtr::create(parent);
+            m_guest = AFaccount::AccountPtr::create(AFlib::id::ObjectPtr::create(), parent);
         m_user = m_guest;
     }
     return m_user;

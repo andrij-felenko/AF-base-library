@@ -53,7 +53,7 @@ set (baseAF_cpp
     tool/afSetting.cpp
     tool/afStorage.cpp
     tool/afTransferOperateList.cpp
-)
+    )
 
 set (initialize_header
     include/AFaccount/AfAccount
@@ -75,17 +75,22 @@ set (initialize_header
     include/AFbase/AfSetting
     include/AFbase/AfSystem
     include/AFbase/AfTransferOperateList
-)
+    )
 
 set (CMAKE_AUTOMOC, true)
 find_package(Qt5Core)
 
 add_library(lib_baseAF ${baseAF_h} ${baseAF_cpp} ${initialize_header})
 
-set_target_properties(lib_baseAF PROPERTIES OUTPUT_NAME "baseAF")
+set_target_properties(lib_baseAF PROPERTIES
+    OUTPUT_NAME "baseAF"
+    CXX_STANDARD 17
+    CXX_EXTENSIONS OFF
+    )
+
 target_link_libraries(lib_baseAF Qt5::Core)
 target_include_directories(lib_baseAF
     PUBLIC  include
     PUBLIC  include/AFbase
     PRIVATE include/lib_baseAF
-)
+    )

@@ -29,11 +29,11 @@ void Storage::loadFromDirectory(const QStringList &dPath, Compress compress)
 {
     QDir dir = AFfile::getFullDir(dPath);
     qDebug() << "Read data to af_storage from directory: " << dir.path();
-    auto fileList = dir.entryList({"*.afd"}, QDir::Files);
+    auto fileList = dir.entryList(File::getFullTypeList(), QDir::Files);
     auto dirList = dir.entryList(QDir::Dirs | QDir::NoDot | QDir::NoDotDot);
     for (auto it : fileList){
         QStringList fileDPath(dPath);
-        fileDPath.push_back(it);
+        fileDPath.push_back(it.split(".").first());
         getObjectList(fileDPath, compress);
     }
     for (auto it : dirList){
@@ -161,25 +161,33 @@ transfer::Send Storage::getOperatesAfter(const QDateTime& dateTime, AFaccList_b 
     return retList;
 }
 
-bool Storage::addObject(const QStringList dPath, const IdObject &object, FileType type)
+bool Storage::addObject(QStringList dPath, const IdObject &object, FileType type)
 {
     if (contains(object)){
         qDebug() << "Can't add object: \n" << object << "\nAlready exists.";
         return false;
     }
 
-    AFfile file(dPath, type);
-    if (not file.openRead())
-        return false;
+    if (dPath.isEmpty())
+        dPath.push_back(QString::number(object.localId(), 16));
 
-    auto list = IdObject::readFromFile(dPath, type);
-    IdObjectPtr ptr = IdObjectPtr::create(object);
-    list.push_back(ptr);
+    IdObjectPtrV list;
+    AFfile file(dPath, type);
+    if (file.exists()){
+        if (not file.openRead())
+            return false;
+
+        list = IdObject::readFromFile(dPath, type);
+    }
 
     if (not file.openWrite())
         return false;
 
-    bool result = file.writeAll(IdObject::listToBytaArray(list));
+    IdObjectPtr ptr = IdObjectPtr::create(object);
+    list.push_back(ptr);
+    auto data = IdObject::listToBytaArray(list);
+    bool result = file.writeAll(data);
+    qDebug() << result << data;
     if (result)
         registrateObject(dPath, type, object);
 

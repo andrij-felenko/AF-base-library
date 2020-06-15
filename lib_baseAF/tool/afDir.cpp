@@ -1,5 +1,6 @@
 #include <QtCore/QDebug>
 #include <QtCore/QCoreApplication>
+#include <QtCore/QStandardPaths>
 
 #include "afDir.h"
 
@@ -9,6 +10,7 @@ using namespace AFlib;
 Dir::Dir(QObject *parent) : QObject(parent)
 {
     init();
+//    initStandartPath();
 }
 
 void Dir::init(bool useCurrentFolder)
@@ -92,6 +94,41 @@ void Dir::init(bool useCurrentFolder)
     qInfo() << "plugins" << m_plugins.path();
     qInfo() << "translates" << m_translates.path();
     qInfo() << "users" << m_users.path();
+}
+
+void Dir::initStandartPath()
+{
+    m_app = QDir::current();
+    m_config = QDir(QStandardPaths::displayName(QStandardPaths::DataLocation));
+    m_cookies = QDir(QStandardPaths::displayName(QStandardPaths::CacheLocation));
+
+    QDir dirTemp = m_config;
+    cdDirectory(dirTemp, "libraries");
+    m_libraries = dirTemp;
+
+    dirTemp = m_config;
+    cdDirectory(dirTemp, "plugins");
+    m_plugins = dirTemp;
+
+    dirTemp = m_config;
+    cdDirectory(dirTemp, "plugins");
+    m_plugins = dirTemp;
+
+    m_storage = QDir(QStandardPaths::displayName(QStandardPaths::DataLocation));
+
+    dirTemp = m_config;
+    cdDirectory(dirTemp, "plugins");
+    m_plugins = dirTemp;
+
+    dirTemp = m_config;
+    cdDirectory(dirTemp, "translates");
+    m_translates = dirTemp;
+
+    dirTemp = m_storage;
+    cdDirectory(dirTemp, "users");
+    m_users = dirTemp;
+
+    cdDirectory(m_config, "config");
 }
 
 QSharedPointer<AFlib::Dir> Dir::instance()

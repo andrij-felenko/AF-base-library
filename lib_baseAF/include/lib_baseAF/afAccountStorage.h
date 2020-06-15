@@ -2,8 +2,6 @@
 #define LIB_ACCOUNTAF_ACCOUNT_STORAGE_H
 
 #include "afAccount.h"
-#include "afAccountGroup.h"
-#include <QtNetwork/QNetworkAccessManager>
 
 namespace AFaccount {
     class Storage;
@@ -12,6 +10,9 @@ namespace AFaccount {
     StoragePtr storage(QObject* parent = nullptr);
     AccountPtr user(QObject* parent = nullptr);
 }
+
+#include "afAccountGroup.h"
+#include <QtNetwork/QNetworkAccessManager>
 
 /*!
  * \brief The AFaccount::Storage class

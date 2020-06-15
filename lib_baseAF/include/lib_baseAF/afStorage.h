@@ -34,7 +34,7 @@ public:
 
     transfer::Send getOperatesAfter(const QDateTime& dateTime, AFaccList_b list = AFaccList_b());
 
-    bool addObject(const QStringList dPath, const IdObject& object, AFlib::FileType type = AFlib::FileType::Data);
+    bool addObject(QStringList dPath, const IdObject& object, AFlib::FileType type = AFlib::FileType::Data);
 
     IdObj     getObject    (const QStringList dPath, const IdObject_bit &object, Compress compress  = Compress::AllActive, AFlib::FileType type = AFlib::FileType::Data);
     IdObj     getObject    (const QStringList dPath, const IdObject_bit &object, AFlib::FileType type, Compress compress = Compress::AllActive);

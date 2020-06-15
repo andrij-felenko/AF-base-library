@@ -30,15 +30,15 @@ find_package(Qt5Core)
 find_package(Qt5Qml)
 find_package(Qt5Quick)
 
-add_library(lib_quickAF SHARED
+add_library(lib_quickAF
     ${quickAF_h} ${quickAF_cpp}
     ${initialize_header}
     rc/af_quick_rc.qrc
 )
 
 set_target_properties(lib_quickAF PROPERTIES OUTPUT_NAME "quickAF")
-target_link_libraries(lib_quickAF
-    lib_baseAF ${force_rc_material_design}
+target_link_libraries(lib_quickAF lib_baseAF
+    ${force_rc_material_design}
     Qt5::Core Qt5::Gui Qt5::Quick Qt5::Qml
 )
 

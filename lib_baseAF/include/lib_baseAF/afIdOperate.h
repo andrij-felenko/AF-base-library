@@ -51,6 +51,17 @@ protected:
     virtual bool setSaveType(SIdType type) final;
 
     virtual void setKey(quint16 key) final {       setUInt16(key, 0, 10); }
+
+private:
+    friend QDataStream& operator << (QDataStream& s, const Operate_bit& op){
+        return s << static_cast <const TbitStruct <48>> (op);
+    }
+    friend QDataStream& operator >> (QDataStream& s, Operate_bit& op){
+        TbitStruct <48> bits;
+        s >> bits;
+        op.setFromValue <quint64, 48> (bits.toUInt64(), 0, 48);
+        return s;
+    }
 };
 
 class AFlib::id::Operate final : public Operate_bit

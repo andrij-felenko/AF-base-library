@@ -4,8 +4,8 @@
 
 AFlib::id::History::History()
 {
-    setAttribute(Attribute::Created, QDateTime::currentDateTime());
-    m_lastUpdate = QDateTime::fromTime_t(0);
+//    setAttribute(Attribute::Created, QDateTime::currentDateTime());
+//    m_lastUpdate = QDateTime::fromTime_t(0);
 }
 
 void AFlib::id::History::updateTime(QDateTime dTime)
@@ -142,7 +142,7 @@ void AFlib::id::History::useCompress(Compress value)
 
         return ptr.isNull();
     };
-    m_operateList.erase(std::remove_if(m_operateList.begin(), m_operateList.end(), removeFunction));
+    m_operateList.erase(std::remove_if(m_operateList.begin(), m_operateList.end(), removeFunction), m_operateList.end());
 }
 
 QVariant AFlib::id::History::getAttribute(Attribute key) const
@@ -256,7 +256,7 @@ QVariant AFlib::id::History::getAttribute(quint16 key) const
 
 QVariant AFlib::id::History::getAttribute(const OperatePtrList& list, quint16 key) const
 {
-    OperatePtr last;
+    OperatePtr last = OperatePtr::create();
     last->setDatetime(Function::nullDateTime());
     for (auto it : list)
         if (it->key() == key)

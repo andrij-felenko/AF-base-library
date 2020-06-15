@@ -231,3 +231,4 @@ void AFquick::GuiApplication::checkPortrait()
     m_portrait = portrait;
     emit portraitChanged(portrait);
 }
+

@@ -4,14 +4,10 @@
 #include <QtCore/QObject>
 #include "lib_baseAF/afIdObject.h"
 
-namespace AFlib::id {
-    class ObjectTemplate;
-}
-
 class AFlib::id::ObjectTemplate : public QObject
 {
 public:
-    ObjectTemplate(quint8 plugin, quint8 type, QObject *parent = nullptr);
+    explicit ObjectTemplate(quint8 plugin, quint8 type, QObject *parent = nullptr);
     ObjectTemplate(quint8 plugin, quint8 type, QStringList subDPath, QObject *parent = nullptr);
     ObjectTemplate(quint8 plugin, quint8 type, FileType fileType, QStringList subDPath, QObject *parent = nullptr);
     ObjectTemplate(quint8 plugin, quint8 type, FileType fileType, QObject *parent = nullptr);

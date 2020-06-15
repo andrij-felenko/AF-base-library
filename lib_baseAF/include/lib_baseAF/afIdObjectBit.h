@@ -36,10 +36,10 @@ struct AFlib::id::Object_bit : public TbitStruct <32>
     static quint32 createLocalId();
     static quint32 createGlobalId();
 
-    quint8  type()     const { return toUInt8 (40, 7); }
+    quint8  type()     const { return toUInt8 (5, 7); }
     quint32 id()       const { return toUInt32(); }
     quint32 uniqueId() const { return toUInt32(12, 20); }
-    quint8  pluginId() const { return toUInt8 (35, 5); }
+    quint8  pluginId() const { return toUInt8 (0, 5); }
 
     template <typename N> N type  () const { return static_cast <N>(type()); }
     template <typename N> N plugin() const { return static_cast <N>(pluginId()); }
@@ -47,10 +47,10 @@ struct AFlib::id::Object_bit : public TbitStruct <32>
 private:
     Object_bit(quint8 plugin, quint8 type, quint32 uid);
 
-    void setType    (quint8 type) { setUInt8 (type, 40, 7); }
+    void setType    (quint8 type) { setUInt8 (type, 5, 7); }
     void setId      (quint32 id)  { setUInt32(id); }
     void setUniqueId(quint32 id)  { setUInt32(id, 12, 20); }
-    void setPluginId(quint8  id)  { setUInt8 (id, 35, 5); }
+    void setPluginId(quint8  id)  { setUInt8 (id, 0, 5); }
 
     void setId(Object_bit id)  { *this = id; }
 
@@ -59,6 +59,16 @@ private:
 
     friend class AFlib::id::Object;
     friend class AFlib::Storage;
+
+    friend QDataStream& operator << (QDataStream& s, const Object_bit& obj){
+        return s << static_cast <const TbitStruct <32>> (obj);
+    }
+    friend QDataStream& operator >> (QDataStream& s,       Object_bit& obj){
+        TbitStruct <32> bits;
+        s >> bits;
+        obj.setId(bits.toUInt32());
+        return s;
+    }
 };
 
 inline bool operator == (const AFlib::id::Object_bit& left, const AFlib::id::Object_bit& right)

@@ -13,15 +13,16 @@ namespace AFlib {
 
 typedef AFlib::File AFfile;
 
-class AFlib::File : protected QFile
+class AFlib::File
 {
 public:
     File(QString dPath, AFlib::FileType type = AFlib::FileType::Data);
     File(QStringList list, AFlib::FileType type = AFlib::FileType::Data);
-    virtual ~File() override;
+    virtual ~File();
 
     bool openRead();
     bool openWrite();
+    bool exists();
 
     QByteArray readAll();
     bool writeAll(const QByteArray& data);
@@ -32,6 +33,8 @@ public:
     FileType dType() const;
 
     static bool rename(QDir dir, QString file, QString newName);
+    static QStringList getFullTypeList();
+    static QString getFileTypeName(FileType type);
 
     static QDir    getFullDir (const QStringList &list, bool isFileNameIsLast = true);
     static QString getFullPath(const QStringList& list, AFlib::FileType type = AFlib::FileType::Data);
@@ -45,6 +48,7 @@ private:
     QDataStream m_stream;
     QStringList p_dPath;
     AFlib::FileType p_fileType;
+    QFile* m_file;
 };
 
 template <class T>

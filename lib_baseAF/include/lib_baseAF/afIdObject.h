@@ -23,6 +23,8 @@ public:
     // TODO need to change it, and all system
     void makeGlobalId(id::Object_bit newId);
 
+    static ObjectPtr createPtr();
+
     virtual Global_bit globalId() const final;
     virtual quint64    global()   const final;
 
@@ -43,7 +45,7 @@ public:
     operator QByteArray() const;
     QByteArray getData() const;
 
-    virtual SavedIdType savedStatus() override;
+    SavedIdType savedStatus() override;
 
     //! Function set owner, only work if history is empty (empty exists create and date time operate).
     //! \param owner Owner id.
@@ -67,7 +69,7 @@ protected:
 
 private:
     Object(Account_bit owner, quint8 pluginId, quint8 typeId, QString name = "", QString descr = "");
-    virtual void saveToStorage(const OperatePtr ptr, bool isId = false) override final;
+    void saveToStorage(const OperatePtr ptr, bool isId = false) override final;
 
     bool setUniqueId();
 

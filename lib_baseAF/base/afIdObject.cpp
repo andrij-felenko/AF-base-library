@@ -2,10 +2,12 @@
 #include "afFile.h"
 #include "AfStorage"
 #include <QtCore/QDebug>
+#include "afFunction.h"
 
 AFlib::id::Object::Object()
 {
-    //
+    setAttribute(Attribute::Created, QDateTime::currentDateTime());
+    m_lastUpdate = Function::nullDateTime();
 }
 
 AFlib::id::Object::Object(const QByteArray &data)
@@ -29,6 +31,8 @@ AFlib::id::Object::Object(const AFlib::id::Object *cpObject)
 AFlib::id::Object::Object(id::Account_bit owner, quint8 pluginId, quint8 typeId, QString name, QString descr)
     : AFlib::id::Object_bit(pluginId, typeId)
 {
+    m_lastUpdate = Function::nullDateTime();
+    setAttribute(Attribute::Created, QDateTime::currentDateTime());
     setOwner(owner);
     setName(name);
     setDescription(descr);
@@ -38,6 +42,12 @@ void AFlib::id::Object::makeGlobalId(Object_bit newId)
 {
     setAttribute(Attribute::LocalId, localId());
     setId(newId.toUInt32());
+}
+
+AFlib::id::ObjectPtr AFlib::id::Object::createPtr()
+{
+    ObjectPtr ptr = ObjectPtr::create();
+    return ptr;
 }
 
 AFlib::id::Global_bit AFlib::id::Object::globalId() const
@@ -147,8 +157,9 @@ QDataStream &operator << (QDataStream& stream, const AFlib::id::Object& data)
 
 QDataStream &operator >> (QDataStream& stream,       AFlib::id::Object& data)
 {
-    stream >> data.m_owner >> static_cast <History&>(data) >> data.m_bitset;
-                         return stream;
+    stream >> data.m_owner >> static_cast <History&>(data)
+            >> static_cast <Object_bit&> (data);
+    return stream;
 }
 }
 
@@ -241,7 +252,11 @@ bool AFlib::id::Object::setUniqueId()
     if (savedStatus() != SavedIdType::TemporarySaved)
         return false;
 
-    setId(afStorage()->foundFreeLocalId(owner(), pluginId(), type()).id());
+    auto ow = owner();
+    auto pi = pluginId();
+    auto ty = type();
+    auto afs = afStorage();
+    setId(afs->foundFreeLocalId(ow, pi, ty).id());
     return true;
 }
 
