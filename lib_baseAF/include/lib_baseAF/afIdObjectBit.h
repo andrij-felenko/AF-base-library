@@ -36,10 +36,10 @@ struct AFlib::id::Object_bit : public TbitStruct <32>
     static quint32 createLocalId();
     static quint32 createGlobalId();
 
-    quint8  type()     const { return toUInt8 (5, 7); }
-    quint32 id()       const { return toUInt32(); }
-    quint32 uniqueId() const { return toUInt32(12, 20); }
-    quint8  pluginId() const { return toUInt8 (0, 5); }
+    quint8  type()     const {  auto r = toUInt8 (5, 7); qDebug() << "type:" << r; return r;}
+    quint32 id()       const {  auto r = toUInt32(0, 32); qDebug() << "id:" << r; return r; }
+    quint32 uniqueId() const {  auto r = toUInt32(12, 20); qDebug() << "uid:" << r; return r; }
+    quint8  pluginId() const {  auto r = toUInt8 (0, 5); qDebug() << "plugin:" << r; return r; }
 
     template <typename N> N type  () const { return static_cast <N>(type()); }
     template <typename N> N plugin() const { return static_cast <N>(pluginId()); }

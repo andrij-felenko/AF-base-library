@@ -8,31 +8,45 @@ AFlib::id::ObjectTemplate::ObjectTemplate(quint8 plugin, quint8 type, QObject *p
     //
 }
 
-AFlib::id::ObjectTemplate::ObjectTemplate(quint8 plugin, quint8 type, QStringList subDPath, QObject *parent)
+AFlib::id::ObjectTemplate::ObjectTemplate(quint8 plugin, quint8 type, QStringList subDPath,
+                                          QObject *parent)
     : ObjectTemplate(plugin, type, FileType::Data, subDPath, parent)
 {
     //
 }
 
 // main constructor, other constructor call it for create this object
-AFlib::id::ObjectTemplate::ObjectTemplate(quint8 plugin, quint8 type, FileType fileType, QStringList subDPath, QObject *parent)
+AFlib::id::ObjectTemplate::ObjectTemplate(quint8 plugin, quint8 type, FileType fileType,
+                                          QStringList subDPath, QObject *parent)
     : QObject(parent), m_subDPath(subDPath), m_fileType(fileType)
 {
     Object obj(AFaccount::storage()->user()->owner(), plugin, type);
-    m_ptr = ObjectPtr::create(obj);
+    qDebug() << "I try to create object inside ObjectTemplate, is object already present:"
+             << !m_ptr.isNull();
+    if (m_ptr.isNull())
+        m_ptr = ObjectPtr::create(obj);
 }
 
-AFlib::id::ObjectTemplate::ObjectTemplate(quint8 plugin, quint8 type, FileType fileType, QObject *parent)
+AFlib::id::ObjectTemplate::ObjectTemplate(quint8 plugin, quint8 type, FileType fileType,
+                                          QObject *parent)
     : ObjectTemplate(plugin, type, fileType, {}, parent)
 {
     //
 }
 
 AFlib::id::ObjectTemplate::ObjectTemplate(ObjectPtr ptr, QObject *parent)
-    : QObject(parent), m_ptr(ptr)
+    : QObject(parent)
 {
-    if (ptr.isNull())
+    m_ptr.clear();
+    qDebug() << "Check is ptr is null [m_ptr, ptr]" << m_ptr.isNull() << ptr.isNull();
+    if (ptr.isNull()){
+        qDebug() << "Send empty ptr to ObjectTemplate ptr constructor";
         m_ptr = Object::createPtr();
+    }
+    else {
+        qDebug() << "copy ptr";
+        m_ptr = ptr;
+    }
 }
 
 const AFlib::id::Object *AFlib::id::ObjectTemplate::afObject() const

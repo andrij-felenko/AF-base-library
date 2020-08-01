@@ -26,12 +26,17 @@ struct AFlib::id::TbitStruct {
     template <uint bitsize_>
     std::bitset <bitsize_> getPiece(uint index, uint size) const
     {
-        if (not m_bitset.test(index))
+        if (size == 32)
+            qDebug() << "getPiece" << QString::number(m_bitset.to_ullong(), 2) << index << size << bitsize_ << m_bitset.test(index);
+        if (index + size > bitsize_)
             return 0;
 
+        if (size == 32)
+            qDebug() << "not 0";
         std::bitset <bitsize_> ret = 0;
         for (uint i = 0; i < size; i++)
             ret[i] = m_bitset[index + i];
+        qDebug() << "";
         return ret;
     }
 
@@ -57,6 +62,7 @@ struct AFlib::id::TbitStruct {
         if (sizeof (typeNumber) * 8 < size)
             std::cerr << "Size of type " << typeid(typeNumber).name() << " less than size " << size << " of need take.";
 
+        qDebug() << m_bitset.to_ullong() << getBitSet(index, size).to_ullong();
         size = std::min(size, bitsize);
         return static_cast <typeNumber> (getBitSet(index, size).to_ullong());
     }

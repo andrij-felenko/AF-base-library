@@ -260,8 +260,10 @@ QVariant AFlib::id::History::getAttribute(const OperatePtrList& list, quint16 ke
     last->setDatetime(Function::nullDateTime());
     for (auto it : list)
         if (it->key() == key)
-            if (it->m_datetime > last->m_datetime)
+            if (it->m_datetime > last->m_datetime){
                 last = it;
+                break;
+            }
     if (last.isNull())
         return QVariant();
     if (last->key() == 0 || not isHIdEnable(last->historyType()))
@@ -332,6 +334,7 @@ void AFlib::id::History::addOperate(Operate id, bool saveToStorage)
 
 void AFlib::id::History::addOperate(OperatePtr id, bool saveToStorage, bool isId)
 {
+    qDebug() << "Add operate" << id->valueId() << saveToStorage << isId;
     for (auto it : m_operateList)
         if (it.data() == id.data())
             return;

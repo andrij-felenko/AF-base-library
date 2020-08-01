@@ -365,7 +365,7 @@ id::Object_bit Storage::foundFreeLocalId(id::Account_bit account, quint8 plugin,
                         if (not isFound)
                             return id::Object_bit(plugin, type, possibleKey);
                     }
-    return id::Object_bit();
+    return id::Object_bit(plugin, type, id::Object_bit::createLocalId());
 }
 
 id::Object_bit Storage::foundFreeGlobalId(id::Object_bit id)

@@ -185,8 +185,8 @@ void AFaccount::Storage::reload()
     if (not AFlib::Dir::cdDirectory(accountDir, "accounts"))
         return;
 
-    QDir groupDir = AFDir()->storage();
-    if (not AFlib::Dir::cdDirectory(accountDir, "groups"))
+    QDir groupDir = AFDir()->users();
+    if (not AFlib::Dir::cdDirectory(groupDir, "groups"))
         return;
 
     AFlib::IdObjectPtrV list;
@@ -210,6 +210,7 @@ void AFaccount::Storage::reload()
             m_groupList.push_back(ptr);
         }
     }
+    qDebug() << accountDir;
 }
 
 void AFaccount::Storage::loginAs(AFlib::id::Account_bit account)
@@ -272,8 +273,11 @@ AFaccount::StoragePtr AFaccount::storage(QObject* parent)
 AFaccount::AccountPtr AFaccount::user(QObject *parent)
 {
     if (m_user.isNull()){
-        if (m_guest.isNull())
-            m_guest = AFaccount::AccountPtr::create(AFlib::id::ObjectPtr::create(), parent);
+        if (m_guest.isNull()){
+            auto newObj = AFlib::id::ObjectPtr::create();
+            m_guest = AFaccount::AccountPtr::create(newObj, parent);
+            m_guest->save();
+        }
         m_user = m_guest;
     }
     return m_user;

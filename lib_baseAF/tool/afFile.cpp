@@ -74,6 +74,7 @@ QByteArray AFlib::File::readAll()
 
 bool AFlib::File::writeAll(const QByteArray &data)
 {
+    qDebug() << "writeAll : " << data.size();
     return m_file->write(data) != -1;
 }
 
