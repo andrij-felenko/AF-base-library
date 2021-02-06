@@ -24,16 +24,16 @@ AFquick::GuiApplication::GuiApplication(int &argc, char **argv)
     setContextProperty("AFapp", this);
     setContextProperty("AFsize", afGuiSize().data());
 
-    connect(m_menu, &MenuModel::getCount, [=](){ return m_pluginList.length(); });
+    connect(m_menu, &MenuModel::getCount, [this](){ return m_pluginList.length(); });
 
     connect(m_menu, &MenuModel::getNameByIndex,
-            [=](int index){ return m_pluginList[index]->name(); });
+            [this](int index){ return m_pluginList[index]->name(); });
 
     connect(m_menu, &MenuModel::getIconByIndex,
-            [=](int index){ return m_pluginList[index]->icon(); });
+            [this](int index){ return m_pluginList[index]->icon(); });
 
     connect(m_menu, &MenuModel::isCurrentByIndex,
-            [=](int index){ return m_pluginList[index]->name() == m_currentPluginName; });
+            [this](int index){ return m_pluginList[index]->name() == m_currentPluginName; });
 }
 
 AFquick::GuiApplication::~GuiApplication()
@@ -122,7 +122,7 @@ QAbstractListModel *AFquick::GuiApplication::menuModel() const
 
 bool AFquick::GuiApplication::addPlugin(GuiPluginPtr plugin)
 {
-    for (auto it : m_pluginList)
+    for (const auto& it : m_pluginList)
         if (it->name() == plugin->name())
             return false;
 
@@ -153,7 +153,7 @@ void AFquick::GuiApplication::setContextProperty(QString name, QVariant variant)
 
 bool AFquick::GuiApplication::setCurrentPlugin(const QString &name)
 {
-    for (auto it : m_pluginList)
+    for (const auto& it : m_pluginList)
         if (it->name() == name){
             if (setContentUrl(it->qmlUrl())){
                 m_currentPluginName = name;

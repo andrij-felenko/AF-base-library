@@ -1,6 +1,18 @@
 #include "afIdGlobalBit.h"
 #include "AfFunction"
 
+AFlib::id::Global_bit::Global_bit(Account_bit owner, Object_bit object)
+    : ownerId(owner), objectId(object)
+{
+    //
+}
+
+AFlib::id::Global_bit::Global_bit(quint64 number)
+    : ownerId(number >> 32), objectId(number % (quint64(1) << 32))
+{
+    //
+}
+
 quint64 AFlib::id::Global_bit::toNumber() const
 {
     return (ownerId.toUInt64() << 32) + objectId.toUInt32();

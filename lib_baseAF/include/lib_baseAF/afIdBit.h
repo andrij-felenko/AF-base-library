@@ -5,8 +5,8 @@
 #include <iostream>
 #include <cmath>
 #include <QtCore/QDataStream>
+#include <QtCore/QBuffer>
 #include <QtCore/QSharedPointer>
-#include <QDebug>
 
 namespace AFlib::id {
     template <uint bitsize>
@@ -26,7 +26,8 @@ struct AFlib::id::TbitStruct {
     template <uint bitsize_>
     std::bitset <bitsize_> getPiece(uint index, uint size) const
     {
-        if (not m_bitset.test(index))
+        // TODO add warning
+        if (index >= bitsize)
             return 0;
 
         std::bitset <bitsize_> ret = 0;
@@ -37,18 +38,19 @@ struct AFlib::id::TbitStruct {
 
     quint8 getCharPiece(uint index) const
     {
-        if (not m_bitset.test(index))
+        // FIXME test_bitset
+        if (m_bitset.size() < index)
             return 0;
 
         quint8 ret = 0;
         for (uint i = index; i < std::min(index + 8, bitsize); i++)
             if (m_bitset[i])
-                ret |= (1 << i);
+                ret |= 1 << (i - index);
 
         return ret;
     }
 
-    //    std::bitset <bitsize> (*getBitSet)(uint indedx, uint size) = &getPiece;
+//        std::bitset <bitsize> (*getBitSet)(uint indedx, uint size) = &getPiece;
     std::bitset <bitsize> getBitSet(uint index, uint size) const { return getPiece <bitsize> (index, size); }
 
     template <typename typeNumber>
@@ -72,6 +74,27 @@ struct AFlib::id::TbitStruct {
     quint32 toUInt32(uint index = 0, uint size = 32) const { return toTypeNumber <quint32>(index, size); }
     quint64 toUInt64(uint index = 0, uint size = 64) const { return toTypeNumber <quint64>(index, size); }
 
+    operator std::string () const { return toString(0); }
+    std::string toString(char separator = 8, char ch = '`') const
+    {
+        std::string ret("");
+        for (unsigned char i = 0; i * 8 < bitsize; i++)
+             ret.push_back(getCharPiece(8 * i));
+
+        if (separator > 0)
+            for (unsigned char i = separator; separator < bitsize; i++, i += separator)
+                ret.insert(i, 1, ch);
+
+        return ret;
+    }
+
+    void fill(const std::string str)
+    {
+        m_bitset = 0;
+        for (unsigned char i = 0; i * 8 < bitsize && str.length() > i; i++)
+            setCharPiece(i * 8, str[i]);
+    }
+
 protected:
     std::bitset <bitsize> m_bitset;
     friend QDataStream& operator << <bitsize> (QDataStream& s, const TbitStruct <bitsize> & data);
@@ -92,11 +115,11 @@ protected:
 
     void setCharPiece(uint index, quint8 ch)
     {
-        if (not m_bitset.test(index))
+        // TODO add warning declaration
+        if (index >= m_bitset.size())
             return;
 
-        for (uint i = 0; i < std::min(uint(8), bitsize - index); i++)
-            m_bitset.set(index + i, ch & (1 << i));
+        setUInt8(ch, index, std::min(index + 8, bitsize));
     }
 
     template <typename typeNumber, uint size_>
@@ -138,19 +161,23 @@ protected:
 template <uint bsize>
 QDataStream& operator << (QDataStream& s, const AFlib::id::TbitStruct <bsize> & data)
 {
-    for (auto i = 0; i * 8 < bsize; i++)
-        s << data.getCharPiece(8 * i);
-    return s;
+    std::string str = data;
+    return s << uint(str.length()) << str.c_str();
 }
 
 template <uint bsize>
 QDataStream& operator >> (QDataStream& s, AFlib::id::TbitStruct <bsize> & data)
 {
-    quint8 ch;
-    for (uint i = 0; i * 8 < bsize; i++){
+    uint len;
+    s >> len;
+    std::string str;
+    char ch;
+    for (uint i = 0; i < len; ++i){
         s >> ch;
-        data.setCharPiece(i * 8, ch);
+        str.push_back(ch);
     }
+    data.fill(str);
+
     return s;
 }
 
@@ -158,12 +185,14 @@ template <typename T>
 QDataStream& operator << (QDataStream& s, const std::vector <QSharedPointer <T>> & list){
     s << uint(list.size());
     QByteArray data;
-    QDataStream stream(&data, QIODevice::WriteOnly);
+    QBuffer buffer(&data);
+    buffer.open(QIODevice::WriteOnly);
+    QDataStream stream(&buffer);
 
     for (auto it = list.begin(); it != list.end(); ++it)
         stream << &it;
-    qDebug() << data;
 
+    buffer.close();
     return s << data;
 }
 

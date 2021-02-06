@@ -29,7 +29,7 @@ namespace AFlib::id {
  * ........ ........ ........ ........ ...###.. ........  3: save enum variable
  * ........ ........ ........ ........ ......## ######## 10: operate key (for using as type of value by object)
  * ........ ........ ........ ........ ........ ........ */
-struct AFlib::id::Operate_bit : public TbitStruct <48>
+struct AFlib::id::Operate_bit : protected TbitStruct <48>
 {
     Account_bit user()    const { return Account_bit(userId()); }
     quint32 userId()      const { return toUInt32(    16, 28);  }
@@ -69,7 +69,7 @@ class AFlib::id::Operate final : public Operate_bit
 public:
     explicit Operate(Account_bit userId = Account_bit(),
                      HistoryIdType history = HistoryIdType::First,
-                     SavedIdType saved = SavedIdType::LocaleSaved,
+                     SavedIdType saved = SavedIdType::Local,
                      QVariant value = QVariant(),
                      quint16 valueKey = 0,
                      QDateTime dTime = QDateTime::currentDateTime());
@@ -100,6 +100,9 @@ private:
     void setValueId(Global_bit newId);
 };
 
+QDebug operator << (QDebug d, const AFlib::id::Operate    & op);
+QDebug operator << (QDebug d, const AFlib::id::Operate_bit& op_b);
+std::ostream& operator << (std::ostream &os, const AFlib::id::Operate &op);
 QDataStream &operator << (QDataStream& stream, const AFlib::id::OperatePtrList& data);
 QDataStream &operator >> (QDataStream& stream,       AFlib::id::OperatePtrList& data);
 

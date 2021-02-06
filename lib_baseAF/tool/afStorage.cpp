@@ -187,7 +187,7 @@ bool Storage::addObject(QStringList dPath, const IdObject &object, FileType type
     list.push_back(ptr);
     auto data = IdObject::listToBytaArray(list);
     bool result = file.writeAll(data);
-    qDebug() << result << data;
+    qDebug() << "Add Object [result, data]" << result << data;
     if (result)
         registrateObject(dPath, type, object);
 

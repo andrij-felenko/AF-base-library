@@ -10,7 +10,7 @@ AFlib::File::File(QString dPath, AFlib::FileType type)
       p_fileType(type)
 {
     m_file = new QFile(getFullPath(dPath));
-    qDebug() << "File name:" << m_file->fileName() << m_file->exists() << endl;
+    qDebug() << "File name:" << m_file->fileName() << m_file->exists() << Qt::endl;
 }
 
 AFlib::File::File(QStringList list, AFlib::FileType type)
@@ -18,7 +18,7 @@ AFlib::File::File(QStringList list, AFlib::FileType type)
       p_fileType(type)
 {
     m_file = new QFile(getFullPath(list));
-    qDebug() << "File name:" << m_file->fileName() << m_file->exists() << endl;
+    qDebug() << "File name:" << m_file->fileName() << m_file->exists() << Qt::endl;
 }
 
 AFlib::File::~File()
@@ -52,9 +52,8 @@ bool AFlib::File::openWrite()
     if (m_file->isOpen())
         m_file->close();
 
-    qDebug() << m_file->permissions();
-    m_file->setPermissions(QFileDevice::WriteOwner | QFileDevice::ReadOwner);
-    bool success = m_file->open(QIODevice::WriteOnly | QIODevice::Truncate);
+    qDebug() << "Permission: " << m_file->fileName() << m_file->permissions();
+    bool success = m_file->open(QIODevice::ReadWrite | QIODevice::Truncate);
     if (not success)
         qDebug() << "File " << m_file->fileName() << " not open, cause: " << m_file->errorString();
 
@@ -135,7 +134,7 @@ QDir AFlib::File::getFullDir(const QStringList& list, bool isFileNameIsLast)
     else
         dir = afDir()->storage();
 
-    for (auto it : list)
+    for (const auto &it : list)
         if (it != list.last() && isFileNameIsLast)
             AFlib::Dir::cdDirectory(dir, it);
     return dir;

@@ -121,8 +121,8 @@ public:
     void addOperations(const QByteArray& list);
     void addOperations(const OperatePtrList list, bool saveToStorage = true, bool isId = false);
     void addOperate(Attribute attributeKey, QVariant value,
-                    Account_bit userId, HIdType history = HIdType::AddIdLine,
-                    SIdType saved = SIdType::LocaleSaved,
+                    Account_bit userId, HIdType history = HIdType::AddLine,
+                    SIdType saved = SIdType::Local,
                     QDateTime dTime = QDateTime::currentDateTime());
     void addOperate(Attribute attributeKey, QVariant value,
                     quint32 userId, quint8 historyId, quint8 savedId,

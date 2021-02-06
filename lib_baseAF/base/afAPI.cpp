@@ -98,7 +98,7 @@ void AFlib::API::post(RequestType type, QByteArray data, bool isData)
     request.setUrl(getServerLink(type, isData));
     m_requestStatus.insert(type, RequestStatus::Send);
     QNetworkAccessManager::post(request, data);
-    qDebug() << data;
+    qDebug() << "AFlib::API::post: " << data;
 }
 
 void AFlib::API::get(RequestType type, bool isData)

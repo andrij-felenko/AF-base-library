@@ -53,19 +53,19 @@ void Group::changeAccess(InfoPtr account, AccessType newAccess)
 void Group::addAccount(AFIdObject_bit account, AccessType access)
 {
     QVariant var = QVariant::fromValue(makeAccountWithAccess(account, access));
-    m_ptr->setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::AddIdLine);
+    m_ptr->setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::AddLine);
 }
 
 void Group::removeAccount(AFIdObject_bit account, AccessType access)
 {
     QVariant var = QVariant::fromValue(makeAccountWithAccess(account, access));
-    m_ptr->setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::RemoveIdLine);
+    m_ptr->setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::RemoveLine);
 }
 
 void Group::changeAccess(AFIdObject_bit account, AccessType newAccess)
 {
     QVariant var = QVariant::fromValue(makeAccountWithAccess(account, newAccess));
-    m_ptr->setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::EditIdLine);
+    m_ptr->setMultiAttribute(AFattribute::GroupMembers, var, AFlib::HIdType::EditLine);
 }
 
 InfoPtrList Group::getByType(AccessType type, bool inheritType) const

@@ -3,6 +3,7 @@
 #include <QtCore/QStandardPaths>
 
 #include "afDir.h"
+#include <iostream>
 
 using namespace AFlib;
 #define TEST_RELEASE true
@@ -85,21 +86,21 @@ void Dir::init(bool useCurrentFolder)
     cdDirectory(tempCacheDir, "users");
     m_users = tempCacheDir;
 
-    qInfo() << "Directory settings for application";
-    qInfo() << "app" << m_app.path();
-    qInfo() << "config" << m_config.path();
-    qInfo() << "cookies" << m_cookies.path();
-    qInfo() << "storage" << m_storage.path();
-    qInfo() << "libraries" << m_libraries.path();
-    qInfo() << "plugins" << m_plugins.path();
-    qInfo() << "translates" << m_translates.path();
-    qInfo() << "users" << m_users.path();
+    qInfo() << "\nAll path`s for application {\n\t"
+            << "app:       " << m_app       .path().toStdString().c_str() << "\n\t"
+            << "users:     " << m_users     .path().toStdString().c_str() << "\n\t"
+            << "config:    " << m_config    .path().toStdString().c_str() << "\n\t"
+            << "cookies:   " << m_cookies   .path().toStdString().c_str() << "\n\t"
+            << "plugins:   " << m_plugins   .path().toStdString().c_str() << "\n\t"
+            << "storage:   " << m_storage   .path().toStdString().c_str() << "\n\t"
+            << "libraries: " << m_libraries .path().toStdString().c_str() << "\n\t"
+            << "translates:" << m_translates.path().toStdString().c_str() << "\n}\n";
 }
 
 void Dir::initStandartPath()
 {
     m_app = QDir::current();
-    m_config = QDir(QStandardPaths::displayName(QStandardPaths::DataLocation));
+    m_config = QDir(QStandardPaths::displayName(QStandardPaths::AppDataLocation));
     m_cookies = QDir(QStandardPaths::displayName(QStandardPaths::CacheLocation));
 
     QDir dirTemp = m_config;
@@ -114,7 +115,7 @@ void Dir::initStandartPath()
     cdDirectory(dirTemp, "plugins");
     m_plugins = dirTemp;
 
-    m_storage = QDir(QStandardPaths::displayName(QStandardPaths::DataLocation));
+    m_storage = QDir(QStandardPaths::displayName(QStandardPaths::AppDataLocation));
 
     dirTemp = m_config;
     cdDirectory(dirTemp, "plugins");

@@ -60,6 +60,6 @@ bool AFlib::id::ObjectTemplate::save()
     auto cp = m_ptr;
     bool trySave = m_ptr->setUniqueId();
     if (trySave)
-        AFlib::afStorage()->addObject(m_subDPath, *m_ptr.data(), m_fileType);
+        qDebug() << "result save " << m_ptr << AFlib::afStorage()->addObject(m_subDPath, *m_ptr.data(), m_fileType);
     return trySave;
 }

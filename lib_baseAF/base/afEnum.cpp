@@ -2,12 +2,12 @@
 
 AFlib::HistoryIdType AFlib::toHistoryIdType(const quint8 i)
 {
-    return HistoryIdType(uint(HistoryIdType::AddIdLine) + i);
+    return HistoryIdType(uint(HistoryIdType::AddLine) + i);
 }
 
 AFlib::SavedIdType AFlib::toSavedIdType(const quint8 i)
 {
-    return SavedIdType(uint(SavedIdType::TemporarySaved) + i);
+    return SavedIdType(uint(SavedIdType::Temporary) + i);
 }
 
 bool operator ==(AFlib::AccountIdType f, AFlib::AccountIdType s){
@@ -40,9 +40,9 @@ quint8 AFlib::fromSaveToInt(AFlib::SavedIdType type)
 
 bool AFlib::isHIdEnable(AFlib::HistoryIdType type)
 {
-    if (type == HIdType::RemoveIdLine)
+    if (type == HIdType::RemoveLine)
         return false;
-    if (type == HIdType::InnactivateIdLine)
+    if (type == HIdType::InnactivateLine)
         return false;
 
     return true;
@@ -81,4 +81,40 @@ QDataStream &operator >>(QDataStream &s, AFlib::FileType& type)
     s >> value;
     type = static_cast <AFlib::FileType> (value);
     return s;
+}
+
+std::string AFlib::saveTypeToString(AFlib::SavedIdType type)
+{
+    using namespace AFlib;
+    switch (type) {
+    case SavedIdType::Local: return "local";
+    case SavedIdType::Temporary: return "temporary";
+    case SavedIdType::OnServer:  return "on_server";
+    case SavedIdType::OnTheWayToServer: return "on_the_way_to_server";
+    }
+    return "";
+}
+
+std::string AFlib::historyToString(AFlib::HistoryIdType type)
+{
+    using namespace AFlib;
+    switch (type) {
+    case HistoryIdType::AddLine: return "add_line";
+    case HistoryIdType::EditLine: return "edit_line";
+    case HistoryIdType::RemoveLine: return "remove_line";
+    case HistoryIdType::SavedChangeLine: return "saved_change_line";
+    case HistoryIdType::InnactivateLine: return "innactivate_line";
+    case HistoryIdType::ActivateLine: return "activate_line";
+    }
+    return "";
+}
+
+std::string AFlib::historyToString(quint8 type)
+{
+    return historyToString(toHistoryIdType(type));
+}
+
+std::string AFlib::saveTypeToString(quint8 type)
+{
+    return saveTypeToString(toSavedIdType(type));
 }

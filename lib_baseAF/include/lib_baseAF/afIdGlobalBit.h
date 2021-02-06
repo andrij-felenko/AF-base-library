@@ -20,10 +20,8 @@ struct AFlib::id::Global_bit
     Account_bit ownerId;
     Object_bit objectId;
 
-    Global_bit(Account_bit owner, Object_bit object)
-        : ownerId(owner), objectId(object) {}
-    Global_bit(quint64 number)
-        : ownerId(number >> 32), objectId(number % (quint64(1) << 32)) {}
+    Global_bit(Account_bit owner, Object_bit object);
+    Global_bit(quint64 number);
 
     quint64 toNumber() const;
 

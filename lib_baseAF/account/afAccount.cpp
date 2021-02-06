@@ -61,25 +61,25 @@ QString AFaccount::Account::passwordHash() const
 void AFaccount::Account::addAccount(AFlib::IdObjectPtr account)
 {
     auto account_b = account->owner().toUInt32();
-    m_ptr->setMultiAttribute(AFattribute::FriendList, account_b, AFlib::HIdType::AddIdLine);
+    m_ptr->setMultiAttribute(AFattribute::FriendList, account_b, AFlib::HIdType::AddLine);
 }
 
 void AFaccount::Account::removeAccount(AFlib::IdObjectPtr account)
 {
     auto account_b = account->owner().toUInt32();
-    m_ptr->setMultiAttribute(AFattribute::FriendList, account_b, AFlib::HIdType::RemoveIdLine);
+    m_ptr->setMultiAttribute(AFattribute::FriendList, account_b, AFlib::HIdType::RemoveLine);
 }
 
 void AFaccount::Account::addGroup(AFlib::IdObjectPtr account)
 {
     auto account_b = account->owner().toUInt32();
-    m_ptr->setMultiAttribute(AFattribute::GroupList, account_b, AFlib::HIdType::RemoveIdLine);
+    m_ptr->setMultiAttribute(AFattribute::GroupList, account_b, AFlib::HIdType::RemoveLine);
 }
 
 void AFaccount::Account::removeGroup(AFlib::IdObjectPtr account)
 {
     auto account_b = account->owner().toUInt32();
-    m_ptr->setMultiAttribute(AFattribute::GroupList, account_b, AFlib::HIdType::RemoveIdLine);
+    m_ptr->setMultiAttribute(AFattribute::GroupList, account_b, AFlib::HIdType::RemoveLine);
 }
 
 QString AFaccount::Account::login() const
@@ -103,7 +103,7 @@ QJsonObject AFaccount::Account::toJson() const
 QByteArray AFaccount::Account::toByteArray() const
 {
     QByteArray ret;
-    QDataStream stream(&ret, QIODevice::WriteOnly);
+    QDataStream stream(&ret, QIODevice::ReadWrite);
     stream << *afObject();
     return ret;
 }

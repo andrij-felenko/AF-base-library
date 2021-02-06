@@ -43,3 +43,11 @@ AFlib::id::Object_bit::Object_bit(quint8 plugin, quint8 type, quint32 uid)
     setType(type);
     setUniqueId(uid);
 }
+
+QDebug operator <<(QDebug d, const AFlib::id::Object_bit &obj_b)
+{
+    return d << "AFlib::id::Object_bit :\n\t"
+             << "unique id:    0x" << QString::number(obj_b.uniqueId(), 16) << ";\n\t"
+             << "type:        "    << obj_b.type() << ";\n\t"
+             << "plugin:      "    << obj_b.pluginId() << ";\n\n";
+}

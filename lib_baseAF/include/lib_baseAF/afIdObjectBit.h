@@ -3,6 +3,7 @@
 
 #include "afIdBit.h"
 #include "afIdAccount.h"
+#include <QtCore/QDebug>
 
 namespace AFlib {
     class Storage;
@@ -15,6 +16,36 @@ namespace AFlib {
         typedef Object_bit Obj_bit;
     }
 }
+
+// TODO learn how it works
+//enum ObjectEnum {
+//    Unique,
+//    Type,
+//    PLugin
+//};
+
+//template <typename Enum, uint bitsize, typename... args>
+//class BitTemplate : AFlib::id::TbitStruct <bitsize>
+//{
+//    // Enum, uint f_index, uint size
+//    template <typename Ret>
+//    Ret get(Enum e)
+//    {
+//        return p_get <Ret>(e, args...);
+//    }
+
+//private:
+//    template <typename Ret>
+//    Ret p_get(Enum needed, Enum current, uint firstIndex, uint size,
+//            auto... list)
+//    {
+//        if (needed == current)
+//            return this.template toTypeNumber <Ret> (firstIndex, size);
+//        if (sizeof...(list) > 3)
+//            return p_get(needed, list...);
+//        return 0;
+//    }
+//};
 
 //! \brief The Function class
 //! \details Bit table, total size <b>28</b>
@@ -71,6 +102,7 @@ private:
     }
 };
 
+QDebug operator << (QDebug d, const AFlib::id::Object_bit& obj_b);
 inline bool operator == (const AFlib::id::Object_bit& left, const AFlib::id::Object_bit& right)
 {
     return left.id() == right.id();

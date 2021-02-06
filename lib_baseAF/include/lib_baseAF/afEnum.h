@@ -42,31 +42,35 @@ namespace AFlib {
     };
 
     enum class HistoryIdType { // 3 bit`s
-        AddIdLine = 0xE0F100,
-        EditIdLine,
-        RemoveIdLine,
-        SavedIdChangeLine,
-        InnactivateIdLine,
-        ActivateIdLine,
+        AddLine = 0xE0F100,
+        EditLine,
+        RemoveLine,
+        SavedChangeLine,
+        InnactivateLine,
+        ActivateLine,
         //
-        First = AddIdLine,
+        First = AddLine,
     };
     HistoryIdType toHistoryIdType(const quint8 i);
     quint8 fromHisToInt(HistoryIdType type);
     typedef HistoryIdType HIdType;
     bool isHIdEnable(HistoryIdType type);
+    std::string historyToString(HistoryIdType type);
+    std::string historyToString(quint8 type);
 
     enum class SavedIdType { // 2 bit`s
-        TemporarySaved = 0xE0F200,
-        LocaleSaved,
-        SavedOnWayToServer,
-        SavedOnServer,
+        Temporary = 0xE0F200,
+        Local,
+        OnTheWayToServer,
+        OnServer,
 
-        First = TemporarySaved,
+        First = Temporary,
     };
     SavedIdType toSavedIdType(const quint8 i);
     quint8 fromSaveToInt(SavedIdType type);
     typedef SavedIdType SIdType;
+    std::string saveTypeToString(SavedIdType type);
+    std::string saveTypeToString(quint8 type);
 
     /// Account id type enum
     //! \details default AccountIdType::LocalUser

@@ -112,23 +112,23 @@ QByteArray AFlib::id::Object::getData() const
 AFlib::SavedIdType AFlib::id::Object::savedStatus()
 {
     if (uniqueId() == 0)
-        return SavedIdType::TemporarySaved;
+        return SavedIdType::Temporary;
     else if (object_b().isIdLocal())
-        return SavedIdType::LocaleSaved;
-    return SavedIdType::SavedOnServer;
+        return SavedIdType::Local;
+    return SavedIdType::OnServer;
 }
 
 AFlib::id::Object::operator QByteArray() const
 {
     QByteArray data;
-    QDataStream stream(data);
+    QDataStream stream(&data, QIODevice::WriteOnly);
     stream << *this;
     return data;
 }
 
 bool AFlib::id::Object::setOwner(const Account_bit &owner)
 {
-    if (not History::isEmpty() && savedStatus() != SavedIdType::TemporarySaved)
+    if (not History::isEmpty() && savedStatus() != SavedIdType::Temporary)
         return false;
 
     m_owner = owner;
@@ -143,7 +143,7 @@ bool AFlib::id::Object::isAccount() const
 QByteArray AFlib::id::Object::listToBytaArray(const ObjectPtrV list)
 {
     QByteArray ret;
-    QDataStream stream(&ret, QIODevice::WriteOnly);
+    QDataStream stream(&ret, QIODevice::ReadWrite);
     stream << list;
     return ret;
 }
@@ -151,7 +151,14 @@ QByteArray AFlib::id::Object::listToBytaArray(const ObjectPtrV list)
 namespace AFlib::id {
 QDataStream &operator << (QDataStream& stream, const AFlib::id::Object& data)
 {
-    stream << data.m_owner << static_cast <const History&>(data) << data.object_b();
+    stream << data.m_owner << static_cast <const History&>(data)
+           << static_cast <const Object_bit&> (data);
+    QByteArray dat;
+    QBuffer buf(&dat);
+    buf.open(QIODevice::WriteOnly);
+    QDataStream s2(&buf);
+    s2 << static_cast <const Object_bit&>(data);
+    buf.close();
     return stream;
 }
 
@@ -249,7 +256,7 @@ void AFlib::id::Object::saveToStorage(const OperatePtr ptr, bool isId)
 
 bool AFlib::id::Object::setUniqueId()
 {
-    if (savedStatus() != SavedIdType::TemporarySaved)
+    if (savedStatus() != SavedIdType::Temporary)
         return false;
 
     auto ow = owner();
@@ -262,13 +269,14 @@ bool AFlib::id::Object::setUniqueId()
 
 QDebug operator <<(QDebug d, const AFlib::id::Object &object)
 {
+    using namespace AFlib;
     return d << "AFlib::id::Object {\n\t"
-             << "owner id:     0x" << QString::number(object.owner().toUInt32(), 16)
-             << "name:        "    << object.name() << ";\n\t"
-             << "description: "    << object.description() << ";\n\t"
-             << "unique id:    0x" << QString::number(object.uniqueId(), 16) << ";\n\t"
-             << "type:        "    << object.type() << ";\n\t"
-             << "plugin:      "    << object.pluginId() << ";\n}";
+             << "owner id:    " << Function::toString(object.owner().toUInt32(), 16).c_str() << ";\n\t"
+             << "unique id:   " << Function::toString(object.uniqueId(), 16).c_str() << ";\n\t"
+             << "name:        " << object.name() << ";\n\t"
+             << "description: " << object.description() << ";\n\t"
+             << "type:        " << object.type() << ";\n\t"
+             << "plugin:      " << object.pluginId() << ";\n}";
 }
 
 bool operator ==(const AFlib::id::ObjectPtr ptr, const AFlib::id::Object &object)
