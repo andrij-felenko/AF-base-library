@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.19)
 project(lib_baseAF VERSION 0.0.1)
 
 set (baseAF_h
@@ -28,7 +28,8 @@ set (baseAF_h
     include/lib_baseAF/afStorage.h
     include/lib_baseAF/afSystem.h
     include/lib_baseAF/afTransferOperateList.h
-)
+    include/lib_baseAF/afLinkedList.h
+    )
 
 set (baseAF_cpp
     account/afAccount.cpp
@@ -53,6 +54,7 @@ set (baseAF_cpp
     tool/afSetting.cpp
     tool/afStorage.cpp
     tool/afTransferOperateList.cpp
+    template/afLinkedList.cpp
     )
 
 set (initialize_header
@@ -77,18 +79,18 @@ set (initialize_header
     include/AFbase/AfTransferOperateList
     )
 
-set (CMAKE_AUTOMOC, true)
-find_package(Qt5Core)
+set (CMAKE_AUTOMOC ON)
+set (CMAKE_CXX_STANDARD 20)
+find_package(Qt6 COMPONENTS Core)
 
 add_library(lib_baseAF ${baseAF_h} ${baseAF_cpp} ${initialize_header})
 
 set_target_properties(lib_baseAF PROPERTIES
     OUTPUT_NAME "baseAF"
-    CXX_STANDARD 17
     CXX_EXTENSIONS OFF
     )
 
-target_link_libraries(lib_baseAF Qt5::Core)
+target_link_libraries(lib_baseAF Qt6::Core)
 target_include_directories(lib_baseAF
     PUBLIC  include
     PUBLIC  include/AFbase
