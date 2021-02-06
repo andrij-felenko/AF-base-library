@@ -76,6 +76,7 @@ public:
 
     Operate(const Operate& copy);
     Operate(const QByteArray& data);
+    virtual ~Operate();
 
     operator QByteArray() const;
     QByteArray getData() const;

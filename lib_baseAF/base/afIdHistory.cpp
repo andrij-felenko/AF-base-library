@@ -260,8 +260,10 @@ QVariant AFlib::id::History::getAttribute(const OperatePtrList& list, quint16 ke
     last->setDatetime(Function::nullDateTime());
     for (const auto& it : list)
         if (it->key() == key)
-            if (it->m_datetime > last->m_datetime)
+            if (it->m_datetime > last->m_datetime){
                 last = it;
+                break;
+            }
     if (last.isNull())
         return QVariant();
     if (last->key() == 0 || not isHIdEnable(last->historyType()))

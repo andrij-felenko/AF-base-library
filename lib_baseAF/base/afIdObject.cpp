@@ -6,12 +6,17 @@
 
 AFlib::id::Object::Object()
 {
-    setAttribute(Attribute::Created, QDateTime::currentDateTime());
+    qDebug() << "create Object 0 [empty object]" << pluginId() << type();
+    addOperate(static_cast <quint16> (Attribute::Created), QDateTime::currentDateTime(),
+               Account_bit(0), HIdType::AddIdLine, SIdType::LocaleSaved);
     m_lastUpdate = Function::nullDateTime();
+    qDebug() << "create Object 0 [empty object] end" << pluginId() << type();
+    qDebug() << "\n";
 }
 
 AFlib::id::Object::Object(const QByteArray &data)
 {
+    qDebug() << "create Object 1" << pluginId() << type();
     QDataStream stream(data);
     stream >> *this;
 }
@@ -19,18 +24,23 @@ AFlib::id::Object::Object(const QByteArray &data)
 AFlib::id::Object::Object(const AFlib::id::Object &cpObject)
     : AFlib::id::Object(cpObject.getData())
 {
+    qDebug() << "create Object 2" << pluginId() << type();
     //
 }
 
 AFlib::id::Object::Object(const AFlib::id::Object *cpObject)
     : AFlib::id::Object(cpObject->getData())
 {
+    qDebug() << "create Object 3" << pluginId() << type();
     //
 }
 
-AFlib::id::Object::Object(id::Account_bit owner, quint8 pluginId, quint8 typeId, QString name, QString descr)
+AFlib::id::Object::Object(id::Account_bit owner,
+                          quint8 pluginId, quint8 typeId,
+                          QString name, QString descr)
     : AFlib::id::Object_bit(pluginId, typeId)
 {
+    qDebug() << "create Object 4";
     m_lastUpdate = Function::nullDateTime();
     setAttribute(Attribute::Created, QDateTime::currentDateTime());
     setOwner(owner);
@@ -145,6 +155,7 @@ QByteArray AFlib::id::Object::listToBytaArray(const ObjectPtrV list)
     QByteArray ret;
     QDataStream stream(&ret, QIODevice::ReadWrite);
     stream << list;
+    qDebug() << "list to byte array: list:" << list.size() << ", data size:" << ret.size();
     return ret;
 }
 
@@ -263,7 +274,9 @@ bool AFlib::id::Object::setUniqueId()
     auto pi = pluginId();
     auto ty = type();
     auto afs = afStorage();
-    setId(afs->foundFreeLocalId(ow, pi, ty).id());
+    auto id = afs->foundFreeLocalId(ow, pi, ty).id();
+    setId(id);
+    qDebug() << uniqueId() << globalId();
     return true;
 }
 

@@ -18,17 +18,36 @@ void AFlib::id::Operate::setValueId(Global_bit newId)
     setValue(newId.toNumber());
 }
 
+AFlib::id::Operate::Operate(Account_bit userId, HistoryIdType history, SavedIdType saved, QVariant value, quint16 valueKey, QDateTime dTime)
+{
+    // explicit constructor
+    setHistoryType(history);
+    setSaveType(saved);
+    setUserId(userId);
+    setKey(valueKey);
+    setValue(value);
+    m_datetime = dTime;
+    qDebug() << "Create operate 0" << valueId();
+}
+
 AFlib::id::Operate::Operate(const AFlib::id::Operate &copy)
 {
     m_datetime = copy.m_datetime;
     m_value = copy.m_value;
     m_bitset = copy.m_bitset;
+    qDebug() << "Create operate 1" << valueId();
 }
 
 AFlib::id::Operate::Operate(const QByteArray &data)
 {
     QDataStream stream(data);
     stream >> m_datetime >> m_value >> static_cast <Operate_bit&> (*this);
+    qDebug() << "Create operate 2" << valueId();
+}
+
+AFlib::id::Operate::~Operate()
+{
+    qDebug() << "Remove operate" << valueId();
 }
 
 QByteArray AFlib::id::Operate::getData() const
@@ -45,17 +64,6 @@ AFlib::id::Operate::operator QByteArray() const
     stream << m_datetime << m_value << static_cast <Operate_bit>(*this);
     buffer.close();
     return data;
-}
-
-AFlib::id::Operate::Operate(Account_bit userId, HistoryIdType history, SavedIdType saved, QVariant value, quint16 valueKey, QDateTime dTime)
-{
-    // explicit constructor
-    setHistoryType(history);
-    setSaveType(saved);
-    setUserId(userId);
-    setKey(valueKey);
-    setValue(value);
-    m_datetime = dTime;
 }
 
 void AFlib::id::Operate::setDatetime(const QDateTime &datetime)

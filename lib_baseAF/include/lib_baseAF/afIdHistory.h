@@ -155,6 +155,7 @@ protected:
 
     friend QDataStream &operator << (QDataStream& stream, const History& data);
     friend QDataStream &operator >> (QDataStream& stream,       History& data);
+    friend class AFlib::id::Object;
 
 private:
     void refreshLastChangeTime();

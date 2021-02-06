@@ -29,7 +29,8 @@ bool AFlib::id::Object_bit::isEmpty() const
 
 quint32 AFlib::id::Object_bit::createLocalId()
 {
-    return Function::randomInt(1, (1 << 10) - 1);
+    auto i = Function::randomInt(1, (1 << 10) - 1);
+    return i;
 }
 
 quint32 AFlib::id::Object_bit::createGlobalId()
@@ -42,6 +43,7 @@ AFlib::id::Object_bit::Object_bit(quint8 plugin, quint8 type, quint32 uid)
     setPluginId(plugin);
     setType(type);
     setUniqueId(uid);
+    qDebug() << id() << uniqueId();
 }
 
 QDebug operator <<(QDebug d, const AFlib::id::Object_bit &obj_b)
