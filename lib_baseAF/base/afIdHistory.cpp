@@ -99,7 +99,7 @@ void AFlib::id::History::makeShorten(OperatePtrList &list)
         // 2: remove all same as last unique id but not compare this last
         list.erase(
             std::remove_if(list.begin(), list.end(),
-                           [last, localLast, multiple](OperatePtr single) {
+                           [last, localLast, multiple](const OperatePtr single) {
                                return (multiple == single->key() && last.data() != single.data())
                                       || multiple.value() == localLast;
                            }));

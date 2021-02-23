@@ -19,7 +19,7 @@ public:
         Windows,
         Mac,
         iOS,
-    }; Q_ENUMS(SystemOS)
+    }; Q_ENUM(SystemOS)
     static SystemOS OS();
 
     static bool isMobile();
@@ -30,7 +30,7 @@ public:
         Right,
         Bottom,
         Undefined,
-    }; Q_ENUMS(Anchor)
+    }; Q_ENUM(Anchor)
 
 signals:
     //

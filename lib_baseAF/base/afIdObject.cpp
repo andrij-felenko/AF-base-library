@@ -8,7 +8,7 @@ AFlib::id::Object::Object()
 {
     qDebug() << "create Object 0 [empty object]" << pluginId() << type();
     addOperate(static_cast <quint16> (Attribute::Created), QDateTime::currentDateTime(),
-               Account_bit(0), HIdType::AddIdLine, SIdType::LocaleSaved);
+               Account_bit(0), HIdType::AddLine, SIdType::Local);
     m_lastUpdate = Function::nullDateTime();
     qDebug() << "create Object 0 [empty object] end" << pluginId() << type();
     qDebug() << "\n";
@@ -216,7 +216,7 @@ AFlib::id::ObjectPtrV AFlib::id::Object::readList(const QByteArray &data, const 
         stream >> *ptr;
 
         bool isFound = false;
-        for (auto it : removeList)
+        for (const auto &it : removeList)
             if (ptr->object_b() == it->object_b() && ptr->owner() == it->owner()){
                 retList.push_back(ptr);
                 isFound = true;

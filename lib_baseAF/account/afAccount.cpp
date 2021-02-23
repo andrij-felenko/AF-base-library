@@ -116,7 +116,7 @@ void AFaccount::Account::reset()
 AFlib::id::AccList_b AFaccount::Account::friendList() const
 {
     AFlib::id::AccList_b ret;
-    for (auto it : m_ptr->getMultiAttribute(AFattribute::FriendList))
+    for (const auto &it : m_ptr->getMultiAttribute(AFattribute::FriendList))
         ret += AFlib::id::Account_bit(it.toUInt());
     return ret;
 }
@@ -124,7 +124,7 @@ AFlib::id::AccList_b AFaccount::Account::friendList() const
 AFlib::id::AccList_b AFaccount::Account::groupList() const
 {
     AFlib::id::AccList_b ret;
-    for (auto it : m_ptr->getMultiAttribute(AFattribute::GroupList))
+    for (const auto &it : m_ptr->getMultiAttribute(AFattribute::GroupList))
         ret += AFlib::id::Account_bit(it.toUInt());
     return ret;
 }

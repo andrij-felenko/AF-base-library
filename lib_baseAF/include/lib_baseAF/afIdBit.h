@@ -31,11 +31,10 @@ struct AFlib::id::TbitStruct {
             return 0;
 
         if (size == 32)
-            qDebug() << "not 0";
+            std::cerr << "not 0";
         std::bitset <bitsize_> ret = 0;
         for (uint i = 0; i < size; i++)
             ret[i] = m_bitset[index + i];
-        qDebug() << "";
         return ret;
     }
 

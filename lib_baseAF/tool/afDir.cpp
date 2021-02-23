@@ -209,14 +209,14 @@ void Dir::cpDirectory(QString from, QString to)
         return;
     }
 
-    for (auto d : dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
+    for (const auto &d : dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
         QString dst_path = to + QDir::separator() + d;
         QDir dirTo(to);
         dirTo.mkpath(dst_path);
         cpDirectory(from + QDir::separator() + d, dst_path);
     }
 
-    for (auto f : dir.entryList(QDir::Files)) {
+    for (const auto &f : dir.entryList(QDir::Files)) {
         QFile file(from + QDir::separator() + f);
         bool result = file.copy(to + QDir::separator() + f);
         qDebug() << "Copy file" << f << "\n\tfrom: " << from << "\n\tto: " << to

@@ -47,7 +47,8 @@ public:
 
     SavedIdType savedStatus() override;
 
-    //! Function set owner, only work if history is empty (empty exists create and date time operate).
+    //! Function set owner, only work if history is empty
+    //! (empty exists create and date time operate).
     //! \param owner Owner id.
     //! \return Return result of set new id, return false if history is not empty.
     virtual bool setOwner(const Account_bit &owner) final;
@@ -56,11 +57,11 @@ public:
     static QByteArray listToBytaArray(const ObjectPtrV list);
 
     static AFlib::id::ObjectPtrV readList(const QByteArray& data);
-    static AFlib::id::ObjectPtr    readList(const QByteArray& data, const Obj_bit id);
+    static AFlib::id::ObjectPtr  readList(const QByteArray& data, const Obj_bit id);
     static AFlib::id::ObjectPtrV readList(const QByteArray& data, const ObjectPtrV list);
 
     static AFlib::id::ObjectPtrV readFromFile(const QStringList &dPath, FileType type);
-    static AFlib::id::ObjectPtr    readFromFile(const QStringList &dPath, FileType type, const  AFlib::id::Obj_bit& id);
+    static AFlib::id::ObjectPtr  readFromFile(const QStringList &dPath, FileType type, const AFlib::id::Obj_bit& id);
     static AFlib::id::ObjectPtrV readFromFile(const QStringList &dPath, FileType type, const ObjectPtrV list);
 
 protected:

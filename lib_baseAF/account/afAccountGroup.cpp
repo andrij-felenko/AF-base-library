@@ -16,6 +16,7 @@ using namespace AFaccount;
 Group::Group(QObject *parent) : AFaccount::Info(parent)
 {
     auto subUsers = m_ptr->getMultiAttribute(AFattribute::UserList);
+    Q_UNUSED(subUsers)
     // TODO parse subUsers
 }
 

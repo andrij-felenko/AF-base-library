@@ -219,7 +219,7 @@ IdObjectPtrV Storage::getObjectList(const QStringList dPath, FileType type, Comp
 
 IdObjectPtrV Storage::getObjectList(QList<id::Account_bit> accList, quint8 plugin, Compress compress)
 {
-    QList <QStringList> dPathList;
+    QVector <QStringList> dPathList;
     for (auto aIt : m_storageList)
         if (accList.contains(aIt.accountBit))
             for (auto pIt : aIt.pluginList)

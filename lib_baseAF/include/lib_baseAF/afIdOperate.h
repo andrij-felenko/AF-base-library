@@ -16,7 +16,7 @@ namespace AFlib::id {
     struct TransferOperateList;
 
     typedef QSharedPointer <Operate> OperatePtr;
-    typedef QList <OperatePtr> OperatePtrList;
+    typedef QVector <OperatePtr> OperatePtrList;
 }
 
 /* ___________________________OPERATE_ID_Bit____________________________

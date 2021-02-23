@@ -30,11 +30,11 @@ AFaccount::StoragePtr AFaccount::Storage::instance()
 
 bool AFaccount::Storage::check(const AFlib::id::Account_bit &id)
 {
-    for (auto it : m_accountList)
+    for (const auto &it : m_accountList)
         if (it->afObject()->owner() == id.accountId())
             return true;
 
-    for (auto it : m_groupList)
+    for (const auto &it : m_groupList)
         if (it->afObject()->owner() == id.accountId())
             return true;
 
@@ -53,7 +53,7 @@ std::optional <QString> AFaccount::Storage::checkLogin(QString login, QString pa
 
 std::optional<QString> AFaccount::Storage::checkLogin(QString login, QString password, AFlib::id::Account_bit acc_b) const
 {
-    for (auto it : m_accountList)
+    for (const auto &it : m_accountList)
         if (it->mail() == login || it->login() == login){
             if (it->check(password)){
                 acc_b = it->afObject()->owner();
@@ -109,7 +109,7 @@ AFaccount::InfoPtr AFaccount::Storage::getInfo(const quint32 &id)
 
 bool AFaccount::Storage::checkNickname(const QString &nick)
 {
-    for (auto it : m_accountList)
+    for (const auto &it : m_accountList)
         if (it->login() == nick)
             return true;
     return false;
@@ -190,9 +190,9 @@ void AFaccount::Storage::reload()
         return;
 
     AFlib::IdObjectPtrV list;
-    for (auto it : accountDir.entryList({"*.afd"}, QDir::Files))
+    for (const auto &it : accountDir.entryList({"*.afd"}, QDir::Files))
         list += AFlib::afStorage()->getObjectList({ "accounts", it }, AFlib::FileType::Account, AFcompress::Shortest);
-    for (auto it : groupDir.entryList({"*.afd"}, QDir::Files))
+    for (const auto &it : groupDir.entryList({"*.afd"}, QDir::Files))
         list += AFlib::afStorage()->getObjectList({ "groups", it }, AFlib::FileType::Account, AFcompress::Shortest);
 
     // remove object that not account
@@ -251,11 +251,11 @@ std::optional<AFaccount::GroupPtr> AFaccount::Storage::getGroup(const AFlib::id:
 bool AFaccount::Storage::contains(AFlib::id::Account_bit id) const
 {
     auto accId = id.accountId();
-    for (auto it : m_accountList)
+    for (const auto &it : m_accountList)
         if (it->afObject()->owner() == accId)
             return true;
 
-    for (auto it : m_groupList)
+    for (const auto &it : m_groupList)
         if (it->afObject()->owner() == accId)
             return true;
 
