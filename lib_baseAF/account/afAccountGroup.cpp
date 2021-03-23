@@ -3,7 +3,7 @@
 #include "AFbase/AfEnum"
 #include <QtCore/QPair>
 
-typedef QPair <quint32, quint8> AccountWithAccess;
+using AccountWithAccess = QPair <quint32, quint8>;
 Q_DECLARE_METATYPE(AccountWithAccess);
 
 AccountWithAccess makeAccountWithAccess(AFIdObject_bit account, AFaccount::AccessType access)

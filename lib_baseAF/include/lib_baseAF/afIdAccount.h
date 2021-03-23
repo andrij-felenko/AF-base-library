@@ -35,9 +35,6 @@ struct AFlib::id::Account_bit : public TbitStruct <32>
     bool isLocal() const;
 
     static Account_bit create(const AccountIdType &type);
-
-    //    friend QDataStream &operator << (QDataStream& stream, const Account_bit& data);
-    //    friend QDataStream &operator >> (QDataStream& stream,       Account_bit& data);
 };
 
 #endif // LIB_BASEAF_ID_ACCOUNT_H

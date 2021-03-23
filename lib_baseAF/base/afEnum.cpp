@@ -14,7 +14,7 @@ bool operator ==(AFlib::AccountIdType f, AFlib::AccountIdType s){
     if (uint(f) == uint(s))
         return true;
 
-    typedef AFlib::AccountIdType AIT;
+    using AIT = AFlib::AccountIdType;
     switch (f) {
     case AIT::User:               return uint(f) == uint(AIT::LocalUser)         || uint(f) == uint(AIT::GlobalUser);
     case AIT::Local:              return uint(f) == uint(AIT::LocalUser)         || uint(f) == uint(AIT::LocalOrganization);

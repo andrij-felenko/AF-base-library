@@ -6,6 +6,7 @@
 #include <cmath>
 #include <QtCore/QDataStream>
 #include <QtCore/QBuffer>
+#include <QtCore/QDebug>
 #include <QtCore/QSharedPointer>
 
 namespace AFlib::id {
@@ -26,9 +27,10 @@ struct AFlib::id::TbitStruct {
     template <uint bitsize_>
     std::bitset <bitsize_> getPiece(uint index, uint size) const
     {
-        // TODO add warning
-        if (index >= bitsize)
+        if (index >= bitsize){
+            std::cerr << "Index is out of bitsize range.";
             return 0;
+        }
 
         if (size == 32)
             std::cerr << "not 0";
@@ -40,7 +42,6 @@ struct AFlib::id::TbitStruct {
 
     quint8 getCharPiece(uint index) const
     {
-        // FIXME test_bitset
         if (m_bitset.size() < index)
             return 0;
 
@@ -52,7 +53,6 @@ struct AFlib::id::TbitStruct {
         return ret;
     }
 
-//        std::bitset <bitsize> (*getBitSet)(uint indedx, uint size) = &getPiece;
     std::bitset <bitsize> getBitSet(uint index, uint size) const { return getPiece <bitsize> (index, size); }
 
     template <typename typeNumber>
@@ -118,9 +118,10 @@ protected:
 
     void setCharPiece(uint index, quint8 ch)
     {
-        // TODO add warning declaration
-        if (index >= m_bitset.size())
+        if (index >= m_bitset.size()){
+            std::cerr << "Index is out of bitsize range.";
             return;
+        }
 
         setUInt8(ch, index, std::min(index + 8, bitsize));
     }
