@@ -1,0 +1,279 @@
+\hypertarget{classAFaccount_1_1Account}{}\doxysection{A\+Faccount\+::Account Class Reference}
+\label{classAFaccount_1_1Account}\index{AFaccount::Account@{AFaccount::Account}}
+
+
+{\ttfamily \#include $<$af\+Account.\+h$>$}
+
+Inheritance diagram for A\+Faccount\+::Account\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d2/dbf/classAFaccount_1_1Account}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFaccount_1_1Account_a2ccf2f35d1cc99bb19448ed28c30951c}{set\+Login}} (Q\+String \mbox{\hyperlink{classAFaccount_1_1Account_a880f18bd804b2455c0ef9c1ed59dc41d}{login}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFaccount_1_1Account_abedbc3202cc189986613e643e92e3805}{Account}} (Q\+Object $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{classAFaccount_1_1Account_a8ad11cb0300b7b3180df113f5f2c7804}{Account}} (\mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{A\+Flib\+::\+Id\+Object\+Ptr}} ptr, Q\+Object $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{classAFaccount_1_1Account_af78e47072e90a32bd84481a099141da8}{Account}} (const Q\+Byte\+Array \&data, Q\+Object $\ast$parent=nullptr)
+\item 
+bool \mbox{\hyperlink{classAFaccount_1_1Account_ac6e08a09d0cccb882447f5ae39da17da}{check}} (Q\+String password) const
+\item 
+virtual Q\+String \mbox{\hyperlink{classAFaccount_1_1Account_a880f18bd804b2455c0ef9c1ed59dc41d}{login}} () const final
+\item 
+\mbox{\hyperlink{classAFaccount_1_1Account_a6d230ccbc612a095b9242472dfae44cb}{operator Q\+Json\+Object}} () const
+\item 
+virtual Q\+Json\+Object \mbox{\hyperlink{classAFaccount_1_1Account_afc9b468423db02919ae268e6ae546fd8}{to\+Json}} () const override
+\item 
+Q\+Byte\+Array \mbox{\hyperlink{classAFaccount_1_1Account_a8c7e73712570330452fc25b7ccfc4ae4}{to\+Byte\+Array}} () const
+\item 
+void \mbox{\hyperlink{classAFaccount_1_1Account_a5bf71aa7d0d4d84b92b51d40770a1854}{reset}} ()
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a6fa582ab55b42a9a77bde4401a0e198b}{A\+Flib\+::id\+::\+Acc\+List\+\_\+b}} \mbox{\hyperlink{classAFaccount_1_1Account_a8d7ad61eab991a51b5ad825141f73f70}{friend\+List}} () const
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a6fa582ab55b42a9a77bde4401a0e198b}{A\+Flib\+::id\+::\+Acc\+List\+\_\+b}} \mbox{\hyperlink{classAFaccount_1_1Account_ab3dcb3c7b01f3cf77af9f721bb586221}{group\+List}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Q\+String \mbox{\hyperlink{classAFaccount_1_1Account_ad7e1a6261125e4c9be47a9e5995752ac}{password\+Hash}} () const final
+\item 
+void \mbox{\hyperlink{classAFaccount_1_1Account_ad72e62690e3ee64db13a9b38f6768303}{add\+Account}} (\mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{A\+Flib\+::\+Id\+Object\+Ptr}} account)
+\item 
+void \mbox{\hyperlink{classAFaccount_1_1Account_a0c9e5a27ac4eedf94dded8c9315a3ecb}{remove\+Account}} (\mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{A\+Flib\+::\+Id\+Object\+Ptr}} account)
+\item 
+void \mbox{\hyperlink{classAFaccount_1_1Account_ad12bb96af0afe88bccdd783468a27629}{add\+Group}} (\mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{A\+Flib\+::\+Id\+Object\+Ptr}} account)
+\item 
+void \mbox{\hyperlink{classAFaccount_1_1Account_ac8e893ae949a5f3d1fc29f4a92b82567}{remove\+Group}} (\mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{A\+Flib\+::\+Id\+Object\+Ptr}} account)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAFaccount_1_1Account_ab647623b3295040f83d3afb2a502a223}{Storage}}
+\item 
+class \mbox{\hyperlink{classAFaccount_1_1Account_a056605a2ef2a9d28a20e8f3024b0d313}{A\+Flib\+::\+A\+PI}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 25 of file af\+Account.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFaccount_1_1Account_abedbc3202cc189986613e643e92e3805}\label{classAFaccount_1_1Account_abedbc3202cc189986613e643e92e3805}} 
+\index{AFaccount::Account@{AFaccount::Account}!Account@{Account}}
+\index{Account@{Account}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{Account()}{Account()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily A\+Faccount\+::\+Account\+::\+Account (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 21 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_a8ad11cb0300b7b3180df113f5f2c7804}\label{classAFaccount_1_1Account_a8ad11cb0300b7b3180df113f5f2c7804}} 
+\index{AFaccount::Account@{AFaccount::Account}!Account@{Account}}
+\index{Account@{Account}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{Account()}{Account()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily A\+Faccount\+::\+Account\+::\+Account (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{A\+Flib\+::\+Id\+Object\+Ptr}}}]{ptr,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_af78e47072e90a32bd84481a099141da8}\label{classAFaccount_1_1Account_af78e47072e90a32bd84481a099141da8}} 
+\index{AFaccount::Account@{AFaccount::Account}!Account@{Account}}
+\index{Account@{Account}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{Account()}{Account()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily A\+Faccount\+::\+Account\+::\+Account (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{data,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file af\+Account.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFaccount_1_1Account_ad72e62690e3ee64db13a9b38f6768303}\label{classAFaccount_1_1Account_ad72e62690e3ee64db13a9b38f6768303}} 
+\index{AFaccount::Account@{AFaccount::Account}!addAccount@{addAccount}}
+\index{addAccount@{addAccount}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{addAccount()}{addAccount()}}
+{\footnotesize\ttfamily void A\+Faccount\+::\+Account\+::add\+Account (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{A\+Flib\+::\+Id\+Object\+Ptr}}}]{account }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 61 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_ad12bb96af0afe88bccdd783468a27629}\label{classAFaccount_1_1Account_ad12bb96af0afe88bccdd783468a27629}} 
+\index{AFaccount::Account@{AFaccount::Account}!addGroup@{addGroup}}
+\index{addGroup@{addGroup}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{addGroup()}{addGroup()}}
+{\footnotesize\ttfamily void A\+Faccount\+::\+Account\+::add\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{A\+Flib\+::\+Id\+Object\+Ptr}}}]{account }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 73 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_ac6e08a09d0cccb882447f5ae39da17da}\label{classAFaccount_1_1Account_ac6e08a09d0cccb882447f5ae39da17da}} 
+\index{AFaccount::Account@{AFaccount::Account}!check@{check}}
+\index{check@{check}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily bool A\+Faccount\+::\+Account\+::check (\begin{DoxyParamCaption}\item[{Q\+String}]{password }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 45 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_a8d7ad61eab991a51b5ad825141f73f70}\label{classAFaccount_1_1Account_a8d7ad61eab991a51b5ad825141f73f70}} 
+\index{AFaccount::Account@{AFaccount::Account}!friendList@{friendList}}
+\index{friendList@{friendList}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{friendList()}{friendList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a6fa582ab55b42a9a77bde4401a0e198b}{A\+Flib\+::id\+::\+Acc\+List\+\_\+b}} A\+Faccount\+::\+Account\+::friend\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 116 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_ab3dcb3c7b01f3cf77af9f721bb586221}\label{classAFaccount_1_1Account_ab3dcb3c7b01f3cf77af9f721bb586221}} 
+\index{AFaccount::Account@{AFaccount::Account}!groupList@{groupList}}
+\index{groupList@{groupList}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{groupList()}{groupList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a6fa582ab55b42a9a77bde4401a0e198b}{A\+Flib\+::id\+::\+Acc\+List\+\_\+b}} A\+Faccount\+::\+Account\+::group\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 124 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_a880f18bd804b2455c0ef9c1ed59dc41d}\label{classAFaccount_1_1Account_a880f18bd804b2455c0ef9c1ed59dc41d}} 
+\index{AFaccount::Account@{AFaccount::Account}!login@{login}}
+\index{login@{login}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily Q\+String A\+Faccount\+::\+Account\+::login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 85 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_a6d230ccbc612a095b9242472dfae44cb}\label{classAFaccount_1_1Account_a6d230ccbc612a095b9242472dfae44cb}} 
+\index{AFaccount::Account@{AFaccount::Account}!operator QJsonObject@{operator QJsonObject}}
+\index{operator QJsonObject@{operator QJsonObject}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{operator QJsonObject()}{operator QJsonObject()}}
+{\footnotesize\ttfamily A\+Faccount\+::\+Account\+::operator Q\+Json\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 132 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_ad7e1a6261125e4c9be47a9e5995752ac}\label{classAFaccount_1_1Account_ad7e1a6261125e4c9be47a9e5995752ac}} 
+\index{AFaccount::Account@{AFaccount::Account}!passwordHash@{passwordHash}}
+\index{passwordHash@{passwordHash}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{passwordHash()}{passwordHash()}}
+{\footnotesize\ttfamily Q\+String A\+Faccount\+::\+Account\+::password\+Hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 56 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_a0c9e5a27ac4eedf94dded8c9315a3ecb}\label{classAFaccount_1_1Account_a0c9e5a27ac4eedf94dded8c9315a3ecb}} 
+\index{AFaccount::Account@{AFaccount::Account}!removeAccount@{removeAccount}}
+\index{removeAccount@{removeAccount}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{removeAccount()}{removeAccount()}}
+{\footnotesize\ttfamily void A\+Faccount\+::\+Account\+::remove\+Account (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{A\+Flib\+::\+Id\+Object\+Ptr}}}]{account }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 67 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_ac8e893ae949a5f3d1fc29f4a92b82567}\label{classAFaccount_1_1Account_ac8e893ae949a5f3d1fc29f4a92b82567}} 
+\index{AFaccount::Account@{AFaccount::Account}!removeGroup@{removeGroup}}
+\index{removeGroup@{removeGroup}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{removeGroup()}{removeGroup()}}
+{\footnotesize\ttfamily void A\+Faccount\+::\+Account\+::remove\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{A\+Flib\+::\+Id\+Object\+Ptr}}}]{account }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 79 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_a5bf71aa7d0d4d84b92b51d40770a1854}\label{classAFaccount_1_1Account_a5bf71aa7d0d4d84b92b51d40770a1854}} 
+\index{AFaccount::Account@{AFaccount::Account}!reset@{reset}}
+\index{reset@{reset}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void A\+Faccount\+::\+Account\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 111 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_a2ccf2f35d1cc99bb19448ed28c30951c}\label{classAFaccount_1_1Account_a2ccf2f35d1cc99bb19448ed28c30951c}} 
+\index{AFaccount::Account@{AFaccount::Account}!setLogin@{setLogin}}
+\index{setLogin@{setLogin}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{setLogin}{setLogin}}
+{\footnotesize\ttfamily void A\+Faccount\+::\+Account\+::set\+Login (\begin{DoxyParamCaption}\item[{Q\+String}]{login }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 137 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_a8c7e73712570330452fc25b7ccfc4ae4}\label{classAFaccount_1_1Account_a8c7e73712570330452fc25b7ccfc4ae4}} 
+\index{AFaccount::Account@{AFaccount::Account}!toByteArray@{toByteArray}}
+\index{toByteArray@{toByteArray}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{toByteArray()}{toByteArray()}}
+{\footnotesize\ttfamily Q\+Byte\+Array A\+Faccount\+::\+Account\+::to\+Byte\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 103 of file af\+Account.\+cpp.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_afc9b468423db02919ae268e6ae546fd8}\label{classAFaccount_1_1Account_afc9b468423db02919ae268e6ae546fd8}} 
+\index{AFaccount::Account@{AFaccount::Account}!toJson@{toJson}}
+\index{toJson@{toJson}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily Q\+Json\+Object A\+Faccount\+::\+Account\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classAFaccount_1_1Info_ae9e69651befc77d52b568dab44d79116}{A\+Faccount\+::\+Info}}.
+
+
+
+Definition at line 90 of file af\+Account.\+cpp.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classAFaccount_1_1Account_a056605a2ef2a9d28a20e8f3024b0d313}\label{classAFaccount_1_1Account_a056605a2ef2a9d28a20e8f3024b0d313}} 
+\index{AFaccount::Account@{AFaccount::Account}!AFlib::API@{AFlib::API}}
+\index{AFlib::API@{AFlib::API}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{AFlib::API}{AFlib::API}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classAFlib_1_1API}{A\+Flib\+::\+A\+PI}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 63 of file af\+Account.\+h.
+
+\mbox{\Hypertarget{classAFaccount_1_1Account_ab647623b3295040f83d3afb2a502a223}\label{classAFaccount_1_1Account_ab647623b3295040f83d3afb2a502a223}} 
+\index{AFaccount::Account@{AFaccount::Account}!Storage@{Storage}}
+\index{Storage@{Storage}!AFaccount::Account@{AFaccount::Account}}
+\doxysubsubsection{\texorpdfstring{Storage}{Storage}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classAFaccount_1_1Storage}{Storage}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 62 of file af\+Account.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/\mbox{\hyperlink{afAccount_8h}{af\+Account.\+h}}\item 
+lib\+\_\+base\+A\+F/account/\mbox{\hyperlink{afAccount_8cpp}{af\+Account.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,195 @@
+\hypertarget{classServer}{}\doxysection{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+Inheritance diagram for Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{db/d00/classServer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_aaf98d5194faee831c6340cc736b9b879}{Server}} (Q\+Object $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classServer_af477592032ac4a1255befc50cd510c46}{$\sim$\+Server}} ()=default
+\item 
+void \mbox{\hyperlink{classServer_a1016678b77eacc5aa97f2310f8b442b1}{init}} ()
+\item 
+int \mbox{\hyperlink{classServer_a2e19aa93430fdea2347106571e71c3b5}{listen}} (const Q\+Host\+Address \&address=Q\+Host\+Address\+::\+Any, quint16 port=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classServer_a8b636cfd5e99b598a4d17c934e868040}{ping}} ()
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classServer_a329b09a602b76563e4bbdf8c8e78fd19}{login}} (const Q\+Http\+Server\+Request \&request)
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classServer_a46691b0bfe069d526941eff9201117f5}{registrate}} (const Q\+Http\+Server\+Request \&request)
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classServer_ab53dd664e2ef65b37b60cca293e757d6}{add\+Account}} (const Q\+Http\+Server\+Request \&request)
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classServer_a885c9ac662605126f2f57a269f0d4ec4}{add\+Account\+By\+Id}} (const Q\+Http\+Server\+Request \&request)
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classServer_a02e06a918d062df7390e44aa90bee9e9}{remind\+My\+Login}} (const Q\+Http\+Server\+Request \&request)
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classServer_a16d643f9f38b82c67ec34f9880ba0c7c}{remind\+My\+Password}} (const Q\+Http\+Server\+Request \&request)
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classServer_a0e82c06876b31824f3d9c74ca9cdfd74}{update\+Objects}} (const Q\+Http\+Server\+Request \&request)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Http\+Server $\ast$ \mbox{\hyperlink{classServer_a00d288e5aba70ca013dd2acd045f5aef}{m\+\_\+server}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 7 of file server.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_aaf98d5194faee831c6340cc736b9b879}\label{classServer_aaf98d5194faee831c6340cc736b9b879}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 6 of file server.\+cpp.
+
+\mbox{\Hypertarget{classServer_af477592032ac4a1255befc50cd510c46}\label{classServer_af477592032ac4a1255befc50cd510c46}} 
+\index{Server@{Server}!````~Server@{$\sim$Server}}
+\index{````~Server@{$\sim$Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{$\sim$Server()}{~Server()}}
+{\footnotesize\ttfamily virtual Server\+::$\sim$\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServer_ab53dd664e2ef65b37b60cca293e757d6}\label{classServer_ab53dd664e2ef65b37b60cca293e757d6}} 
+\index{Server@{Server}!addAccount@{addAccount}}
+\index{addAccount@{addAccount}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{addAccount()}{addAccount()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Server\+::add\+Account (\begin{DoxyParamCaption}\item[{const Q\+Http\+Server\+Request \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 109 of file server.\+cpp.
+
+\mbox{\Hypertarget{classServer_a885c9ac662605126f2f57a269f0d4ec4}\label{classServer_a885c9ac662605126f2f57a269f0d4ec4}} 
+\index{Server@{Server}!addAccountById@{addAccountById}}
+\index{addAccountById@{addAccountById}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{addAccountById()}{addAccountById()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Server\+::add\+Account\+By\+Id (\begin{DoxyParamCaption}\item[{const Q\+Http\+Server\+Request \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 116 of file server.\+cpp.
+
+\mbox{\Hypertarget{classServer_a1016678b77eacc5aa97f2310f8b442b1}\label{classServer_a1016678b77eacc5aa97f2310f8b442b1}} 
+\index{Server@{Server}!init@{init}}
+\index{init@{init}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Server\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file server.\+cpp.
+
+\mbox{\Hypertarget{classServer_a2e19aa93430fdea2347106571e71c3b5}\label{classServer_a2e19aa93430fdea2347106571e71c3b5}} 
+\index{Server@{Server}!listen@{listen}}
+\index{listen@{listen}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{listen()}{listen()}}
+{\footnotesize\ttfamily int Server\+::listen (\begin{DoxyParamCaption}\item[{const Q\+Host\+Address \&}]{address = {\ttfamily QHostAddress\+:\+:Any},  }\item[{quint16}]{port = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file server.\+cpp.
+
+\mbox{\Hypertarget{classServer_a329b09a602b76563e4bbdf8c8e78fd19}\label{classServer_a329b09a602b76563e4bbdf8c8e78fd19}} 
+\index{Server@{Server}!login@{login}}
+\index{login@{login}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Server\+::login (\begin{DoxyParamCaption}\item[{const Q\+Http\+Server\+Request \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 41 of file server.\+cpp.
+
+\mbox{\Hypertarget{classServer_a8b636cfd5e99b598a4d17c934e868040}\label{classServer_a8b636cfd5e99b598a4d17c934e868040}} 
+\index{Server@{Server}!ping@{ping}}
+\index{ping@{ping}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{ping()}{ping()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Server\+::ping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 33 of file server.\+cpp.
+
+\mbox{\Hypertarget{classServer_a46691b0bfe069d526941eff9201117f5}\label{classServer_a46691b0bfe069d526941eff9201117f5}} 
+\index{Server@{Server}!registrate@{registrate}}
+\index{registrate@{registrate}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{registrate()}{registrate()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Server\+::registrate (\begin{DoxyParamCaption}\item[{const Q\+Http\+Server\+Request \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 67 of file server.\+cpp.
+
+\mbox{\Hypertarget{classServer_a02e06a918d062df7390e44aa90bee9e9}\label{classServer_a02e06a918d062df7390e44aa90bee9e9}} 
+\index{Server@{Server}!remindMyLogin@{remindMyLogin}}
+\index{remindMyLogin@{remindMyLogin}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{remindMyLogin()}{remindMyLogin()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Server\+::remind\+My\+Login (\begin{DoxyParamCaption}\item[{const Q\+Http\+Server\+Request \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 123 of file server.\+cpp.
+
+\mbox{\Hypertarget{classServer_a16d643f9f38b82c67ec34f9880ba0c7c}\label{classServer_a16d643f9f38b82c67ec34f9880ba0c7c}} 
+\index{Server@{Server}!remindMyPassword@{remindMyPassword}}
+\index{remindMyPassword@{remindMyPassword}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{remindMyPassword()}{remindMyPassword()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Server\+::remind\+My\+Password (\begin{DoxyParamCaption}\item[{const Q\+Http\+Server\+Request \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 130 of file server.\+cpp.
+
+\mbox{\Hypertarget{classServer_a0e82c06876b31824f3d9c74ca9cdfd74}\label{classServer_a0e82c06876b31824f3d9c74ca9cdfd74}} 
+\index{Server@{Server}!updateObjects@{updateObjects}}
+\index{updateObjects@{updateObjects}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{updateObjects()}{updateObjects()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Server\+::update\+Objects (\begin{DoxyParamCaption}\item[{const Q\+Http\+Server\+Request \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 137 of file server.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classServer_a00d288e5aba70ca013dd2acd045f5aef}\label{classServer_a00d288e5aba70ca013dd2acd045f5aef}} 
+\index{Server@{Server}!m\_server@{m\_server}}
+\index{m\_server@{m\_server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{m\_server}{m\_server}}
+{\footnotesize\ttfamily Q\+Http\+Server$\ast$ Server\+::m\+\_\+server\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file server.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server\+A\+F/\mbox{\hyperlink{server_8h}{server.\+h}}\item 
+server\+A\+F/\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}

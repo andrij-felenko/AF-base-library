@@ -1,0 +1,499 @@
+\hypertarget{classAFquick_1_1GuiApplication}{}\doxysection{A\+Fquick\+::Gui\+Application Class Reference}
+\label{classAFquick_1_1GuiApplication}\index{AFquick::GuiApplication@{AFquick::GuiApplication}}
+
+
+{\ttfamily \#include $<$gui\+Application.\+h$>$}
+
+Inheritance diagram for A\+Fquick\+::Gui\+Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d3/dec/classAFquick_1_1GuiApplication}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a9cf77b5a3b821a8ab15f3b70db04b1ff}{click\+On\+Menu}} (int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a294df7376e3848870661d0f9457e57b3}{account\+Changed}} (bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a08cadd6220f6b185e9768f84775b738a}{account}})
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a95f6f720ca9223a6e9c55357b2f1f1d3}{monomenu\+Changed}} (bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_adaf4367cc7f553b67f274cd350a77ba2}{monomenu}})
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a5801dcc56e4e2325c966d484fe116793}{monoobject\+Changed}} (bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a8c0c3bee5796cf04d15f92f49841046d}{monoobject}})
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_aa89f4b708d98eb7916650465adc6e6dd}{portrait\+Changed}} (bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_af3d8d783d769c2d81790c5b5551e266c}{portrait}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFquick_1_1GuiApplication_a9afd8da9e1951b9316b88ccec02d9597}{Gui\+Application}} (int \&argc, char $\ast$$\ast$argv)
+\item 
+virtual \mbox{\hyperlink{classAFquick_1_1GuiApplication_aa93007f3a7c326abdf907d5ecd4e935a}{$\sim$\+Gui\+Application}} ()
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_af4135b7ae7bfe7fbc8b9930eba93d02a}{initialize\+Plugin}} ()
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a2bf4037d4a40774ba4ae8ad6947579df}{initialize\+Plugin}} (Q\+String name)
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a4ee53f46bd6ef4f1cdf7353a14ce877f}{set\+A\+Faccount\+Flag}} (bool is\+Use\+A\+Faccount)
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a26789e203367f171de2055b8a6387364}{show}} ()
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a1f222690d1b613ed16eac37387d82f66}{quit}} ()
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a9665637f120d14142cb19297252fd62c}{set\+Main\+Qml\+Url}} (Q\+Url url)
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a0bb1856298f65748439afafb64d12398}{set\+Main\+Qml}} (Q\+String path)
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a19af01534a5296590e02aeb33cf1dac2}{set\+Monomenu}} (Q\+String\+List list)
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a7f4d0c925f69d60778fccac34a89c645}{set\+Monomenu}} (Q\+Hash$<$ Q\+String, Q\+String $>$ hash)
+\item 
+Q\+Abstract\+List\+Model $\ast$ \mbox{\hyperlink{classAFquick_1_1GuiApplication_aa3fe2620b0eb7e8badb10298ff18c45b}{menu\+Model}} () const
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a40e3e76b6d88f2313a480e3c89d26054}{add\+Plugin}} (\mbox{\hyperlink{namespaceAFquick_abb6b1ddfbdcebdd2462c4c4c03b6bd4b}{Gui\+Plugin\+Ptr}} plugin)
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a48f921fb32f6a0d8964bc434ad8d783a}{set\+Context\+Property}} (Q\+String name, Q\+Object $\ast$object)
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_a5f11ab982913f23a5dcd5a785714f593}{set\+Context\+Property}} (Q\+String name, Q\+Variant variant)
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a9143a69a8d862bd25d3b7d992cbc46e1}{set\+Current\+Plugin}} (const Q\+String \&name)
+\item 
+virtual bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_ab545090f2d07834cf98a159c38865462}{account}} () const final
+\item 
+virtual bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a380c3ec9a9270394dd14a4b6b4b17d17}{monomenu}} () const final
+\item 
+virtual bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_ac60086af6236a149618d9c3d1dfbc60b}{monoobject}} () const final
+\item 
+virtual bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_ac76a60eb8e9a52dae481df1354e48119}{portrait}} () const final
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a08cadd6220f6b185e9768f84775b738a}{account}}
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_adaf4367cc7f553b67f274cd350a77ba2}{monomenu}}
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a8c0c3bee5796cf04d15f92f49841046d}{monoobject}}
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_af3d8d783d769c2d81790c5b5551e266c}{portrait}}
+\item 
+Q\+Abstract\+List\+Model \mbox{\hyperlink{classAFquick_1_1GuiApplication_a433c8891f56ff94f73e625b1424c93b7}{menu\+Model}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiApplication_afe295f3e34f34178e6818c2e800a6eaa}{check\+Portrait}} ()
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a72c8093fe1e80310dcb482024430b5ab}{set\+Content\+Url}} (Q\+Url url)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a4487b06af63055d11d90e402b3c8fb7c}{m\+\_\+use\+A\+Faccount}}
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_ab50784427d4786183f52608d5b406c06}{m\+\_\+portrait}}
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a23db1c4bd2f7146571c05c8a771ab5ff}{m\+\_\+initialize\+All}}
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1GuiApplication_a006d174f8552e79b50069a9fff0f44b9}{m\+\_\+monomenu}}
+\item 
+Q\+String \mbox{\hyperlink{classAFquick_1_1GuiApplication_ad792fbc99a955fd18ff59de971e8ef99}{m\+\_\+current\+Plugin\+Name}}
+\item 
+Q\+Quick\+View $\ast$ \mbox{\hyperlink{classAFquick_1_1GuiApplication_afb429be9b32500c4e11d3edd40d6d1e4}{m\+\_\+view}}
+\item 
+Q\+List$<$ \mbox{\hyperlink{namespaceAFquick_abb6b1ddfbdcebdd2462c4c4c03b6bd4b}{Gui\+Plugin\+Ptr}} $>$ \mbox{\hyperlink{classAFquick_1_1GuiApplication_aa7987ed607a4ba953f6e7187fd2ae492}{m\+\_\+plugin\+List}}
+\item 
+\mbox{\hyperlink{classAFquick_1_1MenuModel}{Menu\+Model}} $\ast$ \mbox{\hyperlink{classAFquick_1_1GuiApplication_a7c5465c9dfa76407a7d57e57c091ea8e}{m\+\_\+menu}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 13 of file gui\+Application.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a9afd8da9e1951b9316b88ccec02d9597}\label{classAFquick_1_1GuiApplication_a9afd8da9e1951b9316b88ccec02d9597}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!GuiApplication@{GuiApplication}}
+\index{GuiApplication@{GuiApplication}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{GuiApplication()}{GuiApplication()}}
+{\footnotesize\ttfamily A\+Fquick\+::\+Gui\+Application\+::\+Gui\+Application (\begin{DoxyParamCaption}\item[{int \&}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 10 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_aa93007f3a7c326abdf907d5ecd4e935a}\label{classAFquick_1_1GuiApplication_aa93007f3a7c326abdf907d5ecd4e935a}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!````~GuiApplication@{$\sim$GuiApplication}}
+\index{````~GuiApplication@{$\sim$GuiApplication}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{$\sim$GuiApplication()}{~GuiApplication()}}
+{\footnotesize\ttfamily A\+Fquick\+::\+Gui\+Application\+::$\sim$\+Gui\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 39 of file gui\+Application.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_ab545090f2d07834cf98a159c38865462}\label{classAFquick_1_1GuiApplication_ab545090f2d07834cf98a159c38865462}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!account@{account}}
+\index{account@{account}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{account()}{account()}}
+{\footnotesize\ttfamily virtual bool A\+Fquick\+::\+Gui\+Application\+::account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a294df7376e3848870661d0f9457e57b3}\label{classAFquick_1_1GuiApplication_a294df7376e3848870661d0f9457e57b3}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!accountChanged@{accountChanged}}
+\index{accountChanged@{accountChanged}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{accountChanged}{accountChanged}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::account\+Changed (\begin{DoxyParamCaption}\item[{bool}]{account }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a40e3e76b6d88f2313a480e3c89d26054}\label{classAFquick_1_1GuiApplication_a40e3e76b6d88f2313a480e3c89d26054}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!addPlugin@{addPlugin}}
+\index{addPlugin@{addPlugin}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{addPlugin()}{addPlugin()}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::add\+Plugin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFquick_abb6b1ddfbdcebdd2462c4c4c03b6bd4b}{Gui\+Plugin\+Ptr}}}]{plugin }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_afe295f3e34f34178e6818c2e800a6eaa}\label{classAFquick_1_1GuiApplication_afe295f3e34f34178e6818c2e800a6eaa}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!checkPortrait@{checkPortrait}}
+\index{checkPortrait@{checkPortrait}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{checkPortrait()}{checkPortrait()}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::check\+Portrait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 225 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a9cf77b5a3b821a8ab15f3b70db04b1ff}\label{classAFquick_1_1GuiApplication_a9cf77b5a3b821a8ab15f3b70db04b1ff}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!clickOnMenu@{clickOnMenu}}
+\index{clickOnMenu@{clickOnMenu}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{clickOnMenu}{clickOnMenu}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::click\+On\+Menu (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 189 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_af4135b7ae7bfe7fbc8b9930eba93d02a}\label{classAFquick_1_1GuiApplication_af4135b7ae7bfe7fbc8b9930eba93d02a}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!initializePlugin@{initializePlugin}}
+\index{initializePlugin@{initializePlugin}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{initializePlugin()}{initializePlugin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::initialize\+Plugin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a2bf4037d4a40774ba4ae8ad6947579df}\label{classAFquick_1_1GuiApplication_a2bf4037d4a40774ba4ae8ad6947579df}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!initializePlugin@{initializePlugin}}
+\index{initializePlugin@{initializePlugin}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{initializePlugin()}{initializePlugin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::initialize\+Plugin (\begin{DoxyParamCaption}\item[{Q\+String}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_aa3fe2620b0eb7e8badb10298ff18c45b}\label{classAFquick_1_1GuiApplication_aa3fe2620b0eb7e8badb10298ff18c45b}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!menuModel@{menuModel}}
+\index{menuModel@{menuModel}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{menuModel()}{menuModel()}}
+{\footnotesize\ttfamily Q\+Abstract\+List\+Model$\ast$ A\+Fquick\+::\+Gui\+Application\+::menu\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a380c3ec9a9270394dd14a4b6b4b17d17}\label{classAFquick_1_1GuiApplication_a380c3ec9a9270394dd14a4b6b4b17d17}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!monomenu@{monomenu}}
+\index{monomenu@{monomenu}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{monomenu()}{monomenu()}}
+{\footnotesize\ttfamily virtual bool A\+Fquick\+::\+Gui\+Application\+::monomenu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a95f6f720ca9223a6e9c55357b2f1f1d3}\label{classAFquick_1_1GuiApplication_a95f6f720ca9223a6e9c55357b2f1f1d3}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!monomenuChanged@{monomenuChanged}}
+\index{monomenuChanged@{monomenuChanged}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{monomenuChanged}{monomenuChanged}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::monomenu\+Changed (\begin{DoxyParamCaption}\item[{bool}]{monomenu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_ac60086af6236a149618d9c3d1dfbc60b}\label{classAFquick_1_1GuiApplication_ac60086af6236a149618d9c3d1dfbc60b}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!monoobject@{monoobject}}
+\index{monoobject@{monoobject}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{monoobject()}{monoobject()}}
+{\footnotesize\ttfamily virtual bool A\+Fquick\+::\+Gui\+Application\+::monoobject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a5801dcc56e4e2325c966d484fe116793}\label{classAFquick_1_1GuiApplication_a5801dcc56e4e2325c966d484fe116793}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!monoobjectChanged@{monoobjectChanged}}
+\index{monoobjectChanged@{monoobjectChanged}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{monoobjectChanged}{monoobjectChanged}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::monoobject\+Changed (\begin{DoxyParamCaption}\item[{bool}]{monoobject }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_ac76a60eb8e9a52dae481df1354e48119}\label{classAFquick_1_1GuiApplication_ac76a60eb8e9a52dae481df1354e48119}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!portrait@{portrait}}
+\index{portrait@{portrait}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{portrait()}{portrait()}}
+{\footnotesize\ttfamily virtual bool A\+Fquick\+::\+Gui\+Application\+::portrait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_aa89f4b708d98eb7916650465adc6e6dd}\label{classAFquick_1_1GuiApplication_aa89f4b708d98eb7916650465adc6e6dd}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!portraitChanged@{portraitChanged}}
+\index{portraitChanged@{portraitChanged}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{portraitChanged}{portraitChanged}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::portrait\+Changed (\begin{DoxyParamCaption}\item[{bool}]{portrait }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a1f222690d1b613ed16eac37387d82f66}\label{classAFquick_1_1GuiApplication_a1f222690d1b613ed16eac37387d82f66}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!quit@{quit}}
+\index{quit@{quit}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{quit()}{quit()}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a4ee53f46bd6ef4f1cdf7353a14ce877f}\label{classAFquick_1_1GuiApplication_a4ee53f46bd6ef4f1cdf7353a14ce877f}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!setAFaccountFlag@{setAFaccountFlag}}
+\index{setAFaccountFlag@{setAFaccountFlag}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{setAFaccountFlag()}{setAFaccountFlag()}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::set\+A\+Faccount\+Flag (\begin{DoxyParamCaption}\item[{bool}]{is\+Use\+A\+Faccount }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a72c8093fe1e80310dcb482024430b5ab}\label{classAFquick_1_1GuiApplication_a72c8093fe1e80310dcb482024430b5ab}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!setContentUrl@{setContentUrl}}
+\index{setContentUrl@{setContentUrl}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{setContentUrl()}{setContentUrl()}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::set\+Content\+Url (\begin{DoxyParamCaption}\item[{Q\+Url}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 198 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a48f921fb32f6a0d8964bc434ad8d783a}\label{classAFquick_1_1GuiApplication_a48f921fb32f6a0d8964bc434ad8d783a}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!setContextProperty@{setContextProperty}}
+\index{setContextProperty@{setContextProperty}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{setContextProperty()}{setContextProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::set\+Context\+Property (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+Object $\ast$}]{object }\end{DoxyParamCaption})}
+
+
+
+Definition at line 144 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a5f11ab982913f23a5dcd5a785714f593}\label{classAFquick_1_1GuiApplication_a5f11ab982913f23a5dcd5a785714f593}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!setContextProperty@{setContextProperty}}
+\index{setContextProperty@{setContextProperty}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{setContextProperty()}{setContextProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::set\+Context\+Property (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+Variant}]{variant }\end{DoxyParamCaption})}
+
+
+
+Definition at line 149 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a9143a69a8d862bd25d3b7d992cbc46e1}\label{classAFquick_1_1GuiApplication_a9143a69a8d862bd25d3b7d992cbc46e1}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!setCurrentPlugin@{setCurrentPlugin}}
+\index{setCurrentPlugin@{setCurrentPlugin}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{setCurrentPlugin()}{setCurrentPlugin()}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::set\+Current\+Plugin (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 154 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a0bb1856298f65748439afafb64d12398}\label{classAFquick_1_1GuiApplication_a0bb1856298f65748439afafb64d12398}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!setMainQml@{setMainQml}}
+\index{setMainQml@{setMainQml}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{setMainQml()}{setMainQml()}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::set\+Main\+Qml (\begin{DoxyParamCaption}\item[{Q\+String}]{path }\end{DoxyParamCaption})}
+
+
+
+Definition at line 95 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a9665637f120d14142cb19297252fd62c}\label{classAFquick_1_1GuiApplication_a9665637f120d14142cb19297252fd62c}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!setMainQmlUrl@{setMainQmlUrl}}
+\index{setMainQmlUrl@{setMainQmlUrl}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{setMainQmlUrl()}{setMainQmlUrl()}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::set\+Main\+Qml\+Url (\begin{DoxyParamCaption}\item[{Q\+Url}]{url }\end{DoxyParamCaption})}
+
+
+
+Definition at line 90 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a7f4d0c925f69d60778fccac34a89c645}\label{classAFquick_1_1GuiApplication_a7f4d0c925f69d60778fccac34a89c645}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!setMonomenu@{setMonomenu}}
+\index{setMonomenu@{setMonomenu}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{setMonomenu()}{setMonomenu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::set\+Monomenu (\begin{DoxyParamCaption}\item[{Q\+Hash$<$ Q\+String, Q\+String $>$}]{hash }\end{DoxyParamCaption})}
+
+
+
+Definition at line 109 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a19af01534a5296590e02aeb33cf1dac2}\label{classAFquick_1_1GuiApplication_a19af01534a5296590e02aeb33cf1dac2}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!setMonomenu@{setMonomenu}}
+\index{setMonomenu@{setMonomenu}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{setMonomenu()}{setMonomenu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::set\+Monomenu (\begin{DoxyParamCaption}\item[{Q\+String\+List}]{list }\end{DoxyParamCaption})}
+
+
+
+Definition at line 100 of file gui\+Application.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a26789e203367f171de2055b8a6387364}\label{classAFquick_1_1GuiApplication_a26789e203367f171de2055b8a6387364}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!show@{show}}
+\index{show@{show}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Application\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 74 of file gui\+Application.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_ad792fbc99a955fd18ff59de971e8ef99}\label{classAFquick_1_1GuiApplication_ad792fbc99a955fd18ff59de971e8ef99}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!m\_currentPluginName@{m\_currentPluginName}}
+\index{m\_currentPluginName@{m\_currentPluginName}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{m\_currentPluginName}{m\_currentPluginName}}
+{\footnotesize\ttfamily Q\+String A\+Fquick\+::\+Gui\+Application\+::m\+\_\+current\+Plugin\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 66 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a23db1c4bd2f7146571c05c8a771ab5ff}\label{classAFquick_1_1GuiApplication_a23db1c4bd2f7146571c05c8a771ab5ff}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!m\_initializeAll@{m\_initializeAll}}
+\index{m\_initializeAll@{m\_initializeAll}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{m\_initializeAll}{m\_initializeAll}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::m\+\_\+initialize\+All\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 64 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a7c5465c9dfa76407a7d57e57c091ea8e}\label{classAFquick_1_1GuiApplication_a7c5465c9dfa76407a7d57e57c091ea8e}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!m\_menu@{m\_menu}}
+\index{m\_menu@{m\_menu}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{m\_menu}{m\_menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAFquick_1_1MenuModel}{Menu\+Model}}$\ast$ A\+Fquick\+::\+Gui\+Application\+::m\+\_\+menu\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 73 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a006d174f8552e79b50069a9fff0f44b9}\label{classAFquick_1_1GuiApplication_a006d174f8552e79b50069a9fff0f44b9}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!m\_monomenu@{m\_monomenu}}
+\index{m\_monomenu@{m\_monomenu}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{m\_monomenu}{m\_monomenu}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::m\+\_\+monomenu\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 65 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_aa7987ed607a4ba953f6e7187fd2ae492}\label{classAFquick_1_1GuiApplication_aa7987ed607a4ba953f6e7187fd2ae492}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!m\_pluginList@{m\_pluginList}}
+\index{m\_pluginList@{m\_pluginList}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{m\_pluginList}{m\_pluginList}}
+{\footnotesize\ttfamily Q\+List$<$\mbox{\hyperlink{namespaceAFquick_abb6b1ddfbdcebdd2462c4c4c03b6bd4b}{Gui\+Plugin\+Ptr}}$>$ A\+Fquick\+::\+Gui\+Application\+::m\+\_\+plugin\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 69 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_ab50784427d4786183f52608d5b406c06}\label{classAFquick_1_1GuiApplication_ab50784427d4786183f52608d5b406c06}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!m\_portrait@{m\_portrait}}
+\index{m\_portrait@{m\_portrait}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{m\_portrait}{m\_portrait}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::m\+\_\+portrait\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 63 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a4487b06af63055d11d90e402b3c8fb7c}\label{classAFquick_1_1GuiApplication_a4487b06af63055d11d90e402b3c8fb7c}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!m\_useAFaccount@{m\_useAFaccount}}
+\index{m\_useAFaccount@{m\_useAFaccount}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{m\_useAFaccount}{m\_useAFaccount}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::m\+\_\+use\+A\+Faccount\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 62 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_afb429be9b32500c4e11d3edd40d6d1e4}\label{classAFquick_1_1GuiApplication_afb429be9b32500c4e11d3edd40d6d1e4}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!m\_view@{m\_view}}
+\index{m\_view@{m\_view}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{m\_view}{m\_view}}
+{\footnotesize\ttfamily Q\+Quick\+View$\ast$ A\+Fquick\+::\+Gui\+Application\+::m\+\_\+view\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 68 of file gui\+Application.\+h.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a08cadd6220f6b185e9768f84775b738a}\label{classAFquick_1_1GuiApplication_a08cadd6220f6b185e9768f84775b738a}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!account@{account}}
+\index{account@{account}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{account}{account}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::account\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 16 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a433c8891f56ff94f73e625b1424c93b7}\label{classAFquick_1_1GuiApplication_a433c8891f56ff94f73e625b1424c93b7}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!menuModel@{menuModel}}
+\index{menuModel@{menuModel}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{menuModel}{menuModel}}
+{\footnotesize\ttfamily Q\+Abstract\+List\+Model $\ast$ A\+Fquick\+::\+Gui\+Application\+::menu\+Model\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 20 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_adaf4367cc7f553b67f274cd350a77ba2}\label{classAFquick_1_1GuiApplication_adaf4367cc7f553b67f274cd350a77ba2}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!monomenu@{monomenu}}
+\index{monomenu@{monomenu}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{monomenu}{monomenu}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::monomenu\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 17 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_a8c0c3bee5796cf04d15f92f49841046d}\label{classAFquick_1_1GuiApplication_a8c0c3bee5796cf04d15f92f49841046d}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!monoobject@{monoobject}}
+\index{monoobject@{monoobject}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{monoobject}{monoobject}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::monoobject\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 18 of file gui\+Application.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiApplication_af3d8d783d769c2d81790c5b5551e266c}\label{classAFquick_1_1GuiApplication_af3d8d783d769c2d81790c5b5551e266c}} 
+\index{AFquick::GuiApplication@{AFquick::GuiApplication}!portrait@{portrait}}
+\index{portrait@{portrait}!AFquick::GuiApplication@{AFquick::GuiApplication}}
+\doxysubsubsection{\texorpdfstring{portrait}{portrait}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Gui\+Application\+::portrait\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 19 of file gui\+Application.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+quick\+A\+F/include/lib\+\_\+quick\+A\+F/\mbox{\hyperlink{guiApplication_8h}{gui\+Application.\+h}}\item 
+lib\+\_\+quick\+A\+F/src/\mbox{\hyperlink{guiApplication_8cpp}{gui\+Application.\+cpp}}\end{DoxyCompactItemize}

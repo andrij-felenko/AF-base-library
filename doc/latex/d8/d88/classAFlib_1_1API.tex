@@ -1,0 +1,302 @@
+\hypertarget{classAFlib_1_1API}{}\doxysection{A\+Flib\+::A\+PI Class Reference}
+\label{classAFlib_1_1API}\index{AFlib::API@{AFlib::API}}
+
+
+{\ttfamily \#include $<$af\+A\+P\+I.\+h$>$}
+
+Inheritance diagram for A\+Flib\+::A\+PI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d8/d88/classAFlib_1_1API}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_a3bc04e9af048ce1e3db904b63af44f7f}{online\+Changed}} (bool \mbox{\hyperlink{classAFlib_1_1API_a70d196657c4337eda8d942844aca2e26}{online}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFlib_1_1API_ae25d62a3fedf613698cbc96ed2a62183}{A\+PI}} (Q\+Object $\ast$parent=nullptr)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_a4d5d2515a38a441bcee9b62fa0ae808a}{login}} (Q\+String login, Q\+String password)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_a6261586521f4db0ad20009bacd15b68f}{registrate}} (\mbox{\hyperlink{namespaceAFaccount_aacf55e9c1cbb3c73110fa729e139e269}{A\+Faccount\+::\+Account\+Ptr}} account)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_adf4726313ebe2f2a45f0d28383a26662}{remind\+My\+Login}} (Q\+String \mbox{\hyperlink{classAFlib_1_1API_a4d5d2515a38a441bcee9b62fa0ae808a}{login}})
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_ae83af584cde75da1ffed3bd8a6f7a277}{remind\+My\+Password}} (Q\+String \mbox{\hyperlink{classAFlib_1_1API_a4d5d2515a38a441bcee9b62fa0ae808a}{login}})
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_a8ca5952d2096f980fdeb48bcfe8fad92}{add\+Account}} (Q\+String \mbox{\hyperlink{classAFlib_1_1API_a4d5d2515a38a441bcee9b62fa0ae808a}{login}})
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_a0e171f492c4551e85f8d42af3ae77de2}{add\+Account}} (\mbox{\hyperlink{namespaceAFlib_aee516173eb977623a7b68ffb3f836bce}{Id\+Account\+\_\+bit}} id)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_aaa3cb2d61e9cc39e789e33c7c7323974}{update\+Objects}} ()
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1API_a1105fb73a14d6238b0be699be2ae42c5}{online}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{namespaceAFlib_a89efa3b7d2cecc96462ece511deb4c14}{Api\+Ptr}} \mbox{\hyperlink{classAFlib_1_1API_a8afe24faefcbb24d4a3b709e55e56bbb}{instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+String \mbox{\hyperlink{classAFlib_1_1API_a42f45c0f8bd94f6689e2b1dc51178f34}{default\+Link}} = Q\+String(\char`\"{}127.\+0.\+0.\+1\+:55023\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1API_a70d196657c4337eda8d942844aca2e26}{online}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_a71c4af1e8750852516207d76e967633e}{read\+Server\+Answer}} (Q\+Network\+Reply $\ast$reply)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_a5f332e6a89b8bfa829dae98e1dac5714}{post}} (\mbox{\hyperlink{namespaceAFlib_aee9fc95dbaa93c906f1342f1e74dc362}{Request\+Type}} type, Q\+Byte\+Array data, bool is\+Data=false)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_ae3fcacc2ea6d5270fce98d130cbfdd82}{get}} (\mbox{\hyperlink{namespaceAFlib_aee9fc95dbaa93c906f1342f1e74dc362}{Request\+Type}} type, bool is\+Data=false)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_a9b3b156c3547fab2b55d9d0e6634d8ed}{send\+Ping}} ()
+\item 
+void \mbox{\hyperlink{classAFlib_1_1API_a5f11585cbe9ef64ddef5169282ef993d}{set\+Online\+Status}} (bool is\+\_\+online)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Map$<$ \mbox{\hyperlink{namespaceAFlib_aee9fc95dbaa93c906f1342f1e74dc362}{Request\+Type}}, \mbox{\hyperlink{namespaceAFlib_ab7f1bd32505135db9b46286de51a4e4a}{Request\+Status}} $>$ \mbox{\hyperlink{classAFlib_1_1API_a071c29a6d0a59e8b4def6ac3d9e3f9dd}{m\+\_\+request\+Status}}
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1API_adbdc46aa43e41f2b7378e6d84252dd60}{m\+\_\+online}}
+\item 
+Q\+Timer $\ast$ \mbox{\hyperlink{classAFlib_1_1API_aaa0698905fee779a4afe80baf5c5aeac}{m\+\_\+ping\+Timer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 45 of file af\+A\+P\+I.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFlib_1_1API_ae25d62a3fedf613698cbc96ed2a62183}\label{classAFlib_1_1API_ae25d62a3fedf613698cbc96ed2a62183}} 
+\index{AFlib::API@{AFlib::API}!API@{API}}
+\index{API@{API}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{API()}{API()}}
+{\footnotesize\ttfamily A\+Flib\+::\+A\+P\+I\+::\+A\+PI (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 11 of file af\+A\+P\+I.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFlib_1_1API_a0e171f492c4551e85f8d42af3ae77de2}\label{classAFlib_1_1API_a0e171f492c4551e85f8d42af3ae77de2}} 
+\index{AFlib::API@{AFlib::API}!addAccount@{addAccount}}
+\index{addAccount@{addAccount}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{addAccount()}{addAccount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::add\+Account (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_aee516173eb977623a7b68ffb3f836bce}{Id\+Account\+\_\+bit}}}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 177 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_a8ca5952d2096f980fdeb48bcfe8fad92}\label{classAFlib_1_1API_a8ca5952d2096f980fdeb48bcfe8fad92}} 
+\index{AFlib::API@{AFlib::API}!addAccount@{addAccount}}
+\index{addAccount@{addAccount}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{addAccount()}{addAccount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::add\+Account (\begin{DoxyParamCaption}\item[{Q\+String}]{login }\end{DoxyParamCaption})}
+
+
+
+Definition at line 165 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_ae3fcacc2ea6d5270fce98d130cbfdd82}\label{classAFlib_1_1API_ae3fcacc2ea6d5270fce98d130cbfdd82}} 
+\index{AFlib::API@{AFlib::API}!get@{get}}
+\index{get@{get}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_aee9fc95dbaa93c906f1342f1e74dc362}{Request\+Type}}}]{type,  }\item[{bool}]{is\+Data = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 104 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_a8afe24faefcbb24d4a3b709e55e56bbb}\label{classAFlib_1_1API_a8afe24faefcbb24d4a3b709e55e56bbb}} 
+\index{AFlib::API@{AFlib::API}!instance@{instance}}
+\index{instance@{instance}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_a89efa3b7d2cecc96462ece511deb4c14}{A\+Flib\+::\+Api\+Ptr}} A\+Flib\+::\+A\+P\+I\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 128 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_a4d5d2515a38a441bcee9b62fa0ae808a}\label{classAFlib_1_1API_a4d5d2515a38a441bcee9b62fa0ae808a}} 
+\index{AFlib::API@{AFlib::API}!login@{login}}
+\index{login@{login}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::login (\begin{DoxyParamCaption}\item[{Q\+String}]{login,  }\item[{Q\+String}]{password }\end{DoxyParamCaption})}
+
+
+
+Definition at line 133 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_a1105fb73a14d6238b0be699be2ae42c5}\label{classAFlib_1_1API_a1105fb73a14d6238b0be699be2ae42c5}} 
+\index{AFlib::API@{AFlib::API}!online@{online}}
+\index{online@{online}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{online()}{online()}}
+{\footnotesize\ttfamily bool A\+Flib\+::\+A\+P\+I\+::online (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classAFlib_1_1API_a3bc04e9af048ce1e3db904b63af44f7f}\label{classAFlib_1_1API_a3bc04e9af048ce1e3db904b63af44f7f}} 
+\index{AFlib::API@{AFlib::API}!onlineChanged@{onlineChanged}}
+\index{onlineChanged@{onlineChanged}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{onlineChanged}{onlineChanged}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::online\+Changed (\begin{DoxyParamCaption}\item[{bool}]{online }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFlib_1_1API_a5f332e6a89b8bfa829dae98e1dac5714}\label{classAFlib_1_1API_a5f332e6a89b8bfa829dae98e1dac5714}} 
+\index{AFlib::API@{AFlib::API}!post@{post}}
+\index{post@{post}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{post()}{post()}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_aee9fc95dbaa93c906f1342f1e74dc362}{Request\+Type}}}]{type,  }\item[{Q\+Byte\+Array}]{data,  }\item[{bool}]{is\+Data = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 93 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_a71c4af1e8750852516207d76e967633e}\label{classAFlib_1_1API_a71c4af1e8750852516207d76e967633e}} 
+\index{AFlib::API@{AFlib::API}!readServerAnswer@{readServerAnswer}}
+\index{readServerAnswer@{readServerAnswer}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{readServerAnswer()}{readServerAnswer()}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::read\+Server\+Answer (\begin{DoxyParamCaption}\item[{Q\+Network\+Reply $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_a6261586521f4db0ad20009bacd15b68f}\label{classAFlib_1_1API_a6261586521f4db0ad20009bacd15b68f}} 
+\index{AFlib::API@{AFlib::API}!registrate@{registrate}}
+\index{registrate@{registrate}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{registrate()}{registrate()}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::registrate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFaccount_aacf55e9c1cbb3c73110fa729e139e269}{A\+Faccount\+::\+Account\+Ptr}}}]{account }\end{DoxyParamCaption})}
+
+
+
+Definition at line 141 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_adf4726313ebe2f2a45f0d28383a26662}\label{classAFlib_1_1API_adf4726313ebe2f2a45f0d28383a26662}} 
+\index{AFlib::API@{AFlib::API}!remindMyLogin@{remindMyLogin}}
+\index{remindMyLogin@{remindMyLogin}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{remindMyLogin()}{remindMyLogin()}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::remind\+My\+Login (\begin{DoxyParamCaption}\item[{Q\+String}]{login }\end{DoxyParamCaption})}
+
+
+
+Definition at line 149 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_ae83af584cde75da1ffed3bd8a6f7a277}\label{classAFlib_1_1API_ae83af584cde75da1ffed3bd8a6f7a277}} 
+\index{AFlib::API@{AFlib::API}!remindMyPassword@{remindMyPassword}}
+\index{remindMyPassword@{remindMyPassword}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{remindMyPassword()}{remindMyPassword()}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::remind\+My\+Password (\begin{DoxyParamCaption}\item[{Q\+String}]{login }\end{DoxyParamCaption})}
+
+
+
+Definition at line 157 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_a9b3b156c3547fab2b55d9d0e6634d8ed}\label{classAFlib_1_1API_a9b3b156c3547fab2b55d9d0e6634d8ed}} 
+\index{AFlib::API@{AFlib::API}!sendPing@{sendPing}}
+\index{sendPing@{sendPing}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{sendPing()}{sendPing()}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::send\+Ping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 112 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_a5f11585cbe9ef64ddef5169282ef993d}\label{classAFlib_1_1API_a5f11585cbe9ef64ddef5169282ef993d}} 
+\index{AFlib::API@{AFlib::API}!setOnlineStatus@{setOnlineStatus}}
+\index{setOnlineStatus@{setOnlineStatus}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{setOnlineStatus()}{setOnlineStatus()}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::set\+Online\+Status (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+online }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 118 of file af\+A\+P\+I.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1API_aaa3cb2d61e9cc39e789e33c7c7323974}\label{classAFlib_1_1API_aaa3cb2d61e9cc39e789e33c7c7323974}} 
+\index{AFlib::API@{AFlib::API}!updateObjects@{updateObjects}}
+\index{updateObjects@{updateObjects}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{updateObjects()}{updateObjects()}}
+{\footnotesize\ttfamily void A\+Flib\+::\+A\+P\+I\+::update\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 185 of file af\+A\+P\+I.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAFlib_1_1API_a42f45c0f8bd94f6689e2b1dc51178f34}\label{classAFlib_1_1API_a42f45c0f8bd94f6689e2b1dc51178f34}} 
+\index{AFlib::API@{AFlib::API}!defaultLink@{defaultLink}}
+\index{defaultLink@{defaultLink}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{defaultLink}{defaultLink}}
+{\footnotesize\ttfamily Q\+String A\+Flib\+::\+A\+P\+I\+::default\+Link = Q\+String(\char`\"{}127.\+0.\+0.\+1\+:55023\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 52 of file af\+A\+P\+I.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1API_adbdc46aa43e41f2b7378e6d84252dd60}\label{classAFlib_1_1API_adbdc46aa43e41f2b7378e6d84252dd60}} 
+\index{AFlib::API@{AFlib::API}!m\_online@{m\_online}}
+\index{m\_online@{m\_online}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{m\_online}{m\_online}}
+{\footnotesize\ttfamily bool A\+Flib\+::\+A\+P\+I\+::m\+\_\+online\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 76 of file af\+A\+P\+I.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1API_aaa0698905fee779a4afe80baf5c5aeac}\label{classAFlib_1_1API_aaa0698905fee779a4afe80baf5c5aeac}} 
+\index{AFlib::API@{AFlib::API}!m\_pingTimer@{m\_pingTimer}}
+\index{m\_pingTimer@{m\_pingTimer}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{m\_pingTimer}{m\_pingTimer}}
+{\footnotesize\ttfamily Q\+Timer$\ast$ A\+Flib\+::\+A\+P\+I\+::m\+\_\+ping\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 77 of file af\+A\+P\+I.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1API_a071c29a6d0a59e8b4def6ac3d9e3f9dd}\label{classAFlib_1_1API_a071c29a6d0a59e8b4def6ac3d9e3f9dd}} 
+\index{AFlib::API@{AFlib::API}!m\_requestStatus@{m\_requestStatus}}
+\index{m\_requestStatus@{m\_requestStatus}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{m\_requestStatus}{m\_requestStatus}}
+{\footnotesize\ttfamily Q\+Map$<$\mbox{\hyperlink{namespaceAFlib_aee9fc95dbaa93c906f1342f1e74dc362}{Request\+Type}}, \mbox{\hyperlink{namespaceAFlib_ab7f1bd32505135db9b46286de51a4e4a}{Request\+Status}}$>$ A\+Flib\+::\+A\+P\+I\+::m\+\_\+request\+Status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 73 of file af\+A\+P\+I.\+h.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classAFlib_1_1API_a70d196657c4337eda8d942844aca2e26}\label{classAFlib_1_1API_a70d196657c4337eda8d942844aca2e26}} 
+\index{AFlib::API@{AFlib::API}!online@{online}}
+\index{online@{online}!AFlib::API@{AFlib::API}}
+\doxysubsubsection{\texorpdfstring{online}{online}}
+{\footnotesize\ttfamily bool A\+Flib\+::\+A\+P\+I\+::online\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 48 of file af\+A\+P\+I.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/\mbox{\hyperlink{afAPI_8h}{af\+A\+P\+I.\+h}}\item 
+lib\+\_\+base\+A\+F/base/\mbox{\hyperlink{afAPI_8cpp}{af\+A\+P\+I.\+cpp}}\end{DoxyCompactItemize}

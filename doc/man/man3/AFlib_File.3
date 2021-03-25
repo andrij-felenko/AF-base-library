@@ -1,0 +1,217 @@
+.TH "AFlib::File" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::File
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afFile\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFile\fP (QString \fBdPath\fP, \fBAFlib::FileType\fP type=\fBAFlib::FileType::Data\fP)"
+.br
+.ti -1c
+.RI "\fBFile\fP (QStringList list, \fBAFlib::FileType\fP type=\fBAFlib::FileType::Data\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~File\fP ()"
+.br
+.ti -1c
+.RI "bool \fBopenRead\fP ()"
+.br
+.ti -1c
+.RI "bool \fBopenWrite\fP ()"
+.br
+.ti -1c
+.RI "bool \fBexists\fP ()"
+.br
+.ti -1c
+.RI "QByteArray \fBreadAll\fP ()"
+.br
+.ti -1c
+.RI "bool \fBwriteAll\fP (const QByteArray &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBstream\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisOpen\fP () const"
+.br
+.ti -1c
+.RI "QStringList \fBdPath\fP () const"
+.br
+.ti -1c
+.RI "\fBFileType\fP \fBdType\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBrename\fP (QDir dir, QString file, QString newName)"
+.br
+.ti -1c
+.RI "static QStringList \fBgetFullTypeList\fP ()"
+.br
+.ti -1c
+.RI "static QString \fBgetFileTypeName\fP (\fBFileType\fP type)"
+.br
+.ti -1c
+.RI "static QDir \fBgetFullDir\fP (const QStringList &list, bool isFileNameIsLast=true)"
+.br
+.ti -1c
+.RI "static QString \fBgetFullPath\fP (const QStringList &list, \fBAFlib::FileType\fP type=\fBAFlib::FileType::Data\fP)"
+.br
+.ti -1c
+.RI "static QString \fBgetFullPath\fP (const QString &\fBdPath\fP)"
+.br
+.ti -1c
+.RI "static QString \fBgetDPath\fP (const QStringList &list)"
+.br
+.ti -1c
+.RI "static QString \fBgetDPath\fP (const QString &fullPath)"
+.br
+.ti -1c
+.RI "static QString \fBgetDPath\fP (const QDir &fullPath)"
+.br
+.ti -1c
+.RI "static QStringList \fBgetDPathList\fP (const QString &\fBdPath\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QDataStream \fBm_stream\fP"
+.br
+.ti -1c
+.RI "QStringList \fBp_dPath\fP"
+.br
+.ti -1c
+.RI "\fBAFlib::FileType\fP \fBp_fileType\fP"
+.br
+.ti -1c
+.RI "QFile * \fBm_file\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file afFile\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::File::File (QString dPath, \fBAFlib::FileType\fP type = \fC\fBAFlib::FileType::Data\fP\fP)"
+
+.PP
+Definition at line 8 of file afFile\&.cpp\&.
+.SS "AFlib::File::File (QStringList list, \fBAFlib::FileType\fP type = \fC\fBAFlib::FileType::Data\fP\fP)"
+
+.PP
+Definition at line 16 of file afFile\&.cpp\&.
+.SS "AFlib::File::~File ()\fC [virtual]\fP"
+
+.PP
+Definition at line 24 of file afFile\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QStringList AFlib::File::dPath () const"
+
+.PP
+Definition at line 90 of file afFile\&.cpp\&.
+.SS "\fBAFlib::FileType\fP AFlib::File::dType () const"
+
+.PP
+Definition at line 95 of file afFile\&.cpp\&.
+.SS "bool AFlib::File::exists ()"
+
+.PP
+Definition at line 64 of file afFile\&.cpp\&.
+.SS "QString AFlib::File::getDPath (const QDir & fullPath)\fC [static]\fP"
+
+.PP
+Definition at line 179 of file afFile\&.cpp\&.
+.SS "QString AFlib::File::getDPath (const QString & fullPath)\fC [static]\fP"
+
+.PP
+Definition at line 160 of file afFile\&.cpp\&.
+.SS "QString AFlib::File::getDPath (const QStringList & list)\fC [static]\fP"
+
+.PP
+Definition at line 155 of file afFile\&.cpp\&.
+.SS "QStringList AFlib::File::getDPathList (const QString & dPath)\fC [static]\fP"
+
+.PP
+Definition at line 172 of file afFile\&.cpp\&.
+.SS "QString AFlib::File::getFileTypeName (\fBFileType\fP type)\fC [static]\fP"
+
+.PP
+Definition at line 116 of file afFile\&.cpp\&.
+.SS "QDir AFlib::File::getFullDir (const QStringList & list, bool isFileNameIsLast = \fCtrue\fP)\fC [static]\fP"
+
+.PP
+Definition at line 128 of file afFile\&.cpp\&.
+.SS "QString AFlib::File::getFullPath (const QString & dPath)\fC [static]\fP"
+
+.PP
+Definition at line 150 of file afFile\&.cpp\&.
+.SS "QString AFlib::File::getFullPath (const QStringList & list, \fBAFlib::FileType\fP type = \fC\fBAFlib::FileType::Data\fP\fP)\fC [static]\fP"
+
+.PP
+Definition at line 144 of file afFile\&.cpp\&.
+.SS "QStringList AFlib::File::getFullTypeList ()\fC [static]\fP"
+
+.PP
+Definition at line 105 of file afFile\&.cpp\&.
+.SS "bool AFlib::File::isOpen () const"
+
+.PP
+Definition at line 85 of file afFile\&.cpp\&.
+.SS "bool AFlib::File::openRead ()"
+
+.PP
+Definition at line 30 of file afFile\&.cpp\&.
+.SS "bool AFlib::File::openWrite ()"
+
+.PP
+Definition at line 50 of file afFile\&.cpp\&.
+.SS "QByteArray AFlib::File::readAll ()"
+
+.PP
+Definition at line 69 of file afFile\&.cpp\&.
+.SS "bool AFlib::File::rename (QDir dir, QString file, QString newName)\fC [static]\fP"
+
+.PP
+Definition at line 100 of file afFile\&.cpp\&.
+.SS "QDataStream & AFlib::File::stream ()"
+
+.PP
+Definition at line 80 of file afFile\&.cpp\&.
+.SS "bool AFlib::File::writeAll (const QByteArray & data)"
+
+.PP
+Definition at line 74 of file afFile\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QFile* AFlib::File::m_file\fC [private]\fP"
+
+.PP
+Definition at line 52 of file afFile\&.h\&.
+.SS "QDataStream AFlib::File::m_stream\fC [private]\fP"
+
+.PP
+Definition at line 49 of file afFile\&.h\&.
+.SS "QStringList AFlib::File::p_dPath\fC [private]\fP"
+
+.PP
+Definition at line 50 of file afFile\&.h\&.
+.SS "\fBAFlib::FileType\fP AFlib::File::p_fileType\fC [private]\fP"
+
+.PP
+Definition at line 51 of file afFile\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

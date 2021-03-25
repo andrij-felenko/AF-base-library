@@ -1,0 +1,402 @@
+\hypertarget{structAFlib_1_1id_1_1TbitStruct}{}\doxysection{A\+Flib\+::id\+::Tbit\+Struct$<$ bitsize $>$ Struct Template Reference}
+\label{structAFlib_1_1id_1_1TbitStruct}\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+
+
+{\ttfamily \#include $<$af\+Id\+Bit.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a19ef67efce2f7ee4cb3916556b6cf72f}{bit\+Size}} () const
+\item 
+{\footnotesize template$<$uint bitsize\+\_\+$>$ }\\std\+::bitset$<$ bitsize\+\_\+ $>$ \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a98fb100818ac7dc72df9bc0dd0deff01}{get\+Piece}} (uint index, uint size) const
+\item 
+quint8 \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a9c5a1e555c3abaf12b11d93d19900c7c}{get\+Char\+Piece}} (uint index) const
+\item 
+std\+::bitset$<$ bitsize $>$ \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a7978d7d2e8e50a5b5a9cd3adc2dd4a25}{get\+Bit\+Set}} (uint index, uint size) const
+\item 
+{\footnotesize template$<$typename type\+Number $>$ }\\type\+Number \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_ab82cafcdab6c41666a3cf74eeaec30ef}{to\+Type\+Number}} (uint index, uint size) const
+\item 
+{\footnotesize template$<$uint fpart, uint spart$>$ }\\std\+::bitset$<$ fpart+spart $>$ \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a2707e46e5eb73937a9da711758860d15}{unite}} (std\+::bitset$<$ fpart $>$ fp, std\+::bitset$<$ spart $>$ sp) const
+\item 
+quint8 \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a300e4596d90bb22f165948a539f25189}{to\+U\+Int8}} (uint index=0, uint size=8) const
+\item 
+quint16 \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a5ae08ad8ad3e582ea481ac6d78ea5aae}{to\+U\+Int16}} (uint index=0, uint size=16) const
+\item 
+quint32 \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a7aae47f049b576d2aa9a0d6ad6eb2e51}{to\+U\+Int32}} (uint index=0, uint size=32) const
+\item 
+quint64 \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a3cf5ae8c1b4e6389112bf8c605d5b4f4}{to\+U\+Int64}} (uint index=0, uint size=64) const
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a1e9594188dda8eb679e668023b47b529}{operator std\+::string}} () const
+\item 
+std\+::string \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a2513aee7ef1e042ddf602c495768a36b}{to\+String}} (char separator=8, char ch=\textquotesingle{}\`{}\textquotesingle{}) const
+\item 
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_ac787cb20d7ea8bd0fdf79eafd5e6e4b4}{fill}} (const std\+::string str)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a8d61544016ee53d62da28830ee1c3748}{set\+Bool\+Range}} (quint8 i\+From, quint8 i\+To, std\+::vector$<$ bool $>$ values)
+\item 
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_aa93e7d683ee90d4cace6f583e58f60f9}{set\+Char\+Piece}} (uint index, quint8 ch)
+\item 
+{\footnotesize template$<$typename type\+Number , uint size\+\_\+$>$ }\\void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a11f3d3e75b9678107b4deb2b827729d8}{set\+From\+Value}} (type\+Number value, uint index, uint size)
+\item 
+bool \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a2c63e8998564795d888418f8281b52d0}{set\+ReservedT}} (quint8 max\+Size, quint8 i\+From, quint8 i\+To, std\+::vector$<$ bool $>$ values)
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$ bitsize $>$ \& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a66ade6b5d7965dcedee8014e7994fcf0}{operator=}} (const quint8 value)
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$ bitsize $>$ \& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a5d8b077eb51d2cd736a0d16ff017b7ec}{operator=}} (const quint16 value)
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$ bitsize $>$ \& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a899f3769b60846d5fb649980ab57d323}{operator=}} (const quint32 value)
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$ bitsize $>$ \& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a44825a0d16dac8abcfc59d8fc724f218}{operator=}} (const quint64 value)
+\item 
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a85cdde3945c9bf63e6eb197b139b1fc6}{set\+U\+Int8}} (quint8 value, uint index=0, uint size=bitsize)
+\item 
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_ab27cc2d58e8c7937bab93f39f32f7043}{set\+U\+Int16}} (quint16 value, uint index=0, uint size=bitsize)
+\item 
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_ac5f1e712211a6fab5297a755a02cd404}{set\+U\+Int32}} (quint32 value, uint index=0, uint size=bitsize)
+\item 
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_ae5128e8242f173bb8a56e0283be114a1}{set\+U\+Int64}} (quint64 value, uint index=0, uint size=bitsize)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::bitset$<$ bitsize $>$ \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_ad7281f38249c56d91e15485de759f00f}{m\+\_\+bitset}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Data\+Stream \& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a819b9801289b8204332c87d7351b66c2}{operator}} (Q\+Data\+Stream \&s, const \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$ bitsize $>$ \&data)
+\item 
+Q\+Data\+Stream \& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_afccb06335da3026c577605c1b1f5d7b5}{operator$>$$>$}} (Q\+Data\+Stream \&s, \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$ bitsize $>$ \&data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$uint bitsize$>$\newline
+struct A\+Flib\+::id\+::\+Tbit\+Struct$<$ bitsize $>$}
+
+
+
+Definition at line 14 of file af\+Id\+Bit.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a19ef67efce2f7ee4cb3916556b6cf72f}\label{structAFlib_1_1id_1_1TbitStruct_a19ef67efce2f7ee4cb3916556b6cf72f}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!bitSize@{bitSize}}
+\index{bitSize@{bitSize}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{bitSize()}{bitSize()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+uint \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::bit\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 25 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_ac787cb20d7ea8bd0fdf79eafd5e6e4b4}\label{structAFlib_1_1id_1_1TbitStruct_ac787cb20d7ea8bd0fdf79eafd5e6e4b4}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!fill@{fill}}
+\index{fill@{fill}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{fill()}{fill()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::fill (\begin{DoxyParamCaption}\item[{const std\+::string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 94 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a7978d7d2e8e50a5b5a9cd3adc2dd4a25}\label{structAFlib_1_1id_1_1TbitStruct_a7978d7d2e8e50a5b5a9cd3adc2dd4a25}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!getBitSet@{getBitSet}}
+\index{getBitSet@{getBitSet}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{getBitSet()}{getBitSet()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+std\+::bitset$<$bitsize$>$ \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::get\+Bit\+Set (\begin{DoxyParamCaption}\item[{uint}]{index,  }\item[{uint}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 56 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a9c5a1e555c3abaf12b11d93d19900c7c}\label{structAFlib_1_1id_1_1TbitStruct_a9c5a1e555c3abaf12b11d93d19900c7c}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!getCharPiece@{getCharPiece}}
+\index{getCharPiece@{getCharPiece}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{getCharPiece()}{getCharPiece()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+quint8 \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::get\+Char\+Piece (\begin{DoxyParamCaption}\item[{uint}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 43 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a98fb100818ac7dc72df9bc0dd0deff01}\label{structAFlib_1_1id_1_1TbitStruct_a98fb100818ac7dc72df9bc0dd0deff01}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!getPiece@{getPiece}}
+\index{getPiece@{getPiece}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{getPiece()}{getPiece()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+template$<$uint bitsize\+\_\+$>$ \\
+std\+::bitset$<$bitsize\+\_\+$>$ \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::get\+Piece (\begin{DoxyParamCaption}\item[{uint}]{index,  }\item[{uint}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 28 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a1e9594188dda8eb679e668023b47b529}\label{structAFlib_1_1id_1_1TbitStruct_a1e9594188dda8eb679e668023b47b529}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a819b9801289b8204332c87d7351b66c2}{operator}} std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 80 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a5d8b077eb51d2cd736a0d16ff017b7ec}\label{structAFlib_1_1id_1_1TbitStruct_a5d8b077eb51d2cd736a0d16ff017b7ec}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$bitsize$>$\& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a819b9801289b8204332c87d7351b66c2}{operator}}= (\begin{DoxyParamCaption}\item[{const quint16}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 155 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a899f3769b60846d5fb649980ab57d323}\label{structAFlib_1_1id_1_1TbitStruct_a899f3769b60846d5fb649980ab57d323}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$bitsize$>$\& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a819b9801289b8204332c87d7351b66c2}{operator}}= (\begin{DoxyParamCaption}\item[{const quint32}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 156 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a44825a0d16dac8abcfc59d8fc724f218}\label{structAFlib_1_1id_1_1TbitStruct_a44825a0d16dac8abcfc59d8fc724f218}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$bitsize$>$\& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a819b9801289b8204332c87d7351b66c2}{operator}}= (\begin{DoxyParamCaption}\item[{const quint64}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 157 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a66ade6b5d7965dcedee8014e7994fcf0}\label{structAFlib_1_1id_1_1TbitStruct_a66ade6b5d7965dcedee8014e7994fcf0}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$bitsize$>$\& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a819b9801289b8204332c87d7351b66c2}{operator}}= (\begin{DoxyParamCaption}\item[{const quint8}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 154 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a8d61544016ee53d62da28830ee1c3748}\label{structAFlib_1_1id_1_1TbitStruct_a8d61544016ee53d62da28830ee1c3748}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!setBoolRange@{setBoolRange}}
+\index{setBoolRange@{setBoolRange}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{setBoolRange()}{setBoolRange()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+bool \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::set\+Bool\+Range (\begin{DoxyParamCaption}\item[{quint8}]{i\+From,  }\item[{quint8}]{i\+To,  }\item[{std\+::vector$<$ bool $>$}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 106 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_aa93e7d683ee90d4cace6f583e58f60f9}\label{structAFlib_1_1id_1_1TbitStruct_aa93e7d683ee90d4cace6f583e58f60f9}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!setCharPiece@{setCharPiece}}
+\index{setCharPiece@{setCharPiece}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{setCharPiece()}{setCharPiece()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::set\+Char\+Piece (\begin{DoxyParamCaption}\item[{uint}]{index,  }\item[{quint8}]{ch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 119 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a11f3d3e75b9678107b4deb2b827729d8}\label{structAFlib_1_1id_1_1TbitStruct_a11f3d3e75b9678107b4deb2b827729d8}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!setFromValue@{setFromValue}}
+\index{setFromValue@{setFromValue}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{setFromValue()}{setFromValue()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+template$<$typename type\+Number , uint size\+\_\+$>$ \\
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::set\+From\+Value (\begin{DoxyParamCaption}\item[{type\+Number}]{value,  }\item[{uint}]{index,  }\item[{uint}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 130 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a2c63e8998564795d888418f8281b52d0}\label{structAFlib_1_1id_1_1TbitStruct_a2c63e8998564795d888418f8281b52d0}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!setReservedT@{setReservedT}}
+\index{setReservedT@{setReservedT}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{setReservedT()}{setReservedT()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+bool \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::set\+ReservedT (\begin{DoxyParamCaption}\item[{quint8}]{max\+Size,  }\item[{quint8}]{i\+From,  }\item[{quint8}]{i\+To,  }\item[{std\+::vector$<$ bool $>$}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 140 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_ab27cc2d58e8c7937bab93f39f32f7043}\label{structAFlib_1_1id_1_1TbitStruct_ab27cc2d58e8c7937bab93f39f32f7043}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!setUInt16@{setUInt16}}
+\index{setUInt16@{setUInt16}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{setUInt16()}{setUInt16()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::set\+U\+Int16 (\begin{DoxyParamCaption}\item[{quint16}]{value,  }\item[{uint}]{index = {\ttfamily 0},  }\item[{uint}]{size = {\ttfamily bitsize} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 160 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_ac5f1e712211a6fab5297a755a02cd404}\label{structAFlib_1_1id_1_1TbitStruct_ac5f1e712211a6fab5297a755a02cd404}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!setUInt32@{setUInt32}}
+\index{setUInt32@{setUInt32}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{setUInt32()}{setUInt32()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::set\+U\+Int32 (\begin{DoxyParamCaption}\item[{quint32}]{value,  }\item[{uint}]{index = {\ttfamily 0},  }\item[{uint}]{size = {\ttfamily bitsize} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 161 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_ae5128e8242f173bb8a56e0283be114a1}\label{structAFlib_1_1id_1_1TbitStruct_ae5128e8242f173bb8a56e0283be114a1}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!setUInt64@{setUInt64}}
+\index{setUInt64@{setUInt64}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{setUInt64()}{setUInt64()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::set\+U\+Int64 (\begin{DoxyParamCaption}\item[{quint64}]{value,  }\item[{uint}]{index = {\ttfamily 0},  }\item[{uint}]{size = {\ttfamily bitsize} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 162 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a85cdde3945c9bf63e6eb197b139b1fc6}\label{structAFlib_1_1id_1_1TbitStruct_a85cdde3945c9bf63e6eb197b139b1fc6}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!setUInt8@{setUInt8}}
+\index{setUInt8@{setUInt8}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{setUInt8()}{setUInt8()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+void \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::set\+U\+Int8 (\begin{DoxyParamCaption}\item[{quint8}]{value,  }\item[{uint}]{index = {\ttfamily 0},  }\item[{uint}]{size = {\ttfamily bitsize} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 159 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a2513aee7ef1e042ddf602c495768a36b}\label{structAFlib_1_1id_1_1TbitStruct_a2513aee7ef1e042ddf602c495768a36b}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!toString@{toString}}
+\index{toString@{toString}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+std\+::string \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::to\+String (\begin{DoxyParamCaption}\item[{char}]{separator = {\ttfamily 8},  }\item[{char}]{ch = {\ttfamily \textquotesingle{}\`{}\textquotesingle{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 81 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_ab82cafcdab6c41666a3cf74eeaec30ef}\label{structAFlib_1_1id_1_1TbitStruct_ab82cafcdab6c41666a3cf74eeaec30ef}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!toTypeNumber@{toTypeNumber}}
+\index{toTypeNumber@{toTypeNumber}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{toTypeNumber()}{toTypeNumber()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+template$<$typename type\+Number $>$ \\
+type\+Number \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::to\+Type\+Number (\begin{DoxyParamCaption}\item[{uint}]{index,  }\item[{uint}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 59 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a5ae08ad8ad3e582ea481ac6d78ea5aae}\label{structAFlib_1_1id_1_1TbitStruct_a5ae08ad8ad3e582ea481ac6d78ea5aae}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!toUInt16@{toUInt16}}
+\index{toUInt16@{toUInt16}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{toUInt16()}{toUInt16()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+quint16 \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::to\+U\+Int16 (\begin{DoxyParamCaption}\item[{uint}]{index = {\ttfamily 0},  }\item[{uint}]{size = {\ttfamily 16} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 76 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a7aae47f049b576d2aa9a0d6ad6eb2e51}\label{structAFlib_1_1id_1_1TbitStruct_a7aae47f049b576d2aa9a0d6ad6eb2e51}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!toUInt32@{toUInt32}}
+\index{toUInt32@{toUInt32}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{toUInt32()}{toUInt32()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+quint32 \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::to\+U\+Int32 (\begin{DoxyParamCaption}\item[{uint}]{index = {\ttfamily 0},  }\item[{uint}]{size = {\ttfamily 32} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 77 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a3cf5ae8c1b4e6389112bf8c605d5b4f4}\label{structAFlib_1_1id_1_1TbitStruct_a3cf5ae8c1b4e6389112bf8c605d5b4f4}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!toUInt64@{toUInt64}}
+\index{toUInt64@{toUInt64}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{toUInt64()}{toUInt64()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+quint64 \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::to\+U\+Int64 (\begin{DoxyParamCaption}\item[{uint}]{index = {\ttfamily 0},  }\item[{uint}]{size = {\ttfamily 64} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 78 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a300e4596d90bb22f165948a539f25189}\label{structAFlib_1_1id_1_1TbitStruct_a300e4596d90bb22f165948a539f25189}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!toUInt8@{toUInt8}}
+\index{toUInt8@{toUInt8}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{toUInt8()}{toUInt8()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+quint8 \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::to\+U\+Int8 (\begin{DoxyParamCaption}\item[{uint}]{index = {\ttfamily 0},  }\item[{uint}]{size = {\ttfamily 8} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 75 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a2707e46e5eb73937a9da711758860d15}\label{structAFlib_1_1id_1_1TbitStruct_a2707e46e5eb73937a9da711758860d15}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!unite@{unite}}
+\index{unite@{unite}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{unite()}{unite()}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+template$<$uint fpart, uint spart$>$ \\
+std\+::bitset$<$fpart + spart$>$ \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::unite (\begin{DoxyParamCaption}\item[{std\+::bitset$<$ fpart $>$}]{fp,  }\item[{std\+::bitset$<$ spart $>$}]{sp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 70 of file af\+Id\+Bit.\+h.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_a819b9801289b8204332c87d7351b66c2}\label{structAFlib_1_1id_1_1TbitStruct_a819b9801289b8204332c87d7351b66c2}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!operator@{operator}}
+\index{operator@{operator}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{operator}{operator}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+Q\+Data\+Stream\& operator (\begin{DoxyParamCaption}\item[{Q\+Data\+Stream \&}]{s,  }\item[{const \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$ bitsize $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_afccb06335da3026c577605c1b1f5d7b5}\label{structAFlib_1_1id_1_1TbitStruct_afccb06335da3026c577605c1b1f5d7b5}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+Q\+Data\+Stream\& \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct_a819b9801289b8204332c87d7351b66c2}{operator}}$>$$>$ (\begin{DoxyParamCaption}\item[{Q\+Data\+Stream \&}]{s,  }\item[{\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{Tbit\+Struct}}$<$ bitsize $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structAFlib_1_1id_1_1TbitStruct_ad7281f38249c56d91e15485de759f00f}\label{structAFlib_1_1id_1_1TbitStruct_ad7281f38249c56d91e15485de759f00f}} 
+\index{AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}!m\_bitset@{m\_bitset}}
+\index{m\_bitset@{m\_bitset}!AFlib::id::TbitStruct$<$ bitsize $>$@{AFlib::id::TbitStruct$<$ bitsize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_bitset}{m\_bitset}}
+{\footnotesize\ttfamily template$<$uint bitsize$>$ \\
+std\+::bitset$<$bitsize$>$ \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bitsize $>$\+::m\+\_\+bitset\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 102 of file af\+Id\+Bit.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/\mbox{\hyperlink{afIdBit_8h}{af\+Id\+Bit.\+h}}\end{DoxyCompactItemize}

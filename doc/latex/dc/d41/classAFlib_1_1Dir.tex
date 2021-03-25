@@ -1,0 +1,623 @@
+\hypertarget{classAFlib_1_1Dir}{}\doxysection{A\+Flib\+::Dir Class Reference}
+\label{classAFlib_1_1Dir}\index{AFlib::Dir@{AFlib::Dir}}
+
+
+{\ttfamily \#include $<$af\+Dir.\+h$>$}
+
+Inheritance diagram for A\+Flib\+::Dir\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/d41/classAFlib_1_1Dir}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Dir_a66d07ea1e68b1eeb53fce51d549b232e}{user\+Config\+Changed}} (Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a70195f039b031125d351585d86bb8a11}{user\+Config}})
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Dir_aa4ae4953c0175c300cc293462c47625f}{user\+Data\+Changed}} (Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_ac0e74f2c1dd38b34acf89d39daf0a44c}{user\+Data}})
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Dir_af79d7b5467b1fb6327de670724326c95}{user\+Dir\+Changed}} (Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_afc623be95e69ffee075254c3379c0766}{user\+Dir}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFlib_1_1Dir_abee93a3c3d851f2afac40327026875e9}{Dir}} (Q\+Object $\ast$parent=nullptr)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Dir_a4a527b91125ae2df5541997fabf67c77}{init}} (bool use\+Current\+Folder=false)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Dir_a799395b9f9a0109f2ddf7d925d0fe000}{init\+Standart\+Path}} ()
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_aa2efcd34c2c00687b9381f659e151b44}{app}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_afef3c0c5bff53494c79dded4f587c06b}{config}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a418675f1fdf4080298bc6fc2242a267d}{cookies}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_abbcd282633bdd78714151d2472dc492f}{storage}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a719bf362b2fd356583d788d3143f7e66}{libraries}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a1e61ce55ddce2794517af9d0a3d5c71d}{plugins}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a32f35714ed9ae5581c317ef714176f63}{translates}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_ab7d46f68db57aa3cb68cd1f2a880456a}{users}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a3bf6f4db881d131e89d6c5f2ad826f05}{user\+Config}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_acc41cd95904f3bd6bef16acc5e008048}{user\+Data}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_af6ac13e1a0bfd0c6a0a3b18c1a021d2f}{user\+Dir}} () const final
+\item 
+virtual Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a7506ff2108bc1700bc8cce7e6a92d039}{plugin\+Data}} (Q\+String plugin) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+Shared\+Pointer$<$ \mbox{\hyperlink{classAFlib_1_1Dir}{Dir}} $>$ \mbox{\hyperlink{classAFlib_1_1Dir_ab345a715aac1612d473c8c6459705e76}{instance}} ()
+\item 
+static bool \mbox{\hyperlink{classAFlib_1_1Dir_a0d71de41bef9fdabac7c3e5265fd82e9}{cd\+Directory}} (Q\+Dir \&dir, Q\+String name)
+\item 
+static bool \mbox{\hyperlink{classAFlib_1_1Dir_a2e74e7b6bffbac3a5df7c2f3c7d3f07d}{cd\+Directory}} (Q\+Dir \&dir, quint32 name, uint size)
+\item 
+static void \mbox{\hyperlink{classAFlib_1_1Dir_af5d4dd50b15d08ad32d8a7f8fed7950e}{cp\+Directory}} (Q\+String from, Q\+String to)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_af9c5d49b8e6a41ea17c7990ef1dd4489}{app}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a1385d761c4b09187a390163acd72e63f}{config}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a7625c787cb73fece2085d433a0c0b9fa}{cookies}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a81db382054fe37bd5b895e4ffadbe3a3}{libraries}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a94fb14682492985998678a1b1a3fdc1a}{plugins}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a47d6e7db5eab1868cb1ed1098c6e0ada}{storage}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a67063af06e779f862ff2410b206cad39}{translates}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a91dcca773e88f7da581aad3e41e02161}{users}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a70195f039b031125d351585d86bb8a11}{user\+Config}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_ac0e74f2c1dd38b34acf89d39daf0a44c}{user\+Data}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_afc623be95e69ffee075254c3379c0766}{user\+Dir}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Dir_ae1b7a25bb698f987d29b5d2df42955d3}{switch\+To\+User}} (Q\+String name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Dir_aa4d4a8739c27f53827e85e40df63e471}{set\+User\+Config}} (Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a70195f039b031125d351585d86bb8a11}{user\+Config}})
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Dir_aed083871dc671c41e833c6413d22f492}{set\+User\+Data}} (Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_ac0e74f2c1dd38b34acf89d39daf0a44c}{user\+Data}})
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Dir_acba5ba9d153610102b3685f50a5932bf}{set\+User\+Dir}} (Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_afc623be95e69ffee075254c3379c0766}{user\+Dir}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a6b48667bdb651c944338c0ed43973343}{m\+\_\+app}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a89526370b604000a6a1eed1fe97c59c2}{m\+\_\+config}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a4f06acb5251eee63e4ad220af0eaaad4}{m\+\_\+cookies}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_ac7a858c56b8b4a6843738ec59ea1746a}{m\+\_\+libraries}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a9c7e0b6c5206c26ba5605c531f444a9f}{m\+\_\+plugins}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a55483d4e2c555c88a610df99c29a544f}{m\+\_\+storage}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a0214092384c3510e8cc82f5e7f5ae24b}{m\+\_\+translates}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a59fb9dd9a41ac2f001398108d3c47b0f}{m\+\_\+users}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_a4182bf04cf260ca4a50867c2cc6e88e2}{m\+\_\+user\+Config}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_aa5a96dac5799c3f1fa138c602dfe6ca3}{m\+\_\+user\+Data}}
+\item 
+Q\+Dir \mbox{\hyperlink{classAFlib_1_1Dir_acfd4ef11c1bf7b2e99f91fe6f119b312}{m\+\_\+user\+Dir}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 19 of file af\+Dir.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFlib_1_1Dir_abee93a3c3d851f2afac40327026875e9}\label{classAFlib_1_1Dir_abee93a3c3d851f2afac40327026875e9}} 
+\index{AFlib::Dir@{AFlib::Dir}!Dir@{Dir}}
+\index{Dir@{Dir}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{Dir()}{Dir()}}
+{\footnotesize\ttfamily Dir\+::\+Dir (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 11 of file af\+Dir.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFlib_1_1Dir_aa2efcd34c2c00687b9381f659e151b44}\label{classAFlib_1_1Dir_aa2efcd34c2c00687b9381f659e151b44}} 
+\index{AFlib::Dir@{AFlib::Dir}!app@{app}}
+\index{app@{app}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{app()}{app()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::app (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 45 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a0d71de41bef9fdabac7c3e5265fd82e9}\label{classAFlib_1_1Dir_a0d71de41bef9fdabac7c3e5265fd82e9}} 
+\index{AFlib::Dir@{AFlib::Dir}!cdDirectory@{cdDirectory}}
+\index{cdDirectory@{cdDirectory}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{cdDirectory()}{cdDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Dir\+::cd\+Directory (\begin{DoxyParamCaption}\item[{Q\+Dir \&}]{dir,  }\item[{Q\+String}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 187 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a2e74e7b6bffbac3a5df7c2f3c7d3f07d}\label{classAFlib_1_1Dir_a2e74e7b6bffbac3a5df7c2f3c7d3f07d}} 
+\index{AFlib::Dir@{AFlib::Dir}!cdDirectory@{cdDirectory}}
+\index{cdDirectory@{cdDirectory}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{cdDirectory()}{cdDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Dir\+::cd\+Directory (\begin{DoxyParamCaption}\item[{Q\+Dir \&}]{dir,  }\item[{quint32}]{name,  }\item[{uint}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 199 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_afef3c0c5bff53494c79dded4f587c06b}\label{classAFlib_1_1Dir_afef3c0c5bff53494c79dded4f587c06b}} 
+\index{AFlib::Dir@{AFlib::Dir}!config@{config}}
+\index{config@{config}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{config()}{config()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 46 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a418675f1fdf4080298bc6fc2242a267d}\label{classAFlib_1_1Dir_a418675f1fdf4080298bc6fc2242a267d}} 
+\index{AFlib::Dir@{AFlib::Dir}!cookies@{cookies}}
+\index{cookies@{cookies}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{cookies()}{cookies()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::cookies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 47 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_af5d4dd50b15d08ad32d8a7f8fed7950e}\label{classAFlib_1_1Dir_af5d4dd50b15d08ad32d8a7f8fed7950e}} 
+\index{AFlib::Dir@{AFlib::Dir}!cpDirectory@{cpDirectory}}
+\index{cpDirectory@{cpDirectory}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{cpDirectory()}{cpDirectory()}}
+{\footnotesize\ttfamily void Dir\+::cp\+Directory (\begin{DoxyParamCaption}\item[{Q\+String}]{from,  }\item[{Q\+String}]{to }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 204 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a4a527b91125ae2df5541997fabf67c77}\label{classAFlib_1_1Dir_a4a527b91125ae2df5541997fabf67c77}} 
+\index{AFlib::Dir@{AFlib::Dir}!init@{init}}
+\index{init@{init}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Dir\+::init (\begin{DoxyParamCaption}\item[{bool}]{use\+Current\+Folder = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a799395b9f9a0109f2ddf7d925d0fe000}\label{classAFlib_1_1Dir_a799395b9f9a0109f2ddf7d925d0fe000}} 
+\index{AFlib::Dir@{AFlib::Dir}!initStandartPath@{initStandartPath}}
+\index{initStandartPath@{initStandartPath}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{initStandartPath()}{initStandartPath()}}
+{\footnotesize\ttfamily void Dir\+::init\+Standart\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 100 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_ab345a715aac1612d473c8c6459705e76}\label{classAFlib_1_1Dir_ab345a715aac1612d473c8c6459705e76}} 
+\index{AFlib::Dir@{AFlib::Dir}!instance@{instance}}
+\index{instance@{instance}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily Q\+Shared\+Pointer$<$ \mbox{\hyperlink{classAFlib_1_1Dir}{A\+Flib\+::\+Dir}} $>$ Dir\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 135 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a719bf362b2fd356583d788d3143f7e66}\label{classAFlib_1_1Dir_a719bf362b2fd356583d788d3143f7e66}} 
+\index{AFlib::Dir@{AFlib::Dir}!libraries@{libraries}}
+\index{libraries@{libraries}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{libraries()}{libraries()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::libraries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 49 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a7506ff2108bc1700bc8cce7e6a92d039}\label{classAFlib_1_1Dir_a7506ff2108bc1700bc8cce7e6a92d039}} 
+\index{AFlib::Dir@{AFlib::Dir}!pluginData@{pluginData}}
+\index{pluginData@{pluginData}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{pluginData()}{pluginData()}}
+{\footnotesize\ttfamily Q\+Dir Dir\+::plugin\+Data (\begin{DoxyParamCaption}\item[{Q\+String}]{plugin }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 230 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a1e61ce55ddce2794517af9d0a3d5c71d}\label{classAFlib_1_1Dir_a1e61ce55ddce2794517af9d0a3d5c71d}} 
+\index{AFlib::Dir@{AFlib::Dir}!plugins@{plugins}}
+\index{plugins@{plugins}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{plugins()}{plugins()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 50 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_aa4d4a8739c27f53827e85e40df63e471}\label{classAFlib_1_1Dir_aa4d4a8739c27f53827e85e40df63e471}} 
+\index{AFlib::Dir@{AFlib::Dir}!setUserConfig@{setUserConfig}}
+\index{setUserConfig@{setUserConfig}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{setUserConfig()}{setUserConfig()}}
+{\footnotesize\ttfamily void Dir\+::set\+User\+Config (\begin{DoxyParamCaption}\item[{Q\+Dir}]{user\+Config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 160 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_aed083871dc671c41e833c6413d22f492}\label{classAFlib_1_1Dir_aed083871dc671c41e833c6413d22f492}} 
+\index{AFlib::Dir@{AFlib::Dir}!setUserData@{setUserData}}
+\index{setUserData@{setUserData}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{setUserData()}{setUserData()}}
+{\footnotesize\ttfamily void Dir\+::set\+User\+Data (\begin{DoxyParamCaption}\item[{Q\+Dir}]{user\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 169 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_acba5ba9d153610102b3685f50a5932bf}\label{classAFlib_1_1Dir_acba5ba9d153610102b3685f50a5932bf}} 
+\index{AFlib::Dir@{AFlib::Dir}!setUserDir@{setUserDir}}
+\index{setUserDir@{setUserDir}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{setUserDir()}{setUserDir()}}
+{\footnotesize\ttfamily void Dir\+::set\+User\+Dir (\begin{DoxyParamCaption}\item[{Q\+Dir}]{user\+Dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 178 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_abbcd282633bdd78714151d2472dc492f}\label{classAFlib_1_1Dir_abbcd282633bdd78714151d2472dc492f}} 
+\index{AFlib::Dir@{AFlib::Dir}!storage@{storage}}
+\index{storage@{storage}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{storage()}{storage()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::storage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 48 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_ae1b7a25bb698f987d29b5d2df42955d3}\label{classAFlib_1_1Dir_ae1b7a25bb698f987d29b5d2df42955d3}} 
+\index{AFlib::Dir@{AFlib::Dir}!switchToUser@{switchToUser}}
+\index{switchToUser@{switchToUser}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{switchToUser}{switchToUser}}
+{\footnotesize\ttfamily void Dir\+::switch\+To\+User (\begin{DoxyParamCaption}\item[{Q\+String}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Definition at line 143 of file af\+Dir.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a32f35714ed9ae5581c317ef714176f63}\label{classAFlib_1_1Dir_a32f35714ed9ae5581c317ef714176f63}} 
+\index{AFlib::Dir@{AFlib::Dir}!translates@{translates}}
+\index{translates@{translates}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{translates()}{translates()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::translates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 51 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a3bf6f4db881d131e89d6c5f2ad826f05}\label{classAFlib_1_1Dir_a3bf6f4db881d131e89d6c5f2ad826f05}} 
+\index{AFlib::Dir@{AFlib::Dir}!userConfig@{userConfig}}
+\index{userConfig@{userConfig}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{userConfig()}{userConfig()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::user\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 53 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a66d07ea1e68b1eeb53fce51d549b232e}\label{classAFlib_1_1Dir_a66d07ea1e68b1eeb53fce51d549b232e}} 
+\index{AFlib::Dir@{AFlib::Dir}!userConfigChanged@{userConfigChanged}}
+\index{userConfigChanged@{userConfigChanged}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{userConfigChanged}{userConfigChanged}}
+{\footnotesize\ttfamily void A\+Flib\+::\+Dir\+::user\+Config\+Changed (\begin{DoxyParamCaption}\item[{Q\+Dir}]{user\+Config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_acc41cd95904f3bd6bef16acc5e008048}\label{classAFlib_1_1Dir_acc41cd95904f3bd6bef16acc5e008048}} 
+\index{AFlib::Dir@{AFlib::Dir}!userData@{userData}}
+\index{userData@{userData}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{userData()}{userData()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::user\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 54 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_aa4ae4953c0175c300cc293462c47625f}\label{classAFlib_1_1Dir_aa4ae4953c0175c300cc293462c47625f}} 
+\index{AFlib::Dir@{AFlib::Dir}!userDataChanged@{userDataChanged}}
+\index{userDataChanged@{userDataChanged}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{userDataChanged}{userDataChanged}}
+{\footnotesize\ttfamily void A\+Flib\+::\+Dir\+::user\+Data\+Changed (\begin{DoxyParamCaption}\item[{Q\+Dir}]{user\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_af6ac13e1a0bfd0c6a0a3b18c1a021d2f}\label{classAFlib_1_1Dir_af6ac13e1a0bfd0c6a0a3b18c1a021d2f}} 
+\index{AFlib::Dir@{AFlib::Dir}!userDir@{userDir}}
+\index{userDir@{userDir}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{userDir()}{userDir()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::user\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 55 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_af79d7b5467b1fb6327de670724326c95}\label{classAFlib_1_1Dir_af79d7b5467b1fb6327de670724326c95}} 
+\index{AFlib::Dir@{AFlib::Dir}!userDirChanged@{userDirChanged}}
+\index{userDirChanged@{userDirChanged}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{userDirChanged}{userDirChanged}}
+{\footnotesize\ttfamily void A\+Flib\+::\+Dir\+::user\+Dir\+Changed (\begin{DoxyParamCaption}\item[{Q\+Dir}]{user\+Dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_ab7d46f68db57aa3cb68cd1f2a880456a}\label{classAFlib_1_1Dir_ab7d46f68db57aa3cb68cd1f2a880456a}} 
+\index{AFlib::Dir@{AFlib::Dir}!users@{users}}
+\index{users@{users}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{users()}{users()}}
+{\footnotesize\ttfamily virtual Q\+Dir A\+Flib\+::\+Dir\+::users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 52 of file af\+Dir.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAFlib_1_1Dir_a6b48667bdb651c944338c0ed43973343}\label{classAFlib_1_1Dir_a6b48667bdb651c944338c0ed43973343}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_app@{m\_app}}
+\index{m\_app@{m\_app}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_app}{m\_app}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+app\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 67 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a89526370b604000a6a1eed1fe97c59c2}\label{classAFlib_1_1Dir_a89526370b604000a6a1eed1fe97c59c2}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_config@{m\_config}}
+\index{m\_config@{m\_config}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_config}{m\_config}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+config\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 68 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a4f06acb5251eee63e4ad220af0eaaad4}\label{classAFlib_1_1Dir_a4f06acb5251eee63e4ad220af0eaaad4}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_cookies@{m\_cookies}}
+\index{m\_cookies@{m\_cookies}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_cookies}{m\_cookies}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+cookies\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 69 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_ac7a858c56b8b4a6843738ec59ea1746a}\label{classAFlib_1_1Dir_ac7a858c56b8b4a6843738ec59ea1746a}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_libraries@{m\_libraries}}
+\index{m\_libraries@{m\_libraries}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_libraries}{m\_libraries}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+libraries\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 70 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a9c7e0b6c5206c26ba5605c531f444a9f}\label{classAFlib_1_1Dir_a9c7e0b6c5206c26ba5605c531f444a9f}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_plugins@{m\_plugins}}
+\index{m\_plugins@{m\_plugins}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_plugins}{m\_plugins}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+plugins\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 71 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a55483d4e2c555c88a610df99c29a544f}\label{classAFlib_1_1Dir_a55483d4e2c555c88a610df99c29a544f}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_storage@{m\_storage}}
+\index{m\_storage@{m\_storage}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_storage}{m\_storage}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+storage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 72 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a0214092384c3510e8cc82f5e7f5ae24b}\label{classAFlib_1_1Dir_a0214092384c3510e8cc82f5e7f5ae24b}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_translates@{m\_translates}}
+\index{m\_translates@{m\_translates}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_translates}{m\_translates}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+translates\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 73 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a4182bf04cf260ca4a50867c2cc6e88e2}\label{classAFlib_1_1Dir_a4182bf04cf260ca4a50867c2cc6e88e2}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_userConfig@{m\_userConfig}}
+\index{m\_userConfig@{m\_userConfig}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_userConfig}{m\_userConfig}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+user\+Config\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 75 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_aa5a96dac5799c3f1fa138c602dfe6ca3}\label{classAFlib_1_1Dir_aa5a96dac5799c3f1fa138c602dfe6ca3}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_userData@{m\_userData}}
+\index{m\_userData@{m\_userData}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_userData}{m\_userData}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+user\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 76 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_acfd4ef11c1bf7b2e99f91fe6f119b312}\label{classAFlib_1_1Dir_acfd4ef11c1bf7b2e99f91fe6f119b312}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_userDir@{m\_userDir}}
+\index{m\_userDir@{m\_userDir}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_userDir}{m\_userDir}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+user\+Dir\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 77 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a59fb9dd9a41ac2f001398108d3c47b0f}\label{classAFlib_1_1Dir_a59fb9dd9a41ac2f001398108d3c47b0f}} 
+\index{AFlib::Dir@{AFlib::Dir}!m\_users@{m\_users}}
+\index{m\_users@{m\_users}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{m\_users}{m\_users}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::m\+\_\+users\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 74 of file af\+Dir.\+h.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classAFlib_1_1Dir_af9c5d49b8e6a41ea17c7990ef1dd4489}\label{classAFlib_1_1Dir_af9c5d49b8e6a41ea17c7990ef1dd4489}} 
+\index{AFlib::Dir@{AFlib::Dir}!app@{app}}
+\index{app@{app}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{app}{app}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::app\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 22 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a1385d761c4b09187a390163acd72e63f}\label{classAFlib_1_1Dir_a1385d761c4b09187a390163acd72e63f}} 
+\index{AFlib::Dir@{AFlib::Dir}!config@{config}}
+\index{config@{config}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::config\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 23 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a7625c787cb73fece2085d433a0c0b9fa}\label{classAFlib_1_1Dir_a7625c787cb73fece2085d433a0c0b9fa}} 
+\index{AFlib::Dir@{AFlib::Dir}!cookies@{cookies}}
+\index{cookies@{cookies}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{cookies}{cookies}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::cookies\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 24 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a81db382054fe37bd5b895e4ffadbe3a3}\label{classAFlib_1_1Dir_a81db382054fe37bd5b895e4ffadbe3a3}} 
+\index{AFlib::Dir@{AFlib::Dir}!libraries@{libraries}}
+\index{libraries@{libraries}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{libraries}{libraries}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::libraries\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 25 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a94fb14682492985998678a1b1a3fdc1a}\label{classAFlib_1_1Dir_a94fb14682492985998678a1b1a3fdc1a}} 
+\index{AFlib::Dir@{AFlib::Dir}!plugins@{plugins}}
+\index{plugins@{plugins}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{plugins}{plugins}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::plugins\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 26 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a47d6e7db5eab1868cb1ed1098c6e0ada}\label{classAFlib_1_1Dir_a47d6e7db5eab1868cb1ed1098c6e0ada}} 
+\index{AFlib::Dir@{AFlib::Dir}!storage@{storage}}
+\index{storage@{storage}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{storage}{storage}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::storage\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 27 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a67063af06e779f862ff2410b206cad39}\label{classAFlib_1_1Dir_a67063af06e779f862ff2410b206cad39}} 
+\index{AFlib::Dir@{AFlib::Dir}!translates@{translates}}
+\index{translates@{translates}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{translates}{translates}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::translates\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 28 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a70195f039b031125d351585d86bb8a11}\label{classAFlib_1_1Dir_a70195f039b031125d351585d86bb8a11}} 
+\index{AFlib::Dir@{AFlib::Dir}!userConfig@{userConfig}}
+\index{userConfig@{userConfig}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{userConfig}{userConfig}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::user\+Config\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 31 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_ac0e74f2c1dd38b34acf89d39daf0a44c}\label{classAFlib_1_1Dir_ac0e74f2c1dd38b34acf89d39daf0a44c}} 
+\index{AFlib::Dir@{AFlib::Dir}!userData@{userData}}
+\index{userData@{userData}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{userData}{userData}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::user\+Data\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 32 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_afc623be95e69ffee075254c3379c0766}\label{classAFlib_1_1Dir_afc623be95e69ffee075254c3379c0766}} 
+\index{AFlib::Dir@{AFlib::Dir}!userDir@{userDir}}
+\index{userDir@{userDir}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{userDir}{userDir}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::user\+Dir\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 33 of file af\+Dir.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Dir_a91dcca773e88f7da581aad3e41e02161}\label{classAFlib_1_1Dir_a91dcca773e88f7da581aad3e41e02161}} 
+\index{AFlib::Dir@{AFlib::Dir}!users@{users}}
+\index{users@{users}!AFlib::Dir@{AFlib::Dir}}
+\doxysubsubsection{\texorpdfstring{users}{users}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+Dir\+::users\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+Definition at line 29 of file af\+Dir.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/\mbox{\hyperlink{afDir_8h}{af\+Dir.\+h}}\item 
+lib\+\_\+base\+A\+F/tool/\mbox{\hyperlink{afDir_8cpp}{af\+Dir.\+cpp}}\item 
+lib\+\_\+base\+A\+F/tool/\mbox{\hyperlink{afDir2_8cpp}{af\+Dir2.\+cpp}}\end{DoxyCompactItemize}

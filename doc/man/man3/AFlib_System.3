@@ -1,0 +1,96 @@
+.TH "AFlib::System" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::System
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afSystem\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSystemOS\fP "
+.br
+.ti -1c
+.RI "enum \fBAnchor\fP "
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSystem\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBQ_ENUM\fP (\fBSystemOS\fP) static \fBSystemOS\fP OS()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBisMobile\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file afSystem\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBAFlib::System::Anchor\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fITop \fP\fP
+.TP
+\fB\fILeft \fP\fP
+.TP
+\fB\fIRight \fP\fP
+.TP
+\fB\fIBottom \fP\fP
+.TP
+\fB\fIUndefined \fP\fP
+.PP
+Definition at line 27 of file afSystem\&.h\&.
+.SS "enum \fBAFlib::System::SystemOS\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAndroid \fP\fP
+.TP
+\fB\fILinux \fP\fP
+.TP
+\fB\fIWindows \fP\fP
+.TP
+\fB\fIMac \fP\fP
+.TP
+\fB\fIiOS \fP\fP
+.PP
+Definition at line 16 of file afSystem\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "System::System (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 5 of file afSystem\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool System::isMobile ()\fC [static]\fP"
+
+.PP
+Definition at line 25 of file afSystem\&.cpp\&.
+.SS "AFlib::System::Q_ENUM (\fBSystemOS\fP)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

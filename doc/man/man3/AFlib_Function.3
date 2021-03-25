@@ -1,0 +1,159 @@
+.TH "AFlib::Function" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::Function
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afFunction\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFunction\fP (QObject *parent=nullptr)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBlibraryName\fP (QString libraryName)"
+.br
+.ti -1c
+.RI "static QPair< bool, QString > \fBfilePath\fP (QString name, QDir dir=QDir::current())"
+.br
+.ti -1c
+.RI "static QPair< bool, QString > \fBlibraryPath\fP (QString name, QDir dir=QDir::current())"
+.br
+.ti -1c
+.RI "static QSharedPointer< QLibrary > \fBlibrary\fP (QString name, QDir dir=QDir::current(), QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "static QSharedPointer< QPluginLoader > \fBpluginLoader\fP (QString name, QDir dir=QDir::current(), QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "static QString \fBstringToDigit\fP (QString text)"
+.br
+.ti -1c
+.RI "static std::string \fBtoString\fP (uint number, uchar numeral_system=1, char size=\-1, uchar separate=4, bool showNS=true)"
+.br
+.RI "\fBFunction::toString\fP\&. "
+.ti -1c
+.RI "static QString \fBdigitToString\fP (double number, int symbolAfterPoint=3)"
+.br
+.ti -1c
+.RI "static int \fBrandomInt\fP (int from, int to)"
+.br
+.ti -1c
+.RI "static QDateTime \fBnullDateTime\fP ()"
+.br
+.ti -1c
+.RI "template<typename Return_arg , unsigned size> static std::pair< unsigned, Return_arg > \fBfindMaxElement\fP (std::array< Return_arg, size > array)"
+.br
+.ti -1c
+.RI "template<typename Return_arg , unsigned size> static std::pair< unsigned, Return_arg > \fBfindMinElement\fP (std::array< Return_arg, size > array)"
+.br
+.ti -1c
+.RI "template<typename Return_arg , unsigned size> static std::list< unsigned > \fBfindMaxIndexList\fP (std::array< Return_arg, size > array)"
+.br
+.ti -1c
+.RI "template<typename Return_arg , unsigned size> static std::list< unsigned > \fBfindMinIndexList\fP (std::array< Return_arg, size > array)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file afFunction\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Function::Function (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 9 of file afFunction\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString Function::digitToString (double number, int symbolAfterPoint = \fC3\fP)\fC [static]\fP"
+
+.PP
+Definition at line 102 of file afFunction\&.cpp\&.
+.SS "QPair< bool, QString > Function::filePath (QString name, QDir dir = \fCQDir::current()\fP)\fC [static]\fP"
+
+.PP
+Definition at line 157 of file afFunction\&.cpp\&.
+.SS "template<typename Return_arg , unsigned size> static std::pair<unsigned, Return_arg> AFlib::Function::findMaxElement (std::array< Return_arg, size > array)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 37 of file afFunction\&.h\&.
+.SS "template<typename Return_arg , unsigned size> static std::list<unsigned> AFlib::Function::findMaxIndexList (std::array< Return_arg, size > array)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 63 of file afFunction\&.h\&.
+.SS "template<typename Return_arg , unsigned size> static std::pair<unsigned, Return_arg> AFlib::Function::findMinElement (std::array< Return_arg, size > array)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 50 of file afFunction\&.h\&.
+.SS "template<typename Return_arg , unsigned size> static std::list<unsigned> AFlib::Function::findMinIndexList (std::array< Return_arg, size > array)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 77 of file afFunction\&.h\&.
+.SS "QSharedPointer< QLibrary > Function::library (QString name, QDir dir = \fCQDir::current()\fP, QObject * parent = \fCnullptr\fP)\fC [static]\fP"
+
+.PP
+Definition at line 14 of file afFunction\&.cpp\&.
+.SS "QString Function::libraryName (QString libraryName)\fC [static]\fP"
+
+.PP
+Definition at line 147 of file afFunction\&.cpp\&.
+.SS "QPair< bool, QString > Function::libraryPath (QString name, QDir dir = \fCQDir::current()\fP)\fC [static]\fP"
+
+.PP
+Definition at line 168 of file afFunction\&.cpp\&.
+.SS "QDateTime Function::nullDateTime ()\fC [static]\fP"
+
+.PP
+Definition at line 138 of file afFunction\&.cpp\&.
+.SS "QSharedPointer< QPluginLoader > Function::pluginLoader (QString name, QDir dir = \fCQDir::current()\fP, QObject * parent = \fCnullptr\fP)\fC [static]\fP"
+
+.PP
+Definition at line 24 of file afFunction\&.cpp\&.
+.SS "int Function::randomInt (int from, int to)\fC [static]\fP"
+
+.PP
+Definition at line 130 of file afFunction\&.cpp\&.
+.SS "QString Function::stringToDigit (QString text)\fC [static]\fP"
+
+.PP
+Definition at line 34 of file afFunction\&.cpp\&.
+.SS "std::string Function::toString (uint number, uchar numeral_system = \fC1\fP, char size = \fC\-1\fP, uchar separate = \fC4\fP, bool showNS = \fCtrue\fP)\fC [static]\fP"
+
+.PP
+\fBFunction::toString\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInumber\fP - само число 
+.br
+\fInumeral_system\fP - система чисел в яку перетворюємо 
+.br
+\fIsize\fP - розмір майбутнього рядка, за замовчуванням -1 
+.br
+\fIseparate\fP - роздільник числа, за замовчуванням 4 
+.br
+\fIshowNS\fP - флаг чи треба показувати спереду систему чисел 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+повертаемо рядок виду [ 2] 1110 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file afFunction\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

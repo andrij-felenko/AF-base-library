@@ -1,0 +1,171 @@
+.TH "AFaccount::Group" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFaccount::Group
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afAccountGroup\&.h>\fP
+.PP
+Inherits \fBAFaccount::Info\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGroup\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBGroup\fP (\fBAFlib::IdObjectPtr\fP ptr, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBInfoPtrList\fP \fBuserList\fP () const"
+.br
+.ti -1c
+.RI "\fBInfoPtrList\fP \fBownerList\fP () const"
+.br
+.ti -1c
+.RI "\fBInfoPtrList\fP \fBcreatorList\fP () const"
+.br
+.ti -1c
+.RI "\fBInfoPtrList\fP \fBmoderatorList\fP () const"
+.br
+.ti -1c
+.RI "QStringList \fBuserNameList\fP () const"
+.br
+.ti -1c
+.RI "QStringList \fBownerNameList\fP () const"
+.br
+.ti -1c
+.RI "QStringList \fBcreatorNameList\fP () const"
+.br
+.ti -1c
+.RI "QStringList \fBmoderatorNameList\fP () const"
+.br
+.ti -1c
+.RI "void \fBaddAccount\fP (\fBInfoPtr\fP account, \fBAccessType\fP access)"
+.br
+.ti -1c
+.RI "void \fBremoveAccount\fP (\fBInfoPtr\fP account, \fBAccessType\fP access)"
+.br
+.ti -1c
+.RI "void \fBchangeAccess\fP (\fBInfoPtr\fP account, \fBAccessType\fP newAccess)"
+.br
+.ti -1c
+.RI "void \fBaddAccount\fP (\fBAFIdObject_bit\fP account, \fBAccessType\fP access)"
+.br
+.ti -1c
+.RI "void \fBremoveAccount\fP (\fBAFIdObject_bit\fP account, \fBAccessType\fP access)"
+.br
+.ti -1c
+.RI "void \fBchangeAccess\fP (\fBAFIdObject_bit\fP account, \fBAccessType\fP newAccess)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInfoPtrList\fP \fBgetByType\fP (\fBAccessType\fP type, bool inheritType=true) const"
+.br
+.ti -1c
+.RI "QStringList \fBgetNameByType\fP (\fBAccessType\fP type, bool inheritType=true) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QMap< \fBInfoPtr\fP, \fBAccessType\fP > \fBm_userList\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 30 of file afAccountGroup\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Group::Group (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 16 of file afAccountGroup\&.cpp\&.
+.SS "Group::Group (\fBAFlib::IdObjectPtr\fP ptr, QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 23 of file afAccountGroup\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Group::addAccount (\fBAFIdObject_bit\fP account, \fBAccessType\fP access)"
+
+.PP
+Definition at line 54 of file afAccountGroup\&.cpp\&.
+.SS "void Group::addAccount (\fBInfoPtr\fP account, \fBAccessType\fP access)"
+
+.PP
+Definition at line 39 of file afAccountGroup\&.cpp\&.
+.SS "void Group::changeAccess (\fBAFIdObject_bit\fP account, \fBAccessType\fP newAccess)"
+
+.PP
+Definition at line 66 of file afAccountGroup\&.cpp\&.
+.SS "void Group::changeAccess (\fBInfoPtr\fP account, \fBAccessType\fP newAccess)"
+
+.PP
+Definition at line 49 of file afAccountGroup\&.cpp\&.
+.SS "\fBInfoPtrList\fP Group::creatorList () const"
+
+.PP
+Definition at line 31 of file afAccountGroup\&.cpp\&.
+.SS "QStringList Group::creatorNameList () const"
+
+.PP
+Definition at line 36 of file afAccountGroup\&.cpp\&.
+.SS "\fBInfoPtrList\fP Group::getByType (\fBAccessType\fP type, bool inheritType = \fCtrue\fP) const\fC [private]\fP"
+
+.PP
+Definition at line 72 of file afAccountGroup\&.cpp\&.
+.SS "QStringList Group::getNameByType (\fBAccessType\fP type, bool inheritType = \fCtrue\fP) const\fC [private]\fP"
+
+.PP
+Definition at line 84 of file afAccountGroup\&.cpp\&.
+.SS "\fBInfoPtrList\fP Group::moderatorList () const"
+
+.PP
+Definition at line 32 of file afAccountGroup\&.cpp\&.
+.SS "QStringList Group::moderatorNameList () const"
+
+.PP
+Definition at line 37 of file afAccountGroup\&.cpp\&.
+.SS "\fBInfoPtrList\fP Group::ownerList () const"
+
+.PP
+Definition at line 30 of file afAccountGroup\&.cpp\&.
+.SS "QStringList Group::ownerNameList () const"
+
+.PP
+Definition at line 35 of file afAccountGroup\&.cpp\&.
+.SS "void Group::removeAccount (\fBAFIdObject_bit\fP account, \fBAccessType\fP access)"
+
+.PP
+Definition at line 60 of file afAccountGroup\&.cpp\&.
+.SS "void Group::removeAccount (\fBInfoPtr\fP account, \fBAccessType\fP access)"
+
+.PP
+Definition at line 44 of file afAccountGroup\&.cpp\&.
+.SS "\fBInfoPtrList\fP Group::userList () const"
+
+.PP
+Definition at line 29 of file afAccountGroup\&.cpp\&.
+.SS "QStringList Group::userNameList () const"
+
+.PP
+Definition at line 34 of file afAccountGroup\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QMap<\fBInfoPtr\fP, \fBAccessType\fP> AFaccount::Group::m_userList\fC [private]\fP"
+
+.PP
+Definition at line 56 of file afAccountGroup\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

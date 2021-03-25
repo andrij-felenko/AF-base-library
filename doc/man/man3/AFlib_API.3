@@ -1,0 +1,198 @@
+.TH "AFlib::API" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::API
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afAPI\&.h>\fP
+.PP
+Inherits QNetworkAccessManager\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBonlineChanged\fP (bool \fBonline\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAPI\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "void \fBlogin\fP (QString login, QString password)"
+.br
+.ti -1c
+.RI "void \fBregistrate\fP (\fBAFaccount::AccountPtr\fP account)"
+.br
+.ti -1c
+.RI "void \fBremindMyLogin\fP (QString \fBlogin\fP)"
+.br
+.ti -1c
+.RI "void \fBremindMyPassword\fP (QString \fBlogin\fP)"
+.br
+.ti -1c
+.RI "void \fBaddAccount\fP (QString \fBlogin\fP)"
+.br
+.ti -1c
+.RI "void \fBaddAccount\fP (\fBIdAccount_bit\fP id)"
+.br
+.ti -1c
+.RI "void \fBupdateObjects\fP ()"
+.br
+.ti -1c
+.RI "bool \fBonline\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBApiPtr\fP \fBinstance\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBdefaultLink\fP = QString('127\&.0\&.0\&.1:55023')"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBonline\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreadServerAnswer\fP (QNetworkReply *reply)"
+.br
+.ti -1c
+.RI "void \fBpost\fP (\fBRequestType\fP type, QByteArray data, bool isData=false)"
+.br
+.ti -1c
+.RI "void \fBget\fP (\fBRequestType\fP type, bool isData=false)"
+.br
+.ti -1c
+.RI "void \fBsendPing\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetOnlineStatus\fP (bool is_online)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QMap< \fBRequestType\fP, \fBRequestStatus\fP > \fBm_requestStatus\fP"
+.br
+.ti -1c
+.RI "bool \fBm_online\fP"
+.br
+.ti -1c
+.RI "QTimer * \fBm_pingTimer\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 45 of file afAPI\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::API::API (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 11 of file afAPI\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void AFlib::API::addAccount (\fBIdAccount_bit\fP id)"
+
+.PP
+Definition at line 177 of file afAPI\&.cpp\&.
+.SS "void AFlib::API::addAccount (QString login)"
+
+.PP
+Definition at line 165 of file afAPI\&.cpp\&.
+.SS "void AFlib::API::get (\fBRequestType\fP type, bool isData = \fCfalse\fP)\fC [private]\fP"
+
+.PP
+Definition at line 104 of file afAPI\&.cpp\&.
+.SS "\fBAFlib::ApiPtr\fP AFlib::API::instance ()\fC [static]\fP"
+
+.PP
+Definition at line 128 of file afAPI\&.cpp\&.
+.SS "void AFlib::API::login (QString login, QString password)"
+
+.PP
+Definition at line 133 of file afAPI\&.cpp\&.
+.SS "bool AFlib::API::online () const"
+
+.SS "void AFlib::API::onlineChanged (bool online)\fC [signal]\fP"
+
+.SS "void AFlib::API::post (\fBRequestType\fP type, QByteArray data, bool isData = \fCfalse\fP)\fC [private]\fP"
+
+.PP
+Definition at line 93 of file afAPI\&.cpp\&.
+.SS "void AFlib::API::readServerAnswer (QNetworkReply * reply)\fC [private]\fP"
+
+.PP
+Definition at line 20 of file afAPI\&.cpp\&.
+.SS "void AFlib::API::registrate (\fBAFaccount::AccountPtr\fP account)"
+
+.PP
+Definition at line 141 of file afAPI\&.cpp\&.
+.SS "void AFlib::API::remindMyLogin (QString login)"
+
+.PP
+Definition at line 149 of file afAPI\&.cpp\&.
+.SS "void AFlib::API::remindMyPassword (QString login)"
+
+.PP
+Definition at line 157 of file afAPI\&.cpp\&.
+.SS "void AFlib::API::sendPing ()\fC [private]\fP"
+
+.PP
+Definition at line 112 of file afAPI\&.cpp\&.
+.SS "void AFlib::API::setOnlineStatus (bool is_online)\fC [private]\fP"
+
+.PP
+Definition at line 118 of file afAPI\&.cpp\&.
+.SS "void AFlib::API::updateObjects ()"
+
+.PP
+Definition at line 185 of file afAPI\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString AFlib::API::defaultLink = QString('127\&.0\&.0\&.1:55023')\fC [static]\fP"
+
+.PP
+Definition at line 52 of file afAPI\&.h\&.
+.SS "bool AFlib::API::m_online\fC [private]\fP"
+
+.PP
+Definition at line 76 of file afAPI\&.h\&.
+.SS "QTimer* AFlib::API::m_pingTimer\fC [private]\fP"
+
+.PP
+Definition at line 77 of file afAPI\&.h\&.
+.SS "QMap<\fBRequestType\fP, \fBRequestStatus\fP> AFlib::API::m_requestStatus\fC [private]\fP"
+
+.PP
+Definition at line 73 of file afAPI\&.h\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool AFlib::API::online\fC [read]\fP"
+
+.PP
+Definition at line 48 of file afAPI\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

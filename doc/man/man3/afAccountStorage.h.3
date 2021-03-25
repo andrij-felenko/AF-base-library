@@ -1,0 +1,59 @@
+.TH "lib_baseAF/include/lib_baseAF/afAccountStorage.h" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/include/lib_baseAF/afAccountStorage.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'afAccount\&.h'\fP
+.br
+\fC#include 'afAccountGroup\&.h'\fP
+.br
+\fC#include <QtNetwork/QNetworkAccessManager>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAFaccount::Storage\fP"
+.br
+.RI "The \fBAFaccount::Storage\fP class we load all possible account, and take it on RAM, so we can access to them always in any time, but we need to make shorten every object that we have and it give us speed when we parse this list\&. "
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBAFaccount\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef QSharedPointer< Storage > \fBAFaccount::StoragePtr\fP"
+.br
+.ti -1c
+.RI "typedef \fBAFaccount::Storage\fP \fBAFAccountStorage\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "StoragePtr \fBAFaccount::storage\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "AccountPtr \fBAFaccount::user\fP (QObject *parent=nullptr)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBAFaccount::Storage\fP \fBAFAccountStorage\fP"
+
+.PP
+Definition at line 87 of file afAccountStorage\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

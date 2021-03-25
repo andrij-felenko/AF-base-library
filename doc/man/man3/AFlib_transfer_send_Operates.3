@@ -1,0 +1,84 @@
+.TH "AFlib::transfer::send::Operates" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::transfer::send::Operates
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afTransferOperateList\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOperates\fP ()"
+.br
+.ti -1c
+.RI "\fBOperates\fP (\fBid::Global_bit\fP \fBglobalId\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBid::Global_bit\fP \fBglobalId\fP"
+.br
+.ti -1c
+.RI "\fBid::OperatePtrList\fP \fBoperateList\fP"
+.br
+.ti -1c
+.RI "\fBid::OperatePtrList\fP \fBoperateIdList\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &stream, const \fBOperates\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &stream, \fBOperates\fP &data)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 59 of file afTransferOperateList\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::transfer::send::Operates::Operates ()\fC [inline]\fP"
+
+.PP
+Definition at line 60 of file afTransferOperateList\&.h\&.
+.SS "AFlib::transfer::send::Operates::Operates (\fBid::Global_bit\fP globalId)\fC [inline]\fP"
+
+.PP
+Definition at line 61 of file afTransferOperateList\&.h\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream & stream, const \fBOperates\fP & data)\fC [friend]\fP"
+
+.PP
+Definition at line 181 of file afTransferOperateList\&.cpp\&.
+.SS "QDataStream& operator>> (QDataStream & stream, \fBOperates\fP & data)\fC [friend]\fP"
+
+.PP
+Definition at line 186 of file afTransferOperateList\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBid::Global_bit\fP AFlib::transfer::send::Operates::globalId"
+
+.PP
+Definition at line 62 of file afTransferOperateList\&.h\&.
+.SS "\fBid::OperatePtrList\fP AFlib::transfer::send::Operates::operateIdList"
+
+.PP
+Definition at line 65 of file afTransferOperateList\&.h\&.
+.SS "\fBid::OperatePtrList\fP AFlib::transfer::send::Operates::operateList"
+
+.PP
+Definition at line 64 of file afTransferOperateList\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

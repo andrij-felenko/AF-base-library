@@ -1,0 +1,74 @@
+.TH "AFlib::transfer::Send" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::transfer::Send
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afTransferOperateList\&.h>\fP
+.PP
+Inherits QList< transfer::send::Objects >\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSend\fP ()=default"
+.br
+.ti -1c
+.RI "\fBSend\fP (const QByteArray &data)"
+.br
+.ti -1c
+.RI "void \fBaddNewObject\fP (const QStringList &dPath, \fBFileType\fP fileType, \fBid::ObjectPtr\fP object)"
+.br
+.ti -1c
+.RI "void \fBaddOperate\fP (const QStringList &dPath, \fBFileType\fP fileType, \fBid::Global_bit\fP id, \fBid::OperatePtrList\fP list, bool isId)"
+.br
+.ti -1c
+.RI "void \fBaddOperate\fP (const QStringList &dPath, \fBFileType\fP fileType, \fBid::Global_bit\fP id, \fBid::OperatePtr\fP operate, bool isId)"
+.br
+.ti -1c
+.RI "\fBoperator QByteArray\fP () const"
+.br
+.ti -1c
+.RI "QByteArray \fBgetData\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 83 of file afTransferOperateList\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::transfer::Send::Send ()\fC [explicit]\fP, \fC [default]\fP"
+
+.SS "AFlib::transfer::Send::Send (const QByteArray & data)"
+
+.PP
+Definition at line 107 of file afTransferOperateList\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void AFlib::transfer::Send::addNewObject (const QStringList & dPath, \fBFileType\fP fileType, \fBid::ObjectPtr\fP object)"
+
+.PP
+Definition at line 113 of file afTransferOperateList\&.cpp\&.
+.SS "void AFlib::transfer::Send::addOperate (const QStringList & dPath, \fBFileType\fP fileType, \fBid::Global_bit\fP id, \fBid::OperatePtr\fP operate, bool isId)"
+
+.PP
+Definition at line 140 of file afTransferOperateList\&.cpp\&.
+.SS "void AFlib::transfer::Send::addOperate (const QStringList & dPath, \fBFileType\fP fileType, \fBid::Global_bit\fP id, \fBid::OperatePtrList\fP list, bool isId)"
+
+.PP
+Definition at line 124 of file afTransferOperateList\&.cpp\&.
+.SS "QByteArray AFlib::transfer::Send::getData () const"
+
+.PP
+Definition at line 148 of file afTransferOperateList\&.cpp\&.
+.SS "AFlib::transfer::Send::operator QByteArray () const"
+
+.PP
+Definition at line 153 of file afTransferOperateList\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

@@ -1,0 +1,237 @@
+.TH "AFlib::id::TbitStruct< bitsize >" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::id::TbitStruct< bitsize >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afIdBit\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint \fBbitSize\fP () const"
+.br
+.ti -1c
+.RI "template<uint bitsize_> std::bitset< bitsize_ > \fBgetPiece\fP (uint index, uint size) const"
+.br
+.ti -1c
+.RI "quint8 \fBgetCharPiece\fP (uint index) const"
+.br
+.ti -1c
+.RI "std::bitset< bitsize > \fBgetBitSet\fP (uint index, uint size) const"
+.br
+.ti -1c
+.RI "template<typename typeNumber > typeNumber \fBtoTypeNumber\fP (uint index, uint size) const"
+.br
+.ti -1c
+.RI "template<uint fpart, uint spart> std::bitset< fpart+spart > \fBunite\fP (std::bitset< fpart > fp, std::bitset< spart > sp) const"
+.br
+.ti -1c
+.RI "quint8 \fBtoUInt8\fP (uint index=0, uint size=8) const"
+.br
+.ti -1c
+.RI "quint16 \fBtoUInt16\fP (uint index=0, uint size=16) const"
+.br
+.ti -1c
+.RI "quint32 \fBtoUInt32\fP (uint index=0, uint size=32) const"
+.br
+.ti -1c
+.RI "quint64 \fBtoUInt64\fP (uint index=0, uint size=64) const"
+.br
+.ti -1c
+.RI "\fBoperator std::string\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP (char separator=8, char ch='`') const"
+.br
+.ti -1c
+.RI "void \fBfill\fP (const std::string str)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBsetBoolRange\fP (quint8 iFrom, quint8 iTo, std::vector< bool > values)"
+.br
+.ti -1c
+.RI "void \fBsetCharPiece\fP (uint index, quint8 ch)"
+.br
+.ti -1c
+.RI "template<typename typeNumber , uint size_> void \fBsetFromValue\fP (typeNumber value, uint index, uint size)"
+.br
+.ti -1c
+.RI "bool \fBsetReservedT\fP (quint8 maxSize, quint8 iFrom, quint8 iTo, std::vector< bool > values)"
+.br
+.ti -1c
+.RI "\fBTbitStruct\fP< bitsize > & \fBoperator=\fP (const quint8 value)"
+.br
+.ti -1c
+.RI "\fBTbitStruct\fP< bitsize > & \fBoperator=\fP (const quint16 value)"
+.br
+.ti -1c
+.RI "\fBTbitStruct\fP< bitsize > & \fBoperator=\fP (const quint32 value)"
+.br
+.ti -1c
+.RI "\fBTbitStruct\fP< bitsize > & \fBoperator=\fP (const quint64 value)"
+.br
+.ti -1c
+.RI "void \fBsetUInt8\fP (quint8 value, uint index=0, uint size=bitsize)"
+.br
+.ti -1c
+.RI "void \fBsetUInt16\fP (quint16 value, uint index=0, uint size=bitsize)"
+.br
+.ti -1c
+.RI "void \fBsetUInt32\fP (quint32 value, uint index=0, uint size=bitsize)"
+.br
+.ti -1c
+.RI "void \fBsetUInt64\fP (quint64 value, uint index=0, uint size=bitsize)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::bitset< bitsize > \fBm_bitset\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator\fP (QDataStream &s, const \fBTbitStruct\fP< bitsize > &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBTbitStruct\fP< bitsize > &data)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<uint bitsize>
+.br
+struct AFlib::id::TbitStruct< bitsize >"
+
+.PP
+Definition at line 14 of file afIdBit\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<uint bitsize> uint \fBAFlib::id::TbitStruct\fP< bitsize >::bitSize () const\fC [inline]\fP"
+
+.PP
+Definition at line 25 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> void \fBAFlib::id::TbitStruct\fP< bitsize >::fill (const std::string str)\fC [inline]\fP"
+
+.PP
+Definition at line 94 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> std::bitset<bitsize> \fBAFlib::id::TbitStruct\fP< bitsize >::getBitSet (uint index, uint size) const\fC [inline]\fP"
+
+.PP
+Definition at line 56 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> quint8 \fBAFlib::id::TbitStruct\fP< bitsize >::getCharPiece (uint index) const\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> template<uint bitsize_> std::bitset<bitsize_> \fBAFlib::id::TbitStruct\fP< bitsize >::getPiece (uint index, uint size) const\fC [inline]\fP"
+
+.PP
+Definition at line 28 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> \fBAFlib::id::TbitStruct\fP< bitsize >::\fBoperator\fP std::string () const\fC [inline]\fP"
+
+.PP
+Definition at line 80 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> \fBTbitStruct\fP<bitsize>& \fBAFlib::id::TbitStruct\fP< bitsize >::\fBoperator\fP= (const quint16 value)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 155 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> \fBTbitStruct\fP<bitsize>& \fBAFlib::id::TbitStruct\fP< bitsize >::\fBoperator\fP= (const quint32 value)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 156 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> \fBTbitStruct\fP<bitsize>& \fBAFlib::id::TbitStruct\fP< bitsize >::\fBoperator\fP= (const quint64 value)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 157 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> \fBTbitStruct\fP<bitsize>& \fBAFlib::id::TbitStruct\fP< bitsize >::\fBoperator\fP= (const quint8 value)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 154 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> bool \fBAFlib::id::TbitStruct\fP< bitsize >::setBoolRange (quint8 iFrom, quint8 iTo, std::vector< bool > values)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 106 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> void \fBAFlib::id::TbitStruct\fP< bitsize >::setCharPiece (uint index, quint8 ch)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 119 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> template<typename typeNumber , uint size_> void \fBAFlib::id::TbitStruct\fP< bitsize >::setFromValue (typeNumber value, uint index, uint size)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 130 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> bool \fBAFlib::id::TbitStruct\fP< bitsize >::setReservedT (quint8 maxSize, quint8 iFrom, quint8 iTo, std::vector< bool > values)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 140 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> void \fBAFlib::id::TbitStruct\fP< bitsize >::setUInt16 (quint16 value, uint index = \fC0\fP, uint size = \fCbitsize\fP)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 160 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> void \fBAFlib::id::TbitStruct\fP< bitsize >::setUInt32 (quint32 value, uint index = \fC0\fP, uint size = \fCbitsize\fP)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 161 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> void \fBAFlib::id::TbitStruct\fP< bitsize >::setUInt64 (quint64 value, uint index = \fC0\fP, uint size = \fCbitsize\fP)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 162 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> void \fBAFlib::id::TbitStruct\fP< bitsize >::setUInt8 (quint8 value, uint index = \fC0\fP, uint size = \fCbitsize\fP)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 159 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> std::string \fBAFlib::id::TbitStruct\fP< bitsize >::toString (char separator = \fC8\fP, char ch = \fC'`'\fP) const\fC [inline]\fP"
+
+.PP
+Definition at line 81 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> template<typename typeNumber > typeNumber \fBAFlib::id::TbitStruct\fP< bitsize >::toTypeNumber (uint index, uint size) const\fC [inline]\fP"
+
+.PP
+Definition at line 59 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> quint16 \fBAFlib::id::TbitStruct\fP< bitsize >::toUInt16 (uint index = \fC0\fP, uint size = \fC16\fP) const\fC [inline]\fP"
+
+.PP
+Definition at line 76 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> quint32 \fBAFlib::id::TbitStruct\fP< bitsize >::toUInt32 (uint index = \fC0\fP, uint size = \fC32\fP) const\fC [inline]\fP"
+
+.PP
+Definition at line 77 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> quint64 \fBAFlib::id::TbitStruct\fP< bitsize >::toUInt64 (uint index = \fC0\fP, uint size = \fC64\fP) const\fC [inline]\fP"
+
+.PP
+Definition at line 78 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> quint8 \fBAFlib::id::TbitStruct\fP< bitsize >::toUInt8 (uint index = \fC0\fP, uint size = \fC8\fP) const\fC [inline]\fP"
+
+.PP
+Definition at line 75 of file afIdBit\&.h\&.
+.SS "template<uint bitsize> template<uint fpart, uint spart> std::bitset<fpart + spart> \fBAFlib::id::TbitStruct\fP< bitsize >::unite (std::bitset< fpart > fp, std::bitset< spart > sp) const\fC [inline]\fP"
+
+.PP
+Definition at line 70 of file afIdBit\&.h\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "template<uint bitsize> QDataStream& operator (QDataStream & s, const \fBTbitStruct\fP< bitsize > & data)\fC [friend]\fP"
+
+.SS "template<uint bitsize> QDataStream& \fBoperator\fP>> (QDataStream & s, \fBTbitStruct\fP< bitsize > & data)\fC [friend]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<uint bitsize> std::bitset<bitsize> \fBAFlib::id::TbitStruct\fP< bitsize >::m_bitset\fC [protected]\fP"
+
+.PP
+Definition at line 102 of file afIdBit\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

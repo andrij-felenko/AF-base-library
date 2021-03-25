@@ -1,0 +1,317 @@
+.TH "AFaccount::Storage" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFaccount::Storage \- The \fBAFaccount::Storage\fP class we load all possible account, and take it on RAM, so we can access to them always in any time, but we need to make shorten every object that we have and it give us speed when we parse this list\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afAccountStorage\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBlogin\fP (const QString &login, const QString &password)"
+.br
+.ti -1c
+.RI "void \fBlogout\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBisGuestChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBuserChanged\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStorage\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "std::optional< QString > \fBcheckLogin\fP (QString \fBlogin\fP, QString password) const"
+.br
+.RI "checkLogin \\badcode return need rewrite "
+.ti -1c
+.RI "std::optional< QString > \fBcheckLogin\fP (QString \fBlogin\fP, QString password, \fBAFlib::id::Account_bit\fP acc_b) const"
+.br
+.ti -1c
+.RI "QList< \fBAFlib::id::Account_bit\fP > \fBdependsAccount\fP (\fBAFlib::id::Account_bit\fP account=\fBAFlib::id::Acc_bit\fP(0)) const"
+.br
+.ti -1c
+.RI "bool \fBcheck\fP (const \fBAFlib::id::Account_bit\fP &id)"
+.br
+.ti -1c
+.RI "bool \fBcheck\fP (const quint32 &id)"
+.br
+.ti -1c
+.RI "\fBInfoPtr\fP \fBgetInfo\fP (const \fBAFIdAccount\fP &id)"
+.br
+.ti -1c
+.RI "\fBInfoPtr\fP \fBgetInfo\fP (const QString &nick)"
+.br
+.ti -1c
+.RI "\fBInfoPtr\fP \fBgetInfo\fP (const quint32 &id)"
+.br
+.ti -1c
+.RI "bool \fBcheckNickname\fP (const QString &nick)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (\fBAccountPtr\fP account, bool isNeedSave=true)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (\fBGroupPtr\fP group, bool isNeedSave=true)"
+.br
+.ti -1c
+.RI "bool \fBremove\fP (\fBAFlib::id::Account_bit\fP id)"
+.br
+.ti -1c
+.RI "bool \fBisGuest\fP () const"
+.br
+.ti -1c
+.RI "\fBAccount\fP * \fBuser\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBStoragePtr\fP \fBinstance\fP ()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisGuest\fP"
+.br
+.ti -1c
+.RI "\fBInfo\fP \fBuser\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreload\fP ()"
+.br
+.ti -1c
+.RI "void \fBloginAs\fP (\fBAFlib::id::Account_bit\fP account)"
+.br
+.ti -1c
+.RI "bool \fBsave\fP (\fBAccountPtr\fP account)"
+.br
+.ti -1c
+.RI "bool \fBsave\fP (\fBGroupPtr\fP group)"
+.br
+.ti -1c
+.RI "std::optional< \fBAccountPtr\fP > \fBgetAccount\fP (const \fBAFlib::id::Account_bit\fP acc)"
+.br
+.ti -1c
+.RI "std::optional< \fBGroupPtr\fP > \fBgetGroup\fP (const \fBAFlib::id::Account_bit\fP acc)"
+.br
+.ti -1c
+.RI "bool \fBcontains\fP (\fBAFlib::id::Account_bit\fP id) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBAccountPtrV\fP \fBm_accountList\fP"
+.br
+.ti -1c
+.RI "\fBGroupPtrV\fP \fBm_groupList\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static QDir \fBm_accountStorageDir\fP = QDir::current()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAFlib::API\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBAFaccount::Storage\fP class we load all possible account, and take it on RAM, so we can access to them always in any time, but we need to make shorten every object that we have and it give us speed when we parse this list\&. 
+
+
+.PP
+\fBNote\fP
+.RS 4
+This class work only with local data, for use data from server need to use AccountAPI class\&. 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file afAccountStorage\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFaccount::Storage::Storage (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 17 of file afAccountStorage\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void AFaccount::Storage::add (\fBAccountPtr\fP account, bool isNeedSave = \fCtrue\fP)"
+
+.PP
+Definition at line 118 of file afAccountStorage\&.cpp\&.
+.SS "void AFaccount::Storage::add (\fBGroupPtr\fP group, bool isNeedSave = \fCtrue\fP)"
+
+.PP
+Definition at line 128 of file afAccountStorage\&.cpp\&.
+.SS "bool AFaccount::Storage::check (const \fBAFlib::id::Account_bit\fP & id)"
+
+.PP
+Definition at line 31 of file afAccountStorage\&.cpp\&.
+.SS "bool AFaccount::Storage::check (const quint32 & id)"
+
+.PP
+Definition at line 44 of file afAccountStorage\&.cpp\&.
+.SS "std::optional< QString > AFaccount::Storage::checkLogin (QString login, QString password) const"
+
+.PP
+checkLogin \\badcode return need rewrite 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlogin\fP 
+.br
+\fIpassword\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Return true if have error, it's hasn't logic, but for now it's ok\&. 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file afAccountStorage\&.cpp\&.
+.SS "std::optional< QString > AFaccount::Storage::checkLogin (QString login, QString password, \fBAFlib::id::Account_bit\fP acc_b) const"
+
+.PP
+Definition at line 54 of file afAccountStorage\&.cpp\&.
+.SS "bool AFaccount::Storage::checkNickname (const QString & nick)"
+
+.PP
+Definition at line 110 of file afAccountStorage\&.cpp\&.
+.SS "bool AFaccount::Storage::contains (\fBAFlib::id::Account_bit\fP id) const\fC [private]\fP"
+
+.PP
+Definition at line 251 of file afAccountStorage\&.cpp\&.
+.SS "QList< \fBAFlib::id::Account_bit\fP > AFaccount::Storage::dependsAccount (\fBAFlib::id::Account_bit\fP account = \fC\fBAFlib::id::Acc_bit\fP(0)\fP) const"
+
+.PP
+Definition at line 69 of file afAccountStorage\&.cpp\&.
+.SS "std::optional< \fBAFaccount::AccountPtr\fP > AFaccount::Storage::getAccount (const \fBAFlib::id::Account_bit\fP acc)\fC [private]\fP"
+
+.PP
+Definition at line 235 of file afAccountStorage\&.cpp\&.
+.SS "std::optional< \fBAFaccount::GroupPtr\fP > AFaccount::Storage::getGroup (const \fBAFlib::id::Account_bit\fP acc)\fC [private]\fP"
+
+.PP
+Definition at line 243 of file afAccountStorage\&.cpp\&.
+.SS "\fBAFaccount::InfoPtr\fP AFaccount::Storage::getInfo (const \fBAFIdAccount\fP & id)"
+
+.PP
+Definition at line 87 of file afAccountStorage\&.cpp\&.
+.SS "\fBAFaccount::InfoPtr\fP AFaccount::Storage::getInfo (const QString & nick)"
+
+.PP
+Definition at line 97 of file afAccountStorage\&.cpp\&.
+.SS "\fBAFaccount::InfoPtr\fP AFaccount::Storage::getInfo (const quint32 & id)"
+
+.PP
+Definition at line 105 of file afAccountStorage\&.cpp\&.
+.SS "\fBAFaccount::StoragePtr\fP AFaccount::Storage::instance ()\fC [static]\fP"
+
+.PP
+Definition at line 26 of file afAccountStorage\&.cpp\&.
+.SS "bool AFaccount::Storage::isGuest () const"
+
+.SS "void AFaccount::Storage::isGuestChanged ()\fC [signal]\fP"
+
+.SS "void AFaccount::Storage::login (const QString & login, const QString & password)\fC [slot]\fP"
+
+.PP
+Definition at line 161 of file afAccountStorage\&.cpp\&.
+.SS "void AFaccount::Storage::loginAs (\fBAFlib::id::Account_bit\fP account)\fC [private]\fP"
+
+.PP
+Definition at line 216 of file afAccountStorage\&.cpp\&.
+.SS "void AFaccount::Storage::logout ()\fC [slot]\fP"
+
+.PP
+Definition at line 171 of file afAccountStorage\&.cpp\&.
+.SS "void AFaccount::Storage::reload ()\fC [private]\fP"
+
+.PP
+Definition at line 178 of file afAccountStorage\&.cpp\&.
+.SS "bool AFaccount::Storage::remove (\fBAFlib::id::Account_bit\fP id)"
+
+.PP
+Definition at line 138 of file afAccountStorage\&.cpp\&.
+.SS "bool AFaccount::Storage::save (\fBAccountPtr\fP account)\fC [private]\fP"
+
+.PP
+Definition at line 223 of file afAccountStorage\&.cpp\&.
+.SS "bool AFaccount::Storage::save (\fBGroupPtr\fP group)\fC [private]\fP"
+
+.PP
+Definition at line 229 of file afAccountStorage\&.cpp\&.
+.SS "\fBAccount\fP* AFaccount::Storage::user () const"
+
+.SS "void AFaccount::Storage::userChanged ()\fC [signal]\fP"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBAFlib::API\fP\fC [friend]\fP"
+
+.PP
+Definition at line 84 of file afAccountStorage\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBAccountPtrV\fP AFaccount::Storage::m_accountList\fC [private]\fP"
+
+.PP
+Definition at line 71 of file afAccountStorage\&.h\&.
+.SS "QDir AFaccount::Storage::m_accountStorageDir = QDir::current()\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 70 of file afAccountStorage\&.h\&.
+.SS "\fBGroupPtrV\fP AFaccount::Storage::m_groupList\fC [private]\fP"
+
+.PP
+Definition at line 72 of file afAccountStorage\&.h\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool AFaccount::Storage::isGuest\fC [read]\fP"
+
+.PP
+Definition at line 27 of file afAccountStorage\&.h\&.
+.SS "\fBAFaccount::Account\fP * AFaccount::Storage::user\fC [read]\fP"
+
+.PP
+Definition at line 28 of file afAccountStorage\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

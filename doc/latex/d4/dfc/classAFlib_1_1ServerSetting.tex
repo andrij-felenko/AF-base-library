@@ -1,0 +1,124 @@
+\hypertarget{classAFlib_1_1ServerSetting}{}\doxysection{A\+Flib\+::Server\+Setting Class Reference}
+\label{classAFlib_1_1ServerSetting}\index{AFlib::ServerSetting@{AFlib::ServerSetting}}
+
+
+{\ttfamily \#include $<$af\+Server\+Settings.\+h$>$}
+
+Inheritance diagram for A\+Flib\+::Server\+Setting\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/dfc/classAFlib_1_1ServerSetting}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFlib_1_1ServerSetting_a8fb66c9d182498cd9ab8a4d70a83206d}{Server\+Setting}} (Q\+Object $\ast$parent=nullptr)
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1ServerSetting_a1713b55199f06335722a9a9f71299a02}{add\+Url}} (Q\+String key, Q\+String url)
+\item 
+Q\+String \mbox{\hyperlink{classAFlib_1_1ServerSetting_a9042e782f1b27107dd243a50d10b6ca1}{get\+Url}} (Q\+String key, Q\+String default\+Value=\char`\"{}\char`\"{}) const
+\item 
+Q\+Date\+Time \mbox{\hyperlink{classAFlib_1_1ServerSetting_a9729919a530407ba7185c5af0d829b6b}{last\+Storage\+Update}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Map$<$ Q\+String, Q\+String $>$ \mbox{\hyperlink{classAFlib_1_1ServerSetting_a1bf6a6528252d1dfa995f9f7617367b7}{m\+\_\+link\+Map}}
+\item 
+Q\+Date\+Time \mbox{\hyperlink{classAFlib_1_1ServerSetting_af6b5fc994cbc278450dc02e9fc182e7c}{m\+\_\+last\+Storage\+Update}}
+\item 
+Q\+Settings \mbox{\hyperlink{classAFlib_1_1ServerSetting_a6d836dc8c17505161a97d38aced75c14}{m\+\_\+settings}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 18 of file af\+Server\+Settings.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFlib_1_1ServerSetting_a8fb66c9d182498cd9ab8a4d70a83206d}\label{classAFlib_1_1ServerSetting_a8fb66c9d182498cd9ab8a4d70a83206d}} 
+\index{AFlib::ServerSetting@{AFlib::ServerSetting}!ServerSetting@{ServerSetting}}
+\index{ServerSetting@{ServerSetting}!AFlib::ServerSetting@{AFlib::ServerSetting}}
+\doxysubsubsection{\texorpdfstring{ServerSetting()}{ServerSetting()}}
+{\footnotesize\ttfamily A\+Flib\+::\+Server\+Setting\+::\+Server\+Setting (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 5 of file af\+Server\+Settings.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFlib_1_1ServerSetting_a1713b55199f06335722a9a9f71299a02}\label{classAFlib_1_1ServerSetting_a1713b55199f06335722a9a9f71299a02}} 
+\index{AFlib::ServerSetting@{AFlib::ServerSetting}!addUrl@{addUrl}}
+\index{addUrl@{addUrl}!AFlib::ServerSetting@{AFlib::ServerSetting}}
+\doxysubsubsection{\texorpdfstring{addUrl()}{addUrl()}}
+{\footnotesize\ttfamily bool A\+Flib\+::\+Server\+Setting\+::add\+Url (\begin{DoxyParamCaption}\item[{Q\+String}]{key,  }\item[{Q\+String}]{url }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file af\+Server\+Settings.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1ServerSetting_a9042e782f1b27107dd243a50d10b6ca1}\label{classAFlib_1_1ServerSetting_a9042e782f1b27107dd243a50d10b6ca1}} 
+\index{AFlib::ServerSetting@{AFlib::ServerSetting}!getUrl@{getUrl}}
+\index{getUrl@{getUrl}!AFlib::ServerSetting@{AFlib::ServerSetting}}
+\doxysubsubsection{\texorpdfstring{getUrl()}{getUrl()}}
+{\footnotesize\ttfamily Q\+String A\+Flib\+::\+Server\+Setting\+::get\+Url (\begin{DoxyParamCaption}\item[{Q\+String}]{key,  }\item[{Q\+String}]{default\+Value = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 20 of file af\+Server\+Settings.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1ServerSetting_a9729919a530407ba7185c5af0d829b6b}\label{classAFlib_1_1ServerSetting_a9729919a530407ba7185c5af0d829b6b}} 
+\index{AFlib::ServerSetting@{AFlib::ServerSetting}!lastStorageUpdate@{lastStorageUpdate}}
+\index{lastStorageUpdate@{lastStorageUpdate}!AFlib::ServerSetting@{AFlib::ServerSetting}}
+\doxysubsubsection{\texorpdfstring{lastStorageUpdate()}{lastStorageUpdate()}}
+{\footnotesize\ttfamily Q\+Date\+Time A\+Flib\+::\+Server\+Setting\+::last\+Storage\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 25 of file af\+Server\+Settings.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAFlib_1_1ServerSetting_af6b5fc994cbc278450dc02e9fc182e7c}\label{classAFlib_1_1ServerSetting_af6b5fc994cbc278450dc02e9fc182e7c}} 
+\index{AFlib::ServerSetting@{AFlib::ServerSetting}!m\_lastStorageUpdate@{m\_lastStorageUpdate}}
+\index{m\_lastStorageUpdate@{m\_lastStorageUpdate}!AFlib::ServerSetting@{AFlib::ServerSetting}}
+\doxysubsubsection{\texorpdfstring{m\_lastStorageUpdate}{m\_lastStorageUpdate}}
+{\footnotesize\ttfamily Q\+Date\+Time A\+Flib\+::\+Server\+Setting\+::m\+\_\+last\+Storage\+Update\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 31 of file af\+Server\+Settings.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1ServerSetting_a1bf6a6528252d1dfa995f9f7617367b7}\label{classAFlib_1_1ServerSetting_a1bf6a6528252d1dfa995f9f7617367b7}} 
+\index{AFlib::ServerSetting@{AFlib::ServerSetting}!m\_linkMap@{m\_linkMap}}
+\index{m\_linkMap@{m\_linkMap}!AFlib::ServerSetting@{AFlib::ServerSetting}}
+\doxysubsubsection{\texorpdfstring{m\_linkMap}{m\_linkMap}}
+{\footnotesize\ttfamily Q\+Map$<$Q\+String, Q\+String$>$ A\+Flib\+::\+Server\+Setting\+::m\+\_\+link\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file af\+Server\+Settings.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1ServerSetting_a6d836dc8c17505161a97d38aced75c14}\label{classAFlib_1_1ServerSetting_a6d836dc8c17505161a97d38aced75c14}} 
+\index{AFlib::ServerSetting@{AFlib::ServerSetting}!m\_settings@{m\_settings}}
+\index{m\_settings@{m\_settings}!AFlib::ServerSetting@{AFlib::ServerSetting}}
+\doxysubsubsection{\texorpdfstring{m\_settings}{m\_settings}}
+{\footnotesize\ttfamily Q\+Settings A\+Flib\+::\+Server\+Setting\+::m\+\_\+settings\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 32 of file af\+Server\+Settings.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/\mbox{\hyperlink{afServerSettings_8h}{af\+Server\+Settings.\+h}}\item 
+lib\+\_\+base\+A\+F/tool/\mbox{\hyperlink{afServerSettings_8cpp}{af\+Server\+Settings.\+cpp}}\end{DoxyCompactItemize}

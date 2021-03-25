@@ -1,0 +1,81 @@
+\hypertarget{afIdBit_8h}{}\doxysection{lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/af\+Id\+Bit.h File Reference}
+\label{afIdBit_8h}\index{lib\_baseAF/include/lib\_baseAF/afIdBit.h@{lib\_baseAF/include/lib\_baseAF/afIdBit.h}}
+{\ttfamily \#include $<$bitset$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Data\+Stream$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Buffer$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Debug$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Shared\+Pointer$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct$<$ bitsize $>$}}
+\item 
+struct \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct$<$ bitsize $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceAFlib}{A\+Flib}}
+\item 
+ \mbox{\hyperlink{namespaceAFlib_1_1id}{A\+Flib\+::id}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$uint bsize$>$ }\\Q\+Data\+Stream \& \mbox{\hyperlink{afIdBit_8h_a8b06559cb2d81b7639a1067e1c6ac671}{operator$<$$<$}} (Q\+Data\+Stream \&s, const \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bsize $>$ \&data)
+\item 
+{\footnotesize template$<$uint bsize$>$ }\\Q\+Data\+Stream \& \mbox{\hyperlink{afIdBit_8h_aaeb19a956b161dd5511390efa81fe3cd}{operator$>$$>$}} (Q\+Data\+Stream \&s, \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bsize $>$ \&data)
+\item 
+{\footnotesize template$<$typename T $>$ }\\Q\+Data\+Stream \& \mbox{\hyperlink{afIdBit_8h_a767f70df2b9a373b3b97092c4374fa36}{operator$<$$<$}} (Q\+Data\+Stream \&s, const std\+::vector$<$ Q\+Shared\+Pointer$<$ T $>$$>$ \&list)
+\item 
+{\footnotesize template$<$typename T $>$ }\\Q\+Data\+Stream \& \mbox{\hyperlink{afIdBit_8h_a4763911a62abb761f63f0b8868b64be4}{operator$>$$>$}} (Q\+Data\+Stream \&s, std\+::vector$<$ Q\+Shared\+Pointer$<$ T $>$$>$ \&list)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{afIdBit_8h_a8b06559cb2d81b7639a1067e1c6ac671}\label{afIdBit_8h_a8b06559cb2d81b7639a1067e1c6ac671}} 
+\index{afIdBit.h@{afIdBit.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!afIdBit.h@{afIdBit.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$uint bsize$>$ \\
+Q\+Data\+Stream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{Q\+Data\+Stream \&}]{s,  }\item[{const \mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bsize $>$ \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 166 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{afIdBit_8h_a767f70df2b9a373b3b97092c4374fa36}\label{afIdBit_8h_a767f70df2b9a373b3b97092c4374fa36}} 
+\index{afIdBit.h@{afIdBit.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!afIdBit.h@{afIdBit.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Q\+Data\+Stream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{Q\+Data\+Stream \&}]{s,  }\item[{const std\+::vector$<$ Q\+Shared\+Pointer$<$ T $>$$>$ \&}]{list }\end{DoxyParamCaption})}
+
+
+
+Definition at line 189 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{afIdBit_8h_aaeb19a956b161dd5511390efa81fe3cd}\label{afIdBit_8h_aaeb19a956b161dd5511390efa81fe3cd}} 
+\index{afIdBit.h@{afIdBit.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!afIdBit.h@{afIdBit.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$uint bsize$>$ \\
+Q\+Data\+Stream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{Q\+Data\+Stream \&}]{s,  }\item[{\mbox{\hyperlink{structAFlib_1_1id_1_1TbitStruct}{A\+Flib\+::id\+::\+Tbit\+Struct}}$<$ bsize $>$ \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 173 of file af\+Id\+Bit.\+h.
+
+\mbox{\Hypertarget{afIdBit_8h_a4763911a62abb761f63f0b8868b64be4}\label{afIdBit_8h_a4763911a62abb761f63f0b8868b64be4}} 
+\index{afIdBit.h@{afIdBit.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!afIdBit.h@{afIdBit.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Q\+Data\+Stream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{Q\+Data\+Stream \&}]{s,  }\item[{std\+::vector$<$ Q\+Shared\+Pointer$<$ T $>$$>$ \&}]{list }\end{DoxyParamCaption})}
+
+
+
+Definition at line 204 of file af\+Id\+Bit.\+h.
+

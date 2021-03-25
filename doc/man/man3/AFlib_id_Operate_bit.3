@@ -1,0 +1,150 @@
+.TH "AFlib::id::Operate_bit" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::id::Operate_bit
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afIdOperate\&.h>\fP
+.PP
+Inherits \fBAFlib::id::TbitStruct< 48 >\fP\&.
+.PP
+Inherited by \fBAFlib::id::Operate\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAccount_bit\fP \fBuser\fP () const"
+.br
+.ti -1c
+.RI "quint32 \fBuserId\fP () const"
+.br
+.ti -1c
+.RI "\fBHIdType\fP \fBhistoryType\fP () const"
+.br
+.ti -1c
+.RI "\fBSIdType\fP \fBsaveType\fP () const"
+.br
+.ti -1c
+.RI "quint16 \fBkey\fP () const"
+.br
+.ti -1c
+.RI "quint8 \fBreserved\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetReserved\fP (quint8 r)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetUserId\fP (quint32 id) final"
+.br
+.ti -1c
+.RI "virtual void \fBsetUserId\fP (\fBAcc_bit\fP id) final"
+.br
+.ti -1c
+.RI "virtual void \fBsetHistoryType\fP (quint8 type) final"
+.br
+.ti -1c
+.RI "virtual void \fBsetHistoryType\fP (\fBHIdType\fP type) final"
+.br
+.ti -1c
+.RI "virtual bool \fBsetSaveType\fP (quint8 type) final"
+.br
+.ti -1c
+.RI "virtual bool \fBsetSaveType\fP (\fBSIdType\fP type) final"
+.br
+.ti -1c
+.RI "virtual void \fBsetKey\fP (quint16 \fBkey\fP) final"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBOperate_bit\fP &op)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBOperate_bit\fP &op)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 32 of file afIdOperate\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBHIdType\fP AFlib::id::Operate_bit::historyType () const\fC [inline]\fP"
+
+.PP
+Definition at line 36 of file afIdOperate\&.h\&.
+.SS "quint16 AFlib::id::Operate_bit::key () const\fC [inline]\fP"
+
+.PP
+Definition at line 38 of file afIdOperate\&.h\&.
+.SS "quint8 AFlib::id::Operate_bit::reserved () const\fC [inline]\fP"
+
+.PP
+Definition at line 40 of file afIdOperate\&.h\&.
+.SS "\fBSIdType\fP AFlib::id::Operate_bit::saveType () const\fC [inline]\fP"
+
+.PP
+Definition at line 37 of file afIdOperate\&.h\&.
+.SS "virtual void AFlib::id::Operate_bit::setHistoryType (\fBHIdType\fP type)\fC [inline]\fP, \fC [final]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 48 of file afIdOperate\&.h\&.
+.SS "virtual void AFlib::id::Operate_bit::setHistoryType (quint8 type)\fC [inline]\fP, \fC [final]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 47 of file afIdOperate\&.h\&.
+.SS "virtual void AFlib::id::Operate_bit::setKey (quint16 key)\fC [inline]\fP, \fC [final]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 53 of file afIdOperate\&.h\&.
+.SS "void AFlib::id::Operate_bit::setReserved (quint8 r)\fC [inline]\fP"
+
+.PP
+Definition at line 41 of file afIdOperate\&.h\&.
+.SS "bool AFlib::id::Operate_bit::setSaveType (quint8 type)\fC [final]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 94 of file afIdOperate\&.cpp\&.
+.SS "bool AFlib::id::Operate_bit::setSaveType (\fBSIdType\fP type)\fC [final]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 99 of file afIdOperate\&.cpp\&.
+.SS "virtual void AFlib::id::Operate_bit::setUserId (\fBAcc_bit\fP id)\fC [inline]\fP, \fC [final]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 45 of file afIdOperate\&.h\&.
+.SS "virtual void AFlib::id::Operate_bit::setUserId (quint32 id)\fC [inline]\fP, \fC [final]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 44 of file afIdOperate\&.h\&.
+.SS "\fBAccount_bit\fP AFlib::id::Operate_bit::user () const\fC [inline]\fP"
+
+.PP
+Definition at line 34 of file afIdOperate\&.h\&.
+.SS "quint32 AFlib::id::Operate_bit::userId () const\fC [inline]\fP"
+
+.PP
+Definition at line 35 of file afIdOperate\&.h\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& \fBoperator\fP<< (QDataStream & s, const \fBOperate_bit\fP & op)\fC [friend]\fP"
+
+.PP
+Definition at line 56 of file afIdOperate\&.h\&.
+.SS "QDataStream& \fBoperator\fP>> (QDataStream & s, \fBOperate_bit\fP & op)\fC [friend]\fP"
+
+.PP
+Definition at line 59 of file afIdOperate\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

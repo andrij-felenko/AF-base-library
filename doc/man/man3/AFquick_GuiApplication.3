@@ -1,0 +1,313 @@
+.TH "AFquick::GuiApplication" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFquick::GuiApplication
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <guiApplication\&.h>\fP
+.PP
+Inherits QGuiApplication\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBclickOnMenu\fP (int index)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccountChanged\fP (bool \fBaccount\fP)"
+.br
+.ti -1c
+.RI "void \fBmonomenuChanged\fP (bool \fBmonomenu\fP)"
+.br
+.ti -1c
+.RI "void \fBmonoobjectChanged\fP (bool \fBmonoobject\fP)"
+.br
+.ti -1c
+.RI "void \fBportraitChanged\fP (bool \fBportrait\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGuiApplication\fP (int &argc, char **argv)"
+.br
+.ti -1c
+.RI "virtual \fB~GuiApplication\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitializePlugin\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitializePlugin\fP (QString name)"
+.br
+.ti -1c
+.RI "void \fBsetAFaccountFlag\fP (bool isUseAFaccount)"
+.br
+.ti -1c
+.RI "void \fBshow\fP ()"
+.br
+.ti -1c
+.RI "void \fBquit\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMainQmlUrl\fP (QUrl url)"
+.br
+.ti -1c
+.RI "void \fBsetMainQml\fP (QString path)"
+.br
+.ti -1c
+.RI "void \fBsetMonomenu\fP (QStringList list)"
+.br
+.ti -1c
+.RI "void \fBsetMonomenu\fP (QHash< QString, QString > hash)"
+.br
+.ti -1c
+.RI "QAbstractListModel * \fBmenuModel\fP () const"
+.br
+.ti -1c
+.RI "bool \fBaddPlugin\fP (\fBGuiPluginPtr\fP plugin)"
+.br
+.ti -1c
+.RI "void \fBsetContextProperty\fP (QString name, QObject *object)"
+.br
+.ti -1c
+.RI "void \fBsetContextProperty\fP (QString name, QVariant variant)"
+.br
+.ti -1c
+.RI "bool \fBsetCurrentPlugin\fP (const QString &name)"
+.br
+.ti -1c
+.RI "virtual bool \fBaccount\fP () const final"
+.br
+.ti -1c
+.RI "virtual bool \fBmonomenu\fP () const final"
+.br
+.ti -1c
+.RI "virtual bool \fBmonoobject\fP () const final"
+.br
+.ti -1c
+.RI "virtual bool \fBportrait\fP () const final"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBaccount\fP"
+.br
+.ti -1c
+.RI "bool \fBmonomenu\fP"
+.br
+.ti -1c
+.RI "bool \fBmonoobject\fP"
+.br
+.ti -1c
+.RI "bool \fBportrait\fP"
+.br
+.ti -1c
+.RI "QAbstractListModel \fBmenuModel\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcheckPortrait\fP ()"
+.br
+.ti -1c
+.RI "bool \fBsetContentUrl\fP (QUrl url)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_useAFaccount\fP"
+.br
+.ti -1c
+.RI "bool \fBm_portrait\fP"
+.br
+.ti -1c
+.RI "bool \fBm_initializeAll\fP"
+.br
+.ti -1c
+.RI "bool \fBm_monomenu\fP"
+.br
+.ti -1c
+.RI "QString \fBm_currentPluginName\fP"
+.br
+.ti -1c
+.RI "QQuickView * \fBm_view\fP"
+.br
+.ti -1c
+.RI "QList< \fBGuiPluginPtr\fP > \fBm_pluginList\fP"
+.br
+.ti -1c
+.RI "\fBMenuModel\fP * \fBm_menu\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file guiApplication\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFquick::GuiApplication::GuiApplication (int & argc, char ** argv)\fC [explicit]\fP"
+
+.PP
+Definition at line 10 of file guiApplication\&.cpp\&.
+.SS "AFquick::GuiApplication::~GuiApplication ()\fC [virtual]\fP"
+
+.PP
+Definition at line 39 of file guiApplication\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual bool AFquick::GuiApplication::account () const\fC [final]\fP, \fC [virtual]\fP"
+
+.SS "void AFquick::GuiApplication::accountChanged (bool account)\fC [signal]\fP"
+
+.SS "bool AFquick::GuiApplication::addPlugin (\fBGuiPluginPtr\fP plugin)"
+
+.PP
+Definition at line 123 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::checkPortrait ()\fC [private]\fP"
+
+.PP
+Definition at line 225 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::clickOnMenu (int index)\fC [slot]\fP"
+
+.PP
+Definition at line 189 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::initializePlugin ()"
+
+.PP
+Definition at line 56 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::initializePlugin (QString name)"
+
+.PP
+Definition at line 65 of file guiApplication\&.cpp\&.
+.SS "QAbstractListModel* AFquick::GuiApplication::menuModel () const"
+
+.SS "virtual bool AFquick::GuiApplication::monomenu () const\fC [final]\fP, \fC [virtual]\fP"
+
+.SS "void AFquick::GuiApplication::monomenuChanged (bool monomenu)\fC [signal]\fP"
+
+.SS "virtual bool AFquick::GuiApplication::monoobject () const\fC [final]\fP, \fC [virtual]\fP"
+
+.SS "void AFquick::GuiApplication::monoobjectChanged (bool monoobject)\fC [signal]\fP"
+
+.SS "virtual bool AFquick::GuiApplication::portrait () const\fC [final]\fP, \fC [virtual]\fP"
+
+.SS "void AFquick::GuiApplication::portraitChanged (bool portrait)\fC [signal]\fP"
+
+.SS "void AFquick::GuiApplication::quit ()"
+
+.PP
+Definition at line 85 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::setAFaccountFlag (bool isUseAFaccount)"
+
+.PP
+Definition at line 47 of file guiApplication\&.cpp\&.
+.SS "bool AFquick::GuiApplication::setContentUrl (QUrl url)\fC [private]\fP"
+
+.PP
+Definition at line 198 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::setContextProperty (QString name, QObject * object)"
+
+.PP
+Definition at line 144 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::setContextProperty (QString name, QVariant variant)"
+
+.PP
+Definition at line 149 of file guiApplication\&.cpp\&.
+.SS "bool AFquick::GuiApplication::setCurrentPlugin (const QString & name)"
+
+.PP
+Definition at line 154 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::setMainQml (QString path)"
+
+.PP
+Definition at line 95 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::setMainQmlUrl (QUrl url)"
+
+.PP
+Definition at line 90 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::setMonomenu (QHash< QString, QString > hash)"
+
+.PP
+Definition at line 109 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::setMonomenu (QStringList list)"
+
+.PP
+Definition at line 100 of file guiApplication\&.cpp\&.
+.SS "void AFquick::GuiApplication::show ()"
+
+.PP
+Definition at line 74 of file guiApplication\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString AFquick::GuiApplication::m_currentPluginName\fC [private]\fP"
+
+.PP
+Definition at line 66 of file guiApplication\&.h\&.
+.SS "bool AFquick::GuiApplication::m_initializeAll\fC [private]\fP"
+
+.PP
+Definition at line 64 of file guiApplication\&.h\&.
+.SS "\fBMenuModel\fP* AFquick::GuiApplication::m_menu\fC [private]\fP"
+
+.PP
+Definition at line 73 of file guiApplication\&.h\&.
+.SS "bool AFquick::GuiApplication::m_monomenu\fC [private]\fP"
+
+.PP
+Definition at line 65 of file guiApplication\&.h\&.
+.SS "QList<\fBGuiPluginPtr\fP> AFquick::GuiApplication::m_pluginList\fC [private]\fP"
+
+.PP
+Definition at line 69 of file guiApplication\&.h\&.
+.SS "bool AFquick::GuiApplication::m_portrait\fC [private]\fP"
+
+.PP
+Definition at line 63 of file guiApplication\&.h\&.
+.SS "bool AFquick::GuiApplication::m_useAFaccount\fC [private]\fP"
+
+.PP
+Definition at line 62 of file guiApplication\&.h\&.
+.SS "QQuickView* AFquick::GuiApplication::m_view\fC [private]\fP"
+
+.PP
+Definition at line 68 of file guiApplication\&.h\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool AFquick::GuiApplication::account\fC [read]\fP"
+
+.PP
+Definition at line 16 of file guiApplication\&.h\&.
+.SS "QAbstractListModel * AFquick::GuiApplication::menuModel\fC [read]\fP"
+
+.PP
+Definition at line 20 of file guiApplication\&.h\&.
+.SS "bool AFquick::GuiApplication::monomenu\fC [read]\fP"
+
+.PP
+Definition at line 17 of file guiApplication\&.h\&.
+.SS "bool AFquick::GuiApplication::monoobject\fC [read]\fP"
+
+.PP
+Definition at line 18 of file guiApplication\&.h\&.
+.SS "bool AFquick::GuiApplication::portrait\fC [read]\fP"
+
+.PP
+Definition at line 19 of file guiApplication\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

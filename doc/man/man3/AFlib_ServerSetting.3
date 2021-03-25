@@ -1,0 +1,82 @@
+.TH "AFlib::ServerSetting" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::ServerSetting
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afServerSettings\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBServerSetting\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "bool \fBaddUrl\fP (QString key, QString url)"
+.br
+.ti -1c
+.RI "QString \fBgetUrl\fP (QString key, QString defaultValue='') const"
+.br
+.ti -1c
+.RI "QDateTime \fBlastStorageUpdate\fP () const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QMap< QString, QString > \fBm_linkMap\fP"
+.br
+.ti -1c
+.RI "QDateTime \fBm_lastStorageUpdate\fP"
+.br
+.ti -1c
+.RI "QSettings \fBm_settings\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file afServerSettings\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::ServerSetting::ServerSetting (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 5 of file afServerSettings\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool AFlib::ServerSetting::addUrl (QString key, QString url)"
+
+.PP
+Definition at line 10 of file afServerSettings\&.cpp\&.
+.SS "QString AFlib::ServerSetting::getUrl (QString key, QString defaultValue = \fC''\fP) const"
+
+.PP
+Definition at line 20 of file afServerSettings\&.cpp\&.
+.SS "QDateTime AFlib::ServerSetting::lastStorageUpdate () const"
+
+.PP
+Definition at line 25 of file afServerSettings\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QDateTime AFlib::ServerSetting::m_lastStorageUpdate\fC [private]\fP"
+
+.PP
+Definition at line 31 of file afServerSettings\&.h\&.
+.SS "QMap<QString, QString> AFlib::ServerSetting::m_linkMap\fC [private]\fP"
+
+.PP
+Definition at line 30 of file afServerSettings\&.h\&.
+.SS "QSettings AFlib::ServerSetting::m_settings\fC [private]\fP"
+
+.PP
+Definition at line 32 of file afServerSettings\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

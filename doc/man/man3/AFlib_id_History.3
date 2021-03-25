@@ -1,0 +1,453 @@
+.TH "AFlib::id::History" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::id::History
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afIdHistory\&.h>\fP
+.PP
+Inherited by \fBAFlib::id::Object\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHistory\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateTime\fP (QDateTime dTime)"
+.br
+.ti -1c
+.RI "bool \fBhaveUpdates\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEmpty\fP () const"
+.br
+.ti -1c
+.RI "QDateTime \fBlastChange\fP () const"
+.br
+.ti -1c
+.RI "QDateTime \fBlastUpdate\fP () const"
+.br
+.ti -1c
+.RI "QDateTime \fBtimeCreate\fP () const"
+.br
+.ti -1c
+.RI "void \fBmakeFull\fP (const QByteArray &data)"
+.br
+.ti -1c
+.RI "void \fBmakeShorten\fP (\fBOperatePtrList\fP &list)"
+.br
+.ti -1c
+.RI "void \fBmakeShorten\fP ()"
+.br
+.ti -1c
+.RI "void \fBsaveShorten\fP ()"
+.br
+.ti -1c
+.RI "void \fBuseCompress\fP (\fBCompress\fP value)"
+.br
+.ti -1c
+.RI "QVariant \fBgetAttribute\fP (\fBAttribute\fP key) const"
+.br
+.ti -1c
+.RI "void \fBsetAttribute\fP (\fBAttribute\fP key, QVariant value)"
+.br
+.ti -1c
+.RI "template<typename K > QVariant \fBgetAttribute\fP (K key) const"
+.br
+.ti -1c
+.RI "template<typename K > void \fBsetAttribute\fP (K key, QVariant value)"
+.br
+.ti -1c
+.RI "template<typename K > \fBGlobal_bit\fP \fBgetIdAttribute\fP (K key) const"
+.br
+.ti -1c
+.RI "template<typename K > void \fBsetIdAttribute\fP (K key, const \fBGlobal_bit\fP &value)"
+.br
+.ti -1c
+.RI "QVariantList \fBgetMultiAttribute\fP (\fBAttribute\fP key) const"
+.br
+.ti -1c
+.RI "void \fBsetMultiAttribute\fP (\fBAttribute\fP key, QVariant value, \fBHIdType\fP type)"
+.br
+.ti -1c
+.RI "template<typename K > QVariantList \fBgetMultiAttribute\fP (K key) const"
+.br
+.ti -1c
+.RI "template<typename K > \fBGlobalList_bit\fP \fBgetMultiIdAttribute\fP (K key) const"
+.br
+.ti -1c
+.RI "template<typename K > void \fBsetMultiAttribute\fP (K key, const QVariant &value, \fBHIdType\fP type)"
+.br
+.ti -1c
+.RI "template<typename K > void \fBsetMultiIdAttribute\fP (K key, const \fBGlobal_bit\fP &value, \fBHIdType\fP type)"
+.br
+.ti -1c
+.RI "\fBOperatePtrList\fP \fBgetAllOperates\fP () const"
+.br
+.ti -1c
+.RI "\fBOperatePtrList\fP \fBgetIdOperates\fP () const"
+.br
+.ti -1c
+.RI "\fBOperatePtrList\fP \fBgetNoIdOperates\fP () const"
+.br
+.ti -1c
+.RI "\fBOperatePtrList\fP \fBgetListAfter\fP (const QDateTime &afterTime) const"
+.br
+.ti -1c
+.RI "\fBOperatePtrList\fP \fBgetListIdAfter\fP (const QDateTime &afterTime) const"
+.br
+.ti -1c
+.RI "void \fBaddOperate\fP (\fBOperate\fP id, bool \fBsaveToStorage\fP=true)"
+.br
+.ti -1c
+.RI "void \fBaddOperate\fP (\fBOperatePtr\fP id, bool \fBsaveToStorage\fP=true, bool isId=false)"
+.br
+.ti -1c
+.RI "void \fBaddOperate\fP (const QByteArray &data)"
+.br
+.ti -1c
+.RI "void \fBaddOperations\fP (const QByteArray &list)"
+.br
+.ti -1c
+.RI "void \fBaddOperations\fP (const \fBOperatePtrList\fP list, bool \fBsaveToStorage\fP=true, bool isId=false)"
+.br
+.ti -1c
+.RI "void \fBaddOperate\fP (\fBAttribute\fP attributeKey, QVariant value, \fBAccount_bit\fP userId, \fBHIdType\fP history=HIdType::AddLine, \fBSIdType\fP saved=SIdType::Local, QDateTime dTime=QDateTime::currentDateTime())"
+.br
+.ti -1c
+.RI "void \fBaddOperate\fP (\fBAttribute\fP attributeKey, QVariant value, quint32 userId, quint8 historyId, quint8 savedId, QDateTime dTime=QDateTime::currentDateTime())"
+.br
+.ti -1c
+.RI "template<typename K > void \fBaddOperate\fP (K valueKey, QVariant value, \fBAccount_bit\fP userId, \fBHistoryIdType\fP history, \fBSavedIdType\fP saved, QDateTime dTime=QDateTime::currentDateTime())"
+.br
+.ti -1c
+.RI "template<typename K > void \fBaddOperate\fP (K valueKey, QVariant value, quint32 userId, quint8 historyId, quint8 savedId, QDateTime dTime=QDateTime::currentDateTime())"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsaveToStorage\fP (const \fBOperatePtr\fP ptr, bool isId=false)=0"
+.br
+.ti -1c
+.RI "virtual \fBSavedIdType\fP \fBsavedStatus\fP ()=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QDateTime \fBm_lastUpdate\fP"
+.br
+.ti -1c
+.RI "\fBOperatePtrList\fP \fBm_operateList\fP"
+.br
+.ti -1c
+.RI "\fBOperatePtrList\fP \fBm_operateIdList\fP"
+.br
+.ti -1c
+.RI "\fBAccount_bit\fP \fBm_owner\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBrefreshLastChangeTime\fP ()"
+.br
+.ti -1c
+.RI "\fBGlobal_bit\fP \fBgetIdAttribute\fP (quint16 key)"
+.br
+.ti -1c
+.RI "void \fBsetIdAttribute\fP (quint16 key, const \fBGlobal_bit\fP &globalId)"
+.br
+.ti -1c
+.RI "QVariant \fBgetAttribute\fP (quint16 key) const"
+.br
+.ti -1c
+.RI "QVariant \fBgetAttribute\fP (const \fBOperatePtrList\fP &list, quint16 key) const"
+.br
+.ti -1c
+.RI "void \fBsetAttribute\fP (quint16 key, const QVariant &value, bool isId=false)"
+.br
+.ti -1c
+.RI "QVariantList \fBgetMultiAttribute\fP (const \fBOperatePtrList\fP &opList, quint16 key) const"
+.br
+.ti -1c
+.RI "void \fBsetMultiAttribute\fP (quint16 key, const QVariant &value, \fBHIdType\fP type, bool isId=false)"
+.br
+.ti -1c
+.RI "\fBGlobalList_bit\fP \fBgetMultiIdAttribute\fP (quint16 key) const"
+.br
+.ti -1c
+.RI "void \fBsetMultiIdAttribute\fP (quint16 key, const \fBGlobal_bit\fP &value, \fBHIdType\fP type)"
+.br
+.ti -1c
+.RI "void \fBaddOperate\fP (quint16 valueKey, QVariant value, \fBAccount_bit\fP userId, \fBHistoryIdType\fP history, \fBSavedIdType\fP saved, bool isId=false, QDateTime dTime=QDateTime::currentDateTime())"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAFlib::id::Object\fP"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &stream, const \fBHistory\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &stream, \fBHistory\fP &data)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 46 of file afIdHistory\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::id::History::History ()\fC [explicit]\fP"
+
+.PP
+Definition at line 5 of file afIdHistory\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void AFlib::id::History::addOperate (\fBAttribute\fP attributeKey, QVariant value, \fBAccount_bit\fP userId, \fBHIdType\fP history = \fCHIdType::AddLine\fP, \fBSIdType\fP saved = \fCSIdType::Local\fP, QDateTime dTime = \fCQDateTime::currentDateTime()\fP)"
+
+.PP
+Definition at line 225 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::addOperate (\fBAttribute\fP attributeKey, QVariant value, quint32 userId, quint8 historyId, quint8 savedId, QDateTime dTime = \fCQDateTime::currentDateTime()\fP)"
+
+.PP
+Definition at line 231 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::addOperate (const QByteArray & data)"
+
+.PP
+Definition at line 205 of file afIdHistory\&.cpp\&.
+.SS "template<typename K > void AFlib::id::History::addOperate (K valueKey, QVariant value, \fBAccount_bit\fP userId, \fBHistoryIdType\fP history, \fBSavedIdType\fP saved, QDateTime dTime = \fCQDateTime::currentDateTime()\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 132 of file afIdHistory\&.h\&.
+.SS "template<typename K > void AFlib::id::History::addOperate (K valueKey, QVariant value, quint32 userId, quint8 historyId, quint8 savedId, QDateTime dTime = \fCQDateTime::currentDateTime()\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 140 of file afIdHistory\&.h\&.
+.SS "void AFlib::id::History::addOperate (\fBOperate\fP id, bool saveToStorage = \fCtrue\fP)"
+
+.PP
+Definition at line 335 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::addOperate (\fBOperatePtr\fP id, bool saveToStorage = \fCtrue\fP, bool isId = \fCfalse\fP)"
+
+.PP
+Definition at line 341 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::addOperate (quint16 valueKey, QVariant value, \fBAccount_bit\fP userId, \fBHistoryIdType\fP history, \fBSavedIdType\fP saved, bool isId = \fCfalse\fP, QDateTime dTime = \fCQDateTime::currentDateTime()\fP)\fC [private]\fP"
+
+.PP
+Definition at line 358 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::addOperations (const \fBOperatePtrList\fP list, bool saveToStorage = \fCtrue\fP, bool isId = \fCfalse\fP)"
+
+.PP
+Definition at line 219 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::addOperations (const QByteArray & list)"
+
+.PP
+Definition at line 210 of file afIdHistory\&.cpp\&.
+.SS "\fBAFlib::id::OperatePtrList\fP AFlib::id::History::getAllOperates () const"
+
+.PP
+Definition at line 168 of file afIdHistory\&.cpp\&.
+.SS "QVariant AFlib::id::History::getAttribute (\fBAttribute\fP key) const"
+
+.PP
+Definition at line 148 of file afIdHistory\&.cpp\&.
+.SS "QVariant AFlib::id::History::getAttribute (const \fBOperatePtrList\fP & list, quint16 key) const\fC [private]\fP"
+
+.PP
+Definition at line 257 of file afIdHistory\&.cpp\&.
+.SS "template<typename K > QVariant AFlib::id::History::getAttribute (K key) const\fC [inline]\fP"
+
+.PP
+Definition at line 69 of file afIdHistory\&.h\&.
+.SS "QVariant AFlib::id::History::getAttribute (quint16 key) const\fC [private]\fP"
+
+.PP
+Definition at line 252 of file afIdHistory\&.cpp\&.
+.SS "template<typename K > \fBGlobal_bit\fP AFlib::id::History::getIdAttribute (K key) const\fC [inline]\fP"
+
+.PP
+Definition at line 80 of file afIdHistory\&.h\&.
+.SS "\fBAFlib::id::Global_bit\fP AFlib::id::History::getIdAttribute (quint16 key)\fC [private]\fP"
+
+.PP
+Definition at line 242 of file afIdHistory\&.cpp\&.
+.SS "\fBAFlib::id::OperatePtrList\fP AFlib::id::History::getIdOperates () const"
+
+.PP
+Definition at line 173 of file afIdHistory\&.cpp\&.
+.SS "\fBAFlib::id::OperatePtrList\fP AFlib::id::History::getListAfter (const QDateTime & afterTime) const"
+
+.PP
+Definition at line 183 of file afIdHistory\&.cpp\&.
+.SS "\fBAFlib::id::OperatePtrList\fP AFlib::id::History::getListIdAfter (const QDateTime & afterTime) const"
+
+.PP
+Definition at line 194 of file afIdHistory\&.cpp\&.
+.SS "QVariantList AFlib::id::History::getMultiAttribute (\fBAttribute\fP key) const"
+
+.PP
+Definition at line 158 of file afIdHistory\&.cpp\&.
+.SS "QVariantList AFlib::id::History::getMultiAttribute (const \fBOperatePtrList\fP & opList, quint16 key) const\fC [private]\fP"
+
+.PP
+Definition at line 282 of file afIdHistory\&.cpp\&.
+.SS "template<typename K > QVariantList AFlib::id::History::getMultiAttribute (K key) const\fC [inline]\fP"
+
+.PP
+Definition at line 94 of file afIdHistory\&.h\&.
+.SS "template<typename K > \fBGlobalList_bit\fP AFlib::id::History::getMultiIdAttribute (K key) const\fC [inline]\fP"
+
+.PP
+Definition at line 99 of file afIdHistory\&.h\&.
+.SS "\fBAFlib::id::GlobalList_bit\fP AFlib::id::History::getMultiIdAttribute (quint16 key) const\fC [private]\fP"
+
+.PP
+Definition at line 321 of file afIdHistory\&.cpp\&.
+.SS "\fBAFlib::id::OperatePtrList\fP AFlib::id::History::getNoIdOperates () const"
+
+.PP
+Definition at line 178 of file afIdHistory\&.cpp\&.
+.SS "bool AFlib::id::History::haveUpdates () const"
+
+.PP
+Definition at line 16 of file afIdHistory\&.cpp\&.
+.SS "bool AFlib::id::History::isEmpty () const"
+
+.PP
+Definition at line 21 of file afIdHistory\&.cpp\&.
+.SS "QDateTime AFlib::id::History::lastChange () const"
+
+.PP
+Definition at line 32 of file afIdHistory\&.cpp\&.
+.SS "QDateTime AFlib::id::History::lastUpdate () const"
+
+.PP
+Definition at line 44 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::makeFull (const QByteArray & data)"
+
+.PP
+Definition at line 54 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::makeShorten ()"
+
+.PP
+Definition at line 112 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::makeShorten (\fBOperatePtrList\fP & list)"
+
+.PP
+Definition at line 60 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::refreshLastChangeTime ()\fC [private]\fP"
+
+.PP
+Definition at line 237 of file afIdHistory\&.cpp\&.
+.SS "virtual \fBSavedIdType\fP AFlib::id::History::savedStatus ()\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBAFlib::id::Object\fP\&.
+.SS "void AFlib::id::History::saveShorten ()"
+
+.PP
+Definition at line 118 of file afIdHistory\&.cpp\&.
+.SS "virtual void AFlib::id::History::saveToStorage (const \fBOperatePtr\fP ptr, bool isId = \fCfalse\fP)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBAFlib::id::Object\fP\&.
+.SS "void AFlib::id::History::setAttribute (\fBAttribute\fP key, QVariant value)"
+
+.PP
+Definition at line 153 of file afIdHistory\&.cpp\&.
+.SS "template<typename K > void AFlib::id::History::setAttribute (K key, QVariant value)\fC [inline]\fP"
+
+.PP
+Definition at line 74 of file afIdHistory\&.h\&.
+.SS "void AFlib::id::History::setAttribute (quint16 key, const QVariant & value, bool isId = \fCfalse\fP)\fC [private]\fP"
+
+.PP
+Definition at line 274 of file afIdHistory\&.cpp\&.
+.SS "template<typename K > void AFlib::id::History::setIdAttribute (K key, const \fBGlobal_bit\fP & value)\fC [inline]\fP"
+
+.PP
+Definition at line 85 of file afIdHistory\&.h\&.
+.SS "void AFlib::id::History::setIdAttribute (quint16 key, const \fBGlobal_bit\fP & globalId)\fC [private]\fP"
+
+.PP
+Definition at line 247 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::setMultiAttribute (\fBAttribute\fP key, QVariant value, \fBHIdType\fP type)"
+
+.PP
+Definition at line 163 of file afIdHistory\&.cpp\&.
+.SS "template<typename K > void AFlib::id::History::setMultiAttribute (K key, const QVariant & value, \fBHIdType\fP type)\fC [inline]\fP"
+
+.PP
+Definition at line 104 of file afIdHistory\&.h\&.
+.SS "void AFlib::id::History::setMultiAttribute (quint16 key, const QVariant & value, \fBHIdType\fP type, bool isId = \fCfalse\fP)\fC [private]\fP"
+
+.PP
+Definition at line 316 of file afIdHistory\&.cpp\&.
+.SS "template<typename K > void AFlib::id::History::setMultiIdAttribute (K key, const \fBGlobal_bit\fP & value, \fBHIdType\fP type)\fC [inline]\fP"
+
+.PP
+Definition at line 109 of file afIdHistory\&.h\&.
+.SS "void AFlib::id::History::setMultiIdAttribute (quint16 key, const \fBGlobal_bit\fP & value, \fBHIdType\fP type)\fC [private]\fP"
+
+.PP
+Definition at line 330 of file afIdHistory\&.cpp\&.
+.SS "QDateTime AFlib::id::History::timeCreate () const"
+
+.PP
+Definition at line 49 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::updateTime (QDateTime dTime)"
+
+.PP
+Definition at line 11 of file afIdHistory\&.cpp\&.
+.SS "void AFlib::id::History::useCompress (\fBCompress\fP value)"
+
+.PP
+Definition at line 123 of file afIdHistory\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBAFlib::id::Object\fP\fC [friend]\fP"
+
+.PP
+Definition at line 158 of file afIdHistory\&.h\&.
+.SS "QDataStream& operator<< (QDataStream & stream, const \fBHistory\fP & data)\fC [friend]\fP"
+
+.PP
+Definition at line 367 of file afIdHistory\&.cpp\&.
+.SS "QDataStream& operator>> (QDataStream & stream, \fBHistory\fP & data)\fC [friend]\fP"
+
+.PP
+Definition at line 372 of file afIdHistory\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QDateTime AFlib::id::History::m_lastUpdate\fC [protected]\fP"
+
+.PP
+Definition at line 148 of file afIdHistory\&.h\&.
+.SS "\fBOperatePtrList\fP AFlib::id::History::m_operateIdList\fC [protected]\fP"
+
+.PP
+Definition at line 150 of file afIdHistory\&.h\&.
+.SS "\fBOperatePtrList\fP AFlib::id::History::m_operateList\fC [protected]\fP"
+
+.PP
+Definition at line 149 of file afIdHistory\&.h\&.
+.SS "\fBAccount_bit\fP AFlib::id::History::m_owner\fC [protected]\fP"
+
+.PP
+Definition at line 151 of file afIdHistory\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

@@ -1,0 +1,152 @@
+.TH "AFaccount" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFaccount
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAccount\fP"
+.br
+.ti -1c
+.RI "class \fBGroup\fP"
+.br
+.ti -1c
+.RI "class \fBInfo\fP"
+.br
+.ti -1c
+.RI "class \fBStorage\fP"
+.br
+.RI "The \fBAFaccount::Storage\fP class we load all possible account, and take it on RAM, so we can access to them always in any time, but we need to make shorten every object that we have and it give us speed when we parse this list\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef QSharedPointer< \fBAccount\fP > \fBAccountPtr\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBAccountPtr\fP > \fBAccountPtrV\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBGroup\fP > \fBGroupPtr\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBGroupPtr\fP > \fBGroupPtrV\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBInfo\fP > \fBInfoPtr\fP"
+.br
+.ti -1c
+.RI "typedef QList< \fBInfoPtr\fP > \fBInfoPtrList\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBStorage\fP > \fBStoragePtr\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAccessType\fP "
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAccountPtr\fP \fBown\fP ()"
+.br
+.ti -1c
+.RI "\fBAccessType\fP \fBtoAccessType\fP (const quint8 i)"
+.br
+.ti -1c
+.RI "quint8 \fBfromAccessType\fP (\fBAccessType\fP type)"
+.br
+.ti -1c
+.RI "\fBStoragePtr\fP \fBstorage\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBAccountPtr\fP \fBuser\fP (QObject *parent=nullptr)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef QSharedPointer<\fBAccount\fP> \fBAFaccount::AccountPtr\fP"
+
+.PP
+Definition at line 14 of file afAccount\&.h\&.
+.SS "typedef std::vector<\fBAccountPtr\fP> \fBAFaccount::AccountPtrV\fP"
+
+.PP
+Definition at line 16 of file afAccount\&.h\&.
+.SS "typedef QSharedPointer<\fBGroup\fP> \fBAFaccount::GroupPtr\fP"
+
+.PP
+Definition at line 12 of file afAccountGroup\&.h\&.
+.SS "typedef std::vector<\fBGroupPtr\fP> \fBAFaccount::GroupPtrV\fP"
+
+.PP
+Definition at line 14 of file afAccountGroup\&.h\&.
+.SS "typedef QSharedPointer<\fBInfo\fP> \fBAFaccount::InfoPtr\fP"
+
+.PP
+Definition at line 13 of file afAccountInfo\&.h\&.
+.SS "typedef QList<\fBInfoPtr\fP> \fBAFaccount::InfoPtrList\fP"
+
+.PP
+Definition at line 15 of file afAccountInfo\&.h\&.
+.SS "typedef QSharedPointer<\fBStorage\fP> \fBAFaccount::StoragePtr\fP"
+
+.PP
+Definition at line 7 of file afAccountStorage\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBAFaccount::AccessType\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIOwner \fP\fP
+.TP
+\fB\fIModerator \fP\fP
+.TP
+\fB\fICreator \fP\fP
+.TP
+\fB\fIUser \fP\fP
+.TP
+\fB\fIDefault \fP\fP
+.TP
+\fB\fIFirst \fP\fP
+.PP
+Definition at line 16 of file afAccountGroup\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "quint8 AFaccount::fromAccessType (\fBAccessType\fP type)"
+
+.PP
+Definition at line 101 of file afAccountGroup\&.cpp\&.
+.SS "\fBAFaccount::AccountPtr\fP AFaccount::own ()"
+
+.PP
+Definition at line 36 of file afAccount\&.cpp\&.
+.SS "\fBAFaccount::StoragePtr\fP AFaccount::storage (QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 265 of file afAccountStorage\&.cpp\&.
+.SS "\fBAccessType\fP AFaccount::toAccessType (const quint8 i)"
+
+.PP
+Definition at line 96 of file afAccountGroup\&.cpp\&.
+.SS "\fBAFaccount::AccountPtr\fP AFaccount::user (QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 273 of file afAccountStorage\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

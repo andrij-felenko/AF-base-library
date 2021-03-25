@@ -1,0 +1,95 @@
+.TH "AFlib::id::Account_bit" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::id::Account_bit
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afIdAccount\&.h>\fP
+.PP
+Inherits \fBAFlib::id::TbitStruct< 32 >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAccount_bit\fP (quint32 id=0)"
+.br
+.ti -1c
+.RI "quint32 \fBaccountId\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAccountId\fP (quint32 id)"
+.br
+.ti -1c
+.RI "void \fBsetUserId\fP (quint32 id)"
+.br
+.ti -1c
+.RI "\fBoperator quint32\fP () const"
+.br
+.ti -1c
+.RI "\fBAccountIdType\fP \fBaccountType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisGlobal\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisLocal\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBAccount_bit\fP \fBcreate\fP (const \fBAccountIdType\fP &type)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 22 of file afIdAccount\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::id::Account_bit::Account_bit (quint32 id = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 3 of file afIdAccount\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "quint32 AFlib::id::Account_bit::accountId () const"
+
+.PP
+Definition at line 8 of file afIdAccount\&.cpp\&.
+.SS "\fBAFlib::AccountIdType\fP AFlib::id::Account_bit::accountType () const"
+
+.PP
+Definition at line 24 of file afIdAccount\&.cpp\&.
+.SS "\fBAFlib::id::Account_bit\fP AFlib::id::Account_bit::create (const \fBAccountIdType\fP & type)\fC [static]\fP"
+
+.PP
+Definition at line 46 of file afIdAccount\&.cpp\&.
+.SS "bool AFlib::id::Account_bit::isGlobal () const"
+
+.PP
+Definition at line 36 of file afIdAccount\&.cpp\&.
+.SS "bool AFlib::id::Account_bit::isLocal () const"
+
+.PP
+Definition at line 41 of file afIdAccount\&.cpp\&.
+.SS "\fBAFlib::id::Account_bit::operator\fP quint32 () const"
+
+.PP
+Definition at line 61 of file afIdAccount\&.cpp\&.
+.SS "void AFlib::id::Account_bit::setAccountId (quint32 id)"
+
+.PP
+Definition at line 13 of file afIdAccount\&.cpp\&.
+.SS "void AFlib::id::Account_bit::setUserId (quint32 id)"
+
+.PP
+Definition at line 18 of file afIdAccount\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

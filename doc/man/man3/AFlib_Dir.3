@@ -1,0 +1,385 @@
+.TH "AFlib::Dir" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::Dir
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afDir\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBuserConfigChanged\fP (QDir \fBuserConfig\fP)"
+.br
+.ti -1c
+.RI "void \fBuserDataChanged\fP (QDir \fBuserData\fP)"
+.br
+.ti -1c
+.RI "void \fBuserDirChanged\fP (QDir \fBuserDir\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDir\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "void \fBinit\fP (bool useCurrentFolder=false)"
+.br
+.ti -1c
+.RI "void \fBinitStandartPath\fP ()"
+.br
+.ti -1c
+.RI "virtual QDir \fBapp\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBconfig\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBcookies\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBstorage\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBlibraries\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBplugins\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBtranslates\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBusers\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBuserConfig\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBuserData\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBuserDir\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBpluginData\fP (QString plugin) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QSharedPointer< \fBDir\fP > \fBinstance\fP ()"
+.br
+.ti -1c
+.RI "static bool \fBcdDirectory\fP (QDir &dir, QString name)"
+.br
+.ti -1c
+.RI "static bool \fBcdDirectory\fP (QDir &dir, quint32 name, uint size)"
+.br
+.ti -1c
+.RI "static void \fBcpDirectory\fP (QString from, QString to)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "QDir \fBapp\fP"
+.br
+.ti -1c
+.RI "QDir \fBconfig\fP"
+.br
+.ti -1c
+.RI "QDir \fBcookies\fP"
+.br
+.ti -1c
+.RI "QDir \fBlibraries\fP"
+.br
+.ti -1c
+.RI "QDir \fBplugins\fP"
+.br
+.ti -1c
+.RI "QDir \fBstorage\fP"
+.br
+.ti -1c
+.RI "QDir \fBtranslates\fP"
+.br
+.ti -1c
+.RI "QDir \fBusers\fP"
+.br
+.ti -1c
+.RI "QDir \fBuserConfig\fP"
+.br
+.ti -1c
+.RI "QDir \fBuserData\fP"
+.br
+.ti -1c
+.RI "QDir \fBuserDir\fP"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBswitchToUser\fP (QString name)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetUserConfig\fP (QDir \fBuserConfig\fP)"
+.br
+.ti -1c
+.RI "void \fBsetUserData\fP (QDir \fBuserData\fP)"
+.br
+.ti -1c
+.RI "void \fBsetUserDir\fP (QDir \fBuserDir\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QDir \fBm_app\fP"
+.br
+.ti -1c
+.RI "QDir \fBm_config\fP"
+.br
+.ti -1c
+.RI "QDir \fBm_cookies\fP"
+.br
+.ti -1c
+.RI "QDir \fBm_libraries\fP"
+.br
+.ti -1c
+.RI "QDir \fBm_plugins\fP"
+.br
+.ti -1c
+.RI "QDir \fBm_storage\fP"
+.br
+.ti -1c
+.RI "QDir \fBm_translates\fP"
+.br
+.ti -1c
+.RI "QDir \fBm_users\fP"
+.br
+.ti -1c
+.RI "QDir \fBm_userConfig\fP"
+.br
+.ti -1c
+.RI "QDir \fBm_userData\fP"
+.br
+.ti -1c
+.RI "QDir \fBm_userDir\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file afDir\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Dir::Dir (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 11 of file afDir\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QDir AFlib::Dir::app () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 45 of file afDir\&.h\&.
+.SS "bool Dir::cdDirectory (QDir & dir, QString name)\fC [static]\fP"
+
+.PP
+Definition at line 187 of file afDir\&.cpp\&.
+.SS "bool Dir::cdDirectory (QDir & dir, quint32 name, uint size)\fC [static]\fP"
+
+.PP
+Definition at line 199 of file afDir\&.cpp\&.
+.SS "virtual QDir AFlib::Dir::config () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 46 of file afDir\&.h\&.
+.SS "virtual QDir AFlib::Dir::cookies () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 47 of file afDir\&.h\&.
+.SS "void Dir::cpDirectory (QString from, QString to)\fC [static]\fP"
+
+.PP
+Definition at line 204 of file afDir\&.cpp\&.
+.SS "void Dir::init (bool useCurrentFolder = \fCfalse\fP)"
+
+.PP
+Definition at line 17 of file afDir\&.cpp\&.
+.SS "void Dir::initStandartPath ()"
+
+.PP
+Definition at line 100 of file afDir\&.cpp\&.
+.SS "QSharedPointer< \fBAFlib::Dir\fP > Dir::instance ()\fC [static]\fP"
+
+.PP
+Definition at line 135 of file afDir\&.cpp\&.
+.SS "virtual QDir AFlib::Dir::libraries () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 49 of file afDir\&.h\&.
+.SS "QDir Dir::pluginData (QString plugin) const\fC [virtual]\fP"
+
+.PP
+Definition at line 230 of file afDir\&.cpp\&.
+.SS "virtual QDir AFlib::Dir::plugins () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 50 of file afDir\&.h\&.
+.SS "void Dir::setUserConfig (QDir userConfig)\fC [private]\fP"
+
+.PP
+Definition at line 160 of file afDir\&.cpp\&.
+.SS "void Dir::setUserData (QDir userData)\fC [private]\fP"
+
+.PP
+Definition at line 169 of file afDir\&.cpp\&.
+.SS "void Dir::setUserDir (QDir userDir)\fC [private]\fP"
+
+.PP
+Definition at line 178 of file afDir\&.cpp\&.
+.SS "virtual QDir AFlib::Dir::storage () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 48 of file afDir\&.h\&.
+.SS "void Dir::switchToUser (QString name)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 143 of file afDir\&.cpp\&.
+.SS "virtual QDir AFlib::Dir::translates () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 51 of file afDir\&.h\&.
+.SS "virtual QDir AFlib::Dir::userConfig () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 53 of file afDir\&.h\&.
+.SS "void AFlib::Dir::userConfigChanged (QDir userConfig)\fC [signal]\fP"
+
+.SS "virtual QDir AFlib::Dir::userData () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 54 of file afDir\&.h\&.
+.SS "void AFlib::Dir::userDataChanged (QDir userData)\fC [signal]\fP"
+
+.SS "virtual QDir AFlib::Dir::userDir () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 55 of file afDir\&.h\&.
+.SS "void AFlib::Dir::userDirChanged (QDir userDir)\fC [signal]\fP"
+
+.SS "virtual QDir AFlib::Dir::users () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 52 of file afDir\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QDir AFlib::Dir::m_app\fC [private]\fP"
+
+.PP
+Definition at line 67 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::m_config\fC [private]\fP"
+
+.PP
+Definition at line 68 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::m_cookies\fC [private]\fP"
+
+.PP
+Definition at line 69 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::m_libraries\fC [private]\fP"
+
+.PP
+Definition at line 70 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::m_plugins\fC [private]\fP"
+
+.PP
+Definition at line 71 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::m_storage\fC [private]\fP"
+
+.PP
+Definition at line 72 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::m_translates\fC [private]\fP"
+
+.PP
+Definition at line 73 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::m_userConfig\fC [private]\fP"
+
+.PP
+Definition at line 75 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::m_userData\fC [private]\fP"
+
+.PP
+Definition at line 76 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::m_userDir\fC [private]\fP"
+
+.PP
+Definition at line 77 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::m_users\fC [private]\fP"
+
+.PP
+Definition at line 74 of file afDir\&.h\&.
+.SH "Property Documentation"
+.PP 
+.SS "QDir AFlib::Dir::app\fC [read]\fP"
+
+.PP
+Definition at line 22 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::config\fC [read]\fP"
+
+.PP
+Definition at line 23 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::cookies\fC [read]\fP"
+
+.PP
+Definition at line 24 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::libraries\fC [read]\fP"
+
+.PP
+Definition at line 25 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::plugins\fC [read]\fP"
+
+.PP
+Definition at line 26 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::storage\fC [read]\fP"
+
+.PP
+Definition at line 27 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::translates\fC [read]\fP"
+
+.PP
+Definition at line 28 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::userConfig\fC [read]\fP"
+
+.PP
+Definition at line 31 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::userData\fC [read]\fP"
+
+.PP
+Definition at line 32 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::userDir\fC [read]\fP"
+
+.PP
+Definition at line 33 of file afDir\&.h\&.
+.SS "QDir AFlib::Dir::users\fC [read]\fP"
+
+.PP
+Definition at line 29 of file afDir\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

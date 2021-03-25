@@ -1,0 +1,758 @@
+\hypertarget{classAFlib_1_1id_1_1History}{}\doxysection{A\+Flib\+::id\+::History Class Reference}
+\label{classAFlib_1_1id_1_1History}\index{AFlib::id::History@{AFlib::id::History}}
+
+
+{\ttfamily \#include $<$af\+Id\+History.\+h$>$}
+
+Inheritance diagram for A\+Flib\+::id\+::History\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dd/d30/classAFlib_1_1id_1_1History}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFlib_1_1id_1_1History_ab5ef37c0e752a6117b566b5af816f455}{History}} ()
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a8aa2e72edb50c43719d972e8e76f925e}{update\+Time}} (Q\+Date\+Time d\+Time)
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1id_1_1History_ae86da4f093833de4bb2d159d46c5ff90}{have\+Updates}} () const
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1id_1_1History_aa806a5bb4a832d1f7590dd54881d2a7d}{is\+Empty}} () const
+\item 
+Q\+Date\+Time \mbox{\hyperlink{classAFlib_1_1id_1_1History_a77bdd60f375a170226e723bca13885c6}{last\+Change}} () const
+\item 
+Q\+Date\+Time \mbox{\hyperlink{classAFlib_1_1id_1_1History_acf59ed99f042433bd13fbaf66d6b22c8}{last\+Update}} () const
+\item 
+Q\+Date\+Time \mbox{\hyperlink{classAFlib_1_1id_1_1History_a8a2ad9731fa72a468d5811a43dd87439}{time\+Create}} () const
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_ad936ade14beccddd196720e607ba57b5}{make\+Full}} (const Q\+Byte\+Array \&data)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a250de70ae2a02d3e1490f8214690511a}{make\+Shorten}} (\mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \&list)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a29b2fcae0bd6a3c78cdae01eda4c592a}{make\+Shorten}} ()
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a2b523d20436e4e6ce326e7def7aec6a9}{save\+Shorten}} ()
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_ac9dc654c623a4880d06408c95cd79f32}{use\+Compress}} (\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}} value)
+\item 
+Q\+Variant \mbox{\hyperlink{classAFlib_1_1id_1_1History_a30e564c680707fdade2fccc0ac27130c}{get\+Attribute}} (\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}} key) const
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_aa54ccd6d24403914fe0d6c172c51cc15}{set\+Attribute}} (\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}} key, Q\+Variant value)
+\item 
+{\footnotesize template$<$typename K $>$ }\\Q\+Variant \mbox{\hyperlink{classAFlib_1_1id_1_1History_af1f6187d4ddde3105e1e23b56f8347c6}{get\+Attribute}} (K key) const
+\item 
+{\footnotesize template$<$typename K $>$ }\\void \mbox{\hyperlink{classAFlib_1_1id_1_1History_aa7de893f5681c474467f24ccc62518f6}{set\+Attribute}} (K key, Q\+Variant value)
+\item 
+{\footnotesize template$<$typename K $>$ }\\\mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_a339fe5e04692d055c68b4df3911ef6e4}{get\+Id\+Attribute}} (K key) const
+\item 
+{\footnotesize template$<$typename K $>$ }\\void \mbox{\hyperlink{classAFlib_1_1id_1_1History_afa9863b26312de6e6e854e22f377dfd7}{set\+Id\+Attribute}} (K key, const \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} \&value)
+\item 
+Q\+Variant\+List \mbox{\hyperlink{classAFlib_1_1id_1_1History_a3f7ec9e0f792008e28980ce36d7f5c20}{get\+Multi\+Attribute}} (\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}} key) const
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a7e934cf64217cb91bd5304eb5cb89cdf}{set\+Multi\+Attribute}} (\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}} key, Q\+Variant value, \mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}} type)
+\item 
+{\footnotesize template$<$typename K $>$ }\\Q\+Variant\+List \mbox{\hyperlink{classAFlib_1_1id_1_1History_a3a80ba65cbddb2fd0743e86aa201aa1d}{get\+Multi\+Attribute}} (K key) const
+\item 
+{\footnotesize template$<$typename K $>$ }\\\mbox{\hyperlink{namespaceAFlib_1_1id_a1a7c63506284e7fc5d363acfcc09a0dd}{Global\+List\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_ab6d1d040f7e33537be6d5ae5b650d6b4}{get\+Multi\+Id\+Attribute}} (K key) const
+\item 
+{\footnotesize template$<$typename K $>$ }\\void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a2bf716c3b44fdb8fc80e1a430612048f}{set\+Multi\+Attribute}} (K key, const Q\+Variant \&value, \mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}} type)
+\item 
+{\footnotesize template$<$typename K $>$ }\\void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a3aa4ab4e752d9558ab01fa470539cec3}{set\+Multi\+Id\+Attribute}} (K key, const \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} \&value, \mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}} type)
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_ae042c88b9e233c1183c96697d98336fb}{get\+All\+Operates}} () const
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_a0d3ca8c1635bdb6c41992ff095dbd107}{get\+Id\+Operates}} () const
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_aa349e0b6fff5ee50f28633194946a4a2}{get\+No\+Id\+Operates}} () const
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_af239dcccd3ba3b19faa7279588e122eb}{get\+List\+After}} (const Q\+Date\+Time \&after\+Time) const
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_aec51e9ffb5e84db3d4079e170f7c2805}{get\+List\+Id\+After}} (const Q\+Date\+Time \&after\+Time) const
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a8919be7beb55c34b6ad2865f9b75c966}{add\+Operate}} (\mbox{\hyperlink{classAFlib_1_1id_1_1Operate}{Operate}} id, bool \mbox{\hyperlink{classAFlib_1_1id_1_1History_a11b3bdcce616951307c9bc716be66b4d}{save\+To\+Storage}}=true)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_acb7b36a8abec5054057dd018682afa91}{add\+Operate}} (\mbox{\hyperlink{namespaceAFlib_1_1id_a9c33c906c113879da363d48db8129a85}{Operate\+Ptr}} id, bool \mbox{\hyperlink{classAFlib_1_1id_1_1History_a11b3bdcce616951307c9bc716be66b4d}{save\+To\+Storage}}=true, bool is\+Id=false)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a87e6d07cd5ae774229a8af7221e87e92}{add\+Operate}} (const Q\+Byte\+Array \&data)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_ae08d450dd302bedf94b528296f91ef94}{add\+Operations}} (const Q\+Byte\+Array \&list)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_aefa88ac77a950122dae491a0c0ebf327}{add\+Operations}} (const \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} list, bool \mbox{\hyperlink{classAFlib_1_1id_1_1History_a11b3bdcce616951307c9bc716be66b4d}{save\+To\+Storage}}=true, bool is\+Id=false)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a7a89134f9cbe7da8017d18922f092e97}{add\+Operate}} (\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}} attribute\+Key, Q\+Variant value, \mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{Account\+\_\+bit}} user\+Id, \mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}} history=H\+Id\+Type\+::\+Add\+Line, \mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{S\+Id\+Type}} saved=S\+Id\+Type\+::\+Local, Q\+Date\+Time d\+Time=Q\+Date\+Time\+::current\+Date\+Time())
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_aa5704f2791eda901f9f059de24fe5665}{add\+Operate}} (\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}} attribute\+Key, Q\+Variant value, quint32 user\+Id, quint8 history\+Id, quint8 saved\+Id, Q\+Date\+Time d\+Time=Q\+Date\+Time\+::current\+Date\+Time())
+\item 
+{\footnotesize template$<$typename K $>$ }\\void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a2a7faae68e0f55ab13e529fa4982159c}{add\+Operate}} (K value\+Key, Q\+Variant value, \mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{Account\+\_\+bit}} user\+Id, \mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{History\+Id\+Type}} history, \mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{Saved\+Id\+Type}} saved, Q\+Date\+Time d\+Time=Q\+Date\+Time\+::current\+Date\+Time())
+\item 
+{\footnotesize template$<$typename K $>$ }\\void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a7e7496a739bc17084f3f5dc3a2c53fe8}{add\+Operate}} (K value\+Key, Q\+Variant value, quint32 user\+Id, quint8 history\+Id, quint8 saved\+Id, Q\+Date\+Time d\+Time=Q\+Date\+Time\+::current\+Date\+Time())
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a11b3bdcce616951307c9bc716be66b4d}{save\+To\+Storage}} (const \mbox{\hyperlink{namespaceAFlib_1_1id_a9c33c906c113879da363d48db8129a85}{Operate\+Ptr}} ptr, bool is\+Id=false)=0
+\item 
+virtual \mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{Saved\+Id\+Type}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_a3184fb8317a5143095942302bd344ebb}{saved\+Status}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Date\+Time \mbox{\hyperlink{classAFlib_1_1id_1_1History_a1f8275545812db5af43b36654205567c}{m\+\_\+last\+Update}}
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_a1f925b7cbe752226f6cb5bce7a50d04a}{m\+\_\+operate\+List}}
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_a64423e2bb15a99b5971a3710598724a1}{m\+\_\+operate\+Id\+List}}
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{Account\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_a83f9ab5b73b5a40d63a3e104bd5d1d30}{m\+\_\+owner}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_aa10c06c340c13df3ab97c4cda6c4834a}{refresh\+Last\+Change\+Time}} ()
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_aae9656e5582e958740e26201b81b7de5}{get\+Id\+Attribute}} (quint16 key)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_ad40cc60f9e358df5e02de50ef8647fd1}{set\+Id\+Attribute}} (quint16 key, const \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} \&global\+Id)
+\item 
+Q\+Variant \mbox{\hyperlink{classAFlib_1_1id_1_1History_ab11ccbe4e321bafbcda18dbceb8743ea}{get\+Attribute}} (quint16 key) const
+\item 
+Q\+Variant \mbox{\hyperlink{classAFlib_1_1id_1_1History_a397dbd183d82de5b7502afbb6192924a}{get\+Attribute}} (const \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \&list, quint16 key) const
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a3aa46872c34af34d1ee94a2b231de549}{set\+Attribute}} (quint16 key, const Q\+Variant \&value, bool is\+Id=false)
+\item 
+Q\+Variant\+List \mbox{\hyperlink{classAFlib_1_1id_1_1History_abe174e10ba05241d2d2fa6203c7ef739}{get\+Multi\+Attribute}} (const \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \&op\+List, quint16 key) const
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_ae32b798694d524964861688884a62fcf}{set\+Multi\+Attribute}} (quint16 key, const Q\+Variant \&value, \mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}} type, bool is\+Id=false)
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a1a7c63506284e7fc5d363acfcc09a0dd}{Global\+List\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1id_1_1History_a8f29e901817453d3e20ce1e31302c0ab}{get\+Multi\+Id\+Attribute}} (quint16 key) const
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_afce0447673e0496901041b7246d569e4}{set\+Multi\+Id\+Attribute}} (quint16 key, const \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} \&value, \mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}} type)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1id_1_1History_a6da8b7fba63f92a737c0fc2f5fbf684b}{add\+Operate}} (quint16 value\+Key, Q\+Variant value, \mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{Account\+\_\+bit}} user\+Id, \mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{History\+Id\+Type}} history, \mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{Saved\+Id\+Type}} saved, bool is\+Id=false, Q\+Date\+Time d\+Time=Q\+Date\+Time\+::current\+Date\+Time())
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAFlib_1_1id_1_1History_a3e98d945e8045f9ee9e7dccbec6fd8f2}{A\+Flib\+::id\+::\+Object}}
+\item 
+Q\+Data\+Stream \& \mbox{\hyperlink{classAFlib_1_1id_1_1History_a8395f55836a2dd840ec61402b50b708a}{operator$<$$<$}} (Q\+Data\+Stream \&stream, const \mbox{\hyperlink{classAFlib_1_1id_1_1History}{History}} \&data)
+\item 
+Q\+Data\+Stream \& \mbox{\hyperlink{classAFlib_1_1id_1_1History_a2460f93cc39d8636e407c2eb7422ad21}{operator$>$$>$}} (Q\+Data\+Stream \&stream, \mbox{\hyperlink{classAFlib_1_1id_1_1History}{History}} \&data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 46 of file af\+Id\+History.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_ab5ef37c0e752a6117b566b5af816f455}\label{classAFlib_1_1id_1_1History_ab5ef37c0e752a6117b566b5af816f455}} 
+\index{AFlib::id::History@{AFlib::id::History}!History@{History}}
+\index{History@{History}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{History()}{History()}}
+{\footnotesize\ttfamily A\+Flib\+::id\+::\+History\+::\+History (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 5 of file af\+Id\+History.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a7a89134f9cbe7da8017d18922f092e97}\label{classAFlib_1_1id_1_1History_a7a89134f9cbe7da8017d18922f092e97}} 
+\index{AFlib::id::History@{AFlib::id::History}!addOperate@{addOperate}}
+\index{addOperate@{addOperate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{addOperate()}{addOperate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::add\+Operate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}}}]{attribute\+Key,  }\item[{Q\+Variant}]{value,  }\item[{\mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{Account\+\_\+bit}}}]{user\+Id,  }\item[{\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}}}]{history = {\ttfamily HIdType\+:\+:AddLine},  }\item[{\mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{S\+Id\+Type}}}]{saved = {\ttfamily SIdType\+:\+:Local},  }\item[{Q\+Date\+Time}]{d\+Time = {\ttfamily QDateTime\+:\+:currentDateTime()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 225 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_aa5704f2791eda901f9f059de24fe5665}\label{classAFlib_1_1id_1_1History_aa5704f2791eda901f9f059de24fe5665}} 
+\index{AFlib::id::History@{AFlib::id::History}!addOperate@{addOperate}}
+\index{addOperate@{addOperate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{addOperate()}{addOperate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::add\+Operate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}}}]{attribute\+Key,  }\item[{Q\+Variant}]{value,  }\item[{quint32}]{user\+Id,  }\item[{quint8}]{history\+Id,  }\item[{quint8}]{saved\+Id,  }\item[{Q\+Date\+Time}]{d\+Time = {\ttfamily QDateTime\+:\+:currentDateTime()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 231 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a87e6d07cd5ae774229a8af7221e87e92}\label{classAFlib_1_1id_1_1History_a87e6d07cd5ae774229a8af7221e87e92}} 
+\index{AFlib::id::History@{AFlib::id::History}!addOperate@{addOperate}}
+\index{addOperate@{addOperate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{addOperate()}{addOperate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::add\+Operate (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 205 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a2a7faae68e0f55ab13e529fa4982159c}\label{classAFlib_1_1id_1_1History_a2a7faae68e0f55ab13e529fa4982159c}} 
+\index{AFlib::id::History@{AFlib::id::History}!addOperate@{addOperate}}
+\index{addOperate@{addOperate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{addOperate()}{addOperate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void A\+Flib\+::id\+::\+History\+::add\+Operate (\begin{DoxyParamCaption}\item[{K}]{value\+Key,  }\item[{Q\+Variant}]{value,  }\item[{\mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{Account\+\_\+bit}}}]{user\+Id,  }\item[{\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{History\+Id\+Type}}}]{history,  }\item[{\mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{Saved\+Id\+Type}}}]{saved,  }\item[{Q\+Date\+Time}]{d\+Time = {\ttfamily QDateTime\+:\+:currentDateTime()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 132 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a7e7496a739bc17084f3f5dc3a2c53fe8}\label{classAFlib_1_1id_1_1History_a7e7496a739bc17084f3f5dc3a2c53fe8}} 
+\index{AFlib::id::History@{AFlib::id::History}!addOperate@{addOperate}}
+\index{addOperate@{addOperate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{addOperate()}{addOperate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void A\+Flib\+::id\+::\+History\+::add\+Operate (\begin{DoxyParamCaption}\item[{K}]{value\+Key,  }\item[{Q\+Variant}]{value,  }\item[{quint32}]{user\+Id,  }\item[{quint8}]{history\+Id,  }\item[{quint8}]{saved\+Id,  }\item[{Q\+Date\+Time}]{d\+Time = {\ttfamily QDateTime\+:\+:currentDateTime()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 140 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a8919be7beb55c34b6ad2865f9b75c966}\label{classAFlib_1_1id_1_1History_a8919be7beb55c34b6ad2865f9b75c966}} 
+\index{AFlib::id::History@{AFlib::id::History}!addOperate@{addOperate}}
+\index{addOperate@{addOperate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{addOperate()}{addOperate()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::add\+Operate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAFlib_1_1id_1_1Operate}{Operate}}}]{id,  }\item[{bool}]{save\+To\+Storage = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 335 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_acb7b36a8abec5054057dd018682afa91}\label{classAFlib_1_1id_1_1History_acb7b36a8abec5054057dd018682afa91}} 
+\index{AFlib::id::History@{AFlib::id::History}!addOperate@{addOperate}}
+\index{addOperate@{addOperate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{addOperate()}{addOperate()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::add\+Operate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_1_1id_a9c33c906c113879da363d48db8129a85}{Operate\+Ptr}}}]{id,  }\item[{bool}]{save\+To\+Storage = {\ttfamily true},  }\item[{bool}]{is\+Id = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 341 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a6da8b7fba63f92a737c0fc2f5fbf684b}\label{classAFlib_1_1id_1_1History_a6da8b7fba63f92a737c0fc2f5fbf684b}} 
+\index{AFlib::id::History@{AFlib::id::History}!addOperate@{addOperate}}
+\index{addOperate@{addOperate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{addOperate()}{addOperate()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::add\+Operate (\begin{DoxyParamCaption}\item[{quint16}]{value\+Key,  }\item[{Q\+Variant}]{value,  }\item[{\mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{Account\+\_\+bit}}}]{user\+Id,  }\item[{\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{History\+Id\+Type}}}]{history,  }\item[{\mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{Saved\+Id\+Type}}}]{saved,  }\item[{bool}]{is\+Id = {\ttfamily false},  }\item[{Q\+Date\+Time}]{d\+Time = {\ttfamily QDateTime\+:\+:currentDateTime()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 358 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_aefa88ac77a950122dae491a0c0ebf327}\label{classAFlib_1_1id_1_1History_aefa88ac77a950122dae491a0c0ebf327}} 
+\index{AFlib::id::History@{AFlib::id::History}!addOperations@{addOperations}}
+\index{addOperations@{addOperations}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{addOperations()}{addOperations()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::add\+Operations (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}}}]{list,  }\item[{bool}]{save\+To\+Storage = {\ttfamily true},  }\item[{bool}]{is\+Id = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 219 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_ae08d450dd302bedf94b528296f91ef94}\label{classAFlib_1_1id_1_1History_ae08d450dd302bedf94b528296f91ef94}} 
+\index{AFlib::id::History@{AFlib::id::History}!addOperations@{addOperations}}
+\index{addOperations@{addOperations}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{addOperations()}{addOperations()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::add\+Operations (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{list }\end{DoxyParamCaption})}
+
+
+
+Definition at line 210 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_ae042c88b9e233c1183c96697d98336fb}\label{classAFlib_1_1id_1_1History_ae042c88b9e233c1183c96697d98336fb}} 
+\index{AFlib::id::History@{AFlib::id::History}!getAllOperates@{getAllOperates}}
+\index{getAllOperates@{getAllOperates}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getAllOperates()}{getAllOperates()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{A\+Flib\+::id\+::\+Operate\+Ptr\+List}} A\+Flib\+::id\+::\+History\+::get\+All\+Operates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 168 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a30e564c680707fdade2fccc0ac27130c}\label{classAFlib_1_1id_1_1History_a30e564c680707fdade2fccc0ac27130c}} 
+\index{AFlib::id::History@{AFlib::id::History}!getAttribute@{getAttribute}}
+\index{getAttribute@{getAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getAttribute()}{getAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Q\+Variant A\+Flib\+::id\+::\+History\+::get\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}}}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 148 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a397dbd183d82de5b7502afbb6192924a}\label{classAFlib_1_1id_1_1History_a397dbd183d82de5b7502afbb6192924a}} 
+\index{AFlib::id::History@{AFlib::id::History}!getAttribute@{getAttribute}}
+\index{getAttribute@{getAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getAttribute()}{getAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Q\+Variant A\+Flib\+::id\+::\+History\+::get\+Attribute (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \&}]{list,  }\item[{quint16}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 257 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_af1f6187d4ddde3105e1e23b56f8347c6}\label{classAFlib_1_1id_1_1History_af1f6187d4ddde3105e1e23b56f8347c6}} 
+\index{AFlib::id::History@{AFlib::id::History}!getAttribute@{getAttribute}}
+\index{getAttribute@{getAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getAttribute()}{getAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+Q\+Variant A\+Flib\+::id\+::\+History\+::get\+Attribute (\begin{DoxyParamCaption}\item[{K}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 69 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_ab11ccbe4e321bafbcda18dbceb8743ea}\label{classAFlib_1_1id_1_1History_ab11ccbe4e321bafbcda18dbceb8743ea}} 
+\index{AFlib::id::History@{AFlib::id::History}!getAttribute@{getAttribute}}
+\index{getAttribute@{getAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getAttribute()}{getAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Q\+Variant A\+Flib\+::id\+::\+History\+::get\+Attribute (\begin{DoxyParamCaption}\item[{quint16}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 252 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a339fe5e04692d055c68b4df3911ef6e4}\label{classAFlib_1_1id_1_1History_a339fe5e04692d055c68b4df3911ef6e4}} 
+\index{AFlib::id::History@{AFlib::id::History}!getIdAttribute@{getIdAttribute}}
+\index{getIdAttribute@{getIdAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getIdAttribute()}{getIdAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+\mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} A\+Flib\+::id\+::\+History\+::get\+Id\+Attribute (\begin{DoxyParamCaption}\item[{K}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 80 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_aae9656e5582e958740e26201b81b7de5}\label{classAFlib_1_1id_1_1History_aae9656e5582e958740e26201b81b7de5}} 
+\index{AFlib::id::History@{AFlib::id::History}!getIdAttribute@{getIdAttribute}}
+\index{getIdAttribute@{getIdAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getIdAttribute()}{getIdAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{A\+Flib\+::id\+::\+Global\+\_\+bit}} A\+Flib\+::id\+::\+History\+::get\+Id\+Attribute (\begin{DoxyParamCaption}\item[{quint16}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 242 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a0d3ca8c1635bdb6c41992ff095dbd107}\label{classAFlib_1_1id_1_1History_a0d3ca8c1635bdb6c41992ff095dbd107}} 
+\index{AFlib::id::History@{AFlib::id::History}!getIdOperates@{getIdOperates}}
+\index{getIdOperates@{getIdOperates}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getIdOperates()}{getIdOperates()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{A\+Flib\+::id\+::\+Operate\+Ptr\+List}} A\+Flib\+::id\+::\+History\+::get\+Id\+Operates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 173 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_af239dcccd3ba3b19faa7279588e122eb}\label{classAFlib_1_1id_1_1History_af239dcccd3ba3b19faa7279588e122eb}} 
+\index{AFlib::id::History@{AFlib::id::History}!getListAfter@{getListAfter}}
+\index{getListAfter@{getListAfter}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getListAfter()}{getListAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{A\+Flib\+::id\+::\+Operate\+Ptr\+List}} A\+Flib\+::id\+::\+History\+::get\+List\+After (\begin{DoxyParamCaption}\item[{const Q\+Date\+Time \&}]{after\+Time }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 183 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_aec51e9ffb5e84db3d4079e170f7c2805}\label{classAFlib_1_1id_1_1History_aec51e9ffb5e84db3d4079e170f7c2805}} 
+\index{AFlib::id::History@{AFlib::id::History}!getListIdAfter@{getListIdAfter}}
+\index{getListIdAfter@{getListIdAfter}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getListIdAfter()}{getListIdAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{A\+Flib\+::id\+::\+Operate\+Ptr\+List}} A\+Flib\+::id\+::\+History\+::get\+List\+Id\+After (\begin{DoxyParamCaption}\item[{const Q\+Date\+Time \&}]{after\+Time }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 194 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a3f7ec9e0f792008e28980ce36d7f5c20}\label{classAFlib_1_1id_1_1History_a3f7ec9e0f792008e28980ce36d7f5c20}} 
+\index{AFlib::id::History@{AFlib::id::History}!getMultiAttribute@{getMultiAttribute}}
+\index{getMultiAttribute@{getMultiAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getMultiAttribute()}{getMultiAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Q\+Variant\+List A\+Flib\+::id\+::\+History\+::get\+Multi\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}}}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 158 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_abe174e10ba05241d2d2fa6203c7ef739}\label{classAFlib_1_1id_1_1History_abe174e10ba05241d2d2fa6203c7ef739}} 
+\index{AFlib::id::History@{AFlib::id::History}!getMultiAttribute@{getMultiAttribute}}
+\index{getMultiAttribute@{getMultiAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getMultiAttribute()}{getMultiAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Q\+Variant\+List A\+Flib\+::id\+::\+History\+::get\+Multi\+Attribute (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \&}]{op\+List,  }\item[{quint16}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 282 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a3a80ba65cbddb2fd0743e86aa201aa1d}\label{classAFlib_1_1id_1_1History_a3a80ba65cbddb2fd0743e86aa201aa1d}} 
+\index{AFlib::id::History@{AFlib::id::History}!getMultiAttribute@{getMultiAttribute}}
+\index{getMultiAttribute@{getMultiAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getMultiAttribute()}{getMultiAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+Q\+Variant\+List A\+Flib\+::id\+::\+History\+::get\+Multi\+Attribute (\begin{DoxyParamCaption}\item[{K}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 94 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_ab6d1d040f7e33537be6d5ae5b650d6b4}\label{classAFlib_1_1id_1_1History_ab6d1d040f7e33537be6d5ae5b650d6b4}} 
+\index{AFlib::id::History@{AFlib::id::History}!getMultiIdAttribute@{getMultiIdAttribute}}
+\index{getMultiIdAttribute@{getMultiIdAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getMultiIdAttribute()}{getMultiIdAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+\mbox{\hyperlink{namespaceAFlib_1_1id_a1a7c63506284e7fc5d363acfcc09a0dd}{Global\+List\+\_\+bit}} A\+Flib\+::id\+::\+History\+::get\+Multi\+Id\+Attribute (\begin{DoxyParamCaption}\item[{K}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 99 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a8f29e901817453d3e20ce1e31302c0ab}\label{classAFlib_1_1id_1_1History_a8f29e901817453d3e20ce1e31302c0ab}} 
+\index{AFlib::id::History@{AFlib::id::History}!getMultiIdAttribute@{getMultiIdAttribute}}
+\index{getMultiIdAttribute@{getMultiIdAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getMultiIdAttribute()}{getMultiIdAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a1a7c63506284e7fc5d363acfcc09a0dd}{A\+Flib\+::id\+::\+Global\+List\+\_\+bit}} A\+Flib\+::id\+::\+History\+::get\+Multi\+Id\+Attribute (\begin{DoxyParamCaption}\item[{quint16}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 321 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_aa349e0b6fff5ee50f28633194946a4a2}\label{classAFlib_1_1id_1_1History_aa349e0b6fff5ee50f28633194946a4a2}} 
+\index{AFlib::id::History@{AFlib::id::History}!getNoIdOperates@{getNoIdOperates}}
+\index{getNoIdOperates@{getNoIdOperates}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{getNoIdOperates()}{getNoIdOperates()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{A\+Flib\+::id\+::\+Operate\+Ptr\+List}} A\+Flib\+::id\+::\+History\+::get\+No\+Id\+Operates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 178 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_ae86da4f093833de4bb2d159d46c5ff90}\label{classAFlib_1_1id_1_1History_ae86da4f093833de4bb2d159d46c5ff90}} 
+\index{AFlib::id::History@{AFlib::id::History}!haveUpdates@{haveUpdates}}
+\index{haveUpdates@{haveUpdates}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{haveUpdates()}{haveUpdates()}}
+{\footnotesize\ttfamily bool A\+Flib\+::id\+::\+History\+::have\+Updates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 16 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_aa806a5bb4a832d1f7590dd54881d2a7d}\label{classAFlib_1_1id_1_1History_aa806a5bb4a832d1f7590dd54881d2a7d}} 
+\index{AFlib::id::History@{AFlib::id::History}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool A\+Flib\+::id\+::\+History\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 21 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a77bdd60f375a170226e723bca13885c6}\label{classAFlib_1_1id_1_1History_a77bdd60f375a170226e723bca13885c6}} 
+\index{AFlib::id::History@{AFlib::id::History}!lastChange@{lastChange}}
+\index{lastChange@{lastChange}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{lastChange()}{lastChange()}}
+{\footnotesize\ttfamily Q\+Date\+Time A\+Flib\+::id\+::\+History\+::last\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 32 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_acf59ed99f042433bd13fbaf66d6b22c8}\label{classAFlib_1_1id_1_1History_acf59ed99f042433bd13fbaf66d6b22c8}} 
+\index{AFlib::id::History@{AFlib::id::History}!lastUpdate@{lastUpdate}}
+\index{lastUpdate@{lastUpdate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{lastUpdate()}{lastUpdate()}}
+{\footnotesize\ttfamily Q\+Date\+Time A\+Flib\+::id\+::\+History\+::last\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 44 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_ad936ade14beccddd196720e607ba57b5}\label{classAFlib_1_1id_1_1History_ad936ade14beccddd196720e607ba57b5}} 
+\index{AFlib::id::History@{AFlib::id::History}!makeFull@{makeFull}}
+\index{makeFull@{makeFull}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{makeFull()}{makeFull()}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::make\+Full (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a29b2fcae0bd6a3c78cdae01eda4c592a}\label{classAFlib_1_1id_1_1History_a29b2fcae0bd6a3c78cdae01eda4c592a}} 
+\index{AFlib::id::History@{AFlib::id::History}!makeShorten@{makeShorten}}
+\index{makeShorten@{makeShorten}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{makeShorten()}{makeShorten()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::make\+Shorten (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 112 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a250de70ae2a02d3e1490f8214690511a}\label{classAFlib_1_1id_1_1History_a250de70ae2a02d3e1490f8214690511a}} 
+\index{AFlib::id::History@{AFlib::id::History}!makeShorten@{makeShorten}}
+\index{makeShorten@{makeShorten}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{makeShorten()}{makeShorten()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::make\+Shorten (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} \&}]{list }\end{DoxyParamCaption})}
+
+
+
+Definition at line 60 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_aa10c06c340c13df3ab97c4cda6c4834a}\label{classAFlib_1_1id_1_1History_aa10c06c340c13df3ab97c4cda6c4834a}} 
+\index{AFlib::id::History@{AFlib::id::History}!refreshLastChangeTime@{refreshLastChangeTime}}
+\index{refreshLastChangeTime@{refreshLastChangeTime}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{refreshLastChangeTime()}{refreshLastChangeTime()}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::refresh\+Last\+Change\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 237 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a3184fb8317a5143095942302bd344ebb}\label{classAFlib_1_1id_1_1History_a3184fb8317a5143095942302bd344ebb}} 
+\index{AFlib::id::History@{AFlib::id::History}!savedStatus@{savedStatus}}
+\index{savedStatus@{savedStatus}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{savedStatus()}{savedStatus()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{Saved\+Id\+Type}} A\+Flib\+::id\+::\+History\+::saved\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classAFlib_1_1id_1_1Object_ab9fd7f184203215cc19e9636faae2a2a}{A\+Flib\+::id\+::\+Object}}.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a2b523d20436e4e6ce326e7def7aec6a9}\label{classAFlib_1_1id_1_1History_a2b523d20436e4e6ce326e7def7aec6a9}} 
+\index{AFlib::id::History@{AFlib::id::History}!saveShorten@{saveShorten}}
+\index{saveShorten@{saveShorten}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{saveShorten()}{saveShorten()}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::save\+Shorten (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 118 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a11b3bdcce616951307c9bc716be66b4d}\label{classAFlib_1_1id_1_1History_a11b3bdcce616951307c9bc716be66b4d}} 
+\index{AFlib::id::History@{AFlib::id::History}!saveToStorage@{saveToStorage}}
+\index{saveToStorage@{saveToStorage}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{saveToStorage()}{saveToStorage()}}
+{\footnotesize\ttfamily virtual void A\+Flib\+::id\+::\+History\+::save\+To\+Storage (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_1_1id_a9c33c906c113879da363d48db8129a85}{Operate\+Ptr}}}]{ptr,  }\item[{bool}]{is\+Id = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classAFlib_1_1id_1_1Object_a60fd4a261fea9f7dff70d69b022b3376}{A\+Flib\+::id\+::\+Object}}.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_aa54ccd6d24403914fe0d6c172c51cc15}\label{classAFlib_1_1id_1_1History_aa54ccd6d24403914fe0d6c172c51cc15}} 
+\index{AFlib::id::History@{AFlib::id::History}!setAttribute@{setAttribute}}
+\index{setAttribute@{setAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{setAttribute()}{setAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::set\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}}}]{key,  }\item[{Q\+Variant}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 153 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_aa7de893f5681c474467f24ccc62518f6}\label{classAFlib_1_1id_1_1History_aa7de893f5681c474467f24ccc62518f6}} 
+\index{AFlib::id::History@{AFlib::id::History}!setAttribute@{setAttribute}}
+\index{setAttribute@{setAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{setAttribute()}{setAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void A\+Flib\+::id\+::\+History\+::set\+Attribute (\begin{DoxyParamCaption}\item[{K}]{key,  }\item[{Q\+Variant}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 74 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a3aa46872c34af34d1ee94a2b231de549}\label{classAFlib_1_1id_1_1History_a3aa46872c34af34d1ee94a2b231de549}} 
+\index{AFlib::id::History@{AFlib::id::History}!setAttribute@{setAttribute}}
+\index{setAttribute@{setAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{setAttribute()}{setAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::set\+Attribute (\begin{DoxyParamCaption}\item[{quint16}]{key,  }\item[{const Q\+Variant \&}]{value,  }\item[{bool}]{is\+Id = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 274 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_afa9863b26312de6e6e854e22f377dfd7}\label{classAFlib_1_1id_1_1History_afa9863b26312de6e6e854e22f377dfd7}} 
+\index{AFlib::id::History@{AFlib::id::History}!setIdAttribute@{setIdAttribute}}
+\index{setIdAttribute@{setIdAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{setIdAttribute()}{setIdAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void A\+Flib\+::id\+::\+History\+::set\+Id\+Attribute (\begin{DoxyParamCaption}\item[{K}]{key,  }\item[{const \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 85 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_ad40cc60f9e358df5e02de50ef8647fd1}\label{classAFlib_1_1id_1_1History_ad40cc60f9e358df5e02de50ef8647fd1}} 
+\index{AFlib::id::History@{AFlib::id::History}!setIdAttribute@{setIdAttribute}}
+\index{setIdAttribute@{setIdAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{setIdAttribute()}{setIdAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::set\+Id\+Attribute (\begin{DoxyParamCaption}\item[{quint16}]{key,  }\item[{const \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} \&}]{global\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 247 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a7e934cf64217cb91bd5304eb5cb89cdf}\label{classAFlib_1_1id_1_1History_a7e934cf64217cb91bd5304eb5cb89cdf}} 
+\index{AFlib::id::History@{AFlib::id::History}!setMultiAttribute@{setMultiAttribute}}
+\index{setMultiAttribute@{setMultiAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{setMultiAttribute()}{setMultiAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::set\+Multi\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_acc63b5fe263adbc83af95cc61edecd25}{Attribute}}}]{key,  }\item[{Q\+Variant}]{value,  }\item[{\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 163 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a2bf716c3b44fdb8fc80e1a430612048f}\label{classAFlib_1_1id_1_1History_a2bf716c3b44fdb8fc80e1a430612048f}} 
+\index{AFlib::id::History@{AFlib::id::History}!setMultiAttribute@{setMultiAttribute}}
+\index{setMultiAttribute@{setMultiAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{setMultiAttribute()}{setMultiAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void A\+Flib\+::id\+::\+History\+::set\+Multi\+Attribute (\begin{DoxyParamCaption}\item[{K}]{key,  }\item[{const Q\+Variant \&}]{value,  }\item[{\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 104 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_ae32b798694d524964861688884a62fcf}\label{classAFlib_1_1id_1_1History_ae32b798694d524964861688884a62fcf}} 
+\index{AFlib::id::History@{AFlib::id::History}!setMultiAttribute@{setMultiAttribute}}
+\index{setMultiAttribute@{setMultiAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{setMultiAttribute()}{setMultiAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::set\+Multi\+Attribute (\begin{DoxyParamCaption}\item[{quint16}]{key,  }\item[{const Q\+Variant \&}]{value,  }\item[{\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}}}]{type,  }\item[{bool}]{is\+Id = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 316 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a3aa4ab4e752d9558ab01fa470539cec3}\label{classAFlib_1_1id_1_1History_a3aa4ab4e752d9558ab01fa470539cec3}} 
+\index{AFlib::id::History@{AFlib::id::History}!setMultiIdAttribute@{setMultiIdAttribute}}
+\index{setMultiIdAttribute@{setMultiIdAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{setMultiIdAttribute()}{setMultiIdAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void A\+Flib\+::id\+::\+History\+::set\+Multi\+Id\+Attribute (\begin{DoxyParamCaption}\item[{K}]{key,  }\item[{const \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} \&}]{value,  }\item[{\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 109 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_afce0447673e0496901041b7246d569e4}\label{classAFlib_1_1id_1_1History_afce0447673e0496901041b7246d569e4}} 
+\index{AFlib::id::History@{AFlib::id::History}!setMultiIdAttribute@{setMultiIdAttribute}}
+\index{setMultiIdAttribute@{setMultiIdAttribute}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{setMultiIdAttribute()}{setMultiIdAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::set\+Multi\+Id\+Attribute (\begin{DoxyParamCaption}\item[{quint16}]{key,  }\item[{const \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{Global\+\_\+bit}} \&}]{value,  }\item[{\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{H\+Id\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 330 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a8a2ad9731fa72a468d5811a43dd87439}\label{classAFlib_1_1id_1_1History_a8a2ad9731fa72a468d5811a43dd87439}} 
+\index{AFlib::id::History@{AFlib::id::History}!timeCreate@{timeCreate}}
+\index{timeCreate@{timeCreate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{timeCreate()}{timeCreate()}}
+{\footnotesize\ttfamily Q\+Date\+Time A\+Flib\+::id\+::\+History\+::time\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 49 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a8aa2e72edb50c43719d972e8e76f925e}\label{classAFlib_1_1id_1_1History_a8aa2e72edb50c43719d972e8e76f925e}} 
+\index{AFlib::id::History@{AFlib::id::History}!updateTime@{updateTime}}
+\index{updateTime@{updateTime}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{updateTime()}{updateTime()}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::update\+Time (\begin{DoxyParamCaption}\item[{Q\+Date\+Time}]{d\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_ac9dc654c623a4880d06408c95cd79f32}\label{classAFlib_1_1id_1_1History_ac9dc654c623a4880d06408c95cd79f32}} 
+\index{AFlib::id::History@{AFlib::id::History}!useCompress@{useCompress}}
+\index{useCompress@{useCompress}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{useCompress()}{useCompress()}}
+{\footnotesize\ttfamily void A\+Flib\+::id\+::\+History\+::use\+Compress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}}}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file af\+Id\+History.\+cpp.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a3e98d945e8045f9ee9e7dccbec6fd8f2}\label{classAFlib_1_1id_1_1History_a3e98d945e8045f9ee9e7dccbec6fd8f2}} 
+\index{AFlib::id::History@{AFlib::id::History}!AFlib::id::Object@{AFlib::id::Object}}
+\index{AFlib::id::Object@{AFlib::id::Object}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{AFlib::id::Object}{AFlib::id::Object}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classAFlib_1_1id_1_1Object}{A\+Flib\+::id\+::\+Object}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 158 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a8395f55836a2dd840ec61402b50b708a}\label{classAFlib_1_1id_1_1History_a8395f55836a2dd840ec61402b50b708a}} 
+\index{AFlib::id::History@{AFlib::id::History}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily Q\+Data\+Stream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{Q\+Data\+Stream \&}]{stream,  }\item[{const \mbox{\hyperlink{classAFlib_1_1id_1_1History}{History}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 367 of file af\+Id\+History.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a2460f93cc39d8636e407c2eb7422ad21}\label{classAFlib_1_1id_1_1History_a2460f93cc39d8636e407c2eb7422ad21}} 
+\index{AFlib::id::History@{AFlib::id::History}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily Q\+Data\+Stream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{Q\+Data\+Stream \&}]{stream,  }\item[{\mbox{\hyperlink{classAFlib_1_1id_1_1History}{History}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 372 of file af\+Id\+History.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a1f8275545812db5af43b36654205567c}\label{classAFlib_1_1id_1_1History_a1f8275545812db5af43b36654205567c}} 
+\index{AFlib::id::History@{AFlib::id::History}!m\_lastUpdate@{m\_lastUpdate}}
+\index{m\_lastUpdate@{m\_lastUpdate}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{m\_lastUpdate}{m\_lastUpdate}}
+{\footnotesize\ttfamily Q\+Date\+Time A\+Flib\+::id\+::\+History\+::m\+\_\+last\+Update\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 148 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a64423e2bb15a99b5971a3710598724a1}\label{classAFlib_1_1id_1_1History_a64423e2bb15a99b5971a3710598724a1}} 
+\index{AFlib::id::History@{AFlib::id::History}!m\_operateIdList@{m\_operateIdList}}
+\index{m\_operateIdList@{m\_operateIdList}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{m\_operateIdList}{m\_operateIdList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} A\+Flib\+::id\+::\+History\+::m\+\_\+operate\+Id\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 150 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a1f925b7cbe752226f6cb5bce7a50d04a}\label{classAFlib_1_1id_1_1History_a1f925b7cbe752226f6cb5bce7a50d04a}} 
+\index{AFlib::id::History@{AFlib::id::History}!m\_operateList@{m\_operateList}}
+\index{m\_operateList@{m\_operateList}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{m\_operateList}{m\_operateList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a1522d82a7d4f97f3e6aa3edce0608660}{Operate\+Ptr\+List}} A\+Flib\+::id\+::\+History\+::m\+\_\+operate\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 149 of file af\+Id\+History.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1id_1_1History_a83f9ab5b73b5a40d63a3e104bd5d1d30}\label{classAFlib_1_1id_1_1History_a83f9ab5b73b5a40d63a3e104bd5d1d30}} 
+\index{AFlib::id::History@{AFlib::id::History}!m\_owner@{m\_owner}}
+\index{m\_owner@{m\_owner}!AFlib::id::History@{AFlib::id::History}}
+\doxysubsubsection{\texorpdfstring{m\_owner}{m\_owner}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{Account\+\_\+bit}} A\+Flib\+::id\+::\+History\+::m\+\_\+owner\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 151 of file af\+Id\+History.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/\mbox{\hyperlink{afIdHistory_8h}{af\+Id\+History.\+h}}\item 
+lib\+\_\+base\+A\+F/base/\mbox{\hyperlink{afIdHistory_8cpp}{af\+Id\+History.\+cpp}}\end{DoxyCompactItemize}

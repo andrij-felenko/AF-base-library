@@ -1,0 +1,100 @@
+.TH "lib_baseAF/include/lib_baseAF/afAPI.h" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/include/lib_baseAF/afAPI.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'afAccountStorage\&.h'\fP
+.br
+\fC#include <QtCore/QMap>\fP
+.br
+\fC#include <QtCore/QTimer>\fP
+.br
+\fC#include <QtNetwork/QNetworkAccessManager>\fP
+.br
+\fC#include <QtNetwork/QNetworkReply>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAFlib::API\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBAFlib\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef QSharedPointer< API > \fBAFlib::ApiPtr\fP"
+.br
+.ti -1c
+.RI "typedef QList< ApiPtr > \fBAFlib::ApiPtrList\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBAFlib::API\fP > \fBAFapiPtr\fP"
+.br
+.ti -1c
+.RI "typedef QList< \fBAFapiPtr\fP > \fBAFapiPtrList\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAFlib::RequestType\fP "
+.br
+.ti -1c
+.RI "enum \fBAFlib::RequestStatus\fP "
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QString \fBAFlib::getServerKey\fP (const RequestType type, bool isData=false)"
+.br
+.ti -1c
+.RI "QUrl \fBAFlib::getServerLink\fP (const RequestType type, bool isData=false)"
+.br
+.ti -1c
+.RI "ApiPtr \fBAFlib::api\fP ()"
+.br
+.ti -1c
+.RI "QDataStream & \fBAFlib::operator<<\fP (QDataStream &d, const \fBAFlib::RequestType\fP &type)"
+.br
+.ti -1c
+.RI "QDataStream & \fBAFlib::operator>>\fP (QDataStream &d, \fBAFlib::RequestType\fP &type)"
+.br
+.ti -1c
+.RI "\fBAFapiPtr\fP \fBafAPI\fP ()"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef QSharedPointer<\fBAFlib::API\fP> \fBAFapiPtr\fP"
+
+.PP
+Definition at line 82 of file afAPI\&.h\&.
+.SS "typedef QList<\fBAFapiPtr\fP> \fBAFapiPtrList\fP"
+
+.PP
+Definition at line 83 of file afAPI\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBAFapiPtr\fP afAPI ()"
+
+.PP
+Definition at line 233 of file afAPI\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

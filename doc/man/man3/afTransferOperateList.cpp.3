@@ -1,0 +1,58 @@
+.TH "lib_baseAF/tool/afTransferOperateList.cpp" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/tool/afTransferOperateList.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'afTransferOperateList\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBAFlib\fP"
+.br
+.ti -1c
+.RI " \fBAFlib::transfer\fP"
+.br
+.ti -1c
+.RI " \fBAFlib::transfer::answer\fP"
+.br
+.ti -1c
+.RI " \fBAFlib::transfer::send\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBAFlib::transfer::answer::operator<<\fP (QDataStream &stream, const \fBAFlib::transfer::answer::Object\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBAFlib::transfer::answer::operator>>\fP (QDataStream &stream, \fBAFlib::transfer::answer::Object\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBAFlib::transfer::answer::operator<<\fP (QDataStream &stream, const \fBAFlib::transfer::answer::DPathObjectList\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBAFlib::transfer::answer::operator>>\fP (QDataStream &stream, \fBAFlib::transfer::answer::DPathObjectList\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBAFlib::transfer::send::operator>>\fP (QDataStream &stream, Objects &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBAFlib::transfer::send::operator<<\fP (QDataStream &stream, Objects &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBAFlib::transfer::send::operator<<\fP (QDataStream &stream, const \fBAFlib::transfer::send::Operates\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBAFlib::transfer::send::operator>>\fP (QDataStream &stream, \fBAFlib::transfer::send::Operates\fP &data)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

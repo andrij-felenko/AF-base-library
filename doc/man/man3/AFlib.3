@@ -1,0 +1,610 @@
+.TH "AFlib" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBid\fP"
+.br
+.ti -1c
+.RI " \fBtransfer\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAPI\fP"
+.br
+.ti -1c
+.RI "class \fBDir\fP"
+.br
+.ti -1c
+.RI "class \fBFile\fP"
+.br
+.ti -1c
+.RI "class \fBFunction\fP"
+.br
+.ti -1c
+.RI "class \fBServerSetting\fP"
+.br
+.ti -1c
+.RI "class \fBSetting\fP"
+.br
+.ti -1c
+.RI "class \fBStorage\fP"
+.br
+.ti -1c
+.RI "class \fBSystem\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef QSharedPointer< \fBAPI\fP > \fBApiPtr\fP"
+.br
+.ti -1c
+.RI "typedef QList< \fBApiPtr\fP > \fBApiPtrList\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBDir\fP > \fBDirPtr\fP"
+.br
+.ti -1c
+.RI "typedef \fBHistoryIdType\fP \fBHIdType\fP"
+.br
+.ti -1c
+.RI "typedef \fBSavedIdType\fP \fBSIdType\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::Account_bit\fP \fBIdAccount_bit\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::History\fP \fBIdHistory\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::HistoryPtr\fP \fBIdHistoryPtr\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::Global_bit\fP \fBIdGlobal_bit\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::Object\fP \fBIdObject\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::ObjectTemplate\fP \fBIdObjectTemplate\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::Object_bit\fP \fBIdObject_bit\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::ObjectPtr\fP \fBIdObjectPtr\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::ObjectPtrV\fP \fBIdObjectPtrV\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::Operate\fP \fBIdOperate\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::OperatePtr\fP \fBIdOperatePtr\fP"
+.br
+.ti -1c
+.RI "typedef \fBid::OperatePtrList\fP \fBIdOperatePtrList\fP"
+.br
+.ti -1c
+.RI "typedef \fBtransfer::Send\fP \fBTransferOperateSendList\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBServerSetting\fP > \fBServerSettingPtr\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBSetting\fP > \fBSettingPtr\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBStorage\fP > \fBStoragePtr\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBRequestType\fP "
+.br
+.ti -1c
+.RI "enum \fBRequestStatus\fP "
+.br
+.ti -1c
+.RI "enum \fBSchedule\fP "
+.br
+.ti -1c
+.RI "enum \fBContinent\fP "
+.br
+.RI "The Continent enum\&. "
+.ti -1c
+.RI "enum \fBFileType\fP "
+.br
+.RI "Id`s enum list --------------------------------------------------------------------------------\&. "
+.ti -1c
+.RI "enum \fBHistoryIdType\fP "
+.br
+.ti -1c
+.RI "enum \fBSavedIdType\fP "
+.br
+.ti -1c
+.RI "enum \fBAccountIdType\fP "
+.br
+.ti -1c
+.RI "enum \fBAttribute\fP "
+.br
+.ti -1c
+.RI "enum \fBCompress\fP "
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &d, const \fBAFlib::RequestType\fP &type)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &d, \fBAFlib::RequestType\fP &type)"
+.br
+.ti -1c
+.RI "QString \fBgetServerKey\fP (const \fBRequestType\fP type, bool isData=false)"
+.br
+.ti -1c
+.RI "QUrl \fBgetServerLink\fP (const \fBRequestType\fP type, bool isData=false)"
+.br
+.ti -1c
+.RI "\fBApiPtr\fP \fBapi\fP ()"
+.br
+.ti -1c
+.RI "\fBDirPtr\fP \fBafDir\fP ()"
+.br
+.ti -1c
+.RI "\fBHistoryIdType\fP \fBtoHistoryIdType\fP (const quint8 i)"
+.br
+.ti -1c
+.RI "quint8 \fBfromHisToInt\fP (\fBHistoryIdType\fP type)"
+.br
+.ti -1c
+.RI "bool \fBisHIdEnable\fP (\fBHistoryIdType\fP type)"
+.br
+.ti -1c
+.RI "std::string \fBhistoryToString\fP (\fBHistoryIdType\fP type)"
+.br
+.ti -1c
+.RI "std::string \fBhistoryToString\fP (quint8 type)"
+.br
+.ti -1c
+.RI "\fBSavedIdType\fP \fBtoSavedIdType\fP (const quint8 i)"
+.br
+.ti -1c
+.RI "quint8 \fBfromSaveToInt\fP (\fBSavedIdType\fP type)"
+.br
+.ti -1c
+.RI "std::string \fBsaveTypeToString\fP (\fBSavedIdType\fP type)"
+.br
+.ti -1c
+.RI "std::string \fBsaveTypeToString\fP (quint8 type)"
+.br
+.ti -1c
+.RI "\fBAccountIdType\fP \fBtoAccountIdType\fP (const quint8 i)"
+.br
+.ti -1c
+.RI "quint8 \fBfromAccountIdType\fP (\fBAccountIdType\fP type)"
+.br
+.ti -1c
+.RI "\fBServerSettingPtr\fP \fBafServerSettings\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBStoragePtr\fP \fBafStorage\fP ()"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef QSharedPointer<\fBAPI\fP> \fBAFlib::ApiPtr\fP"
+
+.PP
+Definition at line 11 of file afAPI\&.h\&.
+.SS "typedef QList<\fBApiPtr\fP> \fBAFlib::ApiPtrList\fP"
+
+.PP
+Definition at line 13 of file afAPI\&.h\&.
+.SS "typedef QSharedPointer<\fBDir\fP> \fBAFlib::DirPtr\fP"
+
+.PP
+Definition at line 10 of file afDir\&.h\&.
+.SS "typedef \fBHistoryIdType\fP \fBAFlib::HIdType\fP"
+
+.PP
+Definition at line 56 of file afEnum\&.h\&.
+.SS "typedef \fBid::Account_bit\fP \fBAFlib::IdAccount_bit\fP"
+
+.PP
+Definition at line 14 of file afId\&.h\&.
+.SS "typedef \fBid::Global_bit\fP \fBAFlib::IdGlobal_bit\fP"
+
+.PP
+Definition at line 19 of file afId\&.h\&.
+.SS "typedef \fBid::History\fP \fBAFlib::IdHistory\fP"
+
+.PP
+Definition at line 16 of file afId\&.h\&.
+.SS "typedef \fBid::HistoryPtr\fP \fBAFlib::IdHistoryPtr\fP"
+
+.PP
+Definition at line 17 of file afId\&.h\&.
+.SS "typedef \fBid::Object\fP \fBAFlib::IdObject\fP"
+
+.PP
+Definition at line 20 of file afId\&.h\&.
+.SS "typedef \fBid::Object_bit\fP \fBAFlib::IdObject_bit\fP"
+
+.PP
+Definition at line 22 of file afId\&.h\&.
+.SS "typedef \fBid::ObjectPtr\fP \fBAFlib::IdObjectPtr\fP"
+
+.PP
+Definition at line 23 of file afId\&.h\&.
+.SS "typedef \fBid::ObjectPtrV\fP \fBAFlib::IdObjectPtrV\fP"
+
+.PP
+Definition at line 24 of file afId\&.h\&.
+.SS "typedef \fBid::ObjectTemplate\fP \fBAFlib::IdObjectTemplate\fP"
+
+.PP
+Definition at line 21 of file afId\&.h\&.
+.SS "typedef \fBid::Operate\fP \fBAFlib::IdOperate\fP"
+
+.PP
+Definition at line 26 of file afId\&.h\&.
+.SS "typedef \fBid::OperatePtr\fP \fBAFlib::IdOperatePtr\fP"
+
+.PP
+Definition at line 27 of file afId\&.h\&.
+.SS "typedef \fBid::OperatePtrList\fP \fBAFlib::IdOperatePtrList\fP"
+
+.PP
+Definition at line 28 of file afId\&.h\&.
+.SS "typedef QSharedPointer<\fBServerSetting\fP> \fBAFlib::ServerSettingPtr\fP"
+
+.PP
+Definition at line 11 of file afServerSettings\&.h\&.
+.SS "typedef QSharedPointer<\fBSetting\fP> \fBAFlib::SettingPtr\fP"
+
+.PP
+Definition at line 7 of file afSetting\&.h\&.
+.SS "typedef \fBSavedIdType\fP \fBAFlib::SIdType\fP"
+
+.PP
+Definition at line 71 of file afEnum\&.h\&.
+.SS "typedef QSharedPointer<\fBStorage\fP> \fBAFlib::StoragePtr\fP"
+
+.PP
+Definition at line 10 of file afStorage\&.h\&.
+.SS "typedef \fBtransfer::Send\fP \fBAFlib::TransferOperateSendList\fP"
+
+.PP
+Definition at line 30 of file afId\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBAFlib::AccountIdType\fP\fC [strong]\fP"
+Account id type enum
+.PP
+default \fBAccountIdType::LocalUser\fP 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILocalUser \fP\fP
+User, that not accept from server yet, can't send information to global server\&. 
+.TP
+\fB\fILocalOrganization \fP\fP
+Local organization, use only on current device\&. 
+.TP
+\fB\fIGlobalUser \fP\fP
+User, that registrate on server\&. 
+.TP
+\fB\fIGlobalOrganization \fP\fP
+Organization, registrate on server, always have owner user\&. 
+.TP
+\fB\fIUser \fP\fP
+User enum, unite both LocalUser and GlobalUser\&. 
+.TP
+\fB\fIOrganization \fP\fP
+Organization enum, unite LocalOrganization and GlobalOrganization\&. 
+.TP
+\fB\fILocal \fP\fP
+Use for show that enum is local\&. 
+.TP
+\fB\fIGlobal \fP\fP
+Use for Global enum\&. 
+.TP
+\fB\fIFirst \fP\fP
+.PP
+Definition at line 77 of file afEnum\&.h\&.
+.SS "enum \fBAFlib::Attribute\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINone \fP\fP
+.TP
+\fB\fIName \fP\fP
+.TP
+\fB\fICreated \fP\fP
+.TP
+\fB\fIDescription \fP\fP
+.TP
+\fB\fIDate \fP\fP
+.TP
+\fB\fITime \fP\fP
+.TP
+\fB\fILocalId \fP\fP
+.TP
+\fB\fIParent \fP\fP
+.TP
+\fB\fIEmail \fP\fP
+.TP
+\fB\fILogin \fP\fP
+.TP
+\fB\fIIcon \fP\fP
+.TP
+\fB\fIPassword \fP\fP
+.TP
+\fB\fIUserList \fP\fP
+.TP
+\fB\fIGroupMembers \fP\fP
+List of members in Group\&. 
+.TP
+\fB\fIFriendList \fP\fP
+.TP
+\fB\fIGroupList \fP\fP
+.PP
+Definition at line 8 of file afIdHistory\&.h\&.
+.SS "enum \fBAFlib::Compress\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIShortest \fP\fP
+.TP
+\fB\fIAllActive \fP\fP
+.TP
+\fB\fIEachByOne \fP\fP
+.TP
+\fB\fIFull \fP\fP
+.PP
+Definition at line 29 of file afIdHistory\&.h\&.
+.SS "enum \fBAFlib::Continent\fP\fC [strong]\fP"
+
+.PP
+The Continent enum\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIEurope \fP\fP
+.TP
+\fB\fIAfrica \fP\fP
+.TP
+\fB\fINorth_America \fP\fP
+.TP
+\fB\fISouth_America \fP\fP
+.TP
+\fB\fIOceania \fP\fP
+.TP
+\fB\fIEast_Asia \fP\fP
+.TP
+\fB\fIWest_Asia \fP\fP
+.TP
+\fB\fINone \fP\fP
+.PP
+Definition at line 22 of file afEnum\&.h\&.
+.SS "enum \fBAFlib::FileType\fP\fC [strong]\fP"
+
+.PP
+Id`s enum list --------------------------------------------------------------------------------\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIData \fP\fP
+.TP
+\fB\fIAccount \fP\fP
+.TP
+\fB\fIConfig \fP\fP
+.TP
+\fB\fISetting \fP\fP
+.TP
+\fB\fIJson \fP\fP
+.PP
+Definition at line 36 of file afEnum\&.h\&.
+.SS "enum \fBAFlib::HistoryIdType\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAddLine \fP\fP
+.TP
+\fB\fIEditLine \fP\fP
+.TP
+\fB\fIRemoveLine \fP\fP
+.TP
+\fB\fISavedChangeLine \fP\fP
+.TP
+\fB\fIInnactivateLine \fP\fP
+.TP
+\fB\fIActivateLine \fP\fP
+.TP
+\fB\fIFirst \fP\fP
+.PP
+Definition at line 44 of file afEnum\&.h\&.
+.SS "enum \fBAFlib::RequestStatus\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINone \fP\fP
+.TP
+\fB\fISend \fP\fP
+.TP
+\fB\fIFalse \fP\fP
+.TP
+\fB\fITrue \fP\fP
+.PP
+Definition at line 29 of file afAPI\&.h\&.
+.SS "enum \fBAFlib::RequestType\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILogin \fP\fP
+.TP
+\fB\fIRegistrate \fP\fP
+.TP
+\fB\fIRemindMyLogin \fP\fP
+.TP
+\fB\fIRemindMyPassword \fP\fP
+.TP
+\fB\fIPing \fP\fP
+.TP
+\fB\fIUpdateAfObjects \fP\fP
+.TP
+\fB\fIAddAccount \fP\fP
+.TP
+\fB\fIAddAccountById \fP\fP
+.PP
+Definition at line 15 of file afAPI\&.h\&.
+.SS "enum \fBAFlib::SavedIdType\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fITemporary \fP\fP
+.TP
+\fB\fILocal \fP\fP
+.TP
+\fB\fIOnTheWayToServer \fP\fP
+.TP
+\fB\fIOnServer \fP\fP
+.TP
+\fB\fIFirst \fP\fP
+.PP
+Definition at line 61 of file afEnum\&.h\&.
+.SS "enum \fBAFlib::Schedule\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIOnce \fP\fP
+.TP
+\fB\fIDaily \fP\fP
+.TP
+\fB\fIWeekly \fP\fP
+.TP
+\fB\fIMonthly \fP\fP
+.TP
+\fB\fIYearly \fP\fP
+.TP
+\fB\fIPeriodical \fP\fP
+.TP
+\fB\fIOnRequest \fP\fP
+.PP
+Definition at line 11 of file afEnum\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBDirPtr\fP AFlib::afDir ()"
+
+.PP
+Definition at line 238 of file afDir\&.cpp\&.
+.SS "\fBAFlib::ServerSettingPtr\fP AFlib::afServerSettings (QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 30 of file afServerSettings\&.cpp\&.
+.SS "\fBStoragePtr\fP AFlib::afStorage ()"
+
+.PP
+Definition at line 23 of file afStorage\&.cpp\&.
+.SS "\fBAFlib::ApiPtr\fP AFlib::api ()"
+
+.PP
+Definition at line 199 of file afAPI\&.cpp\&.
+.SS "quint8 AFlib::fromAccountIdType (\fBAFlib::AccountIdType\fP type)"
+
+.PP
+Definition at line 68 of file afEnum\&.cpp\&.
+.SS "quint8 AFlib::fromHisToInt (\fBAFlib::HistoryIdType\fP type)"
+
+.PP
+Definition at line 31 of file afEnum\&.cpp\&.
+.SS "quint8 AFlib::fromSaveToInt (\fBAFlib::SavedIdType\fP type)"
+
+.PP
+Definition at line 36 of file afEnum\&.cpp\&.
+.SS "QString AFlib::getServerKey (const \fBRequestType\fP type, bool isData = \fCfalse\fP)"
+
+.PP
+Definition at line 208 of file afAPI\&.cpp\&.
+.SS "QUrl AFlib::getServerLink (const \fBRequestType\fP type, bool isData = \fCfalse\fP)"
+
+.PP
+Definition at line 226 of file afAPI\&.cpp\&.
+.SS "std::string AFlib::historyToString (\fBAFlib::HistoryIdType\fP type)"
+
+.PP
+Definition at line 98 of file afEnum\&.cpp\&.
+.SS "std::string AFlib::historyToString (quint8 type)"
+
+.PP
+Definition at line 112 of file afEnum\&.cpp\&.
+.SS "bool AFlib::isHIdEnable (\fBAFlib::HistoryIdType\fP type)"
+
+.PP
+Definition at line 41 of file afEnum\&.cpp\&.
+.SS "QDataStream & AFlib::operator<< (QDataStream & d, const \fBAFlib::RequestType\fP & type)"
+
+.PP
+Definition at line 239 of file afAPI\&.cpp\&.
+.SS "QDataStream & AFlib::operator>> (QDataStream & d, \fBAFlib::RequestType\fP & type)"
+
+.PP
+Definition at line 244 of file afAPI\&.cpp\&.
+.SS "std::string AFlib::saveTypeToString (quint8 type)"
+
+.PP
+Definition at line 117 of file afEnum\&.cpp\&.
+.SS "std::string AFlib::saveTypeToString (\fBAFlib::SavedIdType\fP type)"
+
+.PP
+Definition at line 86 of file afEnum\&.cpp\&.
+.SS "\fBAFlib::AccountIdType\fP AFlib::toAccountIdType (const quint8 i)"
+
+.PP
+Definition at line 63 of file afEnum\&.cpp\&.
+.SS "\fBAFlib::HistoryIdType\fP AFlib::toHistoryIdType (const quint8 i)"
+
+.PP
+Definition at line 3 of file afEnum\&.cpp\&.
+.SS "\fBAFlib::SavedIdType\fP AFlib::toSavedIdType (const quint8 i)"
+
+.PP
+Definition at line 8 of file afEnum\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

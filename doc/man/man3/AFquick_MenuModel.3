@@ -1,0 +1,148 @@
+.TH "AFquick::MenuModel" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFquick::MenuModel
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <menuModel\&.h>\fP
+.PP
+Inherits QAbstractListModel\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBbeginResetModelSlot\fP ()"
+.br
+.ti -1c
+.RI "void \fBendResetModelSlot\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "QString \fBgetNameByIndex\fP (int index) const"
+.br
+.ti -1c
+.RI "QString \fBgetIconByIndex\fP (int index) const"
+.br
+.ti -1c
+.RI "bool \fBisCurrentByIndex\fP (int index) const"
+.br
+.ti -1c
+.RI "int \fBgetCount\fP () const"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMenuModel\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "int \fBrowCount\fP (const QModelIndex &parent=QModelIndex()) const override"
+.br
+.ti -1c
+.RI "QHash< int, QByteArray > \fBroleNames\fP () const override"
+.br
+.ti -1c
+.RI "QVariant \fBdata\fP (const QModelIndex &index, int role) const override"
+.br
+.ti -1c
+.RI "void \fBupdateData\fP ()"
+.br
+.in -1c
+.SS "Private Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFieldName\fP "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_currentIndex\fP"
+.br
+.ti -1c
+.RI "QHash< int, QByteArray > \fBm_roleNames\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file menuModel\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBAFquick::MenuModel::FieldName\fP\fC [private]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIconPath \fP\fP
+.TP
+\fB\fIName \fP\fP
+.TP
+\fB\fIIsCurrent \fP\fP
+.TP
+\fB\fIId \fP\fP
+.PP
+Definition at line 38 of file menuModel\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFquick::MenuModel::MenuModel (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 3 of file menuModel\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void AFquick::MenuModel::beginResetModelSlot ()\fC [slot]\fP"
+
+.PP
+Definition at line 41 of file menuModel\&.cpp\&.
+.SS "QVariant AFquick::MenuModel::data (const QModelIndex & index, int role) const\fC [override]\fP"
+
+.PP
+Definition at line 22 of file menuModel\&.cpp\&.
+.SS "void AFquick::MenuModel::endResetModelSlot ()\fC [slot]\fP"
+
+.PP
+Definition at line 46 of file menuModel\&.cpp\&.
+.SS "int AFquick::MenuModel::getCount () const\fC [signal]\fP"
+
+.SS "QString AFquick::MenuModel::getIconByIndex (int index) const\fC [signal]\fP"
+
+.SS "QString AFquick::MenuModel::getNameByIndex (int index) const\fC [signal]\fP"
+
+.SS "bool AFquick::MenuModel::isCurrentByIndex (int index) const\fC [signal]\fP"
+
+.SS "QHash< int, QByteArray > AFquick::MenuModel::roleNames () const\fC [override]\fP"
+
+.PP
+Definition at line 17 of file menuModel\&.cpp\&.
+.SS "int AFquick::MenuModel::rowCount (const QModelIndex & parent = \fCQModelIndex()\fP) const\fC [override]\fP"
+
+.PP
+Definition at line 11 of file menuModel\&.cpp\&.
+.SS "void AFquick::MenuModel::updateData ()"
+
+.PP
+Definition at line 36 of file menuModel\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int AFquick::MenuModel::m_currentIndex\fC [private]\fP"
+
+.PP
+Definition at line 45 of file menuModel\&.h\&.
+.SS "QHash<int, QByteArray> AFquick::MenuModel::m_roleNames\fC [private]\fP"
+
+.PP
+Definition at line 46 of file menuModel\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

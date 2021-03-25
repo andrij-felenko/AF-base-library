@@ -1,0 +1,63 @@
+.TH "lib_baseAF/include/lib_baseAF/afAccountGroup.h" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/include/lib_baseAF/afAccountGroup.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QtCore/QDir>\fP
+.br
+\fC#include <QtCore/QMap>\fP
+.br
+\fC#include <QtCore/QObject>\fP
+.br
+\fC#include <QtCore/QString>\fP
+.br
+\fC#include 'lib_baseAF/afAccountInfo\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAFaccount::Group\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBAFaccount\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef QSharedPointer< Group > \fBAFaccount::GroupPtr\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< GroupPtr > \fBAFaccount::GroupPtrV\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAFaccount::AccessType\fP "
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAccessType\fP \fBAFaccount::toAccessType\fP (const quint8 i)"
+.br
+.ti -1c
+.RI "quint8 \fBAFaccount::fromAccessType\fP (\fBAccessType\fP type)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

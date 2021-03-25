@@ -1,0 +1,126 @@
+.TH "Server" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Server
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <server\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBServer\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "virtual \fB~Server\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "int \fBlisten\fP (const QHostAddress &address=QHostAddress::Any, quint16 port=0)"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QByteArray \fBping\fP ()"
+.br
+.ti -1c
+.RI "static QByteArray \fBlogin\fP (const QHttpServerRequest &request)"
+.br
+.ti -1c
+.RI "static QByteArray \fBregistrate\fP (const QHttpServerRequest &request)"
+.br
+.ti -1c
+.RI "static QByteArray \fBaddAccount\fP (const QHttpServerRequest &request)"
+.br
+.ti -1c
+.RI "static QByteArray \fBaddAccountById\fP (const QHttpServerRequest &request)"
+.br
+.ti -1c
+.RI "static QByteArray \fBremindMyLogin\fP (const QHttpServerRequest &request)"
+.br
+.ti -1c
+.RI "static QByteArray \fBremindMyPassword\fP (const QHttpServerRequest &request)"
+.br
+.ti -1c
+.RI "static QByteArray \fBupdateObjects\fP (const QHttpServerRequest &request)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QHttpServer * \fBm_server\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file server\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Server::Server (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 6 of file server\&.cpp\&.
+.SS "virtual Server::~Server ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "QByteArray Server::addAccount (const QHttpServerRequest & request)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 109 of file server\&.cpp\&.
+.SS "QByteArray Server::addAccountById (const QHttpServerRequest & request)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 116 of file server\&.cpp\&.
+.SS "void Server::init ()"
+
+.PP
+Definition at line 15 of file server\&.cpp\&.
+.SS "int Server::listen (const QHostAddress & address = \fCQHostAddress::Any\fP, quint16 port = \fC0\fP)"
+
+.PP
+Definition at line 28 of file server\&.cpp\&.
+.SS "QByteArray Server::login (const QHttpServerRequest & request)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 41 of file server\&.cpp\&.
+.SS "QByteArray Server::ping ()\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 33 of file server\&.cpp\&.
+.SS "QByteArray Server::registrate (const QHttpServerRequest & request)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 67 of file server\&.cpp\&.
+.SS "QByteArray Server::remindMyLogin (const QHttpServerRequest & request)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 123 of file server\&.cpp\&.
+.SS "QByteArray Server::remindMyPassword (const QHttpServerRequest & request)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 130 of file server\&.cpp\&.
+.SS "QByteArray Server::updateObjects (const QHttpServerRequest & request)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 137 of file server\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QHttpServer* Server::m_server\fC [private]\fP"
+
+.PP
+Definition at line 27 of file server\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

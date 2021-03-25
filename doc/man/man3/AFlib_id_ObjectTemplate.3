@@ -1,0 +1,131 @@
+.TH "AFlib::id::ObjectTemplate" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::id::ObjectTemplate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afIdObjectTemplate\&.h>\fP
+.PP
+Inherits QObject\&.
+.PP
+Inherited by \fBAFaccount::Info\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObjectTemplate\fP (quint8 plugin, quint8 type, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBObjectTemplate\fP (quint8 plugin, quint8 type, QStringList subDPath, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBObjectTemplate\fP (quint8 plugin, quint8 type, \fBFileType\fP fileType, QStringList subDPath, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBObjectTemplate\fP (quint8 plugin, quint8 type, \fBFileType\fP fileType, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBObjectTemplate\fP (\fBObjectPtr\fP ptr, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "virtual \fB~ObjectTemplate\fP ()=default"
+.br
+.ti -1c
+.RI "const \fBObject\fP * \fBafObject\fP () const"
+.br
+.ti -1c
+.RI "\fBObjectPtr\fP \fBafObjectPtr\fP () const"
+.br
+.ti -1c
+.RI "\fBAccount_bit\fP \fBowner\fP () const"
+.br
+.ti -1c
+.RI "\fBObject_bit\fP \fBobject_b\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBsave\fP () final"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QStringList \fBm_subDPath\fP"
+.br
+.ti -1c
+.RI "\fBFileType\fP \fBm_fileType\fP"
+.br
+.ti -1c
+.RI "\fBObjectPtr\fP \fBm_ptr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file afIdObjectTemplate\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::id::ObjectTemplate::ObjectTemplate (quint8 plugin, quint8 type, QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 5 of file afIdObjectTemplate\&.cpp\&.
+.SS "AFlib::id::ObjectTemplate::ObjectTemplate (quint8 plugin, quint8 type, QStringList subDPath, QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 11 of file afIdObjectTemplate\&.cpp\&.
+.SS "AFlib::id::ObjectTemplate::ObjectTemplate (quint8 plugin, quint8 type, \fBFileType\fP fileType, QStringList subDPath, QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 19 of file afIdObjectTemplate\&.cpp\&.
+.SS "AFlib::id::ObjectTemplate::ObjectTemplate (quint8 plugin, quint8 type, \fBFileType\fP fileType, QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 30 of file afIdObjectTemplate\&.cpp\&.
+.SS "AFlib::id::ObjectTemplate::ObjectTemplate (\fBObjectPtr\fP ptr, QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 37 of file afIdObjectTemplate\&.cpp\&.
+.SS "virtual AFlib::id::ObjectTemplate::~ObjectTemplate ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBAFlib::id::Object\fP * AFlib::id::ObjectTemplate::afObject () const"
+
+.PP
+Definition at line 52 of file afIdObjectTemplate\&.cpp\&.
+.SS "\fBAFlib::id::ObjectPtr\fP AFlib::id::ObjectTemplate::afObjectPtr () const"
+
+.PP
+Definition at line 57 of file afIdObjectTemplate\&.cpp\&.
+.SS "\fBAFlib::id::Object_bit\fP AFlib::id::ObjectTemplate::object_b () const"
+
+.PP
+Definition at line 67 of file afIdObjectTemplate\&.cpp\&.
+.SS "\fBAFlib::id::Account_bit\fP AFlib::id::ObjectTemplate::owner () const"
+
+.PP
+Definition at line 62 of file afIdObjectTemplate\&.cpp\&.
+.SS "bool AFlib::id::ObjectTemplate::save ()\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 72 of file afIdObjectTemplate\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBFileType\fP AFlib::id::ObjectTemplate::m_fileType\fC [protected]\fP"
+
+.PP
+Definition at line 26 of file afIdObjectTemplate\&.h\&.
+.SS "\fBObjectPtr\fP AFlib::id::ObjectTemplate::m_ptr\fC [protected]\fP"
+
+.PP
+Definition at line 27 of file afIdObjectTemplate\&.h\&.
+.SS "QStringList AFlib::id::ObjectTemplate::m_subDPath\fC [protected]\fP"
+
+.PP
+Definition at line 25 of file afIdObjectTemplate\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

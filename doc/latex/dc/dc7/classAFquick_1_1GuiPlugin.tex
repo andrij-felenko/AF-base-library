@@ -1,0 +1,196 @@
+\hypertarget{classAFquick_1_1GuiPlugin}{}\doxysection{A\+Fquick\+::Gui\+Plugin Class Reference}
+\label{classAFquick_1_1GuiPlugin}\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+
+
+{\ttfamily \#include $<$gui\+Plugin.\+h$>$}
+
+Inheritance diagram for A\+Fquick\+::Gui\+Plugin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/dc7/classAFquick_1_1GuiPlugin}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFquick_1_1GuiPlugin_a560c530696dba99ccbc4acbd3e078b56}{Gui\+Plugin}} (Q\+String \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a6e3fba296fa288f4478058e3ad82f8c0}{name}}, Q\+Object $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classAFquick_1_1GuiPlugin_ae868ed55dcf04b737e9209943dc9a289}{$\sim$\+Gui\+Plugin}} ()=default
+\item 
+virtual Q\+String \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a6e3fba296fa288f4478058e3ad82f8c0}{name}} () const final
+\item 
+virtual Q\+String \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a55b4dafd21cc8f096b893586df8e5ab7}{icon}} () const
+\item 
+virtual Q\+Url \mbox{\hyperlink{classAFquick_1_1GuiPlugin_aab3d9188e29220e6ba8608b5569d64ba}{qml\+Url}} () const =0
+\item 
+virtual void \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a1ddf7520eb6bda875ef6a9c7a50eb72c}{initialize}} ()=0
+\item 
+void \mbox{\hyperlink{classAFquick_1_1GuiPlugin_abdc430a2485f9fad224d01de57dd4b02}{click\+On\+Menu}} (int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a50860bf865850f82f12563f79d1e7a42}{set\+Context\+Property}} (Q\+String \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a6e3fba296fa288f4478058e3ad82f8c0}{name}}, Q\+Object $\ast$object) final
+\item 
+virtual void \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a019e229da93ec9ab170bac73e7078669}{set\+Context\+Property}} (Q\+String \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a6e3fba296fa288f4478058e3ad82f8c0}{name}}, Q\+Variant variant) final
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a9be1c841b6ce6dfde6323c436dc26bc1}{set\+Af\+App}} (\mbox{\hyperlink{classAFquick_1_1GuiApplication}{Gui\+Application}} $\ast$af\+App) final
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a066c456acd77249db6f7f0025e4a6833}{m\+\_\+name}}
+\item 
+\mbox{\hyperlink{classAFquick_1_1GuiApplication}{Gui\+Application}} $\ast$ \mbox{\hyperlink{classAFquick_1_1GuiPlugin_a6a5a78a225c6103b20bfeedb4477fe04}{m\+\_\+af\+App}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAFquick_1_1GuiPlugin_ad33f2f474f880436f9c515b06a574154}{Gui\+Application}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 14 of file gui\+Plugin.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_a560c530696dba99ccbc4acbd3e078b56}\label{classAFquick_1_1GuiPlugin_a560c530696dba99ccbc4acbd3e078b56}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!GuiPlugin@{GuiPlugin}}
+\index{GuiPlugin@{GuiPlugin}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{GuiPlugin()}{GuiPlugin()}}
+{\footnotesize\ttfamily A\+Fquick\+::\+Gui\+Plugin\+::\+Gui\+Plugin (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 4 of file gui\+Plugin.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_ae868ed55dcf04b737e9209943dc9a289}\label{classAFquick_1_1GuiPlugin_ae868ed55dcf04b737e9209943dc9a289}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!````~GuiPlugin@{$\sim$GuiPlugin}}
+\index{````~GuiPlugin@{$\sim$GuiPlugin}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{$\sim$GuiPlugin()}{~GuiPlugin()}}
+{\footnotesize\ttfamily virtual A\+Fquick\+::\+Gui\+Plugin\+::$\sim$\+Gui\+Plugin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_abdc430a2485f9fad224d01de57dd4b02}\label{classAFquick_1_1GuiPlugin_abdc430a2485f9fad224d01de57dd4b02}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!clickOnMenu@{clickOnMenu}}
+\index{clickOnMenu@{clickOnMenu}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{clickOnMenu()}{clickOnMenu()}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Plugin\+::click\+On\+Menu (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file gui\+Plugin.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_a55b4dafd21cc8f096b893586df8e5ab7}\label{classAFquick_1_1GuiPlugin_a55b4dafd21cc8f096b893586df8e5ab7}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!icon@{icon}}
+\index{icon@{icon}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{icon()}{icon()}}
+{\footnotesize\ttfamily Q\+String A\+Fquick\+::\+Gui\+Plugin\+::icon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 15 of file gui\+Plugin.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_a1ddf7520eb6bda875ef6a9c7a50eb72c}\label{classAFquick_1_1GuiPlugin_a1ddf7520eb6bda875ef6a9c7a50eb72c}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!initialize@{initialize}}
+\index{initialize@{initialize}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily virtual void A\+Fquick\+::\+Gui\+Plugin\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_a6e3fba296fa288f4478058e3ad82f8c0}\label{classAFquick_1_1GuiPlugin_a6e3fba296fa288f4478058e3ad82f8c0}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!name@{name}}
+\index{name@{name}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily Q\+String A\+Fquick\+::\+Gui\+Plugin\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 10 of file gui\+Plugin.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_aab3d9188e29220e6ba8608b5569d64ba}\label{classAFquick_1_1GuiPlugin_aab3d9188e29220e6ba8608b5569d64ba}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!qmlUrl@{qmlUrl}}
+\index{qmlUrl@{qmlUrl}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{qmlUrl()}{qmlUrl()}}
+{\footnotesize\ttfamily virtual Q\+Url A\+Fquick\+::\+Gui\+Plugin\+::qml\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_a9be1c841b6ce6dfde6323c436dc26bc1}\label{classAFquick_1_1GuiPlugin_a9be1c841b6ce6dfde6323c436dc26bc1}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!setAfApp@{setAfApp}}
+\index{setAfApp@{setAfApp}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{setAfApp()}{setAfApp()}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Plugin\+::set\+Af\+App (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAFquick_1_1GuiApplication}{Gui\+Application}} $\ast$}]{af\+App }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 37 of file gui\+Plugin.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_a50860bf865850f82f12563f79d1e7a42}\label{classAFquick_1_1GuiPlugin_a50860bf865850f82f12563f79d1e7a42}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!setContextProperty@{setContextProperty}}
+\index{setContextProperty@{setContextProperty}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{setContextProperty()}{setContextProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Plugin\+::set\+Context\+Property (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+Object $\ast$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 27 of file gui\+Plugin.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_a019e229da93ec9ab170bac73e7078669}\label{classAFquick_1_1GuiPlugin_a019e229da93ec9ab170bac73e7078669}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!setContextProperty@{setContextProperty}}
+\index{setContextProperty@{setContextProperty}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{setContextProperty()}{setContextProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Gui\+Plugin\+::set\+Context\+Property (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+Variant}]{variant }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 32 of file gui\+Plugin.\+cpp.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_ad33f2f474f880436f9c515b06a574154}\label{classAFquick_1_1GuiPlugin_ad33f2f474f880436f9c515b06a574154}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!GuiApplication@{GuiApplication}}
+\index{GuiApplication@{GuiApplication}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{GuiApplication}{GuiApplication}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classAFquick_1_1GuiApplication}{Gui\+Application}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 36 of file gui\+Plugin.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_a6a5a78a225c6103b20bfeedb4477fe04}\label{classAFquick_1_1GuiPlugin_a6a5a78a225c6103b20bfeedb4477fe04}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!m\_afApp@{m\_afApp}}
+\index{m\_afApp@{m\_afApp}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{m\_afApp}{m\_afApp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAFquick_1_1GuiApplication}{Gui\+Application}}$\ast$ A\+Fquick\+::\+Gui\+Plugin\+::m\+\_\+af\+App\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 37 of file gui\+Plugin.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1GuiPlugin_a066c456acd77249db6f7f0025e4a6833}\label{classAFquick_1_1GuiPlugin_a066c456acd77249db6f7f0025e4a6833}} 
+\index{AFquick::GuiPlugin@{AFquick::GuiPlugin}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!AFquick::GuiPlugin@{AFquick::GuiPlugin}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily Q\+String A\+Fquick\+::\+Gui\+Plugin\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file gui\+Plugin.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+quick\+A\+F/include/lib\+\_\+quick\+A\+F/\mbox{\hyperlink{guiPlugin_8h}{gui\+Plugin.\+h}}\item 
+lib\+\_\+quick\+A\+F/src/\mbox{\hyperlink{guiPlugin_8cpp}{gui\+Plugin.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,51 @@
+.TH "lib_baseAF/account/afAccountGroup.cpp" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/account/afAccountGroup.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'afAccountGroup\&.h'\fP
+.br
+\fC#include 'afAccountStorage\&.h'\fP
+.br
+\fC#include 'AFbase/AfEnum'\fP
+.br
+\fC#include <QtCore/QPair>\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBAccountWithAccess\fP = QPair< quint32, quint8 >"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQ_DECLARE_METATYPE\fP (\fBAccountWithAccess\fP)"
+.br
+.ti -1c
+.RI "\fBAccountWithAccess\fP \fBmakeAccountWithAccess\fP (\fBAFIdObject_bit\fP account, \fBAFaccount::AccessType\fP access)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "using \fBAccountWithAccess\fP =  QPair <quint32, quint8>"
+
+.PP
+Definition at line 6 of file afAccountGroup\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBAccountWithAccess\fP makeAccountWithAccess (\fBAFIdObject_bit\fP account, \fBAFaccount::AccessType\fP access)"
+
+.PP
+Definition at line 9 of file afAccountGroup\&.cpp\&.
+.SS "Q_DECLARE_METATYPE (\fBAccountWithAccess\fP)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

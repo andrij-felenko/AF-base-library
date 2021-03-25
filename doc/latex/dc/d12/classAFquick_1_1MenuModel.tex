@@ -1,0 +1,222 @@
+\hypertarget{classAFquick_1_1MenuModel}{}\doxysection{A\+Fquick\+::Menu\+Model Class Reference}
+\label{classAFquick_1_1MenuModel}\index{AFquick::MenuModel@{AFquick::MenuModel}}
+
+
+{\ttfamily \#include $<$menu\+Model.\+h$>$}
+
+Inheritance diagram for A\+Fquick\+::Menu\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/d12/classAFquick_1_1MenuModel}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAFquick_1_1MenuModel_a1890aaaf8d785aa8bd5303d9cc000726}{begin\+Reset\+Model\+Slot}} ()
+\item 
+void \mbox{\hyperlink{classAFquick_1_1MenuModel_aa67ace0319623289cb3578bb4122dc05}{end\+Reset\+Model\+Slot}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \mbox{\hyperlink{classAFquick_1_1MenuModel_a6fcca1ef76e97d0973cfc47e00fc897c}{get\+Name\+By\+Index}} (int index) const
+\item 
+Q\+String \mbox{\hyperlink{classAFquick_1_1MenuModel_a57c19bffafcfe1472f3ad99e584dd78e}{get\+Icon\+By\+Index}} (int index) const
+\item 
+bool \mbox{\hyperlink{classAFquick_1_1MenuModel_ac394695b08da8625b5fe4ba217239432}{is\+Current\+By\+Index}} (int index) const
+\item 
+int \mbox{\hyperlink{classAFquick_1_1MenuModel_ab0dde384d295c12cabdaaff0d019f2f4}{get\+Count}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFquick_1_1MenuModel_ae995ec7d0390237d272f5633a39103c8}{Menu\+Model}} (Q\+Object $\ast$parent=nullptr)
+\item 
+int \mbox{\hyperlink{classAFquick_1_1MenuModel_a62f770e3c22d336d79022697888784e5}{row\+Count}} (const Q\+Model\+Index \&parent=Q\+Model\+Index()) const override
+\item 
+Q\+Hash$<$ int, Q\+Byte\+Array $>$ \mbox{\hyperlink{classAFquick_1_1MenuModel_a0eda3792e9400157dc91ab26ddcaef52}{role\+Names}} () const override
+\item 
+Q\+Variant \mbox{\hyperlink{classAFquick_1_1MenuModel_a10b26bd2a6b888f359c252702abe7a1b}{data}} (const Q\+Model\+Index \&index, int role) const override
+\item 
+void \mbox{\hyperlink{classAFquick_1_1MenuModel_a12c60d2ecef3f9f8faa12fccf244946c}{update\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0}{Field\+Name}} 
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classAFquick_1_1MenuModel_a69ad38090b3f85e77ef82cd766e7dd75}{m\+\_\+current\+Index}}
+\item 
+Q\+Hash$<$ int, Q\+Byte\+Array $>$ \mbox{\hyperlink{classAFquick_1_1MenuModel_a268d3138a395e205f1ba5328b63cb1bd}{m\+\_\+role\+Names}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 15 of file menu\+Model.\+h.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0}\label{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!FieldName@{FieldName}}
+\index{FieldName@{FieldName}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{FieldName}{FieldName}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0}{A\+Fquick\+::\+Menu\+Model\+::\+Field\+Name}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IconPath@{IconPath}!AFquick::MenuModel@{AFquick::MenuModel}}\index{AFquick::MenuModel@{AFquick::MenuModel}!IconPath@{IconPath}}}\mbox{\Hypertarget{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0a4a8f02c31bc05bdec3f60c0eaad57a3e}\label{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0a4a8f02c31bc05bdec3f60c0eaad57a3e}} 
+Icon\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Name@{Name}!AFquick::MenuModel@{AFquick::MenuModel}}\index{AFquick::MenuModel@{AFquick::MenuModel}!Name@{Name}}}\mbox{\Hypertarget{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0a72196a2a09680e3e793f7301919bf9f2}\label{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0a72196a2a09680e3e793f7301919bf9f2}} 
+Name&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsCurrent@{IsCurrent}!AFquick::MenuModel@{AFquick::MenuModel}}\index{AFquick::MenuModel@{AFquick::MenuModel}!IsCurrent@{IsCurrent}}}\mbox{\Hypertarget{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0a8088a0b5a97fd7c6763bd4604641c8a8}\label{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0a8088a0b5a97fd7c6763bd4604641c8a8}} 
+Is\+Current&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Id@{Id}!AFquick::MenuModel@{AFquick::MenuModel}}\index{AFquick::MenuModel@{AFquick::MenuModel}!Id@{Id}}}\mbox{\Hypertarget{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0af8d09e09dd551f1ef74f11183063d60b}\label{classAFquick_1_1MenuModel_ada1ef1a6bdd74a19abd0d44313f9afa0af8d09e09dd551f1ef74f11183063d60b}} 
+Id&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 38 of file menu\+Model.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_ae995ec7d0390237d272f5633a39103c8}\label{classAFquick_1_1MenuModel_ae995ec7d0390237d272f5633a39103c8}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!MenuModel@{MenuModel}}
+\index{MenuModel@{MenuModel}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{MenuModel()}{MenuModel()}}
+{\footnotesize\ttfamily A\+Fquick\+::\+Menu\+Model\+::\+Menu\+Model (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 3 of file menu\+Model.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_a1890aaaf8d785aa8bd5303d9cc000726}\label{classAFquick_1_1MenuModel_a1890aaaf8d785aa8bd5303d9cc000726}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!beginResetModelSlot@{beginResetModelSlot}}
+\index{beginResetModelSlot@{beginResetModelSlot}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{beginResetModelSlot}{beginResetModelSlot}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Menu\+Model\+::begin\+Reset\+Model\+Slot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 41 of file menu\+Model.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_a10b26bd2a6b888f359c252702abe7a1b}\label{classAFquick_1_1MenuModel_a10b26bd2a6b888f359c252702abe7a1b}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!data@{data}}
+\index{data@{data}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Q\+Variant A\+Fquick\+::\+Menu\+Model\+::data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{int}]{role }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 22 of file menu\+Model.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_aa67ace0319623289cb3578bb4122dc05}\label{classAFquick_1_1MenuModel_aa67ace0319623289cb3578bb4122dc05}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!endResetModelSlot@{endResetModelSlot}}
+\index{endResetModelSlot@{endResetModelSlot}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{endResetModelSlot}{endResetModelSlot}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Menu\+Model\+::end\+Reset\+Model\+Slot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 46 of file menu\+Model.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_ab0dde384d295c12cabdaaff0d019f2f4}\label{classAFquick_1_1MenuModel_ab0dde384d295c12cabdaaff0d019f2f4}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!getCount@{getCount}}
+\index{getCount@{getCount}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{getCount}{getCount}}
+{\footnotesize\ttfamily int A\+Fquick\+::\+Menu\+Model\+::get\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_a57c19bffafcfe1472f3ad99e584dd78e}\label{classAFquick_1_1MenuModel_a57c19bffafcfe1472f3ad99e584dd78e}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!getIconByIndex@{getIconByIndex}}
+\index{getIconByIndex@{getIconByIndex}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{getIconByIndex}{getIconByIndex}}
+{\footnotesize\ttfamily Q\+String A\+Fquick\+::\+Menu\+Model\+::get\+Icon\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_a6fcca1ef76e97d0973cfc47e00fc897c}\label{classAFquick_1_1MenuModel_a6fcca1ef76e97d0973cfc47e00fc897c}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!getNameByIndex@{getNameByIndex}}
+\index{getNameByIndex@{getNameByIndex}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{getNameByIndex}{getNameByIndex}}
+{\footnotesize\ttfamily Q\+String A\+Fquick\+::\+Menu\+Model\+::get\+Name\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_ac394695b08da8625b5fe4ba217239432}\label{classAFquick_1_1MenuModel_ac394695b08da8625b5fe4ba217239432}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!isCurrentByIndex@{isCurrentByIndex}}
+\index{isCurrentByIndex@{isCurrentByIndex}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{isCurrentByIndex}{isCurrentByIndex}}
+{\footnotesize\ttfamily bool A\+Fquick\+::\+Menu\+Model\+::is\+Current\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_a0eda3792e9400157dc91ab26ddcaef52}\label{classAFquick_1_1MenuModel_a0eda3792e9400157dc91ab26ddcaef52}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!roleNames@{roleNames}}
+\index{roleNames@{roleNames}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{roleNames()}{roleNames()}}
+{\footnotesize\ttfamily Q\+Hash$<$ int, Q\+Byte\+Array $>$ A\+Fquick\+::\+Menu\+Model\+::role\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 17 of file menu\+Model.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_a62f770e3c22d336d79022697888784e5}\label{classAFquick_1_1MenuModel_a62f770e3c22d336d79022697888784e5}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+{\footnotesize\ttfamily int A\+Fquick\+::\+Menu\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Definition at line 11 of file menu\+Model.\+cpp.
+
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_a12c60d2ecef3f9f8faa12fccf244946c}\label{classAFquick_1_1MenuModel_a12c60d2ecef3f9f8faa12fccf244946c}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!updateData@{updateData}}
+\index{updateData@{updateData}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily void A\+Fquick\+::\+Menu\+Model\+::update\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file menu\+Model.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_a69ad38090b3f85e77ef82cd766e7dd75}\label{classAFquick_1_1MenuModel_a69ad38090b3f85e77ef82cd766e7dd75}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!m\_currentIndex@{m\_currentIndex}}
+\index{m\_currentIndex@{m\_currentIndex}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{m\_currentIndex}{m\_currentIndex}}
+{\footnotesize\ttfamily int A\+Fquick\+::\+Menu\+Model\+::m\+\_\+current\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 45 of file menu\+Model.\+h.
+
+\mbox{\Hypertarget{classAFquick_1_1MenuModel_a268d3138a395e205f1ba5328b63cb1bd}\label{classAFquick_1_1MenuModel_a268d3138a395e205f1ba5328b63cb1bd}} 
+\index{AFquick::MenuModel@{AFquick::MenuModel}!m\_roleNames@{m\_roleNames}}
+\index{m\_roleNames@{m\_roleNames}!AFquick::MenuModel@{AFquick::MenuModel}}
+\doxysubsubsection{\texorpdfstring{m\_roleNames}{m\_roleNames}}
+{\footnotesize\ttfamily Q\+Hash$<$int, Q\+Byte\+Array$>$ A\+Fquick\+::\+Menu\+Model\+::m\+\_\+role\+Names\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 46 of file menu\+Model.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+quick\+A\+F/include/lib\+\_\+quick\+A\+F/\mbox{\hyperlink{menuModel_8h}{menu\+Model.\+h}}\item 
+lib\+\_\+quick\+A\+F/src/\mbox{\hyperlink{menuModel_8cpp}{menu\+Model.\+cpp}}\end{DoxyCompactItemize}

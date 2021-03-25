@@ -1,0 +1,67 @@
+.TH "AFlib::transfer::Answer" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::transfer::Answer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afTransferOperateList\&.h>\fP
+.PP
+Inherits QList< answer::DPathObjectList >\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnswer\fP ()=default"
+.br
+.ti -1c
+.RI "\fBAnswer\fP (const QByteArray &data)"
+.br
+.ti -1c
+.RI "void \fBaddNewGlobalId\fP (QStringList dPath, \fBFileType\fP fileType, \fBid::Account_bit\fP owner, \fBid::Object_bit\fP old, \fBid::Object_bit\fP new_)"
+.br
+.ti -1c
+.RI "std::optional< \fBid::Global_bit\fP > \fBisOldIdPresent\fP (\fBid::Global_bit\fP localId, QStringList dPath, \fBFileType\fP type) const"
+.br
+.ti -1c
+.RI "\fBoperator QByteArray\fP () const"
+.br
+.ti -1c
+.RI "QByteArray \fBgetData\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 42 of file afTransferOperateList\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::transfer::Answer::Answer ()\fC [explicit]\fP, \fC [default]\fP"
+
+.SS "AFlib::transfer::Answer::Answer (const QByteArray & data)"
+
+.PP
+Definition at line 53 of file afTransferOperateList\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void AFlib::transfer::Answer::addNewGlobalId (QStringList dPath, \fBFileType\fP fileType, \fBid::Account_bit\fP owner, \fBid::Object_bit\fP old, \fBid::Object_bit\fP new_)"
+
+.PP
+Definition at line 59 of file afTransferOperateList\&.cpp\&.
+.SS "QByteArray AFlib::transfer::Answer::getData () const"
+
+.PP
+Definition at line 94 of file afTransferOperateList\&.cpp\&.
+.SS "std::optional< \fBAFlib::id::Global_bit\fP > AFlib::transfer::Answer::isOldIdPresent (\fBid::Global_bit\fP localId, QStringList dPath, \fBFileType\fP type) const"
+
+.PP
+Definition at line 79 of file afTransferOperateList\&.cpp\&.
+.SS "AFlib::transfer::Answer::operator QByteArray () const"
+
+.PP
+Definition at line 99 of file afTransferOperateList\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

@@ -1,0 +1,126 @@
+.TH "lib_baseAF/include/lib_baseAF/afEnum.h" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/include/lib_baseAF/afEnum.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QtCore/QDebug>\fP
+.br
+\fC#include <QtCore/QObject>\fP
+.br
+\fC#include <QtCore/QDataStream>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBAFlib\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef HistoryIdType \fBAFlib::HIdType\fP"
+.br
+.ti -1c
+.RI "typedef SavedIdType \fBAFlib::SIdType\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAFlib::Schedule\fP "
+.br
+.ti -1c
+.RI "enum \fBAFlib::Continent\fP "
+.br
+.RI "The Continent enum\&. "
+.ti -1c
+.RI "enum \fBAFlib::FileType\fP "
+.br
+.RI "Id`s enum list --------------------------------------------------------------------------------\&. "
+.ti -1c
+.RI "enum \fBAFlib::HistoryIdType\fP "
+.br
+.ti -1c
+.RI "enum \fBAFlib::SavedIdType\fP "
+.br
+.ti -1c
+.RI "enum \fBAFlib::AccountIdType\fP "
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHistoryIdType\fP \fBAFlib::toHistoryIdType\fP (const quint8 i)"
+.br
+.ti -1c
+.RI "quint8 \fBAFlib::fromHisToInt\fP (\fBHistoryIdType\fP type)"
+.br
+.ti -1c
+.RI "bool \fBAFlib::isHIdEnable\fP (\fBHistoryIdType\fP type)"
+.br
+.ti -1c
+.RI "std::string \fBAFlib::historyToString\fP (\fBHistoryIdType\fP type)"
+.br
+.ti -1c
+.RI "std::string \fBAFlib::historyToString\fP (quint8 type)"
+.br
+.ti -1c
+.RI "\fBSavedIdType\fP \fBAFlib::toSavedIdType\fP (const quint8 i)"
+.br
+.ti -1c
+.RI "quint8 \fBAFlib::fromSaveToInt\fP (\fBSavedIdType\fP type)"
+.br
+.ti -1c
+.RI "std::string \fBAFlib::saveTypeToString\fP (\fBSavedIdType\fP type)"
+.br
+.ti -1c
+.RI "std::string \fBAFlib::saveTypeToString\fP (quint8 type)"
+.br
+.ti -1c
+.RI "\fBAccountIdType\fP \fBAFlib::toAccountIdType\fP (const quint8 i)"
+.br
+.ti -1c
+.RI "quint8 \fBAFlib::fromAccountIdType\fP (\fBAccountIdType\fP type)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBAFlib::AccountIdType\fP f, \fBAFlib::AccountIdType\fP s)"
+.br
+.ti -1c
+.RI "QDebug \fBoperator<<\fP (QDebug d, \fBAFlib::FileType\fP type)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBAFlib::FileType\fP &type)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBAFlib::FileType\fP &type)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream & s, const \fBAFlib::FileType\fP & type)"
+
+.PP
+Definition at line 73 of file afEnum\&.cpp\&.
+.SS "QDebug operator<< (QDebug d, \fBAFlib::FileType\fP type)"
+
+.PP
+Definition at line 51 of file afEnum\&.cpp\&.
+.SS "bool operator== (\fBAFlib::AccountIdType\fP f, \fBAFlib::AccountIdType\fP s)"
+
+.PP
+Definition at line 13 of file afEnum\&.cpp\&.
+.SS "QDataStream& operator>> (QDataStream & s, \fBAFlib::FileType\fP & type)"
+
+.PP
+Definition at line 78 of file afEnum\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

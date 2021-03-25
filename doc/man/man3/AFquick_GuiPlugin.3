@@ -1,0 +1,132 @@
+.TH "AFquick::GuiPlugin" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFquick::GuiPlugin
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <guiPlugin\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGuiPlugin\fP (QString \fBname\fP, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "virtual \fB~GuiPlugin\fP ()=default"
+.br
+.ti -1c
+.RI "virtual QString \fBname\fP () const final"
+.br
+.ti -1c
+.RI "virtual QString \fBicon\fP () const"
+.br
+.ti -1c
+.RI "virtual QUrl \fBqmlUrl\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBinitialize\fP ()=0"
+.br
+.ti -1c
+.RI "void \fBclickOnMenu\fP (int index)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetContextProperty\fP (QString \fBname\fP, QObject *object) final"
+.br
+.ti -1c
+.RI "virtual void \fBsetContextProperty\fP (QString \fBname\fP, QVariant variant) final"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetAfApp\fP (\fBGuiApplication\fP *afApp) final"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBm_name\fP"
+.br
+.ti -1c
+.RI "\fBGuiApplication\fP * \fBm_afApp\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBGuiApplication\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file guiPlugin\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFquick::GuiPlugin::GuiPlugin (QString name, QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 4 of file guiPlugin\&.cpp\&.
+.SS "virtual AFquick::GuiPlugin::~GuiPlugin ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void AFquick::GuiPlugin::clickOnMenu (int index)"
+
+.PP
+Definition at line 21 of file guiPlugin\&.cpp\&.
+.SS "QString AFquick::GuiPlugin::icon () const\fC [virtual]\fP"
+
+.PP
+Definition at line 15 of file guiPlugin\&.cpp\&.
+.SS "virtual void AFquick::GuiPlugin::initialize ()\fC [pure virtual]\fP"
+
+.SS "QString AFquick::GuiPlugin::name () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 10 of file guiPlugin\&.cpp\&.
+.SS "virtual QUrl AFquick::GuiPlugin::qmlUrl () const\fC [pure virtual]\fP"
+
+.SS "void AFquick::GuiPlugin::setAfApp (\fBGuiApplication\fP * afApp)\fC [final]\fP, \fC [private]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 37 of file guiPlugin\&.cpp\&.
+.SS "void AFquick::GuiPlugin::setContextProperty (QString name, QObject * object)\fC [final]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 27 of file guiPlugin\&.cpp\&.
+.SS "void AFquick::GuiPlugin::setContextProperty (QString name, QVariant variant)\fC [final]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 32 of file guiPlugin\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBGuiApplication\fP\fC [friend]\fP"
+
+.PP
+Definition at line 36 of file guiPlugin\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBGuiApplication\fP* AFquick::GuiPlugin::m_afApp\fC [private]\fP"
+
+.PP
+Definition at line 37 of file guiPlugin\&.h\&.
+.SS "QString AFquick::GuiPlugin::m_name\fC [private]\fP"
+
+.PP
+Definition at line 34 of file guiPlugin\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

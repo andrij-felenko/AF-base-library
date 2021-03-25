@@ -1,0 +1,95 @@
+.TH "lib_baseAF/include/lib_baseAF/afIdOperate.h" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/include/lib_baseAF/afIdOperate.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QtCore/QDateTime>\fP
+.br
+\fC#include <QtCore/QVariant>\fP
+.br
+\fC#include <QtCore/QSharedPointer>\fP
+.br
+\fC#include 'afEnum\&.h'\fP
+.br
+\fC#include 'afIdAccount\&.h'\fP
+.br
+\fC#include 'afIdGlobalBit\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAFlib::id::Operate_bit\fP"
+.br
+.ti -1c
+.RI "class \fBAFlib::id::Operate\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBAFlib\fP"
+.br
+.ti -1c
+.RI " \fBAFlib::id\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef QSharedPointer< Operate > \fBAFlib::id::OperatePtr\fP"
+.br
+.ti -1c
+.RI "typedef QVector< OperatePtr > \fBAFlib::id::OperatePtrList\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QDebug \fBoperator<<\fP (QDebug d, const \fBAFlib::id::Operate\fP &op)"
+.br
+.ti -1c
+.RI "QDebug \fBoperator<<\fP (QDebug d, const \fBAFlib::id::Operate_bit\fP &op_b)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBAFlib::id::Operate\fP &op)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &stream, const \fBAFlib::id::OperatePtrList\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &stream, \fBAFlib::id::OperatePtrList\fP &data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream & stream, const \fBAFlib::id::OperatePtrList\fP & data)"
+
+.PP
+Definition at line 74 of file afIdOperate\&.cpp\&.
+.SS "QDebug operator<< (QDebug d, const \fBAFlib::id::Operate\fP & op)"
+
+.PP
+Definition at line 131 of file afIdOperate\&.cpp\&.
+.SS "QDebug operator<< (QDebug d, const \fBAFlib::id::Operate_bit\fP & op_b)"
+
+.PP
+Definition at line 145 of file afIdOperate\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const \fBAFlib::id::Operate\fP & op)"
+
+.PP
+Definition at line 117 of file afIdOperate\&.cpp\&.
+.SS "QDataStream& operator>> (QDataStream & stream, \fBAFlib::id::OperatePtrList\fP & data)"
+
+.PP
+Definition at line 82 of file afIdOperate\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

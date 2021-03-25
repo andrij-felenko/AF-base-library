@@ -1,0 +1,163 @@
+.TH "AFlib::id::Operate" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::id::Operate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afIdOperate\&.h>\fP
+.PP
+Inherits \fBAFlib::id::Operate_bit\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOperate\fP (\fBAccount_bit\fP \fBuserId\fP=\fBAccount_bit\fP(), \fBHistoryIdType\fP history=\fBHistoryIdType::First\fP, \fBSavedIdType\fP saved=\fBSavedIdType::Local\fP, QVariant \fBvalue\fP=QVariant(), quint16 valueKey=0, QDateTime dTime=QDateTime::currentDateTime())"
+.br
+.ti -1c
+.RI "\fBOperate\fP (const \fBOperate\fP &copy)"
+.br
+.ti -1c
+.RI "\fBOperate\fP (const QByteArray &data)"
+.br
+.ti -1c
+.RI "virtual \fB~Operate\fP ()"
+.br
+.ti -1c
+.RI "\fBoperator QByteArray\fP () const"
+.br
+.ti -1c
+.RI "QByteArray \fBgetData\fP () const"
+.br
+.ti -1c
+.RI "QDateTime \fBdatetime\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDatetime\fP (const QDateTime &\fBdatetime\fP)"
+.br
+.ti -1c
+.RI "QVariant \fBvalue\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (const QVariant &\fBvalue\fP)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGlobal_bit\fP \fBvalueId\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetValueId\fP (\fBGlobal_bit\fP newId)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QDateTime \fBm_datetime\fP"
+.br
+.ti -1c
+.RI "QVariant \fBm_value\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBHistory\fP"
+.br
+.ti -1c
+.RI "class \fBObject\fP"
+.br
+.ti -1c
+.RI "class \fBAFlib::Storage\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 67 of file afIdOperate\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::id::Operate::Operate (\fBAccount_bit\fP userId = \fC\fBAccount_bit\fP()\fP, \fBHistoryIdType\fP history = \fC\fBHistoryIdType::First\fP\fP, \fBSavedIdType\fP saved = \fC\fBSavedIdType::Local\fP\fP, QVariant value = \fCQVariant()\fP, quint16 valueKey = \fC0\fP, QDateTime dTime = \fCQDateTime::currentDateTime()\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 21 of file afIdOperate\&.cpp\&.
+.SS "AFlib::id::Operate::Operate (const \fBOperate\fP & copy)"
+
+.PP
+Definition at line 33 of file afIdOperate\&.cpp\&.
+.SS "AFlib::id::Operate::Operate (const QByteArray & data)"
+
+.PP
+Definition at line 41 of file afIdOperate\&.cpp\&.
+.SS "AFlib::id::Operate::~Operate ()\fC [virtual]\fP"
+
+.PP
+Definition at line 48 of file afIdOperate\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QDateTime AFlib::id::Operate::datetime () const\fC [inline]\fP"
+
+.PP
+Definition at line 84 of file afIdOperate\&.h\&.
+.SS "QByteArray AFlib::id::Operate::getData () const"
+
+.PP
+Definition at line 53 of file afIdOperate\&.cpp\&.
+.SS "\fBAFlib::id::Operate::operator\fP QByteArray () const"
+
+.PP
+Definition at line 58 of file afIdOperate\&.cpp\&.
+.SS "void AFlib::id::Operate::setDatetime (const QDateTime & datetime)"
+
+.PP
+Definition at line 69 of file afIdOperate\&.cpp\&.
+.SS "void AFlib::id::Operate::setValue (const QVariant & value)"
+
+.PP
+Definition at line 6 of file afIdOperate\&.cpp\&.
+.SS "void AFlib::id::Operate::setValueId (\fBGlobal_bit\fP newId)\fC [private]\fP"
+
+.PP
+Definition at line 16 of file afIdOperate\&.cpp\&.
+.SS "QVariant AFlib::id::Operate::value () const\fC [inline]\fP"
+
+.PP
+Definition at line 87 of file afIdOperate\&.h\&.
+.SS "\fBAFlib::id::Global_bit\fP AFlib::id::Operate::valueId () const\fC [private]\fP"
+
+.PP
+Definition at line 11 of file afIdOperate\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBAFlib::Storage\fP\fC [friend]\fP"
+
+.PP
+Definition at line 97 of file afIdOperate\&.h\&.
+.SS "friend class \fBHistory\fP\fC [friend]\fP"
+
+.PP
+Definition at line 95 of file afIdOperate\&.h\&.
+.SS "friend class \fBObject\fP\fC [friend]\fP"
+
+.PP
+Definition at line 96 of file afIdOperate\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QDateTime AFlib::id::Operate::m_datetime\fC [private]\fP"
+
+.PP
+Definition at line 91 of file afIdOperate\&.h\&.
+.SS "QVariant AFlib::id::Operate::m_value\fC [private]\fP"
+
+.PP
+Definition at line 92 of file afIdOperate\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

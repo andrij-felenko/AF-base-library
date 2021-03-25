@@ -1,0 +1,135 @@
+.TH "AFquick::GuiSize" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFquick::GuiSize
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <guiSize\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetTopleft\fP (QPoint \fBtopleft\fP)"
+.br
+.ti -1c
+.RI "void \fBsetMenuWidth\fP (uint \fBmenuWidth\fP)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBtopleftChanged\fP (QPoint \fBtopleft\fP)"
+.br
+.ti -1c
+.RI "void \fBmenuWidthChanged\fP (uint \fBmenuWidth\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGuiSize\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "virtual double \fBbutton\fP () const"
+.br
+.ti -1c
+.RI "virtual QPoint \fBtopleft\fP () const"
+.br
+.ti -1c
+.RI "virtual uint \fBmenuWidth\fP () const"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "double \fBbutton\fP"
+.br
+.ti -1c
+.RI "QPoint \fBtopleft\fP"
+.br
+.ti -1c
+.RI "uint \fBmenuWidth\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBm_button\fP"
+.br
+.ti -1c
+.RI "QPoint \fBm_topleft\fP"
+.br
+.ti -1c
+.RI "uint \fBm_menuWidth\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file guiSize\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFquick::GuiSize::GuiSize (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 8 of file guiSize\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual double AFquick::GuiSize::button () const\fC [virtual]\fP"
+
+.SS "virtual uint AFquick::GuiSize::menuWidth () const\fC [virtual]\fP"
+
+.SS "void AFquick::GuiSize::menuWidthChanged (uint menuWidth)\fC [signal]\fP"
+
+.SS "void AFquick::GuiSize::setMenuWidth (uint menuWidth)\fC [slot]\fP"
+
+.PP
+Definition at line 43 of file guiSize\&.cpp\&.
+.SS "void AFquick::GuiSize::setTopleft (QPoint topleft)\fC [slot]\fP"
+
+.PP
+Definition at line 34 of file guiSize\&.cpp\&.
+.SS "virtual QPoint AFquick::GuiSize::topleft () const\fC [virtual]\fP"
+
+.SS "void AFquick::GuiSize::topleftChanged (QPoint topleft)\fC [signal]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "double AFquick::GuiSize::m_button\fC [private]\fP"
+
+.PP
+Definition at line 38 of file guiSize\&.h\&.
+.SS "uint AFquick::GuiSize::m_menuWidth\fC [private]\fP"
+
+.PP
+Definition at line 40 of file guiSize\&.h\&.
+.SS "QPoint AFquick::GuiSize::m_topleft\fC [private]\fP"
+
+.PP
+Definition at line 39 of file guiSize\&.h\&.
+.SH "Property Documentation"
+.PP 
+.SS "double AFquick::GuiSize::button\fC [read]\fP"
+
+.PP
+Definition at line 19 of file guiSize\&.h\&.
+.SS "uint AFquick::GuiSize::menuWidth\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 21 of file guiSize\&.h\&.
+.SS "QPoint AFquick::GuiSize::topleft\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 20 of file guiSize\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

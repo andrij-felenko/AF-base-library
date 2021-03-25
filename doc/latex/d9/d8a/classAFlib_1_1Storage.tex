@@ -1,0 +1,517 @@
+\hypertarget{classAFlib_1_1Storage}{}\doxysection{A\+Flib\+::Storage Class Reference}
+\label{classAFlib_1_1Storage}\index{AFlib::Storage@{AFlib::Storage}}
+
+
+{\ttfamily \#include $<$af\+Storage.\+h$>$}
+
+Inheritance diagram for A\+Flib\+::Storage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/d8a/classAFlib_1_1Storage}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAFlib_1_1Storage_1_1AccountStorage}{Account\+Storage}}
+\item 
+struct \mbox{\hyperlink{structAFlib_1_1Storage_1_1PluginStorage}{Plugin\+Storage}}
+\item 
+struct \mbox{\hyperlink{structAFlib_1_1Storage_1_1SingleStorage}{Single\+Storage}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFlib_1_1Storage_acda9756407f7552a6eb1faab3778121a}{Storage}} (Q\+Object $\ast$parent=q\+App)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Storage_aff5f13c3a98c1be1a9102ede1630807d}{load\+From\+Directory}} (const Q\+String\+List \&d\+Path, \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}} compress=\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}})
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1Storage_ae6fc5d948fae33b9ea4bcd5d1156dfc7}{update\+File}} (const Q\+String\+List d\+Path, const Q\+Byte\+Array \&data, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type=\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}})
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1Storage_a17f81f6d444228f9924fb07e5d0aa20c}{contains}} (const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&ptr) const
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1Storage_ad7b6c9985aebf799f9a84110764d64b1}{contains}} (const \mbox{\hyperlink{namespaceAFlib_a3f375a5ba9dbdfb34036204a62572fd4}{Id\+Global\+\_\+bit}} \&global\+Id) const
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1Storage_aa596c8b315038a292249e3867b2b9821}{add\+Operate}} (const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&object, const \mbox{\hyperlink{namespaceAFlib_adcea6c4ab91185eca5fc6a1e97443558}{Id\+Operate}} \&operate, bool is\+Id=false)
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1Storage_aee4ccd1f11a175c61d013b26afb59338}{add\+Operate\+List}} (const \mbox{\hyperlink{classAFlib_1_1transfer_1_1Send}{transfer\+::\+Send}} \&list)
+\item 
+\mbox{\hyperlink{classAFlib_1_1transfer_1_1Send}{transfer\+::\+Send}} \mbox{\hyperlink{classAFlib_1_1Storage_a821cf87b0bf16c399833da720e0ede17}{get\+Operates\+After}} (const Q\+Date\+Time \&date\+Time, \mbox{\hyperlink{afId_8h_a94903b53517ca09c20979015f852490c}{A\+Facc\+List\+\_\+b}} list=\mbox{\hyperlink{afId_8h_a94903b53517ca09c20979015f852490c}{A\+Facc\+List\+\_\+b}}())
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1Storage_a206b692a014d7dd18e78affb06fb2b46}{add\+Object}} (Q\+String\+List d\+Path, const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&object, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type=\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}})
+\item 
+\mbox{\hyperlink{classAFlib_1_1Storage_ae0bbb87d42dd5184e9f5d1bceda60507}{Id\+Obj}} \mbox{\hyperlink{classAFlib_1_1Storage_a384e8d48de9b281eeac5b9a1596333e1}{get\+Object}} (const Q\+String\+List d\+Path, const \mbox{\hyperlink{namespaceAFlib_ab4af07089b137c4e52f3e6204bffe1a3}{Id\+Object\+\_\+bit}} \&object, \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}} compress=\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type=\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}})
+\item 
+\mbox{\hyperlink{classAFlib_1_1Storage_ae0bbb87d42dd5184e9f5d1bceda60507}{Id\+Obj}} \mbox{\hyperlink{classAFlib_1_1Storage_a6de9593824917b2a2a5d5e9ef5061bde}{get\+Object}} (const Q\+String\+List d\+Path, const \mbox{\hyperlink{namespaceAFlib_ab4af07089b137c4e52f3e6204bffe1a3}{Id\+Object\+\_\+bit}} \&object, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type, \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}} compress=\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}})
+\item 
+\mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} \mbox{\hyperlink{classAFlib_1_1Storage_ae118000e525cfd3bc4722ede8af3fafb}{get\+Object\+List}} (const Q\+String\+List d\+Path, \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}} compress=\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type=\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}})
+\item 
+\mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} \mbox{\hyperlink{classAFlib_1_1Storage_add9cd8ea9e0c32d3a78c577b12f65096}{get\+Object\+List}} (const Q\+String\+List d\+Path, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type, \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}} compress=\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}})
+\item 
+\mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} \mbox{\hyperlink{classAFlib_1_1Storage_a0a520e6cd6eeffec20cb733ea1f609a5}{get\+Object\+List}} (Q\+List$<$ \mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{id\+::\+Account\+\_\+bit}} $>$ acc\+List, quint8 plugin, \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}} compress=\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}})
+\item 
+\mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} \mbox{\hyperlink{classAFlib_1_1Storage_ac3e19ceb08465f93a7d9b7c91f3dd439}{get\+Object\+List}} (const Q\+String\+List d\+Path, const \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} list, \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}} compress=\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type=\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}})
+\item 
+\mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} \mbox{\hyperlink{classAFlib_1_1Storage_a0700d80e70588330858a96c33fd51aba}{get\+Object\+List}} (const Q\+String\+List d\+Path, const \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} list, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type, \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}} compress=\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}})
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1Storage_ac3fce7e3f5c0981f7e7b5f28a0c16eb9}{remove\+Object}} (const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&object)
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1Storage_ad2799fde879deda085bfde4ef554ab84}{update\+Objects}} (\mbox{\hyperlink{classAFlib_1_1transfer_1_1Answer}{transfer\+::\+Answer}} answer, \mbox{\hyperlink{classAFlib_1_1transfer_1_1Send}{transfer\+::\+Send}} \&operate\+List)
+\item 
+\mbox{\hyperlink{classAFlib_1_1transfer_1_1Answer}{transfer\+::\+Answer}} \mbox{\hyperlink{classAFlib_1_1Storage_ade8d32e044648eb08f5321f38a0b3f8d}{save\+Objects}} (\mbox{\hyperlink{classAFlib_1_1transfer_1_1Send}{transfer\+::\+Send}} \&send\+Data)
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1Storage_a485767f347c41a6bcf9839a5b7d2369d}{found\+Free\+Local\+Id}} (quint8 plugin, quint8 type)
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1Storage_acf1f76bc92e3d4ff667ed5dbc44acea4}{found\+Free\+Local\+Id}} (\mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{A\+Flib\+::id\+::\+Account\+\_\+bit}} account, quint8 plugin, quint8 type)
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1Storage_adb1a0d6e98f8df393a08ec8cbe480d67}{found\+Free\+Global\+Id}} (\mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} id)
+\item 
+\mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1Storage_ad9c10e4052d027496af0e6c3ca72465f}{found\+Free\+Global\+Id}} (\mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{id\+::\+Global\+\_\+bit}} id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+Shared\+Pointer$<$ \mbox{\hyperlink{classAFlib_1_1Storage}{Storage}} $>$ \mbox{\hyperlink{classAFlib_1_1Storage_affbefdf9da1709ceb91e09cf4ef5d062}{init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{Id\+Object\+Ptr}} \mbox{\hyperlink{classAFlib_1_1Storage_ae0bbb87d42dd5184e9f5d1bceda60507}{Id\+Obj}}
+\item 
+typedef \mbox{\hyperlink{afId_8h_a0cb8be2fc28365fef2a98096d4ffd1e0}{A\+F\+Id\+Object\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1Storage_ae5d1041e8c743b972843c0b3e2133b83}{Id\+Obj\+\_\+b}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}} \mbox{\hyperlink{classAFlib_1_1Storage_a54f6340a83615f708c841f41fa0d702b}{find\+File\+Type\+By\+D\+Path}} (Q\+String\+List d\+Path)
+\item 
+std\+::optional$<$ \mbox{\hyperlink{structAFlib_1_1Storage_1_1SingleStorage}{Single\+Storage}} $>$ \mbox{\hyperlink{classAFlib_1_1Storage_a8afc5f88b196722c3b335faa02649af4}{find\+Single}} (const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&object)
+\item 
+std\+::optional$<$ \mbox{\hyperlink{structAFlib_1_1Storage_1_1SingleStorage}{Single\+Storage}} $>$ \mbox{\hyperlink{classAFlib_1_1Storage_a9a299ea2c2fb5790519cf5546be7e64a}{find\+Single}} (const \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{id\+::\+Global\+\_\+bit}} \&global\+Id)
+\item 
+std\+::optional$<$ \mbox{\hyperlink{structAFlib_1_1Storage_1_1SingleStorage}{Single\+Storage}} $>$ \mbox{\hyperlink{classAFlib_1_1Storage_aef53029539d3dfd21bc9d4f7adff299c}{find\+Single}} (const \mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{id\+::\+Account\+\_\+bit}} \&owner, const \mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} \&object)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Storage_a12477d88ef0c30b6aa3c65d6d78f8a25}{remove\+List\+By\+File}} (const Q\+String\+List d\+Path, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}} file\+Type)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Storage_a915c9ce58719eaa2997af9a89e3f3841}{registrate\+Object}} (const Q\+String\+List d\+Path, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}} file\+Type, const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&object)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Storage_a377931fb4fb829964aa1f6a48f360b40}{registrate\+Object}} (const Q\+String\+List d\+Path, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}} file\+Type, const \mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{Id\+Object\+Ptr}} object)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Storage_a6f664d068d8469ab7f69ce6ab1e6e698}{registrate\+Object}} (const Q\+String\+List d\+Path, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}} file\+Type, const \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} list)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Storage_a6fc461c6c222f76f85a7832f088e3020}{add\+Account}} (\mbox{\hyperlink{namespaceAFlib_aee516173eb977623a7b68ffb3f836bce}{Id\+Account\+\_\+bit}} id)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Storage_a4c56f04cf9c4a5fe4e2d1a937022b5b4}{set\+Last\+Changed\+Time}} (quint32 account, \mbox{\hyperlink{namespaceAFlib_ab4af07089b137c4e52f3e6204bffe1a3}{Id\+Object\+\_\+bit}} id, Q\+Date\+Time d\+Time)
+\item 
+void \mbox{\hyperlink{classAFlib_1_1Storage_a93b36c34b6a6ac03dcf50ca6a66fdfcd}{add\+Local\+Shared}} (\mbox{\hyperlink{namespaceAFlib_a3f375a5ba9dbdfb34036204a62572fd4}{Id\+Global\+\_\+bit}} sender, \mbox{\hyperlink{namespaceAFlib_a3f375a5ba9dbdfb34036204a62572fd4}{Id\+Global\+\_\+bit}} whats\+Add\+Id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structAFlib_1_1Storage_1_1AccountStorage}{Account\+Storage}} $>$ \mbox{\hyperlink{classAFlib_1_1Storage_a456feae1dacc0345787991534d394d66}{m\+\_\+storage\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 16 of file af\+Storage.\+h.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classAFlib_1_1Storage_ae0bbb87d42dd5184e9f5d1bceda60507}\label{classAFlib_1_1Storage_ae0bbb87d42dd5184e9f5d1bceda60507}} 
+\index{AFlib::Storage@{AFlib::Storage}!IdObj@{IdObj}}
+\index{IdObj@{IdObj}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{IdObj}{IdObj}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{Id\+Object\+Ptr}} \mbox{\hyperlink{classAFlib_1_1Storage_ae0bbb87d42dd5184e9f5d1bceda60507}{A\+Flib\+::\+Storage\+::\+Id\+Obj}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file af\+Storage.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_ae5d1041e8c743b972843c0b3e2133b83}\label{classAFlib_1_1Storage_ae5d1041e8c743b972843c0b3e2133b83}} 
+\index{AFlib::Storage@{AFlib::Storage}!IdObj\_b@{IdObj\_b}}
+\index{IdObj\_b@{IdObj\_b}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{IdObj\_b}{IdObj\_b}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{afId_8h_a0cb8be2fc28365fef2a98096d4ffd1e0}{A\+F\+Id\+Object\+\_\+bit}} \mbox{\hyperlink{classAFlib_1_1Storage_ae5d1041e8c743b972843c0b3e2133b83}{A\+Flib\+::\+Storage\+::\+Id\+Obj\+\_\+b}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file af\+Storage.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFlib_1_1Storage_acda9756407f7552a6eb1faab3778121a}\label{classAFlib_1_1Storage_acda9756407f7552a6eb1faab3778121a}} 
+\index{AFlib::Storage@{AFlib::Storage}!Storage@{Storage}}
+\index{Storage@{Storage}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{Storage()}{Storage()}}
+{\footnotesize\ttfamily Storage\+::\+Storage (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily qApp} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 10 of file af\+Storage.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFlib_1_1Storage_a6fc461c6c222f76f85a7832f088e3020}\label{classAFlib_1_1Storage_a6fc461c6c222f76f85a7832f088e3020}} 
+\index{AFlib::Storage@{AFlib::Storage}!addAccount@{addAccount}}
+\index{addAccount@{addAccount}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{addAccount()}{addAccount()}}
+{\footnotesize\ttfamily void Storage\+::add\+Account (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_aee516173eb977623a7b68ffb3f836bce}{Id\+Account\+\_\+bit}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 492 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a93b36c34b6a6ac03dcf50ca6a66fdfcd}\label{classAFlib_1_1Storage_a93b36c34b6a6ac03dcf50ca6a66fdfcd}} 
+\index{AFlib::Storage@{AFlib::Storage}!addLocalShared@{addLocalShared}}
+\index{addLocalShared@{addLocalShared}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{addLocalShared()}{addLocalShared()}}
+{\footnotesize\ttfamily void Storage\+::add\+Local\+Shared (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_a3f375a5ba9dbdfb34036204a62572fd4}{Id\+Global\+\_\+bit}}}]{sender,  }\item[{\mbox{\hyperlink{namespaceAFlib_a3f375a5ba9dbdfb34036204a62572fd4}{Id\+Global\+\_\+bit}}}]{whats\+Add\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 526 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a206b692a014d7dd18e78affb06fb2b46}\label{classAFlib_1_1Storage_a206b692a014d7dd18e78affb06fb2b46}} 
+\index{AFlib::Storage@{AFlib::Storage}!addObject@{addObject}}
+\index{addObject@{addObject}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{addObject()}{addObject()}}
+{\footnotesize\ttfamily bool Storage\+::add\+Object (\begin{DoxyParamCaption}\item[{Q\+String\+List}]{d\+Path,  }\item[{const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&}]{object,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 164 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_aa596c8b315038a292249e3867b2b9821}\label{classAFlib_1_1Storage_aa596c8b315038a292249e3867b2b9821}} 
+\index{AFlib::Storage@{AFlib::Storage}!addOperate@{addOperate}}
+\index{addOperate@{addOperate}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{addOperate()}{addOperate()}}
+{\footnotesize\ttfamily bool Storage\+::add\+Operate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&}]{object,  }\item[{const \mbox{\hyperlink{namespaceAFlib_adcea6c4ab91185eca5fc6a1e97443558}{Id\+Operate}} \&}]{operate,  }\item[{bool}]{is\+Id = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_aee4ccd1f11a175c61d013b26afb59338}\label{classAFlib_1_1Storage_aee4ccd1f11a175c61d013b26afb59338}} 
+\index{AFlib::Storage@{AFlib::Storage}!addOperateList@{addOperateList}}
+\index{addOperateList@{addOperateList}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{addOperateList()}{addOperateList()}}
+{\footnotesize\ttfamily bool Storage\+::add\+Operate\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAFlib_1_1transfer_1_1Send}{transfer\+::\+Send}} \&}]{list }\end{DoxyParamCaption})}
+
+
+
+Definition at line 87 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_ad7b6c9985aebf799f9a84110764d64b1}\label{classAFlib_1_1Storage_ad7b6c9985aebf799f9a84110764d64b1}} 
+\index{AFlib::Storage@{AFlib::Storage}!contains@{contains}}
+\index{contains@{contains}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Storage\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_a3f375a5ba9dbdfb34036204a62572fd4}{Id\+Global\+\_\+bit}} \&}]{global\+Id }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 414 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a17f81f6d444228f9924fb07e5d0aa20c}\label{classAFlib_1_1Storage_a17f81f6d444228f9924fb07e5d0aa20c}} 
+\index{AFlib::Storage@{AFlib::Storage}!contains@{contains}}
+\index{contains@{contains}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Storage\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&}]{ptr }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 409 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a54f6340a83615f708c841f41fa0d702b}\label{classAFlib_1_1Storage_a54f6340a83615f708c841f41fa0d702b}} 
+\index{AFlib::Storage@{AFlib::Storage}!findFileTypeByDPath@{findFileTypeByDPath}}
+\index{findFileTypeByDPath@{findFileTypeByDPath}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{findFileTypeByDPath()}{findFileTypeByDPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}} Storage\+::find\+File\+Type\+By\+D\+Path (\begin{DoxyParamCaption}\item[{Q\+String\+List}]{d\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 399 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_aef53029539d3dfd21bc9d4f7adff299c}\label{classAFlib_1_1Storage_aef53029539d3dfd21bc9d4f7adff299c}} 
+\index{AFlib::Storage@{AFlib::Storage}!findSingle@{findSingle}}
+\index{findSingle@{findSingle}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{findSingle()}{findSingle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{structAFlib_1_1Storage_1_1SingleStorage}{Storage\+::\+Single\+Storage}} $>$ Storage\+::find\+Single (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{id\+::\+Account\+\_\+bit}} \&}]{owner,  }\item[{const \mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 450 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a9a299ea2c2fb5790519cf5546be7e64a}\label{classAFlib_1_1Storage_a9a299ea2c2fb5790519cf5546be7e64a}} 
+\index{AFlib::Storage@{AFlib::Storage}!findSingle@{findSingle}}
+\index{findSingle@{findSingle}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{findSingle()}{findSingle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{structAFlib_1_1Storage_1_1SingleStorage}{Storage\+::\+Single\+Storage}} $>$ Storage\+::find\+Single (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{id\+::\+Global\+\_\+bit}} \&}]{global\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 431 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a8afc5f88b196722c3b335faa02649af4}\label{classAFlib_1_1Storage_a8afc5f88b196722c3b335faa02649af4}} 
+\index{AFlib::Storage@{AFlib::Storage}!findSingle@{findSingle}}
+\index{findSingle@{findSingle}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{findSingle()}{findSingle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{structAFlib_1_1Storage_1_1SingleStorage}{Storage\+::\+Single\+Storage}} $>$ Storage\+::find\+Single (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 426 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_ad9c10e4052d027496af0e6c3ca72465f}\label{classAFlib_1_1Storage_ad9c10e4052d027496af0e6c3ca72465f}} 
+\index{AFlib::Storage@{AFlib::Storage}!foundFreeGlobalId@{foundFreeGlobalId}}
+\index{foundFreeGlobalId@{foundFreeGlobalId}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{foundFreeGlobalId()}{foundFreeGlobalId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} Storage\+::found\+Free\+Global\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAFlib_1_1id_1_1Global__bit}{id\+::\+Global\+\_\+bit}}}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 376 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_adb1a0d6e98f8df393a08ec8cbe480d67}\label{classAFlib_1_1Storage_adb1a0d6e98f8df393a08ec8cbe480d67}} 
+\index{AFlib::Storage@{AFlib::Storage}!foundFreeGlobalId@{foundFreeGlobalId}}
+\index{foundFreeGlobalId@{foundFreeGlobalId}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{foundFreeGlobalId()}{foundFreeGlobalId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} Storage\+::found\+Free\+Global\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}}}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 371 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_acf1f76bc92e3d4ff667ed5dbc44acea4}\label{classAFlib_1_1Storage_acf1f76bc92e3d4ff667ed5dbc44acea4}} 
+\index{AFlib::Storage@{AFlib::Storage}!foundFreeLocalId@{foundFreeLocalId}}
+\index{foundFreeLocalId@{foundFreeLocalId}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{foundFreeLocalId()}{foundFreeLocalId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} Storage\+::found\+Free\+Local\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{A\+Flib\+::id\+::\+Account\+\_\+bit}}}]{account,  }\item[{quint8}]{plugin,  }\item[{quint8}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 351 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a485767f347c41a6bcf9839a5b7d2369d}\label{classAFlib_1_1Storage_a485767f347c41a6bcf9839a5b7d2369d}} 
+\index{AFlib::Storage@{AFlib::Storage}!foundFreeLocalId@{foundFreeLocalId}}
+\index{foundFreeLocalId@{foundFreeLocalId}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{foundFreeLocalId()}{foundFreeLocalId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAFlib_1_1id_1_1Object__bit}{id\+::\+Object\+\_\+bit}} Storage\+::found\+Free\+Local\+Id (\begin{DoxyParamCaption}\item[{quint8}]{plugin,  }\item[{quint8}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 346 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a6de9593824917b2a2a5d5e9ef5061bde}\label{classAFlib_1_1Storage_a6de9593824917b2a2a5d5e9ef5061bde}} 
+\index{AFlib::Storage@{AFlib::Storage}!getObject@{getObject}}
+\index{getObject@{getObject}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{getObject()}{getObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAFlib_1_1Storage_ae0bbb87d42dd5184e9f5d1bceda60507}{Storage\+::\+Id\+Obj}} Storage\+::get\+Object (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{const \mbox{\hyperlink{namespaceAFlib_ab4af07089b137c4e52f3e6204bffe1a3}{Id\+Object\+\_\+bit}} \&}]{object,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type,  }\item[{\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}}}]{compress = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 197 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a384e8d48de9b281eeac5b9a1596333e1}\label{classAFlib_1_1Storage_a384e8d48de9b281eeac5b9a1596333e1}} 
+\index{AFlib::Storage@{AFlib::Storage}!getObject@{getObject}}
+\index{getObject@{getObject}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{getObject()}{getObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAFlib_1_1Storage_ae0bbb87d42dd5184e9f5d1bceda60507}{Storage\+::\+Id\+Obj}} Storage\+::get\+Object (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{const \mbox{\hyperlink{namespaceAFlib_ab4af07089b137c4e52f3e6204bffe1a3}{Id\+Object\+\_\+bit}} \&}]{object,  }\item[{\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}}}]{compress = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}},  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 202 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_add9cd8ea9e0c32d3a78c577b12f65096}\label{classAFlib_1_1Storage_add9cd8ea9e0c32d3a78c577b12f65096}} 
+\index{AFlib::Storage@{AFlib::Storage}!getObjectList@{getObjectList}}
+\index{getObjectList@{getObjectList}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{getObjectList()}{getObjectList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} Storage\+::get\+Object\+List (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type,  }\item[{\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}}}]{compress = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 215 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_ae118000e525cfd3bc4722ede8af3fafb}\label{classAFlib_1_1Storage_ae118000e525cfd3bc4722ede8af3fafb}} 
+\index{AFlib::Storage@{AFlib::Storage}!getObjectList@{getObjectList}}
+\index{getObjectList@{getObjectList}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{getObjectList()}{getObjectList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} Storage\+::get\+Object\+List (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}}}]{compress = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}},  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 238 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a0700d80e70588330858a96c33fd51aba}\label{classAFlib_1_1Storage_a0700d80e70588330858a96c33fd51aba}} 
+\index{AFlib::Storage@{AFlib::Storage}!getObjectList@{getObjectList}}
+\index{getObjectList@{getObjectList}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{getObjectList()}{getObjectList()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} Storage\+::get\+Object\+List (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{const \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}}}]{list,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type,  }\item[{\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}}}]{compress = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 248 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_ac3e19ceb08465f93a7d9b7c91f3dd439}\label{classAFlib_1_1Storage_ac3e19ceb08465f93a7d9b7c91f3dd439}} 
+\index{AFlib::Storage@{AFlib::Storage}!getObjectList@{getObjectList}}
+\index{getObjectList@{getObjectList}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{getObjectList()}{getObjectList()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} Storage\+::get\+Object\+List (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{const \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}}}]{list,  }\item[{\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}}}]{compress = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}},  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 253 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a0a520e6cd6eeffec20cb733ea1f609a5}\label{classAFlib_1_1Storage_a0a520e6cd6eeffec20cb733ea1f609a5}} 
+\index{AFlib::Storage@{AFlib::Storage}!getObjectList@{getObjectList}}
+\index{getObjectList@{getObjectList}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{getObjectList()}{getObjectList()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}} Storage\+::get\+Object\+List (\begin{DoxyParamCaption}\item[{Q\+List$<$ \mbox{\hyperlink{structAFlib_1_1id_1_1Account__bit}{id\+::\+Account\+\_\+bit}} $>$}]{acc\+List,  }\item[{quint8}]{plugin,  }\item[{\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}}}]{compress = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 220 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a821cf87b0bf16c399833da720e0ede17}\label{classAFlib_1_1Storage_a821cf87b0bf16c399833da720e0ede17}} 
+\index{AFlib::Storage@{AFlib::Storage}!getOperatesAfter@{getOperatesAfter}}
+\index{getOperatesAfter@{getOperatesAfter}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{getOperatesAfter()}{getOperatesAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAFlib_1_1transfer_1_1Send}{transfer\+::\+Send}} Storage\+::get\+Operates\+After (\begin{DoxyParamCaption}\item[{const Q\+Date\+Time \&}]{date\+Time,  }\item[{\mbox{\hyperlink{afId_8h_a94903b53517ca09c20979015f852490c}{A\+Facc\+List\+\_\+b}}}]{list = {\ttfamily \mbox{\hyperlink{afId_8h_a94903b53517ca09c20979015f852490c}{A\+Facc\+List\+\_\+b}}()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 127 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_affbefdf9da1709ceb91e09cf4ef5d062}\label{classAFlib_1_1Storage_affbefdf9da1709ceb91e09cf4ef5d062}} 
+\index{AFlib::Storage@{AFlib::Storage}!init@{init}}
+\index{init@{init}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily Q\+Shared\+Pointer$<$ \mbox{\hyperlink{classAFlib_1_1Storage}{A\+Flib\+::\+Storage}} $>$ Storage\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 15 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_aff5f13c3a98c1be1a9102ede1630807d}\label{classAFlib_1_1Storage_aff5f13c3a98c1be1a9102ede1630807d}} 
+\index{AFlib::Storage@{AFlib::Storage}!loadFromDirectory@{loadFromDirectory}}
+\index{loadFromDirectory@{loadFromDirectory}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{loadFromDirectory()}{loadFromDirectory()}}
+{\footnotesize\ttfamily void Storage\+::load\+From\+Directory (\begin{DoxyParamCaption}\item[{const Q\+String\+List \&}]{d\+Path,  }\item[{\mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4}{Compress}}}]{compress = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a2cbc3d196c32b8a20b2dfe207b3bb4c4a668072da0a8ab8423bf3f6efafba5783}{Compress\+::\+All\+Active}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a915c9ce58719eaa2997af9a89e3f3841}\label{classAFlib_1_1Storage_a915c9ce58719eaa2997af9a89e3f3841}} 
+\index{AFlib::Storage@{AFlib::Storage}!registrateObject@{registrateObject}}
+\index{registrateObject@{registrateObject}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{registrateObject()}{registrateObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Storage\+::registrate\+Object (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}}}]{file\+Type,  }\item[{const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 465 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a377931fb4fb829964aa1f6a48f360b40}\label{classAFlib_1_1Storage_a377931fb4fb829964aa1f6a48f360b40}} 
+\index{AFlib::Storage@{AFlib::Storage}!registrateObject@{registrateObject}}
+\index{registrateObject@{registrateObject}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{registrateObject()}{registrateObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Storage\+::registrate\+Object (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}}}]{file\+Type,  }\item[{const \mbox{\hyperlink{namespaceAFlib_a3b6af092289f290c74ff4404d52d6dc7}{Id\+Object\+Ptr}}}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 481 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a6f664d068d8469ab7f69ce6ab1e6e698}\label{classAFlib_1_1Storage_a6f664d068d8469ab7f69ce6ab1e6e698}} 
+\index{AFlib::Storage@{AFlib::Storage}!registrateObject@{registrateObject}}
+\index{registrateObject@{registrateObject}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{registrateObject()}{registrateObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Storage\+::registrate\+Object (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}}}]{file\+Type,  }\item[{const \mbox{\hyperlink{namespaceAFlib_a15c33a6f5c2fc27127c5edabd99d28a6}{Id\+Object\+PtrV}}}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 486 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a12477d88ef0c30b6aa3c65d6d78f8a25}\label{classAFlib_1_1Storage_a12477d88ef0c30b6aa3c65d6d78f8a25}} 
+\index{AFlib::Storage@{AFlib::Storage}!removeListByFile@{removeListByFile}}
+\index{removeListByFile@{removeListByFile}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{removeListByFile()}{removeListByFile()}}
+{\footnotesize\ttfamily void Storage\+::remove\+List\+By\+File (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}}}]{file\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 455 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_ac3fce7e3f5c0981f7e7b5f28a0c16eb9}\label{classAFlib_1_1Storage_ac3fce7e3f5c0981f7e7b5f28a0c16eb9}} 
+\index{AFlib::Storage@{AFlib::Storage}!removeObject@{removeObject}}
+\index{removeObject@{removeObject}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{removeObject()}{removeObject()}}
+{\footnotesize\ttfamily bool Storage\+::remove\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_acacd9d240212f205c1d84b1b59a18e9e}{Id\+Object}} \&}]{object }\end{DoxyParamCaption})}
+
+
+
+Definition at line 263 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_ade8d32e044648eb08f5321f38a0b3f8d}\label{classAFlib_1_1Storage_ade8d32e044648eb08f5321f38a0b3f8d}} 
+\index{AFlib::Storage@{AFlib::Storage}!saveObjects@{saveObjects}}
+\index{saveObjects@{saveObjects}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{saveObjects()}{saveObjects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAFlib_1_1transfer_1_1Answer}{transfer\+::\+Answer}} Storage\+::save\+Objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAFlib_1_1transfer_1_1Send}{transfer\+::\+Send}} \&}]{send\+Data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 317 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_a4c56f04cf9c4a5fe4e2d1a937022b5b4}\label{classAFlib_1_1Storage_a4c56f04cf9c4a5fe4e2d1a937022b5b4}} 
+\index{AFlib::Storage@{AFlib::Storage}!setLastChangedTime@{setLastChangedTime}}
+\index{setLastChangedTime@{setLastChangedTime}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{setLastChangedTime()}{setLastChangedTime()}}
+{\footnotesize\ttfamily void Storage\+::set\+Last\+Changed\+Time (\begin{DoxyParamCaption}\item[{quint32}]{account,  }\item[{\mbox{\hyperlink{namespaceAFlib_ab4af07089b137c4e52f3e6204bffe1a3}{Id\+Object\+\_\+bit}}}]{id,  }\item[{Q\+Date\+Time}]{d\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 505 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_ae6fc5d948fae33b9ea4bcd5d1156dfc7}\label{classAFlib_1_1Storage_ae6fc5d948fae33b9ea4bcd5d1156dfc7}} 
+\index{AFlib::Storage@{AFlib::Storage}!updateFile@{updateFile}}
+\index{updateFile@{updateFile}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{updateFile()}{updateFile()}}
+{\footnotesize\ttfamily bool Storage\+::update\+File (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{d\+Path,  }\item[{const Q\+Byte\+Array \&}]{data,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file af\+Storage.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Storage_ad2799fde879deda085bfde4ef554ab84}\label{classAFlib_1_1Storage_ad2799fde879deda085bfde4ef554ab84}} 
+\index{AFlib::Storage@{AFlib::Storage}!updateObjects@{updateObjects}}
+\index{updateObjects@{updateObjects}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{updateObjects()}{updateObjects()}}
+{\footnotesize\ttfamily bool Storage\+::update\+Objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAFlib_1_1transfer_1_1Answer}{transfer\+::\+Answer}}}]{answer,  }\item[{\mbox{\hyperlink{classAFlib_1_1transfer_1_1Send}{transfer\+::\+Send}} \&}]{operate\+List }\end{DoxyParamCaption})}
+
+
+
+Definition at line 289 of file af\+Storage.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAFlib_1_1Storage_a456feae1dacc0345787991534d394d66}\label{classAFlib_1_1Storage_a456feae1dacc0345787991534d394d66}} 
+\index{AFlib::Storage@{AFlib::Storage}!m\_storageList@{m\_storageList}}
+\index{m\_storageList@{m\_storageList}!AFlib::Storage@{AFlib::Storage}}
+\doxysubsubsection{\texorpdfstring{m\_storageList}{m\_storageList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structAFlib_1_1Storage_1_1AccountStorage}{Account\+Storage}}$>$ A\+Flib\+::\+Storage\+::m\+\_\+storage\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 99 of file af\+Storage.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/\mbox{\hyperlink{afStorage_8h}{af\+Storage.\+h}}\item 
+lib\+\_\+base\+A\+F/tool/\mbox{\hyperlink{afStorage_8cpp}{af\+Storage.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,108 @@
+\hypertarget{afEnum_8h}{}\doxysection{lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/af\+Enum.h File Reference}
+\label{afEnum_8h}\index{lib\_baseAF/include/lib\_baseAF/afEnum.h@{lib\_baseAF/include/lib\_baseAF/afEnum.h}}
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Debug$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Object$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Data\+Stream$>$}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceAFlib}{A\+Flib}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef History\+Id\+Type \mbox{\hyperlink{namespaceAFlib_a1fe55f9d292eeda418c3edca693fd1f3}{A\+Flib\+::\+H\+Id\+Type}}
+\item 
+typedef Saved\+Id\+Type \mbox{\hyperlink{namespaceAFlib_a73ed01244bb2bc68108ac04f508387a9}{A\+Flib\+::\+S\+Id\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceAFlib_a3f1250e780ffcbebc479904301135b58}{A\+Flib\+::\+Schedule}} 
+\item 
+enum \mbox{\hyperlink{namespaceAFlib_a23c26cfe8f39575e8c532c5fb15dab89}{A\+Flib\+::\+Continent}} 
+\begin{DoxyCompactList}\small\item\em The Continent enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} 
+\begin{DoxyCompactList}\small\item\em Id\`{}s enum list -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{A\+Flib\+::\+History\+Id\+Type}} 
+\item 
+enum \mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{A\+Flib\+::\+Saved\+Id\+Type}} 
+\item 
+enum \mbox{\hyperlink{namespaceAFlib_af2de945e460348afd8b94ea3292af856}{A\+Flib\+::\+Account\+Id\+Type}} 
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{History\+Id\+Type}} \mbox{\hyperlink{namespaceAFlib_aef4a23d0b2a833d0db53163c052e2d29}{A\+Flib\+::to\+History\+Id\+Type}} (const quint8 i)
+\item 
+quint8 \mbox{\hyperlink{namespaceAFlib_a8b32d46bb454784a5b0b943949a782ae}{A\+Flib\+::from\+His\+To\+Int}} (\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{History\+Id\+Type}} type)
+\item 
+bool \mbox{\hyperlink{namespaceAFlib_ade690fbc0ba04875a3b1a93daf002f03}{A\+Flib\+::is\+H\+Id\+Enable}} (\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{History\+Id\+Type}} type)
+\item 
+std\+::string \mbox{\hyperlink{namespaceAFlib_abd864909f6dd62ecbae4c31cb539fa3c}{A\+Flib\+::history\+To\+String}} (\mbox{\hyperlink{namespaceAFlib_ab39b5eb37885cc73e908dd583e39ae2d}{History\+Id\+Type}} type)
+\item 
+std\+::string \mbox{\hyperlink{namespaceAFlib_aefd21924d246ffae06b4a590b28237ae}{A\+Flib\+::history\+To\+String}} (quint8 type)
+\item 
+\mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{Saved\+Id\+Type}} \mbox{\hyperlink{namespaceAFlib_ac300d616f6b59fbe920cfd7c0b5d7f53}{A\+Flib\+::to\+Saved\+Id\+Type}} (const quint8 i)
+\item 
+quint8 \mbox{\hyperlink{namespaceAFlib_ab19adc1c02c44a98f30e2fa68818be75}{A\+Flib\+::from\+Save\+To\+Int}} (\mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{Saved\+Id\+Type}} type)
+\item 
+std\+::string \mbox{\hyperlink{namespaceAFlib_a0cd8a0cec09116292146ab656abdc9dc}{A\+Flib\+::save\+Type\+To\+String}} (\mbox{\hyperlink{namespaceAFlib_a144d94a7a7ee5bceba080f3f2c61973a}{Saved\+Id\+Type}} type)
+\item 
+std\+::string \mbox{\hyperlink{namespaceAFlib_a1123d9eaecff017d7c64a972fd3e26cb}{A\+Flib\+::save\+Type\+To\+String}} (quint8 type)
+\item 
+\mbox{\hyperlink{namespaceAFlib_af2de945e460348afd8b94ea3292af856}{Account\+Id\+Type}} \mbox{\hyperlink{namespaceAFlib_adc1bacb085a13ce4ed50de5780becc68}{A\+Flib\+::to\+Account\+Id\+Type}} (const quint8 i)
+\item 
+quint8 \mbox{\hyperlink{namespaceAFlib_aff0a66bb9d44de3a582cef2ea74053d3}{A\+Flib\+::from\+Account\+Id\+Type}} (\mbox{\hyperlink{namespaceAFlib_af2de945e460348afd8b94ea3292af856}{Account\+Id\+Type}} type)
+\item 
+bool \mbox{\hyperlink{afEnum_8h_a14aa1ca0d920b9234943388c9f142440}{operator==}} (\mbox{\hyperlink{namespaceAFlib_af2de945e460348afd8b94ea3292af856}{A\+Flib\+::\+Account\+Id\+Type}} f, \mbox{\hyperlink{namespaceAFlib_af2de945e460348afd8b94ea3292af856}{A\+Flib\+::\+Account\+Id\+Type}} s)
+\item 
+Q\+Debug \mbox{\hyperlink{afEnum_8h_ad50f828b23fcff7bf6f34470f17a7e62}{operator$<$$<$}} (Q\+Debug d, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type)
+\item 
+Q\+Data\+Stream \& \mbox{\hyperlink{afEnum_8h_abbf30485f0aae48e294dfeb44310b760}{operator$<$$<$}} (Q\+Data\+Stream \&s, const \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} \&type)
+\item 
+Q\+Data\+Stream \& \mbox{\hyperlink{afEnum_8h_a16d3f82f04f0465f66e7637db8add4f0}{operator$>$$>$}} (Q\+Data\+Stream \&s, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} \&type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{afEnum_8h_abbf30485f0aae48e294dfeb44310b760}\label{afEnum_8h_abbf30485f0aae48e294dfeb44310b760}} 
+\index{afEnum.h@{afEnum.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!afEnum.h@{afEnum.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+Data\+Stream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{Q\+Data\+Stream \&}]{s,  }\item[{const \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} \&}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 73 of file af\+Enum.\+cpp.
+
+\mbox{\Hypertarget{afEnum_8h_ad50f828b23fcff7bf6f34470f17a7e62}\label{afEnum_8h_ad50f828b23fcff7bf6f34470f17a7e62}} 
+\index{afEnum.h@{afEnum.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!afEnum.h@{afEnum.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+Debug operator$<$$<$ (\begin{DoxyParamCaption}\item[{Q\+Debug}]{d,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 51 of file af\+Enum.\+cpp.
+
+\mbox{\Hypertarget{afEnum_8h_a14aa1ca0d920b9234943388c9f142440}\label{afEnum_8h_a14aa1ca0d920b9234943388c9f142440}} 
+\index{afEnum.h@{afEnum.h}!operator==@{operator==}}
+\index{operator==@{operator==}!afEnum.h@{afEnum.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_af2de945e460348afd8b94ea3292af856}{A\+Flib\+::\+Account\+Id\+Type}}}]{f,  }\item[{\mbox{\hyperlink{namespaceAFlib_af2de945e460348afd8b94ea3292af856}{A\+Flib\+::\+Account\+Id\+Type}}}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file af\+Enum.\+cpp.
+
+\mbox{\Hypertarget{afEnum_8h_a16d3f82f04f0465f66e7637db8add4f0}\label{afEnum_8h_a16d3f82f04f0465f66e7637db8add4f0}} 
+\index{afEnum.h@{afEnum.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!afEnum.h@{afEnum.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily Q\+Data\+Stream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{Q\+Data\+Stream \&}]{s,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} \&}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 78 of file af\+Enum.\+cpp.
+

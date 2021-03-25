@@ -1,0 +1,349 @@
+\hypertarget{classAFlib_1_1File}{}\doxysection{A\+Flib\+::File Class Reference}
+\label{classAFlib_1_1File}\index{AFlib::File@{AFlib::File}}
+
+
+{\ttfamily \#include $<$af\+File.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFlib_1_1File_a6239d801c7f3709bccdaa749b8d60fd1}{File}} (Q\+String \mbox{\hyperlink{classAFlib_1_1File_a8c3f93667da680fb97b6d2b8cbf0860a}{d\+Path}}, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type=\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}})
+\item 
+\mbox{\hyperlink{classAFlib_1_1File_accd229f95d7edb6bb747ef061f70e1cc}{File}} (Q\+String\+List list, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type=\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}})
+\item 
+virtual \mbox{\hyperlink{classAFlib_1_1File_ab53003a963115a2d87b099cdf3dc991e}{$\sim$\+File}} ()
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1File_aae79a4d39a2c3ec63ae6adc15d94a5ce}{open\+Read}} ()
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1File_ab902a200c9cbaaf91dc194d824427b4f}{open\+Write}} ()
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1File_ab8697b4e22de12a5c8fc1763ba76a169}{exists}} ()
+\item 
+Q\+Byte\+Array \mbox{\hyperlink{classAFlib_1_1File_a7baf5725a8728825459fc2aa7946f88b}{read\+All}} ()
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1File_a3327b9f1d87fb0893ef5badb24aed96d}{write\+All}} (const Q\+Byte\+Array \&data)
+\item 
+Q\+Data\+Stream \& \mbox{\hyperlink{classAFlib_1_1File_a00880c9c020eca7503147247ed91a462}{stream}} ()
+\item 
+bool \mbox{\hyperlink{classAFlib_1_1File_a9305ef0a99848f551f90e513029f0ed1}{is\+Open}} () const
+\item 
+Q\+String\+List \mbox{\hyperlink{classAFlib_1_1File_a8c3f93667da680fb97b6d2b8cbf0860a}{d\+Path}} () const
+\item 
+\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}} \mbox{\hyperlink{classAFlib_1_1File_aa655e479b1978d336949b5dc22a7f062}{d\+Type}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classAFlib_1_1File_a07e6d30667e2b57e517a190d134cb46d}{rename}} (Q\+Dir dir, Q\+String file, Q\+String new\+Name)
+\item 
+static Q\+String\+List \mbox{\hyperlink{classAFlib_1_1File_adab90f58debb7471ed7d2a0ac6c70f8d}{get\+Full\+Type\+List}} ()
+\item 
+static Q\+String \mbox{\hyperlink{classAFlib_1_1File_a08c4dd1b567d26d2d39589cf8b73f775}{get\+File\+Type\+Name}} (\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}} type)
+\item 
+static Q\+Dir \mbox{\hyperlink{classAFlib_1_1File_a23406fc0fbaf9006b1b7975e4859bb43}{get\+Full\+Dir}} (const Q\+String\+List \&list, bool is\+File\+Name\+Is\+Last=true)
+\item 
+static Q\+String \mbox{\hyperlink{classAFlib_1_1File_a9d123d2f8779964e2b76f4d84456dbee}{get\+Full\+Path}} (const Q\+String\+List \&list, \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} type=\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}})
+\item 
+static Q\+String \mbox{\hyperlink{classAFlib_1_1File_a9789252a2094d71d5b7f015ed7b5e622}{get\+Full\+Path}} (const Q\+String \&\mbox{\hyperlink{classAFlib_1_1File_a8c3f93667da680fb97b6d2b8cbf0860a}{d\+Path}})
+\item 
+static Q\+String \mbox{\hyperlink{classAFlib_1_1File_ab43ce96a7e7fd63b9d8fc208efb4ed8b}{get\+D\+Path}} (const Q\+String\+List \&list)
+\item 
+static Q\+String \mbox{\hyperlink{classAFlib_1_1File_a9f3d3ee492f41a1b696e74c23ee80b35}{get\+D\+Path}} (const Q\+String \&full\+Path)
+\item 
+static Q\+String \mbox{\hyperlink{classAFlib_1_1File_ab4262422b345325b2399f8b244326455}{get\+D\+Path}} (const Q\+Dir \&full\+Path)
+\item 
+static Q\+String\+List \mbox{\hyperlink{classAFlib_1_1File_a4f9258daa1c04e7ef90129bc91047caa}{get\+D\+Path\+List}} (const Q\+String \&\mbox{\hyperlink{classAFlib_1_1File_a8c3f93667da680fb97b6d2b8cbf0860a}{d\+Path}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Data\+Stream \mbox{\hyperlink{classAFlib_1_1File_a7d99483b8bd374813559ee922baab163}{m\+\_\+stream}}
+\item 
+Q\+String\+List \mbox{\hyperlink{classAFlib_1_1File_a0d41b681d996c97e6ca7f6360378e8fd}{p\+\_\+d\+Path}}
+\item 
+\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} \mbox{\hyperlink{classAFlib_1_1File_ac609cb3e7a8460fb3a9e2a8899a50f4f}{p\+\_\+file\+Type}}
+\item 
+Q\+File $\ast$ \mbox{\hyperlink{classAFlib_1_1File_ae206113882fa8429a747b34516baa061}{m\+\_\+file}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 17 of file af\+File.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFlib_1_1File_a6239d801c7f3709bccdaa749b8d60fd1}\label{classAFlib_1_1File_a6239d801c7f3709bccdaa749b8d60fd1}} 
+\index{AFlib::File@{AFlib::File}!File@{File}}
+\index{File@{File}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{File()}{File()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily A\+Flib\+::\+File\+::\+File (\begin{DoxyParamCaption}\item[{Q\+String}]{d\+Path,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_accd229f95d7edb6bb747ef061f70e1cc}\label{classAFlib_1_1File_accd229f95d7edb6bb747ef061f70e1cc}} 
+\index{AFlib::File@{AFlib::File}!File@{File}}
+\index{File@{File}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{File()}{File()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily A\+Flib\+::\+File\+::\+File (\begin{DoxyParamCaption}\item[{Q\+String\+List}]{list,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_ab53003a963115a2d87b099cdf3dc991e}\label{classAFlib_1_1File_ab53003a963115a2d87b099cdf3dc991e}} 
+\index{AFlib::File@{AFlib::File}!````~File@{$\sim$File}}
+\index{````~File@{$\sim$File}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{$\sim$File()}{~File()}}
+{\footnotesize\ttfamily A\+Flib\+::\+File\+::$\sim$\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 24 of file af\+File.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFlib_1_1File_a8c3f93667da680fb97b6d2b8cbf0860a}\label{classAFlib_1_1File_a8c3f93667da680fb97b6d2b8cbf0860a}} 
+\index{AFlib::File@{AFlib::File}!dPath@{dPath}}
+\index{dPath@{dPath}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{dPath()}{dPath()}}
+{\footnotesize\ttfamily Q\+String\+List A\+Flib\+::\+File\+::d\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 90 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_aa655e479b1978d336949b5dc22a7f062}\label{classAFlib_1_1File_aa655e479b1978d336949b5dc22a7f062}} 
+\index{AFlib::File@{AFlib::File}!dType@{dType}}
+\index{dType@{dType}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{dType()}{dType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} A\+Flib\+::\+File\+::d\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 95 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_ab8697b4e22de12a5c8fc1763ba76a169}\label{classAFlib_1_1File_ab8697b4e22de12a5c8fc1763ba76a169}} 
+\index{AFlib::File@{AFlib::File}!exists@{exists}}
+\index{exists@{exists}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool A\+Flib\+::\+File\+::exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_ab4262422b345325b2399f8b244326455}\label{classAFlib_1_1File_ab4262422b345325b2399f8b244326455}} 
+\index{AFlib::File@{AFlib::File}!getDPath@{getDPath}}
+\index{getDPath@{getDPath}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{getDPath()}{getDPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Q\+String A\+Flib\+::\+File\+::get\+D\+Path (\begin{DoxyParamCaption}\item[{const Q\+Dir \&}]{full\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 179 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a9f3d3ee492f41a1b696e74c23ee80b35}\label{classAFlib_1_1File_a9f3d3ee492f41a1b696e74c23ee80b35}} 
+\index{AFlib::File@{AFlib::File}!getDPath@{getDPath}}
+\index{getDPath@{getDPath}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{getDPath()}{getDPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Q\+String A\+Flib\+::\+File\+::get\+D\+Path (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{full\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 160 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_ab43ce96a7e7fd63b9d8fc208efb4ed8b}\label{classAFlib_1_1File_ab43ce96a7e7fd63b9d8fc208efb4ed8b}} 
+\index{AFlib::File@{AFlib::File}!getDPath@{getDPath}}
+\index{getDPath@{getDPath}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{getDPath()}{getDPath()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Q\+String A\+Flib\+::\+File\+::get\+D\+Path (\begin{DoxyParamCaption}\item[{const Q\+String\+List \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 155 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a4f9258daa1c04e7ef90129bc91047caa}\label{classAFlib_1_1File_a4f9258daa1c04e7ef90129bc91047caa}} 
+\index{AFlib::File@{AFlib::File}!getDPathList@{getDPathList}}
+\index{getDPathList@{getDPathList}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{getDPathList()}{getDPathList()}}
+{\footnotesize\ttfamily Q\+String\+List A\+Flib\+::\+File\+::get\+D\+Path\+List (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{d\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 172 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a08c4dd1b567d26d2d39589cf8b73f775}\label{classAFlib_1_1File_a08c4dd1b567d26d2d39589cf8b73f775}} 
+\index{AFlib::File@{AFlib::File}!getFileTypeName@{getFileTypeName}}
+\index{getFileTypeName@{getFileTypeName}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{getFileTypeName()}{getFileTypeName()}}
+{\footnotesize\ttfamily Q\+String A\+Flib\+::\+File\+::get\+File\+Type\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{File\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 116 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a23406fc0fbaf9006b1b7975e4859bb43}\label{classAFlib_1_1File_a23406fc0fbaf9006b1b7975e4859bb43}} 
+\index{AFlib::File@{AFlib::File}!getFullDir@{getFullDir}}
+\index{getFullDir@{getFullDir}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{getFullDir()}{getFullDir()}}
+{\footnotesize\ttfamily Q\+Dir A\+Flib\+::\+File\+::get\+Full\+Dir (\begin{DoxyParamCaption}\item[{const Q\+String\+List \&}]{list,  }\item[{bool}]{is\+File\+Name\+Is\+Last = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 128 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a9789252a2094d71d5b7f015ed7b5e622}\label{classAFlib_1_1File_a9789252a2094d71d5b7f015ed7b5e622}} 
+\index{AFlib::File@{AFlib::File}!getFullPath@{getFullPath}}
+\index{getFullPath@{getFullPath}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{getFullPath()}{getFullPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+String A\+Flib\+::\+File\+::get\+Full\+Path (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{d\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 150 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a9d123d2f8779964e2b76f4d84456dbee}\label{classAFlib_1_1File_a9d123d2f8779964e2b76f4d84456dbee}} 
+\index{AFlib::File@{AFlib::File}!getFullPath@{getFullPath}}
+\index{getFullPath@{getFullPath}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{getFullPath()}{getFullPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+String A\+Flib\+::\+File\+::get\+Full\+Path (\begin{DoxyParamCaption}\item[{const Q\+String\+List \&}]{list,  }\item[{\mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66af6068daa29dbb05a7ead1e3b5a48bbee}{A\+Flib\+::\+File\+Type\+::\+Data}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 144 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_adab90f58debb7471ed7d2a0ac6c70f8d}\label{classAFlib_1_1File_adab90f58debb7471ed7d2a0ac6c70f8d}} 
+\index{AFlib::File@{AFlib::File}!getFullTypeList@{getFullTypeList}}
+\index{getFullTypeList@{getFullTypeList}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{getFullTypeList()}{getFullTypeList()}}
+{\footnotesize\ttfamily Q\+String\+List A\+Flib\+::\+File\+::get\+Full\+Type\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 105 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a9305ef0a99848f551f90e513029f0ed1}\label{classAFlib_1_1File_a9305ef0a99848f551f90e513029f0ed1}} 
+\index{AFlib::File@{AFlib::File}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool A\+Flib\+::\+File\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 85 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_aae79a4d39a2c3ec63ae6adc15d94a5ce}\label{classAFlib_1_1File_aae79a4d39a2c3ec63ae6adc15d94a5ce}} 
+\index{AFlib::File@{AFlib::File}!openRead@{openRead}}
+\index{openRead@{openRead}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{openRead()}{openRead()}}
+{\footnotesize\ttfamily bool A\+Flib\+::\+File\+::open\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_ab902a200c9cbaaf91dc194d824427b4f}\label{classAFlib_1_1File_ab902a200c9cbaaf91dc194d824427b4f}} 
+\index{AFlib::File@{AFlib::File}!openWrite@{openWrite}}
+\index{openWrite@{openWrite}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{openWrite()}{openWrite()}}
+{\footnotesize\ttfamily bool A\+Flib\+::\+File\+::open\+Write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a7baf5725a8728825459fc2aa7946f88b}\label{classAFlib_1_1File_a7baf5725a8728825459fc2aa7946f88b}} 
+\index{AFlib::File@{AFlib::File}!readAll@{readAll}}
+\index{readAll@{readAll}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{readAll()}{readAll()}}
+{\footnotesize\ttfamily Q\+Byte\+Array A\+Flib\+::\+File\+::read\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 69 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a07e6d30667e2b57e517a190d134cb46d}\label{classAFlib_1_1File_a07e6d30667e2b57e517a190d134cb46d}} 
+\index{AFlib::File@{AFlib::File}!rename@{rename}}
+\index{rename@{rename}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{rename()}{rename()}}
+{\footnotesize\ttfamily bool A\+Flib\+::\+File\+::rename (\begin{DoxyParamCaption}\item[{Q\+Dir}]{dir,  }\item[{Q\+String}]{file,  }\item[{Q\+String}]{new\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 100 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a00880c9c020eca7503147247ed91a462}\label{classAFlib_1_1File_a00880c9c020eca7503147247ed91a462}} 
+\index{AFlib::File@{AFlib::File}!stream@{stream}}
+\index{stream@{stream}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{stream()}{stream()}}
+{\footnotesize\ttfamily Q\+Data\+Stream \& A\+Flib\+::\+File\+::stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 80 of file af\+File.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a3327b9f1d87fb0893ef5badb24aed96d}\label{classAFlib_1_1File_a3327b9f1d87fb0893ef5badb24aed96d}} 
+\index{AFlib::File@{AFlib::File}!writeAll@{writeAll}}
+\index{writeAll@{writeAll}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{writeAll()}{writeAll()}}
+{\footnotesize\ttfamily bool A\+Flib\+::\+File\+::write\+All (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 74 of file af\+File.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAFlib_1_1File_ae206113882fa8429a747b34516baa061}\label{classAFlib_1_1File_ae206113882fa8429a747b34516baa061}} 
+\index{AFlib::File@{AFlib::File}!m\_file@{m\_file}}
+\index{m\_file@{m\_file}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{m\_file}{m\_file}}
+{\footnotesize\ttfamily Q\+File$\ast$ A\+Flib\+::\+File\+::m\+\_\+file\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 52 of file af\+File.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a7d99483b8bd374813559ee922baab163}\label{classAFlib_1_1File_a7d99483b8bd374813559ee922baab163}} 
+\index{AFlib::File@{AFlib::File}!m\_stream@{m\_stream}}
+\index{m\_stream@{m\_stream}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{m\_stream}{m\_stream}}
+{\footnotesize\ttfamily Q\+Data\+Stream A\+Flib\+::\+File\+::m\+\_\+stream\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 49 of file af\+File.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1File_a0d41b681d996c97e6ca7f6360378e8fd}\label{classAFlib_1_1File_a0d41b681d996c97e6ca7f6360378e8fd}} 
+\index{AFlib::File@{AFlib::File}!p\_dPath@{p\_dPath}}
+\index{p\_dPath@{p\_dPath}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{p\_dPath}{p\_dPath}}
+{\footnotesize\ttfamily Q\+String\+List A\+Flib\+::\+File\+::p\+\_\+d\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 50 of file af\+File.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1File_ac609cb3e7a8460fb3a9e2a8899a50f4f}\label{classAFlib_1_1File_ac609cb3e7a8460fb3a9e2a8899a50f4f}} 
+\index{AFlib::File@{AFlib::File}!p\_fileType@{p\_fileType}}
+\index{p\_fileType@{p\_fileType}!AFlib::File@{AFlib::File}}
+\doxysubsubsection{\texorpdfstring{p\_fileType}{p\_fileType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_a65e37e668f0aeb801a0b10b41b5d4c66}{A\+Flib\+::\+File\+Type}} A\+Flib\+::\+File\+::p\+\_\+file\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 51 of file af\+File.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/\mbox{\hyperlink{afFile_8h}{af\+File.\+h}}\item 
+lib\+\_\+base\+A\+F/tool/\mbox{\hyperlink{afFile_8cpp}{af\+File.\+cpp}}\end{DoxyCompactItemize}

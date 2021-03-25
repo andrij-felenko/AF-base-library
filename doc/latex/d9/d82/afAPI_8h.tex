@@ -1,0 +1,86 @@
+\hypertarget{afAPI_8h}{}\doxysection{lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/af\+A\+PI.h File Reference}
+\label{afAPI_8h}\index{lib\_baseAF/include/lib\_baseAF/afAPI.h@{lib\_baseAF/include/lib\_baseAF/afAPI.h}}
+{\ttfamily \#include \char`\"{}af\+Account\+Storage.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Map$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Timer$>$}\newline
+{\ttfamily \#include $<$Qt\+Network/\+Q\+Network\+Access\+Manager$>$}\newline
+{\ttfamily \#include $<$Qt\+Network/\+Q\+Network\+Reply$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAFlib_1_1API}{A\+Flib\+::\+A\+PI}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceAFlib}{A\+Flib}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Q\+Shared\+Pointer$<$ A\+PI $>$ \mbox{\hyperlink{namespaceAFlib_a89efa3b7d2cecc96462ece511deb4c14}{A\+Flib\+::\+Api\+Ptr}}
+\item 
+typedef Q\+List$<$ Api\+Ptr $>$ \mbox{\hyperlink{namespaceAFlib_ac8c67d1c1107ce9836e27afd86ebee86}{A\+Flib\+::\+Api\+Ptr\+List}}
+\item 
+typedef Q\+Shared\+Pointer$<$ \mbox{\hyperlink{classAFlib_1_1API}{A\+Flib\+::\+A\+PI}} $>$ \mbox{\hyperlink{afAPI_8h_a92cc47071ad7a6810baeac30af08e14e}{A\+Fapi\+Ptr}}
+\item 
+typedef Q\+List$<$ \mbox{\hyperlink{afAPI_8h_a92cc47071ad7a6810baeac30af08e14e}{A\+Fapi\+Ptr}} $>$ \mbox{\hyperlink{afAPI_8h_ae15df710c707b4d5ed3c8c266a0dfd6f}{A\+Fapi\+Ptr\+List}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceAFlib_aee9fc95dbaa93c906f1342f1e74dc362}{A\+Flib\+::\+Request\+Type}} 
+\item 
+enum \mbox{\hyperlink{namespaceAFlib_ab7f1bd32505135db9b46286de51a4e4a}{A\+Flib\+::\+Request\+Status}} 
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \mbox{\hyperlink{namespaceAFlib_ade5e6f4dedb1a2b0f7b7d7c142e5b679}{A\+Flib\+::get\+Server\+Key}} (const Request\+Type type, bool is\+Data=false)
+\item 
+Q\+Url \mbox{\hyperlink{namespaceAFlib_a25a8998c3a4aae2313f5d0f497c22b08}{A\+Flib\+::get\+Server\+Link}} (const Request\+Type type, bool is\+Data=false)
+\item 
+Api\+Ptr \mbox{\hyperlink{namespaceAFlib_aff10c015a8ddaef448463140da88a325}{A\+Flib\+::api}} ()
+\item 
+Q\+Data\+Stream \& \mbox{\hyperlink{namespaceAFlib_a2fccb36688590ab4421ee2fe3c0a88fa}{A\+Flib\+::operator$<$$<$}} (Q\+Data\+Stream \&d, const \mbox{\hyperlink{namespaceAFlib_aee9fc95dbaa93c906f1342f1e74dc362}{A\+Flib\+::\+Request\+Type}} \&type)
+\item 
+Q\+Data\+Stream \& \mbox{\hyperlink{namespaceAFlib_a117104d8d5ae7ba66c184d2ad1a020d4}{A\+Flib\+::operator$>$$>$}} (Q\+Data\+Stream \&d, \mbox{\hyperlink{namespaceAFlib_aee9fc95dbaa93c906f1342f1e74dc362}{A\+Flib\+::\+Request\+Type}} \&type)
+\item 
+\mbox{\hyperlink{afAPI_8h_a92cc47071ad7a6810baeac30af08e14e}{A\+Fapi\+Ptr}} \mbox{\hyperlink{afAPI_8h_a53535f2532f9508bede67f297a04fdea}{af\+A\+PI}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{afAPI_8h_a92cc47071ad7a6810baeac30af08e14e}\label{afAPI_8h_a92cc47071ad7a6810baeac30af08e14e}} 
+\index{afAPI.h@{afAPI.h}!AFapiPtr@{AFapiPtr}}
+\index{AFapiPtr@{AFapiPtr}!afAPI.h@{afAPI.h}}
+\doxysubsubsection{\texorpdfstring{AFapiPtr}{AFapiPtr}}
+{\footnotesize\ttfamily typedef Q\+Shared\+Pointer$<$\mbox{\hyperlink{classAFlib_1_1API}{A\+Flib\+::\+A\+PI}}$>$ \mbox{\hyperlink{afAPI_8h_a92cc47071ad7a6810baeac30af08e14e}{A\+Fapi\+Ptr}}}
+
+
+
+Definition at line 82 of file af\+A\+P\+I.\+h.
+
+\mbox{\Hypertarget{afAPI_8h_ae15df710c707b4d5ed3c8c266a0dfd6f}\label{afAPI_8h_ae15df710c707b4d5ed3c8c266a0dfd6f}} 
+\index{afAPI.h@{afAPI.h}!AFapiPtrList@{AFapiPtrList}}
+\index{AFapiPtrList@{AFapiPtrList}!afAPI.h@{afAPI.h}}
+\doxysubsubsection{\texorpdfstring{AFapiPtrList}{AFapiPtrList}}
+{\footnotesize\ttfamily typedef Q\+List$<$\mbox{\hyperlink{afAPI_8h_a92cc47071ad7a6810baeac30af08e14e}{A\+Fapi\+Ptr}}$>$ \mbox{\hyperlink{afAPI_8h_ae15df710c707b4d5ed3c8c266a0dfd6f}{A\+Fapi\+Ptr\+List}}}
+
+
+
+Definition at line 83 of file af\+A\+P\+I.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{afAPI_8h_a53535f2532f9508bede67f297a04fdea}\label{afAPI_8h_a53535f2532f9508bede67f297a04fdea}} 
+\index{afAPI.h@{afAPI.h}!afAPI@{afAPI}}
+\index{afAPI@{afAPI}!afAPI.h@{afAPI.h}}
+\doxysubsubsection{\texorpdfstring{afAPI()}{afAPI()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{afAPI_8h_a92cc47071ad7a6810baeac30af08e14e}{A\+Fapi\+Ptr}} af\+A\+PI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 233 of file af\+A\+P\+I.\+cpp.
+

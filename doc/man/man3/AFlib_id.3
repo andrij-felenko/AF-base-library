@@ -1,0 +1,160 @@
+.TH "AFlib::id" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::id
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAccount_bit\fP"
+.br
+.ti -1c
+.RI "struct \fBGlobal_bit\fP"
+.br
+.ti -1c
+.RI "class \fBHistory\fP"
+.br
+.ti -1c
+.RI "class \fBObject\fP"
+.br
+.ti -1c
+.RI "struct \fBObject_bit\fP"
+.br
+.RI "The \fBFunction\fP class\&. "
+.ti -1c
+.RI "class \fBObjectTemplate\fP"
+.br
+.ti -1c
+.RI "class \fBOperate\fP"
+.br
+.ti -1c
+.RI "struct \fBOperate_bit\fP"
+.br
+.ti -1c
+.RI "struct \fBTbitStruct\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBAccount_bit\fP \fBAcc_bit\fP"
+.br
+.ti -1c
+.RI "typedef QList< \fBAccount_bit\fP > \fBAccList_b\fP"
+.br
+.ti -1c
+.RI "typedef QList< \fBGlobal_bit\fP > \fBGlobalList_bit\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBHistory\fP > \fBHistoryPtr\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBObject\fP > \fBObjectPtr\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBObjectPtr\fP > \fBObjectPtrV\fP"
+.br
+.ti -1c
+.RI "typedef \fBObject_bit\fP \fBObj_bit\fP"
+.br
+.ti -1c
+.RI "typedef QSharedPointer< \fBOperate\fP > \fBOperatePtr\fP"
+.br
+.ti -1c
+.RI "typedef QVector< \fBOperatePtr\fP > \fBOperatePtrList\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBGlobal_bit\fP &id)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBGlobal_bit\fP &id)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &stream, const \fBHistory\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &stream, \fBHistory\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &stream, const \fBAFlib::id::Object\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &stream, \fBAFlib::id::Object\fP &data)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBAccount_bit\fP \fBAFlib::id::Acc_bit\fP"
+
+.PP
+Definition at line 8 of file afIdAccount\&.h\&.
+.SS "typedef QList<\fBAccount_bit\fP> \fBAFlib::id::AccList_b\fP"
+
+.PP
+Definition at line 10 of file afIdAccount\&.h\&.
+.SS "typedef QList<\fBGlobal_bit\fP> \fBAFlib::id::GlobalList_bit\fP"
+
+.PP
+Definition at line 12 of file afIdGlobalBit\&.h\&.
+.SS "typedef QSharedPointer<\fBHistory\fP> \fBAFlib::id::HistoryPtr\fP"
+
+.PP
+Definition at line 38 of file afIdHistory\&.h\&.
+.SS "typedef \fBObject_bit\fP \fBAFlib::id::Obj_bit\fP"
+
+.PP
+Definition at line 14 of file afIdObjectBit\&.h\&.
+.SS "typedef QSharedPointer<\fBObject\fP> \fBAFlib::id::ObjectPtr\fP"
+
+.PP
+Definition at line 9 of file afIdObject\&.h\&.
+.SS "typedef std::vector<\fBObjectPtr\fP> \fBAFlib::id::ObjectPtrV\fP"
+
+.PP
+Definition at line 12 of file afIdObject\&.h\&.
+.SS "typedef QSharedPointer<\fBOperate\fP> \fBAFlib::id::OperatePtr\fP"
+
+.PP
+Definition at line 16 of file afIdOperate\&.h\&.
+.SS "typedef QVector<\fBOperatePtr\fP> \fBAFlib::id::OperatePtrList\fP"
+
+.PP
+Definition at line 19 of file afIdOperate\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "QDataStream& AFlib::id::operator<< (QDataStream & s, const \fBGlobal_bit\fP & id)"
+
+.PP
+Definition at line 22 of file afIdGlobalBit\&.cpp\&.
+.SS "QDataStream& AFlib::id::operator<< (QDataStream & stream, const \fBAFlib::id::Object\fP & data)"
+
+.PP
+Definition at line 163 of file afIdObject\&.cpp\&.
+.SS "QDataStream& AFlib::id::operator<< (QDataStream & stream, const \fBHistory\fP & data)"
+
+.PP
+Definition at line 367 of file afIdHistory\&.cpp\&.
+.SS "QDataStream& AFlib::id::operator>> (QDataStream & s, \fBGlobal_bit\fP & id)"
+
+.PP
+Definition at line 27 of file afIdGlobalBit\&.cpp\&.
+.SS "QDataStream& AFlib::id::operator>> (QDataStream & stream, \fBAFlib::id::Object\fP & data)"
+
+.PP
+Definition at line 176 of file afIdObject\&.cpp\&.
+.SS "QDataStream& AFlib::id::operator>> (QDataStream & stream, \fBHistory\fP & data)"
+
+.PP
+Definition at line 372 of file afIdHistory\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

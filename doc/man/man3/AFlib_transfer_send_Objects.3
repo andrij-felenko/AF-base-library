@@ -1,0 +1,86 @@
+.TH "AFlib::transfer::send::Objects" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::transfer::send::Objects
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afTransferOperateList\&.h>\fP
+.PP
+Inherits QList< Operates >\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddOperate\fP (\fBid::Global_bit\fP id, \fBid::OperatePtrList\fP list, bool isId)"
+.br
+.ti -1c
+.RI "void \fBaddOperate\fP (\fBid::Global_bit\fP id, \fBid::OperatePtr\fP operate, bool isId)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QStringList \fBdPath\fP"
+.br
+.ti -1c
+.RI "\fBFileType\fP \fBfileType\fP"
+.br
+.ti -1c
+.RI "\fBid::ObjectPtr\fP \fBobject\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &stream, \fBObjects\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &stream, \fBObjects\fP &data)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 71 of file afTransferOperateList\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void AFlib::transfer::send::Objects::addOperate (\fBid::Global_bit\fP id, \fBid::OperatePtr\fP operate, bool isId)"
+
+.PP
+Definition at line 23 of file afTransferOperateList\&.cpp\&.
+.SS "void AFlib::transfer::send::Objects::addOperate (\fBid::Global_bit\fP id, \fBid::OperatePtrList\fP list, bool isId)"
+
+.PP
+Definition at line 3 of file afTransferOperateList\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream & stream, \fBObjects\fP & data)\fC [friend]\fP"
+
+.PP
+Definition at line 173 of file afTransferOperateList\&.cpp\&.
+.SS "QDataStream& operator>> (QDataStream & stream, \fBObjects\fP & data)\fC [friend]\fP"
+
+.PP
+Definition at line 162 of file afTransferOperateList\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QStringList AFlib::transfer::send::Objects::dPath"
+
+.PP
+Definition at line 72 of file afTransferOperateList\&.h\&.
+.SS "\fBFileType\fP AFlib::transfer::send::Objects::fileType"
+
+.PP
+Definition at line 73 of file afTransferOperateList\&.h\&.
+.SS "\fBid::ObjectPtr\fP AFlib::transfer::send::Objects::object"
+
+.PP
+Definition at line 77 of file afTransferOperateList\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

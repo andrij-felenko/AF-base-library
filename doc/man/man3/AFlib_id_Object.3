@@ -1,0 +1,310 @@
+.TH "AFlib::id::Object" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::id::Object
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afIdObject\&.h>\fP
+.PP
+Inherits \fBAFlib::id::History\fP, and \fBAFlib::id::Object_bit\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObject\fP ()"
+.br
+.ti -1c
+.RI "\fBObject\fP (const QByteArray &data)"
+.br
+.ti -1c
+.RI "\fBObject\fP (const \fBObject\fP &cpObject)"
+.br
+.ti -1c
+.RI "\fBObject\fP (const \fBObject\fP *cpObject)"
+.br
+.ti -1c
+.RI "virtual \fB~Object\fP ()"
+.br
+.ti -1c
+.RI "void \fBmakeGlobalId\fP (\fBid::Object_bit\fP newId)"
+.br
+.ti -1c
+.RI "virtual \fBGlobal_bit\fP \fBglobalId\fP () const final"
+.br
+.ti -1c
+.RI "virtual quint64 \fBglobal\fP () const final"
+.br
+.ti -1c
+.RI "virtual QString \fBname\fP () const final"
+.br
+.ti -1c
+.RI "virtual QString \fBdescription\fP () const final"
+.br
+.ti -1c
+.RI "virtual \fBObject_bit\fP \fBlocalId_b\fP () const final"
+.br
+.ti -1c
+.RI "virtual quint32 \fBlocalId\fP () const final"
+.br
+.ti -1c
+.RI "virtual void \fBsetName\fP (const QString &\fBname\fP) final"
+.br
+.ti -1c
+.RI "virtual void \fBsetDescription\fP (const QString &\fBdescription\fP) final"
+.br
+.ti -1c
+.RI "virtual \fBObject_bit\fP \fBparent\fP () const final"
+.br
+.ti -1c
+.RI "virtual void \fBsetParent\fP (\fBObject_bit\fP obj_b) final"
+.br
+.ti -1c
+.RI "\fBAccount_bit\fP \fBowner\fP () const"
+.br
+.ti -1c
+.RI "\fBoperator QByteArray\fP () const"
+.br
+.ti -1c
+.RI "QByteArray \fBgetData\fP () const"
+.br
+.ti -1c
+.RI "\fBSavedIdType\fP \fBsavedStatus\fP () override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetOwner\fP (const \fBAccount_bit\fP &\fBowner\fP) final"
+.br
+.ti -1c
+.RI "virtual bool \fBisAccount\fP () const final"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBObjectPtr\fP \fBcreatePtr\fP ()"
+.br
+.ti -1c
+.RI "static QByteArray \fBlistToBytaArray\fP (const \fBObjectPtrV\fP list)"
+.br
+.ti -1c
+.RI "static \fBAFlib::id::ObjectPtrV\fP \fBreadList\fP (const QByteArray &data)"
+.br
+.ti -1c
+.RI "static \fBAFlib::id::ObjectPtr\fP \fBreadList\fP (const QByteArray &data, const \fBObj_bit\fP \fBid\fP)"
+.br
+.ti -1c
+.RI "static \fBAFlib::id::ObjectPtrV\fP \fBreadList\fP (const QByteArray &data, const \fBObjectPtrV\fP list)"
+.br
+.ti -1c
+.RI "static \fBAFlib::id::ObjectPtrV\fP \fBreadFromFile\fP (const QStringList &dPath, \fBFileType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "static \fBAFlib::id::ObjectPtr\fP \fBreadFromFile\fP (const QStringList &dPath, \fBFileType\fP \fBtype\fP, const \fBAFlib::id::Obj_bit\fP &\fBid\fP)"
+.br
+.ti -1c
+.RI "static \fBAFlib::id::ObjectPtrV\fP \fBreadFromFile\fP (const QStringList &dPath, \fBFileType\fP \fBtype\fP, const \fBObjectPtrV\fP list)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObject\fP (\fBAccount_bit\fP \fBowner\fP, quint8 \fBpluginId\fP, quint8 typeId, QString \fBname\fP='', QString descr='')"
+.br
+.ti -1c
+.RI "void \fBsaveToStorage\fP (const \fBOperatePtr\fP ptr, bool isId=false) override final"
+.br
+.ti -1c
+.RI "bool \fBsetUniqueId\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAFlib::id::ObjectTemplate\fP"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &stream, const \fBObject\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &stream, \fBObject\fP &data)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file afIdObject\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::id::Object::Object ()\fC [explicit]\fP"
+
+.PP
+Definition at line 7 of file afIdObject\&.cpp\&.
+.SS "AFlib::id::Object::Object (const QByteArray & data)"
+
+.PP
+Definition at line 17 of file afIdObject\&.cpp\&.
+.SS "AFlib::id::Object::Object (const \fBObject\fP & cpObject)"
+
+.PP
+Definition at line 24 of file afIdObject\&.cpp\&.
+.SS "AFlib::id::Object::Object (const \fBObject\fP * cpObject)"
+
+.PP
+Definition at line 31 of file afIdObject\&.cpp\&.
+.SS "virtual AFlib::id::Object::~Object ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 22 of file afIdObject\&.h\&.
+.SS "AFlib::id::Object::Object (\fBid::Account_bit\fP owner, quint8 pluginId, quint8 typeId, QString name = \fC''\fP, QString descr = \fC''\fP)\fC [private]\fP"
+
+.PP
+Definition at line 38 of file afIdObject\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBAFlib::id::ObjectPtr\fP AFlib::id::Object::createPtr ()\fC [static]\fP"
+
+.PP
+Definition at line 57 of file afIdObject\&.cpp\&.
+.SS "QString AFlib::id::Object::description () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 78 of file afIdObject\&.cpp\&.
+.SS "QByteArray AFlib::id::Object::getData () const"
+
+.PP
+Definition at line 117 of file afIdObject\&.cpp\&.
+.SS "quint64 AFlib::id::Object::global () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 68 of file afIdObject\&.cpp\&.
+.SS "\fBAFlib::id::Global_bit\fP AFlib::id::Object::globalId () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 63 of file afIdObject\&.cpp\&.
+.SS "bool AFlib::id::Object::isAccount () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 148 of file afIdObject\&.cpp\&.
+.SS "QByteArray AFlib::id::Object::listToBytaArray (const \fBObjectPtrV\fP list)\fC [static]\fP"
+
+.PP
+Definition at line 153 of file afIdObject\&.cpp\&.
+.SS "quint32 AFlib::id::Object::localId () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 92 of file afIdObject\&.cpp\&.
+.SS "\fBAFlib::id::Object_bit\fP AFlib::id::Object::localId_b () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 83 of file afIdObject\&.cpp\&.
+.SS "void AFlib::id::Object::makeGlobalId (\fBid::Object_bit\fP newId)"
+
+.PP
+Definition at line 51 of file afIdObject\&.cpp\&.
+.SS "QString AFlib::id::Object::name () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 73 of file afIdObject\&.cpp\&.
+.SS "\fBAFlib::id::Object::operator\fP QByteArray () const"
+
+.PP
+Definition at line 131 of file afIdObject\&.cpp\&.
+.SS "\fBAccount_bit\fP AFlib::id::Object::owner () const\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file afIdObject\&.h\&.
+.SS "\fBAFlib::id::Object_bit\fP AFlib::id::Object::parent () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 107 of file afIdObject\&.cpp\&.
+.SS "\fBAFlib::id::ObjectPtrV\fP AFlib::id::Object::readFromFile (const QStringList & dPath, \fBFileType\fP type)\fC [static]\fP"
+
+.PP
+Definition at line 236 of file afIdObject\&.cpp\&.
+.SS "\fBAFlib::id::ObjectPtr\fP AFlib::id::Object::readFromFile (const QStringList & dPath, \fBFileType\fP type, const \fBAFlib::id::Obj_bit\fP & id)\fC [static]\fP"
+
+.PP
+Definition at line 245 of file afIdObject\&.cpp\&.
+.SS "\fBAFlib::id::ObjectPtrV\fP AFlib::id::Object::readFromFile (const QStringList & dPath, \fBFileType\fP type, const \fBObjectPtrV\fP list)\fC [static]\fP"
+
+.PP
+Definition at line 254 of file afIdObject\&.cpp\&.
+.SS "\fBAFlib::id::ObjectPtrV\fP AFlib::id::Object::readList (const QByteArray & data)\fC [static]\fP"
+
+.PP
+Definition at line 184 of file afIdObject\&.cpp\&.
+.SS "\fBAFlib::id::ObjectPtr\fP AFlib::id::Object::readList (const QByteArray & data, const \fBObj_bit\fP id)\fC [static]\fP"
+
+.PP
+Definition at line 192 of file afIdObject\&.cpp\&.
+.SS "\fBAFlib::id::ObjectPtrV\fP AFlib::id::Object::readList (const QByteArray & data, const \fBObjectPtrV\fP list)\fC [static]\fP"
+
+.PP
+Definition at line 206 of file afIdObject\&.cpp\&.
+.SS "\fBAFlib::SavedIdType\fP AFlib::id::Object::savedStatus ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBAFlib::id::History\fP\&.
+.PP
+Definition at line 122 of file afIdObject\&.cpp\&.
+.SS "void AFlib::id::Object::saveToStorage (const \fBOperatePtr\fP ptr, bool isId = \fCfalse\fP)\fC [final]\fP, \fC [override]\fP, \fC [private]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBAFlib::id::History\fP\&.
+.PP
+Definition at line 263 of file afIdObject\&.cpp\&.
+.SS "void AFlib::id::Object::setDescription (const QString & description)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 102 of file afIdObject\&.cpp\&.
+.SS "void AFlib::id::Object::setName (const QString & name)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 97 of file afIdObject\&.cpp\&.
+.SS "bool AFlib::id::Object::setOwner (const \fBAccount_bit\fP & owner)\fC [final]\fP, \fC [virtual]\fP"
+\fBFunction\fP set owner, only work if history is empty (empty exists create and date time operate)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIowner\fP Owner id\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Return result of set new id, return false if history is not empty\&. 
+.RE
+.PP
+
+.PP
+Definition at line 139 of file afIdObject\&.cpp\&.
+.SS "void AFlib::id::Object::setParent (\fBObject_bit\fP obj_b)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 112 of file afIdObject\&.cpp\&.
+.SS "bool AFlib::id::Object::setUniqueId ()\fC [private]\fP"
+
+.PP
+Definition at line 268 of file afIdObject\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBAFlib::id::ObjectTemplate\fP\fC [friend]\fP"
+
+.PP
+Definition at line 77 of file afIdObject\&.h\&.
+.SS "QDataStream& \fBoperator\fP<< (QDataStream & stream, const \fBObject\fP & data)\fC [friend]\fP"
+
+.PP
+Definition at line 163 of file afIdObject\&.cpp\&.
+.SS "QDataStream& \fBoperator\fP>> (QDataStream & stream, \fBObject\fP & data)\fC [friend]\fP"
+
+.PP
+Definition at line 176 of file afIdObject\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

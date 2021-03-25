@@ -1,0 +1,57 @@
+.TH "lib_baseAF/account/afAccountStorage.cpp" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/account/afAccountStorage.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'afAccountStorage\&.h'\fP
+.br
+\fC#include <QtCore/QCoreApplication>\fP
+.br
+\fC#include <QtCore/QDataStream>\fP
+.br
+\fC#include <QtCore/QFile>\fP
+.br
+\fC#include <QtCore/QCryptographicHash>\fP
+.br
+\fC#include <QtCore/QDebug>\fP
+.br
+\fC#include <AFbase/AfDir>\fP
+.br
+\fC#include <AFbase/AfStorage>\fP
+.br
+\fC#include <AFbase/AfEnum>\fP
+.br
+
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBAFaccount::AccountPtr\fP \fBm_user\fP"
+.br
+.ti -1c
+.RI "\fBAFaccount::AccountPtr\fP \fBm_guest\fP"
+.br
+.ti -1c
+.RI "\fBAFaccount::StoragePtr\fP \fBm_accountStorage\fP"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "\fBAFaccount::StoragePtr\fP m_accountStorage"
+
+.PP
+Definition at line 14 of file afAccountStorage\&.cpp\&.
+.SS "\fBAFaccount::AccountPtr\fP m_guest"
+
+.PP
+Definition at line 13 of file afAccountStorage\&.cpp\&.
+.SS "\fBAFaccount::AccountPtr\fP m_user"
+
+.PP
+Definition at line 12 of file afAccountStorage\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

@@ -1,0 +1,177 @@
+.TH "AFaccount::Account" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFaccount::Account
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afAccount\&.h>\fP
+.PP
+Inherits \fBAFaccount::Info\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetLogin\fP (QString \fBlogin\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAccount\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBAccount\fP (\fBAFlib::IdObjectPtr\fP ptr, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBAccount\fP (const QByteArray &data, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "bool \fBcheck\fP (QString password) const"
+.br
+.ti -1c
+.RI "virtual QString \fBlogin\fP () const final"
+.br
+.ti -1c
+.RI "\fBoperator QJsonObject\fP () const"
+.br
+.ti -1c
+.RI "virtual QJsonObject \fBtoJson\fP () const override"
+.br
+.ti -1c
+.RI "QByteArray \fBtoByteArray\fP () const"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "\fBAFlib::id::AccList_b\fP \fBfriendList\fP () const"
+.br
+.ti -1c
+.RI "\fBAFlib::id::AccList_b\fP \fBgroupList\fP () const"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual QString \fBpasswordHash\fP () const final"
+.br
+.ti -1c
+.RI "void \fBaddAccount\fP (\fBAFlib::IdObjectPtr\fP account)"
+.br
+.ti -1c
+.RI "void \fBremoveAccount\fP (\fBAFlib::IdObjectPtr\fP account)"
+.br
+.ti -1c
+.RI "void \fBaddGroup\fP (\fBAFlib::IdObjectPtr\fP account)"
+.br
+.ti -1c
+.RI "void \fBremoveGroup\fP (\fBAFlib::IdObjectPtr\fP account)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBStorage\fP"
+.br
+.ti -1c
+.RI "class \fBAFlib::API\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 25 of file afAccount\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFaccount::Account::Account (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 21 of file afAccount\&.cpp\&.
+.SS "AFaccount::Account::Account (\fBAFlib::IdObjectPtr\fP ptr, QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 8 of file afAccount\&.cpp\&.
+.SS "AFaccount::Account::Account (const QByteArray & data, QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 14 of file afAccount\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void AFaccount::Account::addAccount (\fBAFlib::IdObjectPtr\fP account)\fC [private]\fP"
+
+.PP
+Definition at line 61 of file afAccount\&.cpp\&.
+.SS "void AFaccount::Account::addGroup (\fBAFlib::IdObjectPtr\fP account)\fC [private]\fP"
+
+.PP
+Definition at line 73 of file afAccount\&.cpp\&.
+.SS "bool AFaccount::Account::check (QString password) const"
+
+.PP
+Definition at line 45 of file afAccount\&.cpp\&.
+.SS "\fBAFlib::id::AccList_b\fP AFaccount::Account::friendList () const"
+
+.PP
+Definition at line 116 of file afAccount\&.cpp\&.
+.SS "\fBAFlib::id::AccList_b\fP AFaccount::Account::groupList () const"
+
+.PP
+Definition at line 124 of file afAccount\&.cpp\&.
+.SS "QString AFaccount::Account::login () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 85 of file afAccount\&.cpp\&.
+.SS "AFaccount::Account::operator QJsonObject () const"
+
+.PP
+Definition at line 132 of file afAccount\&.cpp\&.
+.SS "QString AFaccount::Account::passwordHash () const\fC [final]\fP, \fC [private]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 56 of file afAccount\&.cpp\&.
+.SS "void AFaccount::Account::removeAccount (\fBAFlib::IdObjectPtr\fP account)\fC [private]\fP"
+
+.PP
+Definition at line 67 of file afAccount\&.cpp\&.
+.SS "void AFaccount::Account::removeGroup (\fBAFlib::IdObjectPtr\fP account)\fC [private]\fP"
+
+.PP
+Definition at line 79 of file afAccount\&.cpp\&.
+.SS "void AFaccount::Account::reset ()"
+
+.PP
+Definition at line 111 of file afAccount\&.cpp\&.
+.SS "void AFaccount::Account::setLogin (QString login)\fC [slot]\fP"
+
+.PP
+Definition at line 137 of file afAccount\&.cpp\&.
+.SS "QByteArray AFaccount::Account::toByteArray () const"
+
+.PP
+Definition at line 103 of file afAccount\&.cpp\&.
+.SS "QJsonObject AFaccount::Account::toJson () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBAFaccount::Info\fP\&.
+.PP
+Definition at line 90 of file afAccount\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBAFlib::API\fP\fC [friend]\fP"
+
+.PP
+Definition at line 63 of file afAccount\&.h\&.
+.SS "friend class \fBStorage\fP\fC [friend]\fP"
+
+.PP
+Definition at line 62 of file afAccount\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

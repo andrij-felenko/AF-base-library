@@ -1,0 +1,224 @@
+.TH "AFlib::id::Object_bit" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFlib::id::Object_bit \- The \fBFunction\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afIdObjectBit\&.h>\fP
+.PP
+Inherits \fBAFlib::id::TbitStruct< 32 >\fP\&.
+.PP
+Inherited by \fBAFlib::id::Object\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObject_bit\fP (quint32 \fBid\fP=0)"
+.br
+.ti -1c
+.RI "\fBObject_bit\fP (quint8 \fBplugin\fP, quint8 \fBtype\fP)"
+.br
+.ti -1c
+.RI "\fBAFlib::id::Object_bit\fP \fBobject_b\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisIdLocal\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEmpty\fP () const"
+.br
+.ti -1c
+.RI "quint8 \fBtype\fP () const"
+.br
+.ti -1c
+.RI "quint32 \fBid\fP () const"
+.br
+.ti -1c
+.RI "quint32 \fBuniqueId\fP () const"
+.br
+.ti -1c
+.RI "quint8 \fBpluginId\fP () const"
+.br
+.ti -1c
+.RI "template<typename N > N \fBtype\fP () const"
+.br
+.ti -1c
+.RI "template<typename N > N \fBplugin\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static quint32 \fBcreateLocalId\fP ()"
+.br
+.ti -1c
+.RI "static quint32 \fBcreateGlobalId\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObject_bit\fP (quint8 \fBplugin\fP, quint8 \fBtype\fP, quint32 uid)"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (quint8 \fBtype\fP)"
+.br
+.ti -1c
+.RI "void \fBsetId\fP (quint32 \fBid\fP)"
+.br
+.ti -1c
+.RI "void \fBsetUniqueId\fP (quint32 \fBid\fP)"
+.br
+.ti -1c
+.RI "void \fBsetPluginId\fP (quint8 \fBid\fP)"
+.br
+.ti -1c
+.RI "void \fBsetId\fP (\fBObject_bit\fP \fBid\fP)"
+.br
+.ti -1c
+.RI "template<typename N > void \fBsetType\fP (N \fBtype\fP)"
+.br
+.ti -1c
+.RI "template<typename N > void \fBsetPlugin\fP (N \fBid\fP)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAFlib::id::Object\fP"
+.br
+.ti -1c
+.RI "class \fBAFlib::Storage\fP"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBObject_bit\fP &obj)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBObject_bit\fP &obj)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBFunction\fP class\&. 
+
+Bit table, total size \fB28\fP OBJECT BIT ID TABLE Size Description  24 16 8 0 * ######## ######## ####oooo oooooooo 20 object unique id by current types  * oooooooo oooooooo oooo#### ###ooooo 7 type of object  * oooooooo oooooooo oooooooo ooo##### 5 plugin id, 0 - mean global variable  
+.PP
+Definition at line 58 of file afIdObjectBit\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFlib::id::Object_bit::Object_bit (quint32 id = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 4 of file afIdObjectBit\&.cpp\&.
+.SS "AFlib::id::Object_bit::Object_bit (quint8 plugin, quint8 type)"
+
+.PP
+Definition at line 9 of file afIdObjectBit\&.cpp\&.
+.SS "AFlib::id::Object_bit::Object_bit (quint8 plugin, quint8 type, quint32 uid)\fC [private]\fP"
+
+.PP
+Definition at line 41 of file afIdObjectBit\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "quint32 AFlib::id::Object_bit::createGlobalId ()\fC [static]\fP"
+
+.PP
+Definition at line 36 of file afIdObjectBit\&.cpp\&.
+.SS "quint32 AFlib::id::Object_bit::createLocalId ()\fC [static]\fP"
+
+.PP
+Definition at line 30 of file afIdObjectBit\&.cpp\&.
+.SS "quint32 AFlib::id::Object_bit::id () const\fC [inline]\fP"
+
+.PP
+Definition at line 71 of file afIdObjectBit\&.h\&.
+.SS "bool AFlib::id::Object_bit::isEmpty () const"
+
+.PP
+Definition at line 25 of file afIdObjectBit\&.cpp\&.
+.SS "bool AFlib::id::Object_bit::isIdLocal () const"
+
+.PP
+Definition at line 20 of file afIdObjectBit\&.cpp\&.
+.SS "\fBAFlib::id::Object_bit\fP AFlib::id::Object_bit::object_b () const"
+
+.PP
+Definition at line 15 of file afIdObjectBit\&.cpp\&.
+.SS "template<typename N > N AFlib::id::Object_bit::plugin () const\fC [inline]\fP"
+
+.PP
+Definition at line 76 of file afIdObjectBit\&.h\&.
+.SS "quint8 AFlib::id::Object_bit::pluginId () const\fC [inline]\fP"
+
+.PP
+Definition at line 73 of file afIdObjectBit\&.h\&.
+.SS "void AFlib::id::Object_bit::setId (\fBObject_bit\fP id)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 86 of file afIdObjectBit\&.h\&.
+.SS "void AFlib::id::Object_bit::setId (quint32 id)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 82 of file afIdObjectBit\&.h\&.
+.SS "template<typename N > void AFlib::id::Object_bit::setPlugin (N id)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 89 of file afIdObjectBit\&.h\&.
+.SS "void AFlib::id::Object_bit::setPluginId (quint8 id)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 84 of file afIdObjectBit\&.h\&.
+.SS "template<typename N > void AFlib::id::Object_bit::setType (N type)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 88 of file afIdObjectBit\&.h\&.
+.SS "void AFlib::id::Object_bit::setType (quint8 type)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 81 of file afIdObjectBit\&.h\&.
+.SS "void AFlib::id::Object_bit::setUniqueId (quint32 id)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 83 of file afIdObjectBit\&.h\&.
+.SS "quint8 AFlib::id::Object_bit::type () const\fC [inline]\fP"
+
+.PP
+Definition at line 70 of file afIdObjectBit\&.h\&.
+.SS "template<typename N > N AFlib::id::Object_bit::type () const\fC [inline]\fP"
+
+.PP
+Definition at line 75 of file afIdObjectBit\&.h\&.
+.SS "quint32 AFlib::id::Object_bit::uniqueId () const\fC [inline]\fP"
+
+.PP
+Definition at line 72 of file afIdObjectBit\&.h\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBAFlib::id::Object\fP\fC [friend]\fP"
+
+.PP
+Definition at line 91 of file afIdObjectBit\&.h\&.
+.SS "friend class \fBAFlib::Storage\fP\fC [friend]\fP"
+
+.PP
+Definition at line 92 of file afIdObjectBit\&.h\&.
+.SS "QDataStream& \fBoperator\fP<< (QDataStream & s, const \fBObject_bit\fP & obj)\fC [friend]\fP"
+
+.PP
+Definition at line 94 of file afIdObjectBit\&.h\&.
+.SS "QDataStream& \fBoperator\fP>> (QDataStream & s, \fBObject_bit\fP & obj)\fC [friend]\fP"
+
+.PP
+Definition at line 97 of file afIdObjectBit\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

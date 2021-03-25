@@ -1,0 +1,117 @@
+.TH "AFaccount::Info" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AFaccount::Info
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <afAccountInfo\&.h>\fP
+.PP
+Inherits \fBAFlib::id::ObjectTemplate\fP\&.
+.PP
+Inherited by \fBAFaccount::Account\fP, and \fBAFaccount::Group\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetIcon\fP (const QByteArray &\fBicon\fP) final"
+.br
+.ti -1c
+.RI "virtual void \fBsetMail\fP (const QString &\fBmail\fP) final"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBiconChanged\fP (QString \fBicon\fP)"
+.br
+.ti -1c
+.RI "void \fBmailChanged\fP (QString \fBmail\fP)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInfo\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "\fBInfo\fP (\fBAFlib::IdObjectPtr\fP ptr, QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "virtual QByteArray \fBicon\fP () const final"
+.br
+.ti -1c
+.RI "virtual QString \fBmail\fP () const final"
+.br
+.ti -1c
+.RI "\fBoperator QJsonObject\fP () const"
+.br
+.ti -1c
+.RI "virtual QJsonObject \fBtoJson\fP () const"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "QString \fBmail\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file afAccountInfo\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AFaccount::Info::Info (QObject * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 6 of file afAccountInfo\&.cpp\&.
+.SS "AFaccount::Info::Info (\fBAFlib::IdObjectPtr\fP ptr, QObject * parent = \fCnullptr\fP)"
+
+.PP
+Definition at line 17 of file afAccountInfo\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QByteArray AFaccount::Info::icon () const\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 40 of file afAccountInfo\&.cpp\&.
+.SS "void AFaccount::Info::iconChanged (QString icon)\fC [signal]\fP"
+
+.SS "virtual QString AFaccount::Info::mail () const\fC [final]\fP, \fC [virtual]\fP"
+
+.SS "void AFaccount::Info::mailChanged (QString mail)\fC [signal]\fP"
+
+.SS "AFaccount::Info::operator QJsonObject () const"
+
+.PP
+Definition at line 63 of file afAccountInfo\&.cpp\&.
+.SS "void AFaccount::Info::setIcon (const QByteArray & icon)\fC [final]\fP, \fC [virtual]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 68 of file afAccountInfo\&.cpp\&.
+.SS "void AFaccount::Info::setMail (const QString & mail)\fC [final]\fP, \fC [virtual]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 73 of file afAccountInfo\&.cpp\&.
+.SS "QJsonObject AFaccount::Info::toJson () const\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBAFaccount::Account\fP\&.
+.PP
+Definition at line 50 of file afAccountInfo\&.cpp\&.
+.SH "Property Documentation"
+.PP 
+.SS "QString AFaccount::Info::mail\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 22 of file afAccountInfo\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

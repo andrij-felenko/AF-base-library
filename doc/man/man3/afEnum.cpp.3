@@ -1,0 +1,48 @@
+.TH "lib_baseAF/base/afEnum.cpp" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/base/afEnum.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'afEnum\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBAFlib::AccountIdType\fP f, \fBAFlib::AccountIdType\fP s)"
+.br
+.ti -1c
+.RI "QDebug \fBoperator<<\fP (QDebug d, \fBAFlib::FileType\fP type)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBAFlib::FileType\fP &type)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBAFlib::FileType\fP &type)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream & s, const \fBAFlib::FileType\fP & type)"
+
+.PP
+Definition at line 73 of file afEnum\&.cpp\&.
+.SS "QDebug operator<< (QDebug d, \fBAFlib::FileType\fP type)"
+
+.PP
+Definition at line 51 of file afEnum\&.cpp\&.
+.SS "bool operator== (\fBAFlib::AccountIdType\fP f, \fBAFlib::AccountIdType\fP s)"
+
+.PP
+Definition at line 13 of file afEnum\&.cpp\&.
+.SS "QDataStream& operator>> (QDataStream & s, \fBAFlib::FileType\fP & type)"
+
+.PP
+Definition at line 78 of file afEnum\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

@@ -1,0 +1,72 @@
+.TH "lib_baseAF/base/afIdObject.cpp" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/base/afIdObject.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'afIdObject\&.h'\fP
+.br
+\fC#include 'afFile\&.h'\fP
+.br
+\fC#include 'AfStorage'\fP
+.br
+\fC#include <QtCore/QDebug>\fP
+.br
+\fC#include 'afFunction\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBAFlib\fP"
+.br
+.ti -1c
+.RI " \fBAFlib::id\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBAFlib::id::operator<<\fP (QDataStream &stream, const \fBAFlib::id::Object\fP &data)"
+.br
+.ti -1c
+.RI "QDataStream & \fBAFlib::id::operator>>\fP (QDataStream &stream, \fBAFlib::id::Object\fP &data)"
+.br
+.ti -1c
+.RI "QDebug \fBoperator<<\fP (QDebug d, const \fBAFlib::id::Object\fP &object)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBAFlib::id::ObjectPtr\fP ptr, const \fBAFlib::id::Object\fP &object)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBAFlib::id::ObjectPtr\fP l, const \fBAFlib::id::ObjectPtr\fP r)"
+.br
+.ti -1c
+.RI "\fBAFlib::id::ObjectPtrV\fP & \fBoperator+=\fP (\fBAFlib::id::ObjectPtrV\fP &l, const \fBAFlib::id::ObjectPtrV\fP &r)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBAFlib::id::ObjectPtrV\fP& operator+= (\fBAFlib::id::ObjectPtrV\fP & l, const \fBAFlib::id::ObjectPtrV\fP & r)"
+
+.PP
+Definition at line 307 of file afIdObject\&.cpp\&.
+.SS "QDebug operator<< (QDebug d, const \fBAFlib::id::Object\fP & object)"
+
+.PP
+Definition at line 283 of file afIdObject\&.cpp\&.
+.SS "bool operator== (const \fBAFlib::id::ObjectPtr\fP l, const \fBAFlib::id::ObjectPtr\fP r)"
+
+.PP
+Definition at line 302 of file afIdObject\&.cpp\&.
+.SS "bool operator== (const \fBAFlib::id::ObjectPtr\fP ptr, const \fBAFlib::id::Object\fP & object)"
+
+.PP
+Definition at line 295 of file afIdObject\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.

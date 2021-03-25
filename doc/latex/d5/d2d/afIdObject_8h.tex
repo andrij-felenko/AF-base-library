@@ -1,0 +1,77 @@
+\hypertarget{afIdObject_8h}{}\doxysection{lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/af\+Id\+Object.h File Reference}
+\label{afIdObject_8h}\index{lib\_baseAF/include/lib\_baseAF/afIdObject.h@{lib\_baseAF/include/lib\_baseAF/afIdObject.h}}
+{\ttfamily \#include \char`\"{}af\+Id\+History.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}af\+Id\+Object\+Bit.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAFlib_1_1id_1_1Object}{A\+Flib\+::id\+::\+Object}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceAFlib}{A\+Flib}}
+\item 
+ \mbox{\hyperlink{namespaceAFlib_1_1id}{A\+Flib\+::id}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Q\+Shared\+Pointer$<$ Object $>$ \mbox{\hyperlink{namespaceAFlib_1_1id_ae2bedad529d8fd0c017551abe92ff24d}{A\+Flib\+::id\+::\+Object\+Ptr}}
+\item 
+typedef std\+::vector$<$ Object\+Ptr $>$ \mbox{\hyperlink{namespaceAFlib_1_1id_a7f58e60cb646cc1f7e889ba627578833}{A\+Flib\+::id\+::\+Object\+PtrV}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Debug \mbox{\hyperlink{afIdObject_8h_a37632a6b8bcc40df53666b6014a20ac9}{operator$<$$<$}} (Q\+Debug d, const \mbox{\hyperlink{classAFlib_1_1id_1_1Object}{A\+Flib\+::id\+::\+Object}} \&object)
+\item 
+bool \mbox{\hyperlink{afIdObject_8h_af89f475f6319400346f33a93fecd48a5}{operator==}} (const \mbox{\hyperlink{namespaceAFlib_1_1id_ae2bedad529d8fd0c017551abe92ff24d}{A\+Flib\+::id\+::\+Object\+Ptr}} ptr, const \mbox{\hyperlink{classAFlib_1_1id_1_1Object}{A\+Flib\+::id\+::\+Object}} \&object)
+\item 
+bool \mbox{\hyperlink{afIdObject_8h_a7afe8b7ad22363ba524ff17a28f79fbd}{operator==}} (const \mbox{\hyperlink{namespaceAFlib_1_1id_ae2bedad529d8fd0c017551abe92ff24d}{A\+Flib\+::id\+::\+Object\+Ptr}} l, const \mbox{\hyperlink{namespaceAFlib_1_1id_ae2bedad529d8fd0c017551abe92ff24d}{A\+Flib\+::id\+::\+Object\+Ptr}} r)
+\item 
+\mbox{\hyperlink{namespaceAFlib_1_1id_a7f58e60cb646cc1f7e889ba627578833}{A\+Flib\+::id\+::\+Object\+PtrV}} \& \mbox{\hyperlink{afIdObject_8h_a71d7185edbe315c66b74f9d3e1f17311}{operator+=}} (\mbox{\hyperlink{namespaceAFlib_1_1id_a7f58e60cb646cc1f7e889ba627578833}{A\+Flib\+::id\+::\+Object\+PtrV}} \&l, const \mbox{\hyperlink{namespaceAFlib_1_1id_a7f58e60cb646cc1f7e889ba627578833}{A\+Flib\+::id\+::\+Object\+PtrV}} \&r)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{afIdObject_8h_a71d7185edbe315c66b74f9d3e1f17311}\label{afIdObject_8h_a71d7185edbe315c66b74f9d3e1f17311}} 
+\index{afIdObject.h@{afIdObject.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!afIdObject.h@{afIdObject.h}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceAFlib_1_1id_a7f58e60cb646cc1f7e889ba627578833}{A\+Flib\+::id\+::\+Object\+PtrV}}\& operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceAFlib_1_1id_a7f58e60cb646cc1f7e889ba627578833}{A\+Flib\+::id\+::\+Object\+PtrV}} \&}]{l,  }\item[{const \mbox{\hyperlink{namespaceAFlib_1_1id_a7f58e60cb646cc1f7e889ba627578833}{A\+Flib\+::id\+::\+Object\+PtrV}} \&}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line 307 of file af\+Id\+Object.\+cpp.
+
+\mbox{\Hypertarget{afIdObject_8h_a37632a6b8bcc40df53666b6014a20ac9}\label{afIdObject_8h_a37632a6b8bcc40df53666b6014a20ac9}} 
+\index{afIdObject.h@{afIdObject.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!afIdObject.h@{afIdObject.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily Q\+Debug operator$<$$<$ (\begin{DoxyParamCaption}\item[{Q\+Debug}]{d,  }\item[{const \mbox{\hyperlink{classAFlib_1_1id_1_1Object}{A\+Flib\+::id\+::\+Object}} \&}]{object }\end{DoxyParamCaption})}
+
+
+
+Definition at line 283 of file af\+Id\+Object.\+cpp.
+
+\mbox{\Hypertarget{afIdObject_8h_a7afe8b7ad22363ba524ff17a28f79fbd}\label{afIdObject_8h_a7afe8b7ad22363ba524ff17a28f79fbd}} 
+\index{afIdObject.h@{afIdObject.h}!operator==@{operator==}}
+\index{operator==@{operator==}!afIdObject.h@{afIdObject.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_1_1id_ae2bedad529d8fd0c017551abe92ff24d}{A\+Flib\+::id\+::\+Object\+Ptr}}}]{l,  }\item[{const \mbox{\hyperlink{namespaceAFlib_1_1id_ae2bedad529d8fd0c017551abe92ff24d}{A\+Flib\+::id\+::\+Object\+Ptr}}}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line 302 of file af\+Id\+Object.\+cpp.
+
+\mbox{\Hypertarget{afIdObject_8h_af89f475f6319400346f33a93fecd48a5}\label{afIdObject_8h_af89f475f6319400346f33a93fecd48a5}} 
+\index{afIdObject.h@{afIdObject.h}!operator==@{operator==}}
+\index{operator==@{operator==}!afIdObject.h@{afIdObject.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceAFlib_1_1id_ae2bedad529d8fd0c017551abe92ff24d}{A\+Flib\+::id\+::\+Object\+Ptr}}}]{ptr,  }\item[{const \mbox{\hyperlink{classAFlib_1_1id_1_1Object}{A\+Flib\+::id\+::\+Object}} \&}]{object }\end{DoxyParamCaption})}
+
+
+
+Definition at line 295 of file af\+Id\+Object.\+cpp.
+

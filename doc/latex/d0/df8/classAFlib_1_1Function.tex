@@ -1,0 +1,241 @@
+\hypertarget{classAFlib_1_1Function}{}\doxysection{A\+Flib\+::Function Class Reference}
+\label{classAFlib_1_1Function}\index{AFlib::Function@{AFlib::Function}}
+
+
+{\ttfamily \#include $<$af\+Function.\+h$>$}
+
+Inheritance diagram for A\+Flib\+::Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d0/df8/classAFlib_1_1Function}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAFlib_1_1Function_a9a53d1023cfb5cd5f832800b0701a98b}{Function}} (Q\+Object $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+String \mbox{\hyperlink{classAFlib_1_1Function_a20d20aa7098030c9b453d84f725d0b8c}{library\+Name}} (Q\+String library\+Name)
+\item 
+static Q\+Pair$<$ bool, Q\+String $>$ \mbox{\hyperlink{classAFlib_1_1Function_a52d08d485302408e510089ed2285522a}{file\+Path}} (Q\+String name, Q\+Dir dir=Q\+Dir\+::current())
+\item 
+static Q\+Pair$<$ bool, Q\+String $>$ \mbox{\hyperlink{classAFlib_1_1Function_acb5c0055dc88dd17631b762d2d658562}{library\+Path}} (Q\+String name, Q\+Dir dir=Q\+Dir\+::current())
+\item 
+static Q\+Shared\+Pointer$<$ Q\+Library $>$ \mbox{\hyperlink{classAFlib_1_1Function_a39bcef740b24d2686201f6e0907be30a}{library}} (Q\+String name, Q\+Dir dir=Q\+Dir\+::current(), Q\+Object $\ast$parent=nullptr)
+\item 
+static Q\+Shared\+Pointer$<$ Q\+Plugin\+Loader $>$ \mbox{\hyperlink{classAFlib_1_1Function_a0e151876e476e255e09746e01408406f}{plugin\+Loader}} (Q\+String name, Q\+Dir dir=Q\+Dir\+::current(), Q\+Object $\ast$parent=nullptr)
+\item 
+static Q\+String \mbox{\hyperlink{classAFlib_1_1Function_a005d36229656e960802f250ad2b77df4}{string\+To\+Digit}} (Q\+String text)
+\item 
+static std\+::string \mbox{\hyperlink{classAFlib_1_1Function_a439d21440affb87f8750875c882edd62}{to\+String}} (uint number, uchar numeral\+\_\+system=1, char size=-\/1, uchar separate=4, bool show\+NS=true)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAFlib_1_1Function_a439d21440affb87f8750875c882edd62}{Function\+::to\+String}}. \end{DoxyCompactList}\item 
+static Q\+String \mbox{\hyperlink{classAFlib_1_1Function_a707d16cb450061ac3a8725c46b9efe59}{digit\+To\+String}} (double number, int symbol\+After\+Point=3)
+\item 
+static int \mbox{\hyperlink{classAFlib_1_1Function_ad0d590592a383b4c289bd440def89f35}{random\+Int}} (int from, int to)
+\item 
+static Q\+Date\+Time \mbox{\hyperlink{classAFlib_1_1Function_a3da2449d5c587f19d7bf6ce0b7b17763}{null\+Date\+Time}} ()
+\item 
+{\footnotesize template$<$typename Return\+\_\+arg , unsigned size$>$ }\\static std\+::pair$<$ unsigned, Return\+\_\+arg $>$ \mbox{\hyperlink{classAFlib_1_1Function_a0b67f2ac3aee753f685e990b826e641c}{find\+Max\+Element}} (std\+::array$<$ Return\+\_\+arg, size $>$ array)
+\item 
+{\footnotesize template$<$typename Return\+\_\+arg , unsigned size$>$ }\\static std\+::pair$<$ unsigned, Return\+\_\+arg $>$ \mbox{\hyperlink{classAFlib_1_1Function_aa8f2937cb12dbbf03a571cfdc2a0fc0c}{find\+Min\+Element}} (std\+::array$<$ Return\+\_\+arg, size $>$ array)
+\item 
+{\footnotesize template$<$typename Return\+\_\+arg , unsigned size$>$ }\\static std\+::list$<$ unsigned $>$ \mbox{\hyperlink{classAFlib_1_1Function_a4b5b49da76c2dbc8ddf315dfc71996c8}{find\+Max\+Index\+List}} (std\+::array$<$ Return\+\_\+arg, size $>$ array)
+\item 
+{\footnotesize template$<$typename Return\+\_\+arg , unsigned size$>$ }\\static std\+::list$<$ unsigned $>$ \mbox{\hyperlink{classAFlib_1_1Function_a86194abdb2d2fff0d15ad086aa56fd64}{find\+Min\+Index\+List}} (std\+::array$<$ Return\+\_\+arg, size $>$ array)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 13 of file af\+Function.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAFlib_1_1Function_a9a53d1023cfb5cd5f832800b0701a98b}\label{classAFlib_1_1Function_a9a53d1023cfb5cd5f832800b0701a98b}} 
+\index{AFlib::Function@{AFlib::Function}!Function@{Function}}
+\index{Function@{Function}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{Function()}{Function()}}
+{\footnotesize\ttfamily Function\+::\+Function (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 9 of file af\+Function.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAFlib_1_1Function_a707d16cb450061ac3a8725c46b9efe59}\label{classAFlib_1_1Function_a707d16cb450061ac3a8725c46b9efe59}} 
+\index{AFlib::Function@{AFlib::Function}!digitToString@{digitToString}}
+\index{digitToString@{digitToString}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{digitToString()}{digitToString()}}
+{\footnotesize\ttfamily Q\+String Function\+::digit\+To\+String (\begin{DoxyParamCaption}\item[{double}]{number,  }\item[{int}]{symbol\+After\+Point = {\ttfamily 3} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 102 of file af\+Function.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_a52d08d485302408e510089ed2285522a}\label{classAFlib_1_1Function_a52d08d485302408e510089ed2285522a}} 
+\index{AFlib::Function@{AFlib::Function}!filePath@{filePath}}
+\index{filePath@{filePath}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{filePath()}{filePath()}}
+{\footnotesize\ttfamily Q\+Pair$<$ bool, Q\+String $>$ Function\+::file\+Path (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+Dir}]{dir = {\ttfamily QDir\+:\+:current()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 157 of file af\+Function.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_a0b67f2ac3aee753f685e990b826e641c}\label{classAFlib_1_1Function_a0b67f2ac3aee753f685e990b826e641c}} 
+\index{AFlib::Function@{AFlib::Function}!findMaxElement@{findMaxElement}}
+\index{findMaxElement@{findMaxElement}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{findMaxElement()}{findMaxElement()}}
+{\footnotesize\ttfamily template$<$typename Return\+\_\+arg , unsigned size$>$ \\
+static std\+::pair$<$unsigned, Return\+\_\+arg$>$ A\+Flib\+::\+Function\+::find\+Max\+Element (\begin{DoxyParamCaption}\item[{std\+::array$<$ Return\+\_\+arg, size $>$}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 37 of file af\+Function.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_a4b5b49da76c2dbc8ddf315dfc71996c8}\label{classAFlib_1_1Function_a4b5b49da76c2dbc8ddf315dfc71996c8}} 
+\index{AFlib::Function@{AFlib::Function}!findMaxIndexList@{findMaxIndexList}}
+\index{findMaxIndexList@{findMaxIndexList}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{findMaxIndexList()}{findMaxIndexList()}}
+{\footnotesize\ttfamily template$<$typename Return\+\_\+arg , unsigned size$>$ \\
+static std\+::list$<$unsigned$>$ A\+Flib\+::\+Function\+::find\+Max\+Index\+List (\begin{DoxyParamCaption}\item[{std\+::array$<$ Return\+\_\+arg, size $>$}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 63 of file af\+Function.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_aa8f2937cb12dbbf03a571cfdc2a0fc0c}\label{classAFlib_1_1Function_aa8f2937cb12dbbf03a571cfdc2a0fc0c}} 
+\index{AFlib::Function@{AFlib::Function}!findMinElement@{findMinElement}}
+\index{findMinElement@{findMinElement}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{findMinElement()}{findMinElement()}}
+{\footnotesize\ttfamily template$<$typename Return\+\_\+arg , unsigned size$>$ \\
+static std\+::pair$<$unsigned, Return\+\_\+arg$>$ A\+Flib\+::\+Function\+::find\+Min\+Element (\begin{DoxyParamCaption}\item[{std\+::array$<$ Return\+\_\+arg, size $>$}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 50 of file af\+Function.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_a86194abdb2d2fff0d15ad086aa56fd64}\label{classAFlib_1_1Function_a86194abdb2d2fff0d15ad086aa56fd64}} 
+\index{AFlib::Function@{AFlib::Function}!findMinIndexList@{findMinIndexList}}
+\index{findMinIndexList@{findMinIndexList}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{findMinIndexList()}{findMinIndexList()}}
+{\footnotesize\ttfamily template$<$typename Return\+\_\+arg , unsigned size$>$ \\
+static std\+::list$<$unsigned$>$ A\+Flib\+::\+Function\+::find\+Min\+Index\+List (\begin{DoxyParamCaption}\item[{std\+::array$<$ Return\+\_\+arg, size $>$}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 77 of file af\+Function.\+h.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_a39bcef740b24d2686201f6e0907be30a}\label{classAFlib_1_1Function_a39bcef740b24d2686201f6e0907be30a}} 
+\index{AFlib::Function@{AFlib::Function}!library@{library}}
+\index{library@{library}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{library()}{library()}}
+{\footnotesize\ttfamily Q\+Shared\+Pointer$<$ Q\+Library $>$ Function\+::library (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+Dir}]{dir = {\ttfamily QDir\+:\+:current()},  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 14 of file af\+Function.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_a20d20aa7098030c9b453d84f725d0b8c}\label{classAFlib_1_1Function_a20d20aa7098030c9b453d84f725d0b8c}} 
+\index{AFlib::Function@{AFlib::Function}!libraryName@{libraryName}}
+\index{libraryName@{libraryName}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{libraryName()}{libraryName()}}
+{\footnotesize\ttfamily Q\+String Function\+::library\+Name (\begin{DoxyParamCaption}\item[{Q\+String}]{library\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 147 of file af\+Function.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_acb5c0055dc88dd17631b762d2d658562}\label{classAFlib_1_1Function_acb5c0055dc88dd17631b762d2d658562}} 
+\index{AFlib::Function@{AFlib::Function}!libraryPath@{libraryPath}}
+\index{libraryPath@{libraryPath}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{libraryPath()}{libraryPath()}}
+{\footnotesize\ttfamily Q\+Pair$<$ bool, Q\+String $>$ Function\+::library\+Path (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+Dir}]{dir = {\ttfamily QDir\+:\+:current()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 168 of file af\+Function.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_a3da2449d5c587f19d7bf6ce0b7b17763}\label{classAFlib_1_1Function_a3da2449d5c587f19d7bf6ce0b7b17763}} 
+\index{AFlib::Function@{AFlib::Function}!nullDateTime@{nullDateTime}}
+\index{nullDateTime@{nullDateTime}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{nullDateTime()}{nullDateTime()}}
+{\footnotesize\ttfamily Q\+Date\+Time Function\+::null\+Date\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 138 of file af\+Function.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_a0e151876e476e255e09746e01408406f}\label{classAFlib_1_1Function_a0e151876e476e255e09746e01408406f}} 
+\index{AFlib::Function@{AFlib::Function}!pluginLoader@{pluginLoader}}
+\index{pluginLoader@{pluginLoader}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{pluginLoader()}{pluginLoader()}}
+{\footnotesize\ttfamily Q\+Shared\+Pointer$<$ Q\+Plugin\+Loader $>$ Function\+::plugin\+Loader (\begin{DoxyParamCaption}\item[{Q\+String}]{name,  }\item[{Q\+Dir}]{dir = {\ttfamily QDir\+:\+:current()},  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 24 of file af\+Function.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_ad0d590592a383b4c289bd440def89f35}\label{classAFlib_1_1Function_ad0d590592a383b4c289bd440def89f35}} 
+\index{AFlib::Function@{AFlib::Function}!randomInt@{randomInt}}
+\index{randomInt@{randomInt}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{randomInt()}{randomInt()}}
+{\footnotesize\ttfamily int Function\+::random\+Int (\begin{DoxyParamCaption}\item[{int}]{from,  }\item[{int}]{to }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 130 of file af\+Function.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_a005d36229656e960802f250ad2b77df4}\label{classAFlib_1_1Function_a005d36229656e960802f250ad2b77df4}} 
+\index{AFlib::Function@{AFlib::Function}!stringToDigit@{stringToDigit}}
+\index{stringToDigit@{stringToDigit}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{stringToDigit()}{stringToDigit()}}
+{\footnotesize\ttfamily Q\+String Function\+::string\+To\+Digit (\begin{DoxyParamCaption}\item[{Q\+String}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 34 of file af\+Function.\+cpp.
+
+\mbox{\Hypertarget{classAFlib_1_1Function_a439d21440affb87f8750875c882edd62}\label{classAFlib_1_1Function_a439d21440affb87f8750875c882edd62}} 
+\index{AFlib::Function@{AFlib::Function}!toString@{toString}}
+\index{toString@{toString}!AFlib::Function@{AFlib::Function}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Function\+::to\+String (\begin{DoxyParamCaption}\item[{uint}]{number,  }\item[{uchar}]{numeral\+\_\+system = {\ttfamily 1},  }\item[{char}]{size = {\ttfamily -\/1},  }\item[{uchar}]{separate = {\ttfamily 4},  }\item[{bool}]{show\+NS = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{classAFlib_1_1Function_a439d21440affb87f8750875c882edd62}{Function\+::to\+String}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & -\/ само число \\
+\hline
+{\em numeral\+\_\+system} & -\/ система чисел в яку перетворюємо \\
+\hline
+{\em size} & -\/ розмір майбутнього рядка, за замовчуванням -\/1 \\
+\hline
+{\em separate} & -\/ роздільник числа, за замовчуванням 4 \\
+\hline
+{\em show\+NS} & -\/ флаг чи треба показувати спереду систему чисел \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+повертаемо рядок виду \mbox{[} 2\mbox{]} 1110 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file af\+Function.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+base\+A\+F/include/lib\+\_\+base\+A\+F/\mbox{\hyperlink{afFunction_8h}{af\+Function.\+h}}\item 
+lib\+\_\+base\+A\+F/base/\mbox{\hyperlink{afFunction_8cpp}{af\+Function.\+cpp}}\end{DoxyCompactItemize}

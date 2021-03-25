@@ -1,0 +1,69 @@
+.TH "lib_baseAF/include/lib_baseAF/afFile.h" 3 "Thu Mar 25 2021" "AF library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib_baseAF/include/lib_baseAF/afFile.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'lib_baseAF/afEnum\&.h'\fP
+.br
+\fC#include <QtCore/QDir>\fP
+.br
+\fC#include <QtCore/QDebug>\fP
+.br
+\fC#include <QtCore/QFile>\fP
+.br
+\fC#include <QtCore/QDataStream>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAFlib::File\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBAFlib\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBAFlib::File\fP \fBAFfile\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > \fBAFlib::File\fP & \fBoperator<<\fP (\fBAFlib::File\fP &file, const T &data)"
+.br
+.ti -1c
+.RI "template<class T > \fBAFlib::File\fP & \fBoperator>>\fP (\fBAFlib::File\fP &file, T &data)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBAFlib::File\fP \fBAFfile\fP"
+
+.PP
+Definition at line 15 of file afFile\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "template<class T > \fBAFlib::File\fP& operator<< (\fBAFlib::File\fP & file, const T & data)"
+
+.PP
+Definition at line 56 of file afFile\&.h\&.
+.SS "template<class T > \fBAFlib::File\fP& operator>> (\fBAFlib::File\fP & file, T & data)"
+
+.PP
+Definition at line 67 of file afFile\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AF library from the source code\&.
