@@ -2,7 +2,7 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "AF library"
+PROJECT_NAME           = "AF base library"
 OUTPUT_DIRECTORY       = doc
 CREATE_SUBDIRS         = YES
 ALLOW_UNICODE_NAMES    = YES
@@ -82,6 +82,8 @@ FILE_PATTERNS          = *.c \
 # Configuration options related to the man page output
 #---------------------------------------------------------------------------
 GENERATE_MAN           = YES
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
 
 #---------------------------------------------------------------------------
 # Configuration options related to the preprocessor
