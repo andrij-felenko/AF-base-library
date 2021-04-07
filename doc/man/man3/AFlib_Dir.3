@@ -1,4 +1,4 @@
-.TH "AFlib::Dir" 3 "Fri Mar 26 2021" "AF library" \" -*- nroff -*-
+.TH "AFlib::Dir" 3 "Wed Apr 7 2021" "AF library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -45,13 +45,13 @@ Inherits QObject\&.
 .RI "virtual QDir \fBcookies\fP () const final"
 .br
 .ti -1c
-.RI "virtual QDir \fBstorage\fP () const final"
-.br
-.ti -1c
 .RI "virtual QDir \fBlibraries\fP () const final"
 .br
 .ti -1c
 .RI "virtual QDir \fBplugins\fP () const final"
+.br
+.ti -1c
+.RI "virtual QDir \fBstorage\fP () const final"
 .br
 .ti -1c
 .RI "virtual QDir \fBtranslates\fP () const final"
@@ -232,7 +232,7 @@ Definition at line 135 of file afDir\&.cpp\&.
 .SS "virtual QDir AFlib::Dir::libraries () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
 
 .PP
-Definition at line 49 of file afDir\&.h\&.
+Definition at line 48 of file afDir\&.h\&.
 .SS "QDir Dir::pluginData (QString plugin) const\fC [virtual]\fP"
 
 .PP
@@ -240,7 +240,7 @@ Definition at line 230 of file afDir\&.cpp\&.
 .SS "virtual QDir AFlib::Dir::plugins () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
 
 .PP
-Definition at line 50 of file afDir\&.h\&.
+Definition at line 49 of file afDir\&.h\&.
 .SS "void Dir::setUserConfig (QDir userConfig)\fC [private]\fP"
 
 .PP
@@ -256,7 +256,7 @@ Definition at line 178 of file afDir\&.cpp\&.
 .SS "virtual QDir AFlib::Dir::storage () const\fC [inline]\fP, \fC [final]\fP, \fC [virtual]\fP"
 
 .PP
-Definition at line 48 of file afDir\&.h\&.
+Definition at line 50 of file afDir\&.h\&.
 .SS "void Dir::switchToUser (QString name)\fC [private]\fP, \fC [slot]\fP"
 
 .PP

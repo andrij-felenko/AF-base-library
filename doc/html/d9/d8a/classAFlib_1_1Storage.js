@@ -5,6 +5,7 @@ var classAFlib_1_1Storage =
     [ "SingleStorage", "d7/d20/structAFlib_1_1Storage_1_1SingleStorage.html", "d7/d20/structAFlib_1_1Storage_1_1SingleStorage" ],
     [ "IdObj", "d9/d8a/classAFlib_1_1Storage.html#ae0bbb87d42dd5184e9f5d1bceda60507", null ],
     [ "IdObj_b", "d9/d8a/classAFlib_1_1Storage.html#ae5d1041e8c743b972843c0b3e2133b83", null ],
+    [ "SingleStorage_opt", "d9/d8a/classAFlib_1_1Storage.html#ad12ade993cdc18df35f3a26035059424", null ],
     [ "Storage", "d9/d8a/classAFlib_1_1Storage.html#acda9756407f7552a6eb1faab3778121a", null ],
     [ "addAccount", "d9/d8a/classAFlib_1_1Storage.html#a6fc461c6c222f76f85a7832f088e3020", null ],
     [ "addLocalShared", "d9/d8a/classAFlib_1_1Storage.html#a93b36c34b6a6ac03dcf50ca6a66fdfcd", null ],
@@ -14,9 +15,9 @@ var classAFlib_1_1Storage =
     [ "contains", "d9/d8a/classAFlib_1_1Storage.html#ad7b6c9985aebf799f9a84110764d64b1", null ],
     [ "contains", "d9/d8a/classAFlib_1_1Storage.html#a17f81f6d444228f9924fb07e5d0aa20c", null ],
     [ "findFileTypeByDPath", "d9/d8a/classAFlib_1_1Storage.html#a54f6340a83615f708c841f41fa0d702b", null ],
-    [ "findSingle", "d9/d8a/classAFlib_1_1Storage.html#aef53029539d3dfd21bc9d4f7adff299c", null ],
-    [ "findSingle", "d9/d8a/classAFlib_1_1Storage.html#a9a299ea2c2fb5790519cf5546be7e64a", null ],
-    [ "findSingle", "d9/d8a/classAFlib_1_1Storage.html#a8afc5f88b196722c3b335faa02649af4", null ],
+    [ "findSingle", "d9/d8a/classAFlib_1_1Storage.html#a7e52547278031e0a28a154ca5ba9659f", null ],
+    [ "findSingle", "d9/d8a/classAFlib_1_1Storage.html#a75c1acb3e80274b6b363567d1c8f8727", null ],
+    [ "findSingle", "d9/d8a/classAFlib_1_1Storage.html#acb9d5b05aa25fbefee6a5eabc89390a4", null ],
     [ "foundFreeGlobalId", "d9/d8a/classAFlib_1_1Storage.html#ad9c10e4052d027496af0e6c3ca72465f", null ],
     [ "foundFreeGlobalId", "d9/d8a/classAFlib_1_1Storage.html#adb1a0d6e98f8df393a08ec8cbe480d67", null ],
     [ "foundFreeLocalId", "d9/d8a/classAFlib_1_1Storage.html#acf1f76bc92e3d4ff667ed5dbc44acea4", null ],
@@ -40,5 +41,6 @@ var classAFlib_1_1Storage =
     [ "setLastChangedTime", "d9/d8a/classAFlib_1_1Storage.html#a4c56f04cf9c4a5fe4e2d1a937022b5b4", null ],
     [ "updateFile", "d9/d8a/classAFlib_1_1Storage.html#ae6fc5d948fae33b9ea4bcd5d1156dfc7", null ],
     [ "updateObjects", "d9/d8a/classAFlib_1_1Storage.html#ad2799fde879deda085bfde4ef554ab84", null ],
-    [ "m_storageList", "d9/d8a/classAFlib_1_1Storage.html#a456feae1dacc0345787991534d394d66", null ]
+    [ "m_storageList", "d9/d8a/classAFlib_1_1Storage.html#a456feae1dacc0345787991534d394d66", null ],
+    [ "storage_ptr", "d9/d8a/classAFlib_1_1Storage.html#a30fbfdbb212bdd620513dc0bfdb6b415", null ]
 ];

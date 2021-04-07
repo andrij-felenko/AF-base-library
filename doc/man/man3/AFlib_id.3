@@ -1,4 +1,4 @@
-.TH "AFlib::id" 3 "Fri Mar 26 2021" "AF library" \" -*- nroff -*-
+.TH "AFlib::id" 3 "Wed Apr 7 2021" "AF library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -48,7 +48,10 @@ AFlib::id
 .RI "typedef QList< \fBAccount_bit\fP > \fBAccList_b\fP"
 .br
 .ti -1c
-.RI "typedef QList< \fBGlobal_bit\fP > \fBGlobalList_bit\fP"
+.RI "typedef QVector< \fBGlobal_bit\fP > \fBGlobalList_bit\fP"
+.br
+.ti -1c
+.RI "typedef std::optional< \fBGlobal_bit\fP > \fBGlobal_bit_opt\fP"
 .br
 .ti -1c
 .RI "typedef QSharedPointer< \fBHistory\fP > \fBHistoryPtr\fP"
@@ -101,7 +104,11 @@ Definition at line 8 of file afIdAccount\&.h\&.
 
 .PP
 Definition at line 10 of file afIdAccount\&.h\&.
-.SS "typedef QList<\fBGlobal_bit\fP> \fBAFlib::id::GlobalList_bit\fP"
+.SS "typedef std::optional<\fBGlobal_bit\fP> \fBAFlib::id::Global_bit_opt\fP"
+
+.PP
+Definition at line 15 of file afIdGlobalBit\&.h\&.
+.SS "typedef QVector<\fBGlobal_bit\fP> \fBAFlib::id::GlobalList_bit\fP"
 
 .PP
 Definition at line 12 of file afIdGlobalBit\&.h\&.

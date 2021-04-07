@@ -1,4 +1,4 @@
-.TH "lib_baseAF/include/lib_baseAF/afIdGlobalBit.h" 3 "Fri Mar 26 2021" "AF library" \" -*- nroff -*-
+.TH "lib_baseAF/include/lib_baseAF/afIdGlobalBit.h" 3 "Wed Apr 7 2021" "AF library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -34,7 +34,10 @@ lib_baseAF/include/lib_baseAF/afIdGlobalBit.h
 
 .in +1c
 .ti -1c
-.RI "typedef QList< Global_bit > \fBAFlib::id::GlobalList_bit\fP"
+.RI "typedef QVector< Global_bit > \fBAFlib::id::GlobalList_bit\fP"
+.br
+.ti -1c
+.RI "typedef std::optional< Global_bit > \fBAFlib::id::Global_bit_opt\fP"
 .br
 .in -1c
 .SS "Functions"

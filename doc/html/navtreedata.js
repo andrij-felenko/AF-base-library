@@ -64,9 +64,9 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "d2/dbf/classAFaccount_1_1Account.html#a880f18bd804b2455c0ef9c1ed59dc41d",
-"d5/d81/BusyIndicator_8qml.html",
-"db/d58/classAFlib_1_1File.html#a23406fc0fbaf9006b1b7975e4859bb43",
-"dd/d92/afAccountGroup_8h.html#a1ff785e0b9f90a97aa212b025369f2c5a7a1920d61156abc05a60135aefe8bc67"
+"d5/d7c/afDir_8h_source.html",
+"db/d58/classAFlib_1_1File.html#a07e6d30667e2b57e517a190d134cb46d",
+"dd/d92/afAccountGroup_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
