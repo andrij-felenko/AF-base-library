@@ -59,7 +59,6 @@ Inherits QObject\&.
 .ti -1c
 .RI "\fBIdObj\fP \fBgetObject\fP (const QStringList dPath, const \fBIdObject_bit\fP &object, \fBAFlib::FileType\fP type, \fBCompress\fP compress=\fBCompress::AllActive\fP)"
 .br
-.RI "\fBStorage::getObject\fP - this is overloading function, see \fBgetObject(const QStringList dPath, const IdObject_bit &object, Compress compress, FileType type)\fP "
 .ti -1c
 .RI "\fBIdObjectPtrV\fP \fBgetObjectList\fP (const QStringList dPath, \fBCompress\fP compress=\fBCompress::AllActive\fP, \fBAFlib::FileType\fP type=\fBAFlib::FileType::Data\fP)"
 .br
@@ -113,9 +112,6 @@ Inherits QObject\&.
 .ti -1c
 .RI "typedef \fBAFIdObject_bit\fP \fBIdObj_b\fP"
 .br
-.ti -1c
-.RI "typedef std::optional< \fBSingleStorage\fP > \fBSingleStorage_opt\fP"
-.br
 .in -1c
 .SS "Private Member Functions"
 
@@ -124,13 +120,13 @@ Inherits QObject\&.
 .RI "\fBFileType\fP \fBfindFileTypeByDPath\fP (QStringList dPath)"
 .br
 .ti -1c
-.RI "\fBSingleStorage_opt\fP \fBfindSingle\fP (const \fBIdObject\fP &object)"
+.RI "std::optional< \fBSingleStorage\fP > \fBfindSingle\fP (const \fBIdObject\fP &object)"
 .br
 .ti -1c
-.RI "\fBSingleStorage_opt\fP \fBfindSingle\fP (const \fBid::Global_bit\fP &globalId)"
+.RI "std::optional< \fBSingleStorage\fP > \fBfindSingle\fP (const \fBid::Global_bit\fP &globalId)"
 .br
 .ti -1c
-.RI "\fBSingleStorage_opt\fP \fBfindSingle\fP (const \fBid::Account_bit\fP &owner, const \fBid::Object_bit\fP &object)"
+.RI "std::optional< \fBSingleStorage\fP > \fBfindSingle\fP (const \fBid::Account_bit\fP &owner, const \fBid::Object_bit\fP &object)"
 .br
 .ti -1c
 .RI "void \fBremoveListByFile\fP (const QStringList dPath, \fBFileType\fP fileType)"
@@ -161,13 +157,6 @@ Inherits QObject\&.
 .RI "std::vector< \fBAccountStorage\fP > \fBm_storageList\fP"
 .br
 .in -1c
-.SS "Static Private Attributes"
-
-.in +1c
-.ti -1c
-.RI "static \fBStoragePtr\fP \fBstorage_ptr\fP"
-.br
-.in -1c
 .SH "Detailed Description"
 .PP 
 Definition at line 16 of file afStorage\&.h\&.
@@ -181,183 +170,156 @@ Definition at line 19 of file afStorage\&.h\&.
 
 .PP
 Definition at line 20 of file afStorage\&.h\&.
-.SS "typedef std::optional<\fBSingleStorage\fP> \fBAFlib::Storage::SingleStorage_opt\fP\fC [private]\fP"
-
-.PP
-Definition at line 77 of file afStorage\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Storage::Storage (QObject * parent = \fCqApp\fP)\fC [explicit]\fP"
 
 .PP
-Definition at line 9 of file afStorage\&.cpp\&.
+Definition at line 10 of file afStorage\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Storage::addAccount (\fBIdAccount_bit\fP id)\fC [private]\fP"
 
 .PP
-Definition at line 501 of file afStorage\&.cpp\&.
+Definition at line 492 of file afStorage\&.cpp\&.
 .SS "void Storage::addLocalShared (\fBIdGlobal_bit\fP sender, \fBIdGlobal_bit\fP whatsAddId)\fC [private]\fP"
 
 .PP
-Definition at line 534 of file afStorage\&.cpp\&.
+Definition at line 526 of file afStorage\&.cpp\&.
 .SS "bool Storage::addObject (QStringList dPath, const \fBIdObject\fP & object, \fBAFlib::FileType\fP type = \fC\fBAFlib::FileType::Data\fP\fP)"
 
 .PP
-Definition at line 163 of file afStorage\&.cpp\&.
+Definition at line 164 of file afStorage\&.cpp\&.
 .SS "bool Storage::addOperate (const \fBIdObject\fP & object, const \fBIdOperate\fP & operate, bool isId = \fCfalse\fP)"
 
 .PP
-Definition at line 60 of file afStorage\&.cpp\&.
+Definition at line 61 of file afStorage\&.cpp\&.
 .SS "bool Storage::addOperateList (const \fBtransfer::Send\fP & list)"
 
 .PP
-Definition at line 86 of file afStorage\&.cpp\&.
+Definition at line 87 of file afStorage\&.cpp\&.
 .SS "bool Storage::contains (const \fBIdGlobal_bit\fP & globalId) const"
 
 .PP
-Definition at line 422 of file afStorage\&.cpp\&.
+Definition at line 414 of file afStorage\&.cpp\&.
 .SS "bool Storage::contains (const \fBIdObject\fP & ptr) const"
 
 .PP
-Definition at line 417 of file afStorage\&.cpp\&.
+Definition at line 409 of file afStorage\&.cpp\&.
 .SS "\fBFileType\fP Storage::findFileTypeByDPath (QStringList dPath)\fC [private]\fP"
 
 .PP
-Definition at line 407 of file afStorage\&.cpp\&.
-.SS "\fBStorage::SingleStorage_opt\fP Storage::findSingle (const \fBid::Account_bit\fP & owner, const \fBid::Object_bit\fP & object)\fC [private]\fP"
+Definition at line 399 of file afStorage\&.cpp\&.
+.SS "std::optional< \fBStorage::SingleStorage\fP > Storage::findSingle (const \fBid::Account_bit\fP & owner, const \fBid::Object_bit\fP & object)\fC [private]\fP"
 
 .PP
-Definition at line 457 of file afStorage\&.cpp\&.
-.SS "\fBStorage::SingleStorage_opt\fP Storage::findSingle (const \fBid::Global_bit\fP & globalId)\fC [private]\fP"
+Definition at line 450 of file afStorage\&.cpp\&.
+.SS "std::optional< \fBStorage::SingleStorage\fP > Storage::findSingle (const \fBid::Global_bit\fP & globalId)\fC [private]\fP"
 
 .PP
-Definition at line 439 of file afStorage\&.cpp\&.
-.SS "\fBStorage::SingleStorage_opt\fP Storage::findSingle (const \fBIdObject\fP & object)\fC [private]\fP"
+Definition at line 431 of file afStorage\&.cpp\&.
+.SS "std::optional< \fBStorage::SingleStorage\fP > Storage::findSingle (const \fBIdObject\fP & object)\fC [private]\fP"
 
 .PP
-Definition at line 434 of file afStorage\&.cpp\&.
+Definition at line 426 of file afStorage\&.cpp\&.
 .SS "\fBid::Object_bit\fP Storage::foundFreeGlobalId (\fBid::Global_bit\fP id)"
 
 .PP
-Definition at line 384 of file afStorage\&.cpp\&.
+Definition at line 376 of file afStorage\&.cpp\&.
 .SS "\fBid::Object_bit\fP Storage::foundFreeGlobalId (\fBid::Object_bit\fP id)"
 
 .PP
-Definition at line 379 of file afStorage\&.cpp\&.
+Definition at line 371 of file afStorage\&.cpp\&.
 .SS "\fBid::Object_bit\fP Storage::foundFreeLocalId (\fBAFlib::id::Account_bit\fP account, quint8 plugin, quint8 type)"
 
 .PP
-Definition at line 359 of file afStorage\&.cpp\&.
+Definition at line 351 of file afStorage\&.cpp\&.
 .SS "\fBid::Object_bit\fP Storage::foundFreeLocalId (quint8 plugin, quint8 type)"
 
 .PP
-Definition at line 354 of file afStorage\&.cpp\&.
+Definition at line 346 of file afStorage\&.cpp\&.
 .SS "\fBStorage::IdObj\fP Storage::getObject (const QStringList dPath, const \fBIdObject_bit\fP & object, \fBAFlib::FileType\fP type, \fBCompress\fP compress = \fC\fBCompress::AllActive\fP\fP)"
 
 .PP
-\fBStorage::getObject\fP - this is overloading function, see \fBgetObject(const QStringList dPath, const IdObject_bit &object, Compress compress, FileType type)\fP 
-.PP
-\fBParameters\fP
-.RS 4
-\fIdPath\fP 
-.br
-\fIobject\fP 
-.br
-\fItype\fP 
-.br
-\fIcompress\fP 
-.RE
-.PP
-\fBReturns\fP
-.RS 4
-.RE
-.PP
-
-.PP
-Definition at line 205 of file afStorage\&.cpp\&.
+Definition at line 197 of file afStorage\&.cpp\&.
 .SS "\fBStorage::IdObj\fP Storage::getObject (const QStringList dPath, const \fBIdObject_bit\fP & object, \fBCompress\fP compress = \fC\fBCompress::AllActive\fP\fP, \fBAFlib::FileType\fP type = \fC\fBAFlib::FileType::Data\fP\fP)"
 
 .PP
-Definition at line 210 of file afStorage\&.cpp\&.
+Definition at line 202 of file afStorage\&.cpp\&.
 .SS "\fBIdObjectPtrV\fP Storage::getObjectList (const QStringList dPath, \fBAFlib::FileType\fP type, \fBCompress\fP compress = \fC\fBCompress::AllActive\fP\fP)"
 
 .PP
-Definition at line 223 of file afStorage\&.cpp\&.
+Definition at line 215 of file afStorage\&.cpp\&.
 .SS "\fBIdObjectPtrV\fP Storage::getObjectList (const QStringList dPath, \fBCompress\fP compress = \fC\fBCompress::AllActive\fP\fP, \fBAFlib::FileType\fP type = \fC\fBAFlib::FileType::Data\fP\fP)"
 
 .PP
-Definition at line 246 of file afStorage\&.cpp\&.
+Definition at line 238 of file afStorage\&.cpp\&.
 .SS "\fBIdObjectPtrV\fP Storage::getObjectList (const QStringList dPath, const \fBIdObjectPtrV\fP list, \fBAFlib::FileType\fP type, \fBCompress\fP compress = \fC\fBCompress::AllActive\fP\fP)"
 
 .PP
-Definition at line 256 of file afStorage\&.cpp\&.
+Definition at line 248 of file afStorage\&.cpp\&.
 .SS "\fBIdObjectPtrV\fP Storage::getObjectList (const QStringList dPath, const \fBIdObjectPtrV\fP list, \fBCompress\fP compress = \fC\fBCompress::AllActive\fP\fP, \fBAFlib::FileType\fP type = \fC\fBAFlib::FileType::Data\fP\fP)"
 
 .PP
-Definition at line 261 of file afStorage\&.cpp\&.
+Definition at line 253 of file afStorage\&.cpp\&.
 .SS "\fBIdObjectPtrV\fP Storage::getObjectList (QList< \fBid::Account_bit\fP > accList, quint8 plugin, \fBCompress\fP compress = \fC\fBCompress::AllActive\fP\fP)"
 
 .PP
-Definition at line 228 of file afStorage\&.cpp\&.
+Definition at line 220 of file afStorage\&.cpp\&.
 .SS "\fBtransfer::Send\fP Storage::getOperatesAfter (const QDateTime & dateTime, \fBAFaccList_b\fP list = \fC\fBAFaccList_b\fP()\fP)"
 
 .PP
-Definition at line 126 of file afStorage\&.cpp\&.
+Definition at line 127 of file afStorage\&.cpp\&.
 .SS "QSharedPointer< \fBAFlib::Storage\fP > Storage::init ()\fC [static]\fP"
 
 .PP
-Definition at line 14 of file afStorage\&.cpp\&.
+Definition at line 15 of file afStorage\&.cpp\&.
 .SS "void Storage::loadFromDirectory (const QStringList & dPath, \fBCompress\fP compress = \fC\fBCompress::AllActive\fP\fP)"
 
 .PP
-Definition at line 27 of file afStorage\&.cpp\&.
+Definition at line 28 of file afStorage\&.cpp\&.
 .SS "void Storage::registrateObject (const QStringList dPath, \fBFileType\fP fileType, const \fBIdObject\fP & object)\fC [private]\fP"
 
 .PP
-Definition at line 474 of file afStorage\&.cpp\&.
+Definition at line 465 of file afStorage\&.cpp\&.
 .SS "void Storage::registrateObject (const QStringList dPath, \fBFileType\fP fileType, const \fBIdObjectPtr\fP object)\fC [private]\fP"
 
 .PP
-Definition at line 490 of file afStorage\&.cpp\&.
+Definition at line 481 of file afStorage\&.cpp\&.
 .SS "void Storage::registrateObject (const QStringList dPath, \fBFileType\fP fileType, const \fBIdObjectPtrV\fP list)\fC [private]\fP"
 
 .PP
-Definition at line 495 of file afStorage\&.cpp\&.
+Definition at line 486 of file afStorage\&.cpp\&.
 .SS "void Storage::removeListByFile (const QStringList dPath, \fBFileType\fP fileType)\fC [private]\fP"
 
 .PP
-Definition at line 462 of file afStorage\&.cpp\&.
+Definition at line 455 of file afStorage\&.cpp\&.
 .SS "bool Storage::removeObject (const \fBIdObject\fP & object)"
 
 .PP
-Definition at line 271 of file afStorage\&.cpp\&.
+Definition at line 263 of file afStorage\&.cpp\&.
 .SS "\fBtransfer::Answer\fP Storage::saveObjects (\fBtransfer::Send\fP & sendData)"
 
 .PP
-Definition at line 325 of file afStorage\&.cpp\&.
+Definition at line 317 of file afStorage\&.cpp\&.
 .SS "void Storage::setLastChangedTime (quint32 account, \fBIdObject_bit\fP id, QDateTime dTime)\fC [private]\fP"
 
 .PP
-Definition at line 514 of file afStorage\&.cpp\&.
+Definition at line 505 of file afStorage\&.cpp\&.
 .SS "bool Storage::updateFile (const QStringList dPath, const QByteArray & data, \fBAFlib::FileType\fP type = \fC\fBAFlib::FileType::Data\fP\fP)"
 
 .PP
-Definition at line 45 of file afStorage\&.cpp\&.
+Definition at line 46 of file afStorage\&.cpp\&.
 .SS "bool Storage::updateObjects (\fBtransfer::Answer\fP answer, \fBtransfer::Send\fP & operateList)"
 
 .PP
-Definition at line 297 of file afStorage\&.cpp\&.
+Definition at line 289 of file afStorage\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "std::vector<\fBAccountStorage\fP> AFlib::Storage::m_storageList\fC [private]\fP"
 
 .PP
-Definition at line 105 of file afStorage\&.h\&.
-.SS "\fBStoragePtr\fP AFlib::Storage::storage_ptr\fC [static]\fP, \fC [private]\fP"
-
-.PP
-Definition at line 67 of file afStorage\&.h\&.
+Definition at line 99 of file afStorage\&.h\&.
 
 .SH "Author"
 .PP 

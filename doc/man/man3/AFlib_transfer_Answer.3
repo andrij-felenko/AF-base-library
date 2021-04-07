@@ -23,7 +23,7 @@ Inherits QList< answer::DPathObjectList >\&.
 .RI "void \fBaddNewGlobalId\fP (QStringList dPath, \fBFileType\fP fileType, \fBid::Account_bit\fP owner, \fBid::Object_bit\fP old, \fBid::Object_bit\fP new_)"
 .br
 .ti -1c
-.RI "\fBid::Global_bit_opt\fP \fBisOldIdPresent\fP (\fBid::Global_bit\fP localId, QStringList dPath, \fBFileType\fP type) const"
+.RI "std::optional< \fBid::Global_bit\fP > \fBisOldIdPresent\fP (\fBid::Global_bit\fP localId, QStringList dPath, \fBFileType\fP type) const"
 .br
 .ti -1c
 .RI "\fBoperator QByteArray\fP () const"
@@ -34,7 +34,7 @@ Inherits QList< answer::DPathObjectList >\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 43 of file afTransferOperateList\&.h\&.
+Definition at line 42 of file afTransferOperateList\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "AFlib::transfer::Answer::Answer ()\fC [explicit]\fP, \fC [default]\fP"

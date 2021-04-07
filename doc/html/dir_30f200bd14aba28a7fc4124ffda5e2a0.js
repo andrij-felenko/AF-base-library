@@ -6,6 +6,6 @@ var dir_30f200bd14aba28a7fc4124ffda5e2a0 =
     [ "afPreference.cpp", "db/de5/afPreference_8cpp.html", null ],
     [ "afServerSettings.cpp", "d1/d41/afServerSettings_8cpp.html", "d1/d41/afServerSettings_8cpp" ],
     [ "afSetting.cpp", "db/d41/afSetting_8cpp.html", null ],
-    [ "afStorage.cpp", "df/d28/afStorage_8cpp.html", null ],
+    [ "afStorage.cpp", "df/d28/afStorage_8cpp.html", "df/d28/afStorage_8cpp" ],
     [ "afTransferOperateList.cpp", "db/d1d/afTransferOperateList_8cpp.html", "db/d1d/afTransferOperateList_8cpp" ]
 ];
