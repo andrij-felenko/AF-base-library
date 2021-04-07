@@ -1,0 +1,1118 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Namespace List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Faccount Namespace Reference}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Typedef Documentation}{10}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}AccountPtr}{10}{subsubsection.5.1.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}AccountPtrV}{10}{subsubsection.5.1.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.1.3}GroupPtr}{10}{subsubsection.5.1.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.1.4}GroupPtrV}{10}{subsubsection.5.1.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.1.5}InfoPtr}{10}{subsubsection.5.1.1.5}%
+\contentsline {subsubsection}{\numberline {5.1.1.6}InfoPtrList}{11}{subsubsection.5.1.1.6}%
+\contentsline {subsubsection}{\numberline {5.1.1.7}StoragePtr}{11}{subsubsection.5.1.1.7}%
+\contentsline {subsection}{\numberline {5.1.2}Enumeration Type Documentation}{11}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}AccessType}{11}{subsubsection.5.1.2.1}%
+\contentsline {subsection}{\numberline {5.1.3}Function Documentation}{11}{subsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.1}fromAccessType()}{11}{subsubsection.5.1.3.1}%
+\contentsline {subsubsection}{\numberline {5.1.3.2}own()}{12}{subsubsection.5.1.3.2}%
+\contentsline {subsubsection}{\numberline {5.1.3.3}storage()}{12}{subsubsection.5.1.3.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.4}toAccessType()}{12}{subsubsection.5.1.3.4}%
+\contentsline {subsubsection}{\numberline {5.1.3.5}user()}{12}{subsubsection.5.1.3.5}%
+\contentsline {section}{\numberline {5.2}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib Namespace Reference}{12}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Typedef Documentation}{14}{subsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.1}ApiPtr}{14}{subsubsection.5.2.1.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.2}ApiPtrList}{14}{subsubsection.5.2.1.2}%
+\contentsline {subsubsection}{\numberline {5.2.1.3}DirPtr}{14}{subsubsection.5.2.1.3}%
+\contentsline {subsubsection}{\numberline {5.2.1.4}HIdType}{14}{subsubsection.5.2.1.4}%
+\contentsline {subsubsection}{\numberline {5.2.1.5}IdAccount\_bit}{15}{subsubsection.5.2.1.5}%
+\contentsline {subsubsection}{\numberline {5.2.1.6}IdGlobal\_bit}{15}{subsubsection.5.2.1.6}%
+\contentsline {subsubsection}{\numberline {5.2.1.7}IdHistory}{15}{subsubsection.5.2.1.7}%
+\contentsline {subsubsection}{\numberline {5.2.1.8}IdHistoryPtr}{15}{subsubsection.5.2.1.8}%
+\contentsline {subsubsection}{\numberline {5.2.1.9}IdObject}{15}{subsubsection.5.2.1.9}%
+\contentsline {subsubsection}{\numberline {5.2.1.10}IdObject\_bit}{15}{subsubsection.5.2.1.10}%
+\contentsline {subsubsection}{\numberline {5.2.1.11}IdObjectPtr}{16}{subsubsection.5.2.1.11}%
+\contentsline {subsubsection}{\numberline {5.2.1.12}IdObjectPtrV}{16}{subsubsection.5.2.1.12}%
+\contentsline {subsubsection}{\numberline {5.2.1.13}IdObjectTemplate}{16}{subsubsection.5.2.1.13}%
+\contentsline {subsubsection}{\numberline {5.2.1.14}IdOperate}{16}{subsubsection.5.2.1.14}%
+\contentsline {subsubsection}{\numberline {5.2.1.15}IdOperatePtr}{16}{subsubsection.5.2.1.15}%
+\contentsline {subsubsection}{\numberline {5.2.1.16}IdOperatePtrList}{16}{subsubsection.5.2.1.16}%
+\contentsline {subsubsection}{\numberline {5.2.1.17}ServerSettingPtr}{17}{subsubsection.5.2.1.17}%
+\contentsline {subsubsection}{\numberline {5.2.1.18}SettingPtr}{17}{subsubsection.5.2.1.18}%
+\contentsline {subsubsection}{\numberline {5.2.1.19}SIdType}{17}{subsubsection.5.2.1.19}%
+\contentsline {subsubsection}{\numberline {5.2.1.20}StoragePtr}{17}{subsubsection.5.2.1.20}%
+\contentsline {subsubsection}{\numberline {5.2.1.21}TransferOperateSendList}{17}{subsubsection.5.2.1.21}%
+\contentsline {subsection}{\numberline {5.2.2}Enumeration Type Documentation}{17}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}AccountIdType}{17}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}Attribute}{18}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}Compress}{18}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}Continent}{19}{subsubsection.5.2.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.2.5}FileType}{19}{subsubsection.5.2.2.5}%
+\contentsline {subsubsection}{\numberline {5.2.2.6}HistoryIdType}{20}{subsubsection.5.2.2.6}%
+\contentsline {subsubsection}{\numberline {5.2.2.7}RequestStatus}{20}{subsubsection.5.2.2.7}%
+\contentsline {subsubsection}{\numberline {5.2.2.8}RequestType}{20}{subsubsection.5.2.2.8}%
+\contentsline {subsubsection}{\numberline {5.2.2.9}SavedIdType}{21}{subsubsection.5.2.2.9}%
+\contentsline {subsubsection}{\numberline {5.2.2.10}Schedule}{21}{subsubsection.5.2.2.10}%
+\contentsline {subsection}{\numberline {5.2.3}Function Documentation}{21}{subsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.3.1}afDir()}{21}{subsubsection.5.2.3.1}%
+\contentsline {subsubsection}{\numberline {5.2.3.2}afServerSettings()}{22}{subsubsection.5.2.3.2}%
+\contentsline {subsubsection}{\numberline {5.2.3.3}afStorage()}{22}{subsubsection.5.2.3.3}%
+\contentsline {subsubsection}{\numberline {5.2.3.4}api()}{22}{subsubsection.5.2.3.4}%
+\contentsline {subsubsection}{\numberline {5.2.3.5}fromAccountIdType()}{22}{subsubsection.5.2.3.5}%
+\contentsline {subsubsection}{\numberline {5.2.3.6}fromHisToInt()}{22}{subsubsection.5.2.3.6}%
+\contentsline {subsubsection}{\numberline {5.2.3.7}fromSaveToInt()}{22}{subsubsection.5.2.3.7}%
+\contentsline {subsubsection}{\numberline {5.2.3.8}getServerKey()}{23}{subsubsection.5.2.3.8}%
+\contentsline {subsubsection}{\numberline {5.2.3.9}getServerLink()}{23}{subsubsection.5.2.3.9}%
+\contentsline {subsubsection}{\numberline {5.2.3.10}historyToString()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{23}{subsubsection.5.2.3.10}%
+\contentsline {subsubsection}{\numberline {5.2.3.11}historyToString()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{23}{subsubsection.5.2.3.11}%
+\contentsline {subsubsection}{\numberline {5.2.3.12}isHIdEnable()}{23}{subsubsection.5.2.3.12}%
+\contentsline {subsubsection}{\numberline {5.2.3.13}operator$<$$<$()}{24}{subsubsection.5.2.3.13}%
+\contentsline {subsubsection}{\numberline {5.2.3.14}operator$>$$>$()}{24}{subsubsection.5.2.3.14}%
+\contentsline {subsubsection}{\numberline {5.2.3.15}saveTypeToString()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{24}{subsubsection.5.2.3.15}%
+\contentsline {subsubsection}{\numberline {5.2.3.16}saveTypeToString()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{24}{subsubsection.5.2.3.16}%
+\contentsline {subsubsection}{\numberline {5.2.3.17}toAccountIdType()}{24}{subsubsection.5.2.3.17}%
+\contentsline {subsubsection}{\numberline {5.2.3.18}toHistoryIdType()}{25}{subsubsection.5.2.3.18}%
+\contentsline {subsubsection}{\numberline {5.2.3.19}toSavedIdType()}{25}{subsubsection.5.2.3.19}%
+\contentsline {section}{\numberline {5.3}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::id Namespace Reference}{25}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Typedef Documentation}{26}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}Acc\_bit}{26}{subsubsection.5.3.1.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}AccList\_b}{26}{subsubsection.5.3.1.2}%
+\contentsline {subsubsection}{\numberline {5.3.1.3}GlobalList\_bit}{26}{subsubsection.5.3.1.3}%
+\contentsline {subsubsection}{\numberline {5.3.1.4}HistoryPtr}{26}{subsubsection.5.3.1.4}%
+\contentsline {subsubsection}{\numberline {5.3.1.5}Obj\_bit}{26}{subsubsection.5.3.1.5}%
+\contentsline {subsubsection}{\numberline {5.3.1.6}ObjectPtr}{27}{subsubsection.5.3.1.6}%
+\contentsline {subsubsection}{\numberline {5.3.1.7}ObjectPtrV}{27}{subsubsection.5.3.1.7}%
+\contentsline {subsubsection}{\numberline {5.3.1.8}OperatePtr}{27}{subsubsection.5.3.1.8}%
+\contentsline {subsubsection}{\numberline {5.3.1.9}OperatePtrList}{27}{subsubsection.5.3.1.9}%
+\contentsline {subsection}{\numberline {5.3.2}Function Documentation}{27}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{27}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{28}{subsubsection.5.3.2.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.3}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{28}{subsubsection.5.3.2.3}%
+\contentsline {subsubsection}{\numberline {5.3.2.4}operator$>$$>$()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{28}{subsubsection.5.3.2.4}%
+\contentsline {subsubsection}{\numberline {5.3.2.5}operator$>$$>$()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{28}{subsubsection.5.3.2.5}%
+\contentsline {subsubsection}{\numberline {5.3.2.6}operator$>$$>$()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{28}{subsubsection.5.3.2.6}%
+\contentsline {section}{\numberline {5.4}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::transfer Namespace Reference}{29}{section.5.4}%
+\contentsline {section}{\numberline {5.5}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::transfer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::answer Namespace Reference}{29}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Function Documentation}{29}{subsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.1}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{29}{subsubsection.5.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.2}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{29}{subsubsection.5.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.5.1.3}operator$>$$>$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{30}{subsubsection.5.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.5.1.4}operator$>$$>$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{30}{subsubsection.5.5.1.4}%
+\contentsline {section}{\numberline {5.6}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::transfer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::send Namespace Reference}{30}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Function Documentation}{30}{subsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.1}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{30}{subsubsection.5.6.1.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.2}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{31}{subsubsection.5.6.1.2}%
+\contentsline {subsubsection}{\numberline {5.6.1.3}operator$>$$>$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{31}{subsubsection.5.6.1.3}%
+\contentsline {subsubsection}{\numberline {5.6.1.4}operator$>$$>$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{31}{subsubsection.5.6.1.4}%
+\contentsline {section}{\numberline {5.7}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fquick Namespace Reference}{31}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Typedef Documentation}{32}{subsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.1}GuiPluginPtr}{32}{subsubsection.5.7.1.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.2}GuiSizePtr}{32}{subsubsection.5.7.1.2}%
+\contentsline {subsection}{\numberline {5.7.2}Function Documentation}{32}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}guiSize()}{32}{subsubsection.5.7.2.1}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Faccount\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Account Class Reference}{33}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{34}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Constructor \& Destructor Documentation}{34}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}Account()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{34}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}Account()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{34}{subsubsection.6.1.2.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.3}Account()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{34}{subsubsection.6.1.2.3}%
+\contentsline {subsection}{\numberline {6.1.3}Member Function Documentation}{35}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}addAccount()}{35}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}addGroup()}{35}{subsubsection.6.1.3.2}%
+\contentsline {subsubsection}{\numberline {6.1.3.3}check()}{35}{subsubsection.6.1.3.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.4}friendList()}{35}{subsubsection.6.1.3.4}%
+\contentsline {subsubsection}{\numberline {6.1.3.5}groupList()}{35}{subsubsection.6.1.3.5}%
+\contentsline {subsubsection}{\numberline {6.1.3.6}login()}{36}{subsubsection.6.1.3.6}%
+\contentsline {subsubsection}{\numberline {6.1.3.7}operator QJsonObject()}{36}{subsubsection.6.1.3.7}%
+\contentsline {subsubsection}{\numberline {6.1.3.8}passwordHash()}{36}{subsubsection.6.1.3.8}%
+\contentsline {subsubsection}{\numberline {6.1.3.9}removeAccount()}{36}{subsubsection.6.1.3.9}%
+\contentsline {subsubsection}{\numberline {6.1.3.10}removeGroup()}{36}{subsubsection.6.1.3.10}%
+\contentsline {subsubsection}{\numberline {6.1.3.11}reset()}{36}{subsubsection.6.1.3.11}%
+\contentsline {subsubsection}{\numberline {6.1.3.12}setLogin}{37}{subsubsection.6.1.3.12}%
+\contentsline {subsubsection}{\numberline {6.1.3.13}toByteArray()}{37}{subsubsection.6.1.3.13}%
+\contentsline {subsubsection}{\numberline {6.1.3.14}toJson()}{37}{subsubsection.6.1.3.14}%
+\contentsline {subsection}{\numberline {6.1.4}Friends And Related Function Documentation}{37}{subsection.6.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.4.1}AFlib::API}{37}{subsubsection.6.1.4.1}%
+\contentsline {subsubsection}{\numberline {6.1.4.2}Storage}{37}{subsubsection.6.1.4.2}%
+\contentsline {section}{\numberline {6.2}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Account\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}bit Struct Reference}{38}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{38}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Constructor \& Destructor Documentation}{38}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}Account\_bit()}{38}{subsubsection.6.2.2.1}%
+\contentsline {subsection}{\numberline {6.2.3}Member Function Documentation}{39}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}accountId()}{39}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}accountType()}{39}{subsubsection.6.2.3.2}%
+\contentsline {subsubsection}{\numberline {6.2.3.3}create()}{39}{subsubsection.6.2.3.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.4}isGlobal()}{39}{subsubsection.6.2.3.4}%
+\contentsline {subsubsection}{\numberline {6.2.3.5}isLocal()}{39}{subsubsection.6.2.3.5}%
+\contentsline {subsubsection}{\numberline {6.2.3.6}operator quint32()}{40}{subsubsection.6.2.3.6}%
+\contentsline {subsubsection}{\numberline {6.2.3.7}setAccountId()}{40}{subsubsection.6.2.3.7}%
+\contentsline {subsubsection}{\numberline {6.2.3.8}setUserId()}{40}{subsubsection.6.2.3.8}%
+\contentsline {section}{\numberline {6.3}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Storage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Account\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Storage Struct Reference}{40}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{40}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Member Function Documentation}{41}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}addPlugin()}{41}{subsubsection.6.3.2.1}%
+\contentsline {subsection}{\numberline {6.3.3}Member Data Documentation}{41}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}accountBit}{41}{subsubsection.6.3.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.3.2}pluginList}{41}{subsubsection.6.3.3.2}%
+\contentsline {section}{\numberline {6.4}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::transfer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Answer Class Reference}{41}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{42}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Constructor \& Destructor Documentation}{42}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}Answer()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{42}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}Answer()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{42}{subsubsection.6.4.2.2}%
+\contentsline {subsection}{\numberline {6.4.3}Member Function Documentation}{42}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}addNewGlobalId()}{42}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}getData()}{43}{subsubsection.6.4.3.2}%
+\contentsline {subsubsection}{\numberline {6.4.3.3}isOldIdPresent()}{43}{subsubsection.6.4.3.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.4}operator QByteArray()}{43}{subsubsection.6.4.3.4}%
+\contentsline {section}{\numberline {6.5}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}PI Class Reference}{43}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{44}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Constructor \& Destructor Documentation}{44}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}API()}{45}{subsubsection.6.5.2.1}%
+\contentsline {subsection}{\numberline {6.5.3}Member Function Documentation}{45}{subsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.1}addAccount()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{45}{subsubsection.6.5.3.1}%
+\contentsline {subsubsection}{\numberline {6.5.3.2}addAccount()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{45}{subsubsection.6.5.3.2}%
+\contentsline {subsubsection}{\numberline {6.5.3.3}get()}{45}{subsubsection.6.5.3.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.4}instance()}{45}{subsubsection.6.5.3.4}%
+\contentsline {subsubsection}{\numberline {6.5.3.5}login()}{46}{subsubsection.6.5.3.5}%
+\contentsline {subsubsection}{\numberline {6.5.3.6}online()}{46}{subsubsection.6.5.3.6}%
+\contentsline {subsubsection}{\numberline {6.5.3.7}onlineChanged}{46}{subsubsection.6.5.3.7}%
+\contentsline {subsubsection}{\numberline {6.5.3.8}post()}{46}{subsubsection.6.5.3.8}%
+\contentsline {subsubsection}{\numberline {6.5.3.9}readServerAnswer()}{46}{subsubsection.6.5.3.9}%
+\contentsline {subsubsection}{\numberline {6.5.3.10}registrate()}{46}{subsubsection.6.5.3.10}%
+\contentsline {subsubsection}{\numberline {6.5.3.11}remindMyLogin()}{47}{subsubsection.6.5.3.11}%
+\contentsline {subsubsection}{\numberline {6.5.3.12}remindMyPassword()}{47}{subsubsection.6.5.3.12}%
+\contentsline {subsubsection}{\numberline {6.5.3.13}sendPing()}{47}{subsubsection.6.5.3.13}%
+\contentsline {subsubsection}{\numberline {6.5.3.14}setOnlineStatus()}{47}{subsubsection.6.5.3.14}%
+\contentsline {subsubsection}{\numberline {6.5.3.15}updateObjects()}{47}{subsubsection.6.5.3.15}%
+\contentsline {subsection}{\numberline {6.5.4}Member Data Documentation}{47}{subsection.6.5.4}%
+\contentsline {subsubsection}{\numberline {6.5.4.1}defaultLink}{48}{subsubsection.6.5.4.1}%
+\contentsline {subsubsection}{\numberline {6.5.4.2}m\_online}{48}{subsubsection.6.5.4.2}%
+\contentsline {subsubsection}{\numberline {6.5.4.3}m\_pingTimer}{48}{subsubsection.6.5.4.3}%
+\contentsline {subsubsection}{\numberline {6.5.4.4}m\_requestStatus}{48}{subsubsection.6.5.4.4}%
+\contentsline {subsection}{\numberline {6.5.5}Property Documentation}{48}{subsection.6.5.5}%
+\contentsline {subsubsection}{\numberline {6.5.5.1}online}{48}{subsubsection.6.5.5.1}%
+\contentsline {section}{\numberline {6.6}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Dir Class Reference}{49}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{50}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Constructor \& Destructor Documentation}{50}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}Dir()}{50}{subsubsection.6.6.2.1}%
+\contentsline {subsection}{\numberline {6.6.3}Member Function Documentation}{50}{subsection.6.6.3}%
+\contentsline {subsubsection}{\numberline {6.6.3.1}app()}{51}{subsubsection.6.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.6.3.2}cdDirectory()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{51}{subsubsection.6.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.6.3.3}cdDirectory()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{51}{subsubsection.6.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.6.3.4}config()}{51}{subsubsection.6.6.3.4}%
+\contentsline {subsubsection}{\numberline {6.6.3.5}cookies()}{51}{subsubsection.6.6.3.5}%
+\contentsline {subsubsection}{\numberline {6.6.3.6}cpDirectory()}{52}{subsubsection.6.6.3.6}%
+\contentsline {subsubsection}{\numberline {6.6.3.7}init()}{52}{subsubsection.6.6.3.7}%
+\contentsline {subsubsection}{\numberline {6.6.3.8}initStandartPath()}{52}{subsubsection.6.6.3.8}%
+\contentsline {subsubsection}{\numberline {6.6.3.9}instance()}{52}{subsubsection.6.6.3.9}%
+\contentsline {subsubsection}{\numberline {6.6.3.10}libraries()}{52}{subsubsection.6.6.3.10}%
+\contentsline {subsubsection}{\numberline {6.6.3.11}pluginData()}{52}{subsubsection.6.6.3.11}%
+\contentsline {subsubsection}{\numberline {6.6.3.12}plugins()}{53}{subsubsection.6.6.3.12}%
+\contentsline {subsubsection}{\numberline {6.6.3.13}setUserConfig()}{53}{subsubsection.6.6.3.13}%
+\contentsline {subsubsection}{\numberline {6.6.3.14}setUserData()}{53}{subsubsection.6.6.3.14}%
+\contentsline {subsubsection}{\numberline {6.6.3.15}setUserDir()}{53}{subsubsection.6.6.3.15}%
+\contentsline {subsubsection}{\numberline {6.6.3.16}storage()}{53}{subsubsection.6.6.3.16}%
+\contentsline {subsubsection}{\numberline {6.6.3.17}switchToUser}{53}{subsubsection.6.6.3.17}%
+\contentsline {subsubsection}{\numberline {6.6.3.18}translates()}{54}{subsubsection.6.6.3.18}%
+\contentsline {subsubsection}{\numberline {6.6.3.19}userConfig()}{54}{subsubsection.6.6.3.19}%
+\contentsline {subsubsection}{\numberline {6.6.3.20}userConfigChanged}{54}{subsubsection.6.6.3.20}%
+\contentsline {subsubsection}{\numberline {6.6.3.21}userData()}{54}{subsubsection.6.6.3.21}%
+\contentsline {subsubsection}{\numberline {6.6.3.22}userDataChanged}{54}{subsubsection.6.6.3.22}%
+\contentsline {subsubsection}{\numberline {6.6.3.23}userDir()}{54}{subsubsection.6.6.3.23}%
+\contentsline {subsubsection}{\numberline {6.6.3.24}userDirChanged}{55}{subsubsection.6.6.3.24}%
+\contentsline {subsubsection}{\numberline {6.6.3.25}users()}{55}{subsubsection.6.6.3.25}%
+\contentsline {subsection}{\numberline {6.6.4}Member Data Documentation}{55}{subsection.6.6.4}%
+\contentsline {subsubsection}{\numberline {6.6.4.1}m\_app}{55}{subsubsection.6.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.6.4.2}m\_config}{55}{subsubsection.6.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.6.4.3}m\_cookies}{55}{subsubsection.6.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.6.4.4}m\_libraries}{55}{subsubsection.6.6.4.4}%
+\contentsline {subsubsection}{\numberline {6.6.4.5}m\_plugins}{56}{subsubsection.6.6.4.5}%
+\contentsline {subsubsection}{\numberline {6.6.4.6}m\_storage}{56}{subsubsection.6.6.4.6}%
+\contentsline {subsubsection}{\numberline {6.6.4.7}m\_translates}{56}{subsubsection.6.6.4.7}%
+\contentsline {subsubsection}{\numberline {6.6.4.8}m\_userConfig}{56}{subsubsection.6.6.4.8}%
+\contentsline {subsubsection}{\numberline {6.6.4.9}m\_userData}{56}{subsubsection.6.6.4.9}%
+\contentsline {subsubsection}{\numberline {6.6.4.10}m\_userDir}{56}{subsubsection.6.6.4.10}%
+\contentsline {subsubsection}{\numberline {6.6.4.11}m\_users}{57}{subsubsection.6.6.4.11}%
+\contentsline {subsection}{\numberline {6.6.5}Property Documentation}{57}{subsection.6.6.5}%
+\contentsline {subsubsection}{\numberline {6.6.5.1}app}{57}{subsubsection.6.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.6.5.2}config}{57}{subsubsection.6.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.6.5.3}cookies}{57}{subsubsection.6.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.6.5.4}libraries}{57}{subsubsection.6.6.5.4}%
+\contentsline {subsubsection}{\numberline {6.6.5.5}plugins}{57}{subsubsection.6.6.5.5}%
+\contentsline {subsubsection}{\numberline {6.6.5.6}storage}{58}{subsubsection.6.6.5.6}%
+\contentsline {subsubsection}{\numberline {6.6.5.7}translates}{58}{subsubsection.6.6.5.7}%
+\contentsline {subsubsection}{\numberline {6.6.5.8}userConfig}{58}{subsubsection.6.6.5.8}%
+\contentsline {subsubsection}{\numberline {6.6.5.9}userData}{58}{subsubsection.6.6.5.9}%
+\contentsline {subsubsection}{\numberline {6.6.5.10}userDir}{58}{subsubsection.6.6.5.10}%
+\contentsline {subsubsection}{\numberline {6.6.5.11}users}{58}{subsubsection.6.6.5.11}%
+\contentsline {section}{\numberline {6.7}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::transfer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::answer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Path\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List Struct Reference}{59}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{59}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Friends And Related Function Documentation}{59}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}operator$<$$<$}{59}{subsubsection.6.7.2.1}%
+\contentsline {subsubsection}{\numberline {6.7.2.2}operator$>$$>$}{59}{subsubsection.6.7.2.2}%
+\contentsline {subsection}{\numberline {6.7.3}Member Data Documentation}{60}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}dPath}{60}{subsubsection.6.7.3.1}%
+\contentsline {subsubsection}{\numberline {6.7.3.2}fileType}{60}{subsubsection.6.7.3.2}%
+\contentsline {section}{\numberline {6.8}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::File Class Reference}{60}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{61}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Constructor \& Destructor Documentation}{61}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}File()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{61}{subsubsection.6.8.2.1}%
+\contentsline {subsubsection}{\numberline {6.8.2.2}File()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{61}{subsubsection.6.8.2.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.3}$\sim $File()}{62}{subsubsection.6.8.2.3}%
+\contentsline {subsection}{\numberline {6.8.3}Member Function Documentation}{62}{subsection.6.8.3}%
+\contentsline {subsubsection}{\numberline {6.8.3.1}dPath()}{62}{subsubsection.6.8.3.1}%
+\contentsline {subsubsection}{\numberline {6.8.3.2}dType()}{62}{subsubsection.6.8.3.2}%
+\contentsline {subsubsection}{\numberline {6.8.3.3}exists()}{62}{subsubsection.6.8.3.3}%
+\contentsline {subsubsection}{\numberline {6.8.3.4}getDPath()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{62}{subsubsection.6.8.3.4}%
+\contentsline {subsubsection}{\numberline {6.8.3.5}getDPath()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{63}{subsubsection.6.8.3.5}%
+\contentsline {subsubsection}{\numberline {6.8.3.6}getDPath()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{63}{subsubsection.6.8.3.6}%
+\contentsline {subsubsection}{\numberline {6.8.3.7}getDPathList()}{63}{subsubsection.6.8.3.7}%
+\contentsline {subsubsection}{\numberline {6.8.3.8}getFileTypeName()}{63}{subsubsection.6.8.3.8}%
+\contentsline {subsubsection}{\numberline {6.8.3.9}getFullDir()}{63}{subsubsection.6.8.3.9}%
+\contentsline {subsubsection}{\numberline {6.8.3.10}getFullPath()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{64}{subsubsection.6.8.3.10}%
+\contentsline {subsubsection}{\numberline {6.8.3.11}getFullPath()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{64}{subsubsection.6.8.3.11}%
+\contentsline {subsubsection}{\numberline {6.8.3.12}getFullTypeList()}{64}{subsubsection.6.8.3.12}%
+\contentsline {subsubsection}{\numberline {6.8.3.13}isOpen()}{64}{subsubsection.6.8.3.13}%
+\contentsline {subsubsection}{\numberline {6.8.3.14}openRead()}{64}{subsubsection.6.8.3.14}%
+\contentsline {subsubsection}{\numberline {6.8.3.15}openWrite()}{64}{subsubsection.6.8.3.15}%
+\contentsline {subsubsection}{\numberline {6.8.3.16}readAll()}{65}{subsubsection.6.8.3.16}%
+\contentsline {subsubsection}{\numberline {6.8.3.17}rename()}{65}{subsubsection.6.8.3.17}%
+\contentsline {subsubsection}{\numberline {6.8.3.18}stream()}{65}{subsubsection.6.8.3.18}%
+\contentsline {subsubsection}{\numberline {6.8.3.19}writeAll()}{65}{subsubsection.6.8.3.19}%
+\contentsline {subsection}{\numberline {6.8.4}Member Data Documentation}{65}{subsection.6.8.4}%
+\contentsline {subsubsection}{\numberline {6.8.4.1}m\_file}{65}{subsubsection.6.8.4.1}%
+\contentsline {subsubsection}{\numberline {6.8.4.2}m\_stream}{66}{subsubsection.6.8.4.2}%
+\contentsline {subsubsection}{\numberline {6.8.4.3}p\_dPath}{66}{subsubsection.6.8.4.3}%
+\contentsline {subsubsection}{\numberline {6.8.4.4}p\_fileType}{66}{subsubsection.6.8.4.4}%
+\contentsline {section}{\numberline {6.9}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Function Class Reference}{66}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{67}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Constructor \& Destructor Documentation}{67}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}Function()}{67}{subsubsection.6.9.2.1}%
+\contentsline {subsection}{\numberline {6.9.3}Member Function Documentation}{67}{subsection.6.9.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.1}digitToString()}{67}{subsubsection.6.9.3.1}%
+\contentsline {subsubsection}{\numberline {6.9.3.2}filePath()}{68}{subsubsection.6.9.3.2}%
+\contentsline {subsubsection}{\numberline {6.9.3.3}findMaxElement()}{68}{subsubsection.6.9.3.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.4}findMaxIndexList()}{68}{subsubsection.6.9.3.4}%
+\contentsline {subsubsection}{\numberline {6.9.3.5}findMinElement()}{68}{subsubsection.6.9.3.5}%
+\contentsline {subsubsection}{\numberline {6.9.3.6}findMinIndexList()}{68}{subsubsection.6.9.3.6}%
+\contentsline {subsubsection}{\numberline {6.9.3.7}library()}{69}{subsubsection.6.9.3.7}%
+\contentsline {subsubsection}{\numberline {6.9.3.8}libraryName()}{69}{subsubsection.6.9.3.8}%
+\contentsline {subsubsection}{\numberline {6.9.3.9}libraryPath()}{69}{subsubsection.6.9.3.9}%
+\contentsline {subsubsection}{\numberline {6.9.3.10}nullDateTime()}{69}{subsubsection.6.9.3.10}%
+\contentsline {subsubsection}{\numberline {6.9.3.11}pluginLoader()}{69}{subsubsection.6.9.3.11}%
+\contentsline {subsubsection}{\numberline {6.9.3.12}randomInt()}{70}{subsubsection.6.9.3.12}%
+\contentsline {subsubsection}{\numberline {6.9.3.13}stringToDigit()}{70}{subsubsection.6.9.3.13}%
+\contentsline {subsubsection}{\numberline {6.9.3.14}toString()}{70}{subsubsection.6.9.3.14}%
+\contentsline {section}{\numberline {6.10}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Global\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}bit Struct Reference}{71}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{71}{subsection.6.10.1}%
+\contentsline {subsection}{\numberline {6.10.2}Constructor \& Destructor Documentation}{71}{subsection.6.10.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.1}Global\_bit()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{71}{subsubsection.6.10.2.1}%
+\contentsline {subsubsection}{\numberline {6.10.2.2}Global\_bit()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{71}{subsubsection.6.10.2.2}%
+\contentsline {subsection}{\numberline {6.10.3}Member Function Documentation}{72}{subsection.6.10.3}%
+\contentsline {subsubsection}{\numberline {6.10.3.1}toNumber()}{72}{subsubsection.6.10.3.1}%
+\contentsline {subsection}{\numberline {6.10.4}Friends And Related Function Documentation}{72}{subsection.6.10.4}%
+\contentsline {subsubsection}{\numberline {6.10.4.1}operator$<$$<$}{72}{subsubsection.6.10.4.1}%
+\contentsline {subsubsection}{\numberline {6.10.4.2}operator==}{72}{subsubsection.6.10.4.2}%
+\contentsline {subsubsection}{\numberline {6.10.4.3}operator$>$$>$}{72}{subsubsection.6.10.4.3}%
+\contentsline {subsection}{\numberline {6.10.5}Member Data Documentation}{72}{subsection.6.10.5}%
+\contentsline {subsubsection}{\numberline {6.10.5.1}objectId}{73}{subsubsection.6.10.5.1}%
+\contentsline {subsubsection}{\numberline {6.10.5.2}ownerId}{73}{subsubsection.6.10.5.2}%
+\contentsline {section}{\numberline {6.11}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Faccount\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Group Class Reference}{73}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{74}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Constructor \& Destructor Documentation}{74}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}Group()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{74}{subsubsection.6.11.2.1}%
+\contentsline {subsubsection}{\numberline {6.11.2.2}Group()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{74}{subsubsection.6.11.2.2}%
+\contentsline {subsection}{\numberline {6.11.3}Member Function Documentation}{74}{subsection.6.11.3}%
+\contentsline {subsubsection}{\numberline {6.11.3.1}addAccount()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{74}{subsubsection.6.11.3.1}%
+\contentsline {subsubsection}{\numberline {6.11.3.2}addAccount()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{75}{subsubsection.6.11.3.2}%
+\contentsline {subsubsection}{\numberline {6.11.3.3}changeAccess()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{75}{subsubsection.6.11.3.3}%
+\contentsline {subsubsection}{\numberline {6.11.3.4}changeAccess()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{75}{subsubsection.6.11.3.4}%
+\contentsline {subsubsection}{\numberline {6.11.3.5}creatorList()}{75}{subsubsection.6.11.3.5}%
+\contentsline {subsubsection}{\numberline {6.11.3.6}creatorNameList()}{75}{subsubsection.6.11.3.6}%
+\contentsline {subsubsection}{\numberline {6.11.3.7}getByType()}{76}{subsubsection.6.11.3.7}%
+\contentsline {subsubsection}{\numberline {6.11.3.8}getNameByType()}{76}{subsubsection.6.11.3.8}%
+\contentsline {subsubsection}{\numberline {6.11.3.9}moderatorList()}{76}{subsubsection.6.11.3.9}%
+\contentsline {subsubsection}{\numberline {6.11.3.10}moderatorNameList()}{76}{subsubsection.6.11.3.10}%
+\contentsline {subsubsection}{\numberline {6.11.3.11}ownerList()}{76}{subsubsection.6.11.3.11}%
+\contentsline {subsubsection}{\numberline {6.11.3.12}ownerNameList()}{76}{subsubsection.6.11.3.12}%
+\contentsline {subsubsection}{\numberline {6.11.3.13}removeAccount()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{77}{subsubsection.6.11.3.13}%
+\contentsline {subsubsection}{\numberline {6.11.3.14}removeAccount()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{77}{subsubsection.6.11.3.14}%
+\contentsline {subsubsection}{\numberline {6.11.3.15}userList()}{77}{subsubsection.6.11.3.15}%
+\contentsline {subsubsection}{\numberline {6.11.3.16}userNameList()}{77}{subsubsection.6.11.3.16}%
+\contentsline {subsection}{\numberline {6.11.4}Member Data Documentation}{77}{subsection.6.11.4}%
+\contentsline {subsubsection}{\numberline {6.11.4.1}m\_userList}{77}{subsubsection.6.11.4.1}%
+\contentsline {section}{\numberline {6.12}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fquick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Application Class Reference}{78}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Detailed Description}{79}{subsection.6.12.1}%
+\contentsline {subsection}{\numberline {6.12.2}Constructor \& Destructor Documentation}{79}{subsection.6.12.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.1}GuiApplication()}{79}{subsubsection.6.12.2.1}%
+\contentsline {subsubsection}{\numberline {6.12.2.2}$\sim $GuiApplication()}{79}{subsubsection.6.12.2.2}%
+\contentsline {subsection}{\numberline {6.12.3}Member Function Documentation}{79}{subsection.6.12.3}%
+\contentsline {subsubsection}{\numberline {6.12.3.1}account()}{80}{subsubsection.6.12.3.1}%
+\contentsline {subsubsection}{\numberline {6.12.3.2}accountChanged}{80}{subsubsection.6.12.3.2}%
+\contentsline {subsubsection}{\numberline {6.12.3.3}addPlugin()}{80}{subsubsection.6.12.3.3}%
+\contentsline {subsubsection}{\numberline {6.12.3.4}checkPortrait()}{80}{subsubsection.6.12.3.4}%
+\contentsline {subsubsection}{\numberline {6.12.3.5}clickOnMenu}{80}{subsubsection.6.12.3.5}%
+\contentsline {subsubsection}{\numberline {6.12.3.6}initializePlugin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{80}{subsubsection.6.12.3.6}%
+\contentsline {subsubsection}{\numberline {6.12.3.7}initializePlugin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{81}{subsubsection.6.12.3.7}%
+\contentsline {subsubsection}{\numberline {6.12.3.8}menuModel()}{81}{subsubsection.6.12.3.8}%
+\contentsline {subsubsection}{\numberline {6.12.3.9}monomenu()}{81}{subsubsection.6.12.3.9}%
+\contentsline {subsubsection}{\numberline {6.12.3.10}monomenuChanged}{81}{subsubsection.6.12.3.10}%
+\contentsline {subsubsection}{\numberline {6.12.3.11}monoobject()}{81}{subsubsection.6.12.3.11}%
+\contentsline {subsubsection}{\numberline {6.12.3.12}monoobjectChanged}{81}{subsubsection.6.12.3.12}%
+\contentsline {subsubsection}{\numberline {6.12.3.13}portrait()}{81}{subsubsection.6.12.3.13}%
+\contentsline {subsubsection}{\numberline {6.12.3.14}portraitChanged}{82}{subsubsection.6.12.3.14}%
+\contentsline {subsubsection}{\numberline {6.12.3.15}quit()}{82}{subsubsection.6.12.3.15}%
+\contentsline {subsubsection}{\numberline {6.12.3.16}setAFaccountFlag()}{82}{subsubsection.6.12.3.16}%
+\contentsline {subsubsection}{\numberline {6.12.3.17}setContentUrl()}{82}{subsubsection.6.12.3.17}%
+\contentsline {subsubsection}{\numberline {6.12.3.18}setContextProperty()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{82}{subsubsection.6.12.3.18}%
+\contentsline {subsubsection}{\numberline {6.12.3.19}setContextProperty()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{82}{subsubsection.6.12.3.19}%
+\contentsline {subsubsection}{\numberline {6.12.3.20}setCurrentPlugin()}{83}{subsubsection.6.12.3.20}%
+\contentsline {subsubsection}{\numberline {6.12.3.21}setMainQml()}{83}{subsubsection.6.12.3.21}%
+\contentsline {subsubsection}{\numberline {6.12.3.22}setMainQmlUrl()}{83}{subsubsection.6.12.3.22}%
+\contentsline {subsubsection}{\numberline {6.12.3.23}setMonomenu()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{83}{subsubsection.6.12.3.23}%
+\contentsline {subsubsection}{\numberline {6.12.3.24}setMonomenu()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{83}{subsubsection.6.12.3.24}%
+\contentsline {subsubsection}{\numberline {6.12.3.25}show()}{83}{subsubsection.6.12.3.25}%
+\contentsline {subsection}{\numberline {6.12.4}Member Data Documentation}{84}{subsection.6.12.4}%
+\contentsline {subsubsection}{\numberline {6.12.4.1}m\_currentPluginName}{84}{subsubsection.6.12.4.1}%
+\contentsline {subsubsection}{\numberline {6.12.4.2}m\_initializeAll}{84}{subsubsection.6.12.4.2}%
+\contentsline {subsubsection}{\numberline {6.12.4.3}m\_menu}{84}{subsubsection.6.12.4.3}%
+\contentsline {subsubsection}{\numberline {6.12.4.4}m\_monomenu}{84}{subsubsection.6.12.4.4}%
+\contentsline {subsubsection}{\numberline {6.12.4.5}m\_pluginList}{84}{subsubsection.6.12.4.5}%
+\contentsline {subsubsection}{\numberline {6.12.4.6}m\_portrait}{85}{subsubsection.6.12.4.6}%
+\contentsline {subsubsection}{\numberline {6.12.4.7}m\_useAFaccount}{85}{subsubsection.6.12.4.7}%
+\contentsline {subsubsection}{\numberline {6.12.4.8}m\_view}{85}{subsubsection.6.12.4.8}%
+\contentsline {subsection}{\numberline {6.12.5}Property Documentation}{85}{subsection.6.12.5}%
+\contentsline {subsubsection}{\numberline {6.12.5.1}account}{85}{subsubsection.6.12.5.1}%
+\contentsline {subsubsection}{\numberline {6.12.5.2}menuModel}{85}{subsubsection.6.12.5.2}%
+\contentsline {subsubsection}{\numberline {6.12.5.3}monomenu}{85}{subsubsection.6.12.5.3}%
+\contentsline {subsubsection}{\numberline {6.12.5.4}monoobject}{86}{subsubsection.6.12.5.4}%
+\contentsline {subsubsection}{\numberline {6.12.5.5}portrait}{86}{subsubsection.6.12.5.5}%
+\contentsline {section}{\numberline {6.13}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fquick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plugin Class Reference}{86}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{87}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Constructor \& Destructor Documentation}{87}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}GuiPlugin()}{87}{subsubsection.6.13.2.1}%
+\contentsline {subsubsection}{\numberline {6.13.2.2}$\sim $GuiPlugin()}{87}{subsubsection.6.13.2.2}%
+\contentsline {subsection}{\numberline {6.13.3}Member Function Documentation}{87}{subsection.6.13.3}%
+\contentsline {subsubsection}{\numberline {6.13.3.1}clickOnMenu()}{87}{subsubsection.6.13.3.1}%
+\contentsline {subsubsection}{\numberline {6.13.3.2}icon()}{88}{subsubsection.6.13.3.2}%
+\contentsline {subsubsection}{\numberline {6.13.3.3}initialize()}{88}{subsubsection.6.13.3.3}%
+\contentsline {subsubsection}{\numberline {6.13.3.4}name()}{88}{subsubsection.6.13.3.4}%
+\contentsline {subsubsection}{\numberline {6.13.3.5}qmlUrl()}{88}{subsubsection.6.13.3.5}%
+\contentsline {subsubsection}{\numberline {6.13.3.6}setAfApp()}{88}{subsubsection.6.13.3.6}%
+\contentsline {subsubsection}{\numberline {6.13.3.7}setContextProperty()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{88}{subsubsection.6.13.3.7}%
+\contentsline {subsubsection}{\numberline {6.13.3.8}setContextProperty()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{89}{subsubsection.6.13.3.8}%
+\contentsline {subsection}{\numberline {6.13.4}Friends And Related Function Documentation}{89}{subsection.6.13.4}%
+\contentsline {subsubsection}{\numberline {6.13.4.1}GuiApplication}{89}{subsubsection.6.13.4.1}%
+\contentsline {subsection}{\numberline {6.13.5}Member Data Documentation}{89}{subsection.6.13.5}%
+\contentsline {subsubsection}{\numberline {6.13.5.1}m\_afApp}{89}{subsubsection.6.13.5.1}%
+\contentsline {subsubsection}{\numberline {6.13.5.2}m\_name}{89}{subsubsection.6.13.5.2}%
+\contentsline {section}{\numberline {6.14}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fquick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Size Class Reference}{90}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Detailed Description}{90}{subsection.6.14.1}%
+\contentsline {subsection}{\numberline {6.14.2}Constructor \& Destructor Documentation}{91}{subsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.1}GuiSize()}{91}{subsubsection.6.14.2.1}%
+\contentsline {subsection}{\numberline {6.14.3}Member Function Documentation}{91}{subsection.6.14.3}%
+\contentsline {subsubsection}{\numberline {6.14.3.1}button()}{91}{subsubsection.6.14.3.1}%
+\contentsline {subsubsection}{\numberline {6.14.3.2}menuWidth()}{91}{subsubsection.6.14.3.2}%
+\contentsline {subsubsection}{\numberline {6.14.3.3}menuWidthChanged}{91}{subsubsection.6.14.3.3}%
+\contentsline {subsubsection}{\numberline {6.14.3.4}setMenuWidth}{91}{subsubsection.6.14.3.4}%
+\contentsline {subsubsection}{\numberline {6.14.3.5}setTopleft}{92}{subsubsection.6.14.3.5}%
+\contentsline {subsubsection}{\numberline {6.14.3.6}topleft()}{92}{subsubsection.6.14.3.6}%
+\contentsline {subsubsection}{\numberline {6.14.3.7}topleftChanged}{92}{subsubsection.6.14.3.7}%
+\contentsline {subsection}{\numberline {6.14.4}Member Data Documentation}{92}{subsection.6.14.4}%
+\contentsline {subsubsection}{\numberline {6.14.4.1}m\_button}{92}{subsubsection.6.14.4.1}%
+\contentsline {subsubsection}{\numberline {6.14.4.2}m\_menuWidth}{92}{subsubsection.6.14.4.2}%
+\contentsline {subsubsection}{\numberline {6.14.4.3}m\_topleft}{92}{subsubsection.6.14.4.3}%
+\contentsline {subsection}{\numberline {6.14.5}Property Documentation}{93}{subsection.6.14.5}%
+\contentsline {subsubsection}{\numberline {6.14.5.1}button}{93}{subsubsection.6.14.5.1}%
+\contentsline {subsubsection}{\numberline {6.14.5.2}menuWidth}{93}{subsubsection.6.14.5.2}%
+\contentsline {subsubsection}{\numberline {6.14.5.3}topleft}{93}{subsubsection.6.14.5.3}%
+\contentsline {section}{\numberline {6.15}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::History Class Reference}{93}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{95}{subsection.6.15.1}%
+\contentsline {subsection}{\numberline {6.15.2}Constructor \& Destructor Documentation}{95}{subsection.6.15.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.1}History()}{95}{subsubsection.6.15.2.1}%
+\contentsline {subsection}{\numberline {6.15.3}Member Function Documentation}{96}{subsection.6.15.3}%
+\contentsline {subsubsection}{\numberline {6.15.3.1}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [1/8]}}{96}{subsubsection.6.15.3.1}%
+\contentsline {subsubsection}{\numberline {6.15.3.2}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [2/8]}}{96}{subsubsection.6.15.3.2}%
+\contentsline {subsubsection}{\numberline {6.15.3.3}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [3/8]}}{96}{subsubsection.6.15.3.3}%
+\contentsline {subsubsection}{\numberline {6.15.3.4}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [4/8]}}{96}{subsubsection.6.15.3.4}%
+\contentsline {subsubsection}{\numberline {6.15.3.5}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [5/8]}}{97}{subsubsection.6.15.3.5}%
+\contentsline {subsubsection}{\numberline {6.15.3.6}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [6/8]}}{97}{subsubsection.6.15.3.6}%
+\contentsline {subsubsection}{\numberline {6.15.3.7}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [7/8]}}{97}{subsubsection.6.15.3.7}%
+\contentsline {subsubsection}{\numberline {6.15.3.8}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [8/8]}}{97}{subsubsection.6.15.3.8}%
+\contentsline {subsubsection}{\numberline {6.15.3.9}addOperations()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{98}{subsubsection.6.15.3.9}%
+\contentsline {subsubsection}{\numberline {6.15.3.10}addOperations()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{98}{subsubsection.6.15.3.10}%
+\contentsline {subsubsection}{\numberline {6.15.3.11}getAllOperates()}{98}{subsubsection.6.15.3.11}%
+\contentsline {subsubsection}{\numberline {6.15.3.12}getAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{98}{subsubsection.6.15.3.12}%
+\contentsline {subsubsection}{\numberline {6.15.3.13}getAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{98}{subsubsection.6.15.3.13}%
+\contentsline {subsubsection}{\numberline {6.15.3.14}getAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{99}{subsubsection.6.15.3.14}%
+\contentsline {subsubsection}{\numberline {6.15.3.15}getAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{99}{subsubsection.6.15.3.15}%
+\contentsline {subsubsection}{\numberline {6.15.3.16}getIdAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{99}{subsubsection.6.15.3.16}%
+\contentsline {subsubsection}{\numberline {6.15.3.17}getIdAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{99}{subsubsection.6.15.3.17}%
+\contentsline {subsubsection}{\numberline {6.15.3.18}getIdOperates()}{99}{subsubsection.6.15.3.18}%
+\contentsline {subsubsection}{\numberline {6.15.3.19}getListAfter()}{100}{subsubsection.6.15.3.19}%
+\contentsline {subsubsection}{\numberline {6.15.3.20}getListIdAfter()}{100}{subsubsection.6.15.3.20}%
+\contentsline {subsubsection}{\numberline {6.15.3.21}getMultiAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{100}{subsubsection.6.15.3.21}%
+\contentsline {subsubsection}{\numberline {6.15.3.22}getMultiAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{100}{subsubsection.6.15.3.22}%
+\contentsline {subsubsection}{\numberline {6.15.3.23}getMultiAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{100}{subsubsection.6.15.3.23}%
+\contentsline {subsubsection}{\numberline {6.15.3.24}getMultiIdAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{101}{subsubsection.6.15.3.24}%
+\contentsline {subsubsection}{\numberline {6.15.3.25}getMultiIdAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{101}{subsubsection.6.15.3.25}%
+\contentsline {subsubsection}{\numberline {6.15.3.26}getNoIdOperates()}{101}{subsubsection.6.15.3.26}%
+\contentsline {subsubsection}{\numberline {6.15.3.27}haveUpdates()}{101}{subsubsection.6.15.3.27}%
+\contentsline {subsubsection}{\numberline {6.15.3.28}isEmpty()}{101}{subsubsection.6.15.3.28}%
+\contentsline {subsubsection}{\numberline {6.15.3.29}lastChange()}{101}{subsubsection.6.15.3.29}%
+\contentsline {subsubsection}{\numberline {6.15.3.30}lastUpdate()}{102}{subsubsection.6.15.3.30}%
+\contentsline {subsubsection}{\numberline {6.15.3.31}makeFull()}{102}{subsubsection.6.15.3.31}%
+\contentsline {subsubsection}{\numberline {6.15.3.32}makeShorten()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{102}{subsubsection.6.15.3.32}%
+\contentsline {subsubsection}{\numberline {6.15.3.33}makeShorten()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{102}{subsubsection.6.15.3.33}%
+\contentsline {subsubsection}{\numberline {6.15.3.34}refreshLastChangeTime()}{102}{subsubsection.6.15.3.34}%
+\contentsline {subsubsection}{\numberline {6.15.3.35}savedStatus()}{102}{subsubsection.6.15.3.35}%
+\contentsline {subsubsection}{\numberline {6.15.3.36}saveShorten()}{103}{subsubsection.6.15.3.36}%
+\contentsline {subsubsection}{\numberline {6.15.3.37}saveToStorage()}{103}{subsubsection.6.15.3.37}%
+\contentsline {subsubsection}{\numberline {6.15.3.38}setAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{103}{subsubsection.6.15.3.38}%
+\contentsline {subsubsection}{\numberline {6.15.3.39}setAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{103}{subsubsection.6.15.3.39}%
+\contentsline {subsubsection}{\numberline {6.15.3.40}setAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{103}{subsubsection.6.15.3.40}%
+\contentsline {subsubsection}{\numberline {6.15.3.41}setIdAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{104}{subsubsection.6.15.3.41}%
+\contentsline {subsubsection}{\numberline {6.15.3.42}setIdAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{104}{subsubsection.6.15.3.42}%
+\contentsline {subsubsection}{\numberline {6.15.3.43}setMultiAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{104}{subsubsection.6.15.3.43}%
+\contentsline {subsubsection}{\numberline {6.15.3.44}setMultiAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{104}{subsubsection.6.15.3.44}%
+\contentsline {subsubsection}{\numberline {6.15.3.45}setMultiAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{104}{subsubsection.6.15.3.45}%
+\contentsline {subsubsection}{\numberline {6.15.3.46}setMultiIdAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{105}{subsubsection.6.15.3.46}%
+\contentsline {subsubsection}{\numberline {6.15.3.47}setMultiIdAttribute()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{105}{subsubsection.6.15.3.47}%
+\contentsline {subsubsection}{\numberline {6.15.3.48}timeCreate()}{105}{subsubsection.6.15.3.48}%
+\contentsline {subsubsection}{\numberline {6.15.3.49}updateTime()}{105}{subsubsection.6.15.3.49}%
+\contentsline {subsubsection}{\numberline {6.15.3.50}useCompress()}{105}{subsubsection.6.15.3.50}%
+\contentsline {subsection}{\numberline {6.15.4}Friends And Related Function Documentation}{105}{subsection.6.15.4}%
+\contentsline {subsubsection}{\numberline {6.15.4.1}AFlib::id::Object}{106}{subsubsection.6.15.4.1}%
+\contentsline {subsubsection}{\numberline {6.15.4.2}operator$<$$<$}{106}{subsubsection.6.15.4.2}%
+\contentsline {subsubsection}{\numberline {6.15.4.3}operator$>$$>$}{106}{subsubsection.6.15.4.3}%
+\contentsline {subsection}{\numberline {6.15.5}Member Data Documentation}{106}{subsection.6.15.5}%
+\contentsline {subsubsection}{\numberline {6.15.5.1}m\_lastUpdate}{106}{subsubsection.6.15.5.1}%
+\contentsline {subsubsection}{\numberline {6.15.5.2}m\_operateIdList}{106}{subsubsection.6.15.5.2}%
+\contentsline {subsubsection}{\numberline {6.15.5.3}m\_operateList}{107}{subsubsection.6.15.5.3}%
+\contentsline {subsubsection}{\numberline {6.15.5.4}m\_owner}{107}{subsubsection.6.15.5.4}%
+\contentsline {section}{\numberline {6.16}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Faccount\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Info Class Reference}{107}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Detailed Description}{108}{subsection.6.16.1}%
+\contentsline {subsection}{\numberline {6.16.2}Constructor \& Destructor Documentation}{108}{subsection.6.16.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.1}Info()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{108}{subsubsection.6.16.2.1}%
+\contentsline {subsubsection}{\numberline {6.16.2.2}Info()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{108}{subsubsection.6.16.2.2}%
+\contentsline {subsection}{\numberline {6.16.3}Member Function Documentation}{108}{subsection.6.16.3}%
+\contentsline {subsubsection}{\numberline {6.16.3.1}icon()}{109}{subsubsection.6.16.3.1}%
+\contentsline {subsubsection}{\numberline {6.16.3.2}iconChanged}{109}{subsubsection.6.16.3.2}%
+\contentsline {subsubsection}{\numberline {6.16.3.3}mail()}{109}{subsubsection.6.16.3.3}%
+\contentsline {subsubsection}{\numberline {6.16.3.4}mailChanged}{109}{subsubsection.6.16.3.4}%
+\contentsline {subsubsection}{\numberline {6.16.3.5}operator QJsonObject()}{109}{subsubsection.6.16.3.5}%
+\contentsline {subsubsection}{\numberline {6.16.3.6}setIcon}{109}{subsubsection.6.16.3.6}%
+\contentsline {subsubsection}{\numberline {6.16.3.7}setMail}{110}{subsubsection.6.16.3.7}%
+\contentsline {subsubsection}{\numberline {6.16.3.8}toJson()}{110}{subsubsection.6.16.3.8}%
+\contentsline {subsection}{\numberline {6.16.4}Property Documentation}{110}{subsection.6.16.4}%
+\contentsline {subsubsection}{\numberline {6.16.4.1}mail}{110}{subsubsection.6.16.4.1}%
+\contentsline {section}{\numberline {6.17}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fquick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{110}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Detailed Description}{111}{subsection.6.17.1}%
+\contentsline {subsection}{\numberline {6.17.2}Member Enumeration Documentation}{111}{subsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.1}FieldName}{111}{subsubsection.6.17.2.1}%
+\contentsline {subsection}{\numberline {6.17.3}Constructor \& Destructor Documentation}{112}{subsection.6.17.3}%
+\contentsline {subsubsection}{\numberline {6.17.3.1}MenuModel()}{112}{subsubsection.6.17.3.1}%
+\contentsline {subsection}{\numberline {6.17.4}Member Function Documentation}{112}{subsection.6.17.4}%
+\contentsline {subsubsection}{\numberline {6.17.4.1}beginResetModelSlot}{112}{subsubsection.6.17.4.1}%
+\contentsline {subsubsection}{\numberline {6.17.4.2}data()}{112}{subsubsection.6.17.4.2}%
+\contentsline {subsubsection}{\numberline {6.17.4.3}endResetModelSlot}{112}{subsubsection.6.17.4.3}%
+\contentsline {subsubsection}{\numberline {6.17.4.4}getCount}{112}{subsubsection.6.17.4.4}%
+\contentsline {subsubsection}{\numberline {6.17.4.5}getIconByIndex}{113}{subsubsection.6.17.4.5}%
+\contentsline {subsubsection}{\numberline {6.17.4.6}getNameByIndex}{113}{subsubsection.6.17.4.6}%
+\contentsline {subsubsection}{\numberline {6.17.4.7}isCurrentByIndex}{113}{subsubsection.6.17.4.7}%
+\contentsline {subsubsection}{\numberline {6.17.4.8}roleNames()}{113}{subsubsection.6.17.4.8}%
+\contentsline {subsubsection}{\numberline {6.17.4.9}rowCount()}{113}{subsubsection.6.17.4.9}%
+\contentsline {subsubsection}{\numberline {6.17.4.10}updateData()}{113}{subsubsection.6.17.4.10}%
+\contentsline {subsection}{\numberline {6.17.5}Member Data Documentation}{113}{subsection.6.17.5}%
+\contentsline {subsubsection}{\numberline {6.17.5.1}m\_currentIndex}{114}{subsubsection.6.17.5.1}%
+\contentsline {subsubsection}{\numberline {6.17.5.2}m\_roleNames}{114}{subsubsection.6.17.5.2}%
+\contentsline {section}{\numberline {6.18}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fquick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Single Struct Reference}{114}{section.6.18}%
+\contentsline {subsection}{\numberline {6.18.1}Detailed Description}{114}{subsection.6.18.1}%
+\contentsline {subsection}{\numberline {6.18.2}Member Data Documentation}{114}{subsection.6.18.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.1}iconPath}{114}{subsubsection.6.18.2.1}%
+\contentsline {subsubsection}{\numberline {6.18.2.2}name}{115}{subsubsection.6.18.2.2}%
+\contentsline {section}{\numberline {6.19}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::transfer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::answer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Object Struct Reference}{115}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Detailed Description}{115}{subsection.6.19.1}%
+\contentsline {subsection}{\numberline {6.19.2}Friends And Related Function Documentation}{115}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}operator$<$$<$}{115}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}operator$>$$>$}{116}{subsubsection.6.19.2.2}%
+\contentsline {subsection}{\numberline {6.19.3}Member Data Documentation}{116}{subsection.6.19.3}%
+\contentsline {subsubsection}{\numberline {6.19.3.1}object\_global}{116}{subsubsection.6.19.3.1}%
+\contentsline {subsubsection}{\numberline {6.19.3.2}object\_local}{116}{subsubsection.6.19.3.2}%
+\contentsline {subsubsection}{\numberline {6.19.3.3}owner}{116}{subsubsection.6.19.3.3}%
+\contentsline {section}{\numberline {6.20}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Object Class Reference}{116}{section.6.20}%
+\contentsline {subsection}{\numberline {6.20.1}Detailed Description}{118}{subsection.6.20.1}%
+\contentsline {subsection}{\numberline {6.20.2}Constructor \& Destructor Documentation}{118}{subsection.6.20.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.1}Object()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{118}{subsubsection.6.20.2.1}%
+\contentsline {subsubsection}{\numberline {6.20.2.2}Object()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{118}{subsubsection.6.20.2.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.3}Object()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{118}{subsubsection.6.20.2.3}%
+\contentsline {subsubsection}{\numberline {6.20.2.4}Object()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{118}{subsubsection.6.20.2.4}%
+\contentsline {subsubsection}{\numberline {6.20.2.5}$\sim $Object()}{119}{subsubsection.6.20.2.5}%
+\contentsline {subsubsection}{\numberline {6.20.2.6}Object()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{119}{subsubsection.6.20.2.6}%
+\contentsline {subsection}{\numberline {6.20.3}Member Function Documentation}{119}{subsection.6.20.3}%
+\contentsline {subsubsection}{\numberline {6.20.3.1}createPtr()}{119}{subsubsection.6.20.3.1}%
+\contentsline {subsubsection}{\numberline {6.20.3.2}description()}{119}{subsubsection.6.20.3.2}%
+\contentsline {subsubsection}{\numberline {6.20.3.3}getData()}{119}{subsubsection.6.20.3.3}%
+\contentsline {subsubsection}{\numberline {6.20.3.4}global()}{120}{subsubsection.6.20.3.4}%
+\contentsline {subsubsection}{\numberline {6.20.3.5}globalId()}{120}{subsubsection.6.20.3.5}%
+\contentsline {subsubsection}{\numberline {6.20.3.6}isAccount()}{120}{subsubsection.6.20.3.6}%
+\contentsline {subsubsection}{\numberline {6.20.3.7}listToBytaArray()}{120}{subsubsection.6.20.3.7}%
+\contentsline {subsubsection}{\numberline {6.20.3.8}localId()}{120}{subsubsection.6.20.3.8}%
+\contentsline {subsubsection}{\numberline {6.20.3.9}localId\_b()}{120}{subsubsection.6.20.3.9}%
+\contentsline {subsubsection}{\numberline {6.20.3.10}makeGlobalId()}{121}{subsubsection.6.20.3.10}%
+\contentsline {subsubsection}{\numberline {6.20.3.11}name()}{121}{subsubsection.6.20.3.11}%
+\contentsline {subsubsection}{\numberline {6.20.3.12}operator QByteArray()}{121}{subsubsection.6.20.3.12}%
+\contentsline {subsubsection}{\numberline {6.20.3.13}owner()}{121}{subsubsection.6.20.3.13}%
+\contentsline {subsubsection}{\numberline {6.20.3.14}parent()}{121}{subsubsection.6.20.3.14}%
+\contentsline {subsubsection}{\numberline {6.20.3.15}readFromFile()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{121}{subsubsection.6.20.3.15}%
+\contentsline {subsubsection}{\numberline {6.20.3.16}readFromFile()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{122}{subsubsection.6.20.3.16}%
+\contentsline {subsubsection}{\numberline {6.20.3.17}readFromFile()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{122}{subsubsection.6.20.3.17}%
+\contentsline {subsubsection}{\numberline {6.20.3.18}readList()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{122}{subsubsection.6.20.3.18}%
+\contentsline {subsubsection}{\numberline {6.20.3.19}readList()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{122}{subsubsection.6.20.3.19}%
+\contentsline {subsubsection}{\numberline {6.20.3.20}readList()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{122}{subsubsection.6.20.3.20}%
+\contentsline {subsubsection}{\numberline {6.20.3.21}savedStatus()}{123}{subsubsection.6.20.3.21}%
+\contentsline {subsubsection}{\numberline {6.20.3.22}saveToStorage()}{123}{subsubsection.6.20.3.22}%
+\contentsline {subsubsection}{\numberline {6.20.3.23}setDescription()}{123}{subsubsection.6.20.3.23}%
+\contentsline {subsubsection}{\numberline {6.20.3.24}setName()}{123}{subsubsection.6.20.3.24}%
+\contentsline {subsubsection}{\numberline {6.20.3.25}setOwner()}{123}{subsubsection.6.20.3.25}%
+\contentsline {subsubsection}{\numberline {6.20.3.26}setParent()}{124}{subsubsection.6.20.3.26}%
+\contentsline {subsubsection}{\numberline {6.20.3.27}setUniqueId()}{124}{subsubsection.6.20.3.27}%
+\contentsline {subsection}{\numberline {6.20.4}Friends And Related Function Documentation}{124}{subsection.6.20.4}%
+\contentsline {subsubsection}{\numberline {6.20.4.1}AFlib::id::ObjectTemplate}{124}{subsubsection.6.20.4.1}%
+\contentsline {subsubsection}{\numberline {6.20.4.2}operator$<$$<$}{124}{subsubsection.6.20.4.2}%
+\contentsline {subsubsection}{\numberline {6.20.4.3}operator$>$$>$}{125}{subsubsection.6.20.4.3}%
+\contentsline {section}{\numberline {6.21}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}bit Struct Reference}{125}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Detailed Description}{126}{subsection.6.21.1}%
+\contentsline {subsection}{\numberline {6.21.2}Constructor \& Destructor Documentation}{126}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}Object\_bit()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{126}{subsubsection.6.21.2.1}%
+\contentsline {subsubsection}{\numberline {6.21.2.2}Object\_bit()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{127}{subsubsection.6.21.2.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.3}Object\_bit()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{127}{subsubsection.6.21.2.3}%
+\contentsline {subsection}{\numberline {6.21.3}Member Function Documentation}{127}{subsection.6.21.3}%
+\contentsline {subsubsection}{\numberline {6.21.3.1}createGlobalId()}{127}{subsubsection.6.21.3.1}%
+\contentsline {subsubsection}{\numberline {6.21.3.2}createLocalId()}{127}{subsubsection.6.21.3.2}%
+\contentsline {subsubsection}{\numberline {6.21.3.3}id()}{127}{subsubsection.6.21.3.3}%
+\contentsline {subsubsection}{\numberline {6.21.3.4}isEmpty()}{128}{subsubsection.6.21.3.4}%
+\contentsline {subsubsection}{\numberline {6.21.3.5}isIdLocal()}{128}{subsubsection.6.21.3.5}%
+\contentsline {subsubsection}{\numberline {6.21.3.6}object\_b()}{128}{subsubsection.6.21.3.6}%
+\contentsline {subsubsection}{\numberline {6.21.3.7}plugin()}{128}{subsubsection.6.21.3.7}%
+\contentsline {subsubsection}{\numberline {6.21.3.8}pluginId()}{128}{subsubsection.6.21.3.8}%
+\contentsline {subsubsection}{\numberline {6.21.3.9}setId()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{128}{subsubsection.6.21.3.9}%
+\contentsline {subsubsection}{\numberline {6.21.3.10}setId()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{129}{subsubsection.6.21.3.10}%
+\contentsline {subsubsection}{\numberline {6.21.3.11}setPlugin()}{129}{subsubsection.6.21.3.11}%
+\contentsline {subsubsection}{\numberline {6.21.3.12}setPluginId()}{129}{subsubsection.6.21.3.12}%
+\contentsline {subsubsection}{\numberline {6.21.3.13}setType()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{129}{subsubsection.6.21.3.13}%
+\contentsline {subsubsection}{\numberline {6.21.3.14}setType()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{129}{subsubsection.6.21.3.14}%
+\contentsline {subsubsection}{\numberline {6.21.3.15}setUniqueId()}{130}{subsubsection.6.21.3.15}%
+\contentsline {subsubsection}{\numberline {6.21.3.16}type()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{130}{subsubsection.6.21.3.16}%
+\contentsline {subsubsection}{\numberline {6.21.3.17}type()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{130}{subsubsection.6.21.3.17}%
+\contentsline {subsubsection}{\numberline {6.21.3.18}uniqueId()}{130}{subsubsection.6.21.3.18}%
+\contentsline {subsection}{\numberline {6.21.4}Friends And Related Function Documentation}{130}{subsection.6.21.4}%
+\contentsline {subsubsection}{\numberline {6.21.4.1}AFlib::id::Object}{130}{subsubsection.6.21.4.1}%
+\contentsline {subsubsection}{\numberline {6.21.4.2}AFlib::Storage}{131}{subsubsection.6.21.4.2}%
+\contentsline {subsubsection}{\numberline {6.21.4.3}operator$<$$<$}{131}{subsubsection.6.21.4.3}%
+\contentsline {subsubsection}{\numberline {6.21.4.4}operator$>$$>$}{131}{subsubsection.6.21.4.4}%
+\contentsline {section}{\numberline {6.22}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::transfer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::send\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Objects Struct Reference}{131}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Detailed Description}{132}{subsection.6.22.1}%
+\contentsline {subsection}{\numberline {6.22.2}Member Function Documentation}{132}{subsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.1}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{132}{subsubsection.6.22.2.1}%
+\contentsline {subsubsection}{\numberline {6.22.2.2}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{132}{subsubsection.6.22.2.2}%
+\contentsline {subsection}{\numberline {6.22.3}Friends And Related Function Documentation}{132}{subsection.6.22.3}%
+\contentsline {subsubsection}{\numberline {6.22.3.1}operator$<$$<$}{133}{subsubsection.6.22.3.1}%
+\contentsline {subsubsection}{\numberline {6.22.3.2}operator$>$$>$}{133}{subsubsection.6.22.3.2}%
+\contentsline {subsection}{\numberline {6.22.4}Member Data Documentation}{133}{subsection.6.22.4}%
+\contentsline {subsubsection}{\numberline {6.22.4.1}dPath}{133}{subsubsection.6.22.4.1}%
+\contentsline {subsubsection}{\numberline {6.22.4.2}fileType}{133}{subsubsection.6.22.4.2}%
+\contentsline {subsubsection}{\numberline {6.22.4.3}object}{133}{subsubsection.6.22.4.3}%
+\contentsline {section}{\numberline {6.23}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Template Class Reference}{134}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Detailed Description}{134}{subsection.6.23.1}%
+\contentsline {subsection}{\numberline {6.23.2}Constructor \& Destructor Documentation}{134}{subsection.6.23.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.1}ObjectTemplate()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{135}{subsubsection.6.23.2.1}%
+\contentsline {subsubsection}{\numberline {6.23.2.2}ObjectTemplate()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{135}{subsubsection.6.23.2.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.3}ObjectTemplate()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{135}{subsubsection.6.23.2.3}%
+\contentsline {subsubsection}{\numberline {6.23.2.4}ObjectTemplate()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{135}{subsubsection.6.23.2.4}%
+\contentsline {subsubsection}{\numberline {6.23.2.5}ObjectTemplate()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{136}{subsubsection.6.23.2.5}%
+\contentsline {subsubsection}{\numberline {6.23.2.6}$\sim $ObjectTemplate()}{136}{subsubsection.6.23.2.6}%
+\contentsline {subsection}{\numberline {6.23.3}Member Function Documentation}{136}{subsection.6.23.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.1}afObject()}{136}{subsubsection.6.23.3.1}%
+\contentsline {subsubsection}{\numberline {6.23.3.2}afObjectPtr()}{136}{subsubsection.6.23.3.2}%
+\contentsline {subsubsection}{\numberline {6.23.3.3}object\_b()}{136}{subsubsection.6.23.3.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.4}owner()}{136}{subsubsection.6.23.3.4}%
+\contentsline {subsubsection}{\numberline {6.23.3.5}save()}{137}{subsubsection.6.23.3.5}%
+\contentsline {subsection}{\numberline {6.23.4}Member Data Documentation}{137}{subsection.6.23.4}%
+\contentsline {subsubsection}{\numberline {6.23.4.1}m\_fileType}{137}{subsubsection.6.23.4.1}%
+\contentsline {subsubsection}{\numberline {6.23.4.2}m\_ptr}{137}{subsubsection.6.23.4.2}%
+\contentsline {subsubsection}{\numberline {6.23.4.3}m\_subDPath}{137}{subsubsection.6.23.4.3}%
+\contentsline {section}{\numberline {6.24}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Operate Class Reference}{137}{section.6.24}%
+\contentsline {subsection}{\numberline {6.24.1}Detailed Description}{138}{subsection.6.24.1}%
+\contentsline {subsection}{\numberline {6.24.2}Constructor \& Destructor Documentation}{138}{subsection.6.24.2}%
+\contentsline {subsubsection}{\numberline {6.24.2.1}Operate()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{139}{subsubsection.6.24.2.1}%
+\contentsline {subsubsection}{\numberline {6.24.2.2}Operate()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{139}{subsubsection.6.24.2.2}%
+\contentsline {subsubsection}{\numberline {6.24.2.3}Operate()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{139}{subsubsection.6.24.2.3}%
+\contentsline {subsubsection}{\numberline {6.24.2.4}$\sim $Operate()}{139}{subsubsection.6.24.2.4}%
+\contentsline {subsection}{\numberline {6.24.3}Member Function Documentation}{139}{subsection.6.24.3}%
+\contentsline {subsubsection}{\numberline {6.24.3.1}datetime()}{139}{subsubsection.6.24.3.1}%
+\contentsline {subsubsection}{\numberline {6.24.3.2}getData()}{140}{subsubsection.6.24.3.2}%
+\contentsline {subsubsection}{\numberline {6.24.3.3}operator QByteArray()}{140}{subsubsection.6.24.3.3}%
+\contentsline {subsubsection}{\numberline {6.24.3.4}setDatetime()}{140}{subsubsection.6.24.3.4}%
+\contentsline {subsubsection}{\numberline {6.24.3.5}setValue()}{140}{subsubsection.6.24.3.5}%
+\contentsline {subsubsection}{\numberline {6.24.3.6}setValueId()}{140}{subsubsection.6.24.3.6}%
+\contentsline {subsubsection}{\numberline {6.24.3.7}value()}{140}{subsubsection.6.24.3.7}%
+\contentsline {subsubsection}{\numberline {6.24.3.8}valueId()}{141}{subsubsection.6.24.3.8}%
+\contentsline {subsection}{\numberline {6.24.4}Friends And Related Function Documentation}{141}{subsection.6.24.4}%
+\contentsline {subsubsection}{\numberline {6.24.4.1}AFlib::Storage}{141}{subsubsection.6.24.4.1}%
+\contentsline {subsubsection}{\numberline {6.24.4.2}History}{141}{subsubsection.6.24.4.2}%
+\contentsline {subsubsection}{\numberline {6.24.4.3}Object}{141}{subsubsection.6.24.4.3}%
+\contentsline {subsection}{\numberline {6.24.5}Member Data Documentation}{141}{subsection.6.24.5}%
+\contentsline {subsubsection}{\numberline {6.24.5.1}m\_datetime}{141}{subsubsection.6.24.5.1}%
+\contentsline {subsubsection}{\numberline {6.24.5.2}m\_value}{142}{subsubsection.6.24.5.2}%
+\contentsline {section}{\numberline {6.25}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Operate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}bit Struct Reference}{142}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Detailed Description}{143}{subsection.6.25.1}%
+\contentsline {subsection}{\numberline {6.25.2}Member Function Documentation}{143}{subsection.6.25.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.1}historyType()}{143}{subsubsection.6.25.2.1}%
+\contentsline {subsubsection}{\numberline {6.25.2.2}key()}{143}{subsubsection.6.25.2.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.3}reserved()}{143}{subsubsection.6.25.2.3}%
+\contentsline {subsubsection}{\numberline {6.25.2.4}saveType()}{143}{subsubsection.6.25.2.4}%
+\contentsline {subsubsection}{\numberline {6.25.2.5}setHistoryType()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{143}{subsubsection.6.25.2.5}%
+\contentsline {subsubsection}{\numberline {6.25.2.6}setHistoryType()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{144}{subsubsection.6.25.2.6}%
+\contentsline {subsubsection}{\numberline {6.25.2.7}setKey()}{144}{subsubsection.6.25.2.7}%
+\contentsline {subsubsection}{\numberline {6.25.2.8}setReserved()}{144}{subsubsection.6.25.2.8}%
+\contentsline {subsubsection}{\numberline {6.25.2.9}setSaveType()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{144}{subsubsection.6.25.2.9}%
+\contentsline {subsubsection}{\numberline {6.25.2.10}setSaveType()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{144}{subsubsection.6.25.2.10}%
+\contentsline {subsubsection}{\numberline {6.25.2.11}setUserId()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{144}{subsubsection.6.25.2.11}%
+\contentsline {subsubsection}{\numberline {6.25.2.12}setUserId()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{145}{subsubsection.6.25.2.12}%
+\contentsline {subsubsection}{\numberline {6.25.2.13}user()}{145}{subsubsection.6.25.2.13}%
+\contentsline {subsubsection}{\numberline {6.25.2.14}userId()}{145}{subsubsection.6.25.2.14}%
+\contentsline {subsection}{\numberline {6.25.3}Friends And Related Function Documentation}{145}{subsection.6.25.3}%
+\contentsline {subsubsection}{\numberline {6.25.3.1}operator$<$$<$}{145}{subsubsection.6.25.3.1}%
+\contentsline {subsubsection}{\numberline {6.25.3.2}operator$>$$>$}{145}{subsubsection.6.25.3.2}%
+\contentsline {section}{\numberline {6.26}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::transfer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::send\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Operates Struct Reference}{146}{section.6.26}%
+\contentsline {subsection}{\numberline {6.26.1}Detailed Description}{146}{subsection.6.26.1}%
+\contentsline {subsection}{\numberline {6.26.2}Constructor \& Destructor Documentation}{146}{subsection.6.26.2}%
+\contentsline {subsubsection}{\numberline {6.26.2.1}Operates()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{146}{subsubsection.6.26.2.1}%
+\contentsline {subsubsection}{\numberline {6.26.2.2}Operates()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{146}{subsubsection.6.26.2.2}%
+\contentsline {subsection}{\numberline {6.26.3}Friends And Related Function Documentation}{147}{subsection.6.26.3}%
+\contentsline {subsubsection}{\numberline {6.26.3.1}operator$<$$<$}{147}{subsubsection.6.26.3.1}%
+\contentsline {subsubsection}{\numberline {6.26.3.2}operator$>$$>$}{147}{subsubsection.6.26.3.2}%
+\contentsline {subsection}{\numberline {6.26.4}Member Data Documentation}{147}{subsection.6.26.4}%
+\contentsline {subsubsection}{\numberline {6.26.4.1}globalId}{147}{subsubsection.6.26.4.1}%
+\contentsline {subsubsection}{\numberline {6.26.4.2}operateIdList}{147}{subsubsection.6.26.4.2}%
+\contentsline {subsubsection}{\numberline {6.26.4.3}operateList}{147}{subsubsection.6.26.4.3}%
+\contentsline {section}{\numberline {6.27}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Storage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Plugin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Storage Struct Reference}{148}{section.6.27}%
+\contentsline {subsection}{\numberline {6.27.1}Detailed Description}{148}{subsection.6.27.1}%
+\contentsline {subsection}{\numberline {6.27.2}Member Function Documentation}{148}{subsection.6.27.2}%
+\contentsline {subsubsection}{\numberline {6.27.2.1}addSingle()}{148}{subsubsection.6.27.2.1}%
+\contentsline {subsection}{\numberline {6.27.3}Member Data Documentation}{148}{subsection.6.27.3}%
+\contentsline {subsubsection}{\numberline {6.27.3.1}idList}{148}{subsubsection.6.27.3.1}%
+\contentsline {subsubsection}{\numberline {6.27.3.2}pluginId}{149}{subsubsection.6.27.3.2}%
+\contentsline {section}{\numberline {6.28}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::transfer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Send Class Reference}{149}{section.6.28}%
+\contentsline {subsection}{\numberline {6.28.1}Detailed Description}{149}{subsection.6.28.1}%
+\contentsline {subsection}{\numberline {6.28.2}Constructor \& Destructor Documentation}{149}{subsection.6.28.2}%
+\contentsline {subsubsection}{\numberline {6.28.2.1}Send()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{149}{subsubsection.6.28.2.1}%
+\contentsline {subsubsection}{\numberline {6.28.2.2}Send()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{150}{subsubsection.6.28.2.2}%
+\contentsline {subsection}{\numberline {6.28.3}Member Function Documentation}{150}{subsection.6.28.3}%
+\contentsline {subsubsection}{\numberline {6.28.3.1}addNewObject()}{150}{subsubsection.6.28.3.1}%
+\contentsline {subsubsection}{\numberline {6.28.3.2}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{150}{subsubsection.6.28.3.2}%
+\contentsline {subsubsection}{\numberline {6.28.3.3}addOperate()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{150}{subsubsection.6.28.3.3}%
+\contentsline {subsubsection}{\numberline {6.28.3.4}getData()}{151}{subsubsection.6.28.3.4}%
+\contentsline {subsubsection}{\numberline {6.28.3.5}operator QByteArray()}{151}{subsubsection.6.28.3.5}%
+\contentsline {section}{\numberline {6.29}Server Class Reference}{151}{section.6.29}%
+\contentsline {subsection}{\numberline {6.29.1}Detailed Description}{152}{subsection.6.29.1}%
+\contentsline {subsection}{\numberline {6.29.2}Constructor \& Destructor Documentation}{152}{subsection.6.29.2}%
+\contentsline {subsubsection}{\numberline {6.29.2.1}Server()}{152}{subsubsection.6.29.2.1}%
+\contentsline {subsubsection}{\numberline {6.29.2.2}$\sim $Server()}{152}{subsubsection.6.29.2.2}%
+\contentsline {subsection}{\numberline {6.29.3}Member Function Documentation}{152}{subsection.6.29.3}%
+\contentsline {subsubsection}{\numberline {6.29.3.1}addAccount()}{152}{subsubsection.6.29.3.1}%
+\contentsline {subsubsection}{\numberline {6.29.3.2}addAccountById()}{152}{subsubsection.6.29.3.2}%
+\contentsline {subsubsection}{\numberline {6.29.3.3}init()}{153}{subsubsection.6.29.3.3}%
+\contentsline {subsubsection}{\numberline {6.29.3.4}listen()}{153}{subsubsection.6.29.3.4}%
+\contentsline {subsubsection}{\numberline {6.29.3.5}login()}{153}{subsubsection.6.29.3.5}%
+\contentsline {subsubsection}{\numberline {6.29.3.6}ping()}{153}{subsubsection.6.29.3.6}%
+\contentsline {subsubsection}{\numberline {6.29.3.7}registrate()}{153}{subsubsection.6.29.3.7}%
+\contentsline {subsubsection}{\numberline {6.29.3.8}remindMyLogin()}{153}{subsubsection.6.29.3.8}%
+\contentsline {subsubsection}{\numberline {6.29.3.9}remindMyPassword()}{154}{subsubsection.6.29.3.9}%
+\contentsline {subsubsection}{\numberline {6.29.3.10}updateObjects()}{154}{subsubsection.6.29.3.10}%
+\contentsline {subsection}{\numberline {6.29.4}Member Data Documentation}{154}{subsection.6.29.4}%
+\contentsline {subsubsection}{\numberline {6.29.4.1}m\_server}{154}{subsubsection.6.29.4.1}%
+\contentsline {section}{\numberline {6.30}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Server\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Setting Class Reference}{154}{section.6.30}%
+\contentsline {subsection}{\numberline {6.30.1}Detailed Description}{155}{subsection.6.30.1}%
+\contentsline {subsection}{\numberline {6.30.2}Constructor \& Destructor Documentation}{155}{subsection.6.30.2}%
+\contentsline {subsubsection}{\numberline {6.30.2.1}ServerSetting()}{155}{subsubsection.6.30.2.1}%
+\contentsline {subsection}{\numberline {6.30.3}Member Function Documentation}{155}{subsection.6.30.3}%
+\contentsline {subsubsection}{\numberline {6.30.3.1}addUrl()}{155}{subsubsection.6.30.3.1}%
+\contentsline {subsubsection}{\numberline {6.30.3.2}getUrl()}{155}{subsubsection.6.30.3.2}%
+\contentsline {subsubsection}{\numberline {6.30.3.3}lastStorageUpdate()}{156}{subsubsection.6.30.3.3}%
+\contentsline {subsection}{\numberline {6.30.4}Member Data Documentation}{156}{subsection.6.30.4}%
+\contentsline {subsubsection}{\numberline {6.30.4.1}m\_lastStorageUpdate}{156}{subsubsection.6.30.4.1}%
+\contentsline {subsubsection}{\numberline {6.30.4.2}m\_linkMap}{156}{subsubsection.6.30.4.2}%
+\contentsline {subsubsection}{\numberline {6.30.4.3}m\_settings}{156}{subsubsection.6.30.4.3}%
+\contentsline {section}{\numberline {6.31}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Setting Class Reference}{156}{section.6.31}%
+\contentsline {subsection}{\numberline {6.31.1}Detailed Description}{157}{subsection.6.31.1}%
+\contentsline {subsection}{\numberline {6.31.2}Constructor \& Destructor Documentation}{157}{subsection.6.31.2}%
+\contentsline {subsubsection}{\numberline {6.31.2.1}Setting()}{157}{subsubsection.6.31.2.1}%
+\contentsline {subsection}{\numberline {6.31.3}Member Function Documentation}{157}{subsection.6.31.3}%
+\contentsline {subsubsection}{\numberline {6.31.3.1}value()}{157}{subsubsection.6.31.3.1}%
+\contentsline {section}{\numberline {6.32}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Storage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Single\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Storage Struct Reference}{157}{section.6.32}%
+\contentsline {subsection}{\numberline {6.32.1}Detailed Description}{158}{subsection.6.32.1}%
+\contentsline {subsection}{\numberline {6.32.2}Member Data Documentation}{158}{subsection.6.32.2}%
+\contentsline {subsubsection}{\numberline {6.32.2.1}dPath}{158}{subsubsection.6.32.2.1}%
+\contentsline {subsubsection}{\numberline {6.32.2.2}fileType}{158}{subsubsection.6.32.2.2}%
+\contentsline {subsubsection}{\numberline {6.32.2.3}id}{158}{subsubsection.6.32.2.3}%
+\contentsline {subsubsection}{\numberline {6.32.2.4}lastChange}{158}{subsubsection.6.32.2.4}%
+\contentsline {subsubsection}{\numberline {6.32.2.5}localSharedList}{158}{subsubsection.6.32.2.5}%
+\contentsline {section}{\numberline {6.33}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Faccount\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Storage Class Reference}{159}{section.6.33}%
+\contentsline {subsection}{\numberline {6.33.1}Detailed Description}{160}{subsection.6.33.1}%
+\contentsline {subsection}{\numberline {6.33.2}Constructor \& Destructor Documentation}{160}{subsection.6.33.2}%
+\contentsline {subsubsection}{\numberline {6.33.2.1}Storage()}{161}{subsubsection.6.33.2.1}%
+\contentsline {subsection}{\numberline {6.33.3}Member Function Documentation}{161}{subsection.6.33.3}%
+\contentsline {subsubsection}{\numberline {6.33.3.1}add()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{161}{subsubsection.6.33.3.1}%
+\contentsline {subsubsection}{\numberline {6.33.3.2}add()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{161}{subsubsection.6.33.3.2}%
+\contentsline {subsubsection}{\numberline {6.33.3.3}check()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{161}{subsubsection.6.33.3.3}%
+\contentsline {subsubsection}{\numberline {6.33.3.4}check()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{161}{subsubsection.6.33.3.4}%
+\contentsline {subsubsection}{\numberline {6.33.3.5}checkLogin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{161}{subsubsection.6.33.3.5}%
+\contentsline {subsubsection}{\numberline {6.33.3.6}checkLogin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{162}{subsubsection.6.33.3.6}%
+\contentsline {subsubsection}{\numberline {6.33.3.7}checkNickname()}{162}{subsubsection.6.33.3.7}%
+\contentsline {subsubsection}{\numberline {6.33.3.8}contains()}{162}{subsubsection.6.33.3.8}%
+\contentsline {subsubsection}{\numberline {6.33.3.9}dependsAccount()}{162}{subsubsection.6.33.3.9}%
+\contentsline {subsubsection}{\numberline {6.33.3.10}getAccount()}{163}{subsubsection.6.33.3.10}%
+\contentsline {subsubsection}{\numberline {6.33.3.11}getGroup()}{163}{subsubsection.6.33.3.11}%
+\contentsline {subsubsection}{\numberline {6.33.3.12}getInfo()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{163}{subsubsection.6.33.3.12}%
+\contentsline {subsubsection}{\numberline {6.33.3.13}getInfo()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{163}{subsubsection.6.33.3.13}%
+\contentsline {subsubsection}{\numberline {6.33.3.14}getInfo()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{163}{subsubsection.6.33.3.14}%
+\contentsline {subsubsection}{\numberline {6.33.3.15}instance()}{163}{subsubsection.6.33.3.15}%
+\contentsline {subsubsection}{\numberline {6.33.3.16}isGuest()}{164}{subsubsection.6.33.3.16}%
+\contentsline {subsubsection}{\numberline {6.33.3.17}isGuestChanged}{164}{subsubsection.6.33.3.17}%
+\contentsline {subsubsection}{\numberline {6.33.3.18}login}{164}{subsubsection.6.33.3.18}%
+\contentsline {subsubsection}{\numberline {6.33.3.19}loginAs()}{164}{subsubsection.6.33.3.19}%
+\contentsline {subsubsection}{\numberline {6.33.3.20}logout}{164}{subsubsection.6.33.3.20}%
+\contentsline {subsubsection}{\numberline {6.33.3.21}reload()}{164}{subsubsection.6.33.3.21}%
+\contentsline {subsubsection}{\numberline {6.33.3.22}remove()}{165}{subsubsection.6.33.3.22}%
+\contentsline {subsubsection}{\numberline {6.33.3.23}save()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{165}{subsubsection.6.33.3.23}%
+\contentsline {subsubsection}{\numberline {6.33.3.24}save()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{165}{subsubsection.6.33.3.24}%
+\contentsline {subsubsection}{\numberline {6.33.3.25}user()}{165}{subsubsection.6.33.3.25}%
+\contentsline {subsubsection}{\numberline {6.33.3.26}userChanged}{165}{subsubsection.6.33.3.26}%
+\contentsline {subsection}{\numberline {6.33.4}Friends And Related Function Documentation}{165}{subsection.6.33.4}%
+\contentsline {subsubsection}{\numberline {6.33.4.1}AFlib::API}{165}{subsubsection.6.33.4.1}%
+\contentsline {subsection}{\numberline {6.33.5}Member Data Documentation}{166}{subsection.6.33.5}%
+\contentsline {subsubsection}{\numberline {6.33.5.1}m\_accountList}{166}{subsubsection.6.33.5.1}%
+\contentsline {subsubsection}{\numberline {6.33.5.2}m\_accountStorageDir}{166}{subsubsection.6.33.5.2}%
+\contentsline {subsubsection}{\numberline {6.33.5.3}m\_groupList}{166}{subsubsection.6.33.5.3}%
+\contentsline {subsection}{\numberline {6.33.6}Property Documentation}{166}{subsection.6.33.6}%
+\contentsline {subsubsection}{\numberline {6.33.6.1}isGuest}{166}{subsubsection.6.33.6.1}%
+\contentsline {subsubsection}{\numberline {6.33.6.2}user}{166}{subsubsection.6.33.6.2}%
+\contentsline {section}{\numberline {6.34}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Storage Class Reference}{167}{section.6.34}%
+\contentsline {subsection}{\numberline {6.34.1}Detailed Description}{168}{subsection.6.34.1}%
+\contentsline {subsection}{\numberline {6.34.2}Member Typedef Documentation}{168}{subsection.6.34.2}%
+\contentsline {subsubsection}{\numberline {6.34.2.1}IdObj}{168}{subsubsection.6.34.2.1}%
+\contentsline {subsubsection}{\numberline {6.34.2.2}IdObj\_b}{168}{subsubsection.6.34.2.2}%
+\contentsline {subsection}{\numberline {6.34.3}Constructor \& Destructor Documentation}{169}{subsection.6.34.3}%
+\contentsline {subsubsection}{\numberline {6.34.3.1}Storage()}{169}{subsubsection.6.34.3.1}%
+\contentsline {subsection}{\numberline {6.34.4}Member Function Documentation}{169}{subsection.6.34.4}%
+\contentsline {subsubsection}{\numberline {6.34.4.1}addAccount()}{169}{subsubsection.6.34.4.1}%
+\contentsline {subsubsection}{\numberline {6.34.4.2}addLocalShared()}{169}{subsubsection.6.34.4.2}%
+\contentsline {subsubsection}{\numberline {6.34.4.3}addObject()}{169}{subsubsection.6.34.4.3}%
+\contentsline {subsubsection}{\numberline {6.34.4.4}addOperate()}{170}{subsubsection.6.34.4.4}%
+\contentsline {subsubsection}{\numberline {6.34.4.5}addOperateList()}{170}{subsubsection.6.34.4.5}%
+\contentsline {subsubsection}{\numberline {6.34.4.6}contains()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{170}{subsubsection.6.34.4.6}%
+\contentsline {subsubsection}{\numberline {6.34.4.7}contains()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{170}{subsubsection.6.34.4.7}%
+\contentsline {subsubsection}{\numberline {6.34.4.8}findFileTypeByDPath()}{170}{subsubsection.6.34.4.8}%
+\contentsline {subsubsection}{\numberline {6.34.4.9}findSingle()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{171}{subsubsection.6.34.4.9}%
+\contentsline {subsubsection}{\numberline {6.34.4.10}findSingle()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{171}{subsubsection.6.34.4.10}%
+\contentsline {subsubsection}{\numberline {6.34.4.11}findSingle()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{171}{subsubsection.6.34.4.11}%
+\contentsline {subsubsection}{\numberline {6.34.4.12}foundFreeGlobalId()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{171}{subsubsection.6.34.4.12}%
+\contentsline {subsubsection}{\numberline {6.34.4.13}foundFreeGlobalId()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{171}{subsubsection.6.34.4.13}%
+\contentsline {subsubsection}{\numberline {6.34.4.14}foundFreeLocalId()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{172}{subsubsection.6.34.4.14}%
+\contentsline {subsubsection}{\numberline {6.34.4.15}foundFreeLocalId()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{172}{subsubsection.6.34.4.15}%
+\contentsline {subsubsection}{\numberline {6.34.4.16}getObject()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{172}{subsubsection.6.34.4.16}%
+\contentsline {subsubsection}{\numberline {6.34.4.17}getObject()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{172}{subsubsection.6.34.4.17}%
+\contentsline {subsubsection}{\numberline {6.34.4.18}getObjectList()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{172}{subsubsection.6.34.4.18}%
+\contentsline {subsubsection}{\numberline {6.34.4.19}getObjectList()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{173}{subsubsection.6.34.4.19}%
+\contentsline {subsubsection}{\numberline {6.34.4.20}getObjectList()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{173}{subsubsection.6.34.4.20}%
+\contentsline {subsubsection}{\numberline {6.34.4.21}getObjectList()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{173}{subsubsection.6.34.4.21}%
+\contentsline {subsubsection}{\numberline {6.34.4.22}getObjectList()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{173}{subsubsection.6.34.4.22}%
+\contentsline {subsubsection}{\numberline {6.34.4.23}getOperatesAfter()}{173}{subsubsection.6.34.4.23}%
+\contentsline {subsubsection}{\numberline {6.34.4.24}init()}{174}{subsubsection.6.34.4.24}%
+\contentsline {subsubsection}{\numberline {6.34.4.25}loadFromDirectory()}{174}{subsubsection.6.34.4.25}%
+\contentsline {subsubsection}{\numberline {6.34.4.26}registrateObject()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{174}{subsubsection.6.34.4.26}%
+\contentsline {subsubsection}{\numberline {6.34.4.27}registrateObject()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{174}{subsubsection.6.34.4.27}%
+\contentsline {subsubsection}{\numberline {6.34.4.28}registrateObject()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{174}{subsubsection.6.34.4.28}%
+\contentsline {subsubsection}{\numberline {6.34.4.29}removeListByFile()}{175}{subsubsection.6.34.4.29}%
+\contentsline {subsubsection}{\numberline {6.34.4.30}removeObject()}{175}{subsubsection.6.34.4.30}%
+\contentsline {subsubsection}{\numberline {6.34.4.31}saveObjects()}{175}{subsubsection.6.34.4.31}%
+\contentsline {subsubsection}{\numberline {6.34.4.32}setLastChangedTime()}{175}{subsubsection.6.34.4.32}%
+\contentsline {subsubsection}{\numberline {6.34.4.33}updateFile()}{175}{subsubsection.6.34.4.33}%
+\contentsline {subsubsection}{\numberline {6.34.4.34}updateObjects()}{176}{subsubsection.6.34.4.34}%
+\contentsline {subsection}{\numberline {6.34.5}Member Data Documentation}{176}{subsection.6.34.5}%
+\contentsline {subsubsection}{\numberline {6.34.5.1}m\_storageList}{176}{subsubsection.6.34.5.1}%
+\contentsline {section}{\numberline {6.35}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::System Class Reference}{176}{section.6.35}%
+\contentsline {subsection}{\numberline {6.35.1}Detailed Description}{177}{subsection.6.35.1}%
+\contentsline {subsection}{\numberline {6.35.2}Member Enumeration Documentation}{177}{subsection.6.35.2}%
+\contentsline {subsubsection}{\numberline {6.35.2.1}Anchor}{177}{subsubsection.6.35.2.1}%
+\contentsline {subsubsection}{\numberline {6.35.2.2}SystemOS}{177}{subsubsection.6.35.2.2}%
+\contentsline {subsection}{\numberline {6.35.3}Constructor \& Destructor Documentation}{177}{subsection.6.35.3}%
+\contentsline {subsubsection}{\numberline {6.35.3.1}System()}{178}{subsubsection.6.35.3.1}%
+\contentsline {subsection}{\numberline {6.35.4}Member Function Documentation}{178}{subsection.6.35.4}%
+\contentsline {subsubsection}{\numberline {6.35.4.1}isMobile()}{178}{subsubsection.6.35.4.1}%
+\contentsline {subsubsection}{\numberline {6.35.4.2}Q\_ENUM()}{178}{subsubsection.6.35.4.2}%
+\contentsline {section}{\numberline {6.36}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Flib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Tbit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Struct$<$ bitsize $>$ Struct Template Reference}{178}{section.6.36}%
+\contentsline {subsection}{\numberline {6.36.1}Detailed Description}{179}{subsection.6.36.1}%
+\contentsline {subsection}{\numberline {6.36.2}Member Function Documentation}{179}{subsection.6.36.2}%
+\contentsline {subsubsection}{\numberline {6.36.2.1}bitSize()}{179}{subsubsection.6.36.2.1}%
+\contentsline {subsubsection}{\numberline {6.36.2.2}fill()}{180}{subsubsection.6.36.2.2}%
+\contentsline {subsubsection}{\numberline {6.36.2.3}getBitSet()}{180}{subsubsection.6.36.2.3}%
+\contentsline {subsubsection}{\numberline {6.36.2.4}getCharPiece()}{180}{subsubsection.6.36.2.4}%
+\contentsline {subsubsection}{\numberline {6.36.2.5}getPiece()}{180}{subsubsection.6.36.2.5}%
+\contentsline {subsubsection}{\numberline {6.36.2.6}operator std::string()}{180}{subsubsection.6.36.2.6}%
+\contentsline {subsubsection}{\numberline {6.36.2.7}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{181}{subsubsection.6.36.2.7}%
+\contentsline {subsubsection}{\numberline {6.36.2.8}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{181}{subsubsection.6.36.2.8}%
+\contentsline {subsubsection}{\numberline {6.36.2.9}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{181}{subsubsection.6.36.2.9}%
+\contentsline {subsubsection}{\numberline {6.36.2.10}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{181}{subsubsection.6.36.2.10}%
+\contentsline {subsubsection}{\numberline {6.36.2.11}setBoolRange()}{181}{subsubsection.6.36.2.11}%
+\contentsline {subsubsection}{\numberline {6.36.2.12}setCharPiece()}{182}{subsubsection.6.36.2.12}%
+\contentsline {subsubsection}{\numberline {6.36.2.13}setFromValue()}{182}{subsubsection.6.36.2.13}%
+\contentsline {subsubsection}{\numberline {6.36.2.14}setReservedT()}{182}{subsubsection.6.36.2.14}%
+\contentsline {subsubsection}{\numberline {6.36.2.15}setUInt16()}{182}{subsubsection.6.36.2.15}%
+\contentsline {subsubsection}{\numberline {6.36.2.16}setUInt32()}{183}{subsubsection.6.36.2.16}%
+\contentsline {subsubsection}{\numberline {6.36.2.17}setUInt64()}{183}{subsubsection.6.36.2.17}%
+\contentsline {subsubsection}{\numberline {6.36.2.18}setUInt8()}{183}{subsubsection.6.36.2.18}%
+\contentsline {subsubsection}{\numberline {6.36.2.19}toString()}{183}{subsubsection.6.36.2.19}%
+\contentsline {subsubsection}{\numberline {6.36.2.20}toTypeNumber()}{184}{subsubsection.6.36.2.20}%
+\contentsline {subsubsection}{\numberline {6.36.2.21}toUInt16()}{184}{subsubsection.6.36.2.21}%
+\contentsline {subsubsection}{\numberline {6.36.2.22}toUInt32()}{184}{subsubsection.6.36.2.22}%
+\contentsline {subsubsection}{\numberline {6.36.2.23}toUInt64()}{184}{subsubsection.6.36.2.23}%
+\contentsline {subsubsection}{\numberline {6.36.2.24}toUInt8()}{184}{subsubsection.6.36.2.24}%
+\contentsline {subsubsection}{\numberline {6.36.2.25}unite()}{185}{subsubsection.6.36.2.25}%
+\contentsline {subsection}{\numberline {6.36.3}Friends And Related Function Documentation}{185}{subsection.6.36.3}%
+\contentsline {subsubsection}{\numberline {6.36.3.1}operator}{185}{subsubsection.6.36.3.1}%
+\contentsline {subsubsection}{\numberline {6.36.3.2}operator$>$$>$}{185}{subsubsection.6.36.3.2}%
+\contentsline {subsection}{\numberline {6.36.4}Member Data Documentation}{185}{subsection.6.36.4}%
+\contentsline {subsubsection}{\numberline {6.36.4.1}m\_bitset}{185}{subsubsection.6.36.4.1}%
+\contentsline {chapter}{\numberline {7}File Documentation}{187}{chapter.7}%
+\contentsline {section}{\numberline {7.1}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/account/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account.cpp File Reference}{187}{section.7.1}%
+\contentsline {section}{\numberline {7.2}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/account/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Group.cpp File Reference}{187}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Typedef Documentation}{187}{subsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.1.1}AccountWithAccess}{188}{subsubsection.7.2.1.1}%
+\contentsline {subsection}{\numberline {7.2.2}Function Documentation}{188}{subsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.1}makeAccountWithAccess()}{188}{subsubsection.7.2.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2.2}Q\_DECLARE\_METATYPE()}{188}{subsubsection.7.2.2.2}%
+\contentsline {section}{\numberline {7.3}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/account/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Info.cpp File Reference}{188}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Macro Definition Documentation}{188}{subsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.1.1}DATE\_TIME}{188}{subsubsection.7.3.1.1}%
+\contentsline {section}{\numberline {7.4}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/account/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Storage.cpp File Reference}{189}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Variable Documentation}{189}{subsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.1.1}m\_accountStorage}{189}{subsubsection.7.4.1.1}%
+\contentsline {subsubsection}{\numberline {7.4.1.2}m\_guest}{189}{subsubsection.7.4.1.2}%
+\contentsline {subsubsection}{\numberline {7.4.1.3}m\_user}{189}{subsubsection.7.4.1.3}%
+\contentsline {section}{\numberline {7.5}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}PI.cpp File Reference}{190}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Function Documentation}{190}{subsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.1.1}afAPI()}{190}{subsubsection.7.5.1.1}%
+\contentsline {section}{\numberline {7.6}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enum.cpp File Reference}{190}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Function Documentation}{190}{subsection.7.6.1}%
+\contentsline {subsubsection}{\numberline {7.6.1.1}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{191}{subsubsection.7.6.1.1}%
+\contentsline {subsubsection}{\numberline {7.6.1.2}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{191}{subsubsection.7.6.1.2}%
+\contentsline {subsubsection}{\numberline {7.6.1.3}operator==()}{191}{subsubsection.7.6.1.3}%
+\contentsline {subsubsection}{\numberline {7.6.1.4}operator$>$$>$()}{191}{subsubsection.7.6.1.4}%
+\contentsline {section}{\numberline {7.7}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.cpp File Reference}{191}{section.7.7}%
+\contentsline {section}{\numberline {7.8}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account.cpp File Reference}{192}{section.7.8}%
+\contentsline {section}{\numberline {7.9}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Global\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bit.cpp File Reference}{192}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Function Documentation}{192}{subsection.7.9.1}%
+\contentsline {subsubsection}{\numberline {7.9.1.1}operator$<$$<$()}{192}{subsubsection.7.9.1.1}%
+\contentsline {section}{\numberline {7.10}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}History.cpp File Reference}{192}{section.7.10}%
+\contentsline {section}{\numberline {7.11}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object.cpp File Reference}{193}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Function Documentation}{193}{subsection.7.11.1}%
+\contentsline {subsubsection}{\numberline {7.11.1.1}operator+=()}{193}{subsubsection.7.11.1.1}%
+\contentsline {subsubsection}{\numberline {7.11.1.2}operator$<$$<$()}{193}{subsubsection.7.11.1.2}%
+\contentsline {subsubsection}{\numberline {7.11.1.3}operator==()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{194}{subsubsection.7.11.1.3}%
+\contentsline {subsubsection}{\numberline {7.11.1.4}operator==()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{194}{subsubsection.7.11.1.4}%
+\contentsline {section}{\numberline {7.12}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bit.cpp File Reference}{194}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Function Documentation}{194}{subsection.7.12.1}%
+\contentsline {subsubsection}{\numberline {7.12.1.1}operator$<$$<$()}{194}{subsubsection.7.12.1.1}%
+\contentsline {section}{\numberline {7.13}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Template.cpp File Reference}{194}{section.7.13}%
+\contentsline {section}{\numberline {7.14}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Operate.cpp File Reference}{195}{section.7.14}%
+\contentsline {subsection}{\numberline {7.14.1}Function Documentation}{195}{subsection.7.14.1}%
+\contentsline {subsubsection}{\numberline {7.14.1.1}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{195}{subsubsection.7.14.1.1}%
+\contentsline {subsubsection}{\numberline {7.14.1.2}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{195}{subsubsection.7.14.1.2}%
+\contentsline {subsubsection}{\numberline {7.14.1.3}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{195}{subsubsection.7.14.1.3}%
+\contentsline {subsubsection}{\numberline {7.14.1.4}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{196}{subsubsection.7.14.1.4}%
+\contentsline {subsubsection}{\numberline {7.14.1.5}operator$>$$>$()}{196}{subsubsection.7.14.1.5}%
+\contentsline {section}{\numberline {7.15}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/base/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.cpp File Reference}{196}{section.7.15}%
+\contentsline {section}{\numberline {7.16}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lib.h File Reference}{196}{section.7.16}%
+\contentsline {section}{\numberline {7.17}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lib.h File Reference}{196}{section.7.17}%
+\contentsline {section}{\numberline {7.18}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account.h File Reference}{197}{section.7.18}%
+\contentsline {section}{\numberline {7.19}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Group.h File Reference}{197}{section.7.19}%
+\contentsline {section}{\numberline {7.20}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Info.h File Reference}{198}{section.7.20}%
+\contentsline {subsection}{\numberline {7.20.1}Typedef Documentation}{198}{subsection.7.20.1}%
+\contentsline {subsubsection}{\numberline {7.20.1.1}AccInfoPtr}{199}{subsubsection.7.20.1.1}%
+\contentsline {subsubsection}{\numberline {7.20.1.2}AccInfoPtrList}{199}{subsubsection.7.20.1.2}%
+\contentsline {section}{\numberline {7.21}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Storage.h File Reference}{199}{section.7.21}%
+\contentsline {subsection}{\numberline {7.21.1}Typedef Documentation}{199}{subsection.7.21.1}%
+\contentsline {subsubsection}{\numberline {7.21.1.1}AFAccountStorage}{200}{subsubsection.7.21.1.1}%
+\contentsline {section}{\numberline {7.22}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}PI.h File Reference}{200}{section.7.22}%
+\contentsline {subsection}{\numberline {7.22.1}Typedef Documentation}{200}{subsection.7.22.1}%
+\contentsline {subsubsection}{\numberline {7.22.1.1}AFapiPtr}{201}{subsubsection.7.22.1.1}%
+\contentsline {subsubsection}{\numberline {7.22.1.2}AFapiPtrList}{201}{subsubsection.7.22.1.2}%
+\contentsline {subsection}{\numberline {7.22.2}Function Documentation}{201}{subsection.7.22.2}%
+\contentsline {subsubsection}{\numberline {7.22.2.1}afAPI()}{201}{subsubsection.7.22.2.1}%
+\contentsline {section}{\numberline {7.23}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dir.h File Reference}{201}{section.7.23}%
+\contentsline {subsection}{\numberline {7.23.1}Function Documentation}{202}{subsection.7.23.1}%
+\contentsline {subsubsection}{\numberline {7.23.1.1}AFDir()}{202}{subsubsection.7.23.1.1}%
+\contentsline {section}{\numberline {7.24}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enum.h File Reference}{202}{section.7.24}%
+\contentsline {subsection}{\numberline {7.24.1}Function Documentation}{203}{subsection.7.24.1}%
+\contentsline {subsubsection}{\numberline {7.24.1.1}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{203}{subsubsection.7.24.1.1}%
+\contentsline {subsubsection}{\numberline {7.24.1.2}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{203}{subsubsection.7.24.1.2}%
+\contentsline {subsubsection}{\numberline {7.24.1.3}operator==()}{203}{subsubsection.7.24.1.3}%
+\contentsline {subsubsection}{\numberline {7.24.1.4}operator$>$$>$()}{204}{subsubsection.7.24.1.4}%
+\contentsline {section}{\numberline {7.25}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File.h File Reference}{204}{section.7.25}%
+\contentsline {subsection}{\numberline {7.25.1}Typedef Documentation}{204}{subsection.7.25.1}%
+\contentsline {subsubsection}{\numberline {7.25.1.1}AFfile}{204}{subsubsection.7.25.1.1}%
+\contentsline {subsection}{\numberline {7.25.2}Function Documentation}{205}{subsection.7.25.2}%
+\contentsline {subsubsection}{\numberline {7.25.2.1}operator$<$$<$()}{205}{subsubsection.7.25.2.1}%
+\contentsline {subsubsection}{\numberline {7.25.2.2}operator$>$$>$()}{205}{subsubsection.7.25.2.2}%
+\contentsline {section}{\numberline {7.26}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.h File Reference}{205}{section.7.26}%
+\contentsline {subsection}{\numberline {7.26.1}Typedef Documentation}{206}{subsection.7.26.1}%
+\contentsline {subsubsection}{\numberline {7.26.1.1}AFfunction}{206}{subsubsection.7.26.1.1}%
+\contentsline {section}{\numberline {7.27}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id.h File Reference}{206}{section.7.27}%
+\contentsline {subsection}{\numberline {7.27.1}Typedef Documentation}{207}{subsection.7.27.1}%
+\contentsline {subsubsection}{\numberline {7.27.1.1}AFaccList\_b}{207}{subsubsection.7.27.1.1}%
+\contentsline {subsubsection}{\numberline {7.27.1.2}AFattribute}{207}{subsubsection.7.27.1.2}%
+\contentsline {subsubsection}{\numberline {7.27.1.3}AFcompress}{207}{subsubsection.7.27.1.3}%
+\contentsline {subsubsection}{\numberline {7.27.1.4}AFIdAccount}{207}{subsubsection.7.27.1.4}%
+\contentsline {subsubsection}{\numberline {7.27.1.5}AFIdGlobal\_bit}{207}{subsubsection.7.27.1.5}%
+\contentsline {subsubsection}{\numberline {7.27.1.6}AFIdHistory}{208}{subsubsection.7.27.1.6}%
+\contentsline {subsubsection}{\numberline {7.27.1.7}AFIdHistoryPtr}{208}{subsubsection.7.27.1.7}%
+\contentsline {subsubsection}{\numberline {7.27.1.8}AFIdObject}{208}{subsubsection.7.27.1.8}%
+\contentsline {subsubsection}{\numberline {7.27.1.9}AFIdObject\_bit}{208}{subsubsection.7.27.1.9}%
+\contentsline {subsubsection}{\numberline {7.27.1.10}AFIdObjectPtr}{208}{subsubsection.7.27.1.10}%
+\contentsline {subsubsection}{\numberline {7.27.1.11}AFIdObjectPtrV}{208}{subsubsection.7.27.1.11}%
+\contentsline {subsubsection}{\numberline {7.27.1.12}AFIdObjectTemplate}{209}{subsubsection.7.27.1.12}%
+\contentsline {subsubsection}{\numberline {7.27.1.13}AFIdOperate}{209}{subsubsection.7.27.1.13}%
+\contentsline {subsubsection}{\numberline {7.27.1.14}AFIdOperatePtr}{209}{subsubsection.7.27.1.14}%
+\contentsline {subsubsection}{\numberline {7.27.1.15}AFIdOperatePtrList}{209}{subsubsection.7.27.1.15}%
+\contentsline {subsubsection}{\numberline {7.27.1.16}AFTransferOperateSendList}{209}{subsubsection.7.27.1.16}%
+\contentsline {section}{\numberline {7.28}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account.h File Reference}{209}{section.7.28}%
+\contentsline {section}{\numberline {7.29}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bit.h File Reference}{210}{section.7.29}%
+\contentsline {subsection}{\numberline {7.29.1}Function Documentation}{210}{subsection.7.29.1}%
+\contentsline {subsubsection}{\numberline {7.29.1.1}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{211}{subsubsection.7.29.1.1}%
+\contentsline {subsubsection}{\numberline {7.29.1.2}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{211}{subsubsection.7.29.1.2}%
+\contentsline {subsubsection}{\numberline {7.29.1.3}operator$>$$>$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{211}{subsubsection.7.29.1.3}%
+\contentsline {subsubsection}{\numberline {7.29.1.4}operator$>$$>$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{211}{subsubsection.7.29.1.4}%
+\contentsline {section}{\numberline {7.30}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Global\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bit.h File Reference}{211}{section.7.30}%
+\contentsline {subsection}{\numberline {7.30.1}Function Documentation}{212}{subsection.7.30.1}%
+\contentsline {subsubsection}{\numberline {7.30.1.1}operator$<$$<$()}{212}{subsubsection.7.30.1.1}%
+\contentsline {section}{\numberline {7.31}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}History.h File Reference}{212}{section.7.31}%
+\contentsline {section}{\numberline {7.32}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object.h File Reference}{213}{section.7.32}%
+\contentsline {subsection}{\numberline {7.32.1}Function Documentation}{213}{subsection.7.32.1}%
+\contentsline {subsubsection}{\numberline {7.32.1.1}operator+=()}{213}{subsubsection.7.32.1.1}%
+\contentsline {subsubsection}{\numberline {7.32.1.2}operator$<$$<$()}{214}{subsubsection.7.32.1.2}%
+\contentsline {subsubsection}{\numberline {7.32.1.3}operator==()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{214}{subsubsection.7.32.1.3}%
+\contentsline {subsubsection}{\numberline {7.32.1.4}operator==()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{214}{subsubsection.7.32.1.4}%
+\contentsline {section}{\numberline {7.33}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bit.h File Reference}{214}{section.7.33}%
+\contentsline {subsection}{\numberline {7.33.1}Function Documentation}{215}{subsection.7.33.1}%
+\contentsline {subsubsection}{\numberline {7.33.1.1}operator$<$$<$()}{215}{subsubsection.7.33.1.1}%
+\contentsline {subsubsection}{\numberline {7.33.1.2}operator==()}{215}{subsubsection.7.33.1.2}%
+\contentsline {section}{\numberline {7.34}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Template.h File Reference}{215}{section.7.34}%
+\contentsline {section}{\numberline {7.35}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Operate.h File Reference}{215}{section.7.35}%
+\contentsline {subsection}{\numberline {7.35.1}Function Documentation}{216}{subsection.7.35.1}%
+\contentsline {subsubsection}{\numberline {7.35.1.1}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{216}{subsubsection.7.35.1.1}%
+\contentsline {subsubsection}{\numberline {7.35.1.2}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{216}{subsubsection.7.35.1.2}%
+\contentsline {subsubsection}{\numberline {7.35.1.3}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{217}{subsubsection.7.35.1.3}%
+\contentsline {subsubsection}{\numberline {7.35.1.4}operator$<$$<$()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{217}{subsubsection.7.35.1.4}%
+\contentsline {subsubsection}{\numberline {7.35.1.5}operator$>$$>$()}{217}{subsubsection.7.35.1.5}%
+\contentsline {section}{\numberline {7.36}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Linked\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List.h File Reference}{217}{section.7.36}%
+\contentsline {section}{\numberline {7.37}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Preference.h File Reference}{217}{section.7.37}%
+\contentsline {section}{\numberline {7.38}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Server\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings.h File Reference}{217}{section.7.38}%
+\contentsline {subsection}{\numberline {7.38.1}Function Documentation}{218}{subsection.7.38.1}%
+\contentsline {subsubsection}{\numberline {7.38.1.1}afServerSettings()}{218}{subsubsection.7.38.1.1}%
+\contentsline {section}{\numberline {7.39}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Setting.h File Reference}{218}{section.7.39}%
+\contentsline {section}{\numberline {7.40}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Storage.h File Reference}{219}{section.7.40}%
+\contentsline {subsection}{\numberline {7.40.1}Typedef Documentation}{219}{subsection.7.40.1}%
+\contentsline {subsubsection}{\numberline {7.40.1.1}AFStorage}{219}{subsubsection.7.40.1.1}%
+\contentsline {subsubsection}{\numberline {7.40.1.2}AFStoragePtr}{219}{subsubsection.7.40.1.2}%
+\contentsline {section}{\numberline {7.41}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.h File Reference}{220}{section.7.41}%
+\contentsline {section}{\numberline {7.42}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transfer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Operate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List.h File Reference}{220}{section.7.42}%
+\contentsline {section}{\numberline {7.43}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/template/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Linked\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List.cpp File Reference}{220}{section.7.43}%
+\contentsline {section}{\numberline {7.44}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/tool/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dir.cpp File Reference}{220}{section.7.44}%
+\contentsline {subsection}{\numberline {7.44.1}Macro Definition Documentation}{221}{subsection.7.44.1}%
+\contentsline {subsubsection}{\numberline {7.44.1.1}TEST\_RELEASE}{221}{subsubsection.7.44.1.1}%
+\contentsline {subsection}{\numberline {7.44.2}Function Documentation}{221}{subsection.7.44.2}%
+\contentsline {subsubsection}{\numberline {7.44.2.1}AFDir()}{221}{subsubsection.7.44.2.1}%
+\contentsline {section}{\numberline {7.45}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/tool/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dir2.cpp File Reference}{221}{section.7.45}%
+\contentsline {subsection}{\numberline {7.45.1}Macro Definition Documentation}{222}{subsection.7.45.1}%
+\contentsline {subsubsection}{\numberline {7.45.1.1}TEST\_RELEASE}{222}{subsubsection.7.45.1.1}%
+\contentsline {subsection}{\numberline {7.45.2}Function Documentation}{222}{subsection.7.45.2}%
+\contentsline {subsubsection}{\numberline {7.45.2.1}AFDir()}{222}{subsubsection.7.45.2.1}%
+\contentsline {section}{\numberline {7.46}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/tool/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File.cpp File Reference}{222}{section.7.46}%
+\contentsline {section}{\numberline {7.47}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/tool/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Preference.cpp File Reference}{222}{section.7.47}%
+\contentsline {section}{\numberline {7.48}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/tool/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Server\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings.cpp File Reference}{222}{section.7.48}%
+\contentsline {subsection}{\numberline {7.48.1}Function Documentation}{223}{subsection.7.48.1}%
+\contentsline {subsubsection}{\numberline {7.48.1.1}afServerSettings()}{223}{subsubsection.7.48.1.1}%
+\contentsline {subsection}{\numberline {7.48.2}Variable Documentation}{223}{subsection.7.48.2}%
+\contentsline {subsubsection}{\numberline {7.48.2.1}p\_serverSettingsPtr}{223}{subsubsection.7.48.2.1}%
+\contentsline {section}{\numberline {7.49}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/tool/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Setting.cpp File Reference}{223}{section.7.49}%
+\contentsline {section}{\numberline {7.50}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/tool/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Storage.cpp File Reference}{223}{section.7.50}%
+\contentsline {subsection}{\numberline {7.50.1}Variable Documentation}{223}{subsection.7.50.1}%
+\contentsline {subsubsection}{\numberline {7.50.1.1}storage\_ptr}{224}{subsubsection.7.50.1.1}%
+\contentsline {section}{\numberline {7.51}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/tool/af\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transfer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Operate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List.cpp File Reference}{224}{section.7.51}%
+\contentsline {section}{\numberline {7.52}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Application.h File Reference}{224}{section.7.52}%
+\contentsline {subsection}{\numberline {7.52.1}Typedef Documentation}{225}{subsection.7.52.1}%
+\contentsline {subsubsection}{\numberline {7.52.1.1}AFguiApplication}{225}{subsubsection.7.52.1.1}%
+\contentsline {section}{\numberline {7.53}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plugin.h File Reference}{225}{section.7.53}%
+\contentsline {subsection}{\numberline {7.53.1}Typedef Documentation}{225}{subsection.7.53.1}%
+\contentsline {subsubsection}{\numberline {7.53.1.1}AFguiPluginPtr}{226}{subsubsection.7.53.1.1}%
+\contentsline {section}{\numberline {7.54}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Size.h File Reference}{226}{section.7.54}%
+\contentsline {subsection}{\numberline {7.54.1}Typedef Documentation}{226}{subsection.7.54.1}%
+\contentsline {subsubsection}{\numberline {7.54.1.1}AFguiSize}{226}{subsubsection.7.54.1.1}%
+\contentsline {subsubsection}{\numberline {7.54.1.2}AFguiSizePtr}{227}{subsubsection.7.54.1.2}%
+\contentsline {subsection}{\numberline {7.54.2}Function Documentation}{227}{subsection.7.54.2}%
+\contentsline {subsubsection}{\numberline {7.54.2.1}afGuiSize()}{227}{subsubsection.7.54.2.1}%
+\contentsline {section}{\numberline {7.55}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/include/lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.h File Reference}{227}{section.7.55}%
+\contentsline {subsection}{\numberline {7.55.1}Typedef Documentation}{227}{subsection.7.55.1}%
+\contentsline {subsubsection}{\numberline {7.55.1.1}AFquickMenuModel}{227}{subsubsection.7.55.1.1}%
+\contentsline {section}{\numberline {7.56}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Base/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}App.qml File Reference}{229}{section.7.56}%
+\contentsline {section}{\numberline {7.57}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Base/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu.qml File Reference}{229}{section.7.57}%
+\contentsline {section}{\numberline {7.58}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Base/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plugin.qml File Reference}{229}{section.7.58}%
+\contentsline {section}{\numberline {7.59}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plugin.qml File Reference}{229}{section.7.59}%
+\contentsline {section}{\numberline {7.60}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Busy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Indicator.qml File Reference}{229}{section.7.60}%
+\contentsline {section}{\numberline {7.61}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Content.qml File Reference}{229}{section.7.61}%
+\contentsline {section}{\numberline {7.62}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Header.qml File Reference}{229}{section.7.62}%
+\contentsline {section}{\numberline {7.63}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mirror.qml File Reference}{229}{section.7.63}%
+\contentsline {section}{\numberline {7.64}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Text\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Input.qml File Reference}{229}{section.7.64}%
+\contentsline {section}{\numberline {7.65}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Text\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Input.qml File Reference}{229}{section.7.65}%
+\contentsline {section}{\numberline {7.66}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enum/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Color\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item.qml File Reference}{229}{section.7.66}%
+\contentsline {section}{\numberline {7.67}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enum/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Colors.qml File Reference}{229}{section.7.67}%
+\contentsline {section}{\numberline {7.68}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enum/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}M\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Q\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enum.qml File Reference}{229}{section.7.68}%
+\contentsline {section}{\numberline {7.69}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fbutton.qml File Reference}{229}{section.7.69}%
+\contentsline {section}{\numberline {7.70}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ftext.qml File Reference}{229}{section.7.70}%
+\contentsline {section}{\numberline {7.71}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Check\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Box.qml File Reference}{229}{section.7.71}%
+\contentsline {section}{\numberline {7.72}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Combobox.qml File Reference}{229}{section.7.72}%
+\contentsline {section}{\numberline {7.73}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Digit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Text\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Input.qml File Reference}{229}{section.7.73}%
+\contentsline {section}{\numberline {7.74}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Link\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Text.qml File Reference}{229}{section.7.74}%
+\contentsline {section}{\numberline {7.75}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Position.qml File Reference}{229}{section.7.75}%
+\contentsline {section}{\numberline {7.76}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Separate.qml File Reference}{229}{section.7.76}%
+\contentsline {section}{\numberline {7.77}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Slider.qml File Reference}{229}{section.7.77}%
+\contentsline {section}{\numberline {7.78}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Box.qml File Reference}{229}{section.7.78}%
+\contentsline {section}{\numberline {7.79}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Button.qml File Reference}{229}{section.7.79}%
+\contentsline {section}{\numberline {7.80}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Color\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Button\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object.qml File Reference}{229}{section.7.80}%
+\contentsline {section}{\numberline {7.81}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Text\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object.qml File Reference}{229}{section.7.81}%
+\contentsline {section}{\numberline {7.82}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/rc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Url\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Button\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object.qml File Reference}{229}{section.7.82}%
+\contentsline {section}{\numberline {7.83}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/src/gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Application.cpp File Reference}{229}{section.7.83}%
+\contentsline {subsection}{\numberline {7.83.1}Function Documentation}{230}{subsection.7.83.1}%
+\contentsline {subsubsection}{\numberline {7.83.1.1}m\_defaultQmlUrl()}{230}{subsubsection.7.83.1.1}%
+\contentsline {section}{\numberline {7.84}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/src/gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plugin.cpp File Reference}{230}{section.7.84}%
+\contentsline {section}{\numberline {7.85}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/src/gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Size.cpp File Reference}{230}{section.7.85}%
+\contentsline {subsection}{\numberline {7.85.1}Function Documentation}{231}{subsection.7.85.1}%
+\contentsline {subsubsection}{\numberline {7.85.1.1}afGuiSize()}{231}{subsubsection.7.85.1.1}%
+\contentsline {subsection}{\numberline {7.85.2}Variable Documentation}{231}{subsection.7.85.2}%
+\contentsline {subsubsection}{\numberline {7.85.2.1}afGuiSizePtr}{231}{subsubsection.7.85.2.1}%
+\contentsline {section}{\numberline {7.86}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}quick\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/src/menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.cpp File Reference}{231}{section.7.86}%
+\contentsline {section}{\numberline {7.87}server\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/main.cpp File Reference}{231}{section.7.87}%
+\contentsline {subsection}{\numberline {7.87.1}Function Documentation}{231}{subsection.7.87.1}%
+\contentsline {subsubsection}{\numberline {7.87.1.1}main()}{232}{subsubsection.7.87.1.1}%
+\contentsline {section}{\numberline {7.88}server\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/server.cpp File Reference}{232}{section.7.88}%
+\contentsline {section}{\numberline {7.89}server\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F/server.h File Reference}{232}{section.7.89}%
