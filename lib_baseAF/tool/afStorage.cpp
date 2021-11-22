@@ -9,6 +9,7 @@ static StoragePtr storage_ptr;
 
 Storage::Storage(QObject *parent) : QObject(parent)
 {
+    qDebug() << "Create base storage";
     loadFromDirectory({});
 }
 

@@ -32,8 +32,8 @@ struct AFlib::id::TbitStruct {
             return 0;
         }
 
-        if (size == 32)
-            std::cerr << "not 0";
+//        if (size == 32)
+//            std::cerr << "not 0";
         std::bitset <bitsize_> ret = 0;
         for (uint i = 0; i < size; i++)
             ret[i] = m_bitset[index + i];
@@ -80,6 +80,7 @@ struct AFlib::id::TbitStruct {
     operator std::string () const { return toString(0); }
     std::string toString(char separator = 8, char ch = '`') const
     {
+        std::cerr << "try to call toString function\n";
         std::string ret("");
         for (unsigned char i = 0; i * 8 < bitsize; i++)
              ret.push_back(getCharPiece(8 * i));
@@ -87,6 +88,8 @@ struct AFlib::id::TbitStruct {
         if (separator > 0)
             for (unsigned char i = separator; separator < bitsize; i++, i += separator)
                 ret.insert(i, 1, ch);
+
+        std::cerr << "and it return " << ret.c_str() << "\n";
 
         return ret;
     }
@@ -166,7 +169,12 @@ template <uint bsize>
 QDataStream& operator << (QDataStream& s, const AFlib::id::TbitStruct <bsize> & data)
 {
     std::string str = data;
-    return s << uint(str.length()) << str.c_str();
+    uint len = str.length();
+    s << len;
+
+    for (int i = 0; i < len; i++)
+        s << str[i];
+    return s;
 }
 
 template <uint bsize>
@@ -174,8 +182,10 @@ QDataStream& operator >> (QDataStream& s, AFlib::id::TbitStruct <bsize> & data)
 {
     uint len;
     s >> len;
-    std::string str;
+
     char ch;
+    std::string str;
+
     for (uint i = 0; i < len; ++i){
         s >> ch;
         str.push_back(ch);

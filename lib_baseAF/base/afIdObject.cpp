@@ -10,8 +10,8 @@ AFlib::id::Object::Object()
     addOperate(static_cast <quint16> (Attribute::Created), QDateTime::currentDateTime(),
                Account_bit(0), HIdType::AddLine, SIdType::Local);
     m_lastUpdate = Function::nullDateTime();
-    qDebug() << "create Object 0 [empty object] end" << pluginId() << type();
-    qDebug() << "\n";
+    qDebug() << "create Object 0 [empty object] end";
+    qDebug() << this;
 }
 
 AFlib::id::Object::Object(const QByteArray &data)
@@ -270,26 +270,42 @@ bool AFlib::id::Object::setUniqueId()
     if (savedStatus() != SavedIdType::Temporary)
         return false;
 
+//    auto id = afStorage()->foundFreeLocalId(owner(), pluginId(), type()).id();
+//    setId(id);
+
     auto ow = owner();
     auto pi = pluginId();
     auto ty = type();
     auto afs = afStorage();
     auto id = afs->foundFreeLocalId(ow, pi, ty).id();
     setId(id);
-    qDebug() << uniqueId() << globalId();
+    qDebug() << "set unique id: " << uniqueId() << globalId();
     return true;
 }
 
 QDebug operator <<(QDebug d, const AFlib::id::Object &object)
 {
     using namespace AFlib;
-    return d << "AFlib::id::Object {\n\t"
+    /*return*/ d << "AFlib::id::Object " << QString::number(object.toUInt32(), 8) << " {\n\t"
              << "owner id:    " << Function::toString(object.owner().toUInt32(), 16).c_str() << ";\n\t"
              << "unique id:   " << Function::toString(object.uniqueId(), 16).c_str() << ";\n\t"
              << "name:        " << object.name() << ";\n\t"
              << "description: " << object.description() << ";\n\t"
              << "type:        " << object.type() << ";\n\t"
-             << "plugin:      " << object.pluginId() << ";\n}";
+             << "plugin:      " << object.pluginId() << ";\n}"
+             << "History: ";
+    for (auto it : object.getAllOperates()){
+        d << "dt" << it->datetime();
+        d << "key: " << it->key();
+        d << "value: " << it->value();
+    }
+
+    return d;
+}
+
+QDebug operator <<(QDebug d, const AFlib::id::Object *object)
+{
+    return d << *object;
 }
 
 bool operator ==(const AFlib::id::ObjectPtr ptr, const AFlib::id::Object &object)

@@ -1,4 +1,10 @@
+# basic
 cmake_minimum_required(VERSION 3.19)
+set (CMAKE_AUTOMOC ON)
+set (CMAKE_CXX_STANDARD 20)
+find_package(Qt6 COMPONENTS Core Test Network)
+
+# library baseAF
 project(lib_baseAF VERSION 0.0.1)
 
 set (baseAF_h
@@ -13,6 +19,7 @@ set (baseAF_h
     include/lib_baseAF/afEnum.h
     include/lib_baseAF/afFile.h
     include/lib_baseAF/afFunction.h
+    include/lib_baseAF/afFunction_st.h
     include/lib_baseAF/afId.h
     include/lib_baseAF/afIdAccount.h
     include/lib_baseAF/afIdBit.h
@@ -39,6 +46,7 @@ set (baseAF_cpp
     base/afAPI.cpp
     base/afEnum.cpp
     base/afFunction.cpp
+    base/afFunction_st.cpp
     base/afIdAccount.cpp
     base/afIdGlobalBit.cpp
     base/afIdHistory.cpp
@@ -67,6 +75,7 @@ set (initialize_header
     include/AFbase/AfEnum
     include/AFbase/AfFile
     include/AFbase/AfFunction
+    include/AFbase/AfFunctionSt
     include/AFbase/AfId
     include/AFbase/AfIdHistory
     include/AFbase/AfIdObject
@@ -79,10 +88,6 @@ set (initialize_header
     include/AFbase/AfTransferOperateList
     )
 
-set (CMAKE_AUTOMOC ON)
-set (CMAKE_CXX_STANDARD 20)
-find_package(Qt6 COMPONENTS Core)
-
 add_library(lib_baseAF ${baseAF_h} ${baseAF_cpp} ${initialize_header})
 
 set_target_properties(lib_baseAF PROPERTIES
@@ -90,9 +95,20 @@ set_target_properties(lib_baseAF PROPERTIES
     CXX_EXTENSIONS OFF
     )
 
-target_link_libraries(lib_baseAF Qt6::Core)
+target_link_libraries(lib_baseAF Qt6::Core Qt6::Network Qt6::Test)
 target_include_directories(lib_baseAF
     PUBLIC  include
     PUBLIC  include/AFbase
     PRIVATE include/lib_baseAF
+    )
+
+# tests
+enable_testing(true)
+
+add_executable(test_baseAF test/test.cpp test/afTestClass.cpp test/afTestClass.h)
+add_test(NAME test_baseAF COMMAND test_baseAF)
+
+target_link_libraries(test_baseAF PUBLIC lib_baseAF PRIVATE Qt::Test)
+target_include_directories(test_baseAF
+    PUBLIC $<TARGET_PROPERTY:lib_baseAF,INTERFACE_INCLUDE_DIRECTORIES>
     )

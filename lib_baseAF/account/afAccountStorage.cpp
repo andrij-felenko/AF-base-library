@@ -16,6 +16,7 @@ QDir AFaccount::Storage::m_accountStorageDir = QDir::current();
 
 AFaccount::Storage::Storage(QObject* parent) : QObject(parent)
 {
+    qDebug() << "Create AFAccount storage";
     if (m_accountStorageDir == QDir::current())
         m_accountStorageDir = AFlib::afDir()->users();
     reload();
@@ -274,9 +275,14 @@ AFaccount::AccountPtr AFaccount::user(QObject *parent)
 {
     if (m_user.isNull()){
         if (m_guest.isNull()){
+            qDebug() << "AFaccount user create";
             auto newObj = AFlib::id::ObjectPtr::create();
-            m_guest = AFaccount::AccountPtr::create(newObj, parent);
-            m_guest->save();
+            m_guest = AFaccount::AccountPtr::create(parent);
+            using namespace AFlib;
+            m_guest->afObjectPtr()->setOwner(id::Account_bit::create(AccountIdType::Local));
+            m_accountStorage->add(m_guest);
+            qDebug() << "AFaccount user save" << m_guest.get()->afObject();
+//            m_guest->save();
         }
         m_user = m_guest;
     }

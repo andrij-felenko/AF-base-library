@@ -78,6 +78,7 @@ private:
 };
 
 QDebug operator << (QDebug d, const AFlib::id::Object& object);
+QDebug operator << (QDebug d, const AFlib::id::Object* object);
 bool operator == (const AFlib::id::ObjectPtr ptr, const AFlib::id::Object& object);
 bool operator == (const AFlib::id::ObjectPtr l,   const AFlib::id::ObjectPtr r);
 
